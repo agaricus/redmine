@@ -8,4 +8,4 @@
 # change this key, all old sessions will become invalid! Make sure the
 # secret is at least 30 characters and all random, no regular words or
 # you'll be exposed to dictionary attacks.
-RedmineApp::Application.config.secret_token = '3c96ebb1ebad521d9d22887b883be39f45a53f1411c1d7dc406a499631b2aff9252943b3ed01f3ce'
+RedmineApp::Application.config.secret_token = '6d3c1d448824a62734eed84746074c94cc6d466da0d86b67a3fe58615c6fc8ffcc0125d248393239'
