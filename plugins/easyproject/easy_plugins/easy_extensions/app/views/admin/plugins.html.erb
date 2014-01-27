@@ -1,0 +1,21 @@
+<%= title l(:label_plugins) %>
+
+<% if @plugins.any? %>
+  <table class="list plugins">
+    <% @plugins.each do |plugin| %>
+      <tr id="plugin-<%= plugin.id %>" class="<%= cycle('odd', 'even') %>">
+        <td class="name"><span class="name"><%=hh plugin.name %></span>
+          <%= content_tag('span', hh(plugin.description), :class => 'description') unless plugin.description.blank? %>
+          <%= content_tag('span', link_to(hh(plugin.url), hh(plugin.url)), :class => 'url') unless plugin.url.blank? %>
+        </td>
+        <td class="author"><%= plugin.author_url.blank? ? hh(plugin.author) : link_to(hh(plugin.author), hh(plugin.author_url)) %></td>
+        <td class="version"><%= plugin.version_description.blank? ? h(plugin.version) : hh(plugin.version_description) %></td>
+        <td class="configure"><%= link_to(l(:button_configure), plugin_settings_path(plugin), :class => 'button-1') if plugin.configurable? %></td>
+        <td class="uninstall"><%= link_to(l(:button_uninstall), {:controller => 'settings', :action => 'uninstall', :id => plugin.id}, :class => 'button-2') if false && plugin.should_be_disabled? -%></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+<p class="file_version"><%= EasyExtensions.version -%></p>

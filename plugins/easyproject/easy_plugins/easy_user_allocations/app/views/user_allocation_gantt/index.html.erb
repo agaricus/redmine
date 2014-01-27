@@ -1,0 +1,47 @@
+<% unless @project %>
+  <div class="tabs">
+    <ul>
+      <% easy_user_allocation_tabs.each do |tab| %>
+        <li>
+          <%= link_to(l(tab[:label]), tab[:url], :class => ('selected' if tab[:name] == params[:tab])) %>
+        </li>
+      <% end -%>
+    </ul>
+  </div>
+<% end -%>
+
+<% modul_uniq_id ||= 'resalloc_user-easyquery_EasyUserAllocationQuery' %>
+
+<%= render :partial => 'easy_user_allocation_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => @query.new_record? ? l(:label_user_allocations) : h(@query.name)} -%>
+
+<%= render :partial => 'resalloc' if @query.valid? %>
+
+<% content_for :header_tags do %>
+  <%= call_hook :view_user_allocation_gantt_html_head %>
+  <%= javascript_include_tag 'json2.js', :plugin => 'easy_user_allocations' %>
+  <%= javascript_include_tag 'resalloc.jquery.js', :plugin => 'easy_user_allocations' %>
+  <%= stylesheet_link_tag 'easy_user_allocations.css',	:plugin => 'easy_user_allocations' %>
+<% end %>
+
+<% if EasyUserAllocationQuery.visible(User.current).any? %>
+  <% content_for :sidebar do %>
+    <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {
+      :query_class => EasyUserAllocationQuery,
+      :project => @query.project
+    }
+    -%>
+  <% end -%>
+<% end -%>
+
+<% content_for :sidebar do %>
+  <div class="box">
+    <%= toggling_container(controller_name + '_' + action_name + '_user-query-automatic-filter', User.current, {:heading => l(:easy_user_allocations_sidebar_all_users_queries)}) do %>
+      <div id="user-query-automatic-filter">
+        <% User.active.non_system_flag.easy_type_internal.sorted.each do |user| %>
+          <%= link_to(user.name, {:controller => 'user_allocation_gantt', :set_filter => 1, 'range' => 'last30_next90', 'user_id' => user.id, 'issue_status_id' => 'o', 'issue_is_planned' => '0'}, :title => l(:label_show_assigned_issues, :username => user.name)) %>
+        <% end %>
+        <%= call_hook(:view_issue_sidebar_user_query) %>
+      </div>
+    <% end %>
+  </div>
+<% end -%>

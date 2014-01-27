@@ -1,0 +1,111 @@
+easy_page_modules_001:
+  id: 1
+  type: EpmProjectIssues
+easy_page_modules_002:
+  id: 2
+  type: EpmIssuesWatchedByMe
+easy_page_modules_003:
+  id: 3
+  type: EpmProjectSidebarProjectInfo
+easy_page_modules_004:
+  id: 4
+  type: EpmProjectSidebarProjectMembers
+easy_page_modules_005:
+  id: 5
+  type: EpmIssueQuery
+easy_page_modules_006:
+  id: 6
+  type: EpmDocuments
+easy_page_modules_007:
+  id: 7
+  type: EpmTimelogSimple
+easy_page_modules_008:
+  id: 8
+  type: EpmProjectNews
+easy_page_modules_009:
+  id: 9
+  type: EpmSavedQueries
+easy_page_modules_010:
+  id: 10
+  type: EpmMyProjectsSimple
+easy_page_modules_011:
+  id: 11
+  type: EpmProjectTree
+easy_page_modules_012:
+  id: 12
+  type: EpmIssuesAssignedToMe
+easy_page_modules_013:
+  id: 13
+  type: EpmIssuesReportedByMe
+easy_page_modules_014:
+  id: 14
+  type: EpmProjectSidebarSavedQueries
+easy_page_modules_015:
+  id: 15
+  type: EpmMyCalendar
+easy_page_modules_016:
+  id: 16
+  type: EpmNews
+easy_page_modules_017:
+  id: 17
+  type: EpmProjectSidebarAllUsersQueries
+easy_page_modules_018:
+  id: 18
+  type: EpmProjectsQuery
+easy_page_modules_019:
+  id: 19
+  type: EpmTimelogCalendar
+easy_page_modules_020:
+  id: 20
+  type: EpmIssuesCreateNew
+easy_page_modules_022:
+  id: 22
+  type: EpmProjectSidebarFamilyInfo
+easy_page_modules_023:
+  id: 23
+  type: EpmNoticeboard
+easy_page_modules_024:
+  id: 24
+  type: EpmProjectInfo
+easy_page_modules_025:
+  id: 25
+  type: EpmAttendance
+easy_page_modules_026:
+  id: 26
+  type: EpmUsersQuery
+easy_page_modules_027:
+  id: 27
+  type: EpmResourceAvailability
+easy_page_modules_028:
+  id: 28
+  type: EpmGoogleMaps
+easy_page_modules_029:
+  id: 29
+  type: EpmEasyAlerts
+easy_page_modules_031:
+  id: 31
+  type: EpmEasyReport
+easy_page_modules_032:
+  id: 32
+  type: EpmUserAllocation
+easy_page_modules_033:
+  id: 33
+  type: EpmUserAllocationWorkingPlan
+easy_page_modules_034:
+  id: 34
+  type: EpmProjectHistory
+easy_page_modules_036:
+  id: 36
+  type: EpmProjectContactsOverview
+easy_page_modules_037:
+  id: 37
+  type: EpmEasyCalendar
+easy_page_modules_038:
+  id: 38
+  type: EpmProjectMeetings
+easy_page_modules_039:
+  id: 39
+  type: EpmEasyPersonalFinance
+easy_page_modules_040:
+  id: 40
+  type: EpmEasyPersonalFinanceAdvanced

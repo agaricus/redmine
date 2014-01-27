@@ -1,0 +1,31 @@
+<% prepare_easy_page_for_render %>
+<% page_params = easy_page_context[:page_params] %>
+<% if @tabs.size == 1 %>
+  <% params[:t] = @tab.position %>
+  $('#easy_jquery_tab-0').attr('id','easy_jquery_tab-<%= @tab.id %>')
+	$('#easy_jquery_tabs').prepend("<%= j render_easy_page_editable_tabs %>");
+	PageLayout.initEditableTabs({active: 0});
+<% else %>
+	var $zalozka = $("<li></li>",{id:"easy_page_tab_container_<%= @tab.id %>"})
+	  .html("<%= j render(:partial => 'common/easy_page_editable_tabs_inline_show', :locals => {:tab => @tab, :editable => true, :selected_tab => @tabs.count}) %>");
+	$('#easy_jquery_tabs').append($("<div></div>", {'class': 'easy_jquery_tab', 'id': 'easy_jquery_tab-<%= @tab.id %>'})
+    .append("<%= j render(:partial => 'common/easy_page_editable_tabs_content', :locals =>{:layout_style => @layout_style}) %>"));
+	$('#easy_jquery_tabs ul').append($zalozka);
+<% end %>
+
+
+PageLayout.tab_element.tabs( "refresh" );
+PageLayout.current_tab = <%= @tab.position %>;
+PageLayout.tab_element.tabs( "option", "active", <%= @tab.position - 1 %> );
+$(function() {
+  <% page_params[:page].zones.each do |page_zone| %>
+    <% zone = page_zone.zone_definition -%>
+    PageLayout.initSortable({
+      tab_id: <%= @tab.id %>,
+      tabPos: <%= (params[:t] || 1).to_i %>,
+      zoneName: "<%= zone.zone_name.dasherize %>",
+      updateUrl: "<%= url_for(page_params[:url_order_module].merge(:zone_id => page_zone.id, :t => params[:t])) %>"
+    });
+  <% end %>
+
+});

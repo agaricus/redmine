@@ -1,0 +1,14 @@
+<% unless project.nil? %>
+  <%= toggling_container('issues-sidebar-members-box', User.current, {:heading =>  l(:sidebar_project_members), :container_html => {:class => 'members box'}}) do %>
+    <% project.members.preload(:user).sort_by{|member| [member.roles.sort_by(&:position).first.position] + [member.name] }.each do |member| %>
+      <div class="member easy-dropper-target easy-drop-user" data-user-id="<%= member.user_id %>" data-drop-action="user">
+        <%= avatar(member.user, :size => '40') %>
+        <div class="member-name"><%= link_to(member.name, {:controller => 'issues', :project_id => project, :set_filter => 1, :assigned_to_id => member.user_id, :status_id => 'o', :sort => EasySetting.value('issue_default_sorting_string_short', project)}, :title => l(:label_show_assigned_issues, :username => member.name)) %></div>
+        <div class="member-roles"><%= member.roles.uniq.sort_by(&:position).collect(&:name).join(', ') -%></div>
+        <div class="clear"></div>
+      </div>
+    <% end %>
+
+    <%= call_hook(:view_issue_sidebar_project_members, :project => project) %>
+  <% end %>
+<% end %>

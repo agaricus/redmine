@@ -1,0 +1,14 @@
+<% unless @user.blank? %>
+  <div class="combo-container no-label-required-by-css">
+    <p>
+      <%= label_for_field(:project_id, {:required => true}) -%><%= easy_select_tag(
+        'project_id',
+        {:name => @time_entry.project.blank? ? '' : @time_entry.project.name, :id => @time_entry.project_id},
+        @projects ? project_tree_options_for_select(@projects.flatten, {:selected => @time_entry.project}) : nil,
+        url_for(:action => 'load_assigned_projects', :format => 'json', :user_id => @user.id),
+        :onchange => "$.ajax({url: '#{j(url_for(:action => 'index', :project_changed => '1', :format => 'js')).html_safe}', data: $('#bulk-time-entry-form').serialize()});",
+        :include_blank => true
+      ) -%>
+    </p>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+api.start @period[:from]
+api.end @period[:to]
+
+api.array :users do
+  @recalculated_users.each do |u|
+    api.user do
+      api.id u[0].id
+
+      issue_timeline = u[1]
+
+      allocation_sums = {}
+
+      allocation_issues_data(api, issue_timeline, @period)
+
+      issue_timeline.each do |i, data|
+        unless u[2] && u[2].include?(i.id)
+          data.each do |allocation|
+            allocation_sums[allocation.date] ||= 0
+            allocation_sums[allocation.date] += allocation.hours
+          end
+        end
+      end
+
+      non_working_attendances = u[0].easy_attendances.non_working.between(@period[:from], @period[:to]).group_by{|a| a.arrival.to_date}
+
+      api.array :allocations do
+        (@period[:to] - @period[:from] + 1).to_i.times.each do |day_n|
+          curr_date = (@period[:from] + day_n.days)
+          api.allocation do
+            hours = (allocation_sums[curr_date].nil? ? 0.0 : ((100*allocation_sums[curr_date]).round.to_f/100))
+            working_hours = u[0].working_hours(curr_date)
+            api.hours hours
+            api.over hours > working_hours
+            if (activity = non_working_attendances[curr_date].try(:first).try(:easy_attendance_activity))
+              api.activity_name activity.name
+              api.color_schema activity.color_schema
+            end
+          end
+        end
+      end
+
+    end
+  end
+end

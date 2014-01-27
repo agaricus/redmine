@@ -1,0 +1,24 @@
+<h3><%= l('easy_pages.modules.saved_queries') -%></h3>
+<%= content_tag :h4, l(:label_display) -%>
+<p>
+  <%= label_tag "#{block_name}_saved_personal_queries", l('easy_query.sidebar_filters.personal.other') -%>
+  <%= check_box_tag "#{block_name}[saved_personal_queries]", true, settings['saved_personal_queries'] -%>
+</p>
+<p>
+  <%= label_tag "#{block_name}_saved_public_queries", l('easy_query.sidebar_filters.public.other') -%>
+  <%= check_box_tag "#{block_name}[saved_public_queries]", true, settings['saved_public_queries'] -%>
+</p>
+<p>
+<fieldset>
+  <legend>
+  <%= link_to_function(l('easy_page_module.saved_queries.label_select_queries'), "$(this).closest('fieldset').find('input:checkbox').attr('checked', function(idx, chck) {return !chck;})", :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked') %>
+  </legend>
+  <% @easy_page_modules_data[block_name][:queries].each do |query| %>
+  <label>
+    <%= check_box_tag "#{block_name}[queries][]", query, ( !settings['queries'] || settings['queries'].include?(query)) %>
+    <%= l("easy_query.name.#{query}") %>
+  </label>
+  <% end %>
+</fieldset>
+  
+</p>

@@ -1,0 +1,25 @@
+<%= content_tag :h4,  l(:label_related_issues), :class => 'sidebar-style-h3' %>
+<%= form_tag({}) do -%>
+  <table class="list related-issues anchor issues">
+    <thead>
+      <%= content_tag :th, link_to_function('', "toggleIssuesSelection($(this))", :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked'), :class => 'checkbox' %>
+      <%= content_tag :th, l(:field_subject) %>
+      <%= content_tag :th, l(:field_assigned_to) %>
+      <%= content_tag :th, l(:field_status) %>
+      <%= content_tag :th, l(:field_due_date) %>
+    </thead>
+    <tbody>
+      <%- issue_list(issues) do |issue, level| -%>
+        <tr class="hascontextmenu <%= issue.css_classes(User.current, level) -%>" onclick="javascript:GoToURL('<%= url_for({:controller => 'issues', :action => 'show', :id => issue}) -%>', event)">
+          <%= content_tag :td, check_box_tag('ids[]', issue.id), :class => 'checkbox' %>
+          <%= content_tag :td, link_to_issue(issue, :project => (project != issue.project)), :class => 'subject' %>
+          <%= content_tag :td, issue.assigned_to, :class => 'assigned_to' %>
+          <%= content_tag :td, issue.status , :class => 'status'%>
+          <%= content_tag :td, format_date(issue.due_date), :class => 'due_date' %>
+        </tr>
+      <%- end -%>
+    </tbody>
+  </table>
+<% end %>
+
+<%= context_menu issues_context_menu_path,'table.issues.related-issues' %>

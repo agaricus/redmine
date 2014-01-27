@@ -1,0 +1,11 @@
+<div id="easy_issue_timer_notify_container">
+  <% easy_issue_timers.each do |timer| %>
+    <p>
+      <% if timer.paused? %>
+        <%= content_tag(:span, link_to(l(:button_easy_issue_timer_resume), easy_issue_timer_play_path(timer.issue, :timer_id => timer), :class => 'icon icon-play blue-icon', :method => :post, :title => l(:title_easy_issue_timer_button_resume), :onclick => "$(this).css({'z-index': -1})", :id => dom_id(timer))) %>
+      <% else %>
+        <%= content_tag(:span, link_to(l(:button_easy_issue_timer_stop), easy_issue_timer_stop_path(timer.issue, :timer_id => timer), :class => 'icon icon-checked-circle blue-icon', :method => :post, :title => l(:title_easy_issue_timer_button_stop), :onclick => "$(this).css({'z-index': -1})", :id => dom_id(timer))) %>
+      <% end %>&nbsp;<%= link_to_issue(timer.issue) %>&nbsp;(<span class="timer-time"><%= format_hours(timer.current_hours) %></span>)
+    </p>
+  <% end -%>
+</div>

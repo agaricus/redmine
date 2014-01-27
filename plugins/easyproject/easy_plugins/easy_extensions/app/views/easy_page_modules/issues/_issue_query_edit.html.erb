@@ -1,0 +1,41 @@
+<% settings['query_type'] ||= '2' %>
+<% query = @easy_page_modules_data[block_name][:query] %>
+<%= toggling_container(modul_uniq_id, user, {:heading => l('easy_pages.modules.issue_query'), :container_html => {:class => 'module-content'}}) do %>
+  <%= hidden_field_tag 'edit', 'true' %>
+  <%= render(:partial => 'easy_page_modules/easy_query_module_form', :locals => {
+      :page_module => page_module, :block_name => block_name, :settings => settings, :modul_uniq_id => modul_uniq_id,
+      :query => query, :preview_options => {:update => "#{modul_uniq_id}issues_preview"}
+    }) %>
+  <div style="clear:both">
+    <span class="my-page-issue-query-output-label"><%= l(:label_my_page_issue_output_select) -%></span>
+    <span class="my-page-issue-query-output">
+      <%= select_tag "#{block_name}[output]", options_for_select([[l("label_my_page_issue_output.list"), "list"], [l("label_my_page_issue_output.calendar"), "calendar"]], settings["output"]) -%>
+      <script type="text/javascript">
+        $(function() {
+          $("#<%= block_name %>_output").change(function() {
+            $.get("<%= url_for(:controller => 'my', :action => 'update_my_page_module_view', :uuid => page_module.uuid, :block_name => block_name, :set_filter => 1) %>", $("#<%= block_name %>_output").closest("form").serialize(), function(data) {
+              $("#module_<%= page_module.uuid.dasherize %>").replaceWith(data);
+            });
+          });
+        });
+      </script>
+    </span>
+    <% if settings['output'] != 'calendar' %>
+      <span class="my-page-issue-query-select-label"><%= l(:label_my_page_issue_row_count) -%></span>
+      <% settings["row_limit"] ||= 0 %>
+      <span class="my-page-issue-query-select"><%= text_field_tag("#{block_name}[row_limit]", settings["row_limit"].to_i, :size => 5) -%></span>
+    <% end %>
+  </div>
+  <% if settings['output'] == 'calendar' %>
+    <div>
+      <span><%= l(:label_my_page_timelog_calendar_period_select) -%></span>
+      <span><%= select_tag "#{block_name}[period]", options_for_select([[l("my_page_timelog_calendar_period.month"), "month"], [l("my_page_timelog_calendar_period.week"), "week"]], settings["period"]) -%></span>
+    </div>
+  <% end %>
+  <div id="<%= modul_uniq_id %>issues_preview" class="adhoc-entities-preview"></div>
+<% end %>
+<script type="text/javascript">
+  before_submit_<%= modul_uniq_id.underscore -%> = function() {
+    if ($('#<%= modul_uniq_id -%>query_type_2').is(":checked")) { selectAllOptions('<%= modul_uniq_id -%>selected_columns'); }
+  }
+</script>

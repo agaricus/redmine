@@ -1,0 +1,99 @@
+<% if current_working_plans.any? %>
+<% issue_options ||= Hash.new %>
+<%= form_tag({:controller => 'user_allocation_plan'}) do %>
+  <div id="user-allocation-plan-user-<%= user.id %>" class="user-allocation-plan">
+    <table class="user-allocation-table-plan">
+      <thead>
+        <tr>
+        <th colspan="4"></th>
+          <% from.upto(to) do |day| %>
+            <%= content_tag(:th, day_name(day.cwday), :colspan => 2, :class => 'day-name') %>
+          <% end -%>
+          <%= call_hook :view_easy_user_allocation_plan_table_header_first, {:from => from, :to => to, :user => user, :can_edit => can_edit} %>
+        </tr>
+        <tr>
+          <%= content_tag(:th, l(:label_project_plural), :class => 'border') %>
+          <%= content_tag(:th, l(:label_issue_plural), :class => 'border') %>
+          <%= content_tag(:th, l(:field_estimated_hours), :class => 'border') %>
+          <%= content_tag(:th, l(:label_comment, :scope => [:user_allocation_plan]), :class => 'border') %>
+          <% from.upto(to) do |i| %>
+            <%= content_tag(:th, l(:label_plan, :scope => :user_allocation_plan), :class => 'plan-hour') %>
+            <%= content_tag(:th, l(:label_real, :scope => :user_allocation_plan), :class => 'time-entry-hour') %>
+          <% end -%>
+          <%= call_hook :view_easy_user_allocation_plan_table_header_second, {:from => from, :to => to, :user => user, :can_edit => can_edit} %>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% total_sum = [] %>
+
+        <% current_working_plans.each do |working_plan| %>
+          <tr class="<%= cycle('odd', 'even') %> <%= dom_id(working_plan.issue) %>">
+            <%= content_tag(:td, link_to_project(working_plan.issue.project), :class => 'project-name') %>
+            <td class="issue-subject">
+              <%= link_to_issue(working_plan.issue, issue_options) %>
+            </td>
+            <td title="<%= l(:field_estimated_hours) %> / <%= (100*working_plan.issue.spent_hours).round.to_f/100 %>" class="estimated">
+              <% if working_plan.issue.safe_attribute?('estimated_hours') %>
+                <%= text_field_tag("data[#{working_plan.issue.id}][estimated_hours]", working_plan.issue.estimated_hours, :size => 2) %>
+              <% else %>
+                (<%= working_plan.issue.estimated_hours %>)
+              <% end -%>
+            </td>
+            <td class="comment">
+              <%= text_field_tag("data[#{working_plan.issue.id}][notes]", working_plan.comment) if can_edit[:my_working_plan]  %>
+            </td>
+            <% sum_by_day = working_plan.allocations.inject({}){|mem,var| mem[var.date.cwday] ||= 0; mem[var.date.cwday] += var.hours; mem}; total_sum << sum_by_day %>
+            <% from.upto(to) do |day| %>
+              <td class="plan-hour <%= day.cwday %>">
+                <% if can_edit[:my_working_plan] %>
+                  <%= text_field_tag("data[#{working_plan.issue.id}][customAllocation][#{day}]", sum_by_day[day.cwday] && sum_by_day[day.cwday].round(1), :size => 1, :onclick => '$(this).select();', :onchange => "workingPlanOnChange(this, '#{working_plan.issue.id}','#{url_for({:controller => 'user_allocation_plan', :action => 'recalculate', :issue_id => working_plan.issue, :user_id => user, :id => working_plan.id, :start_date => from, :format => 'json'})}')") %>
+                <% else %>
+                  <%= sum_by_day[day.cwday] %>
+                <% end -%>
+              </td>
+              <td class="time-entry-hour">
+                <% timelog_link_url = bulk_time_entries_path(:spent_on => day, :issue_id => working_plan.issue_id, :user_id => user.id, :project_id => working_plan.issue.project_id, :back_url => url_for(params)) %>
+                <% if time_entries[day] && log_time = time_entries[day][working_plan.issue_id] %>
+                  <%= link_to(log_time, timelog_link_url, :title => l(:button_log_time)) %>
+                <% else %>
+                  <%= link_to('', timelog_link_url, :class => 'icon icon-add', :title => l(:button_log_time)) %>
+                <% end -%>
+              </td>
+            <% end -%>
+            <%= call_hook :view_easy_user_allocation_plan_table_body, {:from => from, :to => to, :user => user, :working_plan => working_plan, :can_edit => can_edit} %>
+            <td class="save-button">
+              <%= hidden_field_tag("data[#{working_plan.issue.id}][start]", working_plan.issue.start_date) %>
+              <%= hidden_field_tag("data[#{working_plan.issue.id}][end]", working_plan.issue.due_date) %>
+              <%= link_to_function('', "
+                workingPlanSubmit(this, '#{url_for(:controller => 'user_allocation_plan', :action => 'save_issue', :issue_id => working_plan.issue, :user_id => user, :id => working_plan.id, :start_date => from)}', '#{working_plan.issue_id}');
+                ", :class => 'icon icon-save', :id => "user-#{user.id}-issue-#{working_plan.issue_id}-save-button") if can_edit[:my_working_plan] %>
+            </td>
+          </tr>
+        <% end -%>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="border"></td>
+          <% total_sum = total_sum.inject({}) {|mem, v| v.each{|k,v| mem[k] ||= 0; mem[k] += v}; mem} %>
+          <% from.upto(to) do |day| %>
+            <td class="plan-hour <%= day.cwday %>">
+              <%= total_sum[day.cwday] && total_sum[day.cwday].round(1) %>
+            </td>
+            <td class="time-entry-hour">
+              <%= time_entries[day] && time_entries[day].values.sum || 0 %>
+            </td>
+          <% end -%>
+          <%= call_hook :view_easy_user_allocation_plan_table_footer, {:from => from, :to => to, :user => user, :working_plans => current_working_plans, :can_edit => can_edit} %>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+<% end %>
+<p style="text-align: right">
+  <%= content_tag(:em, l(:text_easy_user_allocation_working_plan_bottom_info)) %>
+</p>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end -%>

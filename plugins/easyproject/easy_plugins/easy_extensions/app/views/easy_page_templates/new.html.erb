@@ -1,0 +1,20 @@
+<div id="easy-page-template">
+  <h2><%= l(:label_easy_page_template_new, :pagename => @page.translated_name) %></h2>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :controller => 'easy_pages', :action => 'index' }, { :title => l('breadcrumb.title.easy_pages_administration') }),
+    link_to(l('breadcrumb.label.easy_page_templates', :pagename => @page.translated_name), {:controller => 'easy_page_templates', :action => 'index', :page_id => @page.id }, { :title => l('breadcrumb.title.easy_page_templates', :pagename => @page.translated_name) }),
+    l('breadcrumb.label.easy_page_templates_new')
+] -%>
+
+  <%= form_for(@page_template, :html => {:class => 'tabular'}) do |f| %>
+    <%= error_messages_for @page_template %>
+    <%= f.hidden_field :easy_pages_id, :value => params[:page_id] %>
+
+    <%= render :partial => 'form', :locals => {:f => f}  %>
+
+    <p><%= f.submit l(:button_add), :class => 'button-1' %></p>
+  <% end %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+

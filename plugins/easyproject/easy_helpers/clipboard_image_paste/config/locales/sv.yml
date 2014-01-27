@@ -1,0 +1,17 @@
+# Easy Helpers-clipboard_image_paste Language File [redimine-path]/plugins/easyproject/easy_helpers/clipboard_image_paste/config/locales/sv.yml
+# Swedish Translation by Patrick Hvid (patrick (a) plan42.se)
+# Version 1.0 (2013-09-01)
+sv:
+  cbp_txt_add_image      : 'Lägg till bild från urklipp'
+  cbp_txt_crop_box       : 'beskärningsruta:  x={1}  y={2}  bredd={3}  höjd={4}'
+  cbp_txt_print          : 'Använd PrintScreen, därefter Ctrl+V.'
+  cbp_txt_select         : 'Använd musen för att markera en specifik del av bilden.'
+  cbp_txt_deselect       : 'Klicka utanför markeringen för att avmarkera.'
+  cbp_txt_empty_cb       : 'Urklipp är tomt. Försök med PrintScreen igen.'
+  cbp_txt_no_image_cb    : 'Urklipp är tomt. Försök med PrintScreen igen.'
+  cbp_txt_no_image_pst   : 'Ingen bild är inklistrad ännu. Klistra in först.'
+  cbp_txt_too_many_files : 'Kan inte lägga till fler bilagor. Antalet bilagor per uppdatering är begränsat till %{max_attachments}.'
+  cbp_txt_wrong_browser  : 'Din internetläsare kan inte klistra in bilder. Använd Firefox ver. >= %{min_firefox_ver} eller Chrome ver. >= %{min_chrome_ver}.'
+  cbp_txt_btn_ok         : 'Ok'
+  cbp_txt_btn_cancel     : 'Avbryt'
+  cbp_txt_copy_link      : 'Kopiera bild och länk till tumnagel'

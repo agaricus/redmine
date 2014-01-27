@@ -1,0 +1,6 @@
+<% modul_uniq_id ||= ''; options ||={}
+uniq_prefix = "#{controller_name}_#{action_name}_#{modul_uniq_id}" -%>
+<div class="modal-selector-easy-autoscroll-tree autoscroll" id ="modal-selector-easy-autoscroll-tree">
+  <%= render :partial => 'modal_selector_easy_query_multi_tree_entities', :locals => {:entities => entities, :columns => options[:columns], :level => 0, :selected_values => selected_values, :entity_name => query.entity.name, :uniq_prefix => uniq_prefix, :options => options } -%>
+</div>
+<%= javascript_tag "modal_selector_ctx_menu = contextMenuInit('', $('#modal-dialog-loader #modal-selector-easy-autoscroll-tree'))" -%>

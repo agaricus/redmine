@@ -1,0 +1,80 @@
+<% prefix = @fullscreen ? 'fullscreen-' : '' %>
+
+<div id="<%= prefix %>issues">
+  <div class="resalloc-buttons">
+    <p>
+      <span id="<%= prefix %>split-help" class="split-help" style="display:none;">
+        <%= l('resalloc.split_issue_help') %>
+      </span>
+
+      <% if User.current.allowed_to_globally?(:edit_easy_user_allocations, {}) %>
+        <%= link_to_function l('resalloc.button_undo'), "window.location.reload();", :class => 'button-2 icon icon-reload' %>
+        <a id="<%= prefix %>split-issue-button" class="button-2 icon icon-split" href="javascript:void(0);" onclick="$('#<%= prefix %>resalloc-container').resalloc('splitIssue', {button: this, helpSelector: '#<%= prefix %>split-help'});"><%= l('resalloc.button_split_issue') %></a>
+        <a class="button-1 icon icon-save" href="javascript:void(0);" onclick="$('#<%= prefix %>resalloc-container').resalloc('saveIssues');"><%= l('resalloc.button_save') %></a>
+      <% end -%>
+
+      <% unless @fullscreen %>
+        <%= easy_modal_selector_link_to_fullscreen_by_ajax(
+          url_for(params.merge({:action => 'index', :fullscreen => true})),
+          {
+            :class => 'button-2 icon icon-fullscreen'
+          }) %>
+      <% end -%>
+    </p>
+  </div>
+
+  <div style="clear:both;"></div>
+
+  <div id="<%= prefix %>resalloc-container">
+  </div>
+  <% unless @fullscreen %>
+    <%= render :partial => 'user_allocation_gantt/legend' %>
+  <% end -%>
+
+</div>
+  <%= javascript_tag "$(function(){window.csrf_token = '#{h(form_authenticity_token)}';
+    $('##{prefix}resalloc-container').resalloc({
+      loadUrl: '#{url_for(:controller => 'user_allocation_gantt', :action => 'data', :format => 'json')}',
+      recalculateUrl: '#{url_for(:controller => 'user_allocation_gantt', :action => 'recalculate', :format => 'json')}',
+      saveIssuesUrl: '#{url_for(:controller => 'user_allocation_gantt', :action => 'save_issues')}',
+      splitIssueUrl: '#{url_for(:controller => 'user_allocation_gantt', :action => 'split_issue', :format => 'json')}',
+      loadParams: {
+        period_type: '#{@period[:period_type]}',
+        period: '#{@period[:period]}',
+        from: '#{@period[:from]}',
+        to: '#{@period[:to]}',
+        project_id: '#{@project.try(:id)}'
+      },
+      lang: {
+        est: '#{j l(:field_estimated_hours)}',
+        activity: '#{j l(:label_activity)}',
+        spenttime: '#{j l(:label_spent_time)}',
+        hoursleft: '#{j l(:field_remaining_timeentries)}',
+        issueid: '#{j l(:label_issue_id)}',
+        startdate: '#{j l(:field_start_date)}',
+        duedate: '#{j l(:field_due_date)}',
+        percentcompleted: '#{j l(:field_done_ratio)}',
+        assignedto: '#{j l(:field_assigned_to)}',
+        author: '#{j l(:field_author)}',
+        successfulUpdate: '#{j l(:notice_successful_update)}',
+        overallocation: '#{j l(:text_overallocation)}',
+        save: '#{j l(:button_save)}',
+        cancel: '#{j l(:button_cancel)}',
+        editEst: '#{j l(:label_edit_estimated_hours)}'
+      },
+      humanDateFormat: '#{j momentjs_date_format}',
+      changed_title: '#{l(:label_allocation_changed_title)}',
+      readonly: #{User.current.allowed_to_globally?(:edit_easy_user_allocations, {}) ? 'false' : 'true'}
+    });
+  });" -%>
+
+<% if @fullscreen %>
+  <script type="text/javascript">
+    $('#resalloc-container').hide();
+    $('#modal-dialog-loader-wrapper').bind('dialogbeforeclose', function(event, ui) {
+      $('#resalloc-container').show();
+      $('#modal-dialog-loader-wrapper').empty();
+    });
+  </script>
+<% end -%>
+

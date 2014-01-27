@@ -1,0 +1,168 @@
+<div id="issue-detail">
+  <h2 class="issue-detail-header">
+    <%= h(@issue) -%>
+  </h2>
+  <table id="issue-show-header-button-n-progress">
+    <tbody>
+      <tr>
+        <td style="width: 20%;">
+          <p>
+            <%= link_to(l(:button_update), edit_issue_path(@issue), :title => l(:sidebar_issue_button_update), :class => 'icon icon-edit button-1') if @issue.editable? -%>
+          </p>
+        </td>
+        <td style="width:80%; text-align:right;">
+          <div class="progress">
+            <%= progress_bar @issue.done_ratio, :legend => "#{@issue.done_ratio}%" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="clear:both"></div>
+  <div class="<%= @issue.css_classes %> details">
+    <div id="issue-info">
+      <div class="topinfo">
+        <div class="">
+          <%= avatar(@issue.assigned_to) if @issue.assigned_to -%>
+        </div>
+        <div class="issue-subinfo-container">
+          <div class="subinfo">
+            <div class="assigned-to">
+              <%=l(:field_assigned_to)%>:
+              <%= @issue.assigned_to ? link_to_user(@issue.assigned_to) : "-" %>
+            </div>
+            <div class="due-date">
+              <span>
+                <%= format_date(@issue.start_date) -%>
+              </span>
+              -
+              <span class="<%= 'overdue' if @issue.overdue? -%>">
+                <%= format_date_or_time(@issue.due_date) -%>
+              </span>
+            </div>
+            <div class="status">
+              <%=l(:field_status)%>:
+              <span>
+                <%= @issue.status.name %>
+              </span>
+            </div>
+            <div class="author">
+              <%= authoring(@issue.created_on, @issue.author) -%>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="custom-fields">
+          <%= render_show_issue_custom_fields(@issue.visible_custom_field_values, EasySetting.value('show_issue_custom_field_values_layout')) -%>
+        </div>
+        <%= call_hook(:view_issues_show_details_bottom, :issue => @issue) %>
+      </div>
+
+      <% if @issue.description? || @issue.attachments.any? -%>
+        <% if @issue.description? %>
+          <div class="wiki">
+            <%= textilizable(@issue, :description, {:headings => false, :attachments => @issue.attachments}) %>
+          </div>
+          <div class="clear"></div>
+        <% end %>
+        <%= link_to_attachments @issue, :thumbnails => true %>
+      <% end -%>
+
+      <%= call_hook(:view_issues_show_description_bottom, :issue => @issue) %>
+    </div>
+    <% if @issue.child? %>
+      <div class="issue-parents">
+        <%= content_tag :h3, l(:label_parenttask_plural), :class => 'sidebar-style-h3' %>
+        <%= render_ancestors_tree(@issue) %>
+      </div>
+    <% end %>
+    <% if !@issue.leaf? %>
+      <div class="issue-childs">
+        <%= content_tag :h3, l(:label_subtask_plural), :class => 'sidebar-style-h3' %>
+        <%= render_descendants_tree(@issue) unless @issue.leaf? %>
+      </div>
+    <% end %>
+
+    <% if @relations.present? %>
+      <div id="relations">
+        <%= content_tag :h3, l(:label_related_issues), :class => 'sidebar-style-h3' %>
+        <% @relations.each do |relation| %>
+          <p class="<%= relation.other_issue(@issue).css_classes %> <%= cycle('odd','even') %>">
+            <%= l(relation.label_for(@issue)) %> - <%= "(#{l('datetime.distance_in_words.x_days', :count => relation.delay)})" if relation.delay && relation.delay != 0 %>
+            <%= h(relation.other_issue(@issue).project) + ' - ' if Setting.cross_project_issue_relations? %>
+            <%= link_to_issue(relation.other_issue(@issue), :truncate => 60) %>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+  <% if @journals.present? %>
+    <div id="history">
+      <%= content_tag :h3, l(:label_history), :class => 'sidebar-style-h3' %>
+      <%= render :partial => 'history', :locals => { :issue => @issue, :journals => @journals } %>
+    </div>
+  <% end %>
+
+  <%= call_hook(:view_issues_show_journals_bottom, :issue => @issue) %>
+
+  <% if @prev_issue_id || @next_issue_id %>
+    <div class="next-prev-links">
+      <p>
+        <%= link_to_if @prev_issue_id,
+          "\xc2\xab #{l(:label_previous_issue)}",
+          (@prev_issue_id ? issue_path(@prev_issue_id) : nil),
+          :title =>  h(@prev_issue.to_s) %>
+      </p>
+      <p>
+        <% if @issue_position && @issue_count %>
+          <span class="position"><%= l(:label_item_position, :position => @issue_position, :count => @issue_count) %></span>
+        <% end %>
+      </p>
+      <p>
+        <%= link_to_if @next_issue_id,
+          "#{l(:label_next_issue)} \xc2\xbb",
+          (@next_issue_id ? issue_path(@next_issue_id) : nil),
+          :title => h(@next_issue.to_s) %>
+      </p>
+    </div>
+  <% end %>
+
+<div id="update" style="display:none;">
+</div>
+
+ <script type="text/javascript">
+   $(document).ready(function() {
+     var scroll_to = window.location.hash;
+     if (scroll_to && scroll_to == '#update') {
+       ShowAndScrollTo('update', -110);
+       $('#issue-sidebar-link_to-update').removeClass('button-1');$('#issue-sidebar-link_to-update').addClass('button-2');
+       focusWiki('issue_notes');
+     }
+     var journals_to_hide = $(".journal span.expander.issue-journal-details-toggler").closest('.journal').toArray();
+     if ($(journals_to_hide).last()[0] == $(".journal.has-details:last-child").last()[0]) {
+       journals_to_hide.pop(); // all except last
+     }
+     $(journals_to_hide).each(function(index, i) {
+       toggleJournalDetails($(i));
+     })
+     $(".journal span.expander.issue-journal-details-toggler").click(function(event) {
+       expander = $(event.target);
+       toggleJournalDetails(expander.closest(".journal"));
+
+     })
+   });
+   function toggleJournalDetails(journal) {
+     journal.find(".avatar-container img").toggleClass('smallest-avatar')
+     journal.find(".journal-details-container").find('ul').toggle();
+     journal.toggleClass('open');
+   }
+ </script>
+
+  <% ### PAGE CUSTOMS ########################################################## %>
+
+
+  <% html_title "#{@issue.tracker.name} ##{@issue.id}: #{@issue.subject}" %>
+</div>

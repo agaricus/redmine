@@ -1,0 +1,44 @@
+<div id="easy-page-templates">
+  <%= content_tag :h1, l(:label_easy_page_templates, :pagename => @page.translated_name) -%>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :controller => 'easy_pages', :action => 'index' }, { :title => l('breadcrumb.title.easy_pages_administration') }),
+    l('breadcrumb.label.easy_page_templates', :pagename => @page.translated_name)
+  ] -%>
+  <% if (@page_templates.empty?) -%>
+    <p class="nodata"><%= l(:label_no_data) -%></p>
+  <% else -%>
+    <table class="list reorder">
+      <thead>
+        <tr>
+          <th></th>
+          <th><%= l(:field_template_name) -%></th>
+          <th><%= l(:field_description) -%></th>
+          <th><%= l(:field_is_default) -%></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @page_templates.each do |page_template| -%>
+          <tr class="<%= cycle('odd', 'even') -%>">
+            <td class="center reorder-handler"><%= render_reorder_handle(url_for({:action => 'update', :id => page_template.id, :page_id => @page.id}), 'easy_page_template') %></td>
+            <td class="easy-page-template-name name"><%= page_template.template_name -%></td>
+            <td class="easy-page-template-description"><%= page_template.description -%></td>
+            <td class="easy-page-template-is-default"><%= checked_image page_template.is_default? %></td>
+            <td class="easy-page-template-links">
+              <div><%= link_to l(:label_easy_page_template_show), { :action => 'show_page_template', :id => page_template.id }, { :title => l(:title_easy_page_template_show), :class => 'icon icon-slab' } -%></div>
+              <div class="additional-links"><%= call_hook(:view_easy_page_templates_index_additional_actions, :page => @page, :page_template => page_template) -%></div>
+              <div><%= link_to l(:button_edit), { :action => 'edit', :id => page_template.id, :page_id => @page.id }, { :class => 'icon icon-edit', :title => l(:title_button_edit) } -%></div>
+              <div><%= link_to l(:button_delete), { :action => 'destroy', :id => page_template.id, :page_id => @page.id}, { :method => :delete, :class => 'icon  texticon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :title => l(:title_button_delete)} -%></div>
+            </td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  <% end -%>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to l(:label_easy_page_templates_new), { :action => 'new', :page_id => @page.id }, {:class => 'button-1 icon icon-add', :title => l(:title_easy_page_templates_new)} -%>
+<% end %>

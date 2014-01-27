@@ -1,0 +1,43 @@
+<%= content_tag :h1, l(:label_tracker_plural)%>
+
+<table class="list reorder">
+  <thead><tr>
+      <th></th>
+      <th><%=l(:label_tracker)%></th>
+      <th></th>
+      <th></th>
+    </tr></thead>
+  <tbody>
+    <% @trackers.each do |tracker| %>
+      <tr class="<%= cycle('odd', 'even') %> <%= tracker.easy_color_scheme %> ">
+        <td class="center reorder-handler"><%= render_reorder_handle(tracker, 'tracker') %></td>
+        <td class="name"><%= link_to h(tracker.name), edit_tracker_path(tracker) %></td>
+        <td align="center">
+          <% unless tracker.workflow_rules.count > 0 %>
+            <span class="icon icon-warning">
+              <%= l(:text_tracker_no_workflow) %> (<%= link_to l(:button_edit), workflows_edit_path(:tracker_id => tracker) %>)
+            </span>
+          <% end %>
+        </td>
+        <td class="buttons">
+          <%= delete_link tracker_path(tracker) %>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
+
+<p class="pagination"><%= pagination_links_full @tracker_pages %></p>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% html_title(l(:label_tracker_plural)) -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to l(:label_tracker_new), new_tracker_path, :class => 'button-1' %>
+  <%= link_to l(:field_summary), fields_trackers_path, :class => 'button-2' %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= render :partial => 'easy_queries/infinite_scroll' %>
+<% end -%>

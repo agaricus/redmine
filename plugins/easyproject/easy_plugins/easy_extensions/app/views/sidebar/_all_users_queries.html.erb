@@ -1,0 +1,18 @@
+<%
+modul_uniq_id ||= controller_name + '_' + action_name
+modul_uniq_id = modul_uniq_id + '_user-query-automatic-filter'
+%>
+<div class="box">
+  <%= toggling_container(modul_uniq_id, User.current, {:heading => l(:sidebar_all_users_queries)}) do %>
+    <div id="user-query-automatic-filter">
+      <% if in_mobile_view? %>
+        <%= select_tag(:filter_all_users, options_for_select(User.active.non_system_flag.easy_type_internal.sorted.collect{|user| [user.name, url_for({:controller => 'issues', :set_filter => 1, :assigned_to_id => user.id, :status_id => 'o', :sort => EasySetting.value('issue_default_sorting_string_short')})]}), :prompt => l(:select_option_issue_restrictions_users_blank), :onchange => "window.location = $(this).val()") %>
+      <% else %>
+        <% User.active.non_system_flag.easy_type_internal.sorted.each do |user| %>
+          <%= link_to(user.name, {:controller => 'issues', :set_filter => 1, :assigned_to_id => user.id, :status_id => 'o', :sort => EasySetting.value('issue_default_sorting_string_short')}, :title => l(:label_show_assigned_issues, :username => user.name)) %>
+        <% end %>
+      <% end -%>
+      <%= call_hook(:view_issue_sidebar_user_query) %>
+    </div>
+  <% end %>
+</div>

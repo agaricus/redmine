@@ -1,0 +1,5 @@
+api.array :projects, api_meta(:total_count => @project_count, :offset => @offset, :limit => @limit) do
+  @projects.each do |project|
+    render_api_project(api, project)
+  end
+end

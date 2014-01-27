@@ -1,0 +1,157 @@
+/* BUTTON-1*/
+.button-1, input[type="submit"], input[type="submit"][name="commit"], input.button-1[type="submit"][name="continue"] {
+    background: #97c246; /* Old browsers */
+    background: -moz-linear-gradient(top,  #97c246 0%, #8fb743 50%, #81ae2e 51%, #769f2a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#97c246), color-stop(50%,#8fb743), color-stop(51%,#81ae2e), color-stop(100%,#769f2a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #97c246 0%,#8fb743 50%,#81ae2e 51%,#769f2a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #97c246 0%,#8fb743 50%,#81ae2e 51%,#769f2a 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #97c246 0%,#8fb743 50%,#81ae2e 51%,#769f2a 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #97c246 0%,#8fb743 50%,#81ae2e 51%,#769f2a 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97c246', endColorstr='#769f2a',GradientType=0 ); /* IE6-9 */
+    border-color: #8EBB3A #8EBB3A #6A9025;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 1px #FFFFFF inset;
+    color: #fff;
+}
+.button-1.orange {
+    background: #fbb95c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #fbb95c 0%, #fbae42 50%, #f9a227 51%, #f89509 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbb95c), color-stop(50%,#fbae42), color-stop(51%,#f9a227), color-stop(100%,#f89509)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #fbb95c 0%,#fbae42 50%,#f9a227 51%,#f89509 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #fbb95c 0%,#fbae42 50%,#f9a227 51%,#f89509 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #fbb95c 0%,#fbae42 50%,#f9a227 51%,#f89509 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #fbb95c 0%,#fbae42 50%,#f9a227 51%,#f89509 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbb95c', endColorstr='#f89509',GradientType=0 ); /* IE6-9 */
+    border-color: #F99D1A #F99D1A #E38808;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 1px #FFFFFF inset;
+}
+/* BUTTON-2*/
+div#sidebar div.menu-more-container .menu-expander,
+.button-2, input[type="submit"].button-2, input[type="submit"][name=commit].button-2, input[type="submit"][name=continue],
+div.menu-dashboard li span.dashboard-item-icon{
+    background: #ececec; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ececec 0%, #e6e6e6 50%, #e1e1e1 51%, #d9d9d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ececec), color-stop(50%,#e6e6e6), color-stop(51%,#e1e1e1), color-stop(100%,#d9d9d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ececec 0%,#e6e6e6 50%,#e1e1e1 51%,#d9d9d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ececec 0%,#e6e6e6 50%,#e1e1e1 51%,#d9d9d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ececec 0%,#e6e6e6 50%,#e1e1e1 51%,#d9d9d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ececec 0%,#e6e6e6 50%,#e1e1e1 51%,#d9d9d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ececec', endColorstr='#d9d9d9',GradientType=0 ); /* IE6-9 */
+    border-color: #D7D7D7 #D7D7D7 #C8C8C8;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 1px #FFFFFF inset;
+    color: inherit;
+}
+.button-2:hover, input[type="submit"].button-2:hover, .button-2.selected, input[type="submit"][name=continue]:hover,
+input[type="submit"][name=commit].button-2:hover,div#sidebar div.menu-more-container .menu-expander:hover,
+div.menu-dashboard li a:hover span.dashboard-item-icon,
+.button-1:hover, input[type="submit"]:hover, input[type="submit"][name=commit]:hover, input[type="submit"][name=continue].button-1:hover{
+    box-shadow:0 1px 2px rgba(0,0,0,0.3), inset 0 0 3px #fff;
+    -webkit-box-shadow:0 1px 2px rgba(0,0,0,0.3), inset 0 0 3px #fff;
+    -moz-box-shadow:0 1px 2px rgba(0,0,0,0.3), inset 0 0 3px #fff;
+}
+.button-2.pressed {
+    background: #d4d4d4; /* Old browsers */
+    background: -moz-linear-gradient(top, #d4d4d4 0%, #e9e9e9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d4d4d4), color-stop(100%,#e9e9e9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d4d4d4 0%, #e9e9e9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d4d4d4 0%, #e9e9e9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d4d4d4 0%, #e9e9e9 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #d4d4d4 0%, #e9e9e9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4d4d4', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-9 */
+    cursor: default;
+}
+.button-2.pressed:hover {
+    box-shadow: 0 0 1px #FFFFFF inset;
+}
+#header, #main-menu-section, div#indent-box, .main-background-color  {
+    background-color: #359FD3;
+    background: -moz-linear-gradient(top, rgba(45,135,179,1) 0%, rgba(57,171,227,1) 2%, rgba(53,159,211,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(45,135,179,1)), color-stop(2%,rgba(57,171,227,1)), color-stop(98%,rgba(53,159,211,1)), color-stop(100%,rgba(125,126,130,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(45,135,179,1) 0%,rgba(57,171,227,1) 2%,rgba(53,159,211,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(45,135,179,1) 0%,rgba(57,171,227,1) 2%,rgba(53,159,211,1)100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(45,135,179,1) 0%,rgba(57,171,227,1) 2%,rgba(53,159,211,1) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(45,135,179,1) 0%,rgba(57,171,227,1) 2%,rgba(53,159,211,1) 100%); /* W3C */
+}
+#footer,div#top-menu > ul > li a:hover,div#top-menu div.menu-more-container > .menu-expander:hover,div#top-menu > ul > li a.selected{
+    background-color: #359FD3;
+    background: -moz-linear-gradient(top, #7d7e82 0%, #359fd3 2%, #39abe3 98%, #2d87b3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7e82), color-stop(2%,#359fd3), color-stop(100%,#39abe3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7d7e82 0%,#359fd3 2%,#39abe3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7d7e82 0%,#359fd3 2%,#39abe3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7d7e82 0%,#359fd3 2%,#39abe3 100%); /* IE10+ */
+    background: linear-gradient(top, #7d7e82 0%,#359fd3 2%,#39abe3 100%); /* W3C */
+}
+/* COLOUR THEMES*/
+
+/* -- RED*/
+.scheme-0, .list tr.scheme-0 td > a, .user-list tr.scheme-0 td > a, li.scheme-0 > a, #main span.scheme-0, tr.scheme-0 td .tooltip > a {
+    color: #e50026;
+}
+.scheme-0:hover, .list  tr.scheme-0:hover, .user-list tr.scheme-0:hover tr.scheme-0:hover td > a, li.scheme-0:hover > a, #main span.scheme-0:hover, tr.scheme-0:hover td .tooltip > a {
+    color: #7B0013;
+}
+/* -- highRED*/
+.scheme-1, tr.scheme-1 td > a, li.scheme-1 > a, #main span.scheme-1, tr.scheme-1 td .tooltip > a {
+    color: #e50026;
+    background-color: #FAE0E0;
+}
+.scheme-1:hover, .list tr.scheme-1:hover, .user-list tr.scheme-1:hover, tr.scheme-1:hover td > a, li.scheme-1:hover > a, #main span.scheme-1:hover, tr.scheme-1:hover td .tooltip > a {
+    color: #7B0013;
+    background-color: #F6516B;
+}
+/* -- Green*/
+.scheme-2, .list tr.scheme-2 td > a, .user-list tr.scheme-2 td > a, li.scheme-2 > a, #main span.scheme-2,  tr.scheme-2 td .tooltip > a {
+    color: #64a608;
+}
+.scheme-2:hover, .list  tr.scheme-2:hover, .user-list tr.scheme-2:hover tr.scheme-2:hover td > a, li.scheme-2:hover > a, #main span.scheme-2:hover, tr.scheme-2:hover td .tooltip > a {
+    color: #345901;
+}
+/* -- highGreen*/
+.scheme-3, .list tr.scheme-3 td > a, .user-list tr.scheme-3 td > a, li.scheme-3 > a, #main span.scheme-3,  tr.scheme-3 td .tooltip > a {
+    color: #345901;
+    background-color: #B5E177;
+}
+.scheme-3:hover, .list  tr.scheme-3:hover, .user-list tr.scheme-3:hover tr.scheme-3:hover td > a, li.scheme-3:hover > a, #main span.scheme-3:hover, tr.scheme-3:hover td .tooltip > a {
+    color: #BCE18A;
+    background-color: #516F28;
+}
+/* -- BLUE*/
+.scheme-4, .list tr.scheme-4 td > a, .user-list tr.scheme-4 td > a, li.scheme-4 > a, #main span.scheme-4,  tr.scheme-4 td .tooltip > a {
+    color:  #0b9de5;
+}
+.scheme-4:hover, .list  tr.scheme-4:hover, .user-list tr.scheme-4:hover tr.scheme-4:hover td > a, li.scheme-4:hover > a, #main span.scheme-4:hover, tr.scheme-4:hover td .tooltip > a {
+    color: #02547B;
+}
+/* -- highBLUE*/
+.scheme-5, .list tr.scheme-5 td > a, .user-list tr.scheme-5 td > a, li.scheme-5 > a, #main span.scheme-5, tr.scheme-5 td .tooltip > a {
+    color: #02547B;
+    background-color: #82D2F6;
+}
+.scheme-5:hover, .list  tr.scheme-5:hover, .user-list tr.scheme-5:hover tr.scheme-5:hover td > a, li.scheme-5:hover > a, #main span.scheme-5:hover, tr.scheme-5:hover td .tooltip > a {
+    color: #97D7F6;
+    background-color: #387A99;
+}
+/* -- ORAGNE*/
+.scheme-6, .list tr.scheme-6 td > a, .user-list tr.scheme-6 td > a, li.scheme-6 > a, #main span.scheme-6, tr.scheme-6 td .tooltip > a {
+    color:  #e57300;
+}
+.scheme-6:hover, .list  tr.scheme-6:hover, .user-list tr.scheme-6:hover tr.scheme-6:hover td > a, li.scheme-6:hover > a, #main span.scheme-6:hover, tr.scheme-6:hover td .tooltip > a {
+    color: #F6A451;
+}
+/* -- highORAGNE*/
+.scheme-7, .list tr.scheme-7 td > a, .user-list tr.scheme-7 td > a, li.scheme-7 > a, #main span.scheme-7, tr.scheme-7 td .tooltip > a {
+    color: #F6C592;
+    background-color: #9F7A54;
+}
+.scheme-7:hover, .list  tr.scheme-7:hover, .user-list tr.scheme-7:hover tr.scheme-7:hover td > a, li.scheme-7:hover > a, #main span.scheme-7:hover, tr.scheme-7:hover td .tooltip > a {
+    color: #F6C592;
+    background-color: #7B3E00;
+}
+table.issues tr[class*=scheme-] td:not(.subject) > a {
+    color: inherit;
+}

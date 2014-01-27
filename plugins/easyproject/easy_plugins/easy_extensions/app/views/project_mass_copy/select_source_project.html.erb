@@ -1,0 +1,27 @@
+<h2><%= l(:heading_project_mass_copy_select_source_project) -%></h2>
+
+<h3><%= l(:label_project_plural) -%></h3>
+<div class="autoscroll">
+  <table class="list projects">
+    <tbody>
+      <% Project.each_with_easy_level(@projects) do |project, level| %>
+        <tr class="<%= project.css_project_classes('', :level => level) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%>">
+          <td class="name"><%= link_to(project.name, {:controller => 'project_mass_copy', :action => 'select_target_projects', :source_project_id => project, :back_url => params[:back_url]}) -%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<h3><%= l(:label_templates_plural) -%></h3>
+<div class="autoscroll">
+  <table class="list projects">
+    <tbody>
+      <% Project.each_with_easy_level(@project_templates) do |project, level| %>
+        <tr class="<%= project.css_project_classes('', :level => level) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%>">
+          <td class="name"><%= link_to(project.name, {:controller => 'project_mass_copy', :action => 'select_target_projects', :source_project_id => project, :back_url => params[:back_url]}) -%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

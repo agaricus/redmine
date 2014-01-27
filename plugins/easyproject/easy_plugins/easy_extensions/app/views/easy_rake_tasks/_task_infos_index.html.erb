@@ -1,0 +1,37 @@
+<table class="list easy-rake-task-infos">
+  <thead>
+    <tr>
+      <th><%= l(:field_status) -%></th>
+      <th><%= l(:field_started_at) -%></th>
+      <th><%= l(:field_finished_at) -%></th>
+      <th><%= l(:field_note) -%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% task_infos.each do |task_info| %>
+      <tr class="<%= cycle('odd', 'even') -%>">
+        <td><%= task_info_status(task_info) -%></td>
+        <td><%= format_time(task_info.started_at) -%></td>
+        <td><%= format_time(task_info.finished_at) if task_info.finished_at -%></td>
+        <td><%= task_info.note.to_s.html_safe -%></td>
+        <td>
+          <table>
+            <% task_info.easy_rake_task_info_details.group_by(&:status).each do |status, details| -%>
+              <tr>
+                <td>
+                  <%= task.info_detail_status_caption(status) %>:
+                </td>
+                <td>
+                  <% details.each do |detail| %>
+                    <%= link_to_function detail.caption, "$.get('#{j url_for(detail.detail_url(task))}', '', function(data) {$('#modal-dialog-loader').html(data); createModalSelectorWindow();})", :title => detail.caption %><br />
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

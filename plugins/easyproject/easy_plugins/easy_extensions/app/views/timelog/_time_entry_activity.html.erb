@@ -1,0 +1,58 @@
+<% options ||= Hash.new %>
+<% unless activity_collection.nil? %>
+  <% activity_collection << TimeEntryActivity.default if activity_collection.blank? %>
+  <% time_entry_id = convert_form_name_to_id(tag_name_prefix)
+  @user ||= User.current
+  user_roles = project && @user.roles_for_project(project).uniq
+  user_roles_collection = [[l(:label_activity_all), 'xAll']]
+  user_roles_collection_selected = params["user_role_id_#{time_entry_id}"] || params[:user_role_id]
+  if project && @user.admin? && user_roles && user_roles.include?(Role.non_member)
+    user_roles = project.all_members_roles
+    user_roles_collection_selected ||= 'xAll'
+  end
+  if !user_roles_collection_selected.blank? && user_roles_collection_selected != 'xAll'
+    user_roles_collection_selected = nil unless user_roles.collect{|role| role.id.to_s}.include?(user_roles_collection_selected)
+  end
+  if user_roles
+    user_roles.uniq.each{|role| user_roles_collection << [role.name, role.id.to_s]}
+  end
+  if !user_roles.blank? && !user_roles.include?(Role.non_member)
+    user_roles_collection_selected ||= user_roles.first.id.to_s
+  end
+  if user_roles_collection.size > 1
+    user_roles_collection_selected ||= user_roles_collection[1][1]
+  end
+  -%>
+  <fieldset class="timeentry-activities">
+    <legend class="required">
+      <%= l(:field_activity) -%>
+      <% if EasySetting.value('enable_activity_roles') && !options[:hide_role_select]  %>
+        <div class="user-role-select">
+          <%= label_tag("user_role_id_#{time_entry_id}", l(:label_user_role_select), :class => 'inline') -%>
+          <%= select_tag("user_role_id_#{time_entry_id}", options_for_select(user_roles_collection, user_roles_collection_selected), {
+                      :onchange => "
+                      $.post('#{j url_for({:controller => 'timelog', :action => 'change_role_activities', :project_id => project})}', {
+                        user_role_id: $(\"#user_role_id_#{time_entry_id}\").val(),
+                        container_id: '#{container_id}',
+                        tag_name_prefix: '#{tag_name_prefix}',
+                        entity_class: '#{entity && entity.class.name}',
+                        entity_id: '#{(entity && !entity.new_record?) ? entity.id : nil }',
+                        user_id: '#{@user && @user.id}'
+                        })"}) -%>
+        </div>
+      <% end %>
+    </legend>
+    <% if activity_collection.size > 7 %>
+      <%= select_tag "#{tag_name_prefix}[activity_id]", options_for_select(activity_collection.collect{|a| [h(a.name), a.id.to_s]}, (entity && entity.activity_id)) %>
+    <% elsif activity_collection.any? %>
+      <% activity_collection.each do |activity| %>
+        <p class="activity">
+          <%= radio_button_tag "#{tag_name_prefix}[activity_id]" , activity.id, (entity && activity.id == entity.activity_id) || activity_collection.size == 1, :id => "radio-timeentry-#{tag_name_prefix}-#{activity.id}"-%>
+          <%= label_tag "radio-timeentry-#{tag_name_prefix}", h(activity.name), :for => "radio-timeentry-#{tag_name_prefix}-#{activity.id}" -%>
+        </p>
+      <% end %>
+    <% else %>
+      <%= content_tag(:p, l(:text_timelog_user_time_entry_no_activity_for_role), :class => 'nodata') %>
+    <% end %>
+  </fieldset>
+<% end %>

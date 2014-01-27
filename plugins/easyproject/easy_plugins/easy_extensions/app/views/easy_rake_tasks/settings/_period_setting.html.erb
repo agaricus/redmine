@@ -1,0 +1,5 @@
+<p>
+  <%= l(:label_easy_rake_period) %>
+  <%= f.text_field(:interval, :size => 3, :placeholder => 'x', :no_label => true, :style => 'width:auto;' ) %>
+  <%= f.select(:period, options_for_select(EasyRakeTask.available_periods.map{|p| [l("label_easy_rake_period_#{p}"), p]}, task.period), :no_label => true) %>
+</p>

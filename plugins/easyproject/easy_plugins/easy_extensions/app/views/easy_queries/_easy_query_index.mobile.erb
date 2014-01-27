@@ -1,0 +1,55 @@
+<%
+options ||= Hash.new
+saved_filters = String.new
+saved_filters << render(:partial => 'sidebar/all_users_queries') if query.entity == Issue && @project.nil?
+saved_filters << render(:partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => query.class});
+
+options[:display_saved_queries_button] = !saved_filters.blank?
+
+unless defined?(show_free_search)
+  show_free_search = !query.searchable_columns.blank?
+  end
+-%>
+
+<% if show_free_search %>
+    <%= render(:partial => 'common/freetext_quick_search', :locals => {:free_search_options => free_search_options, :query => query}) %>
+<% end %>
+
+<div class="easy-query-filters-mobile-container">
+  <div class="easy-query-filters-mobile-form">
+    <%= content_tag :h1, (query.new_record? ? easy_query_name : h(query.name)) -%>
+    <div class="buttons">
+      <% if query.is_a?(EasyProjectQuery) %>
+        <span id="project_mobile_favorited_links" class="mobile-easy-query-saved-filters-toggler">
+          <% if params[:favorited] %>
+            <%= link_to(l(:button_show_all_projects), projects_path(:set_filter => 0), :class => 'icon icon-fav') %>
+          <% else %>
+            <%= link_to(l(:button_show_favorite_projects), projects_path(:set_filter => 1, :favorited => 1), :class => 'icon icon-star') %>
+          <% end -%>
+        </span>
+      <% end -%>
+      <% unless saved_filters.blank? %>
+        <%= content_tag(:span, :id => "#{options[:modul_uniq_id]}mobile-easy-query-saved-filters-toggler", :class => 'mobile-easy-query-saved-filters-toggler') do  %>
+          <i class="icon-toggler"></i>
+          <%= l(:button_mobile_saved_filters) %>
+        <% end -%>
+        <%= javascript_tag do %>
+          $("#<%= options[:modul_uniq_id] -%>mobile-easy-query-saved-filters-toggler").click(function(e, el) {
+          ToggleDivAndChangeOpen('<%= options[:modul_uniq_id] -%>mobile-easy-query-saved-filters', $("#<%= options[:modul_uniq_id] -%>mobile-easy-query-saved-filters-toggler"));
+          });
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= content_tag :div, :class => 'floatright' do %>
+    <div id="<%= "#{options[:modul_uniq_id]}mobile-easy-query-saved-filters" -%>" style="display:none" class="gray-background mobile-easy-query-saved-filters">
+      <%= saved_filters.html_safe -%>
+    </div>
+  <% end unless saved_filters.blank? %>
+
+  <div style="clear:both"></div>
+</div>
+<%= error_messages_for 'query' -%>
+<% ### PAGE CUSTOMS ########################################################## -%>
+<% html_title(query.new_record? ? easy_query_name : query.name) -%>

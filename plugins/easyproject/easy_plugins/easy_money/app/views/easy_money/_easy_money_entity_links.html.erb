@@ -1,0 +1,24 @@
+<% if project.easy_money_settings.revenues_type == 'list'-%>
+  <li>
+    <% if User.current.allowed_to?(:easy_money_manage_other_revenue, project) -%>
+      <%= link_to(l(:button_easy_money_project_new_revenue), { :controller => 'easy_money_other_revenues', :action => 'new', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id, :back_url => params[:back_url] }, { :title => l(:title_easy_money_project_new_revenue), :class => 'revenue-new-link' }) -%>
+    <% elsif User.current.allowed_to?(:easy_money_manage_expected_revenue, project) -%>
+      <%= link_to(l(:button_easy_money_project_new_revenue), { :controller => 'easy_money_expected_revenues', :action => 'new', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id, :back_url => params[:back_url] }, { :title => l(:title_easy_money_project_new_revenue), :class => 'revenue-new-link' }) -%>
+    <% end -%>
+  </li>
+<% end -%>
+<% if project.easy_money_settings.expenses_type == 'list' -%>
+  <li>
+    <% if User.current.allowed_to?(:easy_money_manage_other_expense, project) -%>
+      <%= link_to(l(:button_easy_money_project_new_expense), { :controller => 'easy_money_other_expenses', :action => 'new', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id, :back_url => params[:back_url] },{ :title => l(:title_easy_money_project_new_expense), :class => 'expense-new-link' }) -%>
+    <% elsif User.current.allowed_to?(:easy_money_manage_expected_expense, project) -%>
+      <%= link_to(l(:button_easy_money_project_new_expense), { :controller => 'easy_money_expected_expenses', :action => 'new', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id, :back_url => params[:back_url] },{ :title => l(:title_easy_money_project_new_expense), :class => 'expense-new-link' }) -%>
+    <% end -%>
+  </li>
+  <%= render :partial => 'easy_money/move_to_project_button', :locales => {} if User.current.allowed_to?(:easy_money_move, project) %>
+<% end -%>
+<% if User.current.allowed_to?(:easy_money_settings, project) %>
+  <li>
+    <%= link_to(l(:button_easy_money_project_settings), {:controller => 'easy_money_settings', :action => 'project_settings', :project_id => project }, {:title => l(:title_easy_money_settings), :class => 'settings-index-link'}) -%>
+  </li>
+<% end -%>

@@ -1,0 +1,73 @@
+---
+sv:
+  easy_user_allocations_name: Resurser förvaltning
+  easy_user_allocations_description: ! '- Ledningsresurser / folk'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Visa resursförvaltning
+  permission_view_my_easy_user_allocations: Visa egna resurser
+  permission_edit_easy_user_allocations: Redigera resursförvaltning
+  permission_edit_my_easy_user_allocations_plan: Redigera egen arbetsplan
+  permission_view_easy_user_allocations_by_project: Visa anslagen per projekt
+  project_module_user_allocations: Resurser förvaltning
+  label_user_allocations: Resurser förvaltning
+  label_user_allocation_gantt: Resursfördelning Gantt
+  label_user_allocation_gantt_users: Användare
+  label_user_allocation_gantt_user_selection: Urval
+  label_user_allocation_gantt_range: Datum
+  label_allocations_by_project: Resursfördelning av projekt
+  label_unassigned_issues: Otilldelade uppgifter
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Välj ett annat datumintervall för att visa hela
+    uppgiften
+  label_allocation_changed_title: Uppgift ändrades och kommer att uppdateras på spara
+  label_user_allocation_plan: Arbetsplan
+  label_filter_group_easy_user_allocation_query: Resurstilldelningen
+  text_easy_user_allocation_working_plan_bottom_info: Tillåter att schemalägga användaren
+    arbetsbelastningen i den valda veckan. Tabell visar den schemalagda tiden och
+    faktisk tid rapporterats.
+  resalloc:
+    title: Resurstilldelningen
+    settings: Inställningar
+    button_apply_settings: Tillämpa inställningar
+    button_recalculate: Räkna om tilldelning
+    button_save: Spara ändringar
+    button_undo: Ångra ändringar som inte sparats
+    button_split_issue: Delad aktivitet
+    split_issue_help: Välj datum genom att klicka på en ej tilldelad uppgift.
+    error_date_range_too_long: måste vara mindre än 1 år
+    legend_hours_worked: Tid spenderad
+    legend_hours_overtime: Arbetad tid utöver den föreskrivna tiden
+  easy_pages:
+    modules:
+      user_allocation: Resurstilldelningen
+      user_allocation_working_plan: Resursallokering / arbetsplan
+  user_allocation_plan:
+    label_plan: Plan
+    label_real: Real
+    label_comment: Kommentera
+  easy_query:
+    name:
+      easy_user_allocation_query: Resurstilldelningen
+      easy_user_allocation_by_project_query: Resursfördelning av projekt
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Privata filter om resursfördelning
+        easy_user_allocation_by_project_query: Privata filter om resursfördelning
+          genom projektet
+      public:
+        easy_user_allocation_query: Offentliga filter om resursfördelning
+        easy_user_allocation_by_project_query: Offentliga filter om resursfördelning
+          genom projektet
+  label_setting_keep_issue_start_dates: Ändra inte datum uppgiftens start.
+  text_setting_keep_issue_start_dates: Om aktiverade och uppgiften beräknade timmar
+    är för låg, kommer uppgiften inte kortas, men det kommer att tilldelas 0 timmar
+    istället.
+  label_setting_allocate_evenly: Fördela jämnt
+  text_setting_allocate_evenly: Om aktiverad och en uppgift ändrar storlek på tilldelning
+    Gantt, uppskattas timmar fördelas jämnt genom hela varaktigheten av uppgiften.
+  label_setting_allocate_from_start: Fördela från startdatum av arbetsuppgifter
+  project_module_easy_user_allocations: Användning av resurser / personer
+  text_overallocation: summan av tilldelade timmar är större då uppskattades timmar.
+  easy_user_allocations_sidebar_all_users_queries: Avsättning från användare
+  easy_user_allocations_label_show_assigned_issues: Visa anslag för användaren %{username}
+  label_edit_estimated_hours: Redigera uppskattade timmar

@@ -1,0 +1,18 @@
+<% modul_uniq_id ||= '' -%>
+<% unless projects.nil? -%>
+  <% uniq_prefix = "#{controller_name}_#{action_name}_#{modul_uniq_id}" %>
+  <% Project.each_with_easy_level(projects) do |project, level| -%>
+    <% uniq_id = uniq_prefix + 'project-' + project.id.to_s %>
+    <tr id="<%= uniq_id %>" class="<%= project.css_project_classes(uniq_prefix) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%> open">
+      <td class="expander">
+        <span class="<%= 'expander' if !project.leaf? -%>"
+              onclick="javascript:ToggleTableRowVisibility('<%= uniq_prefix -%>','project','<%= project.id -%>','<%= user.id %>',true);" alt="Expander" title="<%=l :collapse_expand %>">&nbsp;</span>
+      </td>
+      <td class="name" style="padding-left: <%= level %>em;"><%= link_to_project(project) -%></td>
+      <% if (defined?(show_desc) && show_desc && !in_mobile_view?) -%>
+        <td class="descr"><div class="long_descr"><%= truncate_html(textilizable(project.description, {:headings => false, :project => project}), 255) %></div></td>
+      <% end -%>
+      <td class="time" title="<%=l(:field_due_date) + " " + format_date(project.easy_due_date.to_time).to_s unless project.easy_due_date.nil? %>"><%= format_date(project.easy_due_date) unless project.easy_due_date.nil? -%></td>
+    </tr>
+  <% end -%>
+<% end -%>

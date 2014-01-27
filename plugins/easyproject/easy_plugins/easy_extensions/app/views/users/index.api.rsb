@@ -1,0 +1,7 @@
+api.array :users, api_meta(:total_count => @user_count, :offset => @offset, :limit => @limit) do
+  @users.each do |group, attributes|
+    attributes[:entities].each do |user|
+      render_api_user(api, user)
+    end
+  end
+end

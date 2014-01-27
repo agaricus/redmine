@@ -1,0 +1,183 @@
+<%
+entity_type, entity_id = entity.class.name, entity.id
+url_params ||= {}
+easy_money_settings ||= project.easy_money_settings
+%>
+<div class="splitcontent nosplitcontentright gray-background">
+  <% if easy_money_settings.show_expected? %>
+    <div class="splitcontentleft tabular-list">
+      <h3><%= l(:label_easy_money_expected_budget) -%></h3>
+
+      <% if User.current.allowed_to?(:easy_money_show_expected_revenue, project) || User.current.allowed_to?(:easy_money_manage_expected_revenue, project) -%>
+        <% if easy_money_settings.revenues_type == 'list' -%>
+          <p id="expected-revenues">
+            <%= link_to(l(:button_easy_money_project_expected_revenues), {:controller => 'easy_money_expected_revenues', :action => 'index', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}.merge(url_params), { :title => l(:title_easy_money_project_expected_revenues), :class => 'expected-revenue-index-link index-link' }) -%>
+            <%= format_easy_money_price(entity.easy_money.sum_expected_revenues, project) -%>
+          </p>
+        <% else -%>
+          <%= form_tag({:controller => 'easy_money_expected_revenues', :action => 'inline_update', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}, :id => 'easy-money-expected-revenues', :remote => true) do -%>
+            <p id="expected-revenues">
+              <%= render :partial => 'easy_money_expected_revenues/inline_show', :locals => {:project => project, :sum_expected_revenues => entity.easy_money.sum_expected_revenues, :entity_type => entity_type, :entity_id => entity_id} -%>
+            </p>
+          <% end -%>
+        <% end -%>
+      <% else -%>
+        <p id="expected-revenues">&nbsp;</p>
+      <% end -%>
+
+      <% if project.self_and_descendants.active.has_module(:time_tracking).size > 0 -%>
+        <% if User.current.allowed_to?(:easy_money_show_expected_payroll_expense, project) || User.current.allowed_to?(:easy_money_manage_expected_payroll_expense, project) -%>
+          <% if easy_money_settings.expected_payroll_expense_type == 'amount' -%>
+            <%= form_tag({:controller => 'easy_money_expected_payroll_expenses', :action => 'inline_update', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id, :project_id => project}, :id => 'easy-money-expected_payrol-expenses', :remote => true) do -%>
+              <p id="expected-payroll-expenses">
+                <%= render :partial => 'easy_money_expected_payroll_expenses/inline_show', :locals => {:project => project, :sum_expected_payroll_expenses => entity.easy_money.sum_expected_payroll_expenses, :entity_type => entity_type, :entity_id => entity_id} -%>
+              </p>
+            <% end -%>
+          <% else -%>
+            <p id="expected-payroll-expenses">
+              <span><%= l(:button_easy_money_project_time_entry_expenses) -%></span>
+              <%= format_easy_money_price(entity.easy_money.sum_expected_payroll_expenses, project) -%>
+            </p>
+          <% end -%>
+        <% else -%>
+          <p id="expected-payroll-expenses">&nbsp;</p>
+        <% end -%>
+      <% end -%>
+
+      <% if User.current.allowed_to?(:easy_money_show_expected_expense, project) || User.current.allowed_to?(:easy_money_manage_expected_expense, project) -%>
+        <% if easy_money_settings.expenses_type == 'list' %>
+          <p id="expected-expenses">
+            <%= link_to(l(:button_easy_money_project_expected_expenses), {:controller => 'easy_money_expected_expenses', :action => 'index', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}.merge(url_params),{ :title => l(:title_easy_money_project_expected_expenses), :class => 'expected-expense-index-link index-link' }) -%>
+            <%= format_easy_money_price(entity.easy_money.sum_expected_expenses, project) -%>
+          </p>
+        <% else -%>
+          <%= form_tag({:controller => 'easy_money_expected_expenses', :action => 'inline_update', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}, :id => 'easy-money-expected-expenses', :remote => true) do %>
+            <p id="expected-expenses">
+              <%= render :partial => 'easy_money_expected_expenses/inline_show', :locals => {:project => project, :sum_expected_expenses => entity.easy_money.sum_expected_expenses, :entity_type => entity_type, :entity_id => entity_id} -%>
+            </p>
+          <% end -%>
+        <% end -%>
+      <% else -%>
+        <p id="expected-expenses">&nbsp;</p>
+      <% end -%>
+
+      <% if User.current.allowed_to?(:easy_money_show_expected_profit, project) -%>
+        <p id="expected-profit" class="bigger-font">
+          <%= render :partial => 'easy_money/inline_expected_profit', :locals => {:project => project, :expected_profit => entity.easy_money.expected_profit} %>
+        </p>
+      <% else -%>
+        <p id="expected-profit">&nbsp;</p>
+      <% end -%>
+
+      <% if project.self_and_descendants.active.has_module(:time_tracking).size > 0 -%>
+        <% if User.current.allowed_to?(:easy_money_show_expected_payroll_expense, project) || User.current.allowed_to?(:easy_money_manage_expected_payroll_expense, project) -%>
+          <% if easy_money_settings.expected_payroll_expense_type == 'hours' -%>
+            <%= form_tag({:controller => 'easy_money_expected_hours', :action => 'inline_update', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}, :id => 'easy-money-expected-hours', :remote => true) do %>
+              <p id="expected-hours">
+                <%= render :partial => 'easy_money_expected_hours/inline_show', :locals => {:project => project, :expected_hours => entity.easy_money.sum_expected_hours, :entity_type => entity_type, :entity_id => entity_id} -%>
+              </p>
+            <% end -%>
+          <% elsif easy_money_settings.expected_payroll_expense_type == 'estimated_hours' || easy_money_settings.expected_payroll_expense_type == 'planned_hours_and_rate' -%>
+            <p id="expected-hours">
+              <%= render :partial => 'easy_money_expected_hours/show_estimated_hours', :locals => {:project => project, :expected_hours => entity.easy_money.sum_expected_hours} -%>
+            </p>
+          <% end -%>
+        <% else -%>
+          <p id="expected-hours">&nbsp;</p>
+        <% end -%>
+      <% end -%>
+
+    </div>
+  <% end %>
+
+  <div class="splitcontentleft tabular-list">
+    <h3><%= l(:label_easy_money_real_budget) -%></h3>
+
+    <% if User.current.allowed_to?(:easy_money_show_other_revenue, project) || User.current.allowed_to?(:easy_money_manage_other_revenue, project) -%>
+      <% if easy_money_settings.revenues_type == 'list' %>
+        <p id="other-revenues">
+          <%= link_to(l(:button_easy_money_project_other_revenues), {:controller => 'easy_money_other_revenues', :action => 'index', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}.merge(url_params), { :title => l(:title_easy_money_project_other_revenues), :class => 'other-revenue-index-link index-link' }) -%>
+          <%= format_easy_money_price(entity.easy_money.sum_other_revenues, project) -%>
+        </p>
+      <% else %>
+        <%= form_tag({:controller => 'easy_money_other_revenues', :action => 'inline_update', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}, :id => 'easy-money-other-revenues', :remote => true) do %>
+          <p id="other-revenues">
+            <%= render :partial => 'easy_money_other_revenues/inline_show', :locals => {:project => project, :sum_other_revenues => entity.easy_money.sum_other_revenues, :entity_type => entity_type, :entity_id => entity_id} -%>
+          </p>
+        <% end -%>
+      <% end -%>
+    <% else -%>
+      <p id="other-revenues">&nbsp;</p>
+    <% end -%>
+
+    <% if project.self_and_descendants.active.has_module(:time_tracking).size > 0 -%>
+      <% if User.current.allowed_to?(:easy_money_show_time_entry_expenses, project) -%>
+        <p id="time-entry-expenses">
+          <%= link_to(l(:button_easy_money_project_time_entry_expenses), {:controller => 'easy_money_time_entry_expenses', :action => 'index', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}.merge(url_params), { :title => l(:title_easy_money_project_time_entry_expenses), :class => 'time-entry-expense-index-link index-link' }) -%>
+          <%= format_easy_money_price(entity.easy_money.sum_time_entry_expenses, project) -%>
+        </p>
+      <% else -%>
+        <p id="time-entry-expenses">&nbsp;</p>
+      <% end -%>
+    <% end -%>
+
+    <% if User.current.allowed_to?(:easy_money_show_other_expense, project) || User.current.allowed_to?(:easy_money_manage_other_expense, project) -%>
+      <% if easy_money_settings.expenses_type == 'list' -%>
+        <p id="other-expenses">
+          <%= link_to(l(:button_easy_money_project_other_expenses), {:controller => 'easy_money_other_expenses', :action => 'index', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}.merge(url_params),{ :title => l(:title_easy_money_project_other_expenses), :class => 'other-expense-index-link index-link' }) -%>
+          <%= format_easy_money_price(entity.easy_money.sum_other_expenses, project) -%>
+        </p>
+      <% else %>
+        <%= form_tag({:controller => 'easy_money_other_expenses', :action => 'inline_update', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}, :id => 'easy-money-other-expenses', :remote => true) do %>
+          <p id="other-expenses">
+            <%= render :partial => 'easy_money_other_expenses/inline_show', :locals => {:project => project, :sum_other_expenses => entity.easy_money.sum_other_expenses, :entity_type => entity_type, :entity_id => entity_id} -%>
+          </p>
+        <% end -%>
+      <% end -%>
+    <% else -%>
+      <p id="other-expenses">&nbsp;</p>
+    <% end -%>
+
+    <% if User.current.allowed_to?(:easy_money_show_other_profit, project) -%>
+      <p id="other-profit" class="tooltip real_hourly_rate bigger-font">
+        <%= render :partial => 'easy_money/inline_other_profit', :locals => {:project => project, :other_profit => entity.easy_money.other_profit} -%>
+      </p>
+      <%= javascript_tag( "$('#other-profit').qtip({
+              content: '#{l(:tooltip_real_hourly_rate, :average_hourly_rate => Sanitize.clean(format_easy_money_price(entity.easy_money.average_hourly_rate, project), :output => :html))}',
+              hide: {
+                fixed: true,
+                delay: 500
+              },
+              position: {
+                target: 'mouse'
+                }
+              })") %>
+    <% else -%>
+      <p id="other-profit">&nbsp;</p>
+    <% end -%>
+
+    <% if project.self_and_descendants.active.has_module(:time_tracking).size > 0 -%>
+      <% if User.current.allowed_to?(:easy_money_show_time_entry_expenses, project) -%>
+        <p id="other-hours">
+          <%= link_to(l(:button_easy_money_project_time_entry_hours), {:controller => 'easy_money_time_entry_expenses', :action => 'index', :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}.merge(url_params), { :title => l(:title_easy_money_project_time_entry_expenses), :class => 'time-entry-expense-index-link index-link' }) -%>
+          <%= content_tag :span, l(:label_easy_money_hour, :hours => entity.easy_money.sum_time_entry_hours.round(2)) -%>
+        </p>
+      <% else -%>
+        <p id="other-hours">&nbsp;</p>
+      <% end -%>
+    <% end -%>
+  </div>
+  <div class="clear"></div>
+</div>
+<%= call_hook(:view_easy_money_entity_overview_bottom, :project => project, :entity_type => entity_type, :entity_id => entity_id, :entity => entity, :easy_money_settings => easy_money_settings) %>
+<script type="text/javascript">
+  function renderExpectedProfit() {
+    $('#expected-profit').load('<%= url_for(:controller => 'easy_money', :action => 'inline_expected_profit', :project_id => project.id, :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id) -%>');
+  }
+  function renderExpectedPayrollExpenses() {
+    $('#expected-payroll-expenses').load('<%= url_for(:controller => 'easy_money_expected_payroll_expenses', :action => 'inline_expected_payroll_expenses', :project_id => project.id, :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id) %>');
+  }
+  function renderOtherProfit() {
+    $('#other-profit').load('<%= url_for(:controller => 'easy_money', :action => 'inline_other_profit', :project_id => project.id, :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id) %>');
+  }
+</script>

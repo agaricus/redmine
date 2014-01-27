@@ -1,0 +1,78 @@
+<% prepare_easy_page_for_render -%>
+<% if in_mobile_view? %>
+  <%= mobile_xhtml_doctype %>
+<% else %>
+  <% tabs = easy_page_context[:page_params][:tabs]; current_tab = easy_page_context[:page_params][:current_tab] %>
+  <!DOCTYPE html>
+<% end %>
+<html lang="en">
+  <% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'easy_page_layout', :plugin => 'easy_extensions' %>
+    <%= javascript_include_tag 'select_list_move' %>
+  <% end %>
+  <%= render :file => 'layouts/base_html_header' %>
+  <body class="<%= body_css_classes %> easy-page-content-page">
+    <% if ((current_theme && current_theme.is_easy_theme?)) || in_mobile_view? %>
+      <div id="indent-box"></div>
+      <div id="wrapper">
+        <div id="wrapper2">
+          <div id="wrapper3">
+            <%= render :file => 'layouts/base_body_header' %>
+            <%= render :partial => 'easy_page_layout/easy_page_layout_before_main', :locals => {:page_params => easy_page_context[:page_params], :page_modules => easy_page_context[:page_modules]} -%>
+            <div id="main" class="container_12 easy-page-content<%= easy_page_context[:page_params][:edit] ? ' edit' : ' show' %>">
+              <% if display_main_menu?(@project) %>
+                <%= render :partial => 'projects/project_info_topmenu' %>
+                <div class="clear"></div>
+              <% end %>
+              <div class="grid_12">
+                <div class="grid_9 alpha">
+
+                  <div id="content">
+                    <%= render_flash_messages %>
+                    <%= yield :easy_page_layout_content %>
+                    <%= yield %>
+                    <%= call_hook :view_layouts_base_content %>
+                  </div>
+
+
+                  <div class="" id="easy_jquery_tabs">
+                    <%= render_easy_page_editable_tabs %>
+                    <div id="easy_jquery_tab-<%= (current_tab && current_tab.id) || 0 %>" class="easy_jquery_tab" >
+                      <%= render :partial => 'common/easy_page_editable_tabs_content', :locals => {:layout_style => 'two_column_header_three_rows_right_sidebar'} %>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid_3 omega">
+                  <div id="sidebar">
+                    <% if content_for?(:easy_page_layout_service_box) -%>
+                      <div id="easy-page-layout-service-box" class="box">
+                        <%= yield :easy_page_layout_service_box %>
+                      </div>
+                    <% end -%>
+                    <%= yield :easy_page_zone_right_sidebar -%>
+                  </div>
+                </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <%= render :file => 'layouts/base_body_footer_wrapper' %>
+          </div>
+        </div>
+      </div>
+      <% if easy_page_context[:page_params][:edit] && tabs %>
+      <script>
+        $(function() {
+          PageLayout.initEditableTabs({active: <%= current_tab ? current_tab.position - 1 : 0 %>})
+        });
+      </script>
+      <% end %>
+
+    <% else %>
+
+      <%= render(:partial => 'layouts/easy_page_layouts/easy_page_layout_redmine_float') %>
+
+    <% end %>
+
+    <%= call_hook :view_layouts_base_body_bottom %>
+  </body>
+</html>

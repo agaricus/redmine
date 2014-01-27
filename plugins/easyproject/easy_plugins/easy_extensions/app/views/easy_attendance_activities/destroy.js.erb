@@ -1,0 +1,10 @@
+<% if @confirm %>
+  $('#modal-dialog-loader').html("<%= j(render(:template => 'easy_attendance_activities/move_attendances', :formats => [:html])) %>");
+  $('#modal-dialog-loader h2').remove();
+  createModalSelectorWindow();
+  $('#modal-dialog-loader-wrapper').dialog({title: '<%= flash[:error] %>'});
+<% else %>
+  tr = $("#easy-attendance-activity-<%= @easy_attendance_activity.id %>");
+  tr.fadeOut();
+  tr.remove();
+<% end %>

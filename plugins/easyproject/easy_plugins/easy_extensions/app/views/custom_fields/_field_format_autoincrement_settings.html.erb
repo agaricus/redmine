@@ -1,0 +1,22 @@
+<%
+if custom_field.settings.is_a?(ActiveRecord::AttributeMethods::Serialization::Attribute)
+  custom_field.settings.unserialize if custom_field.settings.state == :serialized
+  custom_field_settings = custom_field.settings.value
+else
+  custom_field_settings = custom_field.settings
+end
+%>
+<p>
+  <label for="custom_field_settings_from"><%=l(:label_field_format_autoincrement_from_to)%></label><%= text_field_tag 'custom_field[settings][from]', custom_field_settings['from'] || 0, :size => 5 %> - <%= text_field_tag 'custom_field[settings][to]', custom_field_settings['to'] || 999, :size => 5 %>
+</p>
+<% if custom_field.type == 'IssueCustomField' %>
+  <p>
+    <%= l(:label_field_format_autoincrement_entity_limitation) %>
+  </p>
+  <p class="centered-input">
+    <%= label_tag 'custom_field_settings_per_project', l(:field_project) %><%= check_box_tag 'custom_field[settings][per_project]', '1', custom_field_settings['per_project'] == '1' %>
+  </p>
+  <p class="centered-input">
+    <%= label_tag 'custom_field_settings_per_tracker', l(:field_tracker) %><%= check_box_tag 'custom_field[settings][per_tracker]', '1', custom_field_settings['per_tracker'] == '1' %>
+  </p>
+<% end %>

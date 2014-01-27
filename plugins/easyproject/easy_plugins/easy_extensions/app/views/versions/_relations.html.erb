@@ -1,0 +1,16 @@
+<% if @relations.present? %>
+  <%= content_tag :h3, l(:label_related_versions), :class => 'sidebar-style-h3' %>
+  <table class="list versions version-relations">
+    <% @relations.each do |relation| %>
+      <tr class="hascontextmenu version version-<%=  relation.other_version(@version).id -%> <%= relation.other_version(@version).css_classes -%>">
+        <td class="hide-when-print checkbox"><%= check_box_tag("ids[]", relation.other_version(@version).id, false, :style => 'display:none;') -%></td>
+        <td class="subject"><%= l(relation.gerund_label_for(@version)) %> - <%= "(#{l('datetime.distance_in_words.x_days', :count => relation.delay)})" if relation.delay && relation.delay != 0 -%>
+          <%= link_to_version(relation.other_version(@version), :truncate => 60) %>
+        </td>
+        <td class="assigned_to"><%= link_to_project(relation.other_version(@version).project) -%></td>
+        <td class="buttons"><%= link_to('', { :controller => 'easy_version_relations', :action => 'destroy', :version_id => @version, :id => relation}, :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :title => l(:label_relation_delete), :class => 'icon-unlink') if authorize_for('easy_version_relations', 'destroy') -%></td>
+      </tr>
+    <% end %>
+  </table>
+<% end -%>
+<%= render :partial => 'version_relations/form' -%>

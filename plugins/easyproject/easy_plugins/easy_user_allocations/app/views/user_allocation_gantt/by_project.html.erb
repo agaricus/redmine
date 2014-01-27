@@ -1,0 +1,32 @@
+<div class="tabs">
+  <ul>
+    <% easy_user_allocation_tabs.each do |tab| %>
+      <li>
+        <%= link_to(l(tab[:label]), tab[:url], :class => ('selected' if tab[:name] == params[:tab])) %>
+      </li>
+    <% end -%>
+  </ul>
+</div>
+
+<% modul_uniq_id ||= 'resalloc_user-easyquery_EasyUserAllocationByProjectQuery' %>
+
+<%= render :partial => 'easy_user_allocation_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => @query.new_record? ? l(:label_user_allocations) : h(@query.name)} -%>
+
+<%= render :partial => 'resalloc_by_project' if @query.valid? %>
+
+<% content_for :header_tags do %>
+  <%= call_hook :view_user_allocation_gantt_html_head %>
+  <%= javascript_include_tag 'json2.js', :plugin => 'easy_user_allocations' %>
+  <%= javascript_include_tag 'resalloc_by_project.jquery.js', :plugin => 'easy_user_allocations' %>
+  <%= stylesheet_link_tag 'easy_user_allocations.css',	:plugin => 'easy_user_allocations' %>
+<% end %>
+
+<% if EasyUserAllocationByProjectQuery.visible(User.current).any? %>
+  <% content_for :sidebar do %>
+    <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {
+      :query_class => EasyUserAllocationByProjectQuery,
+      :project => @query.project,
+      :query_link => {:controller => 'user_allocation_gantt', :action => 'by_project'}
+    } -%>
+  <% end -%>
+<% end -%>

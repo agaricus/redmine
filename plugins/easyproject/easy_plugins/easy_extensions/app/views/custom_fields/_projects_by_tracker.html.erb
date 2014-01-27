@@ -1,0 +1,74 @@
+<fieldset>
+  <legend><%= l(:label_project_plural) %></legend>
+
+  <span>
+    <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_all)}/#{l(:button_uncheck_all)}", "toggle_checkboxes_by_selector_on_tracker('input.cbx-project')", :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}") -%>
+    <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_rootprojects)}/#{l(:button_uncheck_rootprojects)}", "toggle_checkboxes_by_selector_on_tracker('input.cbx-root-project')", :title => "#{l(:button_check_rootprojects)}/#{l(:button_uncheck_rootprojects)}") -%>
+  </span>
+  <%= render_project_nested_lists(Project.non_templates.visible.includes(:trackers)) do |project|
+    lbl_text = ' ' + project.name
+    cbx_class  = ['cbx-project']
+    cbx_class << 'cbx-root-project' if project.root?
+    cbx_class << project.ancestors.collect{|a| "cbx-parent-project-#{a.id}"}.join(' ')
+    cbx_class << project.trackers.collect{|t| "cbx-project-tracker-#{t.id}"}.join(' ')
+
+    if !project.leaf? && project.descendants.active.size > 0
+      lbl_text << ' ' + link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_subprojects)}/#{l(:button_uncheck_subprojects)}", "toggle_checkboxes_by_selector_on_tracker('input.cbx-parent-project-#{project.id}')", :title => "#{l(:button_check_subprojects)}/#{l(:button_uncheck_subprojects)}")
+    end
+
+    content_tag('label', check_box_tag('custom_field[project_ids][]', project.id, (@custom_field.projects.include?(project)), :id => nil, :class => cbx_class.join(' ')) + lbl_text.html_safe, :class => 'max-width')
+  end -%>
+  <%= hidden_field_tag 'custom_field[project_ids][]', '' %>
+</fieldset>
+
+<script>
+  function checked_trackers(){
+    return $.map($('.issue-custom-field-trackers input:checkbox:checked'), function(x){return $(x).val()});
+  }
+
+  function issue_custom_field_projects_by_tracker() {
+    var values = checked_trackers();
+
+    $('.projects-by-tracker input:checkbox').prop('disabled', true);
+    $('.projects-by-tracker label').addClass('disabled');
+
+    $.each(values, function() {
+      var input = $('.projects-by-tracker input:checkbox.cbx-project-tracker-' + this);
+
+      input.parent().removeClass('disabled');
+      input.prop('disabled', false);
+    });
+
+    $('.projects-by-tracker input:checkbox:disabled').attr('checked', false);
+  }
+
+  function toggle_checkboxes_by_selector_on_tracker(selector){
+    // Checkboxy se zatrhávají jen povolené
+    //   -> toogle nefunguje na disable_all
+    selector += ':enabled'
+
+    // Zatím prosím nechat, v nějakých situacích to nemusí jít
+    // ale snad už jo :-)
+    //
+    // var all_checked = true;
+    // $(selector).each(function(index) {
+    //   if (!$(this).is(':checked:enabled')) { all_checked = false; }
+    // });
+    // $(selector).attr('checked', !all_checked);
+    //
+    // var values = checked_trackers();
+    // $.each(values, function() {
+    //   selector += '.cbx-project-tracker-' + this;
+    // });
+    //
+    // $("input.cbx-parent-project-18").parent().find("input:checkbox:disabled").attr('checked', false)
+    toggleCheckboxesBySelector(selector);
+  }
+
+  $('.issue-custom-field-trackers input:checkbox').change(function(){
+    issue_custom_field_projects_by_tracker();
+  });
+  $(function(){
+    issue_custom_field_projects_by_tracker();
+  });
+</script>

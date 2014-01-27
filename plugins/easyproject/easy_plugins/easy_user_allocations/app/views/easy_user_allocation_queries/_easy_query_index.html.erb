@@ -1,0 +1,33 @@
+<%
+options ||= Hash.new; back_url ||= nil
+query_form_url ||= {:controller => 'easy_queries', :action => 'new', :type => query.class.name, :project_id => @project, :back_url => back_url}
+easy_query_apply_url ||= url_for({:project_id => @project})
+easy_query_clear_url ||= {:set_filter => 0, :project_id => @project}
+-%>
+<% if !query.new_record? && query.editable_by?(User.current) -%>
+  <%= content_for :easy_page_layout_service_box do -%>
+    <div class="query-action-buttons">
+      <%= link_to l(:button_edit_projectquery), {:controller => 'easy_queries', :action => 'edit', :id => query, :project_id => @project, :back_url => back_url}, :class => 'icon icon-edit', :title => l(:title_edit_projectquery) -%>
+      <%= link_to l(:button_delete_projectquery), {:controller => 'easy_queries', :action => 'show', :id => query, :project_id => @project, :back_url => back_url}, :data => {:confirm => l(:text_are_you_sure)}, :method => 'delete', :class => 'icon icon-del', :title => l(:title_delete_projectquery) -%>
+    </div>
+  <% end
+end -%>
+
+<%= form_tag(query_form_url, :id => "#{options[:modul_uniq_id]}query_form", :method => :get) do -%>
+  <%= hidden_field_tag 'set_filter', '1' -%>
+  <%= hidden_field_tag 'type', query.class.to_s -%>
+  <div id="query_form_content" class="easy-query-filter-container">
+    <%= render :partial => 'easy_user_allocation_queries/easy_query_index_form', :locals => { :query => query, :filter_active => @filter_active, :query_heading => (query.new_record? ? easy_query_name : h(query.name)), :modul_uniq_id => options[:modul_uniq_id], :options => options } %>
+    <div class="buttons" id="<%= options[:modul_uniq_id] -%>filter_buttons" style="display: none;">
+      <%= link_to_function l(query.entity.name.underscore, :scope => [:easy_query,:button_apply], :default => l(:button_apply) ), "selectAllOptions('#{options[:modul_uniq_id]}selected_columns'); submit_form('#{options[:modul_uniq_id]}query_form','#{easy_query_apply_url}')", :class => 'icon icon-checked apply-link', :title => l(:title_apply_projectquery) -%>
+      <%= link_to l(:button_clear_projectquery), easy_query_clear_url, :class => 'icon icon-reload clear-link', :title => l(:title_clear_projectquery) -%>
+      <% if query.display_save_button && query.new_record? && User.current.allowed_to?(:save_queries, @project, :global => true) -%>
+        <%= link_to l(:button_save_projectquery), {}, :onclick => "selectAllOptions('#{options[:modul_uniq_id]}selected_columns'); $('##{options[:modul_uniq_id]}query_form').submit(); return false;", :class => 'icon icon-save save-link', :title => l(:title_save_projectquery) -%>
+      <% end -%>
+    </div>
+    <%= render_easy_query_bottom_buttons(query, @year, @month) if respond_to?(:render_easy_query_bottom_buttons) %>
+  </div>
+<% end -%>
+<%= error_messages_for 'query' -%>
+<% ### PAGE CUSTOMS ########################################################## -%>
+<% html_title(query.new_record? ? easy_query_name : query.name) -%>

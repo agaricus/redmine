@@ -1,0 +1,12 @@
+<%= form_tag({:controller => 'easy_issues', :action => 'description_update', :id => @issue}, :method => :post, :id => 'issue_description_form') do %>
+  <%= label_tag 'issue_description_textarea', l(:field_description), :class => 'hidden-for-sighted' %>
+  <%= text_area_tag 'issue[description]', @issue.description, :id => "issue_description_textarea",
+    :class => 'wiki-edit',
+    :rows => (@issue.description.blank? ? 10 : [[10, @issue.description.length / 50].max, 100].min) %>
+  <%= call_hook(:view_issues_edit_notes_bottom, { :issue => @issue, :notes => @issue.description, :form => nil }) %>
+  <p>
+    <%= submit_tag l(:button_update) %>
+    <%= link_to l(:button_cancel), '#', :onclick => "$('#issue_description_form').remove(); $('#show_issue_description').show(); return false;" %>
+  </p>
+<% end %>
+<%= wikitoolbar_for('issue_description_textarea') unless in_mobile_view? %>

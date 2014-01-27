@@ -1,0 +1,18 @@
+#sidebar ul.project-index-sidebar-menu.sidebar-menu, #sidebar ul.project-index-sidebar-menu.sidebar-menu ul {
+    padding: 0px;
+}
+#sidebar ul.project-index-sidebar-menu.sidebar-menu li {
+    list-style-type: none;
+}
+#money-type-select {
+    border-bottom: 2px solid #c0c0c0;
+}
+#money-type-select p {
+    display: inline-block;
+}
+#money-type-select p label {
+    width: 200px;
+}
+table#easy-money-subproject td span {
+    white-space: nowrap;
+}

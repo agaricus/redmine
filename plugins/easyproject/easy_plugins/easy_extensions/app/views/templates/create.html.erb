@@ -1,0 +1,98 @@
+<%= content_tag :h1,  l(:label_template_new) -%>
+
+<%= form_tag({ :action => 'make_project_from_template', :id => @source_project }, :method => :post, :id => 'project-from-template') do -%>
+  <div class="gray-background tabular long2">
+    <p id="project-template">
+      <%= label_tag :project_root, l('project_template.label_name') %>
+      <span><%= h @source_project %></span>
+    </p>
+    <% p = @projects.shift %>
+    <% if p %>
+      <%= hidden_field_tag 'template[project][][id]', p.id %>
+      <p id="project-name">
+        <%= label_tag 'template[project][][name]', l('project_template.label_new_project'), :class => 'required' %>
+        <%= text_field_tag 'template[project][][name]', p.name, {:size => 50, :id => "template_project_#{p.id}_name", :autofocus => true} -%>
+        <%= javascript_tag "$('#template_project_#{p.id}_name').focus()" %>
+      </p>
+      <p id="project-root">
+        <% if @source_project.allowed_parents(:force => :projects).compact.empty? %>
+          <%= hidden_field_tag 'template[parent_id]', '' %>
+        <% else -%>
+          <label><%= l(:field_parent) %></label>
+          <%= parent_project_select_tag(@source_project, :force => :projects, :html => {:name => 'template[parent_id]', :id => 'template_parent_id'}) -%>
+        <% end %>
+      </p>
+      <% if EasySetting.value('project_display_identifiers') -%>
+        <p>
+          <%= label_tag 'template[project][][identifier]', l('field_identifier'), :class => 'required' %>
+          <%= text_field_tag 'template[project][][identifier]', '', :size => 50 -%>
+          <br />
+          <em>
+            <%= l(:text_length_between, :min => 1, :max => Project::IDENTIFIER_MAX_LENGTH) %> <%= l(:text_project_identifier_info).html_safe %>
+          </em>
+        </p>
+      <% end %>
+      <% unless p.custom_field_values.blank? %>
+        <%= toggling_container("project_template_custom_fields_#{p.id}", User.current, {:heading => l(:label_project_templates_custom_fields), :container_html => {:class => ''}, :default_button_state => false}) do %>
+          <%= render :partial => 'projects/form_project_custom_fields', :locals => {:custom_field_values => p.custom_field_values, :form_name_prefix => 'template[project][]', :project => p} %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <% @projects.each do |project| -%>
+      <%= hidden_field_tag 'template[project][][id]', project.id %>
+      <p class="subproject">
+        <%= label_tag "template[project][][name]", project.to_s, :class => 'required' %>
+        <%= text_field_tag "template[project][][name]", project.name, {:size => 50, :id => "template_project_#{project.id}_name"} -%>
+      </p>
+      <% if EasySetting.value('project_display_identifiers') -%>
+        <p>
+          <%= label_tag "template[project][][identifier]", l('field_identifier'), :class => 'required' %>
+          <%= text_field_tag "template[project][][identifier]", '', :size => 50, :disabled => project.identifier_frozen? -%>
+          <br />
+          <em>
+            <%= l(:text_length_between, :min => 1, :max => Project::IDENTIFIER_MAX_LENGTH) %> <%= l(:text_project_identifier_info).html_safe %>
+          </em>
+        </p>
+      <% end %>
+      <% unless project.custom_field_values.blank? %>
+        <%= toggling_container("project_template_custom_fields_#{project.id}", User.current, {:heading => l(:label_project_templates_custom_fields), :container_html => {:class => ''}, :default_button_state => false}) do %>
+          <%= render :partial => 'projects/form_project_custom_fields', :locals => {:custom_field_values => project.custom_field_values, :form_name_prefix => "template[project][]", :project => project} %>
+        <% end %>
+      <% end %>
+    <% end -%>
+
+    <p id="form-start-date">
+      <%= label_tag "template[start_date]", @projects.size == 0 ? l(:label_template_easy_start_date) : l(:label_templates_easy_start_date) %>
+      <%= text_field_tag "template[start_date]", Date.current, {:size => 10} -%>
+      <%= calendar_for('template_start_date') -%>
+    </p>
+
+    <p id="form-checkbox">
+      <%= label_tag 'template[update_dates]', l(:label_project_templates_update_dates) %>
+      <%= check_box_tag 'template[update_dates]', '', true -%>
+    </p>
+
+    <p>
+      <%= label_tag 'template[match_starting_dates]', l(:label_match_starting_dates) %>
+      <%= check_box_tag 'template[match_starting_dates]', '1', false -%>
+    </p>
+
+    <div id="additional_template_options">
+      <p>
+        <%= label_tag(:change_issues_author, l(:label_project_templates_change_issues_author)) -%>
+        <%= select_tag('template[change_issues_author]', options_for_select([[l(:label_no_change_option), '']] + User.active.non_system_flag.easy_type_internal.sorted.collect{|u| [u.name, u.id]}, '')) %>
+      </p>
+
+      <%= call_hook(:view_templates_create_project_from_template, :source_project => @source_project) %>
+    </div>
+  </div>
+  <p>
+    <%= submit_tag l(:button_new_project_from_template), :class => 'button-1' %>
+  </p>
+
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% html_title(l(:label_template_new)) -%>

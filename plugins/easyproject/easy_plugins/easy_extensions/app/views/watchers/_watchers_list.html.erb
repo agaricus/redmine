@@ -1,0 +1,6 @@
+<h3><%= l(:label_issue_watchers) %></h3>
+<div class="watchers-button-add" id="watchers-button-add" <%= 'style="display:none"' if request.xhr? && params[:action] != 'destroy' -%> >
+  <%= link_to( '', {:controller => 'watchers', :action => 'new', :object_type => watched.class.name.underscore, :object_id => watched}, :remote => true, :class => 'icon icon-add' )if User.current.allowed_to?(:add_issue_watchers, watched.project) %>
+</div>
+<div class="watchers-list"><%= watchers_list(watched) %></div>
+<br style="clear:both" />

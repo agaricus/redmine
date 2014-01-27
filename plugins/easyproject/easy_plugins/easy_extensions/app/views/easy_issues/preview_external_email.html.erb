@@ -1,0 +1,19 @@
+<h2><%= l(:heading_easy_issues_preview_external_email) -%></h2>
+
+<%= labelled_form_for(@issue, :url => {:controller => :easy_issues, :action => :preview_external_email, :id => @issue}, :html => {:class => 'tabular', :multipart => true}) do |f| %>
+  <%= hidden_field_tag(:back_url, params[:back_url]) unless params[:back_url].blank? %>
+  <div class="box">
+    <%= call_hook(:view_easy_issues_preview_external_email, { :issue => @issue, :form => f }) %>
+    <div id="preview_external_email_container">
+      <%= render :partial => 'easy_issues/preview_external_email' %>
+    </div>
+    <div>
+      <%= link_to_attachments @issue, :thumbnails => false, :show_checkboxes => true, :do_not_show_context_menu => true %>
+    </div>
+    <div>
+      <%= render :partial => 'attachments/form', :locals => {:container => @issue} -%>
+    </div>
+  </div>
+  <%= f.submit l(:button_send_email), :title => l(:button_send_email) %>
+  <%= link_to(l(:button_dont_send_email), {:controller => :issues, :action => :show, :id => @issue}, :class => 'button-2', :title => l(:button_dont_send_email) ) %>
+<% end %>

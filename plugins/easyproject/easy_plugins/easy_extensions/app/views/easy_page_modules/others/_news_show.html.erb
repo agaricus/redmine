@@ -1,0 +1,5 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => (l('easy_pages.modules.news') + ' (' + @easy_page_modules_data[block_name][:news_count].to_s + ')'), :container_html => {:class => 'module-content'}}) do %>
+  <%# easy_cache("my_page_others_news_user_#{user.id}") do %>
+    <%= render(:partial => 'news/news', :collection => @easy_page_modules_data[block_name][:news]) -%>
+  <%# end %>
+<% end %>

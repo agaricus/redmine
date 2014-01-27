@@ -1,0 +1,50 @@
+<% unless issue.nil? %>
+  <div class="box issue-info <%= 'redmine-classic' unless current_theme && current_theme.is_easy_theme? %>">
+    <%= call_hook(:view_issue_sidebar_issue_info, :issue => issue) %>
+    <div class="issue_actions">
+      <div>
+        <%= link_to(l(:button_update), edit_issue_path(@issue), {
+          :class => "icon icon-edit #{params[:dd].blank? ? 'button-1' : 'button-2'}",
+          :id => 'issue-sidebar-link_to-update',
+          :remote => true,
+          :accesskey => accesskey(:issue_edit),
+          :title => l(:sidebar_issue_button_update)
+        }) if @issue.editable? %>
+
+        <%= easy_issue_timer_button(issue) if issue.editable? %>
+      </div>
+      <%= call_hook(:view_issue_sidebar_issue_info_before_menu_more, :issue => issue) %>
+  <%# easy_cache ['sidebar/_issue_info/menu_more', User.current, issue.project] do %>
+      <%= render_menu_more(nil, nil, :menu_more_class => 'menu-more-sidebar', :menu_expander_class => 'button-2 icon icon-add') do %>
+        <ul>
+          <% if User.current.allowed_to?(:log_time, issue.project) && !(!EasySetting.value('allow_log_time_to_closed_issue') && issue.closed?) %>
+            <li><%= link_to l(:button_log_time), new_issue_time_entry_path(issue, :back_url => issue_path(issue)), :class => 'icon icon-time-add', :title => l(:sidebar_issue_button_log_time) %></li>
+          <% end %>
+          <li><%= watcher_link(issue, User.current) %></li>
+          <% if User.current.allowed_to?(:add_issues, @project) %>
+            <li><%= link_to l(:button_copy), {:controller => 'issues', :action => 'new', :project_id => issue.project, :copy_from => issue}, :class => 'icon icon-copy issue-copy', :title => l(:sidebar_issue_button_copy) %></li>
+          <% end %>
+          <% if @issue.editable? %>
+            <li><%= link_to l(:button_move), {:controller => 'issues', :action => 'bulk_edit', :'ids[]' => issue}, :class => 'icon icon-move', :title => l(:sidebar_issue_button_move) %></li>
+          <% end %>
+          <% if User.current.allowed_to?(:delete_issues, issue.project) %>
+            <li><%= link_to l(:button_delete), issue_path(issue), :data => {:confirm => issues_destroy_confirmation_message(issue)}, :method => :delete, :class => 'icon icon-del', :title => l(:sidebar_issue_button_delete) -%></li>
+          <% end %>
+          <% if User.current.allowed_to?(:manage_issue_relations, issue.project) %>
+            <li><%= link_to(l(:button_new_issue_relation), {}, :href => 'javascript:ShowAndScrollTo2(\'new-relation-form\', \'relations\', -150);', :class => 'icon icon-relation', :title => l(:title_new_issue_relation)) -%></li>
+            <li id="put-between-menu-item"><%= link_to(l(:button_issue_put_between), {}, :href => 'javascript:ShowAndScrollTo2(\'put-between-form\', \'relations\', -150);', :class => 'icon icon-integrate') %></li>
+          <% end %>
+          <% if User.current.allowed_to?(:manage_subtasks, issue.project) -%>
+            <li><%= link_to(l(:button_new_subtask), {:controller => 'issues', :action => 'new', :project_id => issue.project, :subtask_for_id => issue}, :class => 'icon icon-add', :title => l(:title_new_subtask)) %></li>
+          <% end %>
+          <% if User.current.allowed_to?(:add_subprojects, issue.project) %>
+            <li><%= link_to(l(:button_easy_copy_to_project), {:controller => 'projects', :action => 'new', :project => {:name => issue.subject, :description => issue.description, :due_date => issue.due_date, :parent_id => issue.project}}, :class => 'icon icon-copy issue-copy', :title => l(:title_easy_copy_to_project)) %></li>
+          <% end %>
+          <%= call_hook(:view_issue_sidebar_issue_buttons, :issue => issue) %>
+        </ul>
+      <% end %>
+  <%# end %>
+      <%= call_hook(:view_issue_sidebar_issue_info_after_menu_more, :issue => issue) %>
+    </div>
+  </div>
+<% end %>

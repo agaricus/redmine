@@ -1,0 +1,5 @@
+api.array :time_entries, api_meta(:total_count => @entity_count, :offset => @offset, :limit => @limit) do
+  @entities.each do |entity|
+    render_api_time_entry(api, entity)
+  end
+end

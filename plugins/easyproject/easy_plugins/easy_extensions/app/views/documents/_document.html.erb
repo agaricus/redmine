@@ -1,0 +1,38 @@
+<% doc_manage_perm = !document.active_record_restricted?(User.current, :manage)
+modul_uniq_id ||= controller_name + '_' + action_name
+modul_uniq_id << "_"
+-%>
+<div class="document-detail" id="<%= "document-#{document.id}" -%>">
+  <div class="doc-title gray-background">
+    <div class="floatleft">
+      <%= content_tag :h4, @easy_page_modules_data.nil? || controller_name == 'projects' ? h(document.title) : (document.project.to_s + ' &#187; ' + document.title).html_safe -%>
+    </div>
+    <div class="floatright">
+      <% if authorize_for('documents', 'add_attachment', document.project) && @easy_page_modules_data.nil? && doc_manage_perm %>
+        <% authorize_for_add_attachment = true  %>
+        <%= link_to(l(:label_attachment_new), new_attachment_document_path(document), :class => 'button-2', :remote => true) %>
+      <% else %>
+        <% authorize_for_add_attachment = false %>
+      <% end %>
+      <% if @easy_page_modules_data.nil? && doc_manage_perm %>
+        <%= link_to( l(:button_edit), {:controller => 'documents', :action => 'edit', :id => document}, :class => 'icon icon-edit', :accesskey => accesskey(:edit)) if authorize_for('documents', 'edit', document.project)  %>
+        <%= link_to( l(:button_delete), {:controller => 'documents', :action => 'destroy', :id => document}, :data => {:confirm => l(:text_are_you_sure)}, :method => :delete, :class => 'icon icon-del') if authorize_for('documents', 'destroy', document.project)  %>
+      <% end %>
+    </div>
+    <div style="clear:both"> </div>
+    <% if document.custom_values.any? %>
+      <div class="document-custom-values-container">
+        <%= render :partial => 'documents/custom_field_values', :locals => {:custom_field_values => document.visible_custom_field_values} %>
+      </div>
+    <% end -%>
+  </div>
+  <% unless document.description.blank? %>
+    <div class="doc-description wiki">
+      <%= content_tag :div, truncate_html(textilizable(document.description, {:headings => false}), 400, link_to_function(l(:label_more), "switchElements($(this).parents('.truncated-text'),$('#document-#{document.id}').find('.original-text'))")).html_safe, :class => 'truncated-text' -%>
+      <%= content_tag :div, textilizable(document.description || '') + link_to_function(l(:label_less), "switchElements($(this).parents('.original-text'),$('#document-#{document.id}').find('.truncated-text'))").html_safe, :class => 'original-text', :style => 'display:none' -%>
+    </div>
+  <% end %>
+  <div class="doc-index-attachments">
+    <%= link_to_attachments document, { :author => true, :enable_toggling => false, :toggling_uniq_id => modul_uniq_id, :default_button_state => !@project.nil? } %>
+  </div>
+</div>

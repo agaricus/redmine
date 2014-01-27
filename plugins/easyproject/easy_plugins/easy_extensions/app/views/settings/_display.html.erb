@@ -1,0 +1,37 @@
+<%= form_tag({:action => 'edit', :tab => 'display'}) do %>
+  <%= fields_for :easy_setting do |f| %>
+    <div class="box tabular settings long2">
+      <p><%= setting_select :ui_theme, Redmine::Themes.themes.collect {|t| [l(t.id, :scope => [:themes], :default => t.name), t.id]}, :blank => :label_default, :label => :label_theme %></p>
+      <p>
+        <%= f.label(:use_personal_theme, l(:label_easy_setting_use_personal_theme)) %>
+        <%= f.check_box :use_personal_theme, :checked => EasySetting.value('use_personal_theme') %>
+      </p>
+      <p><%= setting_select :default_language, lang_options_for_select(false) -%></p>
+      <p><%= setting_select :start_of_week, [[day_name(1),'1'], [day_name(6),'6'], [day_name(7),'7']], :blank => :label_language_based -%></p>
+      <% locale = User.current.language.blank? ? ::I18n.locale : User.current.language %>
+      <p><%= setting_select :date_format, Setting::DATE_FORMATS.collect {|f| [::I18n.l(Date.today, :locale => locale, :format => f), f]}, :blank => :label_language_based %></p>
+      <p><%= setting_select :time_format, Setting::TIME_FORMATS.collect {|f| [::I18n.l(Time.now, :locale => locale, :format => f), f]}, :blank => :label_language_based %></p>
+      <p><%= setting_select :user_format, @options[:user_format] -%></p>
+      <p>
+        <%= setting_check_box :gravatar_enabled %><br />
+        <em><%= l(:text_settings_gravatar_enabled) -%></em>
+      </p>
+      <p><%= setting_select :gravatar_default, [["Wavatars", 'wavatar'], ["Identicons", 'identicon'], ["Monster ids", 'monsterid'], ["Retro", 'retro'], ["Mystery man", 'mm']], :blank => :label_none %></p>
+      <p><%= setting_check_box :thumbnails_enabled %></p>
+      <p><%= setting_text_field :thumbnails_size, :size => 6 %></p>
+      <p>
+        <%= hidden_field_tag('easy_setting[show_personal_statement]', '0', :id => nil) -%>
+        <%= label_tag('easy_setting_show_personal_statement', l(:setting_show_personal_statement)) %><%= check_box_tag('easy_setting[show_personal_statement]', '1', EasySetting.value('show_personal_statement')) -%>
+      </p>
+      <p>
+        <%= hidden_field_tag('easy_setting[show_bulk_time_entry]', '0', :id => nil) -%>
+        <%= label_tag('easy_setting_show_bulk_time_entry', l(:setting_show_bulk_time_entry)) %><%= check_box_tag('easy_setting[show_bulk_time_entry]', '1', EasySetting.value('show_bulk_time_entry')) -%>
+      </p>
+      <p>
+        <%= hidden_field_tag('easy_setting[show_easy_resource_booking]', '0', :id => nil) -%>
+        <%= label_tag('easy_setting_show_easy_resource_booking', l(:setting_show_easy_resource_booking)) %><%= check_box_tag('easy_setting[show_easy_resource_booking]', '1', EasySetting.value('show_easy_resource_booking')) -%>
+      </p>
+    </div>
+    <%= submit_tag l(:button_save), :class => 'button-1' -%>
+  <% end %>
+<% end %>

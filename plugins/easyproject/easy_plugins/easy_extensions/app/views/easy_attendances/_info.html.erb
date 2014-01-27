@@ -1,0 +1,37 @@
+<% easy_attendance ||= @easy_attendance;uniq_id ||= ''; day ||= easy_attendance.arrival %>
+<div id="<%= "#{uniq_id}easy_attendance-#{easy_attendance.id}" -%>" class="easy_attendance-detail-info">
+  <%= content_tag :h5, easy_attendance.easy_attendance_activity.name, :class => 'user-name' -%>
+  <ul>
+    <li>
+      <% if easy_attendance.arrival %>
+        <%= content_tag :strong, l(:label_date_from) -%>
+        <%= content_tag :span, format_time(easy_attendance.arrival, false), :class => 'arrival' -%>
+      <% end %>
+      <% if easy_attendance.departure %>
+        <%= content_tag :strong, l(:label_date_to) -%>
+        <%= content_tag :span, format_time(easy_attendance.departure, false), :class => 'departure' -%>
+      <% end %>
+    </li>
+    <%= content_tag :li do %>
+      <%
+      hours = (easy_attendance.departure - easy_attendance.arrival) / 3600
+      uwh = easy_attendance.user.working_hours(day)
+      if hours < uwh
+        css_sum = 'too-few'
+      elsif hours > uwh
+        css_sum = 'too-much'
+      else
+        css_sum = 'ok'
+      end
+    %>
+      <%= content_tag :strong, l(:label_total) -%>
+      <%= content_tag :span, html_hours("%.2f" % hours) + 'h', :class => "total-hours #{css_sum}" -%>
+    <% end if easy_attendance.departure && easy_attendance.arrival %>
+  </ul>
+  <% if easy_attendance.description.present? %>
+    <br />
+    <div class="description">
+      <%= truncate_html(textilizable(easy_attendance.description).html_safe, 125).html_safe %>
+    </div>
+  <% end -%>
+</div>

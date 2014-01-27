@@ -1,0 +1,29 @@
+<%
+# admin_ids = Array
+# field_name = string -> form name
+modul_uniq_id ||= [controller_name, action_name, params[:id]].join('_')
+field_id ||= field_name.gsub('[', '_').gsub(']', '')
+%>
+<%= toggling_container(modul_uniq_id, User.current, {:heading => l(:label_easy_plugin_setting_admin_whitelist), :container_html => {:class => ''}, :default_button_state => false}) do %>
+  <p>
+    <%= content_tag(:em, l(:text_easy_plugin_setting_admin_whitelist, :role_link => link_to(l(:label_role_and_permissions), roles_path)).html_safe) %>
+  </p>
+  <div>
+    <% if admin_ids.any? && !admin_ids.include?(User.current.id.to_s) %>
+      <% User.where(:id => admin_ids).sorted.each do |user| %>
+        <p class="floating">
+          <%= hidden_field_tag(field_name, user.id) %>
+          <%= content_tag(:span, user, :class => 'icon icon-true') %>
+      <% end -%>
+    <% else %>
+      <% User.active.where(:admin => true).sorted.each do |user| %>
+        <p class="floating">
+          <%= check_box_tag(field_name, user.id, admin_ids.include?(user.id.to_s), :id => "#{field_id}#{user.id}") %>
+          <%= label_tag("#{field_id}#{user.id}", user) %>
+        </p>
+      <% end -%>
+    <% end -%>
+
+  </div>
+
+<% end -%>

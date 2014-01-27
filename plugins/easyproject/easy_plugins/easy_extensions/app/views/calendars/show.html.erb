@@ -1,0 +1,21 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {
+  :query => @query,
+  :easy_query_name => (@query.new_record? ? l(:label_calendar) : h(@query.name)),
+  :query_form_url => {:controller => 'calendars', :action => 'show', :project_id => @project},
+  :options => {:year => @year, :month => @month, :easy_query_form_buttons_bottom_render_method => 'issues_calendar'}} %>
+
+<% if @query.valid? %>
+  <%= render :partial => 'common/calendar', :locals => {:calendar => @calendar} %>
+
+  <p class="legend cal">
+    <span class="starting"><%= l(:text_tip_issue_begin_day) %></span>
+    <span class="ending"><%= l(:text_tip_issue_end_day) %></span>
+    <span class="starting ending"><%= l(:text_tip_issue_begin_end_day) %></span>
+  </p>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'issues/sidebar' %>
+<% end %>
+
+<% html_title(l(:label_calendar)) -%>

@@ -1,0 +1,10 @@
+Dir[File.dirname(__FILE__) + '/lib/<%= plugin_name_underscored %>/redmine/controllers/*.rb'].each {|file| require_dependency file }
+Dir[File.dirname(__FILE__) + '/lib/<%= plugin_name_underscored %>/redmine/helpers/*.rb'].each {|file| require_dependency file }
+Dir[File.dirname(__FILE__) + '/lib/<%= plugin_name_underscored %>/redmine/models/*.rb'].each {|file| require_dependency file }
+Dir[File.dirname(__FILE__) + '/lib/<%= plugin_name_underscored %>/redmine/others/*.rb'].each {|file| require_dependency file }
+
+ActionDispatch::Reloader.to_prepare do
+
+  require '<%= plugin_name_underscored %>/hooks'
+
+end

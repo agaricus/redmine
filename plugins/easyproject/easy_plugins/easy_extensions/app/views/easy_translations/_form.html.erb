@@ -1,0 +1,26 @@
+<%= form_tag(update_easy_translations_path(@entity.class.name, @entity, @entity_column), :method => :put) do %>
+  <div class="box tabular splitcontent" id="easy_translation_used_translation_container">
+    <p id="easy_translation_original_value_field" class="long2">
+      <%= label_tag(:easy_translations_original_value, l(:label_easy_translation_original_value)) %>
+      <%= text_field_tag('easy_translations[original_value]', @entity.send(@entity_column, {:translated => false})) %>
+    </p>
+    <p id="easy_translation_add_translation_select" class="long2" style="<%= 'display:none' if @available_locales.empty? %>">
+      <%= label_tag(:add_translation, l(:text_easy_translation_add_translation)) %>
+      <%= select_tag(:add_translation, options_for_select(@available_locales.collect{|i| [@translated_langs_from_cache[i], i]}), :include_blank => true) %>
+    </p>
+    <div class="clear"></div>
+    <hr />
+    <div>
+      <%= render(:partial => 'form_translated_field', :collection => @translations, :as => :t) %>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <p class="buttons">
+    <%= submit_tag(l(:button_update), :class => 'button-1') %>
+  </p>
+<% end -%>
+<script type="text/javascript">
+  $("#add_translation").change(function(event) {
+    $.post("<%=j create_easy_translations_path(@entity.class.name, @entity, @entity_column) %>", {lang: event.target.value});
+  })
+</script>

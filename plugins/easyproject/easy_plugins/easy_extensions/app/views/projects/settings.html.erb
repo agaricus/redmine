@@ -1,0 +1,10 @@
+<%= content_tag :h2, l(:label_settings)%>
+<div id="project-settings-edit-container">
+  <%= render_tabs project_settings_tabs %>
+</div>
+<% html_title(l(:label_settings)) -%>
+<script type="text/javascript">
+  $(window).load(function() {
+    if (typeof project_settings_tabs_after_render == 'function') { project_settings_tabs_after_render(); }
+  });
+</script>

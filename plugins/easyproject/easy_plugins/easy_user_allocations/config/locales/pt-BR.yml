@@ -1,0 +1,75 @@
+---
+pt-BR:
+  easy_user_allocations_name: Gestão de recursos
+  easy_user_allocations_description: ! '- Gestão de recursos / pessoas'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Vista de gestão de recursos
+  permission_view_my_easy_user_allocations: Ver gestão de recursos próprios
+  permission_edit_easy_user_allocations: Editar gestão de recursos
+  permission_edit_my_easy_user_allocations_plan: Editar plano de trabalho próprio
+  project_module_user_allocations: Gestão de recursos
+  label_user_allocations: Gestão de recursos
+  label_user_allocation_gantt: Alocação de recursos gantt
+  label_user_allocation_gantt_users: Usuários
+  label_user_allocation_gantt_user_selection: Seleção
+  label_user_allocation_gantt_range: Datas
+  label_allocations_by_project: Alocação de recursos por projeto
+  label_unassigned_issues: Tarefas não atribuídas
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Escolha um intervalo de data diferente para
+    exibir toda a tarefa
+  label_allocation_changed_title: Tarefa foi alterado e será atualizado em salvar
+  label_user_allocation_plan: Plano de trabalho
+  text_easy_user_allocation_working_plan_bottom_info: Permite programar a carga de
+    trabalho do usuário na semana selecionada. Tabela mostra o horário e tempo real
+    relatado.
+  resalloc:
+    title: A alocação de recursos
+    settings: Configurações
+    button_apply_settings: Aplicar configurações
+    button_recalculate: Alocação recalcular
+    button_save: Salvar alterações
+    button_undo: Desfazer as alterações não salvas
+    button_split_issue: Tarefa de divisão
+    split_issue_help: Escolha uma data clicando em uma tarefa não atribuída.
+    error_date_range_too_long: deve ser inferior a um ano
+    legend_hours_worked: O tempo gasto
+    legend_hours_overtime: Tempo trabalhado além do tempo prescrito
+  easy_pages:
+    modules:
+      user_allocation: A alocação de recursos
+      user_allocation_working_plan: Plano de alocação / trabalho Resource
+  user_allocation_plan:
+    label_plan: Plano
+    label_real: Real
+    label_comment: Comentar
+  easy_query:
+    name:
+      easy_user_allocation_query: A alocação de recursos
+      easy_user_allocation_by_project_query: Alocação de recursos por projeto
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Filtros privadas sobre a alocação de recursos
+        easy_user_allocation_by_project_query: Filtros privadas sobre a alocação de
+          recursos por projeto
+      public:
+        easy_user_allocation_query: Filtros públicas sobre a alocação de recursos
+        easy_user_allocation_by_project_query: Filtros públicas sobre a alocação de
+          recursos por projeto
+  label_setting_keep_issue_start_dates: Não alterar as datas de início da tarefa.
+  text_setting_keep_issue_start_dates: Se ativado e tarefa horas estimadas são muito
+    baixos, a tarefa não será encurtada, mas ele vai ser alocado para 0 horas em seu
+    lugar.
+  project_module_easy_user_allocations: Uso de recursos / pessoas
+  label_setting_allocate_evenly: Alocar uniformemente
+  text_setting_allocate_evenly: Se ativado e uma tarefa é redimensionada em Gantt
+    de alocação, horas estimadas são distribuídos uniformemente por toda a duração
+    da tarefa.
+  label_setting_allocate_from_start: Alocar as datas de início das tarefas
+  text_overallocation: soma de horas alocadas é mais hora então estimados.
+  permission_view_easy_user_allocations_by_project: Ver as dotações por projeto
+  easy_user_allocations_sidebar_all_users_queries: Alocações por usuários
+  easy_user_allocations_label_show_assigned_issues: Mostrar alocação para usuário
+    %{username}
+  label_filter_group_easy_user_allocation_query: A alocação de recursos
+  label_edit_estimated_hours: Edite estimados horas

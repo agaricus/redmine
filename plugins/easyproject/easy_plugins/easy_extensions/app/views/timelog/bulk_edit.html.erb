@@ -1,0 +1,63 @@
+<h2><%= l(:label_bulk_edit_selected_time_entries) %></h2>
+
+<ul id="bulk-selection">
+  <% @time_entries.each do |entry| %>
+    <%= content_tag 'li',
+      link_to("#{format_date(entry.spent_on)} - #{entry.project}: #{l(:label_f_hour_plural, :value => entry.hours)}", edit_time_entry_path(entry)) %>
+  <% end %>
+</ul>
+
+<%= form_tag(bulk_update_time_entries_path, :id => 'bulk_edit_form') do %>
+  <%= hidden_field_tag 'back_url', params[:back_url] %>
+  <%= @time_entries.collect {|i| hidden_field_tag('ids[]', i.id)}.join.html_safe %>
+  <div class="box tabular gray-background">
+    <div>
+      <div class="combo-container">
+        <label><%= l(:field_project) %></label>
+        <% p_selected_value = @selected_visible_project.nil? ? {:name => '', :id => ''} : {:name => @selected_visible_project.name, :id => @selected_visible_project.id} %>
+        <%= scoped_easy_select_tag('time_entry[project_id]', @visible_projects, p_selected_value,
+          url_for(params.merge({:action => 'change_projects_for_bulk_edit', :format => 'json'})),
+          {:onchange => "$.post('#{j(url_for(:action => 'change_issues_for_bulk_edit', :format => 'html'))}', $('#bulk_edit_form').serialize(), function(data) {$('#issues_combo_container').html(data)})",
+            :html_options => {:id => 'time_entry_project_id'}, :root_element => 'projects'}
+        ) %>
+      </div>
+
+      <div class="combo-container" id="issues_combo_container">
+        <%= render :partial => 'timelog/issues_for_bulk_edit', :locals => {} %>
+      </div>
+
+      <p>
+        <%= label_tag(:time_entry_spent_on, l(:field_spent_on)) -%>
+        <%= text_field :time_entry, :spent_on, :size => 10 %><%= calendar_for('time_entry_spent_on') %>
+      </p>
+
+      <p>
+        <%= label_tag(:time_entry_hours, l(:field_hours)) %>
+        <%= text_field :time_entry, :hours, :size => 6 %>
+      </p>
+
+      <% if @available_activities.any? %>
+        <p>
+          <%= label_tag(:time_entry_activity_td, l(:field_activity)) -%>
+          <%= select_tag('time_entry[activity_id]', content_tag('option', l(:label_no_change_option), :value => '') + options_from_collection_for_select(@available_activities, :id, :name)) %>
+        </p>
+      <% end %>
+
+      <p class="timeentry-comments">
+        <%= label_tag(:time_entry_comments, l(:field_comments)) -%>
+        <%= text_field(:time_entry, :comments, :size => 100) %>
+      </p>
+
+      <% @custom_fields.each do |custom_field| %>
+        <p>
+          <%= label_tag("time_entry_custom_field_values_#{custom_field.id}", h(custom_field.translated_name)) -%>
+          <%= custom_field_tag_for_bulk_edit('time_entry', custom_field, @projects) %>
+        </p>
+      <% end %>
+
+      <%= call_hook(:view_time_entries_bulk_edit_details_bottom, { :time_entries => @time_entries }) %>
+    </div>
+  </div>
+
+  <p><%= submit_tag l(:button_submit), :class => 'button-1' %></p>
+<% end %>

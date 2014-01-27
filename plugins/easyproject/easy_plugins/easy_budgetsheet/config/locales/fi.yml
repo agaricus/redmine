@@ -1,0 +1,31 @@
+---
+fi:
+  budgetsheet_name: Arkki
+  budgetsheet_author: Easy Software
+  budgetsheet_description: ! '- Yleiskatsaus viettänyt aikaa käyttäjien hankkeisiin.'
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: Arkki
+  budgetsheet_date_from_label: Alkaen
+  budgetsheet_date_to_label: Voit
+  budgetsheet_project_label: Hanke
+  budgetsheet_activities_label: Aktiivisuus
+  budgetsheet_users_label: Käyttäjät
+  budgetsheet_export_button: Käyttää
+  budgetsheet_export_to_csv: viedä CSV
+  budgetsheet_export_to_pdf: viedä PDF
+  budgetsheet_export_to_html: katsella
+  budgetsheet_costs: Maksaa
+  budgetsheet_per_hour: tunnissa
+  budgetsheet_top_menu: Arkki
+  permission_view_budgetsheet: Katso Sheet
+  label_easy_budget_sheet_queries_plural: Budgetsheet
+
+  label_show_billable_things: Näytä "Laskutettava? ' valinta
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budgetsheet
+  field_project_root: Tärkein hanke
+  field_easy_is_billable: Laskutettava?
+  field_easy_billed: Laskutetaan?
+  sidebar_budgetsheet_all_users_queries: Työväen arkkia
+  label_billable_things_default_state: Default valtion

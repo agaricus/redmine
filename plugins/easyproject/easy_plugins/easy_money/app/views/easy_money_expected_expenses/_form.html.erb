@@ -1,0 +1,30 @@
+<div class="splitcontent">
+  <div class="splitcontentleft">
+    <p>
+      <label for="easy_money_name"><%= l(:field_easy_money_expected_expense_name) %><span class="required">*</span></label>
+      <%= f.text_field :name -%>
+    </p>
+    <p>
+      <%= f.label l(:field_easy_money_expected_expense_description) -%>
+      <%= f.text_area :description -%>
+      <%= wikitoolbar_for('easy_money_description') %>
+    </p>
+  </div>
+  <div class="splitcontentright">
+    <p>
+      <%= f.label l(:field_easy_money_expected_expense_spent_on) -%>
+      <%= f.text_field :spent_on, :size => 10 -%><%= calendar_for('easy_money_spent_on') -%>
+    </p>
+    <%= render :partial => 'easy_money/form_entity_price', :locals => { :f => f, :project => project, :easy_money_entity => expected_expense } %>
+    <% expected_expense.custom_field_values.each do |custom_value| -%>
+      <p>
+        <%= custom_field_tag_with_label :easy_money, custom_value %>
+      </p>
+    <% end -%>
+    <div id="easy-money-attachments-container">
+      <%= content_tag :strong, l(:label_easy_money_attachments) -%>
+      <%= render :partial => 'attachments/form', :locals => {:container => expected_expense} %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

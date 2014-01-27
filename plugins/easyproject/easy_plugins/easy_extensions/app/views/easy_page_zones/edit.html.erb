@@ -1,0 +1,13 @@
+<div id="easy-page-zone-form">
+  <h2><%= l(:label_easy_page_zone_edit) %></h2>
+
+  <%= form_for(@zone) do |f| %>
+    <%= error_messages_for @zone %>
+
+    <%= render :partial => 'form', :locals => {:f => f}  %>
+
+    <p><%= f.submit l(:button_update) %></p>
+  <% end %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>

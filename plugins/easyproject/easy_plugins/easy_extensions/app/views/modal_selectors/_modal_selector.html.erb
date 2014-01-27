@@ -1,0 +1,38 @@
+<div id="<%= params['field_id'] -%>-content-container" class="easy-lookup-modal-selector-container">
+  <%= render :partial => 'modal_selectors/modal_selector_filters', :locals => { :query => query} %>
+  <div id="modal-selector-entities">
+    <%= send(easy_query_renderer_method, query, entities, entity_pages, entity_count, selected_values, options) if respond_to?(easy_query_renderer_method) %>
+  </div>
+  <div class="modal-selected-button"><%= link_to_function options[:button_selector_assign_label], "saveAndCloseModalSelectorWindow('#{params['field_id']}', '#{params['field_id']}');", :title => options[:button_selector_assign_title], :class => 'button-1' -%></div>
+  <div class="modal-close-button"><%= link_to_function options[:button_close_label], "closeModalSelectorWindow();", :title => options[:button_close_title], :class => 'button-2' -%></div>
+  <div class="modal-selected-values">
+    <form id="<%= params['field_id'] -%>-modal-selected-values-form" action="">
+      <div id="<%= params['field_id'] -%>-modal-selected-values-container">
+        <% params[:ids].each do |x| -%>
+          <%= hidden_field_tag 'ids[]', x, :id => nil -%>
+        <% end unless params[:ids].blank? -%>
+        <div class="dont-copy">
+          <%= hidden_field_tag(:back_url, params[:back_url], :id => nil) if params[:back_url] -%>
+          <%= hidden_field_tag(:entity_attribute, params['entity_attribute']) -%>
+          <%= hidden_field_tag(:field_id, params['field_id']) -%>
+          <%= hidden_field_tag(:field_name, params['field_name'])-%>
+          <%= hidden_field_tag(:multiple, params['multiple']) if params['multiple'] -%>
+          <%= hidden_field_tag(:project_id, params['project_id']) if params['project_id'] -%>
+          <%= hidden_field_tag(:query_name, params['query_name']) if params['query_name']-%>
+          <%= hidden_field_tag(:issue_id, params['issue_id']) if params['issue_id'] %>
+        </div>
+        <% if params[:serializable_attributes] && params[:serializable_attributes].is_a?(Hash) %>
+          <% params[:serializable_attributes].each do |k, v| %>
+            <%= hidden_field_tag("serializable_attributes[#{k}]", v) -%>
+          <% end %>
+        <% end %>
+        <%= render :partial => 'modal_selectors/modal_selector_selected_values', :locals => { :selected_values => selected_values, :field_name => params['field_name'], :field_id => params['field_id'], :show_delete_link => true } %>
+      </div>
+    </form>
+  </div>
+  <div class="modal-hook">
+    <form id="<%= params['field_id'] -%>-modal-hook-form" action="">
+      <%= call_hook(:view_modal_selector_hook, {:hook_id => params[:hook_id], :query => query }) %>
+    </form>
+  </div>
+</div>

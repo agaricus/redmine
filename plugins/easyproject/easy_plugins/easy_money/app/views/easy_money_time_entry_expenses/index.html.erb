@@ -1,0 +1,24 @@
+<% url_params = { :project_id => @project }
+project_easy_money_settings_show_rate = @project.easy_money_settings.show_rate?('all')
+easy_money_rate_type_active = EasyMoneyRateType.active
+rate_type_size = 0 -%>
+
+<h2><%= l(:label_easy_money_time_entry_expenses) -%></h2>
+<%= render :partial => 'project_time_entry', :locals => { :url_params => url_params, :project_easy_money_settings_show_rate => project_easy_money_settings_show_rate, :easy_money_rate_type_active => easy_money_rate_type_active } -%>
+<div class="easy-money-project-time-entry-expenses-container">
+
+</div>
+
+<div id="easy-money-content" class="easy-money-issue-time-entry-expenses-container">
+  <%= render :partial => 'issue_time_entry', :locals => { :url_params => url_params, :project_easy_money_settings_show_rate => project_easy_money_settings_show_rate, :easy_money_rate_type_active => easy_money_rate_type_active } -%>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+<% end -%>

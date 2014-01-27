@@ -1,0 +1,12 @@
+<% projects, query = @easy_page_modules_data[block_name][:projects], @easy_page_modules_data[block_name][:query] %>
+<% if query %>
+  <%= toggling_container(modul_uniq_id, user, {:heading => (settings['query_type'] == '2' ? h(query.name) : link_to(h(query.name), { :controller => 'projects', :action => 'index', :project_id => query.project, :query_id => query}, :title => l(:label_user_saved_query, :queryname => query.name))), :container_html => {:class => 'module-content'}}) do %>
+    <% if (settings["output"] == "calendar") -%>
+      <%= render :partial => 'easy_page_modules/projects/project_query_calendar', :locals => {:projects => projects, :query => query, :block_name => block_name, :user => user, :modul_uniq_id => modul_uniq_id, :settings => settings} -%>
+    <% else -%>
+      <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:entities => @easy_page_modules_data[block_name][:prepared_result_entities], :query => query, :block_name => block_name, :user => user, :options => {:disable_sort => true, :go_to_url => {:controller => 'projects', :action => 'show'}}} -%>
+    <% end -%>
+  <% end %>
+<% else %>
+  <%= l(:label_easy_page_module_settings_missing) %>
+<% end %>

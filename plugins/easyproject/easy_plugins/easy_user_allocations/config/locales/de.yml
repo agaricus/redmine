@@ -1,0 +1,68 @@
+---
+de:
+  easy_user_allocations_name: Ressourcen-Management
+  easy_user_allocations_description: ! '- Management von Ressourcen / Menschen'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Anzeige Ressourcemanagement
+  permission_view_my_easy_user_allocations: Anzeige eigenes Ressourcen-Management
+  permission_edit_easy_user_allocations: Resourcen-Management bearbeiten 
+  permission_edit_my_easy_user_allocations_plan: eigenen Arbeitsplan bearbeiten
+  permission_view_easy_user_allocations_by_project: Zuweisungen nach Projekt ansehen
+  project_module_user_allocations: Ressourcemanagement
+  label_user_allocations: Ressourcemanagement
+  label_user_allocation_gantt: Ressourcen - Gantt
+  label_user_allocation_gantt_users: Benutzer
+  label_user_allocation_gantt_user_selection: Auswahl
+  label_user_allocation_gantt_range: Datum
+  label_allocations_by_project: Mittelzuweisung durch Projekt
+  label_unassigned_issues: Nicht zugewiesene Aufgaben
+  label_issue_id: Augaben-ID
+  label_allocation_worm_out_of_range: Um die Aufgabe anzuzeigen, wählen Sie einen größeren Datumsbereich.
+  label_allocation_changed_title: Die Aufgabe wurde geändert und wird beim Speichern aktualisiert.
+  label_user_allocation_plan: Arbeitsplan
+  label_filter_group_easy_user_allocation_query: Mittelzuweisung
+  text_easy_user_allocation_working_plan_bottom_info: Erlaubt Benutzer Arbeitsbelastung in der ausgewählten Woche zu planen. Tabelle zeigt die geplante und tatsächlich verbrachte Zeit.
+  resalloc:
+    title: Ressourcen
+    settings: Einstellungen
+    button_apply_settings: Einstellungen übernehmen
+    button_recalculate: Zuteilung neu berechnen
+    button_save: Änderungen speichern
+    button_undo: Nicht gespeicherte Änderungen zurücknehmen
+    button_split_issue: Aufgabe aufteilen
+    split_issue_help: Mit einem Klick auf eine nicht zugewiesene Aufgabe den Termin für die Aufteilung markieren.
+    error_date_range_too_long: muss weniger als 1 Jahr sein
+    legend_hours_worked: Zeitaufwand
+    legend_hours_overtime: Arbeitszeit außerhalb der vorgesehenen Zeit
+    legend_custom: Manuell zugewiesene Stunden
+  easy_pages:
+    modules:
+      user_allocation: Ressourcen-Verteilung
+      user_allocation_working_plan: Mittelzuweisung / Arbeitsplan
+  user_allocation_plan:
+    label_plan: Planen
+    label_real: Real
+    label_comment: Kommentar
+  easy_query:
+    name:
+      easy_user_allocation_query: Mittelzuweisung
+      easy_user_allocation_by_project_query: Mittelzuweisung durch Projekt
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Privat Filter für Ressourcenallokation
+        easy_user_allocation_by_project_query: Privat Filter für die Mittelverteilung nach Projekt
+      public:
+        easy_user_allocation_query: Öffentliche Filter für Ressourcenallokation
+        easy_user_allocation_by_project_query: Öffentliche Filter für Ressourcenzuteilung durch Projekt
+  label_setting_keep_issue_start_dates: Ändern Sie nicht die Startdaten der Aufgabe .
+  text_setting_keep_issue_start_dates: Wenn diese Option aktiviert und und die geschätzten Stunden zu niedrig sind, wird Aufgabe nicht gekürzt, sondern es werden bis 0 Stunden zugeteilt.
+  label_setting_allocate_evenly: gleichmäßig verteilen
+  text_setting_allocate_evenly: 'Wenn aktiviert: Falls eine Aufgabe im
+    Gantt neu eingestellt wird, werden geschätzte Stunden gleichmäßig über die gesamte Dauer der Aufgabe verteilt.'
+  label_setting_allocate_from_start: Verteilen nach Startdaten von Aufgaben
+  project_module_easy_user_allocations: Verwenden von Ressourcen / Personen
+  text_overallocation: Summe der zugeteilten Stunden ist größer als geschätzte Stunden.
+  easy_user_allocations_sidebar_all_users_queries: Zuweisungen von Nutzern
+  easy_user_allocations_label_show_assigned_issues: Anzeige Zuweisung für Benutzer %{username}
+  
+  label_edit_estimated_hours: geschätzte Stunden bearbeiten 

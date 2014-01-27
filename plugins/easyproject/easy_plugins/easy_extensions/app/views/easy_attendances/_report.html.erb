@@ -1,0 +1,96 @@
+<h1><%= l(:'easy_attendance.label') -%></h1>
+
+<%= form_tag() do %>
+  <div class="gray-background">
+    <%= hidden_field_tag 'tab', 'report' %>
+    <div class="floatleft">
+      <div id="report-date-select">
+        <p>
+          <%= radio_button_tag 'report[period_type]', '1', !@free_period, :onclick => 'dateRangePeriodToggle(true);' %>
+          <%= select_tag 'report[period]', options_for_period_select(@saved_params[:period] || 'current_month'),
+            :onfocus => '$("#report_period_type_1").attr("checked", true);',
+            :disabled => @free_period %>
+        </p>
+        <p>
+          <%= radio_button_tag 'report[period_type]', '2', @free_period, :onclick => 'dateRangePeriodToggle(false);' %>
+          <span onclick="$('#report_period_type_2').attr('checked', true);dateRangePeriodToggle(false);">
+            <%= l(:label_date_from_to, :start => (text_field_tag('report[from]', @from, :size => 10, :disabled => !@free_period) + calendar_for('report_from')),
+              :end => (text_field_tag('report[to]', @to, :size => 10, :disabled => !@free_period) + calendar_for('report_to'))).html_safe %>
+          </span>
+        </p>
+        <script type="text/javascript">
+          function dateRangePeriodToggle(bool) {
+            $("#report_from, #report_to").attr("disabled", bool);$("#report_period").attr("disabled", !bool)
+          }
+        </script>
+      </div>
+    </div>
+    <div class="floatright">
+      <% if @users_and_groups.any? %>
+        <%= select_tag('report[users][]', grouped_options_for_select(@users_and_groups, @saved_params[:users] || User.current.id), {:multiple => 1, :size => 7})%>
+      <% end %>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <p>
+    <%= submit_tag l(:button_apply) %>
+  </p>
+<% end %>
+
+<br />
+
+<% if @reports.any? %>
+  <% if @reports.one? %>
+    <%= render(:partial => 'personal_report', :locals => {:report => @reports.first, :activities => @activities}) %>
+  <% else %>
+    <table class="list" id="easy-attendance-reports">
+      <thead>
+        <th><%= l(:field_name)-%></th>
+        <th></th>
+        <% @activities.each do |activity| %>
+          <th><%= h activity.name -%></th>
+        <% end %>
+        <%= call_hook :view_easy_attendances_report_list_header, {:reports => @reports, :activities => @activities, :saved_params => @saved_params} %>
+      </thead>
+      <tbody>
+        <% @reports.each do |report|
+          cycle_color = cycle('odd', 'even')
+        %>
+          <tr class="<%= cycle_color %>">
+            <td class="user-name"><%= h report.user.name -%></td>
+            <td><%= l(:label_easy_attendance_report_working_time, :sum_timeentries => format_hours(report.sum_timeentries), :total_working_hours => format_hours(report.sum_working_hours),
+                :timeentries_percent => content_tag(:span, report.timeentries_percent, :class => "easy-attendance-report-#{report.timeentries_percent_class_name}")).html_safe -%></td>
+            <td colspan="<%= @activities.size -%>"></td>
+            <%= call_hook :view_easy_attendances_report_list_body_time_entry_line, {:report => report, :activities => @activities, :saved_params => @saved_params, :cycle_color => cycle_color} %>
+          </tr>
+          <tr class="<%= cycle_color %>">
+            <td></td>
+            <td><%= l(:label_easy_attendance_report_attendence_time, :sum_attendance => format_hours(report.sum_attendances), :total_working_hours => format_hours(report.sum_attendance_hours),
+                :working_percent => content_tag(:span, report.working_attendance_percent, :class => "easy-attendance-report-#{report.working_percent_class_name}")).html_safe -%></td>
+            <% @activities.each do |activity|
+              sum_act = report.user_activities[activity.id] || 0.0 -%>
+              <td><%= format_hours(sum_act.to_f / 1.hour) -%></td>
+            <% end %>
+            <%= call_hook :view_easy_attendances_report_list_body_attendance_line, {:report => report, :activities => @activities, :saved_params => @saved_params, :cycle_color => cycle_color} %>
+          </tr>
+          <tr class="<%= cycle_color %> time-entry-year-sum">
+            <%= content_tag(:td, l(:label_report_sum_time_entry, :scope => :easy_attendance, :year => report.from.year), :colspan => 2) -%>
+            <% @activities.each do |activity| %>
+              <%= content_tag(:td, (l(:label_day, :count => ('%.2f' % activity.sum_in_days_timeentry(report.user, report.from.year)).to_f) unless activity.mapped_project_id.nil?) ) -%>
+            <% end %>
+            <%= call_hook :view_easy_attendances_report_list_body_sum_time_entry_line, {:report => report, :activities => @activities, :saved_params => @saved_params, :cycle_color => cycle_color} %>
+          </tr>
+          <tr class="<%= cycle_color %> easy-attendance-year-sum" style="border-bottom-width: 2px">
+            <%= content_tag(:td, l(:label_report_sum_attendance, :scope => :easy_attendance, :year => report.from.year), :colspan => 2) -%>
+            <% @activities.each do |activity| %>
+              <%= content_tag(:td, l(:label_day, :count => ('%.2f' % activity.sum_in_days_easy_attendance(report.user, report.from.year)).to_f)) -%>
+            <% end %>
+            <%= call_hook :view_easy_attendances_report_list_body_sum_attendnace_line, {:report => report, :activities => @activities, :saved_params => @saved_params, :cycle_color => cycle_color} %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>

@@ -1,0 +1,3 @@
+<% @easy_page_modules_data[block_name][:selected].each do |query_class| %>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:user => user, :query_class => query_class, :modul_uniq_id => modul_uniq_id, :private_queries => Array(@easy_page_modules_data[block_name][:personal][query_class]), :public_queries => Array(@easy_page_modules_data[block_name][:public][query_class])} -%>
+<% end %>

@@ -1,0 +1,86 @@
+<%= form_tag({:action => 'edit', :tab => 'issues'}, :class => 'tabular long2') do %>
+
+  <div class="splitcontent">
+    <div class="splitcontentleft">
+      <fieldset>
+        <legend><%= l(:heading_issues_settings_display) -%></legend>
+        <div class="gray-background">
+          <p>
+            <%= hidden_field_tag('easy_setting[show_issue_id]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_show_issue_id', l(:setting_show_issue_id)) %><%= check_box_tag('easy_setting[show_issue_id]', '1', EasySetting.value('show_issue_id')) -%>
+          </p>
+          <p>
+            <%= setting_check_box :display_subprojects_issues %>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[display_issue_relations_on_new_form]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_display_issue_relations_on_new_form', l(:setting_display_issue_relations_on_new_form)) %><%= check_box_tag('easy_setting[display_issue_relations_on_new_form]', '1', EasySetting.value('display_issue_relations_on_new_form') == true) -%>
+          </p>
+          <p>
+            <%= content_tag(:label, l(:setting_issue_created_on_date_format_label)) + select_tag('easy_setting[issue_created_on_date_format]', options_for_select([[l(:setting_issue_created_on_date_format_datetime),'datetime'],[l(:setting_issue_created_on_date_format_date),'date']], :selected => EasySetting.value('issue_created_on_date_format').to_s)) %>
+          </p>
+          <p>
+            <%= label_tag :easy_setting_issue_color_scheme_for, l(:label_issue_color_scheme_for) -%><%= select_tag('easy_setting[issue_color_scheme_for]', options_for_select([[l(:label_issue_priority), 'issue_priority'],[l(:label_issue_status),'issue_status'],[l(:label_tracker),'tracker']], EasySetting.value('issue_color_scheme_for'))) %>
+          </p>
+        </div>
+      </fieldset>
+    </div>
+    <div class="splitcontentright">
+      <fieldset>
+        <legend><%= l(:heading_issues_settings_behaviour) -%></legend>
+        <div class="gray-background">
+          <p>
+            <%= hidden_field_tag('easy_setting[quick_jump_to_an_issue]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_quick_jump_to_an_issue', l(:setting_quick_jump_to_an_issue)) %><%= check_box_tag('easy_setting[quick_jump_to_an_issue]', '1', EasySetting.value('quick_jump_to_an_issue')) -%>
+          </p>
+          <p>
+            <%= hidden_field_tag 'easy_setting[milestone_effective_date_from_issue_due_date]', false, :id => false %>
+            <%= label_tag( 'easy_setting[milestone_effective_date_from_issue_due_date]', l(:setting_milestone_effective_date_from_issue_due_date)) %><%= check_box_tag 'easy_setting[milestone_effective_date_from_issue_due_date]', true, EasySetting.value('milestone_effective_date_from_issue_due_date') %>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[enable_private_issues]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_enable_private_issues', l(:setting_enable_private_issues)) %><%= check_box_tag('easy_setting[enable_private_issues]', '1', EasySetting.value('enable_private_issues')) -%>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[allow_repeating_issues]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_allow_repeating_issues', l(:setting_allow_repeating_issues)) %><%= check_box_tag('easy_setting[allow_repeating_issues]', '1', EasySetting.value('allow_repeating_issues')) -%>
+          </p>
+          <p>
+            <%= setting_select :cross_project_subtasks, cross_project_subtasks_options %>
+          </p>
+          <p>
+            <%= setting_check_box :cross_project_issue_relations %>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[close_subtask_after_parent]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_close_subtask_after_parent', l(:setting_close_subtask_after_parent)) %><%= check_box_tag('easy_setting[close_subtask_after_parent]', '1', EasySetting.value('close_subtask_after_parent')) -%>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[issue_recalculate_attributes]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_issue_recalculate_attributes', l(:setting_issue_recalculate_attributes)) %><%= check_box_tag('easy_setting[issue_recalculate_attributes]', '1', EasySetting.value('issue_recalculate_attributes') == true) -%>
+          </p>
+          <p>
+            <%= setting_select :issue_done_ratio, Issue::DONE_RATIO_OPTIONS.collect {|i| [l("setting_issue_done_ratio_#{i}"), i]} %>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[issue_set_done_after_close]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_issue_set_done_after_close', l(:setting_issue_set_done_after_close)) %><%= check_box_tag('easy_setting[issue_set_done_after_close]', '1', EasySetting.value('issue_set_done_after_close')) -%>
+          </p>
+          <p>
+            <%= hidden_field_tag('easy_setting[issue_private_note_as_default]', '0', :id => nil) -%>
+            <%= label_tag('easy_setting_issue_private_note_as_default', l(:setting_issue_private_note_as_default)) %><%= check_box_tag('easy_setting[issue_private_note_as_default]', '1', EasySetting.value('issue_private_note_as_default')) -%>
+          </p>
+          <p>
+            <%= setting_text_field :issues_export_limit, :size => 6 %>
+          </p>
+          <p>
+            <%= setting_text_field :gantt_items_limit, :size => 6 %>
+          </p>
+        </div>
+      </fieldset>
+    </div>
+    <div class="clear"></div>
+    <%= call_hook(:view_settings_issues_form) %>
+    <%= submit_tag l(:button_save), :class => 'button-1' -%>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => (l('easy_pages.modules.issues_reported_by_me') + ' (' + @easy_page_modules_data[block_name][:issues_count].to_s + ')'), :container_html => {:class => 'module-content'}}) do %>
+  <%= render :partial => 'issues/list_my_page', :locals => { :issues => @easy_page_modules_data[block_name][:reported_issues], :block_name => block_name } %>
+  <% if @easy_page_modules_data[block_name][:reported_issues].length > 0 %>
+    <p class="small"><%= link_to l(:label_issue_view_all), :controller => 'issues', :action => 'index', :set_filter => 1, :status_id => 'o', :author_id => user.id, :sort => EasySetting.value('issue_default_sorting_string_short') %></p>
+  <% end %>
+<% end %>
+<% content_for :header_tags do %>
+  <%= auto_discovery_link_tag(:atom, {:controller => 'issues', :action => 'index', :set_filter => 1, :author_id => user.id, :format => 'atom', :key => User.current.rss_key}, {:title => l(:label_reported_issues)}) %>
+<% end %>

@@ -1,0 +1,57 @@
+<% uniq_prefix = "#{controller_name}_#{action_name}_" -%>
+<div id="templates-index">
+  <% require_dependency 'admin_helper' -%>
+
+  <%= content_tag :h1, l(:label_templates_plural) -%>
+
+  <% if (@projects.empty?) -%>
+    <p class="nodata"><%= l(:label_no_data) -%></p>
+  <% else -%>
+    <%= form_tag({}) do %>
+      <table class="list templates">
+        <thead>
+          <tr>
+            <%= content_tag(:th, link_to_function('', "toggleIssuesSelection($(this))",
+                :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked')) -%>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @projects.each do |project| -%>
+            <% uniq_id = uniq_prefix + "project-#{project.id}" -%>
+            <tr id="<%= uniq_id -%>" class="hascontextmenu <%= cycle("odd", "even") -%> <%= project.css_project_classes(uniq_prefix) -%>
+            <%= ("subproject " + "parentproject_#{project.parent_id}") if project.child? -%>
+                <%= toggle_open_css_row(uniq_id, User.current, true) -%>" >
+                  <%= content_tag :td, check_box_tag('ids[]', project.id, false, :id => nil), :class => 'checkbox hide-when-print' -%>
+              <td class="name" style="padding-left: <%= project.level -%>em;">
+                <%= project_plus_button(!project.leaf?, project.id, uniq_prefix) %>
+                <%= link_to(h(project.name), :controller => 'projects', :action => 'show', :id => project) -%>
+              </td>
+              <td class="descr"><div class="long_descr"><%= truncate_html(textilizable(project.description, {:headings => false, :project => project}), 255) %></div></td>
+              <td class="fast-icons">
+                <%= link_to(l(:button_create_project_from_template), { :controller => 'templates', :action => 'show_create_project', :id => project, :'project[parent_id]' => (params[:project] && params[:project][:parent_id])}, :class => 'button-1 icon icon-add', :title => l(:title_button_template_create_project)) %>
+                <span class="btn_contextmenu_trigger icon icon-settings button-2" title="<%= l(:title_additional_context_menu) %>"><%= l(:button_additional_context_menu) -%></span>
+              </td>
+            </tr>
+          <% end -%>
+        </tbody>
+      </table>
+    <% end -%>
+  <% end -%>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+<% @projects.each do |p|
+  uniq_id = uniq_prefix + 'project-' + p.id.to_s
+  unless toggle_button_expanded?(uniq_id, User.current)  -%>
+          HideTableRow('<%= uniq_prefix -%>', 'project', <%= p.id -%>, true);
+  <% end
+  end -%>
+    });
+  </script>
+  <% ### PAGE CUSTOMS ########################################################## -%>
+
+  <% html_title(l(:label_templates_plural)) -%>
+
+</div>
+<%= context_menu templates_context_menu_path %>

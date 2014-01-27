@@ -1,0 +1,5 @@
+<ul class="document-custom-field-values">
+  <% custom_field_values.each do |value| %>
+    <li><span><%= h(value.custom_field.translated_name) %>: </span><%= show_value(value) %></li>
+  <% end -%>
+</ul>

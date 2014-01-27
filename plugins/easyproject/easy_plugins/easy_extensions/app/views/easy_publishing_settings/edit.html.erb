@@ -1,0 +1,19 @@
+<div id="easy-publishing-settings-container">
+  <h2><%= l(:easy_publishing_setting) %></h2>
+  <%= form_for(@publishing_setting, :html => {:multipart => true}) do |f| %>
+    <%= error_messages_for @publishing_setting %>
+    <div class="gray-background tabular">
+      <%= render :partial => 'form', :locals => {:f => f}  -%>
+    </div>
+    <p>
+      <%= f.submit l(:button_save), :class => 'button-1' -%>
+    </p>
+  <% end -%>
+</div>
+<% if @publishing_setting.easy_publishing_module_id == 3 -%>
+  <%= link_to_attachments(@publishing_setting) %>
+<% end -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to(l(:button_back), params[:back_url] || url_for({ :controller => 'easy_publishing_settings', :action => 'index' }), :class => 'button-2') %>
+<% end %>

@@ -1,0 +1,21 @@
+<% if page_module.entity_id.blank? -%>
+  <%= render :partial => 'easy_page_modules/page_module_cannot_be_displayed', :locals => { :page_module => page_module } %>
+<% else -%>
+  <%= toggling_container(modul_uniq_id, user, {:heading => l(:label_simple_add_project_task_on_project), :container_html => {:class => 'module-content project-tree'}}) do %>
+    <table class="list my_projects">
+      <tbody>
+        <%= render :partial => 'projects/projects_tree', :locals => {:projects => @easy_page_modules_data[block_name][:projects], :user => user, :modul_uniq_id => modul_uniq_id} %>
+      </tbody>
+    </table>
+    <% uniq_prefix = "#{controller_name}_#{action_name}_#{modul_uniq_id}" -%>
+    <script type="text/javascript">
+      $(document).ready(function() {
+    <% @easy_page_modules_data[block_name][:projects].each do |p| -%>
+      <% uniq_id = uniq_prefix + 'project-' + p.id.to_s -%>
+      <% next if toggle_button_expanded?(uniq_id, user) -%>
+          HideTableRow('<%= uniq_prefix -%>', 'project', <%= p.id -%>, true);
+    <% end -%>
+      });
+    </script>
+  <% end %>
+<% end -%>

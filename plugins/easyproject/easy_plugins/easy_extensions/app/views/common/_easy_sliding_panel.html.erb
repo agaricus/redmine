@@ -1,0 +1,12 @@
+<div id="<%= panel.dom_id %>" class="easy-sliding-panel-container hide-when-print" <%= panel.render_data_attribute.html_safe %> style="display:none">
+  <div class="easy-sliding-panel-wrapper">
+    <div class="clicker-panel" id="clicker_<%= panel.dom_id %>">
+      <%= content_tag(:span, panel.clicker_text, :class => 'clicker-panel-inner-text') %>
+    </div>
+    <div class="expander-panel">
+      <%= panel.panel_content %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_tag("$(function() {$('##{panel.dom_id}').#{panel.name}(#{panel.js_options.html_safe})})") %>

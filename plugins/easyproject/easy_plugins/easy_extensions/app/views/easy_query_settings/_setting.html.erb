@@ -1,0 +1,37 @@
+<%= form_tag({:action => 'save'}, :onsubmit => "selectAllOptions('#{@easy_query.class.name.underscore}_selected_columns');") do %>
+  <%= hidden_field_tag :tab, @easy_query.class.name.underscore -%>
+  <div class="gray-background">
+    <%= content_tag :h4, l(:default_fitlers, :scope => [:easy_query, :label]) -%>
+    <%= render :partial => 'easy_queries/filters', :locals => {:query => @easy_query, :modul_uniq_id => "#{@easy_query.class.name.underscore}_"} -%>
+    <br />
+    <%= content_tag :h4,  l(:default_columns, :scope => [:easy_query, :label]) -%>
+    <%= render :partial => 'easy_queries/columns', :locals => {:query => @easy_query, :modul_uniq_id => "#{@easy_query.class.name.underscore}_"} -%>
+    <br />
+
+    <% if false %>
+      <%= content_tag :h4,  l(:label_sort) -%>
+      <table class="sort-settings">
+        <% 3.times do |i| -%>
+          <tr>
+            <td><%= i+1 -%>:</td>
+            <td>
+              <%= select_tag("easy_query[sort_criteria][#{i}][]",
+                options_for_select([[]] + @easy_query.available_columns.select(&:sortable?).collect {|column| [column.caption, column.name.to_s]}, @easy_query.sort_criteria_key(i))) -%>
+            </td>
+            <td>
+              <%= select_tag( "easy_query[sort_criteria][#{i}][]",
+                options_for_select([[], [l(:label_ascending), 'asc'], [l(:label_descending), 'desc']], @easy_query.sort_criteria_order(i))) -%>
+            </td>
+          </tr>
+        <% end -%>
+      </table>
+    <% end # temporary not available s%>
+
+    <%= content_tag :h4,  l(:field_group_by) -%>
+    <p>
+      <%= label_tag :grouped_by, l(:field_column_names) -%>
+      <%= select_tag( 'easy_query[group_by]', options_for_select([[]] + @easy_query.groupable_columns.collect {|c| [c.caption, c.name.to_s]}, @easy_query.group_by), :id => :grouped_by) -%>
+    </p>
+  </div>
+  <%= content_tag :p, submit_tag(l(:button_save), :class => 'button-1') -%>
+<% end %>

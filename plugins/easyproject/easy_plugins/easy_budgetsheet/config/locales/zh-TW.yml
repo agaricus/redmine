@@ -1,0 +1,31 @@
+---
+zh-TW:
+  budgetsheet_name: 片
+  budgetsheet_author: 易軟件
+  budgetsheet_description: ! '- 概述用戶的項目花費的時間。'
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: 片
+  budgetsheet_date_from_label: 從
+  budgetsheet_date_to_label: 對
+  budgetsheet_project_label: 項目
+  budgetsheet_activities_label: 活動
+  budgetsheet_users_label: 用戶
+  budgetsheet_export_button: 使用
+  budgetsheet_export_to_csv: 導出到CSV
+  budgetsheet_export_to_pdf: 導出為PDF格式
+  budgetsheet_export_to_html: 看
+  budgetsheet_costs: 成本
+  budgetsheet_per_hour: 每小時
+  budgetsheet_top_menu: 片
+  permission_view_budgetsheet: 查看表
+
+  label_show_billable_things: 顯示的可收費的？“選擇
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budgetsheet
+  field_project_root: 主要項目
+  field_easy_is_billable: 可收費的嗎？
+  field_easy_billed: 帳單嗎？
+  sidebar_budgetsheet_all_users_queries: 工人張
+  label_billable_things_default_state: 默認狀態
+  label_easy_budget_sheet_queries_plural: Budgetsheet

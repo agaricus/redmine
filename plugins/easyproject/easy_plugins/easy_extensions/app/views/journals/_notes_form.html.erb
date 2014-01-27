@@ -1,0 +1,17 @@
+<%= form_tag({}, :id => "journal-#{@journal.id}-form") do %>
+  <%= hidden_field_tag('back_url', params[:back_url]) if params[:back_url] %>
+  <%= text_area_tag :notes, @journal.notes, :class => 'wiki-edit',
+    :rows => (@journal.notes.blank? ? 10 : [[10, @journal.notes.length / 50].max, 100].min), :id => "notes-#{@journal.id}" %>
+  <%= call_hook(:view_journals_notes_form_after_notes, { :journal => @journal}) %>
+  <p>
+    <%= submit_tag l(:button_save), :class => 'button-1 floatleft', :style => 'clear:left' -%>
+    <%= preview_link preview_edit_issue_path(:project_id => @project, :id => @journal),
+      "journal-#{@journal.id}-form",
+      "journal_#{@journal.id}_preview" %> |
+    <%= link_to l(:button_cancel), '#', :onclick => "$('#journal-#{@journal.id}-form').remove(); " +
+      "$('#journal-#{@journal.id}-notes').show(); return false;", :class => 'button-2' -%>
+  </p>
+
+  <div id="journal_<%= @journal.id %>_preview" class="wiki"></div>
+  <%= wikitoolbar_for "notes-#{@journal.id}" %>
+<% end %>

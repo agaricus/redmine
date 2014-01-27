@@ -1,0 +1,9 @@
+<%= title [l(:label_group_plural), groups_path], @group.name %>
+
+<%= render_tabs group_settings_tabs %>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to l(:label_group_new), new_group_path, :class => 'button-1' %>
+<% end %>

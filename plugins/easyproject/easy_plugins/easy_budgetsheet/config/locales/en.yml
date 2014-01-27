@@ -1,0 +1,36 @@
+en:
+  budgetsheet_name: "Sheet"
+  budgetsheet_author: "Easy Software"
+  budgetsheet_description: " - overview of spent time by users on projects."
+  budgetsheet_author_url: "http://www.easyproject.cz/en"
+
+  budgetsheet_title: Sheet
+  budgetsheet_date_from_label: From
+  budgetsheet_date_to_label: To
+  budgetsheet_project_label: Project
+  budgetsheet_activities_label: Activity
+  budgetsheet_users_label: Users
+  budgetsheet_export_button: Use
+  budgetsheet_export_to_csv: export to CSV
+  budgetsheet_export_to_pdf: export to PDF
+  budgetsheet_export_to_html: view
+  budgetsheet_costs: "Cost"
+  budgetsheet_per_hour: "per hour"
+  budgetsheet_top_menu: Sheet
+
+  permission_view_budgetsheet: "View Sheet"
+  label_easy_budget_sheet_queries_plural: Budgetsheet
+
+
+  label_show_billable_things: "Show 'Billable?' choice"
+  label_billable_things_default_state: 'Default state'
+
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budgetsheet
+
+  field_project_root: "Main project"
+  field_easy_is_billable: 'Billable?'
+  field_easy_billed: 'Billed?'
+
+  sidebar_budgetsheet_all_users_queries: "Worker's sheets"

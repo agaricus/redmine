@@ -1,0 +1,34 @@
+<table class="list issues">
+  <tbody>
+    <% if @rss_items.size == 0 -%>
+      <tr><td><%=l(:label_no_data)-%></td></tr>
+    <% else -%>
+      <% @rss_items.each do |feed|
+        tr_css = 'hascontextmenu ' + cycle('odd', 'even') + ' issue priority-' + feed.issue_priority_position
+        tr_css << ' overdue' if !feed.issue_due_date.to_s.blank? && (feed.issue_due_date.to_date < Date.today) && feed.issue_status_closed.to_i == 0 -%>
+        <tr class="<%= tr_css -%>">
+          <td class="project-name" title="<%=l(:label_show_project_info, :projectname => feed.project_name.to_s)-%>">
+            <%= link_to(feed.project_name.to_s, feed.link_project.to_s)-%>
+          </td>
+          <td class="subject priority-<%=feed.issue_priority_position.to_s-%>">
+            <%= link_to(feed.issue_subject.to_s, feed.link_issue.to_s)-%>
+          </td>
+          <td class="done-ratio" title="<%=l(:label_done)+' '+feed.issue_done_ratio.to_s -%> %">
+            <%= progress_bar(feed.issue_done_ratio.to_i, :width => '80px' )-%>
+          </td>
+          <% if !feed.issue_due_date.to_s.blank?-%>
+            <td class="due-date" title="<%= l(:field_due_date)+' '+feed.issue_due_date.to_s -%>">
+              <%= distance_of_time_in_words(Time.now, feed.issue_due_date.to_s.to_date) -%>
+            </td>
+          <% else -%>
+            <td class="due-date"></td>
+          <% end -%>
+          <td class="fast-icons">
+            <%= link_to("", feed.link_timelog.to_s, :class => 'icon icon-time-add', :title => l(:button_log_time))-%>
+            <%= link_to("", feed.link_issues.to_s, :class => 'icon icon-add', :title => l(:button_update))-%>
+          </td>
+        </tr>
+      <% end -%>
+    <% end -%>
+  </tbody>
+</table>

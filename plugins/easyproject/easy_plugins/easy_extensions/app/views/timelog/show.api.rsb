@@ -1,0 +1,1 @@
+render_api_time_entry(api, @time_entry)

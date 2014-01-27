@@ -1,0 +1,3 @@
+api.message do
+  api.value(@messsage)
+end

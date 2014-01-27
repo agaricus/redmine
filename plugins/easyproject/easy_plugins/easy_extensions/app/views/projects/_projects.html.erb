@@ -1,0 +1,6 @@
+<% if query.grouped? || (!query.sort_criteria.nil? && query.sort_criteria.size > 0) %>
+  <%= render :partial => 'list', :locals => {:projects => projects, :query => query} %>
+<% else %>
+  <% query_active = query.id || (session[:projectquery] && (session[:projectquery][:set_filter] == '1')) %>
+  <%= render :partial => 'projects/projects_query_tree', :locals => {:projects => projects, :query => query} %>
+<% end %>

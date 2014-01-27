@@ -1,0 +1,72 @@
+<%= form_tag({:action => 'edit'}) do %>
+  <div class="box tabular settings long2">
+    <p><%= setting_text_field :app_title, :size => 30 %></p>
+    <p style="display:none"><%= setting_text_area :welcome_text, :cols => 60, :rows => 5, :class => 'wiki-edit' %></p>
+    <%= wikitoolbar_for 'settings_welcome_text' %>
+    <p><%= setting_text_field :attachment_max_size, :size => 6 %> <%= l(:"number.human.storage_units.units.kb") %></p>
+    <p>
+      <label><%= l(:label_easy_setting_attachment_description) %></label>
+      <label class="inline">
+        <%= radio_button_tag 'easy_setting[attachment_description]', 'required',
+          EasySetting.value('attachment_description_required') -%>
+        <%= l(:label_easy_setting_attachment_description_required) %>
+      </label>
+      <label class="inline">
+        <%= radio_button_tag 'easy_setting[attachment_description]', '1',
+          EasySetting.value('attachment_description') && !EasySetting.value('attachment_description_required') -%>
+        <%= l(:label_easy_setting_attachment_description_enabled) %>
+      </label>
+      <label class="inline">
+        <%= radio_button_tag 'easy_setting[attachment_description]', '0', !EasySetting.value('attachment_description') -%>
+        <%= l(:label_easy_setting_attachment_description_disabled) %>
+      </label>
+    </p>
+    <p><%= setting_text_field :per_page_options, :size => 20 %><br />
+      <em><%= l(:text_comma_separated) %></em></p>
+    <p><%= setting_text_field :activity_days_default, :size => 6 %> <%= l(:label_day_plural) %></p>
+    <p><%= setting_text_field :host_name, :size => 60 %><br />
+      <em><%= l(:label_example) %>: <%= @guessed_host_and_path %></em></p>
+    <p><%= setting_select :protocol, [['HTTP', 'http'], ['HTTPS', 'https']] %></p>
+    <p>
+      <%= setting_select :text_formatting, Redmine::WikiFormatting.format_names.collect{|name| [name, name.to_s]}, :blank => :label_none %>
+      <br />
+      <em><%= l(:text_textile_migration) -%></em>
+    </p>
+    <script type="text/javascript">
+      $("#settings_text_formatting").change(function(event) {
+        if (event.target.value == 'HTML') {
+          $("#settings-general-easy-settings-ckeditor-toolbar-config").show();
+        } else {
+          $("#settings-general-easy-settings-ckeditor-toolbar-config").hide();
+        }
+      })
+    </script>
+    <p id="settings-general-easy-settings-ckeditor-toolbar-config" style="<%= Setting.text_formatting.to_s == 'HTML' ? '' : 'display:none' %>">
+      <%= label_tag(:easy_setting_ckeditor_toolbar_config, l(:field_ckeditor_toolbar_config)) %><%= select_tag('easy_setting[ckeditor_toolbar_config]', options_for_select(%w(Basic Extended Full).collect{|c| [l(c.downcase, :scope => :editor_config_names), c]}, EasySetting.value('ckeditor_toolbar_config'))) %>
+    </p>
+    <div>
+      <%= content_tag(:div, l(:text_easy_attachment_reminder_explanatory_html).html_safe, :style => 'float: right') %>
+      <p>
+        <%= label_tag(:easy_setting_attachment_reminder_words, l(:field_attachment_reminder_words)) %>
+        <%= text_area_tag('easy_setting[attachment_reminder_words]', EasySetting.value('attachment_reminder_words'), :size => '35x2', :style => 'width: 200px') %>
+      </p>
+    </div>
+    <p><%= setting_check_box :cache_formatted_text %></p>
+    <p style="display:none"><%= setting_select :wiki_compression, [['Gzip', 'gzip']], :blank => :label_none %></p>
+    <p><%= setting_text_field :feeds_limit, :size => 6 %></p>
+    <p><%= setting_text_field :file_max_size_displayed, :size => 6 %> <%= l(:"number.human.storage_units.units.kb") %></p>
+    <p style="display:none"><%= setting_text_field :diff_max_lines_displayed, :size => 6 %></p>
+    <p style="display:none"><%= setting_text_field :repositories_encodings, :size => 60 %>
+      <em class="info"><%= l(:text_comma_separated) %></em>
+    </p>
+    <% if RUBY_VERSION >= '1.9' %>
+      <p>
+        <%= hidden_field_tag('easy_setting[use_easy_cache]', '0', :id => nil) -%>
+        <%= label_tag('easy_setting_use_easy_cache', l(:setting_use_easy_cache)) %><%= check_box_tag('easy_setting[use_easy_cache]', '1', EasySetting.value('use_easy_cache')) -%> (Experimental, only Ruby 1.9.3 and higher)
+        <%= link_to(l(:button_release_cache), {:controller => 'settings', :action => 'release_cache'}, :remote => true, :class => 'button-2', :title => l(:button_release_cache)) %>
+      </p>
+    <% end %>
+    <%= call_hook(:view_settings_general_form) %>
+  </div>
+  <%= submit_tag l(:button_save), :class => 'button-1' %>
+<% end %>

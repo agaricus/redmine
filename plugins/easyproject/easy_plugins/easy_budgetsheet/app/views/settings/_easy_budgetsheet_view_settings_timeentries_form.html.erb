@@ -1,0 +1,8 @@
+<p>
+  <%= f.label :show_billable_things, l(:label_show_billable_things) -%>
+  <%= f.check_box(:show_billable_things, :checked => EasySetting.value('show_billable_things'), :onchange => "$(this).next().toggle()") -%>
+  <span style="<%= 'display:none' unless EasySetting.value('show_billable_things') %>">
+    <%= f.label(:billable_things_default_state, l(:label_billable_things_default_state), :class => 'inline') %>
+    <%= f.check_box(:billable_things_default_state, :checked => EasySetting.value('billable_things_default_state')) %>
+  </span>
+</p>

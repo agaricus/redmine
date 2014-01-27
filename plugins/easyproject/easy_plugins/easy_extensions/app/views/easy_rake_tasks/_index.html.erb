@@ -1,0 +1,39 @@
+<% if tasks.blank? %>
+  <p class="nodata"><%= l(:label_no_data) -%></p>
+<% else %>
+  <%= form_tag do %>
+    <table class="list easy-rake-tasks">
+      <thead>
+        <tr>
+          <th style="display:none"></th>
+          <th><%= l(:field_active) -%></th>
+          <th><%= l(:field_name) -%></th>
+          <th><%= l(:'easy_rake_tasks.views.interval') -%></th>
+          <th><%= l(:'easy_rake_tasks.views.next_run_at') -%></th>
+          <th><%= l(:'easy_rake_tasks.views.last_action') -%></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tasks.each do |task| %>
+          <tr class="<%= cycle('odd', 'even') -%> hascontextmenu">
+            <td style="display:none"><%= check_box_tag 'ids[]', task.id, false, :id => nil, :class => 'checkbox hide-when-print' -%></td>
+            <td><%= checked_image task.active? %></td>
+            <td><%= task.caption -%></td>
+            <td><%= task_period_caption(task) -%></td>
+            <td><%= format_time(task.next_run_at) -%></td>
+            <% if last_info = task.easy_rake_task_infos.last %>
+              <td class="<%= 'overdue' if last_info.status == EasyRakeTaskInfo::STATUS_ENDED_FAILED -%>" title="<%= task_info_status(last_info) -%>"><%= format_time(last_info.finished_at) if last_info.finished_at -%></td>
+            <% else %>
+              <td></td>
+            <% end %>
+            <td class="buttons">
+              <span class="btn_contextmenu_trigger icon icon-settings" title="<%= l(:label_settings) %>"></span>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  <%= context_menu({:controller =>'context_menus', :action => 'easy_rake_tasks'})%>
+<% end %>

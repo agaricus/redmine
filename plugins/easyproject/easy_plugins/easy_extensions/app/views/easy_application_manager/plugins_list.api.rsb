@@ -1,0 +1,8 @@
+api.plugins do
+  @plugins.each do |plugin|
+    api.plugin do
+      api.id(plugin.id.to_s)
+      api.name(hh(plugin.name))
+    end
+  end
+end

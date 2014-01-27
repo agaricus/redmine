@@ -1,0 +1,524 @@
+#easygantt-container {
+    margin-top: 5px;
+}
+#gantt-buttons div.menu-more-container {
+    display: inline-block;
+}
+div.easygantt {
+    border: 1px solid #ccc;
+}
+div.easygantt .user-list-container {
+    width: 26%;
+    height: 100%;
+    float: left;
+}
+div.easygantt .user-list-scroller {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+div.easygantt .grid-container {
+    width: 74%;
+    height: 100%;
+    float: right;
+}
+div.easygantt ul.user-list {
+    margin: 0 0 0 0;
+    padding: 0 0 0 5px;
+    list-style: none;
+}
+div.easygantt ul.user-list > li {
+    padding: 5px 5px 0 0;
+    display: block;
+    height: 17px;
+}
+div.easygantt ul.user-list > li.no-issues {
+    padding-left: 20px;
+}
+div.easygantt ul.user-list > li > a {
+    color: rgb(0, 51, 102);
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Tahoma, Arial;
+    text-decoration: none;
+    width: 88%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    word-wrap: normal;
+}
+div.easygantt ul.task-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div.easygantt ul.task-list > li {
+    padding: 5px 0 5px 20px;
+    height: 12px;
+}
+div.easygantt ul.task-list > li > a:first-child {
+    color: #0da5dd;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85%;
+    display: inline-block;
+    word-wrap: normal;
+}
+div.easygantt ul.task-list > li > a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 95%;
+}
+div.easygantt ul.task-list > li > a.edit-link {
+    background-image: url('../../images/easygantt/edit.png');
+    width: 13px;
+    float:right;
+    margin-right: 5px;
+}
+div.easygantt ul.task-list > li > a.edit-link:link,
+div.easygantt ul.task-list > li > a.edit-link:active,
+div.easygantt ul.task-list > li > a.edit-link:visited,
+div.easygantt ul.task-list > li > a.edit-link:hover {
+    text-decoration: none !important;
+}
+div.easygantt div.month-container {
+    display: inline-block;
+}
+div.easygantt div.grid-header div.days > span,
+div.month-container-small > span,
+div.week-container > span {
+    font-family: Tahoma, Arial;
+    font-weight: bold;
+    font-size: 9px;
+    color: #858585 !important;
+    display: inline-block;
+    padding-top: 6px;
+    height: 16px;
+    border-left: 1px solid rgb(243,243,243);
+}
+div.easygantt div.grid-header div.month {
+    font-family: Tahoma, Arial;
+    font-weight: bold;
+    font-size: 9px;
+    color: #858585 !important;
+    display: inline-block;
+    padding-top: 3px;
+    height: 15px;
+    border-left: 1px solid rgb(243,243,243);
+}
+div.week-container-small > span {
+    width: 11px;
+    text-align: center;
+    font-family: Tahoma, Arial;
+    font-weight: normal;
+    font-size: 8px;
+    color: #858585 !important;
+    display: inline-block;
+    padding-top: 6px;
+    height: 16px;
+    border-left: 1px solid rgb(243,243,243);
+}
+div.week-container {
+    white-space: nowrap;
+}
+div.easygantt div.grid-header div.days > span, div.week-container > span, div.week-container-small > span {
+    border-top: 1px solid rgb(243,243,243);
+}
+div.easygantt div.grid-header div.days > span.weekend {
+    background-color: #f3f3f3;
+}
+div.easygantt div.grid-header div.month {
+    padding-left: 8px;
+    overflow: hidden;
+}
+div.easygantt div.month-container-small {
+    height: 22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+div.easygantt div.grid-header-container {
+    overflow:hidden;
+}
+div.easygantt div.grid-header {
+    background-color: #ffffff;
+    border-top: 1px solid rgb(243,243,243);
+}
+div.easygantt div.grid-body {
+    background-image: url('../../images/easygantt/bg_grid.png');
+    height: 100%;
+    position: relative;
+    overflow:hidden;
+}
+div.easygantt div.grid-body-container {
+    overflow: scroll;
+}
+div.easygantt div.grid-body.day {
+    background-image: url('../../images/easygantt/background.png');
+}
+div.easygantt div.grid-header div.days > span, div.week-container > span {
+    width: 23px;
+    text-align: center;
+}
+div.easygantt div.user-allocation {
+    position: absolute;
+    height: 14px;
+    margin-top: 4px;
+    background-color: #eee;
+    font-style: italic;
+}
+div.easygantt div.worm {
+    background-image: url('../../images/easygantt/progress_bg.png');
+    border: 1px solid #6589A9;
+    position: absolute;
+    height: 12px;
+    font-size: 10px;
+    margin-top: 5px;
+    cursor: move;
+    z-index: 35;
+    box-shadow: 0 0 10px #ccc;
+}
+div.easygantt div.worm.project {
+    border: 1px solid #BC810D;
+}
+div.easygantt div.worm > div.progress {
+    background-image: url('../../images/easygantt/progress.png');
+    height: 100%;
+}
+div.easygantt div.worm.project > div.progress {
+    background-image: url('../../images/easygantt/progress_orange.png');
+}
+div.easygantt div.worm.parent > div.progress {
+    background: rgb(50, 129, 194);
+}
+div.easygantt div.milestone-worm {
+    position: absolute;
+    background: url('../../images/easygantt/rhombus.png') no-repeat scroll;
+    width: 16px;
+    height: 17px;
+    margin-top: 3px;
+    margin-left: 3px;
+    z-index: 20;
+    cursor: move;
+}
+div.easygantt div.inline-milestone {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    z-index: 30;
+    background: url('../../images/easygantt/rhombus_small.png') no-repeat scroll;
+}
+div.easygantt table.user-list thead th {
+    white-space: nowrap;
+}
+div.easygantt table.user-list tr.milestone-menu-item td > a {
+    font-style: italic;
+    font-weight: bold;
+    color: #aa0000;
+}
+div.easygantt ul.task-list > li.highlight {
+    background-color: #eaf0ef;
+}
+div.easygantt div.user-allocation > span, div.easygantt div.worm > span {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+div.easygantt span.expander:before {
+    font-size: 13px;
+    line-height: 13px;
+    width: 13px;
+    bottom: 0;
+}
+div.easygantt div.loader {
+    background-image: url('../../images/easygantt/loading.gif');
+    height: 32px;
+    width: 32px;
+    position: absolute;
+}
+div.easygantt span.over {
+    color: red;
+    font-weight: bold;
+}
+div.easygantt .todayLine {
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    border-left: 1px dashed red;
+    z-index: 5;
+}
+div.easygantt .line {
+    position: absolute;
+    background-color: #4A8F43;
+    z-index: 10;
+}
+div.easygantt .line.vertical {
+    width: 1px;
+}
+div.easygantt .line.horizontal {
+    height: 1px;
+}
+div.easygantt .line.arrow {
+    background-image: url('../../images/easygantt/arrow.png');
+    background-color: transparent;
+    width: 7px;
+    height: 22px;
+}
+div.easygantt ul.task-list.child-container {
+    margin-left: 5px;
+}
+div.easygantt ul.task-list.child-container span.expander {
+    margin-left: -20px;
+}
+div.easygantt div.user-list-container {
+    overflow: hidden;
+}
+div.easygantt .ui-state-disabled, div.easygantt .ui-widget-content .ui-state-disabled, div.easygantt .ui-widget-header .ui-state-disabled {
+    opacity: 1;
+}
+
+.ui-tooltip-content {
+    font-size: 10px;
+}
+.ui-tooltip-content h5 {
+    font-size: 12px;
+    color: #124012;
+    margin: 5px 0;
+}
+.ui-tooltip-content h6 {
+    font-size: 11px;
+    color: #444;
+    margin: 2px 0;
+}
+.ui-tooltip-content p {
+    margin: 0;
+}
+
+#easygantt-settings-buttons {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+div.easygantt-splitter {
+    border-right: 1px dotted #aaa;
+}
+div.user-list-container > div.ui-resizable-handle.ui-resizable-e {
+    background-color: rgb(204, 204, 204);
+    width: 9px;
+    height: 20000px;
+}
+#easygantt-container div.ui-resizable-handle.ui-resizable-e {
+    z-index: 30;
+}
+.gantt-add-issue-button-container {
+    text-align: center;
+}
+.gantt-add-issue-button {
+    width: 100%;
+}
+.gantt-add-issue-button > span.ui-button-text {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.gantt-new-issue-container > form {
+    min-height: 0;
+}
+.gantt-new-issue-container .issue_common_static_fields, .gantt-new-issue-container #issue-dependent-fields {
+    width: 49%;
+}
+.gantt-new-issue-container .issue_common_static_fields {
+    float: left;
+}
+ .gantt-new-issue-container #issue-dependent-fields {
+    float: right;
+ }
+
+/* gantt context menu */
+.ui-tooltip.gantt-ctx .ui-ui-tooltip-content {
+    border: none;
+}
+.ui-tooltip.gantt-ctx .ui-tooltip-tip {
+    display: none !important;
+}
+.qtip.gantt-ctx {
+    background: white;
+    border:none;
+    padding: 0;
+}
+ul.gantt-context-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #ffffff;
+}
+ul.gantt-context-menu > li {
+    padding: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+}
+ul.gantt-context-menu > li:hover {
+    border: 1px solid #628db6;
+    background-color: #eef5fd;
+}
+ul.gantt-context-menu > li > a {
+    padding: 2px 0 2px 20px;
+    font-size: 12px;
+    text-decoration: none;
+}
+ul.gantt-context-menu > li > a:hover {
+    color: #2A5685
+}
+
+/* plumbing */
+._jsPlumb_endpoint {
+    z-index: 19;
+}
+._jsPlumb_connector {
+    z-index: 40;
+}
+._jsPlumb_connector.hover {
+    z-index: 50;
+}
+.easygantt.new-relation ._jsPlumb_endpoint {
+    z-index: 19;
+}
+
+div.easygantt div.user-list-container ul.user-list ul.task-list li.easy-helpdesk-sla-violated {
+    background-color: #FF5555;
+    border: 1px solid #FF0000;
+}
+
+div.easygantt div.user-list-container ul.user-list ul.task-list li.easy-helpdesk-sla-violated a {
+    color: #FFFFFF;
+}
+
+div.easygantt div.user-list-container ul.user-list ul.task-list li.easy-helpdesk-sla-almost-violated {
+    background-color: #FFFF55;
+    border: 1px solid #FFFF00;
+}
+
+div.easygantt div.user-list-container ul.user-list ul.task-list li.easy-helpdesk-sla-almost-violated a {
+    color: #000000;
+}
+
+div.easygantt div.user-list-container ul.user-list ul.task-list li.easy-helpdesk-sla-ok {
+    background-color: #55FF55;
+    border: 1px solid #00FF00;
+}
+
+div.easygantt div.user-list-container ul.user-list ul.task-list li.easy-helpdesk-sla-ok a {
+    color: #FFFFFF;
+}
+#easygantt-container-fs {
+    margin: 5px;
+}
+table.user-list {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-top: -2px;
+}
+.issue-column-header-scroller {
+    overflow: hidden;
+}
+table.issue-column-header {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+table.user-list tr {
+    height: 22px;
+}
+table.user-list td:first-child {
+    padding-left: 20px;
+}
+table.user-list tr.group-menu-item td:first-child {
+    padding-left: 5px;
+}
+table.user-list td {
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid #eee;
+    padding: 0 8px;
+}
+table.issue-column-header th {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0;
+}
+table.user-list td a {
+    white-space: nowrap;
+    font-size: 11px;
+}
+table.user-list tr.group-menu-item td a {
+    color: rgb(0, 51, 102);
+    font-size: 12px;
+}
+div.gantt-relation-legend {
+    float: right;
+    padding: 10px;
+}
+div.gantt-relation-legend > span {
+    margin: 5px;
+    cursor: pointer;
+}
+div.gantt-relation-legend span.legend-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #6589A9;
+    margin-bottom: -4px;
+    margin-right: 3px;
+    color: white;
+    text-align: center;
+}
+div.easygantt div.worm.parent-worm {
+    margin-top: 7px;
+    background: #6589A9;
+    height: 7px;
+    background: #88b7d5;
+    border:none;
+}
+div.easygantt div.worm.parent-worm:before {
+    left: 0%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+div.easygantt div.worm.parent-worm:before {
+    border-color: rgba(136, 183, 213, 0);
+    border-left-color: #88b7d5;
+    border-width: 0 0 8px 8px;
+    top: 100%;
+    margin-top: 0px;
+    z-index: 1;
+}
+div.easygantt div.worm.parent-worm:after {
+    right: 0;
+    border-style: solid;
+    border-color: transparent red transparent transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+div.easygantt div.worm.parent-worm:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: #88b7d5;
+    border-width:0 8px 8px 0;
+    top: 100%;
+    z-index: 1;
+}

@@ -1,0 +1,32 @@
+---
+ru:
+  budgetsheet_name: Платежные ведомости
+  budgetsheet_author: Easy Software
+  budgetsheet_description: Обзор провели время пользователями проекта.
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: Платежные ведомости
+  budgetsheet_date_from_label: От
+  budgetsheet_date_to_label: до
+  budgetsheet_project_label: Проект
+  budgetsheet_activities_label: Деятельность
+  budgetsheet_users_label: Пользователи
+  budgetsheet_export_button: Использовать
+  budgetsheet_export_to_csv: экспорт в CSV
+  budgetsheet_export_to_pdf: экспорт в PDF
+  budgetsheet_export_to_html: Вывести на монитор
+  budgetsheet_costs: Расходы
+  budgetsheet_per_hour: в час
+  budgetsheet_top_menu: Платежные ведомости
+  permission_view_budgetsheet: Просмотр ведомостей
+  label_easy_time_entry_queries_plural: Easy ведомости
+  easy_query:
+    name:
+      easy_time_entry_query: Платежные ведомости
+      easy_budget_sheet_query: Budgetsheet
+  field_project_root: Главный проект
+  sidebar_budgetsheet_all_users_queries: Платежные ведомости по конкретным людям
+  label_show_billable_things: Отобразить настройку 'к оплате'
+  field_easy_is_billable: К оплате?
+  field_easy_billed: Оплачено?
+  label_billable_things_default_state: Настройки по умолчанию
+  label_easy_budget_sheet_queries_plural: Budgetsheet

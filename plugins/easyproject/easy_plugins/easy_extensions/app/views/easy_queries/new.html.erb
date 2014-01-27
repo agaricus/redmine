@@ -1,0 +1,7 @@
+<h2><%= l(:label_query_new) %></h2>
+
+<%= form_for(@easy_query, :as => :easy_query, :url => easy_queries_path, :html => {:onsubmit => 'selectAllOptions("selected_columns");' }) do |f| %>
+  <%= hidden_field_tag( :project_id, @easy_query.project_id ) if @easy_query.project -%>
+  <%= render :partial => 'form', :locals => {:f => f, :query => @easy_query} -%>
+  <%= submit_tag l(:button_save), :class => 'button-1' -%>
+<% end %>

@@ -1,0 +1,18 @@
+$("#ajax-modal").html("<%=j render('easy_repeating_advanced_form') %>");
+$("#ajax-modal").prepend("<%=j content_tag(:h3, l(:title_easy_repeating_advanced_header), :class => 'title') %>");
+var submitButton = $('<input type=button>').attr({value: "<%=j l(:button_submit) %>", "class":"button-1"});
+submitButton.click(function(e) {
+  $("#<%= params[:object_name] %>_easy_is_easy_repeating_form_loader").append($("#ajax-modal #easy_section_repeating_options").hide());
+  hideModal();
+})
+$("#ajax-modal").append(submitButton);
+showModal('ajax-modal', '80%');
+$("#ajax-modal h3.title").remove();
+
+$("#easy_section_repeating_options_<%= @settings['period'] || 'daily' %>" ).show();
+$('input[name="<%= params[:object_name] || @entity.class.name.underscore %>[easy_repeat_settings][period]"]').change(function( e ){
+  if($(this).is(':checked')) {
+    $('.easy-section-repeating-period').hide();
+    $('#easy_section_repeating_options_' + $(this).val() ).show();
+  }
+});

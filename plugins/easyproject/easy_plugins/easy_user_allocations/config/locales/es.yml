@@ -1,0 +1,76 @@
+---
+es:
+  easy_user_allocations_name: Gestión de recursos
+  easy_user_allocations_description: ! '- Gestión de los recursos / personas'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Ver la gestión de recursos
+  project_module_user_allocations: Gestión de recursos
+  label_user_allocations: Gestión de recursos
+  label_user_allocation_gantt: Recursos de Gantt de asignación
+  label_user_allocation_gantt_users: Usuarios
+  label_user_allocation_gantt_range: Fechas
+  resalloc:
+    title: Asignación de recursos
+    settings: Configuración
+    button_apply_settings: Aplicar la configuración de
+    button_recalculate: Volver a calcular la asignación de
+    button_save: Guardar los cambios
+    button_undo: Regreso sin guardar los cambios
+    button_split_issue: Dividir la tarea
+    split_issue_help: Haga clic en la tarea asignada para marcar la fecha de la distribución.
+    error_date_range_too_long: debe ser inferior a 1 año
+    legend_hours_worked: El tiempo dedicado
+    legend_hours_overtime: El tiempo trabajado fuera del plazo establecido
+  label_user_allocation_gantt_user_selection: Selección
+  label_unassigned_issues: Tareas no asignadas
+  label_issue_id: Identificación
+  label_allocation_worm_out_of_range: Para ver la nota, seleccione un intervalo de
+    fechas más grande
+  label_allocation_changed_title: La tarea se ha cambiado y se actualizará cuando
+    se guarda
+  easy_pages:
+    modules:
+      user_allocation: Uso de los recursos
+      user_allocation_working_plan: Plan de asignación / de trabajo de Recursos
+  permission_view_my_easy_user_allocations: Ver la gestión de los recursos propios
+  permission_edit_easy_user_allocations: Editar gestión de los recursos
+  permission_edit_my_easy_user_allocations_plan: Editar plan de trabajo propio
+  label_user_allocation_plan: Plan de trabajo
+  user_allocation_plan:
+    label_plan: Plan
+    label_real: Real
+    label_comment: Comentario
+  easy_query:
+    name:
+      easy_user_allocation_query: La asignación de recursos
+      easy_user_allocation_by_project_query: La asignación de recursos por proyecto
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Filtros privados en la asignación de recursos
+        easy_user_allocation_by_project_query: Filtros privados en la asignación de
+          recursos por proyecto
+      public:
+        easy_user_allocation_query: Filtros públicas sobre la asignación de recursos
+        easy_user_allocation_by_project_query: Filtros públicas sobre la asignación
+          de recursos por proyecto
+  label_allocations_by_project: La asignación de recursos por proyecto
+  text_easy_user_allocation_working_plan_bottom_info: Permite programar la carga de
+    trabajo del usuario en la semana seleccionada. Tabla muestra la hora programada
+    y el tiempo real que se notifiquen.
+  label_setting_keep_issue_start_dates: No cambie las fechas de inicio de la tarea.
+  text_setting_keep_issue_start_dates: Si habilitados y tareas horas estimadas son
+    demasiado bajos, la tarea no se reducirá, sino que se asignará a 0 horas en su
+    lugar.
+  project_module_easy_user_allocations: Uso de los recursos / personas
+  label_setting_allocate_evenly: Asignar equitativamente
+  text_setting_allocate_evenly: Si está activado y una tarea se cambia el tamaño de
+    la asignación de Gantt, horas estimadas se distribuyen uniformemente a través
+    de toda la duración de la tarea.
+  label_setting_allocate_from_start: Asignar a las fechas de inicio de las tareas
+  text_overallocation: suma de horas asignadas es mayor horas luego estimados.
+  permission_view_easy_user_allocations_by_project: Ver las asignaciones por proyecto
+  easy_user_allocations_sidebar_all_users_queries: Las asignaciones de los usuarios
+  easy_user_allocations_label_show_assigned_issues: Muestra la asignación del usuario
+    %{username}
+  label_filter_group_easy_user_allocation_query: La asignación de recursos
+  label_edit_estimated_hours: Editar horas estimadas

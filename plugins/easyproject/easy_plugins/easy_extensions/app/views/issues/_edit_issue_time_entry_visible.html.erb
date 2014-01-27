@@ -1,0 +1,4 @@
+<div class="issue-timelog-fields">
+  <% tag_name_prefix = 'time_entry' %>
+  <%= render :partial => 'timelog/user_time_entry', :locals => { :required => false, :tag_name_prefix => tag_name_prefix, :time_entry => @time_entry, :activities => activity_collection(User.current, params["user_role_id_#{tag_name_prefix}"], @issue.project), :project => @issue.project, :issue => @issue} -%>
+</div>

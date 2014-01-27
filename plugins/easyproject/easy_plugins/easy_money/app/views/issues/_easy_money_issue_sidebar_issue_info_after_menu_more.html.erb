@@ -1,0 +1,7 @@
+<%
+project ||= issue.project
+entity_type, entity_id = 'Issue', issue.id
+%>
+<%= render_menu_more('asdasd', project, :label => l(:label_easy_money), :menu_more_class => 'menu-more-sidebar', :menu_expander_class => 'icon icon-money button-2') do %>
+  <%= render :partial => 'easy_money/easy_money_entity_links', :locals => {:project => project, :entity_type => entity_type, :entity_id => entity_id} %>
+<% end if User.current.allowed_to?(:view_easy_money, project) %>

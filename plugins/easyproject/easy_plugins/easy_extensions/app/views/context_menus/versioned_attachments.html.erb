@@ -1,0 +1,21 @@
+<ul>
+  <% unless @att_v.blank? -%>
+    <% @att_v.each do |att_version| -%>
+      <li class="folder <%= 'current-version' if att_version.attachment.version == att_version.version || att_version.attachment.version.nil? -%>">
+        <%= link_to_attachment att_version, :class => 'icon icon-attachment' -%>
+        <span class="size">(<%= number_to_human_size att_version.filesize %>)</span>
+        <span class="author"><%= att_version.author -%>, <%= format_time(att_version.updated_at) -%></span>
+        - v<%= att_version.version %>
+        <ul>
+          <%= content_tag :li, link_to_attachment(att_version, :text => l(:button_download), :class => 'icon icon-attachment', :download => true ) -%>
+          <%= content_tag :li, link_to(l(:button_delete), {:controller => :attachments, :action => :destroy_version, :id => att_version}, :data => {:confirm => l(:text_are_you_sure)}, :title => l(:button_delete), :class => 'icon icon-del') if att_version.container.attachments_deletable? -%>
+          <%= content_tag :li do -%>
+            <%= link_to l(:label_revert_to_version), {:controller => :attachments, :action => :revert_to_version, :id => att_version.attachment, :version_num => att_version.version}, :class => 'icon icon-move' -%>
+          <% end unless (att_version.attachment.version == att_version.version || att_version.attachment.version.nil?) -%>
+        </ul>
+      </li>
+    <%end%>
+  <%else%>
+    <%= content_tag :li, l('attachments.no_more_versions') -%>
+  <%end%>
+</ul>

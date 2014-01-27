@@ -1,0 +1,15 @@
+<% if content_for?(:easy_page_layout_service_box_bottom) -%>
+  <div id="easy-page-layout-service-box-bottom" class="container_12">
+    <div class="grid_12"><%= yield :easy_page_layout_service_box_bottom %></div>
+  </div>
+<% end -%>
+<div id="ajax-indicator" style="display:none;">
+  <%= content_tag(:span, l(:label_loading)) unless in_mobile_view? -%>
+</div>
+<div id="ajax-modal" style="display:none;"></div>
+<div id="modal-dialog-loader-wrapper" style="display:none;"><div id="modal-dialog-loader"></div></div>
+<div id="footer">
+  <%= render :partial => 'layouts/footer' %>
+</div>
+<div class="clear"></div>
+<%= yield :after_footer_tags -%>

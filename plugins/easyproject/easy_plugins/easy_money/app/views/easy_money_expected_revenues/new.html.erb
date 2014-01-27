@@ -1,0 +1,58 @@
+<div class="easy-money-expected-revenue-container">
+  <h2><%= l(:label_easy_money_expected_revenue_new) -%></h2>
+  <%= form_for(@easy_money_object, :as => :easy_money, :html => {:id => "easy-money-expected-revenue-form", :class => "easy-money-form tabular"}) do |f| -%>
+    <%= error_messages_for @easy_money_object %>
+    <%= f.hidden_field :entity_type, :id => nil %>
+    <%= f.hidden_field :entity_id, :id => nil %>
+    <%= hidden_field_tag('back_url', params[:back_url], :id => nil) unless params[:back_url].blank? %>
+    <div class="box">
+
+      <% if User.current.allowed_to?(:easy_money_manage_expected_revenue, @project) && User.current.allowed_to?(:easy_money_manage_other_revenue, @project) -%>
+        <% if ((@project.easy_money_settings.revenues_type == 'sum' && @project.other_revenues.size == 0) || @project.easy_money_settings.revenues_type == 'list')-%>
+          <div id="money-type-select">
+            <p>
+              <label>
+                <%= radio_button_tag 'revenue_type', 'expected_revenue', true -%>
+                <%= l(:label_easy_money_expected_revenue_new) -%>
+              </label>
+            </p>
+            <p>
+              <label>
+                <%= radio_button_tag 'revenue_type', 'other_revenue', false -%>
+                <%= l(:label_easy_money_other_revenue_new) -%>
+              </label>
+            </p>
+          </div>
+        <% end -%>
+      <% end -%>
+
+      <%= render :partial => 'easy_money_expected_revenues/form', :locals => {:f => f, :project => @project, :expected_revenue => @easy_money_object} -%>
+    </div>
+    <p class="links">
+      <%= f.submit l(:button_add), :class => 'button-1' -%>
+      <%= f.submit l(:button_issue_create_and_continue), :name => 'continue', :class => 'link_new icon-save-issue button-2' -%>
+    </p>
+  <% end -%>
+</div>
+
+<% ### PAGE CUSTOMS ##########################################################-%>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+<% end -%>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#revenue_type_other_revenue").change(function() {
+      url = '<%= url_for(:controller => 'easy_money_other_revenues', :action => 'new', :only_path => false) -%>';
+      url += (url.indexOf('?') >= 0) ? '&' : '?';
+      url += $('#easy-money-expected-revenue-form').serialize();
+      window.location = url;
+    });
+  });
+</script>

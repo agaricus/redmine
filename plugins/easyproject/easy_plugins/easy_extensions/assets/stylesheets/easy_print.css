@@ -1,0 +1,76 @@
+/***** Media print specific styles *****/
+body {
+    background-color: white !important;
+    background-image: none !important;
+}
+#top-menu, #header, #main-menu, #sidebar, #footer, .contextual, .other-formats, #query_form_content .buttons, #easy-contacts-filter_buttons, div#indent-box { display:none; }
+#main { background: #fff; }
+#content { width: 99%; margin: 0; padding: 0; border: 0; background: #fff; overflow: visible !important;}
+#wiki_add_attachment { display:none; }
+.hide-when-print { display: none; }
+.autoscroll {overflow-x: visible;}
+table.list {margin-top:0.5em;}
+table.list th, table.list td {border: 1px solid #aaa;}
+.flash {
+  border: 1px solid #000 !important;
+  background: none;
+
+}
+.flash * {
+  color: #000 !important;
+}
+#main div#issue-detail h2.issue-detail-header {
+  width:auto;
+}
+#main div#issue-info .topinfo div.subinfo2,#main div#issue-info .topinfo div.subinfo {
+  width:32%;
+}
+.wrapper,.wrapper2,.drid_12,.grid_9,#main,#content {
+  background:#fff!important;
+  border:0;
+  border-bottom:none!important;
+  border-left:none!important;
+  border-right:none!important;
+  border-top:none!important;
+  margin:0;
+  overflow:visible!important;
+  padding:0;
+  width:99%!important;
+}
+.hide-when-print,.tabs,.easy-query-filter-settings,#header-space-holder {
+  display:none!important;
+}
+.autoscroll {
+  overflow-x:visible;
+}
+table.list {
+  margin-top:.5em;
+}
+table.list th,table.list td {
+  border:1px solid #aaa;
+}
+#top-menu,#header,#main-menu,#sidebar,#footer,.contextual,.other-formats,#wiki_add_attachment {
+  display:none;
+}
+.easy-page-brake-before {
+  page-break-before: always;
+}
+.easy-page-brake-after {
+  page-break-after: always;
+}
+.easy-printable-template-page.a4 {
+    width: 210mm;
+    height: 297mm;
+}
+.easy-printable-template-page.a4.landscape {
+    width: 297mm;
+    height: 210mm;
+}
+.easy-printable-template-page.a3 {
+    width: 297mm;
+    height: 420mm;
+}
+.easy-printable-template-page.a3.landscape {
+    width: 420mm;
+    height: 297mm;
+}

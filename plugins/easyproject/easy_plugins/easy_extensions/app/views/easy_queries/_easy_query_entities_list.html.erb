@@ -1,0 +1,138 @@
+<%
+available_columns = [:subject, :name, :project, :issue, :firstname, :lastname, :login]
+user ||= User.current; block_name ||= ''; uniq_id ||= ''
+unless defined?(options)
+  options = Hash.new
+  end
+modul_uniq_id ||= "#{controller_name}_#{action_name}"; uniq_id ||= modul_uniq_id
+options[:block_name] ||= block_name; options[:uniq_id] ||= uniq_id
+options[:hascontextmenu] = false if in_mobile_view? || !options.key?(:hascontextmenu)
+unless options.key?(:hide_sums_in_group_by)
+  options[:hide_sums_in_group_by] = false
+  end
+# available *options*
+# * :disable_sort  => true - change header from sorting_link to plain text
+# * :modal_selector => true - display view as lookup window, with selectable rows. Require parameters for modal selector
+# * :go_to_url => {:controller => ...} - set rows clickable, jump to url...
+# * :hide_sums_in_group_by => true - This hide sums and count of records in group by row.
+# * :hascontextmenu => true/false
+-%>
+<%= form_tag({}, :id => "easy-query-list-#{query.entity.name.underscore.dasherize}") do -%>
+  <table class="list entities <%= query.entity.name.pluralize.downcase -%>">
+  <%# easy_cache ['easy_query_header', block_name, I18n.locale] do  %>
+    <thead>
+      <tr>
+        <%= content_tag(:th, link_to('', 'javascript:void(0)', :onclick => 'toggleIssuesSelection(this)',
+            :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked')) if options[:hascontextmenu] -%>
+        <%= content_tag(:th) if options[:modal_selector] -%>
+        <th class="hide-when-print"></th>
+        <% query.inline_columns.each do |column| -%>
+          <%= easy_query_column_header(column, options) %>
+        <% end -%>
+        <th class="hide-when-print"></th>
+      </tr>
+      <% easy_query_first_sumable_index = -1 %>
+      <% if options[:disable_sumable_column] != true && query.columns.detect{|i| easy_query_first_sumable_index += 1; i.sumable?} %>
+      <%
+        sumable_colspan = easy_query_first_sumable_index
+        sumable_colspan += 1 if options[:hascontextmenu];sumable_colspan += 1 if options[:modal_selector]
+       %>
+        <tr id="totalsum-summary">
+          <td class="hide-when-print"></td>
+          <td id="summary-table-bottom-first-cell" colspan="<%= sumable_colspan %>">
+            <div id="totalsum-description">
+              <%= options[:label_sumable_header_total] || l(:label_total_total) %>
+            </div>
+          </td>
+
+          <% query.columns[(easy_query_first_sumable_index)..(query.columns.size-1)].each_with_index do |column, index| %>
+
+            <% if column.sumable_header? %>
+              <%= content_tag :td, format_html_entity_attribute(query.entity, column, query.entity_sum(column), :project => query.project).html_safe, :class => column.name.to_s.underscore -%>
+            <% else %>
+              <%= content_tag :td -%>
+            <% end %>
+          <% end %>
+          <td class="hide-when-print"></td>
+        </tr>
+      <% end %>
+    </thead>
+  <%# end %>
+    <tbody>
+
+      <% number_of_group = 0 %>
+      <% previous_group = params[:previous_group] || false %>
+      <% easy_query_group_entities_list(entities, query, options) do |group, attributes| -%>
+        <%
+        if query.grouped? && group.to_param.to_s != previous_group.to_s
+          uniq_id = "#{modul_uniq_id}_#{block_name}_#{query.group_by_column.name}_#{group.hash}_#{number_of_group}"; number_of_group += 1 %>
+          <%= filter_plus_button(group.blank?, query.inline_columns.size + 3, uniq_id, format_html_entity_attribute(query.entity, query.group_by_column, group), (options[:hide_sums_in_group_by] ? attributes[:count] : easy_query_group_by_title_content(query, attributes[:count], attributes[:sums]) ), user) %>
+        <% end -%>
+        <% easy_query_entity_list(attributes[:entities]) do |entity, level| %>
+          <tr id="entity-<%= entity.id %>"
+              class="<%= cycle('odd', 'even') %><%= ' hascontextmenu' if options[:hascontextmenu] -%> <%= query.class.entity_css_classes(entity, {:level => level, :uniq_prefix => nil}) %> <%= ' context-menu-selection' if options[:modal_selector] && selected_values && selected_values.detect{|a,b| a == entity.id.to_s} -%> <%= " selectable" if options[:modal_selector] -%><%= ' easy-to-do-list-source' if entity.is_a?(Issue) -%>"
+              <% if options[:go_to_url] %>
+                onclick="javascript:GoToURL('<%= url_for(options[:go_to_url].merge({:id => entity})) -%>', event)"
+              <% end %>
+              <%= detect_hide_elements(uniq_id, user) -%> data-url="<%= issue_path(entity, :format => 'json').html_safe if entity.is_a?(Issue) %>">
+      <%# TODO zavisi na pravech easy_cache ['easy_que easy_query_row', entity, block_name, I18n.locale], !block_name.blank? do %>
+            <% if options[:modal_selector] %>
+              <td class="checkbox hide-when-print">
+                <%= entity_modal_selector_checker(entity, selected_values, options[:multiple]) %>
+              </td>
+            <% elsif options[:hascontextmenu] %>
+              <%= content_tag :td, check_box_tag('ids[]', entity.id, false, :id => nil), :class => 'checkbox hide-when-print' -%>
+            <% end %>
+            <td class="easy-query-additional-beginning-buttons hide-when-print"><%= easy_query_additional_beginning_buttons(query, entity, options) -%></td>
+            <% query.inline_columns.each do |column| -%>
+              <%= content_tag :td, format_html_entity_attribute(entity.class, column, column.value(entity), {:entity => entity, :allow_avatar => options[:allow_avatar]}), :class => column.name.to_s.underscore -%>
+            <% end %>
+            <td class="easy-query-additional-ending-buttons hide-when-print"><%= easy_query_additional_ending_buttons(query, entity, options) -%></td>
+      <%# end -%>
+          </tr>
+          <% query.block_columns.each do |column|
+            if (text = format_html_entity_attribute(entity.class, column, column.value(entity), {:entity => entity})) && text.present? -%>
+              <tr class="<%= current_cycle %>">
+                <td colspan="<%= query.inline_columns.size + 3 %>" class="<%= column.css_classes %>"><%= text %></td>
+              </tr>
+            <% end -%>
+          <% end #block columns %>
+
+        <% end #entities %>
+        <%= easy_query_summary_row(query, attributes[:sums], :bottom, options) if query.grouped? %>
+      <% end #group %>
+
+    </tbody>
+  </table>
+  <%#= render :partial => 'easy_queries/easy_query_tooltip_box', :locals => {:block_name => options[:block_name], :uniq_id => options[:uniq_id]} -%>
+<% end -%>
+
+<%= render :partial => 'easy_queries/easy_query_tooltip_box' if options[:render_query_tooltip_box] %>
+
+<%= content_for :header_tags do %>
+  <script type="text/javascript">
+            $(document).ready(function() {
+              if (typeof setInfiniteScrollDefaults == 'function')
+              {
+                setInfiniteScrollDefaults();
+                $('table.list.entities.<%= query.entity.name.pluralize.downcase -%>:first > tbody').infinitescroll({
+                  navSelector: 'p.pagination',
+                  nextSelector: 'p.pagination > a.next',
+                  itemSelector: 'table.list.entities.<%= query.entity.name.pluralize.downcase -%>:first > tbody > tr, p.pagination > a.next'
+                }, function(data, opts) {
+                  var a = $(data.pop());
+                  if (a.is('a')) {
+                    opts.path = [a.attr('href')];
+                    a.remove();
+                  } else {
+                    data.push(a[0]);
+                    opts.state.isPaused = true;
+                  }
+                  $('.multieditable-container:not(.multieditable-initialized)').each(function () {
+                    initInlineEditForContainer(this);
+                  });
+                });
+              }
+            });
+  </script>
+<% end -%>

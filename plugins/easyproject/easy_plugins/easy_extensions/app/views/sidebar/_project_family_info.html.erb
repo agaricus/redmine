@@ -1,0 +1,22 @@
+<% if (defined?(project) && !project.nil?)  -%>
+  <%= toggling_container('sidebar-project-family-info', User.current, {:heading =>  l(:sidebar_project_family_info), :container_html => {:class => 'project-family-info'}}) do %>
+    <% if project %>
+      <%final_projects_collection = []
+      final_projects_collection << project
+      final_projects_collection << project.parent if project.parent && project.parent.visible?
+      final_projects_collection << project.siblings.visible if EasySetting.value('default_projects_tree_display') == 'with_siblings' && !project.root?
+      final_projects_collection << project.children.visible
+      final_projects_collection = final_projects_collection.flatten.compact.uniq.sort_by(&:lft) -%>
+      <table class="list projects">
+        <tbody>
+          <% Project.each_with_easy_level(final_projects_collection, :zero_start => true) do |subproject, level| -%>
+            <%  project_url = url_for(:controller => 'projects', :action => 'show', :id => subproject.id, :jump => current_menu_item) %>
+            <tr id="project-<%= subproject.id -%>" class="<%= subproject.css_project_classes(nil, {:level => level}) -%> <%= 'subproject' if subproject.child? -%> <%= "parentproject_#{subproject.parent_id}" if subproject.child? -%><%= " selected" if subproject.id == project.id -%>">
+              <td class="name"><%= link_to show_shorter_value(subproject.name, :size => 35 - (level * 2), :appendix => "..."), project_url, { :title => l(:title_project_show, :projectname => subproject.name)} -%></td>
+            </tr>
+          <% end -%>
+        </tbody>
+      </table>
+    <% end %>
+  <% end -%>
+<% end -%>

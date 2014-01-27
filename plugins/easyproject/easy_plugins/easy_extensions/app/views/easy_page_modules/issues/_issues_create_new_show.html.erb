@@ -1,0 +1,40 @@
+<% issue = @easy_page_modules_data[block_name][:issue]
+  hidden_fields = @easy_page_modules_data[block_name][:hidden_fields]
+  only_selected = @easy_page_modules_data[block_name][:only_selected]
+  show_option_all = (@easy_page_modules_data[block_name][:settings]['show_fields_option'] == 'all' && user.allowed_to?(:add_issue_watchers, issue.project)) && !in_mobile_view?
+%>
+<div id="<%= block_name %>" class="my-page-updatable-attributes">
+  <%= toggling_container(modul_uniq_id, user, {:heading => l(:label_issue_new), :container_html => {:class => 'module-content new-issue-form'}}) do %>
+    <% if issue -%>
+
+      <%= labelled_form_for :"#{block_name}issue", issue, :html => {:multipart => true, :id => "#{block_name}issue-form", :class => 'tabular new-issue-form'}, :url => { :controller => 'my', :action => 'new_my_page_create_issue', :t => params[:t] } do |f| %>
+        <%= hidden_field_tag 'block_name', block_name -%>
+        <%= hidden_field_tag 'user_id', user.id -%>
+        <%= hidden_field_tag 'show_fields_option', @easy_page_modules_data[block_name][:settings]["show_fields_option"] -%>
+        <%= hidden_field_tag 'back_url', url_for(params) -%>
+        <%= error_messages_for issue -%>
+        <div class="box">
+          <% if !only_selected || !hidden_fields.include?(:subject) || !hidden_fields.include?(:description) %>
+            <div class="issue_common_static_fields  alpha omega <%= show_option_all ? 'grid_5' : 'grid_7' %>">
+              <div class="my-page-new-issue-left-description">
+                <%= render :partial => 'issues/new_form_static_attributes', :locals => {:object_name => block_name+'issue', :issue => issue, :modul_uniq_id => block_name, :enable_editor => (@easy_page_modules_data[block_name][:settings]['enable_text_editor'] == '1' && !in_mobile_view?), :hidden_fields =>  hidden_fields} -%>
+              </div>
+              <div class="my-page-button-create">
+            <%= submit_tag l(:button_create) , :class => 'button-1'%>
+          </div>
+            </div>
+          <% end -%>
+
+          <div class="my-page-new-issue-right tabular issue-dependent-fields alpha omega <%= show_option_all ? 'grid_7' : 'grid_5' %>" id="<%= block_name+'issue-dependent-fields' %>">
+            <% if @easy_page_modules_data[block_name][:settings]['show_fields_option'] == 'all' %>
+              <%= render :partial => 'easy_page_modules/issues/issues_create_new_show_fields_all', :locals => { :issue => issue, :user => user, :block_name => block_name, :modul_uniq_id => block_name, :show_fields_option => @easy_page_modules_data[block_name][:settings]["show_fields_option"], :issue_priorities => @easy_page_modules_data[block_name][:issue_priorities], :issue_assignable_users => @easy_page_modules_data[block_name][:assignable_users], :projects => @easy_page_modules_data[block_name][:projects], :allowed_statuses => @easy_page_modules_data[block_name][:allowed_statuses]} -%>
+            <% else %>
+              <%= render :partial => 'easy_page_modules/issues/issues_create_new_show_fields_only_required', :locals => { :issue => issue, :user => user, :block_name => block_name, :show_fields_option => @easy_page_modules_data[block_name][:settings]["show_fields_option"], :issue_priorities => @easy_page_modules_data[block_name][:issue_priorities], :assignable_users => @easy_page_modules_data[block_name][:assignable_users], :projects => @easy_page_modules_data[block_name][:projects], :hidden_fields => @easy_page_modules_data[block_name][:hidden_fields], :only_selected => only_selected, :allowed_statuses => @easy_page_modules_data[block_name][:allowed_statuses], :allowed_trackers => @easy_page_modules_data[block_name][:allowed_trackers], :required_attributes => @easy_page_modules_data[block_name][:required_attributes]} %>
+            <% end %>
+          </div>
+          <div style="clear:both"></div>
+        </div>
+      <% end %>
+    <% end -%>
+  <% end -%>
+</div>

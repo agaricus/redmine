@@ -1,0 +1,16 @@
+<%  modul_uniq_id ||= controller_name + '_' + action_name %>
+<%= toggling_container(modul_uniq_id, User.current, {:heading => l(:label_add_related_projects), :default_button_state => false, :wrapping_heading_element => :h3}) do %>
+  <%= error_messages_for 'relation' -%>
+  <p class="gray-background">
+    <span class="label-before"><%= l(:label_project_new_relation_before) -%></span>
+    <span class="relation-type">
+      <%= select_tag 'project[relation][relation_type]', options_for_select(collection_for_relation_type_select) -%>
+    </span>
+    <span class="label-after"><%= l(:label_project_new_relation_after) -%></span>
+    <span class="projects-selector"><%= projects_relations_field_tag 'project[relation][project_to_id]', 'relation_project_to_id', [], :url => {:project_id => @project.id, :query_name => 'project_relation'} %></span>
+    <span class="predecessor-fields" id="predecessor_fields">
+      <%= l(:field_delay) %>: <%= text_field_tag 'project[relation][delay]', nil, :size => 3 -%>
+      <%= l(:label_day_plural) -%>
+    </span>
+  </p>
+<% end %>

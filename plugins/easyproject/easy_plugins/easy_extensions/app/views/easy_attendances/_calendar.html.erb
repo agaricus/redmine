@@ -1,0 +1,23 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => (@query.new_record? ? l(:label_calendar) : h(@query.name))} %>
+<%= render :partial => 'common/calendar_listing_links', :locals => {:period => :month, :calendar => @calendar, :url_options => {:tab => :calendar}} -%>
+
+<% if @query.valid? %>
+  <div id="easy_attendances" class="easy-attendances">
+    <%= render :partial => 'common/calendar', :locals => {:calendar => @calendar, :modul_uniq_id => 'attendances', :easy_user_working_time_calendar => EasyUserWorkingTimeCalendar.default} %>
+  </div>
+  <p class="legend cal">
+    <span class="starting"><%= l(:starting, :scope => [:easy_attendance, :calendar, :legend]) %></span>
+    <span class="ending"><%= l(:ending, :scope => [:easy_attendance, :calendar, :legend]) %></span>
+    <span class="starting ending"><%= l(:starting_ending, :scope => [:easy_attendance, :calendar, :legend]) %></span>
+  </p>
+<% end %>
+<script type="text/javascript">
+<% day = @calendar.startdt
+while day <= @calendar.enddt %>
+  add = $('<a>').attr({'class':'easy-attendance-calendar-add-quick-event icon icon-add floatright', 'title': '<%= l :new, :scope => :easy_attendance -%>'});
+  add.click(function() {
+    $.get('<%= j url_for(:controller => 'easy_attendances', :action => 'new', :arrival_at => day) %>')});
+  $('#<%= "attendances-day-num-#{day.month}-#{day.day}" %>').append(add);
+  <% day += 1 %>
+<% end %>
+</script>

@@ -1,0 +1,4 @@
+<%= content_tag(:h2, l(:label_easy_issue_timer_settings)) %>
+<%= form_tag({}, :method => :put, :class => 'tabular settings', :id => 'easy_issue_timers_settings_form') do %>
+  <%= render(:partial => 'easy_issue_timers/form', :locals => {:setting => @setting, :statuses => @statuses}) %>
+<% end -%>

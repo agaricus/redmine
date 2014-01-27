@@ -1,0 +1,30 @@
+<% query = @easy_page_modules_data[block_name][:query] %>
+<%= toggling_container(modul_uniq_id, user, {:heading => l('easy_pages.modules.attendance'), :container_html => {:class => 'module-content'}}) do %>
+  <%= hidden_field_tag 'edit', 'true' %>
+  <%= render(:partial => 'easy_page_modules/easy_query_module_form', :locals => {
+      :page_module => page_module, :block_name => block_name, :settings => settings, :modul_uniq_id => modul_uniq_id,
+      :query => query, :hide_preview => true
+    }) %>
+  <div style="clear:both">
+    <span class="my-page-issue-query-output-label"><%= l(:label_my_page_issue_output_select) -%></span>
+    <span class="my-page-issue-query-output">
+      <%= select_tag "#{block_name}[output]", options_for_select([[l("label_my_page_issue_output.list"), "list"], [l("label_my_page_issue_output.calendar"), "calendar"]], settings["output"]) -%>
+    </span>
+  </div>
+  <div id="<%= modul_uniq_id %>easy_attendances_preview" class="adhoc-entities-preview"></div>
+  <% if settings['output'] == 'calendar' %>
+    <div>
+      <span><%= l(:label_my_page_timelog_calendar_period_select) -%></span>
+      <span><%= select_tag "#{block_name}[period]", options_for_select([[l("my_page_timelog_calendar_period.month"), "month"], [l("my_page_timelog_calendar_period.week"), "week"]], settings["period"]) -%></span>
+    </div>
+  <% end %>
+<% end %>
+<script type="text/javascript">
+  $("<%= "#{block_name}_output" %>").change(function() {
+    $.post('<%= j(url_for(:controller => 'my', :action => 'update_my_page_module_view', :uuid => page_module.uuid, :block_name => block_name )) %>',
+    $('#module_<%= page_module.uuid.dasherize %>_form').serialize(), function(data) {recreateSortables(); $("#module_<%= page_module.uuid.dasherize %>").html(data) } )
+  })
+  before_submit_<%= modul_uniq_id.underscore -%> = function() {
+    if ($('#<%= modul_uniq_id -%>query_type_2').is(":checked")) { selectAllOptions('<%= modul_uniq_id -%>selected_columns'); }
+  }
+</script>

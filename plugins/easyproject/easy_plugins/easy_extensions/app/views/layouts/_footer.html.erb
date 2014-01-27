@@ -1,0 +1,28 @@
+<%= call_hook :view_layout_footer_top -%>
+<div>
+  <% unless in_mobile_view? %>
+    <div id="button-back-to-top" class="bgl floatleft">
+      <%= link_to_function content_tag(:i, nil, :class => 'icon-arrow up')+"\n"+l(:button_back_to_top), 'window.scrollTo(0,0)'  -%>
+      <%= link_to_function content_tag(:i, nil, :class => 'icon-arrow down')+"\n"+l(:button_down), 'window.scrollTo(0, $(document).height() * 2)' -%>
+      <div id="account_menu">
+        <%= render_menu :account_menu -%>
+      </div>
+    </div>
+  <% end %>
+  <div class="bgr floatright">
+    <%  if is_mobile_device?  %>
+      <%= link_to(in_mobile_view? ? l(:label_switch_to_full_version) : l(:label_switch_to_mobile_version), {:controller => 'my', :action => 'toggle_mobile_view', :back_url => url_for(:controller => controller_name, :action => action_name, :id => params[:id], :project_id => params[:project_id])}, :class => 'icon' )-%>
+    <% end %>
+    <% if in_mobile_view? %>
+      <% if User.current.logged? %>
+        <%= link_to l(:label_issue), {:controller => 'issues', :action => 'new', :project_id => @project, :format => 'mobile'}, :class => 'icon icon-add floatright', :style => 'clear: right' -%>
+        <%= link_to l(:label_project), {:controller => 'templates', :action => 'index', :format => 'mobile'}, :class => 'icon icon-add floatright', :style => '' -%>
+      <% end %>
+    <% else %>
+      <%= link_to(EasyExtensions::EasyProjectSettings.app_link, 'http://' + EasyExtensions::EasyProjectSettings.app_link, :class => 'icon', :target => '_blank') -%>
+    <% end %>
+
+  </div>
+  <div class="clear"></div>
+</div>
+<%= call_hook :view_layout_footer_bottom -%>

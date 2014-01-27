@@ -1,0 +1,17 @@
+<div id="project-selector-container" style="padding: 10px">
+  <h1><%= l(:label_easy_money_select_project) %></h1>
+  <%= form_tag(:action => "move_to_project") do %>
+    <div class="combo-container floatleft">
+      <%= easy_autocomplete_tag('to_project_id', {:name => '', :id => ''}, url_for(params.merge({:action => 'projects_to_move', :format => 'json'})), {:root_element => 'projects'}) %>
+    </div>
+
+    <%= hidden_field_tag 'from_project_id', @from_project_id %>
+    <%= hidden_field_tag 'money_entity_type', @money_entity_type %>
+    
+    <p class="buttons">
+      <%= submit_tag l(:button_save), :class => 'button-1' %>
+      <%= link_to_function l(:button_cancel), 'closeModalSelectorWindow();', :class => 'button-2' -%>
+    </p>
+    <div class="clear"></div>
+  <% end -%>
+</div>

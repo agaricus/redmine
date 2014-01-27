@@ -1,0 +1,30 @@
+<div id="header">
+  <div id="logo"><%= link_to('', home_path, :title => l(:title_logo))-%></div>
+  <div id="main-menu-section">
+    <% if User.current.logged? || !Setting.login_required? %>
+      <div id="top-menu">
+        <ul>
+          <% menu_items_for(:easy_quick_top_menu).each do |node|  -%>
+            <% next if node.name == :my_page %>
+            <%= render_menu_node(node).html_safe %>
+          <% end %>
+          <li>
+            <%= link_to(l(:label_menu_more), '#', :data => {:menu_toggle => true}) %>
+            <ul class="menu-children" style="display:none">
+              <% menu_items_for(:top_menu).select{|i| [:login, :logout, :my_account].include?(i.name)}.each do |node|  -%>
+                <%= render_menu_node(node).html_safe %>
+              <% end %>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    <% end %>
+  </div>
+  <div class="clear"></div>
+</div>
+<script type="text/javascript">
+  $("#top-menu a[data-menu-toggle=true]").click(function(e){
+    $(e.target).next('ul.menu-children').slideToggle();
+  })
+</script>

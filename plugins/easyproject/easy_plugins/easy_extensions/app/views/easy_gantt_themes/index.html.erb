@@ -1,0 +1,37 @@
+<%= content_tag :h1, l(:label_easy_gantt_theme_plural)%>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th><%= l(:field_name) %></th>
+      <th><%= l(:label_header_style) %></th>
+      <th><%= l(:label_logo) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @gantt_themes.each do |theme| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= link_to h(theme), edit_easy_gantt_theme_path(theme) %></td>
+        <td>
+          <div id="header-style-preview" style="color: <%= theme.header_font_hex_color %>; background-color: <%= theme.header_hex_color %>;"><%= l(:label_gantt) %></div>
+        </td>
+        <td class="logo_preview">
+          <% if theme.attachments.any? %>
+            <img src="<%= url_for(:controller => 'attachments', :action => 'download', :id => theme.attachments.last) %>"/>
+          <% end -%>
+        </td>
+        <td class="buttons">
+          <%= link_to l(:button_edit), edit_easy_gantt_theme_path(theme), :class => 'icon icon-edit' %>
+          <%= delete_link easy_gantt_theme_path(theme) %>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>
+
+<% html_title(l(:label_easy_gantt_theme_plural)) -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to l(:label_easy_gantt_theme_new), new_easy_gantt_theme_path, :class => 'big button-1 icon icon-add' %>
+<% end -%>

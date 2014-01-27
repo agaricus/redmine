@@ -1,0 +1,2502 @@
+---
+ja:
+  direction: ltr
+  date:
+    formats:
+      default: ! '%Y/%m/%d'
+      short: ! '%m/%d'
+      long: ! '%Y年%m月%d日(%a)'
+    day_names:
+    - 日曜日
+    - 月曜日
+    - 火曜日
+    - 水曜日
+    - 木曜日
+    - 金曜日
+    - 土曜日
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+    month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  time:
+    formats:
+      default: ! '%Y/%m/%d %H:%M:%S'
+      time: ! '%H:%M'
+      short: ! '%y/%m/%d %H:%M'
+      long: ! '%Y年%m月%d日(%a) %H時%M分%S秒 %Z'
+    am: 午前
+    pm: 午後
+  datetime:
+    distance_in_words:
+      half_a_minute: 30秒前後
+      less_than_x_seconds:
+        one: 1秒以内
+        other: ! '%{count}秒以内'
+      x_seconds:
+        one: 1秒
+        other: ! '%{count}秒'
+      less_than_x_minutes:
+        one: 1分以内
+        other: ! '%{count}分以内'
+      x_minutes:
+        one: 1分
+        other: ! '%{count}分'
+      about_x_hours:
+        one: 約1時間
+        other: 約%{count}時間
+      x_hours:
+        one: 1時間
+        other: ! '%{count}時間'
+      x_days:
+        one: 1日
+        other: ! '%{count}日'
+      about_x_months:
+        one: 約1ヶ月
+        other: 約%{count}ヶ月
+      x_months:
+        one: 1ヶ月
+        other: ! '%{count}ヶ月'
+      about_x_years:
+        one: 約1年
+        other: 約%{count}年
+      over_x_years:
+        one: 1年以上
+        other: ! '%{count}年以上'
+      almost_x_years:
+        one: ほぼ1年
+        other: ほぼ%{count}年
+  number:
+    format:
+      separator: .
+      delimiter: ! ','
+      precision: 3
+    currency:
+      format:
+        format: ! '%n%u'
+        unit: 円
+        separator: .
+        delimiter: ! ','
+        precision: 0
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+    human:
+      format:
+        delimiter: ''
+        precision: 3
+        separator: 、
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+  support:
+    array:
+      sentence_connector: 及び
+      skip_last_comma: true
+  activerecord:
+    errors:
+      template:
+        header:
+          one: ! '%{model} にエラーが発生しました。'
+          other: ! '%{model} に %{count} つのエラーが発生しました。'
+        body: 次の項目を確認してください。
+      messages:
+        inclusion: は一覧にありません。
+        exclusion: は予約されています。
+        invalid: は不正な値です。
+        confirmation: が一致しません。
+        accepted: を受諾してください。
+        empty: を入力してください。
+        blank: を入力してください。
+        too_long: は%{count}文字以内で入力してください。
+        too_short: は%{count}文字以上で入力してください。
+        wrong_length: は%{count}文字で入力してください。
+        taken: はすでに存在します。
+        not_a_number: は数値で入力してください。
+        not_a_date: は日付を入力してください。
+        greater_than: は%{count}より大きい値にしてください。
+        greater_than_or_equal_to: は%{count}以上の値にしてください。
+        equal_to: は%{count}にしてください。
+        less_than: は%{count}より小さい値にしてください。
+        less_than_or_equal_to: は%{count}以下の値にしてください。
+        odd: は奇数にしてください。
+        even: は偶数にしてください。
+        greater_than_start_date: を開始日より後にしてください
+        not_same_project: 同じプロジェクトに属していません
+        circular_dependency: この関係では、循環依存になります
+        cant_link_an_issue_with_a_descendant: 指定したチケットとは親子関係になっているため関連づけられません
+        cant_link_an_project_with_a_descendant: プロジェクトは、そのサブタスクのいずれかにリンクすることはできません
+        cant_link_an_version_with_a_descendant: マイルストーンは、そのサブタスクのいずれかにリンクすることはできません
+        not_a_amount: 有効でない金額
+        before_milestone: （%{due_date}（）マイルストーンの日付より前でなければなりません%{effective_date}）
+        before_project_end: （%{due_date}）プロジェクト期日前である必要があります（%{project_due_date}）
+        after_project_start: （%{start_date}）プロジェクトの開始日よりも大きくなければなりません（%{project_start_date}）
+        less_than_duration: 推定時間によると時期尚早である
+        greater_than_soonest_start: （%{start_date}）最も早い開始日よりも大きくなければなりません（%{soonest_start}関連タスクの）
+        greater_than_start_date2: （%{due_date}）開始日よりも大きくなければなりません（%{start_date}）
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: 許容範囲外である
+    models:
+      easy_user_working_time_calendar: カレンダー
+      easy_user_working_time_calendar_holiday: 祝日
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: 親カレンダー
+        name: 名前
+        default_working_hours: 一日あたりの労働時間数
+        first_day_of_week: 週の最初の日
+        is_default: デフォルトのカレンダー
+      easy_user_working_time_calendar_holiday:
+        name: 名前
+        holiday_date: デイ
+        is_repeating: 繰り返しの休日
+  actionview_instancetag_blank_option: 選んでください
+  general_text_No: いいえ
+  general_text_Yes: はい
+  general_text_no: いいえ
+  general_text_yes: はい
+  general_lang_name: Japanese (日本語)
+  general_csv_separator: ! ','
+  general_csv_decimal_separator: .
+  general_csv_encoding: CP932
+  general_pdf_encoding: CP932
+  general_first_day_of_week: '7'
+  notice_account_updated: アカウントが更新されました。
+  notice_account_invalid_creditentials: ユーザー名もしくはパスワードが無効です
+  notice_account_password_updated: パスワードが更新されました。
+  notice_account_wrong_password: パスワードが違います
+  notice_account_register_done: アカウントが作成されました。有効にするには送信したメールにあるリンクをクリックしてください。
+  notice_account_unknown_email: ユーザーが存在しません。
+  notice_can_t_change_password: このアカウントでは外部認証を使っています。パスワードは変更できません。
+  notice_account_lost_email_sent: 新しいパスワードのメールを送信しました。
+  notice_account_activated: アカウントが有効になりました。ログインできます。
+  notice_successful_create: 作成しました。
+  notice_successful_update: 更新しました。
+  notice_successful_delete: 削除しました。
+  notice_successful_connection: 接続しました。
+  notice_file_not_found: アクセスしようとしたページは存在しないか削除されています。
+  notice_locking_conflict: 別のユーザーがデータを更新しています。
+  notice_not_authorized: このページにアクセスするには認証が必要です。
+  notice_not_authorized_archived_project: プロジェクトはアーカイブされています。
+  notice_email_sent: ! '%{value} 宛にメールを送信しました。'
+  notice_email_error: メール送信中にエラーが発生しました (%{value})
+  notice_feeds_access_key_reseted: RSSアクセスキーを初期化しました。
+  notice_api_access_key_reseted: APIアクセスキーを初期化しました。
+  notice_failed_to_save_issues: ! '全%{total}件中%{count}件のチケットが保存できませんでした: %{ids}.'
+  notice_failed_to_save_members: ! 'メンバーの保存に失敗しました: %{errors}.'
+  notice_no_issue_selected: チケットが選択されていません! 更新対象のチケットを選択してください。
+  notice_account_pending: アカウントは作成済みで、システム管理者の承認待ちです。
+  notice_default_data_loaded: デフォルト設定をロードしました。
+  notice_unable_delete_version: バージョンを削除できません
+  notice_unable_delete_time_entry: 作業時間を削除できません
+  notice_issue_done_ratios_updated: チケットの進捗が更新されました。
+  notice_gantt_chart_truncated: ガントチャートは、最大表示項目数(%{max})を超えたたため切り捨てられました。
+  error_can_t_load_default_data: ! 'デフォルト設定がロードできませんでした: %{value}'
+  error_scm_not_found: リポジトリに、エントリ/リビジョンが存在しません。
+  error_scm_command_failed: ! 'リポジトリへアクセスしようとしてエラーになりました: %{value}'
+  error_scm_annotate: エントリが存在しない、もしくはアノテートできません。
+  error_issue_not_found_in_project: チケットが見つかりません、もしくはこのプロジェクトに属していません
+  error_unable_delete_issue_status: チケットのステータスを削除できませんでした。
+  error_no_tracker_in_project: このプロジェクトにはトラッカーが登録されていません。プロジェクト設定を確認してください。
+  error_no_default_issue_status: デフォルトのチケットステータスが定義されていません。設定を確認してください（管理→チケットのステータス）。
+  error_can_not_delete_custom_field: カスタムフィールドを削除できません。
+  error_unable_to_connect: 接続できません。 (%{value})
+  error_can_not_remove_role: このロールは使用されています。削除できません。
+  error_can_not_reopen_issue_on_closed_version: 終了したバージョンにひも付けされたチケットの再オープンはできません。
+  error_can_not_archive_project: このプロジェクトはアーカイブできません
+  error_issue_done_ratios_not_updated: チケットの進捗が更新できません。
+  error_workflow_copy_source: コピー元となるトラッカーまたはロールを選択してください
+  error_workflow_copy_target: コピー先となるトラッカーとロールを選択してください
+  error_can_not_delete_tracker: このトラッカーは使用されています。削除できません。
+  warning_attachments_not_saved: ! '%{count}個の添付ファイルが保存できませんでした。'
+  mail_subject_lost_password: ! '%{value} パスワード再発行'
+  mail_body_lost_password: ! 'パスワードを変更するには、以下のリンクをクリックしてください:'
+  mail_subject_register: ! '%{value} アカウント登録の確認'
+  mail_body_register: ! 'アカウント登録を完了するには、以下のアドレスをクリックしてください:'
+  mail_body_account_information_external: ! '%{value} アカウントを使ってにログインできます。'
+  mail_body_account_information: アカウント情報
+  mail_subject_account_activation_request: ! '%{value} アカウントの承認要求'
+  mail_body_account_activation_request: 新しいユーザー %{value} が登録されました。このアカウントはあなたの承認待ちです：
+  mail_subject_reminder: ! '%{count}件のチケットの期日が%{days}日以内に到来します'
+  mail_body_reminder: ! '%{count}件の担当チケットの期日が%{days}日以内に到来します:'
+  mail_subject_wiki_content_added: Wikiページ %{id} が追加されました
+  mail_body_wiki_content_added: ! '%{author} によってWikiページ %{id} が追加されました。'
+  mail_subject_wiki_content_updated: Wikiページ %{id} が更新されました
+  mail_body_wiki_content_updated: ! '%{author} によってWikiページ %{id} が更新されました。'
+  field_name: 名称
+  field_description: 説明
+  field_summary: サマリー
+  field_is_required: 必須
+  field_firstname: 名前
+  field_lastname: 苗字
+  field_mail: メールアドレス
+  field_filename: ファイル
+  field_filesize: サイズ
+  field_downloads: ダウンロード
+  field_author: 作成者
+  field_created_on: 作成日
+  field_updated_on: 更新日
+  field_field_format: 書式
+  field_is_for_all: 全プロジェクト向け
+  field_possible_values: 選択肢
+  field_regexp: 正規表現
+  field_min_length: 最小値
+  field_max_length: 最大値
+  field_value: 値
+  field_category: カテゴリ
+  field_title: タイトル
+  field_project: プロジェクト
+  field_issue: チケット
+  field_status: ステータス
+  field_notes: 注記
+  field_is_closed: 終了したチケット
+  field_is_default: デフォルト値
+  field_tracker: トラッカー
+  field_subject: 題名
+  field_due_date: 期日
+  field_assigned_to: 担当者
+  field_priority: 優先度
+  field_fixed_version: 対象バージョン
+  field_user: ユーザー
+  field_principal: 主体
+  field_role: ロール
+  field_homepage: ホームページ
+  field_is_public: 公開
+  field_parent: 親プロジェクト名
+  field_is_in_roadmap: チケットをロードマップに表示する
+  field_login: ログイン
+  field_mail_notification: メール通知
+  field_admin: システム管理者
+  field_last_login_on: 最終接続日
+  field_language: 言語
+  field_effective_date: 期日
+  field_password: パスワード
+  field_new_password: 新しいパスワード
+  field_password_confirmation: パスワードの確認
+  field_version: バージョン
+  field_type: タイプ
+  field_host: ホスト
+  field_port: ポート
+  field_account: アカウント
+  field_base_dn: 検索範囲
+  field_attr_login: ログイン名属性
+  field_attr_firstname: 名前属性
+  field_attr_lastname: 苗字属性
+  field_attr_mail: メール属性
+  field_onthefly: あわせてユーザーを作成
+  field_start_date: 開始日
+  field_done_ratio: 進捗 %
+  field_auth_source: 認証方式
+  field_hide_mail: メールアドレスを隠す
+  field_comments: コメント
+  field_url: URL
+  field_start_page: メインページ
+  field_subproject: サブプロジェクト
+  field_hours: 時間
+  field_activity: 活動
+  field_spent_on: 日付
+  field_identifier: 識別子
+  field_is_filter: フィルタとして使う
+  field_issue_to: 関連するチケット
+  field_delay: 遅延
+  field_assignable: このロールにチケットを割り当て可能
+  field_redirect_existing_links: 既存のリンクをリダイレクトする
+  field_estimated_hours: 予定工数
+  field_column_names: 項目
+  field_time_entries: 時間を記録
+  field_time_zone: タイムゾーン
+  field_searchable: 検索条件に設定可能とする
+  field_default_value: デフォルト値
+  field_comments_sorting: コメントの表示順
+  field_parent_title: 親ページ
+  field_editable: 編集可能
+  field_watcher: ウォッチャー
+  field_identity_url: OpenID URL
+  field_content: 内容
+  field_group_by: グループ条件
+  field_sharing: 共有
+  field_parent_issue: 親チケット
+  field_member_of_group: 担当者のグループ
+  field_assigned_to_role: 担当者のロール
+  field_text: テキスト
+  field_visible: 表示
+  field_warn_on_leaving_unsaved: データを保存せずにページから移動するときに警告
+  field_commit_logs_encoding: コミットメッセージのエンコーディング
+  field_scm_path_encoding: パスのエンコーディング
+  field_path_to_repository: リポジトリのパス
+  field_root_directory: ルートディレクトリ
+  field_cvsroot: CVSROOT
+  field_cvs_module: モジュール
+  setting_app_title: アプリケーションのタイトル
+  setting_app_subtitle: アプリケーションのサブタイトル
+  setting_welcome_text: ウェルカムメッセージ
+  setting_default_language: 既定の言語
+  setting_login_required: 認証が必要
+  setting_self_registration: ユーザーによるアカウント登録
+  setting_attachment_max_size: 添付ファイルサイズの上限
+  setting_issues_export_limit: エクスポートするチケット数の上限
+  setting_mail_from: 送信元メールアドレス
+  setting_bcc_recipients: ブラインドカーボンコピーで受信(bcc)
+  setting_plain_text_mail: プレインテキストのみ(HTMLなし)
+  setting_host_name: ホスト名
+  setting_text_formatting: テキストの書式
+  setting_cache_formatted_text: 書式化されたテキストをキャッシュする
+  setting_wiki_compression: Wiki履歴を圧縮する
+  setting_feeds_limit: フィード内容の上限
+  setting_default_projects_public: デフォルトで新しいプロジェクトは公開にする
+  setting_autofetch_changesets: コミットを自動取得する
+  setting_sys_api_enabled: リポジトリ管理用のWebサービスを有効にする
+  setting_commit_ref_keywords: 参照用キーワード
+  setting_commit_fix_keywords: 修正用キーワード
+  setting_autologin: 自動ログイン
+  setting_date_format: 日付の形式
+  setting_time_format: 時刻の形式
+  setting_cross_project_issue_relations: 異なるプロジェクトのチケット間で関連の設定を許可
+  setting_issue_list_default_columns: チケットの一覧で表示する項目
+  setting_repositories_encodings: 添付ファイルとリポジトリのエンコーディング
+  setting_emails_header: メールのヘッダ
+  setting_emails_footer: メールのフッタ
+  setting_protocol: プロトコル
+  setting_per_page_options: ページ毎の表示件数
+  setting_user_format: ユーザー名の表示書式
+  setting_activity_days_default: プロジェクトの活動ページに表示される日数
+  setting_display_subprojects_issues: サブプロジェクトのチケットをメインプロジェクトに表示する
+  setting_enabled_scm: 使用するバージョン管理システム
+  setting_mail_handler_body_delimiters: メール本文から一致する行以降を切り取る
+  setting_mail_handler_api_enabled: 受信メール用のWebサービスを有効にする
+  setting_mail_handler_api_key: APIキー
+  setting_sequential_project_identifiers: プロジェクト識別子を連番で生成する
+  setting_gravatar_enabled: Gravatarのアイコンを使用する
+  setting_gravatar_default: デフォルトのGravatarアイコン
+  setting_diff_max_lines_displayed: 差分の表示行数の上限
+  setting_file_max_size_displayed: 画面表示するテキストファイルサイズの上限
+  setting_repository_log_display_limit: ファイルのリビジョン表示数の上限
+  setting_openid: OpenIDによるログインと登録
+  setting_password_min_length: パスワードの最低必要文字数
+  setting_new_project_user_role_id: システム管理者以外のユーザーが作成したプロジェクトに設定するロール
+  setting_default_projects_modules: 新規プロジェクトにおいてデフォルトで有効になるモジュール
+  setting_issue_done_ratio: 進捗の算出方法
+  setting_issue_done_ratio_issue_field: 各チケットにフィールドを用意する
+  setting_issue_done_ratio_issue_status: チケットのステータスを使用する
+  setting_start_of_week: 週の開始曜日
+  setting_rest_api_enabled: RESTによるWebサービスを有効にする
+  setting_default_notification_option: デフォルトのメール通知オプション
+  setting_commit_logtime_enabled: コミット時に作業時間を記録する
+  setting_commit_logtime_activity_id: 作業時間の作業分類
+  setting_gantt_items_limit: ガントチャート最大表示項目数
+  setting_default_projects_tracker_ids: 新規プロジェクトにおいてデフォルトで有効になるトラッカー
+  permission_add_project: プロジェクトの追加
+  permission_add_subprojects: サブプロジェクトの追加
+  permission_edit_project: プロジェクトの編集
+  permission_select_project_modules: モジュールの選択
+  permission_manage_members: メンバーの管理
+  permission_manage_versions: バージョンの管理
+  permission_manage_categories: チケットのカテゴリの管理
+  permission_view_issues: チケットの閲覧
+  permission_add_issues: チケットの追加
+  permission_edit_issues: チケットの編集
+  permission_manage_issue_relations: 関連するチケットの管理
+  permission_add_issue_notes: 注記の追加
+  permission_edit_issue_notes: 注記の編集
+  permission_edit_own_issue_notes: 自身が記入した注記の編集
+  permission_move_issues: チケットの移動
+  permission_delete_issues: チケットの削除
+  permission_manage_public_queries: 公開クエリの管理
+  permission_save_queries: クエリの保存
+  permission_view_gantt: ガントチャートの閲覧
+  permission_view_calendar: カレンダーの閲覧
+  permission_view_issue_watchers: ウォッチャー一覧の閲覧
+  permission_add_issue_watchers: ウォッチャーの追加
+  permission_delete_issue_watchers: ウォッチャーの削除
+  permission_log_time: 作業時間の記入
+  permission_view_time_entries: 作業時間の閲覧
+  permission_edit_time_entries: 作業時間の編集
+  permission_edit_own_time_entries: 自身が記入した作業時間の編集
+  permission_manage_project_activities: 作業分類 (時間トラッキング) の管理
+  permission_manage_news: ニュースの管理
+  permission_comment_news: ニュースへのコメント
+  permission_view_documents: 文書の閲覧
+  permission_manage_files: ファイルの管理
+  permission_view_files: ファイルの閲覧
+  permission_manage_wiki: Wikiの管理
+  permission_rename_wiki_pages: Wikiページ名の変更
+  permission_delete_wiki_pages: Wikiページの削除
+  permission_view_wiki_pages: Wikiの閲覧
+  permission_export_wiki_pages: Wikiページを他の形式にエクスポート
+  permission_view_wiki_edits: Wiki履歴の閲覧
+  permission_edit_wiki_pages: Wikiページの編集
+  permission_delete_wiki_pages_attachments: 添付ファイルの削除
+  permission_protect_wiki_pages: Wikiページの凍結
+  permission_manage_repository: リポジトリの管理
+  permission_browse_repository: リポジトリの閲覧
+  permission_view_changesets: 更新履歴の閲覧
+  permission_commit_access: コミット権限
+  permission_manage_boards: フォーラムの管理
+  permission_view_messages: メッセージの閲覧
+  permission_add_messages: メッセージの追加
+  permission_edit_messages: メッセージの編集
+  permission_edit_own_messages: 自身が記入したメッセージの編集
+  permission_delete_messages: メッセージの削除
+  permission_delete_own_messages: 自身が記入したメッセージの削除
+  permission_manage_subtasks: 子チケットの管理
+  project_module_issue_tracking: チケットトラッキング
+  project_module_time_tracking: 時間トラッキング
+  project_module_news: ニュース
+  project_module_documents: 文書
+  project_module_files: ファイル
+  project_module_wiki: Wiki
+  project_module_repository: リポジトリ
+  project_module_boards: フォーラム
+  project_module_gantt: ガントチャート
+  project_module_calendar: カレンダー
+  label_user: ユーザー
+  label_user_plural: ユーザー
+  label_user_new: 新しいユーザー
+  label_user_anonymous: 匿名ユーザー
+  label_profile: プロフィール
+  label_project: プロジェクト
+  label_project_new: 新しいプロジェクト
+  label_project_plural: プロジェクト
+  label_x_projects:
+    zero: プロジェクトはありません
+    one: 1プロジェクト
+    other: ! '%{count}プロジェクト'
+  label_project_all: 全プロジェクト
+  label_project_latest: 最近のプロジェクト
+  label_issue: チケット
+  label_issue_new: 新しいチケット
+  label_issue_plural: チケット
+  label_issue_view_all: すべてのチケットを見る
+  label_issues_by: ! '%{value} 別のチケット'
+  label_issue_added: チケットが追加されました
+  label_issue_updated: チケットが更新されました
+  label_document: 文書
+  label_document_new: 新しい文書
+  label_document_plural: 文書
+  label_document_added: 文書が追加されました
+  label_role: ロール
+  label_role_plural: ロール
+  label_role_new: 新しいロール
+  label_role_and_permissions: ロールと権限
+  label_member: メンバー
+  label_member_new: 新しいメンバー
+  label_member_plural: メンバー
+  label_tracker: トラッカー
+  label_tracker_plural: トラッカー
+  label_tracker_new: 新しいトラッカーを作成
+  label_workflow: ワークフロー
+  label_issue_status: チケットのステータス
+  label_issue_status_plural: チケットのステータス
+  label_issue_status_new: 新しいステータス
+  label_issue_category: チケットのカテゴリ
+  label_issue_category_plural: チケットのカテゴリ
+  label_issue_category_new: 新しいカテゴリ
+  label_custom_field: カスタムフィールド
+  label_custom_field_plural: カスタムフィールド
+  label_custom_field_new: 新しいカスタムフィールドを作成
+  label_enumerations: 列挙項目
+  label_enumeration_new: 新しい値
+  label_information: 情報
+  label_information_plural: 情報
+  label_please_login: ログインしてください
+  label_register: 登録する
+  label_login_with_open_id_option: またはOpenIDでログインする
+  label_password_lost: パスワードの再発行
+  label_home: ホーム
+  label_my_page: マイページ
+  label_my_account: 個人設定
+  label_my_projects: マイプロジェクト
+  label_my_page_block: マイページパーツ
+  label_administration: 管理
+  label_login: ログイン
+  label_logout: ログアウト
+  label_help: ヘルプ
+  label_reported_issues: 報告したチケット
+  label_assigned_to_me_issues: 担当しているチケット
+  label_last_login: 最近の接続
+  label_registered_on: 登録日
+  label_activity: 活動
+  label_overall_activity: すべての活動
+  label_user_activity: ! '%{value} の活動'
+  label_new: 新しく作成
+  label_logged_as: ログイン中：
+  label_environment: 環境
+  label_authentication: 認証
+  label_auth_source: 認証方式
+  label_auth_source_new: 新しい認証方式
+  label_auth_source_plural: 認証方式
+  label_subproject_plural: サブプロジェクト
+  label_subproject_new: 新しいサブプロジェクト
+  label_and_its_subprojects: ! '%{value} とサブプロジェクト'
+  label_min_max_length: 最小値 - 最大値の長さ
+  label_list: リストから選択
+  label_date: 日付
+  label_integer: 整数
+  label_float: 小数
+  label_boolean: 真偽値
+  label_string: テキスト
+  label_text: 長いテキスト
+  label_attribute: 属性
+  label_attribute_plural: 属性
+  label_no_data: 表示するデータがありません
+  label_change_status: ステータスの変更
+  label_history: 履歴
+  label_attachment: ファイル
+  label_attachment_new: 新しいファイル
+  label_attachment_delete: ファイルを削除
+  label_attachment_plural: ファイル
+  label_file_added: ファイルが追加されました
+  label_report: レポート
+  label_report_plural: レポート
+  label_news: ニュース
+  label_news_new: ニュースを追加
+  label_news_plural: ニュース
+  label_news_latest: 最新ニュース
+  label_news_view_all: すべてのニュースを見る
+  label_news_added: ニュースが追加されました
+  label_news_comment_added: ニュースにコメントが追加されました
+  label_settings: 設定
+  label_overview: 概要
+  label_version: バージョン
+  label_version_new: 新しいバージョン
+  label_version_plural: バージョン
+  label_confirmation: 確認
+  label_close_versions: 完了したバージョンを終了にする
+  label_export_to: ! '他の形式にエクスポート:'
+  label_read: 読む...
+  label_public_projects: 公開プロジェクト
+  label_open_issues: 未完了
+  label_open_issues_plural: 未完了
+  label_closed_issues: 完了
+  label_closed_issues_plural: 完了
+  label_x_open_issues_abbr_on_total:
+    zero: 0件未完了 / 全%{total}件
+    one: 1件未完了 / 全%{total}件
+    other: ! '%{count}件未完了 / 全%{total}件'
+  label_x_open_issues_abbr:
+    zero: 0件未完了
+    one: 1件未完了
+    other: ! '%{count}件未完了'
+  label_x_closed_issues_abbr:
+    zero: 0件完了
+    one: 1件完了
+    other: ! '%{count}件完了'
+  label_total: 合計
+  label_total_total: 合計：
+  label_permissions: 権限
+  label_current_status: 現在のステータス
+  label_new_statuses_allowed: ステータスの移行先
+  label_all: すべて
+  label_none: なし
+  label_nobody: 無記名
+  label_next: 次
+  label_previous: 前
+  label_used_by: 使用中
+  label_details: 詳細
+  label_add_note: 注記を追加
+  label_per_page: ページ毎
+  label_calendar: カレンダー
+  label_months_from: ヶ月分
+  label_gantt: ガントチャート
+  label_internal: 内部
+  label_last_changes: 最新の変更 %{count}件
+  label_change_view_all: すべての変更を見る
+  label_personalize_page: このページをパーソナライズする
+  label_comment: コメント
+  label_comment_plural: コメント
+  label_x_comments:
+    zero: コメントがありません
+    one: 1コメント
+    other: ! '%{count}コメント'
+    two: 2コメント
+    three: 3コメント
+    four: 4コメント
+  label_comment_add: コメント追加
+  label_comment_added: 追加されたコメント
+  label_comment_delete: コメント削除
+  label_query: カスタムクエリ
+  label_query_plural: カスタムクエリ
+  label_query_new: 新しいクエリ
+  label_my_queries: マイカスタムクエリ
+  label_filter_add: フィルタ追加
+  label_filter_plural: フィルタ
+  label_equals: 等しい
+  label_not_equals: 等しくない
+  label_in_less_than: 今日から○日後以前
+  label_in_more_than: 今日から○日後以降
+  label_greater_or_equal: 以上
+  label_less_or_equal: 以下
+  label_in: 今日から○日後
+  label_today: 今日
+  label_all_time: 全期間
+  label_yesterday: 昨日
+  label_this_week: 今週
+  label_last_week: 先週
+  label_last_n_days: 直近%{count}日間
+  label_this_month: 今月
+  label_last_month: 先月
+  label_this_year: 今年
+  label_date_range: 期間
+  label_less_than_ago: 今日より○日前以降
+  label_more_than_ago: 今日より○日前以前
+  label_ago: ○日前
+  label_contains: 含む
+  label_not_contains: 含まない
+  label_day_plural: 日
+  label_repository: リポジトリ
+  label_repository_plural: リポジトリ
+  label_browse: ブラウズ
+  label_branch: ブランチ
+  label_tag: タグ
+  label_revision: リビジョン
+  label_revision_plural: リビジョン
+  label_revision_id: リビジョン %{value}
+  label_associated_revisions: 関係しているリビジョン
+  label_added: 追加
+  label_modified: 変更
+  label_copied: コピー
+  label_renamed: 名称変更
+  label_deleted: 削除
+  label_latest_revision: 最新リビジョン
+  label_latest_revision_plural: 最新リビジョン
+  label_view_revisions: リビジョンを見る
+  label_view_all_revisions: すべてのリビジョンを見る
+  label_max_size: サイズの上限
+  label_sort_highest: 一番上へ
+  label_sort_higher: 上へ
+  label_sort_lower: 下へ
+  label_sort_lowest: 一番下へ
+  label_roadmap: ロードマップ
+  label_roadmap_due_in: 期日まで %{value}
+  label_roadmap_overdue: ! '%{value} 遅れ'
+  label_roadmap_no_issues: このバージョンに関するチケットはありません
+  label_search: 検索
+  label_result_plural: 結果
+  label_all_words: すべての単語
+  label_wiki: Wiki
+  label_wiki_edit: Wiki編集
+  label_wiki_edit_plural: Wiki編集
+  label_wiki_page: Wikiページ
+  label_wiki_page_plural: Wikiページ
+  label_index_by_title: 索引(名前順)
+  label_index_by_date: 索引(日付順)
+  label_current_version: 最新版
+  label_preview: プレビュー
+  label_feed_plural: フィード
+  label_changes_details: 全変更の詳細
+  label_issue_tracking: チケットトラッキング
+  label_spent_time: 作業時間の記録
+  label_overall_spent_time: すべての作業時間の記録
+  label_f_hour: ! '%{value}時間'
+  label_f_hour_plural: ! '%{value}時間'
+  label_time_tracking: 時間トラッキング
+  label_change_plural: 変更
+  label_statistics: 統計
+  label_commits_per_month: 月別のコミット
+  label_commits_per_author: 起票者別のコミット
+  label_diff: 差分
+  label_view_diff: 差分を見る
+  label_diff_inline: インライン
+  label_diff_side_by_side: 横に並べる
+  label_options: オプション
+  label_copy_workflow_from: ワークフローをここからコピー
+  label_permissions_report: 権限レポート
+  label_watched_issues: ウォッチしているチケット
+  label_related_issues: 関連するチケット
+  label_applied_status: 適用されるステータス
+  label_loading: ロード中...
+  label_relation_new: 新しい関連
+  label_relation_delete: 関連の削除
+  label_relates_to: 関連している
+  label_duplicates: 次のチケットと重複
+  label_duplicated_by: 次のチケットが重複
+  label_blocks: ブロックしている
+  label_blocked_by: ブロックされている
+  label_precedes: 次のチケットに先行
+  label_follows: 次のチケットに後続
+  label_end_to_start: 最後-最初
+  label_end_to_end: 最後-最後
+  label_start_to_start: 最初-最初
+  label_start_to_end: 最初-最後
+  label_stay_logged_in: ログインを維持
+  label_disabled: 無効
+  label_show_completed_versions: 完了したバージョンを表示
+  label_me: 自分
+  label_board: フォーラム
+  label_board_new: 新しいフォーラム
+  label_board_plural: フォーラム
+  label_board_sticky: スティッキー
+  label_board_locked: ロック
+  label_topic_plural: トピック
+  label_message_plural: メッセージ
+  label_message_last: 最新のメッセージ
+  label_message_new: 新しいメッセージ
+  label_message_posted: メッセージが追加されました
+  label_reply_plural: 返答
+  label_send_information: アカウント情報をユーザーに送信
+  label_year: 年
+  label_month: 月
+  label_week: 週
+  label_date_from: ! '日付指定: '
+  label_date_to: から
+  label_language_based: ユーザーの言語の設定に従う
+  label_sort_by: 並び替え %{value}
+  label_send_test_email: テストメールを送信
+  label_feeds_access_key: RSSアクセスキー
+  label_missing_feeds_access_key: RSSアクセスキーが見つかりません
+  label_feeds_access_key_created_on: RSSアクセスキーは%{value}前に作成されました
+  label_module_plural: モジュール
+  label_updated_time: ! '%{value}前に更新'
+  label_jump_to_a_project: プロジェクトへ移動...
+  label_file_plural: ファイル
+  label_changeset_plural: 更新履歴
+  label_default_columns: 既定の項目
+  label_no_change_option: (変更無し)
+  label_bulk_edit_selected_issues: チケットの一括編集
+  label_theme: テーマ
+  label_default: 既定
+  label_search_titles_only: タイトルのみ
+  label_user_mail_option_all: 参加しているプロジェクトのすべての通知
+  label_user_mail_option_selected: 選択したプロジェクトのすべての通知...
+  label_user_mail_option_none: 通知しない
+  label_user_mail_option_only_my_events: ウォッチまたは関係している事柄のみ
+  label_user_mail_option_only_assigned: 自分が担当している事柄のみ
+  label_user_mail_option_only_owner: 自分が作成した事柄のみ
+  label_user_mail_no_self_notified: 自分自身による変更の通知は不要
+  label_registration_activation_by_email: メールでアカウントを有効化
+  label_registration_manual_activation: 手動でアカウントを有効化
+  label_registration_automatic_activation: 自動でアカウントを有効化
+  label_display_per_page: ! '1ページに: %{value}'
+  label_age: 年齢
+  label_change_properties: プロパティの変更
+  label_general: 全般
+  label_more: 続き
+  label_scm: バージョン管理システム
+  label_plugins: プラグイン
+  label_ldap_authentication: LDAP認証
+  label_downloads_abbr: DL
+  label_optional_description: 任意のコメント
+  label_add_another_file: 別のファイルを追加
+  label_preferences: 設定
+  label_chronological_order: 古い順
+  label_reverse_chronological_order: 新しい順
+  label_planning: 計画
+  label_incoming_emails: 受信メール
+  label_generate_key: キーの生成
+  label_issue_watchers: チケットのウォッチャー
+  label_example: 例
+  label_display: 表示
+  label_sort: ソート条件
+  label_ascending: 昇順
+  label_descending: 降順
+  label_date_from_to: ! '%{start}から%{end}まで'
+  label_wiki_content_added: Wikiページが追加されました
+  label_wiki_content_updated: Wikiページが更新されました
+  label_group: グループ
+  label_group_plural: グループ
+  label_group_new: 新しいグループ
+  label_time_entry_plural: 作業時間の記録
+  label_version_sharing_none: 共有しない
+  label_version_sharing_descendants: サブプロジェクト単位
+  label_version_sharing_hierarchy: プロジェクト階層単位
+  label_version_sharing_tree: プロジェクトツリー単位
+  label_version_sharing_system: すべてのプロジェクト
+  label_update_issue_done_ratios: 進捗の更新
+  label_copy_source: コピー元
+  label_copy_target: コピー先
+  label_copy_same_as_target: 同じコピー先
+  label_display_used_statuses_only: このトラッカーで使われているステータスのみ表示する
+  label_api_access_key: APIアクセスキー
+  label_missing_api_access_key: APIアクセスキーが見つかりません
+  label_api_access_key_created_on: APIアクセスキーは%{value}前に作成されました
+  label_subtask_plural: 子チケット
+  label_project_copy_notifications: コピーしたチケットのメール通知を送信する
+  label_principal_search: ! 'ユーザーまたはグループの検索:'
+  label_user_search: ! 'ユーザーの検索:'
+  label_git_report_last_commit: ファイルとディレクトリの最新コミットを表示する
+  label_parent_revision: 親
+  label_child_revision: 子
+  label_gantt_progress_line: イナズマ線
+  button_login: ログイン
+  button_submit: 送信
+  button_save: 保存
+  button_check_all: すべてにチェックをつける
+  button_uncheck_all: すべてのチェックを外す
+  button_expand_all: 展開
+  button_collapse_all: 折りたたみ
+  button_delete: 削除
+  button_create: 作成
+  button_create_and_continue: 連続作成
+  button_test: テスト
+  button_edit: 編集
+  button_edit_associated_wikipage: ! '関連するWikiページを編集: %{page_title}'
+  button_add: 追加
+  button_change: 変更
+  button_apply: 適用
+  button_clear: クリア
+  button_lock: ロック
+  button_unlock: アンロック
+  button_download: ダウンロード
+  button_list: 一覧
+  button_view: 表示
+  button_move: 移動
+  button_move_and_follow: 移動後表示
+  button_back: 戻る
+  button_cancel: キャンセル
+  button_activate: 有効にする
+  button_sort: ソート
+  button_log_time: 時間を記録
+  button_rollback: このバージョンにロールバック
+  button_watch: ウォッチ
+  button_unwatch: ウォッチをやめる
+  button_reply: 返答
+  button_archive: アーカイブ
+  button_unarchive: アーカイブ解除
+  button_reset: リセット
+  button_rename: 名前変更
+  button_change_password: パスワード変更
+  button_copy: コピー
+  button_copy_and_follow: コピー後表示
+  button_annotate: アノテート
+  button_update: 更新
+  button_configure: 設定
+  button_quote: 引用
+  button_duplicate: 複製
+  button_show: 表示
+  status_active: 有効
+  status_registered: 登録
+  status_locked: ロック
+  version_status_open: 進行中
+  version_status_locked: ロック中
+  version_status_closed: 終了
+  field_active: 有効
+  text_select_mail_notifications: どのメール通知を送信するか、アクションを選択してください。
+  text_regexp_info: 例) ^[A-Z0-9]+$
+  text_min_max_length_info: 0だと無制限になります
+  text_project_destroy_confirmation: 本当にこのプロジェクトと関連データを削除しますか？
+  text_subprojects_destroy_warning: サブプロジェクト %{value} も削除されます。
+  text_workflow_edit: ワークフローを編集するロールとトラッカーを選んでください
+  text_are_you_sure: よろしいですか？
+  text_journal_changed: ! '%{label} を %{old} から %{new} に変更'
+  text_journal_changed_no_detail: ! '%{label} を更新'
+  text_journal_set_to: ! '%{label} を %{value} にセット'
+  text_journal_deleted: ! '%{label} を削除 (%{old})'
+  text_journal_added: ! '%{label} %{value} を追加'
+  text_tip_issue_begin_day: この日に開始するチケット
+  text_tip_issue_end_day: この日に終了するチケット
+  text_tip_issue_begin_end_day: この日に開始・終了するチケット
+  text_caracters_maximum: 最大%{count}文字です。
+  text_caracters_minimum: 最低%{count}文字の長さが必要です
+  text_length_between: 長さは%{min}から%{max}文字までです。
+  text_tracker_no_workflow: このトラッカーにワークフローが定義されていません
+  text_unallowed_characters: 次の文字は使用できません
+  text_comma_separated: (カンマで区切ることで)複数の値を設定できます。
+  text_line_separated: (1行ごとに書くことで)複数の値を設定できます。
+  text_issues_ref_in_commit_messages: コミットメッセージ内でチケットの参照/修正
+  text_issue_added: チケット %{id} が %{author} によって報告されました。
+  text_issue_updated: チケット %{id} が %{author} によって更新されました。
+  text_wiki_destroy_confirmation: 本当にこのwikiとその内容のすべてを削除しますか？
+  text_issue_category_destroy_question: ! '%{count}件のチケットがこのカテゴリに割り当てられています。'
+  text_issue_category_destroy_assignments: カテゴリの割り当てを削除する
+  text_issue_category_reassign_to: チケットをこのカテゴリに再割り当てする
+  text_user_mail_option: ! '未選択のプロジェクトでは、ウォッチまたは関係している事柄(例: 自分が報告者もしくは担当者であるチケット)のみメールが送信されます。'
+  text_no_configuration_data: ! 'ロール、トラッカー、チケットのステータス、ワークフローがまだ設定されていません。
+
+    デフォルト設定のロードを強くお勧めします。ロードした後、それを修正することができます。'
+  text_load_default_configuration: デフォルト設定をロード
+  text_status_changed_by_changeset: 更新履歴 %{value} で適用されました。
+  text_time_logged_by_changeset: 更新履歴 %{value} で適用されました。
+  text_issues_destroy_confirmation: 本当に選択したチケットを削除しますか？
+  text_select_project_modules: ! 'このプロジェクトで使用するモジュールを選択してください:'
+  text_default_administrator_account_changed: デフォルト管理アカウントが変更済
+  text_file_repository_writable: ファイルリポジトリに書き込み可能
+  text_plugin_assets_writable: Plugin assetsディレクトリに書き込み可能
+  text_rmagick_available: RMagickが使用可能 (オプション)
+  text_destroy_time_entries_question: このチケットの%{hours}時間分の作業記録の扱いを選択してください。
+  text_destroy_time_entries: 記録された作業時間を含めて削除
+  text_assign_time_entries_to_project: 記録された作業時間をプロジェクト自体に割り当て
+  text_reassign_time_entries: 記録された作業時間をこのチケットに再割り当て：
+  text_user_wrote: ! '%{value} は書きました:'
+  text_enumeration_destroy_question: ! '%{count}個のオブジェクトがこの値に割り当てられています。'
+  text_enumeration_category_reassign_to: ! '次の値に割り当て直す:'
+  text_email_delivery_not_configured: ! 'メールを送信するために必要な設定が行われていないため、メール通知は利用できません。
+
+    config/configuration.ymlでSMTPサーバの設定を行い、アプリケーションを再起動してください。'
+  text_repository_usernames_mapping: ! 'リポジトリのログから検出されたユーザー名をどのRedmineユーザーに関連づけるのか選択してください。
+
+    ログ上のユーザー名またはメールアドレスがRedmineのユーザーと一致する場合は自動的に関連づけられます。'
+  text_diff_truncated: ! '... 差分の行数が表示可能な上限を超えました。超過分は表示しません。'
+  text_custom_field_possible_values_info: 選択肢の値は1行に1個ずつ記述してください。
+  text_wiki_page_destroy_question: この親ページの配下に%{descendants}ページの子孫ページがあります。
+  text_wiki_page_nullify_children: 子ページをメインページ配下に移動する
+  text_wiki_page_destroy_children: 配下の子孫ページも削除する
+  text_wiki_page_reassign_children: 子ページを次の親ページの配下に移動する
+  text_own_membership_delete_confirmation: ! '一部またはすべての権限を自分自身から剥奪しようとしているため、このプロジェクトを編集できなくなる可能性があります。
+
+    本当に続けますか？'
+  text_zoom_in: 拡大
+  text_zoom_out: 縮小
+  text_warn_on_leaving_unsaved: このページから移動すると、保存されていないデータが失われます。
+  text_scm_path_encoding_note: ! 'デフォルト: UTF-8'
+  text_mercurial_repository_note: ! 'ローカルリポジトリ (例: /hgrepo, c:\hgrepo)'
+  text_git_repository_note: ! 'Bare、かつ、ローカルリポジトリ (例: /gitrepo, c:\gitrepo)'
+  text_scm_command: コマンド
+  text_scm_command_version: バージョン
+  text_scm_config: バージョン管理システムのコマンドをconfig/configuration.ymlで設定できます。設定後、Redmineを再起動してください。
+  text_scm_command_not_available: バージョン管理システムのコマンドが利用できません。管理画面にて設定を確認してください。
+  default_role_manager: 管理者
+  default_role_developer: 開発者
+  default_role_reporter: 報告者
+  default_tracker_bug: バグ
+  default_tracker_feature: 機能
+  default_tracker_support: サポート
+  default_issue_status_new: 新規
+  default_issue_status_in_progress: 進行中
+  default_issue_status_resolved: 解決
+  default_issue_status_feedback: フィードバック
+  default_issue_status_closed: 終了
+  default_issue_status_rejected: 却下
+  default_doc_category_user: ユーザー文書
+  default_doc_category_tech: 技術文書
+  default_priority_low: 低め
+  default_priority_normal: 通常
+  default_priority_high: 高め
+  default_priority_urgent: 急いで
+  default_priority_immediate: 今すぐ
+  default_activity_design: 設計作業
+  default_activity_development: 開発作業
+  enumeration_issue_priorities: チケットの優先度
+  enumeration_doc_categories: 文書カテゴリ
+  enumeration_activities: 作業分類 (時間トラッキング)
+  enumeration_system_activity: システム作業分類
+  label_additional_workflow_transitions_for_assignee: チケット担当者に追加で許可する遷移
+  label_additional_workflow_transitions_for_author: チケット作成者に追加で許可する遷移
+  label_bulk_edit_selected_time_entries: 作業時間の一括編集
+  text_time_entries_destroy_confirmation: 本当に選択した作業時間を削除しますか？
+  label_role_anonymous: 匿名ユーザー
+  label_role_non_member: 非メンバー
+  label_issue_note_added: 注記が追加されました
+  label_issue_status_updated: ステータスが更新されました
+  label_issue_priority_updated: 優先度が更新されました
+  label_issues_visibility_own: 作成者か担当者であるチケット
+  field_issues_visibility: 表示できるチケット
+  label_issues_visibility_all: すべてのチケット
+  permission_set_own_issues_private: 自分のチケットをプライベートに設定
+  field_is_private: プライベート
+  permission_set_issues_private: チケットをプライベートに設定
+  label_issues_visibility_public: プライベートチケット以外
+  text_issues_destroy_descendants_confirmation: ! '%{count}個の子チケットも削除されます。'
+  notice_issue_successful_create: チケット %{id} が作成されました。
+  label_between: 次の範囲内
+  setting_issue_group_assignment: グループへのチケット割り当てを許可
+  description_query_sort_criteria_direction: 順序
+  description_project_scope: 検索範囲
+  description_filter: Filter
+  description_user_mail_notification: メール通知の設定
+  description_date_from: 開始日
+  description_message_content: 内容
+  description_available_columns: 利用できる項目
+  description_date_range_interval: 日付で指定
+  description_issue_category_reassign: 新しいカテゴリを選択してください
+  description_search: 検索キーワード
+  description_notes: 注記
+  description_date_range_list: 一覧から選択
+  description_choose_project: プロジェクト
+  description_date_to: 終了日
+  description_query_sort_criteria_attribute: 項目
+  description_wiki_subpages_reassign: 新しい親ページを選択してください
+  description_selected_columns: 選択された項目
+  error_scm_annotate_big_text_file: テキストファイルサイズの上限を超えているためアノテートできません。
+  setting_default_issue_start_date_to_creation_date: 現在の日付を新しいチケットの開始日とする
+  button_edit_section: このセクションを編集
+  description_all_columns: すべての項目
+  button_export: エクスポート
+  label_export_options: ! '%{export_format} エクスポート設定'
+  error_attachment_too_big: このファイルはアップロードできません。添付ファイルサイズの上限(%{max_size})を超えています。
+  notice_failed_to_save_time_entries: ! '全%{total}件中%{count}件の作業時間が保存できませんでした: %{ids}.'
+  label_x_issues:
+    zero: 0 チケット
+    one: 1 チケット
+    other: ! '%{count} チケット'
+  label_repository_new: 新しいリポジトリ
+  field_repository_is_default: メインリポジトリ
+  label_copy_attachments: 添付ファイルをコピー
+  label_item_position: ! '%{position}/%{count}'
+  label_completed_versions: 完了したバージョン
+  text_project_identifier_info: アルファベット小文字(a-z)・数字・ハイフン・アンダースコアが使えます。最初の文字はアルファベットの小文字にしてください。<br
+    />識別子は後で変更することはできません。
+  field_multiple: 複数選択可
+  setting_commit_cross_project_ref: 異なるプロジェクトのチケットの参照/修正を許可
+  text_issue_conflict_resolution_add_notes: 自分の編集内容を破棄し注記のみ追加
+  text_issue_conflict_resolution_overwrite: 自分の編集内容の保存を強行 (他のユーザーの更新内容は注記を除き上書きされます)
+  notice_issue_update_conflict: このチケットを編集中に他のユーザーが更新しました。
+  text_issue_conflict_resolution_cancel: 自分の編集内容を破棄し %{link} を再表示
+  permission_manage_related_issues: 関連するチケットの管理
+  field_auth_source_ldap_filter: LDAPフィルタ
+  label_search_for_watchers: ウォッチャーを検索して追加
+  notice_account_deleted: アカウントが削除されました。
+  setting_unsubscribe: ユーザーによるアカウント削除を許可
+  button_delete_my_account: 自分のアカウントを削除
+  text_account_destroy_confirmation: ! '本当にアカウントを削除しますか？
+
+    アカウントは恒久的に削除されます。削除後に再度アカウントを有効にする手段はありません。'
+  error_session_expired: セッションが失効しました。ログインし直してください。
+  text_session_expiration_settings: ! '警告: この設定を変更すると現在有効なセッションが失効する可能性があります。'
+  setting_session_lifetime: 有効期間の最大値
+  setting_session_timeout: 無操作タイムアウト
+  label_session_expiration: セッション有効期間
+  permission_close_project: プロジェクトの終了/再開
+  label_show_closed_projects: 終了したプロジェクトを表示
+  button_close: 終了
+  button_reopen: 再開
+  project_status_active: 有効
+  project_status_closed: 終了
+  project_status_archived: アーカイブ
+  text_project_closed: このプロジェクトは終了しているため読み取り専用です。
+  notice_user_successful_create: ユーザー %{id} を作成しました。
+  field_core_fields: 標準フィールド
+  field_timeout: タイムアウト(秒単位)
+  setting_thumbnails_enabled: 添付ファイルのサムネイル画像を表示
+  setting_thumbnails_size: サムネイル画像の大きさ(ピクセル単位)
+  label_status_transitions: ステータスの遷移
+  label_fields_permissions: フィールドに対する権限
+  label_readonly: 読み取り専用
+  label_required: 必須
+  text_repository_identifier_info: アルファベット小文字(a-z)・数字・ハイフン・アンダースコアが使えます。<br />識別子は後で変更することはできません。
+  field_board_parent: 親フォーラム
+  label_attribute_of_project: プロジェクトの %{name}
+  label_attribute_of_author: 作成者の %{name}
+  label_attribute_of_assigned_to: 担当者の %{name}
+  label_attribute_of_fixed_version: 対象バージョンの %{name}
+  label_copy_subtasks: 子チケットをコピー
+  label_copied_to: コピー先
+  label_copied_from: コピー元
+  label_any_issues_in_project: 次のプロジェクト内のチケット
+  label_any_issues_not_in_project: 次のプロジェクト外のチケット
+  field_private_notes: プライベート注記
+  permission_view_private_notes: プライベート注記の閲覧
+  permission_set_notes_private: 注記をプライベートに設定
+  label_no_issues_in_project: 次のプロジェクト内のチケットを除く
+  label_any: すべて
+  label_last_n_weeks: 直近%{count}週間
+  setting_cross_project_subtasks: 異なるプロジェクトのチケット間の親子関係を許可
+  label_cross_project_descendants: サブプロジェクト単位
+  label_cross_project_tree: プロジェクトツリー単位
+  label_cross_project_hierarchy: プロジェクト階層単位
+  label_cross_project_system: すべてのプロジェクト
+  button_hide: 隠す
+  setting_non_working_week_days: 休業日
+  label_in_the_next_days: 今後○日
+  label_in_the_past_days: 過去○日
+  label_attribute_of_user: ユーザーの %{name}
+  text_turning_multiple_off: この設定を無効にすると、複数選択されている値のうち1個だけが保持され残りは選択解除されます。
+  label_attribute_of_issue: チケットの %{name}
+  permission_add_documents: 文書の追加
+  permission_edit_documents: 文書の編集
+  permission_delete_documents: 文書の削除
+  setting_jsonp_enabled: JSONPを有効にする
+  field_inherit_members: メンバーを継承
+  field_closed_on: 終了日
+  label_total_time: 合計
+  error_can_not_delete_auth_source: この認証ソースが使用されており、削除することはできません。
+  field_is_planned: 計画された
+  field_versions: マイルストーン
+  field_issue_to_id: 関連タスク
+  permission_view_news: ニュースを表示
+  permission_view_easy_attendances: メッセージボードを表示して、使用
+  permission_edit_easy_attendances: ボード上のレコードを編集
+  permission_view_project_overview_users_query: ファイラーからプロジェクト概要ユーザへの表示
+  label_permissions_global: グローバル権限
+  label_permissions_project: プロジェクト権限
+  label_project_gantt: プロジェクト·ガント
+  label_no_change: 変更なし
+  label_change_to: に変更します：
+  option_only_selected: のみ選択
+  label_allow_log_time_to_closed_issue: 閉じた問題に時間をログオンを許可する
+  project_status_planned: 計画された
+  text_project_archive_confirmation: アーカイブこのプロジェクトと関連データにしてもよろしいですか？
+  text_project_close_confirmation: このプロジェクトを閉じてもよろしいですか？
+  text_project_reopen_confirmation: このプロジェクトを再度してもよろしいですか？
+  text_milestone_effective_date_from_issue: 効力発生日は、フォームのタスクを調整します＃%{issue}
+  easyproject_name: EASY PROJECT 2013
+  easyproject_author: 簡単なソフトウェア
+  easyproject_author_url: http://www.easyproject.cz/en
+  easyproject_description: プロジェクト管理のための経営情報システム。
+  project_module_easy_other_permissions: 他人
+  permission_create_project_from_template: テンプレートからプロジェクトを作成する
+  permission_create_project_template: プロジェクトからテンプレートを作成
+  permission_edit_project_template: プロジェクトテンプレートを編集
+  permission_delete_project_template: プロジェクトテンプレートを削除
+  permission_view_project_activity: プロジェクト活動の眺め
+  permission_view_project_report: プロジェクト統計ビュー
+  permission_action_duplicate_issue: タスクを重複
+  permission_edit_own_issue: 独自のタスクを編集
+  permission_view_restrictions_users: 選択したユーザーへのコメントを見る
+  permission_view_personal_statement: 個人的な声明を見る
+  permission_view_all_statements: すべてのユーザーの文を見る
+  permission_manage_page_project_overview: プロジェクトの概要を管理する
+  permission_supervisor: メンバーではありませんどこにプロジェクトを管理する
+  permission_archive_project: アーカイブプロジェクト
+  permission_copy_project: コピープロジェクト
+  permission_manage_my_page: 私のページを編集
+  permission_view_bulk_time_entry: バルク時間エントリー
+  permission_manage_bulk_version: バルクバージョン管理
+  permission_manage_easy_project_relations: プロジェクトとの関係を管理する
+  permission_manage_easy_version_relations: バージョン関係を管理する
+  permission_edit_issue_fixed_activity: 固定されたタスクに関連付けられた活性の変化
+  permission_view_easy_attendances_extra_info: 余分な情報表示（ユーザーのIPアドレスを、...）
+  permission_manage_global_versions: グローバルなマイルストーンを管理する
+  permission_edit_own_easy_attendances: 独自の出勤を編集
+  permission_view_easy_attendance_other_users: 出席、他のユーザーを見る
+  permission_manage_easy_issue_timers: タスクタイマの設定にアクセスする
+  permission_edit_project_custom_fields: プロジェクトのカスタムフィールドを編集
+  permission_delete_project: プロジェクトの削除
+  heading_easy_user_working_time_calendar_index: カレンダーのリスト - 作業時間
+  heading_easy_user_working_time_calendar_show: カレンダー%{calendarname}
+  heading_easy_user_working_time_calendar_edit: カレンダーの基本的な属性を編集
+  heading_easy_user_working_time_calendar_new: 新暦
+  heading_easy_user_working_time_calendars_holiday_index: 祝日インデックス
+  heading_easy_user_working_time_calendars_holiday_edit: 編集休日
+  heading_easy_user_working_time_calendars_holiday_new: 新しい休日
+  heading_layout_from_template_selecting_projects: テンプレートを適用するためのプロジェクトを選択する
+  heading_layout_from_template_selecting_users: テンプレートを適用するためのユーザ選択
+  heading_project_mass_copy_select_source_project: ソースプロジェクトを選択してください
+  heading_project_mass_copy_select_target_projects: ターゲット·プロジェクトを選択してください
+  heading_project_mass_copy_select_actions: コピーできるアクションを選択してください
+  heading_easy_issues_preview_external_email: 外部メールを送信
+  heading_issues_settings_display: 表示
+  heading_issues_settings_behaviour: 行動
+  label_simple_add_project_task: プロジェクト
+  label_simple_add_project_task_on_project: サブプロジェクト
+  label_done: 行わ
+  label_issue_due_date: 期日までの時間
+  label_show_user_info: 約inforamtionsを表示%{username}。
+  label_show_assigned_issues: ユーザに割り当てられたタスクを表示する%{username}。
+  label_budget_draw: 予算ドロー
+  label_user_new_issue: ユーザーの新しいタスクを作成する%{username}。
+  label_user_saved_query: ユーザのフィルタを表示する%{queryname}。
+  label_show_project_info: プロジェクト情報を表示する%{projectname}。
+  label_show_issue_info: タスクを表示する%{issuename}詳細。
+  label_templates_plural: プロジェクトテンプレート
+  label_news_unread: 未読ニュース
+  label_new_project_name: 新しいプロジェクト名
+  label_template_new: テンプレートから新しいプロジェクト
+  label_template_copy: 既存プロジェクトにテンプレートをコピー
+  label_easy_page_module_settings_missing: 、再びモジュールを保存してください。
+  label_my_page_project_query_select: 保存されたフィルター：
+  label_my_page_issue_query_select: 保存されたフィルター：
+  label_my_page_user_query_select: 保存されたフィルター：
+  label_my_page_project_output_select: 出力フォーマット：
+  label_my_page_issue_output_select: 出力フォーマット：
+  label_my_page_user_output_select: 出力フォーマット：
+  label_my_page_issue_query: 保存されたフィルタ
+  label_my_page_issue_query_new_before: あなたは、タスクリストに新しいフィルタを作成することができますか
+  label_my_page_issue_query_new_link: ここで
+  label_my_page_issue_query_new_after: 。
+  label_my_page_projects_row_count: プロジェクトの数：
+  label_my_page_issue_row_count: タスクの数：
+  label_my_page_document_row_count: 文書の数：
+  label_my_page_users_row_count: ユーザー数：
+  label_my_page_news_row_count: ニュースの数：
+  label_my_page_users_filter_visible: プロジェクト概要のフィルタリングのオプションを次の項目で絞り込み表示：
+  label_my_page_issue_enable_text_editor: テキストエディタを有効にする：
+  label_my_page_issue_show_fields_option_part1: ショー
+  label_my_page_issue_show_fields_option_part2: フォームフィールド。
+  label_my_page_projects_query_settings_missing: 、MODUL設定を修正してください。
+  label_my_page_projects_query_select: 保存されたフィルター：
+  label_my_page_document_query_select: 保存されたフィルター：
+  label_my_page_projects_query: 保存されたフィルタ
+  label_my_page_projects_query_new_before: は、プロジェクトのリストに新しいフィルタを作成したりすることができます
+  label_my_page_projects_query_new_link: ここで
+  label_my_page_projects_query_new_after: 。
+  label_my_page_issues_rss_reader: 別のサーバからタスク
+  label_my_page_issues_rss_reader_url: 出典：
+  label_my_page_issues_rss_reader_row_limit: リネージュ：
+  label_my_page_issues_rss_reader_loading: データをロードし、しばらくお待ちください。
+  label_my_page_google_maps_iframe_tag: HTMLタグを埋め込ま
+  label_version_show_closed_issues: 閉じられたタスクを表示します。
+  label_easy_pages_project_administration: ページのパーソナライズ
+  label_easy_pages: パーソナライズするためのページのリスト
+  label_easy_page_zone: ゾーン
+  label_easy_page_zones: ページ上のゾーン%{pagename}
+  label_easy_page_new: 新しいページ
+  label_easy_page_edit: ページを編集
+  label_easy_page_zones_view: ページゾーンの概要
+  label_easy_page_zone_new: ゾーン
+  label_easy_page_zone_edit: 編集ゾーン
+  label_easy_page_zone_show: 表示ゾーン%{zonename}
+  label_easy_page_modules: ゾーン内のモジュール
+  label_easy_page_user_modules: ページ上のモジュール%{pagename}
+  label_personalize_user_page: モジュールを編集または追加
+  label_personalize_user_page_from_layout: デフォルト設定してページを上書きします。
+  label_easy_page_templates: ページ上のテンプレートのリスト%{pagename}
+  label_easy_page_templates_new: 新しいテンプレート
+  label_easy_page_template_new: 新しいページテンプレート%{pagename}
+  label_easy_page_template_edit: ページテンプレートを編集%{pagename}
+  label_easy_page_user_layout_modules: ページ上のモジュールレイアウト
+  label_easy_page_template_user_modules: テンプレート内のモジュールレイアウト%{templatename}
+  label_easy_page_template_show: モジュールレイアウト
+  label_select_page_template: ページテンプレートを選択します。
+  label_select_my_page_template: 私のページテンプレートを選択してください
+  label_easy_page_zones_new_assignments: ページにゾーンを追加
+  label_easy_page_assign_zone: のページレイアウトにゾーンを追加する%{pagename}
+  label_select_page_assign_zone: ゾーンを選択します：
+  label_easy_page_no_zones: いいえゾーンが定義されていません。
+  label_easy_page_no_pages: 定義されていない編集するページ。
+  label_easy_page_module_select: リストからモジュールを選択します。
+  label_user_my_page: 私のページ
+  label_project_custom_fields: プロジェクトのカスタムフィールド
+  label_project_no_custom_fields: いいえプロジェクトカスタムフィールドはありません。
+  label_easy_page_module_empty: モジュール%{modulename}テンプレートに表示することができません。それを修正するために特定のページを追加します。
+  label_easy_page_module_missing: MODUL %{modulename}存在しないため、表示することができません。
+  label_project_templates_update_dates: 開始日を投影内容に応じ、すべてのプロジェクトデータを更新します。
+  label_user_saved_projectquery: ユーザフィルタを表示%{queryname}。
+  label_new_project_from_template: テンプレートから新しいプロジェクト
+  label_easy_my_page_template_to_all: すべてのユーザーにテンプレートを適用
+  label_custom_field_computed_string: 計算フィールド - テキスト
+  label_custom_field_computed_integer: 計算フィールド - 整数
+  label_custom_field_computed_float: 計算フィールド - 進数
+  label_custom_field_computed_date: 計算フィールド - 日付
+  label_custom_field_computed_boolean: 計算フィールド - はい/いいえ
+  label_my_page_timelog_calendar: タイムシート
+  label_my_page_timelog_calendar_period_select: カレンダー期間：
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: 営業時間
+  label_restrictions_users: のみ表示する
+  label_timelog_view_all: 時間の全体の文では、働いていた
+  label_personal_statement: 身上書
+  label_log_time: バルク時間エントリー
+  label_issue_assigned_to_users: ユーザー：
+  label_issue_assigned_to_groups: グループ：
+  label_last_year: 昨年
+  label_template_to_selected_projects: プロジェクトにテンプレートを適用
+  label_template_to_selected_users: ユーザーにテンプレートを適用
+  label_my_page_timelog_simple_day_limit: ディスプレイ日
+  label_error_project_query: エラー処理のフィルタがありました。あなたの管理者にこのエラーを報告してください。
+  label_project_description: 説明
+  label_easy_lookup: ルックアップ
+  label_custom_field_settings_entity_type: エンティティ
+  label_custom_field_settings_entity_attribute: 属性
+  label_link_with: とのリンク%{attribute}
+  label_issue_new_relation_before: このタスク
+  label_issue_new_relation_after: タスク：
+  label_project_new_relation_before: このプロジェクト
+  label_project_new_relation_after: プロジェクト：
+  label_version_new_relation_before: このバージョン
+  label_version_new_relation_after: バージョン：
+  label_parenttask_plural: 親タスク
+  label_revert_to_version: このバージョンに戻す
+  label_project_overview_project_info: プロジェクト概観
+  label_easy_user_queries_plural: ユーザー
+  label_menu_more: もっと
+  label_project_index: プロジェクトリスト
+  label_issue_index: タスクリスト
+  label_issue_static_attributes_heading: 基本的な属性：
+  label_issue_updatable_attributes_heading: 追加属性：
+  label_issue_attachments_heading: 添付ファイル：
+  label_issue_watchers_heading: 同僚：
+  label_document_category_read_role: このカテゴリ内の文書を読み取る権限
+  label_document_category_manage_role: このカテゴリでドキュメントを管理する権限
+  label_document_category_custom_roles_n: デフォルト設定を使用し
+  label_document_category_custom_roles_y: カスタム設定を使用し
+  label_datetime_custom_field_tag_hour: 営業時間
+  label_datetime_custom_field_tag_minute: 分。
+  label_datetime_custom_field: 日時
+  label_menu_project_template: （テンプレート）
+  label_with_non_shared_versions: サブプロジェクトから非共有マイルストーンを表示
+  label_project_copy_tracker_issues:
+    zero: なしタスク
+    one: 1タスク
+    two: 2タスク
+    three: 3タスク
+    four: 4タスク
+    other: ! '%{count}タスク'
+  label_top_ten_projects: 最後の10プロジェクト
+  label_activity_all: すべて
+  label_working_time: 労働時間
+  label_admin_easy_user_working_time_calendars: 作業時間 - テンプレート
+  label_easy_user_working_time_calendar_explanatory_notes: 凡例：
+  label_easy_user_working_time_calendar_explanatory_notes_default: 一般的な営業日
+  label_easy_user_working_time_calendar_explanatory_notes_today: 今日
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: 週末
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: ホリデー
+  label_easy_user_working_time_calendar_explanatory_notes_exception: ワーキング例外
+  label_easy_user_working_time_calendar_none: ユーザーは任意の作業時間カレンダーを選択していません。
+  label_easy_user_working_time_calendar_default_time: デフォルトの作業時間は%{count}一日あたりの時間。
+  label_easy_user_working_time_calendar_change_calendar: 時間カレンダーに努めて変更します。
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: 選択したカレンダから作業時例外を保持
+  label_easy_user_working_time_calendar_settings: 設定
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: からのコピー
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: コピー例外
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: コピー祝日
+  label_easy_user_working_time_mass_exceptions: ミサの例外
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: 労働時間数を設定
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: すべてのための
+  label_easy_query_settings: フィルタの設定
+  label_field_format_autoincrement_from_to: から - まで
+  label_field_format_autoincrement_entity_limitation: でカウント自動番号：
+  label_project_templates_custom_fields: プロジェクトのカスタムフィールドの設定
+  label_source_project: ソースプロジェクト
+  label_target_projects: ターゲットプロジェクト
+  label_easy_page_modules_on_project_overview: プロジェクトの概要上のモジュール
+  label_project_templates_change_issues_author: すべてのタスクの作成者を変更
+  label_easy_system_flag: （プロジェクトのメンバーなどでは表示されません）
+  label_timelog_comment_editor_enabled: 報告の時点でコメント用のエディタを使用しますか？
+  label_time_entry_spent_on_at_issue_update_enabled: 日付のタスクを更新するために登録者の時間を設定していますか？
+  label_user_form_other_settings: 他の選択肢
+  label_user_copy_roles_from: ユーザーからのロールと権限を適用します
+  label_easy_page_tab_default_name: タブ%{count}
+  label_mass_copy_select_actions: コピー（選択されたアクションが削除され、よりコピーされます）：
+  label_select_none_assignee: <<なし譲受人>>
+  label_select_no_change_assignee: <<変化なし譲受人>>
+  label_unread_entity: 未読
+  label_switch_to_mobile_version: モバイルページ
+  label_switch_to_full_version: デスクトップページ
+  label_default_project_page: デフォルトのプロジェクトページ
+  label_too_many_mambers: あまりにも多くのユーザーは、検索を使用します。
+  label_gantt_pdf_date: 日から
+  label_gantt_show_all_versions: すべてのマイルストーンを表示
+  label_gantt_versions_above: タスク上にマイルストーンを表示
+  label_custom_field_settings_multiple: 複数
+  label_last_user_assigned_to: <<最後の譲受人の>>
+  label_author_assigned_to: <<著者の>>
+  label_default_color_schema: デフォルトの色
+  label_template_easy_start_date: プロジェクトの開始日を設定する
+  label_templates_easy_start_date: プロジェクトの開始日を設定する
+  label_eqdt: ''
+  label_bulk_time_entries: バルク時間エントリー
+  label_bulk_time_entries_edit: 編集時間を費やし
+  label_bulk_time_add_another: 別のものを追加
+  label_bulk_time_flash_project: プロジェクト：
+  label_bulk_time_flash_issue: タスク：
+  label_bulk_time_flash_comment: コメント：
+  label_bulk_time_flash_user: ユーザー：
+  label_bulk_time_flash_hours: 営業時間：
+  label_bulk_time_flash_spent_on: 日：
+  label_issue_priority: タスクの優先順位
+  label_issue_priority_plural: タスクの優先順位
+  label_amount: 額
+  label_version_update_database: すべてのタスクに移動しますか？
+  label_my_issues_plural: 私の
+  label_other_issues_plural: その他
+  label_projectquery_plural: プロジェクトフィルター
+  label_userquery_plural: ユーザフィルタ
+  label_related_projects: 関連プロジェクト
+  label_related_versions: 関連のバージョン
+  label_add_related_issues: 関連するタスクを追加
+  label_add_related_projects: 関連プロジェクトを追加
+  label_add_related_versions: 関連のバージョンを追加
+  label_preceding: 先行
+  label_following: 以下
+  label_send_email_to_all_users: すべてのユーザーにメールを送信
+  label_updated_on: 更新日
+  label_less: レス
+  label_group_by: グループによる%{value}
+  label_period_past: 過去
+  label_period_present: プレゼント
+  label_period_future: 将来
+  label_to_today: 今日まで
+  label_after_due_date: 期日後
+  label_next_n_days: 次%{days}日
+  label_next_week: 来週
+  label_next_month: 来月
+  label_next_year: 来年
+  label_tomorrow: 明日
+  label_user_role_select: 役割の：
+  label_document_global: ドキュメント
+  label_milestone_sharing_info: 凡例：
+  label_milestone_sharing_info_none: マイルストーンは、作成したプロジェクトで使用されます。
+  label_milestone_sharing_info_descendants: マイルストーンは、作成したプロジェクトとそのすべてのサブプロジェクトで使用されます。
+  label_milestone_sharing_info_hierarchy: マイルストーンは、作成したプロジェクトは、その両親とそのサブプロジェクトで使用されます。
+  label_milestone_sharing_info_tree: マイルストーンは、作成したプロジェクトや任意のプロジェクトに共通する優れたを持つすべてのプロジェクトで使用されています。
+  label_milestone_sharing_info_system: マイルストーンは、すべてのプロジェクトで使用されます。
+  label_autoincrement: 自動インクリメント
+  label_quick_search: クイック検索
+  label_search_result_journal_header: 雑誌で見つかった検索文字列（%{count}）：
+  label_journal_as_search_result: ジャーナル
+  label_not_available: N / A
+  label_search_entities: 検索：
+  label_fixed_version: ターゲットマイルストーン
+  label_easy_color_schemes: カラースキームを選択します。
+  label_issue_color_scheme_for: 用ユーザ配色：
+  label_easy_setting_new_subproject_user_role_id: サブプロジェクトを作成し、管理者以外のユーザーに与えられた役割
+  label_easy_setting_new_subproject_user_role_id_info: （ユーザーが唯一のサブプロジェクトを作成する権限を持っている場合、ケースに適しています）
+  label_easy_setting_attachment_description: 添付ファイルの説明
+  label_easy_setting_attachment_description_required: 必須
+  label_easy_setting_attachment_description_enabled: 使用可能
+  label_easy_setting_attachment_description_disabled: 無効
+  label_issue_by_unassigned_to: 割り当てられていない
+  label_issue_notice_recipients: に送信されたE-メール：
+  label_email: E-メール
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: 仕事は時間に開始
+  label_easy_user_working_time_calendar_time_to: 仕事は時間通りに終わる
+  label_issue_open_plural: 問題 - オープン
+  label_issue_close_plural: 問題 - 近く
+  label_easy_version_queries_plural: マイルストーン
+  label_issues_assigned_to_me_visible_issues_assigned: 私が割り当てられていますタスクのみ。
+  label_issues_assigned_to_me_visible_issues_conserns: 私は著者ですか、割り当てられるか、または同僚タスク。
+  label_match_starting_dates: プロジェクトの開始日までにタスクを設定
+  label_next_issue: 次のタスク
+  label_previous_issue: 前のタスク
+  label_issue_automatic_recalculate_attributes: サブタスクからの自動変更%{issue_id}
+  label_easy_query_export_links: 輸出
+  label_easy_attendance_spent_time: 費やした時間
+  label_easy_attendance_plural: 出席
+  label_easy_attendance_queries_plural: 出席
+  label_easy_attendance_user_arrival_add_notify_title: このユーザーでログインした後に情報を知らせて！
+  label_easy_google_maps_address: アドレス -  Googleマップ
+  label_preview_external_email_mail_sender: メール送信者
+  label_preview_external_email_mail_recepient: メールrecepient
+  label_preview_external_email_mail_cc: メールのコピー
+  label_preview_external_email_mail_subject: メールの件名
+  label_preview_external_email_mail_body_html: HTMLでメールの本文
+  label_preview_external_email_mail_body_plain: プレーンテキストでメールの本文
+  label_easy_issue_timer: タスクタイマー
+  label_easy_issue_timer_settings: タスクタイマー設定
+  label_easy_issue_timer_start: 始まる
+  label_easy_issue_timer_end: 完了
+  label_easy_issue_easy_is_repeating: 繰り返しの
+  label_easy_issue_easy_repeating_period: 繰り返し期間
+  label_easy_issue_easy_repeating_period_daily: デイリー
+  label_easy_issue_easy_repeating_period_weekly: 毎週
+  label_easy_issue_easy_repeating_period_monthly: 毎月
+  label_easy_issue_easy_repeating_period_custom: カスタム
+  label_easy_issue_easy_repeating_further_options: reccuringの道
+  label_easy_issue_easy_repeating_time: 設定を作成する
+  label_easy_issue_easy_repeating_time_hour: で繰り返し
+  label_easy_issue_easy_repeating_create_time: 時間を作成
+  label_easy_issue_easy_repeating_in_advance: あらかじめ
+  label_easy_issue_easy_repeating_on_start_date: 当日reccuring上
+  label_easy_issue_easy_repeating_dont_create_now: 今作成しないでください
+  label_easy_issue_easy_repeating_create_now_all: 今、すべての作成
+  label_easy_issue_easy_repeating_create_now_count: 今amoutを作成
+  label_easy_issue_easy_reccuring_daily_every: すべての
+  label_easy_issue_easy_reccuring_daily_each: イテレーション
+  label_easy_issue_easy_reccuring_daily_work: 作業日
+  label_easy_issue_easy_repeating_endtype: 終わり
+  label_easy_issue_easy_repeating_endtype_date: 日に
+  label_easy_issue_easy_repeating_endtype_count: のxを繰り返した後、
+  label_easy_issue_easy_repeating_endtype_endless: によりプロジェクト終了
+  label_easy_issue_easy_repeating_start: スタート
+  label_easy_issue_reccuring_after: 後に
+  label_easy_issue_reccuring_day_plural: 日
+  label_easy_issue_reccuring_month: 月
+  label_easy_issue_subject_reccuring_suffix: （Reccuring）
+  label_easy_issue_reccuring_monthly_orders:
+    1: 最初
+    2: 2番目の
+    3: 3番目の
+    4: 第4
+    5: ラスト
+  label_day:
+    zero: '0'
+    one: 1日
+    other: ! '%{count}デイズ'
+    two: ! '%{count}デイズ'
+    three: ! '%{count}デイズ'
+    four: ! '%{count}デイズ'
+    half: ! '%{count}デイ'
+  label_easy_versions: マイルストーン
+  label_easy_versions_top_menu: マイルストーン
+  label_easy_repository_source_easy_repository_url: リポジトリへのURL
+  label_easy_lesser_admin_for: 低い管理者がアクセスできる領域。
+  label_added_datetime_by: によって追加された%{author}に%{datetime}
+  label_updated_datetime_by: によって更新%{author}に%{datetime}
+  label_user_mail_no_notified_if_issue_closing: 私は、閉じたタスクから通知されたくない
+  label_user_mail_no_notification_ever: 私の更新について誰に通知しないでください
+  label_easy_setting_required_issue_id_at_time_entry: 問題は、タイムエントリに必要とされる
+  button_context_menu: クイックタスクメニューを表示します。
+  button_attachment_context_menu: バージョン履歴を表示します。
+  button_new_project_from_template: 新しいプロジェクトを作成する
+  button_new_template_from_project: 新しいテンプレートを作成します。
+  button_create_project_from_template: 新しいプロジェクトを作成する
+  button_copy_project_from_template: プロジェクトにコピー
+  button_template_restore_project: プロジェクトの復元
+  button_easy_page_templates: テンプレートの概要
+  button_save_easy_page: ページを保存して、戻って
+  button_edit_projectquery: フィルタを編集
+  button_delete_projectquery: フィルタを削除
+  button_apply_projectquery: 使用
+  button_clear_projectquery: デフォルトのフィルタ
+  button_save_projectquery: 保存
+  button_timelog_calendar_new: 時間を追加
+  button_uninstall: アンインストールする
+  button_easy_lookup_modal_selector_assign: 選択した割り当て
+  button_new_issue_relation: 関連するタスクを追加
+  button_issue_put_between: 間に入れて
+  button_new_subtask: サブタスクを追加
+  button_easy_lookup_modal_close: クローズ
+  button_go_up: UP
+  button_issue_create: タスクを保存
+  button_issue_create_and_continue: 保存して続行
+  button_issue_update: タスクを更新します。
+  button_issue_submit: 更新保存
+  button_gantt_issue_update: アップデートタスク
+  button_gantt_issue_update_plural: アップデート
+  button_easy_user_working_time_calendar_show: カレンダーの詳細
+  button_easy_user_working_time_calendars_new: 新暦
+  button_easy_user_working_time_calendar_holidays: 祝日
+  button_easy_user_working_time_calendar_holidays_new: 新しい休日
+  button_easy_user_working_time_back_to_calendar: カレンダーに戻る
+  button_easy_user_working_time_back_to_calendars: カレンダーに戻る
+  button_easy_user_working_time_reset_to_parent: 原点にカレンダーをリセット
+  button_easy_user_working_time_parent: 親カレンダーに移動
+  button_check_subprojects: サブプロジェクトをチェック
+  button_uncheck_subprojects: サブプロジェクトのチェックを外し
+  button_check_rootprojects: ルートプロジェクトをチェック
+  button_uncheck_rootprojects: ルートプロジェクトのチェックを外し
+  button_edit_user_profile: プロフィールを編集
+  button_project_mass_copy: 質量変化
+  button_choose_actions: アクションを選択しに行く
+  button_down: ダウン
+  button_check_and_uncheck_subprojects: チェック/チェックを外してサブプロジェクト
+  button_gantt_show_sidebar: 保存されたフィルタを表示
+  button_gantt_hide_sidebar: 保存されたフィルタを隠す
+  button_easy_page_add_tab: タブを追加
+  button_manage_versions: マイルストーンを管理する
+  button_mobile_saved_filters: 保存されたフィルタ
+  button_edit_anonymous_user: 匿名ユーザーの編集
+  button_back_to_calendar: カレンダーに戻る
+  button_bulk_time_save_and_continue: 新しいエントリを保存し、追加
+  button_gantt_zoom_day: デイ
+  button_gantt_zoom_week: 週
+  button_gantt_zoom_month: 月
+  button_fullscreen: フルスクリーン
+  button_fullscreen_close: X
+  button_add_and_close: 追加して閉じる
+  button_generate_rss_key: RSSキーを生成
+  button_generate_api_key: APIキーを生成
+  button_back_to_top: トップへ戻る
+  button_advanced_search: 高度な検索
+  button_my_page_google_maps_url_helper: Googleからのマップを追加するためのヘルプ
+  button_timelog_calendar_prev:
+    week: 前の週
+    month: 前月
+  button_timelog_calendar_next:
+    week: 来週
+    month: 来月
+  button_send_email: メールを送信
+  button_dont_send_email: メールを送信しないでください
+  button_link_easy_google_map_address: Googleマップ上に表示
+  button_select_file: ファイルを選択してください
+  button_easy_issue_timer_play: 私はそれによ
+  button_easy_issue_timer_stop: それは完了だ
+  button_release_cache: リリースキャッシュ
+  button_journal_unprivate_note: パブリッシング
+  title_button_template: プロジェクトからテンプレートを作成%{projectname}。
+  title_button_template_create_project: テンプレートからプロジェクトを作成します。
+  title_button_template_copy_project: 既存プロジェクトにテンプレートをコピーします。
+  title_button_template_restore_project: プロジェクトテンプレートを編集します。
+  title_project_new_issue: プロジェクトにタスクを追加%{projectname}
+  title_project_edit: プロジェクトを編集
+  title_project_show: プロジェクトを表示%{projectname}
+  title_other_formats_links_atom: RSSリーダーへのアップロード。
+  title_other_formats_links_csv: CSVファイルとしてディスクに保存します。
+  title_other_formats_links_pdf: PDFファイルとしてディスクに保存します。
+  title_other_formats_links_png: PNGファイルとしてディスクに保存します。
+  title_other_formats_links_ics: ICS（見通し）ファイルとしてディスクに保存します。
+  title_other_formats_links_ics_outlook: MS Outlookの予定表からタスクのリストを購読してください。
+  title_easy_page_zones_view: ショーのページのゾーンの概要をクリックする。
+  title_easy_page_zone_edit: 編集ゾーンをクリックする。
+  title_easy_page_zone_show: ショーゾーンをクリックする。
+  title_easy_page_zone_modules: クリックして、モジュールを表示します。
+  title_personalize_user_page: クリックすると、このページをパーソナライズすることができます。
+  title_personalize_user_page_from_layout: 実際のレイアウトに置き換えられますセレクトページテンプレートをクリックする。
+  title_easy_page_templates: ショーページテンプレート一覧をクリックする。
+  title_easy_page_templates_new: クリックして新しいテンプレートを作成します。
+  title_easy_page_user_layout_modules: ショーのモジュールレイアウトをクリックする。
+  title_easy_page_template_show: テンプレートのショーのモジュールレイアウトをクリックする。
+  title_easy_page_zones_new_assignments: クリックして、ページレイアウトに新しいゾーンを追加します。
+  title_button_save_easy_page: クリックしてページを保存して戻ってください。
+  title_my_page_issue_query_new_link: クリックして、タスクリストから新しいフィルタを作成します。
+  title_edit_projectquery: クリックすることで、ユーザフィルタの編集ページに移動します。
+  title_delete_projectquery: クリックすることで、実際のユーザフィルタを削除します。
+  title_apply_projectquery: 使用済みのセットプロジェクトフィルタをクリックする。
+  title_clear_projectquery: クリックすると、フィルタのデフォルト設定を再起動します。
+  title_save_projectquery: クリックすることで、他の用途のためにあらかじめ設定されたフィルタを保存します。
+  title_new_project_from_template: クリックして、テンプレートのリストに移動します。
+  title_easy_my_page_template_to_all: すべてのユーザーにこのテンプレートをAply。
+  title_timelog_calendar_new: クリックして、選択した日までの時間を追加します。
+  title_template_to_selected_projects: プロジェクトにテンプレートを適用
+  title_template_to_selected_users: ユーザーにテンプレートを適用
+  title_easy_lookup_modal_selector_assign: クリックすると、選択した項目を割り当てることができます。
+  title_button_edit: クリックすると、このエントリを編集することができます。
+  title_button_delete: クリックすると、このエントリを削除することができます。
+  title_new_issue_relation: 関連のタスクを追加します。
+  title_new_subtask: サブタスクを追加します。
+  title_logo: 私のページに移動する場合にクリックします。
+  title_delete: 項目を削除する場合にクリックします。
+  title_delete_selected: 選択した項目を削除する場合にクリックします。
+  title_go_up: ページの一番上に移動しクリックします。
+  title_says: 言う：
+  title_project_copy_tracker_issues: 変動問題トラッカーをクリックする。
+  title_user_profile: 番組をクリックする%{username}プロフィール。
+  title_easy_user_working_time_calendar_show: クリックすると、カレンダーの日を編集することができます。
+  title_easy_user_working_time_calendars_new: クリックすると、新しいカレンダーを作成することができます。
+  title_easy_user_working_time_calendar_holidays: クリックすると、休日を管理することができます。
+  title_easy_user_working_time_calendar_holidays_new: クリックすると、新しい休日を作成することができます。
+  title_easy_user_working_time_back_to_calendar: クリックすると、カレンダーに戻ることができます。
+  title_easy_user_working_time_back_to_calendars: クリックすると、カレンダーに戻ることができます。
+  title_easy_user_working_time_calendars_inline_edit: クリックすると、例外を追加することができます。
+  title_easy_user_working_time_calendars_inline_save: クリックすると、例外を保存することができます。
+  title_easy_user_working_time_calendars_inline_close: クリックすると、例外の編集を終了することができます。
+  title_easy_user_working_time_reset_to_parent: クリックすると、現在のすべての例外を削除し、親状態からカレンダーを設定することができます。
+  title_easy_user_working_time_parent: クリックすると、親のカレンダーに行くことができます。
+  title_edit_user_profile: クリックして、あなたのプロフィールを編集した端末に対してのみ。
+  title_easy_page_add_tab: クリックすると、新しいタブを追加することができます。
+  title_last_journal_link: 問題の最後のジャーナルを表示します。
+  title_edit_anonymous_user: クリックすると、匿名ユーザーを編集することができます。
+  title_fullscreen: フルスクリーンでの表示
+  title_download_attachment: ファイルをダウンロード
+  title_show_attachment: ファイルの内容を表示します
+  title_user_detail: クリックすると、ユーザの詳細を表示することができます。
+  title_version_detail: クリックすると、マイルストーンの詳細を表示することができます。
+  title_easy_issue_timer_button_play: タスクを更新して、時間を測定し始める。
+  title_easy_issue_timer_button_stop: タスクおよび予備充填時間入力フォームを更新する
+  title_jump_to_project: プロジェクトを選択
+  title_issue_remove_parent: このタスクをクリックすることで、もはやサブタスクできなくなります。
+  title_journal_unprivate_note: すべてのユーザーを更新して表示
+  title_timelog_calendar_prev:
+    week: クリックして、前の週に行く。
+    month: クリックすることで、前の月に移動します。
+  title_timelog_calendar_next:
+    week: クリックして、来週に行く。
+    month: クリックして、次の月に移動します。
+  title_easy_modal_selector_trigger:
+    issue: リストからタスクをクリックして選択します。
+    project: リストからプロジェクトをクリックして選択します。
+    version: 一覧からマイルストーンをクリックして選択します。
+    user: リストからユーザーをクリックして選択します。
+    group: リストからグループを選択する場合にクリックします。
+    document: リストから文書をクリックして選択します。
+  project_template:
+    label_name: テンプレート名
+    label_new_project: 新しいプロジェクトの名前
+  sidebar_all_users_queries: 労働者の作業
+  sidebar_issue_button_update: メモを追加したり、タスクを編集
+  sidebar_issue_button_log_time: 費やした時間を追加
+  sidebar_issue_button_duplicate: タスクを重複
+  sidebar_issue_button_copy: Copyタスク
+  sidebar_issue_button_move: タスクを移動
+  sidebar_issue_button_delete: タスクを削除する
+  sidebar_issue_spent_time: タスクの概要時間を費やし
+  sidebar_issue_info: タスク情報
+  sidebar_issues_buttons: Harmonogram
+  sidebar_project_info: プロジェクト情報
+  sidebar_project_spent_time: プロジェクトでは、時間の概要を費やし
+  sidebar_project_members: プロジェクトチーム
+  sidebar_budget_costs_info: コスト
+  sidebar_project_family_info: プロジェクトツリー
+  field_easy_due_date: 期日。
+  field_easy_start_date: 開始日
+  field_spinned: トップに固執
+  field_zone_name: ゾーン名
+  field_page_name: ページ名
+  field_is_primary: プライマリー
+  field_show_empty: 空のフィールドを表示する
+  field_show_on_list: リストに表示
+  field_predicted_cost: 予算
+  field_computed_token: フォーミュラ
+  field_member: プロジェクトメンバー
+  field_groups: グループ
+  field_roles: 役割
+  field_xproject: プロジェクト
+  field_cached_group_names: グループ
+  field_parent_user: 優れた
+  field_template_name: テンプレート名
+  field_parent_project: 親プロジェクト
+  field_root: メインプロジェクト
+  field_main_project: メインプロジェクト
+  field_sum_of_timeentries: 費やした時間
+  field_remaining_timeentries: 残り時間
+  field_completed_percent: ％が完了
+  field_attachment_created_on: アタッチメント - 上で作成
+  field_user_roles: 役割
+  field_show_on_more_form: ! '''もっと''のショー'
+  field_spent_estimated_timeentries: ％の時間を費やし
+  field_easy_system_flag: システムグループ
+  field_easy_global_rating: グローバル評価
+  field_id: ID
+  field_at_work: 職場で？
+  field_arrival: 到来
+  field_departure: 出発
+  field_easy_attendance_activity: 活動
+  field_arrival_user_ip: 到着のIP
+  field_departure_user_ip: 出発IP
+  field_color_schema: Barevnéスキーマ
+  field_group: ユーザグループ
+  field_rss_key: RSSキー
+  field_api_key: APIキー
+  field_global_fixing_activity: プロジェクトのタスクがプリセット活動です。
+  field_project_fixed_activity_true: タスクを作成するときに活動が事前に選択されています。
+  field_project_fixed_activity_false: 時間を書き込むときに活性を選択することができる。
+  field_user_time_entry_setting: 時間によって入学：
+  field_easy_range_from: での時間を費やし
+  field_easy_range_to: に費や​​された時間
+  field_easy_range_form_to: で
+  field_enable_activity_roles: ロールにactivititesを割り当て
+  field_limit_assignable_users: 問題は、著者にのみ戻すことができる
+  field_easy_version_category_id: カテゴリ
+  field_easy_version_category: カテゴリ
+  field_relations_from: 関係
+  field_created_at: 作成
+  field_updated_at: 編集済みの
+  field_easy_send_invitation: 電子メールで招待状を送る
+  field_easy_do_not_allow_close_if_subtasks_opened: サブタスクが開かれた場合、タスクを閉じないようにしてください
+  field_easy_do_not_allow_close_if_no_attachments: ファイルが添付されない限りタスクを閉じないようにしてください
+  field_easy_issue_prefix: タスク接頭
+  field_send_to_external_mails: メールへのアップデート送信しますか？
+  field_attachments: 添付ファイル
+  field_ckeditor_toolbar_config: HTMLエディタツールバー
+  field_easy_issue_timer_assign_to_me: 私に割り当てられた
+  field_easy_issue_timer_round: ラウンド時間
+  field_attachment_reminder_words: アタッチメント言葉
+  field_easy_is_repeating: 繰り返しの
+  field_easy_lesser_admin: レッサー管理者
+  field_easy_user_type: ユーザータイプ
+  field_easy_repeat_settings: Reccuringオプション
+  field_send_all_planned_emails: すべての計画されたメールを送信
+  status_archived: アーカイブ
+  filter_active: アクティブ
+  notice_journal_published: 公開更新！
+  notice_successful_create_template: テンプレートが正常に作成。
+  notice_successful_create_project_from_template: プロジェクトが正常に作成されました。
+  notice_failed_create_project_from_template: プロジェクトが作成されなかった：%{errors}
+  notice_almost_successful_create_project_from_template: プロジェクトは完全なアイテムのコピーなしで作成されました。
+  notice_successful_restore_template: テンプレートが正常に復元されました。
+  notice_template_successful_applied: テンプレートが正常に適用された。
+  notice_plugin_successful_uninstall: プラグイン%{plugin}正常に削除され、現在、Webサーバーを再起動する必要がありました。
+  notice_project_successful_archive: プロジェクトが正常にアーカイブされています。
+  notice_failed_to_update: 節約中にエラーが発生しました。
+  notice_project_successful_unarchive: プロジェクトでは、アーカイブ解除しました。
+  error_invalid_authenticity_token: ページが期限切れ。
+  error_rss_reader_timeout: 設定でエラー（ページが現在接続されていない、正しくタスクのソースを持っていることを確認してください。現在の問題の原因が簡単プロジェクトすることはできません！）。
+  error_rss_reader_bad_url: 設定でエラー（ページが現在接続されていない、正しくタスクのソースを持っていることを確認してください）​​。
+  error_rss_reader_old_ep: 設定中にエラーが発生しました（タスクのソースが簡単プロジェクト2012年以降である必要があります）。
+  error_validates_max_size: ファイルが大きすぎる
+  error_custom_value_autoincrement_greater: より大きくなる必要があります%{count}
+  error_custom_value_autoincrement_equal: でなければならない%{count}
+  error_can_not_unarchive_project: プロジェクトはアーカイブを解除することができませんでした。
+  error_can_not_delete_project: プロジェクトを削除することはできません。
+  error_can_not_delete_project_template: プロジェクトテンプレートを削除することはできません。
+  error_can_not_create_project_template: プロジェクトからプロジェクトテンプレートを作成中にエラーが発生しました%{projectname}。
+  error_bulk_update_save: ! '%{count}オブジェクトが保存することはできません。'
+  error_no_file_selected_to_upload: いいえファイルはアップロードする選択されていません。
+  error_cannot_close_issue_due_to_subtasks: 開かれたタスクが含まれているため、タスクを閉じることができません。%{issues}
+  error_cannot_close_issue_due_to_no_attachments: 全く愛着を持っていないため、タスクを閉じることができません
+  error_create_repo_from_url_cannot_create_dir: ディレクトリを作成することはできません%{dir}
+  error_create_repo_from_url_cannot_determine_repo_name: リポジトリ名を判断できません
+  error_create_repo_from_url_repo_already_exists: リポジトリがすでに存在して
+  error_create_repo_from_url_repo_cannot_be_created: リポジトリを作成することはできません
+  error_update_easy_issue_timer_settings: 保存されていない設定
+  error_project_not_selected: プロジェクトが選択されていない
+  error_repeat_period_missing: 繰り返しの周期は選択されな​​ければならない
+  error_repeat_endtype_missing: 繰り返しの終わりには、選択されな​​ければならない
+  error_repeat_endtype_count_blank: カウントreccuringすると空白にすることはできません
+  error_repeat_endtype_count_numeric: カウントreccuringする番号である必要があります
+  error_repeat_endtype_date_blank: 終了の日付は空白にすることはできません
+  error_repeat_daily_option_missing: reccuringタイプ（仕事やすべての日）が選択されな​​ければならない
+  error_repeat_daily_x_blank: reccuring日間のカウント期間は空白にすることはできません
+  error_repeat_daily_x_numeric: reccuring日間のカウント期間は数字でなければならない
+  error_repeat_weekly_days_selected: 少なくとも1週間の曜日を選択する必要が
+  error_repeat_monthly_option_missing: reccuringタイプ（x番目の日/カスタム）に選択されな​​ければならない
+  error_repeat_monthly_day_numeric: 日reccuringには1と31の間の数でなければならない
+  error_repeat_monthly_month_numeric: 月reccuringする間の数でなければならない
+  confirm_admininstration_display_all_project: すべてのプロジェクトは非常に長い時間がかかります参照してください。続行しますか？
+  text_commit_example_1: レフリー＃1523 @ 5h30mカレンダー仕上げ
+  text_commit_example_2: 全くタスクに時間5時間30分を記録しません。 1523
+  text_easy_settings_time_entry_heading: 費やした時間の制限
+  text_easy_settings_time_entry_limit: 追加/編集の時間を許可する
+  text_easy_settings_time_entry_limit_note: あなたが時間制限を無効にしたい場合は、これらのテキストボックスを空白にして取る。
+  text_easy_attachment_reminder_confirm: あなたは、添付ファイルを言及しますが、あなたが1つを添付していなかった、あなたはとにかく続けたいですか？
+  text_easy_attachment_reminder_explanatory_html: ？ =任意の文字<br />の* =任意の数<br /><dd
+    style="margin-left:15px;">任意の文字</dd>
+  text_easy_settings_time_entry_limit_past: 過去に日
+  text_easy_settings_time_entry_limit_future: 未来への日
+  text_git_repository_url_note: フォームのHTTP（S）内のURL :/ /ユーザ：パスワード@ URL / repo.git。フォームが送信後リポジトリがローカルに自動的に作成されます。
+  text_external_email_sent: 添付されたメッセージは、外部のメールに送られた%{email}。
+  text_textile_migration: ! '"バンドルEXEC熊手easyproject：織物：MIGRATE_ALL RAILS_ENV =生産"コマンドラインからの繊維からHTMLを使用するアプリケーションに保存されたテキストを移行するための'
+  text_project_is_planned: プロジェクトが計画されている場合、メールのいずれも送信されません。
+  text_easy_attendance_user_detail_online_at: ユーザーがに到着
+  text_easy_attendance_user_detail_offline_at: ユーザー休暇で
+  text_easy_attendance_user_detail_no_data_today: ユーザーがまだ来ていない
+  text_easy_attendance_user_notify_default_message: ! '%{user}ただでログイン'
+  text_easy_attendance_user_notify_title: 通知がに送信されます：%{email}
+  text_easy_attendance_user_notify_already_exists_warning: 警告！通知はすでに存在しています。合計%{count}
+    X
+  setting_issue_recalculate_attributes: サブタスクが（優先順位、推定時間、行わ％は、日付と期日を開始）親タスクに影響を与えるの作成
+  setting_project_display_identifiers: プロジェクト識別子を表示します
+  setting_use_easy_cache: particularyキャッシュを有効にする
+  setting_just_one_issue_mail: タスクの更新後に一つメールを送信（メールは私と他の人に分かれません）
+  my_page_timelog_calendar_period:
+    month: 毎月
+    week: 毎週
+  easy_pages:
+    pages:
+      my_page: 私のページ
+      project_overview: プロジェクト - ホームページ
+    pages_description:
+      my_page: 私のページ
+      project_overview: プロジェクト - ホームページ
+    modules:
+      issues_create_new: 新しいタスク
+      issue_query: フィルタからのタスク
+      projects_query: フィルタからのプロジェクト
+      documents: ドキュメント
+      issues_assigned_to_me: 私の仕事
+      issues_reported_by_me: 私が報告したタスク
+      issues_watched_by_me: タスクは、私が見て
+      my_calendar: マイカレンダー
+      my_projects_simple: プロジェクトリスト
+      news: ニュース
+      saved_queries: 保存されたフィルタリスト
+      timelog_simple: 時間の使用
+      timelog_calendar: タイムログカレンダー
+      issues_rss_reader: 別のサーバからタスク
+      project_history: プロジェクトの履歴
+      project_news: 新しい
+      project_tree: サブプロジェクト
+      project_sidebar_all_users_queries: 労働者の作業
+      project_sidebar_project_info: プロジェクト情報
+      project_sidebar_project_members: プロジェクトメンバー
+      project_sidebar_saved_queries: 保存されたフィルタ
+      project_issues: タスク
+      noticeboard: 掲示板
+      project_sidebar_family_info: プロジェクトツリー
+      project_info: プロジェクト情報
+      attendance: 出席
+      users_query: フィルタからのプロジェクトチーム
+      resource_availability: リソースの可用性
+      google_maps: マップグーグル
+    module_category:
+      calendars: カレンダー
+      issues: タスク
+      lists: リスト
+      others: 他人
+      projects: プロジェクト
+      project_sidebar: サイドバー
+      timelog: 時間の使用
+      users: ユーザー
+      redmine: Redmineの
+    zones:
+      top_left: 左上
+      top_middle: 上部中央
+      top_right: 右上
+      middle_left: 真ん中の左
+      middle_middle: 真ん中
+      middle_right: 右真ん中
+      bottom_left: 左下
+      bottom_middle: 中央下
+      bottom_right: 右下
+      right_sidebar: 右のサイドバー
+    zones_description:
+      top_left: 説明
+      top_middle: 説明
+      top_right: 説明
+      middle_left: 説明
+      middle_middle: 説明
+      middle_right: 説明
+      bottom_left: 説明
+      bottom_middle: 説明
+      bottom_right: 説明
+      right_sidebar: 説明
+  label_my_page_project_output:
+    list: リスト
+    calendar: カレンダー
+  label_my_page_issue_output:
+    list: リスト
+    calendar: カレンダー
+  select_easy_page_module_project_info:
+    label: 表示するプロパティ
+    description: 説明
+    customfields: プロジェクトのカスタムフィールド
+  easy_page_module:
+    project_history:
+      heading_project_edit_custom_fields: プロジェクトのカスタムフィールドを編集
+    project_query:
+      adhoc_query: フィルタのアドホック名
+      adhoc_query_default_text: フィルタの名前
+    issue_query:
+      adhoc_query: フィルタのアドホック名
+      adhoc_query_default_text: フィルタの名前
+    document_query:
+      adhoc_query: フィルタのアドホック名
+      adhoc_query_default_text: フィルタの名前
+    user_query:
+      adhoc_query: フィルタのアドホック名
+      adhoc_query_default_text: フィルタの名前
+    attendance:
+      adhoc_query: フィルタのアドホック名
+      adhoc_query_default_text: 私の出席
+    resource_availability:
+      label_resource_name: 資源名
+      label_day_start_time: 起動時間
+      label_day_end_time: 終了時刻
+      label_set_available: 利用できるように設定
+      label_set_unavailable: 利用できないように設定
+      label_available: 利用できる
+      label_unavailable: 利用できない
+      label_set_day_available: 利用できるように一日を設定
+      label_set_day_unavailable: 利用できないように一日を設定
+      label_description_prompt: 理由を入力してください：
+    new_issue:
+      field: フィールド
+      show: 示す
+      default_value: デフォルト値（空白は変化がないことを意味します）
+  menu:
+    admin:
+      easy_pages_administration: ページのパーソナライズ
+  breadcrumb:
+    label:
+      easy_pages_administration: ページのパーソナライズ
+      easy_page_templates: ページテンプレート%{pagename}
+      easy_page_new: 新しいページ
+      easy_page_show: ページ上のモジュール%{pagename}
+      easy_page_edit: ページ%{pagename}編集
+      easy_page_templates_edit: テンプレート%{templatename}編集
+      easy_page_templates_new: 新しいページテンプレート
+      easy_page_template_view: モジュールレイアウト
+      easy_page_template_edit: モジュールレイアウトEditationは
+      easy_page_template_user_modules: モジュールレイアウト
+    title:
+      easy_pages_administration: クリックして、ページの管理に移動します。
+      easy_page_templates: クリックすることで、テンプレートリストに行く%{pagename}。
+      easy_page_new: クリックして新しいページを作成します。
+      easy_page_show: ページに表示モジュールをクリックする%{pagename}。
+      easy_page_edit: 編集ページをクリックする%{pagename}。
+      easy_page_templates_edit: 編集テンプレートをクリックする%{templatename}。
+      easy_page_templates_new: クリックして、ページ上の新しいテンプレートを作成%{pagename}。
+      easy_page_template_view: 表示モジュールのレイアウトをクリックする。
+      easy_page_template_edit: テンプレート内の編集モジュールのレイアウトをクリックする。
+      easy_page_template_user_modules: 表示モジュールのレイアウトをクリックする。
+  easy_user_working_time_calendar_names:
+    standard: 標準
+  easy_lookup:
+    document:
+      label: ドキュメント
+    group:
+      label: グループ
+    issue:
+      label: 問題
+    project:
+      label: プロジェクト
+    user:
+      label: ユーザー
+    version:
+      label: マイルストーン
+  project_default_page:
+    project_overview: プロジェクト概観
+    roadmap: マイルストーン
+    issue_tracking: タスク
+    time_tracking: 費やした時間
+    news: ニュース
+    documents: ドキュメント
+    repository: リポジトリー
+    calendar: カレンダー
+    gantt: ガント
+    boards: ボード
+    files: ファイル
+    wiki: ウィキ
+  select_option_issue_restrictions_users_blank: セレクト>> <<
+  mail:
+    field_author: 筆者
+    field_updated_by: によって更新
+    field_before: 前
+    field_updated_time: 前に更新
+    label_attachment_new: 新しいファイルを追加しました
+    text_attachment_added: ユーザー%{user}に追加%{time}へ%{added_to}以下のファイル（複数可）：
+  attachments:
+    no_more_versions: これ以上のバージョン
+    revert_to:
+      successfully: 添付ファイルが正常に戻った%{version}バージョン。
+      failed: 添付ファイルに戻すことができなかった%{version}バージョン。現在のバージョンは、次のとおりです。%{current_v}。
+  easy_query:
+    name:
+      easy_issue_query: 問題
+      easy_project_query: プロジェクト
+      easy_user_query: ユーザー
+      easy_document_query: ドキュメント
+      easy_version_query: マイルストーン
+      easy_attendance_query: 出席
+      easy_time_entry_query: タイムエントリ
+      easy_group_query: グループ
+    label:
+      default_columns: デフォルト列
+      default_fitlers: デフォルトのフィルタ
+    button_apply:
+      project: 設定を適用
+      user: 設定を適用
+      issue: 設定を適用
+    sidebar_filters:
+      personal:
+        easy_issue_query: タスクのプライベートフィルタ
+        easy_user_query: ユーザーのプライベートフィルタ
+        easy_project_query: プロジェクトのプライベートフィルタ
+        easy_document_query: 書類上のプライベートフィルタ
+        other: プライベートフィルタ
+        easy_attendance_query: 出席のプライベートフィルタ
+        easy_group_query: グループのプライベートフィルタ
+        easy_member_query: メンバーのプライベートフィルタ
+        easy_time_entry_query: 費やした時間のプライベートフィルタ
+        easy_version_query: バージョンのプライベートフィルタ
+      public:
+        easy_issue_query: タスクのパブリックフィルタ
+        easy_user_query: ユーザーのパブリックフィルタ
+        easy_project_query: プロジェクト上のパブリックフィルタ
+        easy_document_query: 書類上のパブリックフィルタ
+        other: パブリックフィルタ
+        easy_attendance_query: 出席のパブリックフィルタ
+        easy_group_query: グループのパブリックフィルタ
+        easy_member_query: メンバーのパブリックフィルタ
+        easy_time_entry_query: 費やした時間のパブリックフィルタ
+        easy_version_query: バージョンのパブリックフィルタ
+    easy_lookup:
+      name:
+        issue:
+          default: 問題を選択してください
+          issue_relation: 関連するタスクを選択してください
+        project:
+          default: プロジェクトを選択してください
+          project_relation: 関連プロジェクトを選択してください
+        user:
+          default: ユーザーを選択
+        group:
+          default: グループを選択
+        version:
+          default: マイルストーンを選択してください
+          version_relation: 関連のバージョンを選択してください
+        document:
+          default: 文書を選択してください
+  easy_scheduler_task_info:
+    planned: タスク%{task_name}計画された。
+    running: タスク%{task_name}実行されています。
+    ended_failed: タスク%{task_name}失敗しました。
+    ended_ok: タスク%{task_name}正常に終了しました。
+    initialized: タスク%{task_name}作成されたものです。
+  user:
+    easy_user_type:
+      internal: ユーザー
+      external: クライアント
+  bulk_time_entry_title: バルク時間エントリー
+  text_bulk_time_entry_permission: このユーザーはプロジェクトに時間報告する権利を持っていません。
+  label_avatar: アバター
+  message_avatar_uploaded: アバターが正常にアップロード
+  button_change_avatar: 地元のアバターを変更する
+  are_you_sure_delete_avatar: あなたのアバターを削除してもよろしいですか？
+  avatar_deleted: アバター削除
+  unable_to_delete_avatar: 申し訳ありません。アバターを削除中にエラーが発生しました。
+  avatar_invalid_file: 無効なファイルの種類
+  text_settings_gravatar_enabled: 古典的なアバターは、ユーザプロファイルから使用されなくグラバター項目が選択されていない場合。
+  license_manager:
+    user_limit: ユーザーのあなたの最大数は%{email}ご連絡ください拡張し、枯渇した。
+    user_limit_unlock_button: あなたは、アクティブなユーザーの最大数に達しました。
+  image_tag:
+    alt:
+      bullet_toggle_plus: 複数選択に切り替え
+  collapse_expand: 展開/折りたたみ
+  gantt_day: 日
+  gantt_day_plural: 日
+  gantt_day_plural5: 日
+  gantt_start: 開始日
+  gantt_end: 期日
+  gantt_duration: 期日
+  gantt_completed: 完成した
+  issue_predecessor_error: タスク%{issue_name}既に別のタスクを以下の通りです。
+  project_predecessor_error: プロジェクト%{project_name}すでに別のプロジェクトに従っている。
+  version_predecessor_error: バージョン%{version_name}すでに別のバージョンを以下の通りです。
+  label_easy_publishing_module: モジュール
+  label_easy_publishing_modules: パブリッシング·モジュール
+  easy_publishing_setting: モジュール
+  easy_publishing_setting_new: 新しいパブリッシュ設定
+  label_easy_publishing_setting_url: URLの例
+  button_easy_publishing_settings_new: 新しいモジュール
+  label_easy_publishing_module_info: 情報
+  label_easy_publishing_module_contact: 連絡
+  label_easy_publishing_module_help: あなたのソリューションを選択してください
+  label_easy_publishing_module_info_header: 今、あなたが簡単Redmineのを注文
+  label_easy_publishing_invalid_file_type: これらのファイルは、イメージではなく、保存されませんでした：%{files}。
+  helper_module:
+    button_show_help: ヘルプを表示
+    button_close_help: ヘルプを閉じる
+    alt_image_help: 画像のヘルプ
+    title_help: あなたのソリューションを選択してください
+    title_contact: 連絡
+    button_show_youtube: 動画を再生する
+  user_time_entry_setting:
+    all: 時間または範囲
+    hours: 営業時間
+    range: 範囲（から - まで）
+  label_rating: 評価
+  label_easy_global_rating: グローバル評価
+  easy_attendance:
+    label: 出席
+    label_menu_more: 出席
+    label_back_to_basic: クローズ
+    label_setting: 発着のレコードを使用して
+    label_mail: メールに気付く
+    label_statistic_worked: 働いていた
+    label_statistic_attendance: 出席
+    label_statistic_supplement: から%{hours}例えば、。%{percent}％
+    new: 到着/出発の署名
+    arrival: 到着
+    departure: 出発
+    advanced_settings: スケジューラ
+    label_activities: 活動
+    project_mapping_0: プロジェクトに結合することなく、
+    project_mapping_1: プロジェクトにバインド
+    project_mapping_1_1: と活動
+    link_to_easy_attendance: 出席者リスト
+    error_can_not_delete_activity: 活動は、レコードが含まれており、削除できませんでした。
+    change_easy_attendance_activity_to: への活動を次のように変更します
+    description:
+      arrival: 私は働くようになった
+      departure: 仕事を離れる
+      advanced_infobox: 例：私はから休暇を取る%{from}へ%{to}。
+    activities:
+      enumerations:
+        label: 活動（掲示板）
+        new: ボード上の新しい活動
+    title:
+      advanced_settings: 自宅からあなたの仕事を計画したりしておきます。
+    arrival_date_error: 脱退を超えることはできません。
+    arrival_already_taken: 日付はすでに別のアクティビティによって行われる。
+    invalid_date: 日付なし
+    departure_is_same_as_arrival: 到着と同じ時間を持っていなければならない。
+    notice:
+      notice_arrivaled: 到着を記録した。クリックすることで、あなたの到着や出発を変更することができます。
+      warning_missing_departure: ボードには、その日からの逸脱が不足しています%{arrival_date}。それを入力してください。
+    calendar:
+      legend:
+        starting: 活動の始まり
+        ending: 終了アクティビティ
+        starting_ending: この日の活動
+    mail_added:
+      subject: ! '%{user}職場からの不在を発表'
+      body_top: ! '%{user}発表%{activity}から職場に%{from}へ%{to}。'
+      body_link: ここで参照するには出席のリスト。
+    mail_updated:
+      subject: ! '%{user}職場からの不在を発表'
+      body_top: ! '%{user}発表%{activity}から職場に%{from}へ%{to}。'
+      body_link: ここで参照するには出席のリスト。
+    label_report_sum_time_entry: 年間の総%{year}[時間を報告]
+    label_report_sum_attendance: 用合計%{year}[出席]
+    text_activity_destroy_with_attendances: 活動は合計報告されている%{count}出席の記録。あなたが活動してすべてのレコードを削除してもよろしいですか？
+    field_range: で出席を書く：
+    range:
+      full_day: 一日中
+      forenoon: 午前
+      afternoon: 午後
+  sidebar_easy_attendances_all_users_queries: ユーザーが出席
+  error_put_between_issue_count: 二つの問題を選択してください
+  label_xml_data_export: XMLデータのエクスポート
+  label_xml_data_select_exportables: データをエクスポートする場合に選択します
+  label_xml_data_select_projects: プロジェクトを選択してください
+  button_xml_data_export: エクスポート
+  button_xml_data_import: インポート
+  button_xml_data_continue: 続ける
+  label_xml_data_import: XMLデータのインポート
+  label_user_mapping: ユーザーマッピング
+  label_map_to: 地図へ
+  option_map_to_new_user: 新規ユーザー
+  label_tracker_mapping: トラッカーマッピング
+  option_map_to_new_tracker: 新しいトラッカー
+  label_xml_data_notify: 通知を送信
+  label_role_mapping: ロールマッピング
+  label_issue_status_mapping: 問題のステータスマッピング
+  label_issue_priority_mapping: 問題の優先度マッピング
+  label_time_entry_activity_mapping: 活動マッピング
+  label_custom_field_mapping: カスタムフィールドのマッピング
+  option_map_to_new_role: 新しい役割
+  option_map_to_new_project_custom_field: 新規分野
+  option_map_to_new_issue_custom_field: 新規分野
+  option_map_to_new_issue_priority: 新しい優先順位
+  option_map_to_new_issue_status: 新しいステータス
+  option_map_to_new_time_entry_activity: 新しいアクティビティ
+  label_auto_mapping: ための自動マッピング
+  label_import_success: データが正常にインポートされた
+  label_import_zip_error: 誤ったデータ形式
+  xml_data_users: ユーザー
+  xml_data_trackers: トラッカー
+  xml_data_roles: 役割
+  xml_data_issue_priorities: タスクの優先順位
+  xml_data_project_custom_fields: カスタムフィールド
+  xml_data_issue_custom_fields: カスタムフィールド
+  xml_data_issue_statuses: タスクステータス
+  xml_data_document_categories: ドキュメントのカテゴリ
+  xml_data_time_entry_activities: 活動
+  sample_text: 簡単なプロジェクト
+  easy_color_scheme_not_available: バイカラースキーム%{current}、あなたはそれを変更することができます
+  notice_issues_successful_create: ユーザーに作成した成功した：
+  notice_failed_to_save_issues2: タスクの保存に失敗しました%{issue}エラーが発生したため：%{error}
+  notice_too_many_projects: あまりにも多くのプロジェクト（%{count}）、検索を使用する。
+  general_all: すべて
+  general_only_required: のみ必要
+  mail_subject_easy_query_migration_nonsaved_query: 簡単なプロジェクト - フィルタ移行は - 失敗
+  mail_body_easy_query_migration_nonsaved_query_begin: こんにちは、あなたの保存されたフィルタの移行は、このフィルタを保存するために失敗しました：
+  mail_body_easy_query_migration_nonsaved_query_end: （列には、いくつかの日付の範囲が含まれ - 作成、更新、期日を、...）上記のリンクをクリックし、フィルタを変更してください。
+  mail_subject_easy_query_migration_unsupported_query: 簡単なプロジェクト - フィルタの移行 - サポートされていない設定
+  mail_body_easy_query_migration_unsupported_query_begin: こんにちは、あなたの保存されたフィルタの移行は、このフィルタを保存するために失敗しました：
+  mail_body_easy_query_migration_unsupported_query_end: 上記のリンクをクリックして、フィルタを変更してください。それは、この設定が含まれています。
+  setting_project_list_default_columns: デフォルト列は、プロジェクトのリストに表示された
+  setting_default_projects_tree_display: プロジェクトツリーの表示
+  setting_projects_tree_display_with_siblings: 兄弟と
+  setting_projects_tree_display_without_siblings: 兄弟なし
+  setting_issue_created_on_date_format_label: のように作成された表示
+  setting_issue_created_on_date_format_date: 日付
+  setting_issue_created_on_date_format_datetime: 日時
+  setting_enable_private_issues: プライベートの問題を有効に
+  setting_show_personal_statement: メニュー内の個人的な声明を表示する
+  setting_show_bulk_time_entry: メニューのバルク時間を表示
+  setting_project_calculate_start_date: タスクから開始日計算
+  setting_project_calculate_due_date: タスクから期日を計算
+  setting_show_issue_id: タスクIDを表示
+  setting_quick_jump_to_an_issue: IDが検索される場合は、タスクにジャンプ
+  setting_milestone_effective_date_from_issue_due_date: マイルストーンの終了後にタスクの期日を設定することができます。
+  setting_issue_set_done_after_close: クローズドタスクで行われた100％設定
+  setting_allow_repeating_issues: タスクを繰り返し許す
+  workflow_button_edit: ワークフロー設定
+  easy_search:
+    legend_entities: 検索：
+    legend_column_types: での検索：
+    label_column_type:
+      name: 名前
+      description: 説明
+      comment: コメント
+      other: 他人
+  enumeration_easy_version_cetegory: バージョンカテゴリ
+  label_tracker_move_issues: 問題の再割り当て
+  label_tracker_move_issues_explanation: にトラッカーを変更します。
+  button_tracker_move_issues: 再割り当て、および削除
+  option_dont_map: ! '- マッピングされません -'
+  move_auth_source_users_explanation: ユーザー用の新しい認証ソースを選択します。
+  button_auth_source_move_users: 再割り当て、および削除
+  dashboard:
+    legends:
+      others: 他人
+      projects: プロジェクト
+      issues: タスク
+      users: ユーザー
+      security: セキュリティー
+      xml: XML
+      extensions: 拡張
+      settings: 設定
+  label_easy_user_working_time_calendar_no_of_days: 営業日
+  label_easy_user_working_time_calendar_no_of_hours: 労働時間
+  label_easy_attendance_report_working_time: 働いていた%{sum_timeentries}の%{total_working_hours}すなわち、%{timeentries_percent}％
+  label_easy_attendance_report_attendence_time: 出席は持って%{sum_attendance}の%{total_working_hours}すなわち、%{working_percent}％
+  button_settings: 調整
+  button_history: 歴史
+  field_started_at: で始まる
+  field_finished_at: で終わり
+  field_note: 注意
+  easy_rake_tasks:
+    views:
+      heading_index: スケジュールされたタスクの概要
+      button_index: スケジュールされたタスクの概要
+      heading_settings: ジョブの設定%{task_name}
+      heading_task_infos: 仕事の概要 -%{task_name}
+      interval: インターバル
+      next_run_at: 次のスタート
+      last_action: 最後のアクション
+    periods:
+      daily: すべての%{interval}
+      hourly: すべての%{interval}営業時間
+      minutes: すべての%{interval}分
+    easy_rake_task_receive_mail:
+      caption: メールを受け取る
+    easy_rake_task_repeating_entities:
+      caption: Reccuring問題デーモン
+    easy_rake_task_history_cleaner:
+      caption: 古いスケジュールされたタスクの履歴を削除
+    easy_rake_task_check_failure_tasks:
+      caption: 失敗スケジュールされたタスクのためのチェッカー
+      email_type:
+        all_admins: 管理者にメールを送信
+        email: にメールを送信
+      mail:
+        heading: これらのスケジュールされたタスクの失敗%{date}
+        footer: あなたは、スケジュールされたタスクの設定を変更することができます
+  easy_rake_task_infos:
+    status:
+      running: それは
+      ended_ok: 順序で完了
+      ended_failed: エラーで終了
+  button_delete_avatar: アバターを削除
+  label_issue_due_date_overdue: 完了するには左：
+  label_issue_due_date_not_overdue: 締め切り後に
+  label_project_due_date_overdue: 残りを完了する
+  label_project_due_date_not_overdue: 締め切り後に
+  label_easy_setting_use_personal_theme: ユーザーが独自の外観を変更するために許可しますか？
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: 新しい関係
+  button_gantt_relation_destroy: リレーションを削除
+  title_permission_flag_r: 書き込むことはできません - 読み取り専用
+  title_permission_flag_p: ログインが必要です
+  title_permission_flag_m: プロジェクトのメンバーである必要が
+  title_permission_flag_l: ログインが必要です
+  setting_display_issue_relations_on_new_form: 新しいフォームに関連するタスクを見る
+  gantt_new_following_issue: 新しい次のタスク
+  gantt_new_preceding_issue: 新しい先行タスク
+  gantt_new_child_issue: 新しいサブタスク
+  themes:
+    easy: 容易
+    easy_widescreen: 広い
+  label_easy_user_working_time_day_settings: 日を設定する
+  editor_config_names:
+    basic: 基本
+    extended: 高度な
+    full: フル
+  custom_field_names:
+    external_mails:
+      label: 外部メール
+  label_field_format_rating_star_no: 星
+  label_easy_gantt_theme_plural: PDFガントテーマ
+  label_easy_gantt_theme_new: 新しいテーマ
+  label_header_style: ヘッダスタイル
+  label_logo: ロゴ
+  field_header_color: 背景色
+  field_header_font_color: テキストの色
+  label_with_theme: テーマを使用して
+  label_is_null: 空である
+  label_is_not_null: 空ではありません
+  search_field_placeholders:
+    issues: タスクを検索する
+    projects: プロジェクトを探す
+  label_easy_issue_easy_reccuring_monthly_every: 各
+  label_zoom: ズーム
+  label_easy_issue_easy_repeating_create_now: 今作成
+  label_added_time_by: によって追加された%{author}
+  label_updated_time_by: によって更新%{author}%{age}前に
+  label_easy_issue_easy_repeating_period_yearly: 毎年
+  label_easy_issue_easy_repeating_create_time_time: 作成の時間
+  label_easy_issue_easy_reccuring_recur_every: ごとに再発する
+  label_easy_issue_easy_reccuring_recur_years: 年（複数可）
+  label_easy_issue_easy_reccuring_recur_months: 月
+  label_easy_issue_easy_reccuring_yearly_month_of: の
+  label_easy_issue_easy_reccuring_after_recurs: イテレーション
+  label_last_n_days_next_m_days: -%{last}日+%{next}日
+  label_email_field:
+    from: FROM
+    to: TO
+  button_execute: 実行する
+  title_easy_copy_to_project: 問題からプロジェクトを作成します。
+  field_easy_next_start: 次のスタート
+  text_easy_issue_reccuring_create_now: このセクションでは、あなたが今作成したいどのように多くの問題を定義することができます。次の問題はreccuringの設定から決定日に作成されます。時間に以下で定義。
+  label_easy_publishing_module_youtube: ユーチューブ
+  setting_close_subtask_after_parent: 閉じられたタスクの後、近くのサブタスク
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: 不明
+        received: 受け
+        processed_and_deleted: 処理され、削除された
+        not_processed_and_deleted: 処理され、削除されたNOT
+        not_processed_and_left_on_server: サーバ上で処理され、残っていない
+        cannot_be_processed: 処理できない
+  label_video_url: 動画のURL
+  button_easy_copy_to_project: プロジェクトを作成します
+  permission_edit_own_projects: 独自のプロジェクトを編集
+  label_easy_attendance_is_repeating: 繰り返し？
+  label_easy_attendance_repeating_to: に繰り返し
+  label_easy_custom_field_disable: 無効にする
+  label_easy_custom_field_enable: 可能にする
+  label_filter_group_project_fields: プロジェクト
+  label_filter_group_relations: 関係
+  label_filter_group_custom_fields_suffix: カスタムフィールド
+  label_filter_group_unknown: 不明
+  label_filter_group_easy_issue_query: 問題
+  label_filter_group_easy_project_query: プロジェクト
+  label_filter_group_easy_user_query: ユーザー
+  label_filter_group_easy_document_query: ドキュメント
+  label_filter_group_easy_version_query: マイルストーン
+  label_filter_group_easy_attendance_query: 出席
+  label_filter_group_easy_time_entry_query: タイムエントリ
+  label_filter_group_easy_group_query: グループ
+  label_easy_setting_show_time_entry_range_select: 選択すると/の範囲には、show
+  lable_should_send_invitation_update: 通知を送信
+  button_easy_issue_timer_pause: 一時停止
+  button_easy_issue_timer_resume: 続ける
+  button_download_email: メールをダウンロード
+  title_easy_issue_timer_button_pause: ポーズ測定時間
+  title_easy_issue_timer_button_resume: measuere時間で継続
+  field_easy_is_meeting: 会議
+  field_easy_meeting_day: 総会の日
+  field_easy_meeting_time: 会議の時間
+  field_easy_start_date_time: 開始時刻
+  field_easy_due_date_time: 期限
+  field_mail_to_admin: 管理者のメール
+  notice_easy_custom_field_disabled: カスタムフィールドは無効になりました
+  notice_easy_custom_field_enabled: カスタムフィールドが有効になっていました
+  error_easy_custom_field_disable_deletable: このカスタムフィールドは無効にすることはできません
+  text_easy_rake_task_failure_email: このメールにメッセージを配信される障害が発生した場合に
+  label_customize_gantt_export: カスタムエクスポート設定
+  label_not_updated_on: 顕在化されませんでした
+  label_easy_rake_period: すべての
+  label_easy_rake_period_monthly: 月
+  label_easy_rake_period_daily: 日
+  label_easy_rake_period_hourly: 時間
+  label_easy_rake_period_minutes: 分
+  button_create_issue_from_journal: 問題を作成します。
+  button_additional_context_menu: その他のオプション
+  title_create_issue_from_journal: 説明としてこのジャーナルのテキストと、新しい問題を作成します。
+  title_additional_context_menu: 追加のオプションを含むメニューをクリックして開きます
+  field_time_entry: 費やした時間
+  label_new_subproject_from_template: テンプレートから新しいサブプロジェクト
+  permission_view_estimated_hours: 推定時間を表示し
+  label_easy_repeat_left_reccurs: Reccurs左
+  button_load_additional_records: 追加のレコードをロードする
+  field_sum_estimated_hours: 推定総時間
+  button_print: 印刷
+  button_pdf: PDF

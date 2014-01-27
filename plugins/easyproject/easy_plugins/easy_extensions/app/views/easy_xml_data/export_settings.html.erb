@@ -1,0 +1,30 @@
+<h2><%= l(:label_xml_data_export) -%></h2>
+
+<%= form_tag(:action => 'export', :format => 'xml') do %>
+
+  <h3><%= l(:label_xml_data_select_exportables) %></h3>
+  <% @exportables.each do |exportable| %>
+    <label>
+      <%= check_box_tag 'exportables[]', exportable.to_s, true %>
+      <%= l(@exportable_labels[exportable] || "label_#{exportable.to_s.singularize}_plural") %>
+    </label>
+  <% end %>
+
+  <h3><%= l(:label_xml_data_select_projects) %></h3>
+  <%= project_selection_tree(@projects) %>
+
+  <script type="text/javascript">
+		$(document).ready(function() {
+			$('#project-select-all').click(function() {
+				if($(this).is(':checked')) {
+					$("input[type='checkbox']", $('#project-selection-tree')).attr('checked', 'checked');
+				} else {
+					$("input[type='checkbox']", $('#project-selection-tree')).removeAttr('checked');
+				}
+			});
+		});
+  </script>
+
+  <%= submit_tag l(:button_xml_data_export), :class => 'button-2 big' %>
+
+<% end -%>

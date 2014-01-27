@@ -1,0 +1,15 @@
+<div>
+  <p>
+    <%= label_tag(:settings_office_ip_range, l(:label_setting_attendance_office_ip_range)) %>
+  	<%= text_field_tag('settings[office_ip_range]', @settings['office_ip_range']) %>
+  </p>
+  <p><em><%= l(:text_setting_attendance_office_ip_range) %></em></p>
+  <p>
+    <%= label_tag(:settings_ip_range_activity_id, l(:label_setting_attendance_ip_range_activity_id)) %>
+  	<%= select_tag('settings[ip_range_activity_id]', options_from_collection_for_select(EasyAttendanceActivity.all, :id, :name, @settings['ip_range_activity_id']), :include_blank => true) %>
+  </p>
+  <p>
+    <%= label_tag(:settings_outside_ip_range_activity_id, l(:label_setting_attendance_outside_ip_range_activity_id)) %>
+  	<%= select_tag('settings[outside_ip_range_activity_id]', options_from_collection_for_select(EasyAttendanceActivity.all, :id, :name, @settings['outside_ip_range_activity_id']), :include_blank => true) %>
+  </p>
+</div>

@@ -1,0 +1,16 @@
+<%= error_messages_for 'enumeration' %>
+
+<div class="box tabular">
+
+  <%#= hidden_field 'enumeration', 'type'  %>
+  <%#= back_url_hidden_field_tag -%>
+
+  <p><%= f.text_field :name %></p>
+  <p><%= f.check_box :active %></p>
+  <p><%= f.check_box :is_default %></p>
+
+  <% @enumeration.custom_field_values.each do |value| %>
+    <p><%= custom_field_tag_with_label :enumeration, value %></p>
+  <% end %>
+  <%= call_hook(:view_enumerations_form_bottom, { :enumeration => @enumeration }) %>
+</div>

@@ -1,0 +1,17 @@
+<div class="contextual">
+  <p><%= change_status_link(@user) unless @user.is_a?(AnonymousUser) %></p>
+</div>
+
+<%= title [l(:label_user_plural), users_path], @user.login %>
+
+<%= render_tabs user_settings_tabs %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <% if EasyLicenseManager.has_license_limit?(:user_limit) %>
+    <%= link_to(l(:label_user_new), {:action => 'new'}, :class => 'icon icon-add button-1')  %>
+  <% else %>
+    <p class="icon icon-warning red-icon"><%= l('license_manager.user_limit', :email => EasyExtensions::EasyProjectSettings.app_email) %></p>
+  <% end %>
+  <%= link_to(l(:label_profile), user_path(@user), :class => 'icon icon-user button-1 orange') %>
+  <%= link_to(l(:button_delete), {:controller => 'users', :action => 'destroy', :id => @user}, :data => {:confirm => l(:text_are_you_sure)}, :method => :delete, :class => 'icon icon-del button-2') if User.current != @user && !@user.is_a?(AnonymousUser) %>
+<% end %>

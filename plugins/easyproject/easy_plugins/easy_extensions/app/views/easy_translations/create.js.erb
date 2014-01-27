@@ -1,0 +1,6 @@
+$("#add_translation :selected").remove();
+$("#easy_translation_used_translation_container").append("<%=j render(:partial => 'form_translated_field', :locals => {:t => @easy_translation}) %>")
+$("#<%= dom_id(@easy_translation) %> input").focus();
+if ($("#add_translation option").length <= 1) {
+  $("#easy_translation_add_translation_select").hide();
+}

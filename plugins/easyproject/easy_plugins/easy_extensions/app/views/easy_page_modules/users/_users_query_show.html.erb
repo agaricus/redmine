@@ -1,0 +1,31 @@
+<% users, query = @easy_page_modules_data[block_name][:users], @easy_page_modules_data[block_name][:query]
+easy_query_apply_url ||= url_for()
+back_url ||= nil
+query_form_url ||= {:controller => 'easy_queries', :action => 'new', :type => query.class.name, :project_id => @project, :back_url => back_url}
+if query
+  query.sort_criteria = params[:sort] if params[:sort]
+  sort_clear
+
+  sort_init(query.sort_criteria_init)
+  sort_update(query.sortable_columns)
+  prepared_result_entities = query.prepare_result(:order => sort_clause)
+end  %>
+<% if query %>
+  <%= toggling_container(modul_uniq_id, user, {:heading => (settings['query_type'] == '2' ? h(query.name) : link_to(h(query.name), { :controller => 'projects', :action => 'index', :project_id => query.project, :query_id => query}, :title => l(:label_user_saved_query, :queryname => query.name))), :container_html => {:class => 'module-content'}}) do %>
+    <% if settings['filter_visible'] == 'true' %>
+      <%= form_tag(query_form_url, :id => "#{modul_uniq_id}query_form", :method => :get) do -%>
+        <%= hidden_field_tag 'set_filter', '1' -%>
+        <div class="easy-query-filter-container">
+          <%= render :partial => 'easy_queries/easy_query_index_form', :locals => { :query => query, :modul_uniq_id => modul_uniq_id, :block_name => block_name, :filter_active => (l(:filter_active) if settings['query_type'] == '2'), :show_sort_criteria => true, :show_query_heading => false, :show_filters_opened => false} %>
+          <div class="buttons" id="<%= modul_uniq_id -%>filter_buttons" style="display: none;">
+            <%= link_to_function l(query.entity.name.underscore, :scope => [:easy_query,:button_apply], :default => l(:button_apply) ), "selectAllOptions('#{modul_uniq_id}selected_columns'); submit_form('#{modul_uniq_id}query_form','#{easy_query_apply_url}')", :class => 'icon icon-checked apply-link', :title => l(:title_apply_projectquery) -%>
+          </div>
+        </div>
+      <% end -%>
+      <br />
+    <% end %>
+    <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:entities =>  prepared_result_entities, :query => query, :block_name => block_name, :user => user, :options => {:disable_sort => false, :go_to_url => {:controller => 'users', :action => 'show'}}} -%>
+  <% end %>
+<% else %>
+  <%= l(:label_easy_page_module_settings_missing) %>
+<% end %>

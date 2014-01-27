@@ -1,0 +1,77 @@
+---
+ru:
+  easy_user_allocations_name: Управление персоналом
+  easy_user_allocations_description: Управление пресоналом
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Показать распределение персонала
+  project_module_user_allocations: Управление персоналом
+  label_user_allocations: Управление персоналом
+  label_user_allocation_gantt: Распределения ресурсов - Гант
+  label_user_allocation_gantt_users: Пользователи
+  label_user_allocation_gantt_range: Даты
+  resalloc:
+    title: Распределение персонала
+    settings: Настройки
+    button_apply_settings: Применить настройки
+    button_recalculate: Пересчитать распределение
+    button_save: Сохранить изменения
+    button_undo: Не сохранять
+    button_split_issue: Разделить задачу
+    split_issue_help: Нажатием на неназначенную задачу, внесите дату для разделения.
+    error_date_range_too_long: должна быть меньше, чем 1 год
+    legend_hours_worked: Отработанное время
+    legend_hours_overtime: Количество фактически отработанных часов превышает количество
+      запланированных часов
+  label_user_allocation_gantt_user_selection: Выбор
+  label_unassigned_issues: Нераспределенные задачи
+  label_issue_id: ID задачи
+  label_allocation_worm_out_of_range: Для отображения целой задачи, задайте больший
+    диапозон времени
+  label_allocation_changed_title: Задача была изменена и будет обновляться при сохранении
+  easy_pages:
+    modules:
+      user_allocation: Распределение персонала
+      user_allocation_working_plan: Распределение персонала / план работ
+  permission_view_my_easy_user_allocations: Отобразить собственный рабочий план
+  permission_edit_easy_user_allocations: Редактирование Распределения персонала
+  permission_edit_my_easy_user_allocations_plan: Редактировать собственный рабочий
+    план
+  label_user_allocation_plan: Рабочий план
+  user_allocation_plan:
+    label_plan: План
+    label_real: Реальность
+    label_comment: Комментарий
+  easy_query:
+    name:
+      easy_user_allocation_query: Распределение персонала
+      easy_user_allocation_by_project_query: Распределения персонала по проектам
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Личные фильтры на распределение персонала
+        easy_user_allocation_by_project_query: Личные фильтры на распределение персонала
+          по проектам
+      public:
+        easy_user_allocation_query: Публичные фильтры на распределение персонала
+        easy_user_allocation_by_project_query: Публичные фильтры на распределение
+          персонала по проектам
+  label_allocations_by_project: Распределение персонала по проектам
+  text_easy_user_allocation_working_plan_bottom_info: Позволяет пользователю планировать
+    нагрузку в выбранной недели. Таблица показывает назначенное время и фактическое
+    время.
+  label_setting_keep_issue_start_dates: Не изменять дату начала задачи.
+  text_setting_keep_issue_start_dates: При включении, если у пользователя нет других
+    задач и задача может бытьвыполнена раньше срока, все остальные дни будут заполенеы
+    0 (часов нв работу)
+  project_module_easy_user_allocations: Распределение персонала
+  label_setting_allocate_evenly: Распределить нагрузку равномерно
+  text_setting_allocate_evenly: При включении этой функции, часы отведенные на решение
+    задачи будут распределяться равномерно, даже при изменении сроков выполненеия
+  label_setting_allocate_from_start: Считать часы от даты начала задачи
+  text_overallocation: Сумма напланированных Вами часов, превышает количество часов
+    отведенных на решение задачи.
+  permission_view_easy_user_allocations_by_project: Посмотреть распределение по проектам
+  easy_user_allocations_sidebar_all_users_queries: Распределение пользователей
+  easy_user_allocations_label_show_assigned_issues: Отображение распределения для
+    пользователея %{username}
+  label_filter_group_easy_user_allocation_query: Распределение ресурсов
+  label_edit_estimated_hours: Редактировать оценкам часа

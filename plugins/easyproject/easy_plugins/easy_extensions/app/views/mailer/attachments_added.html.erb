@@ -1,0 +1,25 @@
+<h1>
+  <%= l('mail.label_attachment_new') %>
+</h1>
+<p>
+  <%= l('mail.text_attachment_added', {
+    :user => link_to_user(@attachments.first.author, {:only_path => false}),
+    :time => format_time(@attachments.first.current_version.updated_at),
+    :added_to => link_to( h(@added_to), @added_to_url)
+  }).html_safe %>
+</p>
+
+<ul>
+  <% @attachments.each do |attachment| %>
+    <li>
+      <%= link_to_attachment(attachment, {:only_path => false}) %>
+      <i>(<%= number_to_human_size(attachment.filesize) %>)</i>
+      <%= " - v#{attachment.version}" %>
+      <% unless attachment.description.blank? %>
+        <p style="padding-left:10px">
+          <%= " - #{attachment.description}" %>
+        </p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

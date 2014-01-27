@@ -1,0 +1,24 @@
+<%
+tab_controller = tab.is_a?(EasyPageTemplateTab) ? {:controller => 'easy_page_template_layout'} : {:controller => 'easy_page_layout'} 
+is_preloaded ||= false
+%>
+<%= form_tag(tab_controller.merge(:action => 'save_tab', :tab_id => tab, :is_preloaded => is_preloaded), :id => "tab_form_#{tab.id}", :remote => true) do %>
+  <%= text_field_tag 'name', tab.name, :maxlength => 255, :size => 20, :id => "tab_name_edit_#{tab.id}" %>
+  <%= link_to('', "#", :class => 'icon icon-save', :id => "tab_name_form_save_#{tab.id}") %>
+  <script type="text/javascript">
+    $("<%= "#tab_name_form_save_#{tab.id}" %>").click(function(e){
+      e.stopPropagation();
+      e.preventDefault();
+      $('#<%= "tab_form_#{tab.id}" %>').submit();
+      return false;
+    });
+  </script>
+  <%= link_to('', tab_controller.merge(:action => 'show_tab', :tab_id => tab, :is_preloaded => is_preloaded, :original_url => params[:original_url]), :remote => true, :class => 'icon icon-close') %>
+  <script type="text/javascript">
+    $("#tab_name_edit_<%= tab.id %>").keydown(function(e){
+      if( e.which == 32 ) {
+        e.stopPropagation();
+      }
+    });
+  </script>
+<% end %>

@@ -1,0 +1,6 @@
+<% if @issue.valid? %>
+  $("#content").prepend($("<div/>").attr({"class":"flash notice"}).html("<%= j l(:notice_issue_successful_create, :id => link_to("#{@issue.to_s}", issue_path(@issue), :title => @issue.subject)).html_safe %>"))
+  closeModalSelectorWindow();
+<% else %>
+  $("#modal-dialog-loader").prepend("<%= j error_messages_for(@issue) %>");
+<% end %>

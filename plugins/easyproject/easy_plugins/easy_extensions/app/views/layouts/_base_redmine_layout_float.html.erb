@@ -1,0 +1,65 @@
+<div id="wrapper">
+  <div id="wrapper2">
+    <div id="wrapper3">
+
+      <div id="top-menu">
+        <div id="account">
+          <%= render_menu :account_menu -%>
+        </div>
+        <%= content_tag('div', "#{l(:label_logged_as)} #{link_to_user(User.current, :format => :username)}".html_safe, :id => 'loggedas') if User.current.logged? %>
+        <%= render_menu :easy_quick_top_menu -%>
+        <%= render_menu :top_menu -%>
+      </div>
+
+      <div id="header">
+        <div id="quick-search">
+          <%= call_hook :view_layout_before_quick_search %>
+          <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+            <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+            <%= search_field_tag 'q', @question, {:size => 15, :class => 'small border-radius-3', :accesskey => accesskey(:quick_search),
+              :placeholder => (@question_placeholder || l(:label_search)) } -%>
+            <% submit_tag l(:label_search), :class => 'button-2' %>
+          <% end %>
+          <span id="header-quick-search-project-jump-box-container">
+            <%= render_project_jump_box %>
+          </span>
+        </div>
+
+        <h1><%= page_header_title %></h1>
+
+        <% if display_main_menu?(@project) %>
+          <div id="main-menu">
+            <%= render_main_menu(@project) %>
+          </div>
+        <% end %>
+      </div>
+
+      <div id="main" class="<%= sidebar_content? ? '' : 'nosidebar' %>">
+        <div id="sidebar">
+          <% if content_for?(:easy_page_layout_service_box) -%>
+            <div id="easy-page-layout-service-box" class="box">
+              <%= yield :easy_page_layout_service_box %>
+            </div>
+          <% end -%>
+          <%= yield :sidebar %>
+          <%= view_layouts_base_sidebar_hook_response %>
+        </div>
+
+        <div id="content">
+          <%= render_flash_messages %>
+          <%= yield %>
+          <%= yield :easy_page_layout_content %>
+          <%= yield :easy_page_zone_top_left -%>
+          <%= yield :easy_page_zone_top_middle -%>
+          <%= yield :easy_page_zone_middle_left -%>
+          <%= yield :easy_page_zone_middle_right -%>
+          <%= yield :easy_page_zone_bottom_left -%>
+          <%= call_hook :view_layouts_base_content %>
+          <div style="clear:both;"></div>
+        </div>
+      </div>
+
+      <%= render :file => 'layouts/base_body_footer_wrapper' %>
+    </div>
+  </div>
+</div>

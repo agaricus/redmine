@@ -1,0 +1,8 @@
+api.array :issues do
+  @visible_issues.each do |issue|
+    api.issue do
+      api.value issue.to_s
+      api.id issue.id
+    end
+  end
+end

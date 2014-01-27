@@ -1,0 +1,20 @@
+<% if @journal.private_notes? %>
+  (<%= l(:field_private_notes) %>)
+<% end %>
+<div class="journal-details-container">
+  <h4>
+    <%= l(:text_issue_updated, :id => "#{@issue.to_s}", :author => h(@journal.user)) %>
+  </h4>
+  <% if @journal.visible_details.any? %>
+    <ul class="details">
+      <% details_to_strings(@journal.visible_details, false, :only_path => false).each do |string| %>
+        <li><%= string -%></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= content_tag('div', textilizable(@journal, :notes, {:headings => false, :only_path => false}), :id => "journal-#{@journal.id}-notes", :class => "wiki") -%>
+</div>
+<br />
+<hr />
+<br />
+<%= render :partial => 'mailer/issue', :formats => [:html], :locals => { :issue => @issue, :users => @users, :issue_url => @issue_url } %>

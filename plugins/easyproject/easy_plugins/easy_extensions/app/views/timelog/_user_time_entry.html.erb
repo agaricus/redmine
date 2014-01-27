@@ -1,0 +1,87 @@
+<% timelog_comment_force_textfield ||= false %>
+<% time_entry_id = convert_form_name_to_id(tag_name_prefix) -%>
+<% if User.current.user_time_entry_setting_hours? -%>
+  <%= hours_selector(time_entry, tag_name_prefix)  %>
+<% end -%>
+<% if User.current.user_time_entry_setting_range? -%>
+  <div class="timeentry-range splitcontentright">
+    <p class="nowrap">
+      <% if EasySetting.value('show_time_entry_range_select') %>
+        <% selected_easy_time_entry_range_from, selected_easy_time_entry_range_to = '', '' -%>
+        <% selected_easy_time_entry_range_from = easy_range_to_string(time_entry.easy_range_from) if time_entry && !time_entry.easy_range_from.nil? -%>
+        <% selected_easy_time_entry_range_from = easy_range_to_string(params["#{tag_name_prefix}"][:easy_time_entry_range][:from]) if params["#{tag_name_prefix}"] && !params["#{tag_name_prefix}"][:easy_time_entry_range].blank? -%>
+
+        <%= label_for_field(:easy_range_from, { :required => required }) %><%= select_tag("#{tag_name_prefix}[easy_time_entry_range][from]", hourstimecheck_collection_for_select_options(selected_easy_time_entry_range_from, :first_option => ['','']), :onchange => "#{time_entry_id}_disable_select_options_to();") %>
+      <% else %>
+        <% from_value = User.current.user_time_in_zone(time_entry.easy_range_from).strftime('%H:%M') if time_entry && !time_entry.easy_range_from.nil? %>
+        <% from_value = params["#{tag_name_prefix}"][:easy_time_entry_range][:from] if params["#{tag_name_prefix}"] && !params["#{tag_name_prefix}"][:easy_time_entry_range].blank? %>
+
+        <%= label_for_field(:easy_range_from, { :required => required }) %><%= tag(:input, :type => 'time', :value => from_value, :placeholder => from_value, :name => "#{tag_name_prefix}[easy_time_entry_range][from]", :size => 3, :class => 'input-type-time') %>
+      <% end %>
+
+    </p>
+    <p class="nowrap">
+      <% if EasySetting.value('show_time_entry_range_select') %>
+        <% selected_easy_time_entry_range_to = easy_range_to_string(time_entry.easy_range_to) if time_entry && !time_entry.easy_range_to.nil? %>
+        <% selected_easy_time_entry_range_to = easy_range_to_string(params["#{tag_name_prefix}"][:easy_time_entry_range][:to]) if params["#{tag_name_prefix}"] && !params["#{tag_name_prefix}"][:easy_time_entry_range].blank? %>
+
+        <%= label_for_field(:easy_range_to, {:label => :field_easy_range_form_to, :required => required }) -%><%= select_tag("#{tag_name_prefix}[easy_time_entry_range][to]", hourstimecheck_collection_for_select_options(selected_easy_time_entry_range_to, :first_option => ['','']), :onchange => "#{time_entry_id}_disable_select_options_from();") -%>
+      <% else %>
+        <% to_value = User.current.user_time_in_zone(time_entry.easy_range_to).strftime('%H:%M') if time_entry && !time_entry.easy_range_to.nil? %>
+        <% to_value = params["#{tag_name_prefix}"][:easy_time_entry_range][:to] if params["#{tag_name_prefix}"] && !params["#{tag_name_prefix}"][:easy_time_entry_range].blank? %>
+
+        <%= label_for_field(:easy_range_to, {:label => :field_easy_range_form_to, :required => required }) %><%= tag(:input, :type => 'time', :value => to_value, :placeholder => to_value, :name => "#{tag_name_prefix}[easy_time_entry_range][to]", :size => 3, :class => 'input-type-time') %>
+      <% end %>
+    </p>
+  </div>
+<%  end -%>
+<div class="clear"></div>
+<div class="timeentry-comments">
+  <%= call_hook :view_time_entries_user_time_entry_middle, {:time_entry => time_entry, :tag_name_prefix => tag_name_prefix} %>
+  <p class="splitcontentleft">
+    <%= label_tag "#{tag_name_prefix}[comments]", l(:field_comments) -%><%= timelog_comment_tag "#{tag_name_prefix}[comments]", time_entry && time_entry.comments, {:force_text_field => timelog_comment_force_textfield} -%>
+  </p>
+  <div class="clear"></div>
+</div>
+
+<% if project && issue && (project.fixed_activity? && !issue.activity_id.nil?) %>
+  <%= hidden_field_tag( "#{tag_name_prefix}[activity_id]", issue.activity_id)  -%>
+<% else
+  rand_container_id = rand(Time.now.to_i)
+%>
+  <div id="timeentry-activity-container-<%= rand_container_id -%>" class="timeentry-activities-select">
+    <%= render :partial => 'timelog/time_entry_activity', :locals => { :tag_name_prefix => tag_name_prefix, :entity => time_entry, :activity_collection => activities, :project => project, :container_id => "timeentry-activity-container-#{rand_container_id}", :options => {}} -%>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+<%= time_entry_id -%>_disable_select_options_to = function() {
+  var source = $('<%= time_entry_id -%>_easy_time_entry_range_from');
+  var destination = $('<%= time_entry_id -%>_easy_time_entry_range_to');
+  var source_value = source.getValue();
+
+  for(i=0; i<destination.options.length; i++) {
+    if (destination.options[i].value <= source_value) {
+      destination.options[i].disabled = true;
+    } else {
+      destination.options[i].disabled = false;
+    }
+  }
+}
+<%= time_entry_id -%>_disable_select_options_from = function() {
+var source = $('<%= time_entry_id -%>_easy_time_entry_range_to');
+var destination = $('<%= time_entry_id -%>_easy_time_entry_range_from');
+var source_value = source.getValue();
+
+for(i=0; i<destination.options.length; i++) {
+  if (destination.options[i].value >= source_value) {
+    destination.options[i].disabled = true;
+  } else {
+    destination.options[i].disabled = false;
+  }
+}
+}
+/* ]]> */
+</script>

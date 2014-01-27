@@ -1,0 +1,18 @@
+<%= content_tag(:h2, l(:label_confirmation), :class => 'title') %>
+<%= form_tag(move_attendances_easy_attendance_activity_path(@easy_attendance_activity), :method => :post, :class => '' ) do %>
+  <div class="gray-background">
+    <p class="long2">
+      <%= label_tag(:easy_attendance_activity_to, l(:change_easy_attendance_activity_to, :scope => :easy_attendance)) %>
+      <%= select_tag(:easy_attendance_activity_to, options_from_collection_for_select(@easy_attendance_activities, :id, :name)) %>
+    </p>
+  </div>
+  <p>
+    <%= submit_tag(l(:button_submit), :class => 'floatleft') %> &nbsp;
+    <% if request.xhr? %>
+      <%= link_to_function(l(:button_cancel), 'closeModalSelectorWindow()', :class => 'button-2') %>
+    <% else %>
+      <%= link_to(l(:button_cancel), {:controller => 'enumerations'}, :class => 'button-2') %>
+    <% end %>
+  </p>
+
+<% end %>

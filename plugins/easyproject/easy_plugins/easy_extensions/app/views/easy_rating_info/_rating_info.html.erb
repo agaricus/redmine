@@ -1,0 +1,16 @@
+<div class="rating-infos">
+  <% @ratings.each do |rating| %>
+    <div class="rating">
+      <div>
+        <% n = "rating-detail-#{rating.id}" %>
+        <% 5.times do |i| %>
+          <%= radio_button_tag(n, 1, (rating.rating/25.0).round == i, :class => 'star', :disabled => true) %>
+        <% end %>
+        <%= javascript_tag "$(\"input[name='#{n}']\").rating();" %>
+      </div>
+      <%= rating.description %>
+    </div>
+    <hr>
+  <% end %>
+  <p class="pagination"><%= pagination_links_full @ratings_pages, @ratings_count, :per_page_links => false %></p>
+</div>

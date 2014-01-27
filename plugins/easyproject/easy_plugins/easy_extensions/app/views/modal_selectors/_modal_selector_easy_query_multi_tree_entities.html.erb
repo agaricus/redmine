@@ -1,0 +1,20 @@
+<table class="list">
+  <thead>
+    <tr>
+      <th></th>
+      <th style="display:none"></th>
+      <% columns[level].each do |column| -%>
+        <%= content_tag('th', column.caption) -%>
+      <% end -%>
+    </tr>
+  </thead>
+  <tbody>
+    <% entities.each do |entity|
+      if entity.is_a?(Array) -%>
+        <%= render :partial => 'modal_selector_easy_query_multi_tree_entity', :locals => {:entities => entities, :entity => entity[0], :subentities => entity[1], :columns => columns, :level => level, :selected_values => selected_values, :entity_name => entity_name, :uniq_prefix => uniq_prefix, :options => options } -%>
+      <% else -%>
+        <%= render :partial => 'modal_selector_easy_query_multi_tree_entity', :locals => {:entities => entities, :entity => entity, :subentities => nil, :columns => columns, :level => level, :selected_values => selected_values, :entity_name => entity_name, :uniq_prefix => uniq_prefix, :options => options } -%>
+      <% end -%>
+    <% end -%>
+  </tbody>
+</table>

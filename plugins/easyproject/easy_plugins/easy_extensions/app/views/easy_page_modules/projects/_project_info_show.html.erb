@@ -1,0 +1,19 @@
+<div class="project-info-module box">
+  <% if page_module.entity_id.blank? -%>
+    <%= render :partial => 'easy_page_modules/page_module_cannot_be_displayed', :locals => { :page_module => page_module } %>
+  <% else -%>
+    <%= toggling_container(modul_uniq_id, user, {:heading =>  l(:label_project_overview_project_info), :container_html => {:class => 'module-content'}}) do %>
+      <% if settings['action'] == 'description' -%>
+        <%= textilizable(@project.description || '') %>
+      <% elsif settings['action'] == 'customfields' -%>
+        <ul>
+          <% @project.visible_custom_field_values.each do |value| -%>
+            <li class="project-custom-field <%= cycle('odd','even') -%>">
+              <%= custom_field_label_tag :project, value -%>: <%= content_tag :span, show_value( value )-%>
+            </li>
+          <% end -%>
+        </ul>
+      <% end -%>
+    <% end %>
+  <% end -%>
+</div>

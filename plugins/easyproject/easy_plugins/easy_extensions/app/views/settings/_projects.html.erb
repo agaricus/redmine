@@ -1,0 +1,67 @@
+<%= form_tag({:action => 'edit', :tab => 'projects'}) do %>
+
+  <div class="box tabular settings long2">
+    <p>
+      <%= label_tag :easy_setting_project_fixed_activity, l(:field_global_fixing_activity) -%><%= hidden_field_tag 'easy_setting[project_fixed_activity]', false, :id => nil -%><%= check_box_tag 'easy_setting[project_fixed_activity]', true, EasySetting.value('project_fixed_activity') -%>
+    </p>
+    <p>
+      <%= label_tag :easy_setting_enable_activity_roles, l(:field_enable_activity_roles) -%><%= hidden_field_tag 'easy_setting[enable_activity_roles]', false, :id => nil -%><%= check_box_tag 'easy_setting[enable_activity_roles]', true, EasySetting.value('enable_activity_roles') -%>
+    </p>
+    <p><%= setting_check_box :default_projects_public -%></p>
+    <p>
+      <%= setting_multiselect(:default_projects_modules,
+        Redmine::AccessControl.available_project_modules.collect {|m| [l_or_humanize(m, :prefix => "project_module_"), m.to_s]}) -%>
+    </p>
+    <p><%= setting_multiselect(:default_projects_tracker_ids,
+        Tracker.sorted.all.collect {|t| [t.name, t.id.to_s]}) %></p>
+    <p>
+      <%= hidden_field_tag 'easy_setting[project_display_identifiers]', '0', :id => nil %>
+      <%= label_tag 'easy_setting[project_display_identifiers]', l(:setting_project_display_identifiers) %>
+      <%= check_box_tag 'easy_setting[project_display_identifiers]', true, EasySetting.value('project_display_identifiers') %>
+    </p>
+    <script type="text/javascript">
+      $("#easy_setting_project_display_identifiers").change(function(event) {
+        $('#sequential_project_identifiers_container').toggle();
+      })
+    </script>
+    <p id="sequential_project_identifiers_container" style="<%= 'display:none' unless EasySetting.value('project_display_identifiers') -%>">
+      <%= setting_check_box :sequential_project_identifiers -%>
+    </p>
+    <p>
+      <%= setting_select :new_project_user_role_id,
+        Role.find_all_givable.collect {|r| [r.name, r.id.to_s]},
+        :blank => "--- #{l(:actionview_instancetag_blank_option)} ---" -%>
+    </p>
+    <p>
+      <%= label_tag :easy_setting_new_subproject_user_role_id, l(:label_easy_setting_new_subproject_user_role_id) -%>
+      <%= select_tag('easy_setting[new_subproject_user_role_id]', options_for_select([["--- #{l(:actionview_instancetag_blank_option)} ---",'']] + Role.find_all_givable.collect {|r| [r.name, r.id.to_s]}, EasySetting.value('new_subproject_user_role_id'))) -%>
+      <%= label_tag :label_easy_setting_new_subproject_user_role_id_info, l(:label_easy_setting_new_subproject_user_role_id_info) , :class => 'inline' -%>
+    </p>
+    <p>
+      <%= content_tag(:label, l(:setting_default_projects_tree_display)) + select_tag('easy_setting[default_projects_tree_display]', options_for_select([[l(:setting_projects_tree_display_with_siblings),'with_siblings'],[l(:setting_projects_tree_display_without_siblings),'without_siblings']], :selected => EasySetting.value('default_projects_tree_display').to_s)) -%>
+    </p>
+    <p>
+      <%= hidden_field_tag 'easy_setting[project_calculate_start_date]', '0', :id => nil %>
+      <%= label_tag 'easy_setting[project_calculate_start_date]', l(:setting_project_calculate_start_date) %>
+      <%= check_box_tag 'easy_setting[project_calculate_start_date]', true, EasySetting.value('project_calculate_start_date') %>
+    </p>
+    <p>
+      <%= hidden_field_tag 'easy_setting[project_calculate_due_date]', '0', :id => nil %>
+      <%= label_tag 'easy_setting[project_calculate_due_date]', l(:setting_project_calculate_due_date) %>
+      <%= check_box_tag 'easy_setting[project_calculate_due_date]', true, EasySetting.value('project_calculate_due_date') %>
+    </p>
+    <p>
+      <%= label_tag l(:setting_default_activity_in_overall_activity) %>
+      <%= hidden_field_tag 'easy_setting[default_activity_in_overall_activity][]', '', :id => nil %>
+      <% Redmine::Activity.available_event_types.each do |event| %>
+        <label>
+          <%= check_box_tag('easy_setting[default_activity_in_overall_activity][]', event, EasySetting.value('default_activity_in_overall_activity').try(:include?, event).to_s.html_safe) %>
+          <%= l("label_#{event.singularize}_plural") %>
+        </label>
+      <% end %>
+    </p>
+    <%= call_hook(:view_settings_projects_form) %>
+  </div>
+
+  <%= submit_tag l(:button_save), :class => 'button-1' -%>
+<% end %>

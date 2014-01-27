@@ -1,0 +1,5 @@
+<div class="issue_updatable_fields">
+  <div id="attributes" class="attributes ">
+    <%= render :partial => 'issues/new_form_updatable_attributes', :locals => {:modul_uniq_id => 'easy_modal', :priorities => @priorities, :allowed_statuses => @allowed_statuses, :issue => @issue, :project => @project || @issue.project, :select_project => !params[:project_id], :projects_ajax_url => url_for({ :controller => 'easy_issues', :action => :dependent_fields, :project_id => @project || @issue.project, :id => @issue, :format => 'js', :render_for_modal => true })} %>
+  </div>
+</div>

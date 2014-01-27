@@ -1,0 +1,9 @@
+<div class="contextual">
+  <p>
+    <%= link_to(l(:label_issue_view_all), {:controller => 'issues', :set_filter => 1, :assigned_to_id => @user.id, :status_id => 'o', :sort => EasySetting.value('issue_default_sorting_string_short')}, :title => l(:label_show_assigned_issues, :username => @user.name), :class => 'button-2 icon-gradient') %>
+    <%= link_to(l(:button_edit_user_profile), {:controller => 'my', :action => 'account'}, :class => 'button-1 edit-user-profile icon icon-user', :title => l(:title_edit_user_profile)) if User.current == @user %>
+    <%= link_to(l(:button_edit), edit_user_path(@user), :class => 'button-1 icon icon-edit') if User.current.admin? %>
+  </p>
+</div>
+<h1><%=h @user.name %></h1>
+<%= render_tabs(user_show_tabs, false) -%>

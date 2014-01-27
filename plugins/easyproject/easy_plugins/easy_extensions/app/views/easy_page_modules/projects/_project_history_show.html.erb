@@ -1,0 +1,11 @@
+<% if page_module.entity_id.blank? -%>
+  <%= render :partial => 'easy_page_modules/page_module_cannot_be_displayed', :locals => { :page_module => page_module } %>
+<% else -%>
+  <% project = @easy_page_modules_data[block_name][:project] %>
+  <%= toggling_container(modul_uniq_id, user, {:heading => l(:'easy_pages.modules.project_history'), :container_html => {:class => 'module-content'}}) do %>
+    <%= easy_journal_render_history(@easy_page_modules_data[block_name][:journals], {:collapsible => false, :entity => project}) -%>
+    <% if User.current.allowed_to?(:edit_project_custom_fields, project) %>
+      <p><%= link_to(l(:button_update), {:controller => 'projects', :action => 'edit_custom_fields_form', :id => project}, :remote => true, :class => 'button-1') -%></p>
+    <% end %>
+  <% end %>
+<% end %>

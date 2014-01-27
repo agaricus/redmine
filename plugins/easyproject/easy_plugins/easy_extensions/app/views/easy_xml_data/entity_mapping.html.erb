@@ -1,0 +1,34 @@
+<h2><%= l("label_#{@mapping_entity_type}_mapping") %></h2>
+
+<%= form_tag(:action => "map") do %>
+  <%= hidden_field_tag 'mapping_entity_type', @mapping_entity_type %>
+  <table class="list">
+    <thead>
+      <tr>
+        <% if @mapping_entity_type == 'user' %>
+          <th><%= l(:field_login) %></th>
+        <% end %>
+        <th><%= l(:field_name) %></th>
+        <th><%= l(:label_map_to) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @mapping_entities.each do |e| %>
+        <tr class="<%= cycle('odd', 'even') %>">
+          <% if @mapping_entity_type == 'user' %>
+            <td><%= e[:login] %></td>
+          <% end %>
+          <td><%= e[:name] %></td>
+          <% mapping_options = @existing_entities.map {|ee| [ee.name, ee.id]} %>
+          <td><%= select_tag(
+              'map[' + e[:id] + ']',
+              options_for_select(e[:match].blank? ? ([["--- #{l('option_map_to_new_' + @mapping_entity_type)} ---", '']] + mapping_options) : mapping_options, e[:match])) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= submit_tag l(:button_xml_data_continue), :class => 'button-2 big'%>
+
+<% end -%>

@@ -1,0 +1,41 @@
+<%
+settings['query_type'] ||= '2'; path_for_easy_query_form ||= 'easy_queries/easy_query_index_form'; hide_preview ||= false;
+epm_queries = epm_easy_queries(page_module, query.class)
+%>
+<% if epm_queries.any? %>
+  <div>
+    <%= radio_button_tag "#{block_name}[query_type]", '1', settings['query_type'] != '2', :id => modul_uniq_id + 'query_type_1' %>
+    <span class="my-page-issue-query-select-label">
+      <%= label_tag("#{modul_uniq_id}query_type_1", l("label_my_page_#{query.entity.name.downcase}_query_select", :default => l(:label_my_page_issue_query_select))) -%>
+    </span>
+    <span class="my-page-issue-query-select">
+      <%= select_tag "#{block_name}[query_id]", options_for_select([[l(:actionview_instancetag_blank_option),'']] + epm_queries.collect {|p| [p.name, p.id]}, settings["query_id"].to_i), :disabled => settings['query_type'] != '1' -%>
+    </span>
+  </div>
+<% end %>
+<div class="easy-query-filter-container">
+  <%= radio_button_tag "#{block_name}[query_type]", '2', settings['query_type'] == '2', :id => modul_uniq_id + 'query_type_2' %>
+
+  <span class="my-page-issue-query-select-label">
+    <%= label_tag(modul_uniq_id + 'query_type_2', l("easy_page_module.#{query.entity.name.downcase}_query.adhoc_query", :default => l("easy_page_module.issue_query.adhoc_query"))) -%>
+  </span>
+  <span><%= text_field_tag("#{block_name}[query_name]", (settings['query_name'].blank? ? l("easy_page_module.#{query.entity.name.downcase}_query.adhoc_query_default_text", :default => l("easy_page_module.issue_query.adhoc_query_default_text")) : CGI::unescape(settings['query_name']))) -%></span>
+  <div id="<%= modul_uniq_id -%>query_form_content"  style="<%= 'display:none' if  settings['query_type'] != '2' %>">
+    <%= render :partial => path_for_easy_query_form, :locals => { :query => query, :modul_uniq_id => modul_uniq_id, :block_name => block_name, :filter_active => (l(:filter_active) if settings['query_type'] == '2'), :show_sort_criteria => !query.is_a?(EasyProjectQuery), :show_query_heading => false, :show_filters_opened => true, :easy_page_zone_module_uuid => page_module.uuid} %>
+    <div class="buttons" id="<%= modul_uniq_id -%>filter_buttons">
+      <%= hidden_field_tag "#{block_name}[set_filter]", '1' -%>
+      <%= hidden_field_tag :block_name, block_name -%>
+      <%= hidden_field_tag :output, 'list' -%>
+      <%= hidden_field_tag :easy_query_type, query.class.name -%>
+      <%= hidden_field_tag :easy_query_render, 'list' -%>
+      <%= adhoc_preview_button(modul_uniq_id, preview_options) unless hide_preview -%>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $("#<%= modul_uniq_id %>query_type_1, #<%= modul_uniq_id %>query_type_2").change(function(event) {
+    $('#<%= block_name %>_query_id').attr('disabled', !$('#<%= block_name %>_query_id').is(':disabled'));
+    $('#<%= modul_uniq_id -%>query_form_content').toggle();
+  })
+</script>

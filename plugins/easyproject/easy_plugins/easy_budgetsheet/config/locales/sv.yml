@@ -1,0 +1,39 @@
+# Easy Budget Language File [redimine-path]/plugins/easyproject/easy_plugins/easy_budgetsheet/config/locales/sv.yml
+# Swedish Translation by Patrick Hvid (patrick (a) plan42.se)
+# Version 1.0 (2013-09-01)
+sv:
+  budgetsheet_name: Budget
+  budgetsheet_author: Easy Software
+  budgetsheet_description: '- Översikt över förbrukad tid i projekt.'
+  budgetsheet_author_url: 'http://www.easyproject.cz/en'
+
+  budgetsheet_title: Budget
+  budgetsheet_date_from_label: Från
+  budgetsheet_date_to_label: Till
+  budgetsheet_project_label: Projekt
+  budgetsheet_activities_label: Arbetsuppgift
+  budgetsheet_users_label: Användare
+  budgetsheet_export_button: Använd
+  budgetsheet_export_to_csv: exportera till CSV
+  budgetsheet_export_to_pdf: exportera till PDF
+  budgetsheet_export_to_html: visa
+  budgetsheet_costs: Kostnad
+  budgetsheet_per_hour: per timme
+  budgetsheet_top_menu: Budget
+
+  permission_view_budgetsheet: Visa Budget
+  label_easy_budget_sheet_queries_plural: Budgetar
+
+  label_show_billable_things: Visa valet 'Fakturerbar'?
+  label_billable_things_default_state: Förvalt värde
+
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budget
+
+  field_project_root: Topprojekt
+  field_easy_is_billable: 'Fakturerbart?'
+  field_easy_billed: 'Fakturerat?'
+  sidebar_budgetsheet_all_users_queries: Budget per deltagare
+
+

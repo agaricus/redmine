@@ -1,0 +1,27 @@
+<div id="easy-pages">
+  <%= content_tag :h1, l(:label_easy_pages) -%>
+  <%= breadcrumb [
+    l('breadcrumb.label.easy_pages_administration')
+  ] -%>
+
+  <% if (@pages.empty?) -%>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else -%>
+    <table class="list">
+      <% @pages.each do |page| %>
+        <tr class="<%= cycle('odd', 'even') %>">
+          <td class="easy-page-name"><%= page.translated_name -%></td>
+          <td class="easy-page-description"><%= page.translated_description -%></td>
+          <td class="easy-page-links">
+            <div><%= link_to l(:button_easy_page_templates), {:controller => 'easy_page_templates', :action => 'index', :page_id => page.id }, { :title => l(:title_easy_page_templates) } -%></div>
+            <div><%# link_to l(:label_easy_page_user_layout_modules), {:controller => 'easy_page_modules', :action => 'page_user_modules', :page_id => page.id, :user_id => User.current.id }, { :title => l(:title_easy_page_user_layout_modules) } if page.zones.size > 0 -%></div>
+            <div><%# link_to l(:label_easy_page_zones_view), { :controller => 'easy_page_zones', :action => 'page_index', :page_id => page.id }, { :title => l(:title_easy_page_zones_view) } -%></div>
+            <div><%# link_to l(:button_edit), { :action => 'edit', :id => page.id }, { :class => 'icon icon-edit' } -%></div>
+          </td>
+        </tr>
+      <% end -%>
+    </table>
+  <% end -%>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>

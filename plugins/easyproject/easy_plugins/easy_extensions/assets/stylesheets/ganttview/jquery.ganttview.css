@@ -1,0 +1,142 @@
+div.easy-ganttview {
+	border: 1px solid #e4e4e4;
+}
+div.easy-ganttview div.menu-container {
+	float: left;
+	width: 30%;
+	border-right: 2px solid #e4e4e4;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: hidden
+}
+div.easy-ganttview div.grid-container {
+	float: right;
+	width: 70%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	overflow: scroll;
+}
+div.easy-ganttview div.clear {
+	clear: both;
+}
+.splitter-helper {
+	border-right: 2px dotted #ccc;
+	z-index: 400;
+	height: 100000px;
+}
+div.easy-ganttview table.calendar {
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+div.easy-ganttview table.calendar tr > td {
+	border-left: 1px solid #e4e4e4;
+	border-right: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
+	padding: 0;
+}
+div.easy-ganttview div.grid-header-container {
+	overflow: hidden;
+}
+div.easy-ganttview table.calendar tr {
+	height: 22px;
+}
+div.easy-ganttview table.calendar tr.top-row > td > span {
+	padding-left: 4px;
+}
+div.easy-ganttview table.calendar tr.bottom-row > td > span {
+	width: 23px;
+}
+div.easy-ganttview table.calendar tr.bottom-row > td.free-day {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+div.easy-ganttview table.calendar tr > td > span {
+	display: inline-block;
+	font-family: Tahoma, Arial;
+	font-size: 9px;
+	font-weight: bold;
+	text-align: center;
+	color: #858585;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+div.easy-ganttview table.menu-header {
+	height: 44px;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+div.easy-ganttview table.menu-header td {
+	padding: 0 5px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	height: 44px;
+	border-right: 1px solid #e4e4e4;
+	border-left: 1px solid #e4e4e4;
+}
+div.easy-ganttview div.menu-scroller {
+	overflow: hidden;
+}
+div.easy-ganttview table.menu {
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+div.easy-ganttview table.menu.single-column {
+	width: 110%;
+}
+div.easy-ganttview table.menu tr {
+	height: 22px;
+}
+div.easy-ganttview table.menu td {
+	border: 1px solid #e4e4e4;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 5px;
+	text-align: center;
+}
+div.easy-ganttview table.menu td a {
+	color: #036;
+}
+div.easy-ganttview table.menu td:first-child {
+	text-align: left;
+}
+div.easy-ganttview div.grid-container {
+	overflow: hidden;
+}
+div.easy-ganttview div.grid-body-container {
+	overflow: scroll;
+	box-shadow: inset 0 0 30px #ccc;
+}
+div.easy-ganttview div.grid-body {
+	background-image: url('../../images/ganttview/grid.png');
+	position: relative;
+}
+div.easy-ganttview div.grid-body > div {
+	position: absolute;
+}
+div.easy-ganttview div.grid-body > div.free-day {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+div.easy-ganttview div.grid-body > div.worm {
+	border: 1px solid #e4e4e4;
+	background-image: url('../../images/ganttview/worm_background.png');
+	height: 11px;
+	margin-top: 4px;
+	box-shadow: 0 0 10px #ccc;
+	z-index: 10;
+}
+div.easy-ganttview div.grid-body > div.worm.orange {
+	border: 1px solid #BC810D;
+}
+div.easy-ganttview div.worm div.progress {
+	height: 100%;
+}
+div.easy-ganttview div.worm.orange div.progress {
+	background-image: url('../../images/ganttview/progress_orange.png');
+}

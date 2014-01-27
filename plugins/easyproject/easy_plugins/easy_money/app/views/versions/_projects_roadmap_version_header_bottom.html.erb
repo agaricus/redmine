@@ -1,0 +1,23 @@
+<div class="splitcontent">
+  <div class="splitcontentleft">
+    <p>
+      <% if User.current.allowed_to?(:easy_money_show_expected_profit, project) -%>
+        <span><%= l(:label_easy_money_expected_budget) -%></span>
+        <%= format_easy_money_price(version.easy_money.expected_profit, project) -%>
+      <% else -%>
+        &nbsp;
+      <% end -%>
+    </p>
+  </div>
+  <div class="splitcontentright">
+    <p>
+      <% if User.current.allowed_to?(:easy_money_show_other_profit, project) -%>
+        <span><%= l(:label_easy_money_real_budget) -%></span>
+        <%= format_easy_money_price(version.easy_money.other_profit, project) -%>
+      <% else -%>
+        &nbsp;
+      <% end -%>
+    </p>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,40 @@
+== Easy Redmine upgrade
+
+Easy Redmine - plugin to Redmine (http://www.redmine.org)
+Copyright (C) 2008-2013  Easy Software, s.r.o.
+http://www.easyredmine.com
+
+
+== Requirements
+
+Same as Redmine 2.4.2. See [redmine_root]/doc/UPGRADING
+Only Ruby 1.9.3 and higher is supported.
+
+Installing Redmine and Easy Redmine to virtual directory like http://localhost/redmine is not working.
+
+== Upgrading to latest Easy Redmine from a package
+
+1. Backup your Redmine database and file system folder if something make wrong. Do not make backup into [redmine] directory! You have to copy it outside!
+
+2. Delete all Redmine files and folders WITHOUT:
+    - [redmine_root]/config/database.yml
+    - [redmine_root]/config/configuration.yml
+    - [redmine_root]/files/*
+    - your additional plugins or modifications
+
+3. Copy all content from a package into [redmine_root]
+
+4. More gems are required. Under [redmine_root] directory run:
+     bundle update
+
+5. Under [redmine_root] directory run (if you are using bitnami write 'sudo' before 'bundle'):
+     bundle exec rake easyproject:install RAILS_ENV=production
+
+6. Start your Redmine application server. E.g. under [redmine_root] directory run:
+     bundle exec ruby script/rails server -e production
+
+== References
+
+Changelog is on: https://www.easyredmine.com/support/core-easy-redmine-features
+Feaures are on: https://www.easyredmine.com/features
+Support is on: https://www.easyredmine.com/support

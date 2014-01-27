@@ -1,0 +1,27 @@
+<% if in_mobile_view? %>
+  <%= mobile_xhtml_doctype %>
+<% else %>
+  <!DOCTYPE html>
+<% end %>
+<html lang="en">
+  <% content_for :header_tags do %>
+    <%= stylesheet_link_tag 'layout_iframe', :plugin => 'easy_extensions' %>
+  <% end %>
+  <%= render :file => 'layouts/base_html_header' %>
+  <body class="<%= body_css_classes %>">
+    <div id="wrapper">
+      <div id="wrapper2">
+        <div id="wrapper3">
+          <div id="main">
+            <div id="content">
+              <%= render_flash_messages %>
+              <%= yield %>
+              <%= call_hook :view_layouts_base_content %>
+              <div style="clear:both;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

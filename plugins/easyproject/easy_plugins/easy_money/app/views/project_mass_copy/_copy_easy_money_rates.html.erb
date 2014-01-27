@@ -1,0 +1,14 @@
+<% if source_project.module_enabled?('easy_money') %>
+  <fieldset>
+    <legend><%= l(:label_easy_money) -%></legend>
+    <label class="block">
+      <%= check_box_tag 'only[]', 'easy_money_rate_priorities', params[:only] && params[:only].include?('easy_money_rate_priorities') %> <%= l(:label_easy_money_rate_priorities_settings) %>
+    </label>
+    <label class="block">
+      <%= check_box_tag 'only[]', 'easy_money_rates', params[:only] && params[:only].include?('easy_money_rates') %> <%= l(:label_easy_money_mass_copy_rates) %>
+    </label>
+    <label class="block">
+      <%= check_box_tag 'only[]', 'easy_money_settings', params[:only] && params[:only].include?('easy_money_settings') %> <%= l(:label_easy_money_settings) %>
+    </label>
+  </fieldset>
+<% end %>

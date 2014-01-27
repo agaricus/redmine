@@ -1,0 +1,8 @@
+<h2><%=l(:label_document)%></h2>
+
+<%= labelled_form_for @document do |f| %>
+  <div class="gray-background">
+    <%= render :partial => 'form', :locals => {:f => f} %>
+  </div>
+  <p><%= submit_tag l(:button_save), :class => 'button-1' %></p>
+<% end %>

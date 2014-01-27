@@ -1,0 +1,5 @@
+<% if page_params[:edit] %>
+  <%= render :partial => 'easy_page_layout/easy_page_layout_before_main_edit', :locals => {:page_params => easy_page_context[:page_params], :page_modules => easy_page_context[:page_modules]} %>
+<% else %>
+  <%= render :partial => 'easy_page_layout/easy_page_layout_before_main_show', :locals => {:page_params => easy_page_context[:page_params], :page_modules => easy_page_context[:page_modules]} %>
+<% end %>

@@ -1,0 +1,9 @@
+Forked (under GNU/GPL 2) by Easy Software (http://www.easysoftware.cz/)
+http://www.redmine.org/plugins/clipboard_image_paste
+to work with Easy Redmine
+
+- init.rb: visible, migration_order, plugin_in_relative_subdirectory, ActionDispatch::Reloader.to_prepare
+- assets/javascripts/clipboard_image_paste.js: changed finding attachment form section
+- app/views/clipboard_image_paste/_add_form: removed size text, optional description
+- app/views/clipboard_image_paste/_headers: removed jcrop, jquery
+- lib/clipboard_image_paste/attachment_patch.rb: changed patching mechanism to avoid load Redmine's models

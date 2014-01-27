@@ -1,0 +1,70 @@
+<% activities ||= EasyAttendanceActivity.sorted %>
+<% legend ||= nil %>
+<fieldset class="easy-attendance-personal-report" id="<%= "user-#{report.user.id}" %>">
+  <%= content_tag(:legend, legend) if legend %>
+  <table class="general">
+    <tr>
+      <td class="user-name">
+        <%= report.user.name %>
+      </td>
+      <td>
+        <table class="easy-attendance-statistics">
+          <tr>
+            <td>
+              <%= l(:label_statistic_worked, :scope => :easy_attendance) -%>
+            </td>
+            <td class="sum-hours">
+              <%= format_hours(report.sum_timeentries) %>
+            </td>
+            <td>
+              <small>
+                <%=l(:label_statistic_supplement, :scope => :easy_attendance, :hours => format_hours(report.sum_working_hours),
+                :percent => content_tag(:span, report.timeentries_percent, :class => "easy-attendance-report-#{report.timeentries_percent_class_name}")).html_safe %>
+              </small>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= l(:label_statistic_attendance, :scope => :easy_attendance) -%>
+            </td>
+            <td class="sum-hours">
+              <%= format_hours(report.sum_attendances) %>
+            </td>
+            <td>
+              <small>
+                <%=l(:label_statistic_supplement, :scope => :easy_attendance, :hours => format_hours(report.sum_attendance_hours),
+                :percent => content_tag(:span, report.working_attendance_percent, :class => "easy-attendance-report-#{report.working_percent_class_name}")).html_safe %>
+              </small>
+            </td>
+          </tr>
+          <%= call_hook(:view_easy_attendances_personal_report_top_table_in_statistics, {:report => report}) %>
+        </table>
+        <%= call_hook(:view_easy_attendances_personal_report_top_table_after_statistics, {:report => report}) %>
+      </td>
+    </tr>
+  </table>
+  <table class="activities-sum">
+    <thead>
+      <th></th>
+      <%= content_tag(:th, l(:field_hours)) %>
+      <%= content_tag(:th, l(:label_report_sum_attendance, :scope => :easy_attendance, :year => report.from.year), :class => 'easy-attendance-year-sum') -%>
+      <%= content_tag(:th, l(:label_report_sum_time_entry, :scope => :easy_attendance, :year => report.from.year), :class => 'time-entry-year-sum') -%>
+      <%= call_hook(:view_easy_attendances_personal_report_table_header_bottom, {:report => report}) %>
+    </thead>
+    <tbody>
+      <% activities.each do |activity| %>
+      <% filter_url = {:set_filter => '1', :tab => 'list', :easy_attendance_activity_id => activity.id, :arrival => "#{report.from}|#{report.to}", :user_id => report.user.id} %>
+        <tr class="<%= cycle('odd','even')%> <%= "easy-attendance-sum-activity-#{activity.id}" %>" >
+          <td class="activity-name">
+            <%= activity.name %>
+          </td>
+          <% sum_act = report.user_activities[activity.id] || 0.0 -%>
+          <%= content_tag(:td, link_to(format_hours(sum_act.to_f / 1.hour), easy_attendances_path(filter_url))) -%>
+          <%= content_tag(:td, l(:label_day, :count => ('%.2f' % activity.sum_in_days_easy_attendance(report.user, report.from.year)).to_f), :class => 'easy-attendance-year-sum') -%>
+          <%= content_tag(:td, (l(:label_day, :count => ('%.2f' % activity.sum_in_days_timeentry(report.user, report.from.year)).to_f) unless activity.mapped_project_id.nil?), :class => 'time-entry-year-sum' ) -%>
+        </tr>
+      <% end %>
+      <%= call_hook(:view_easy_attendances_personal_report_table_body_bottom, {:report => report}) %>
+    </tbody>
+  </table>
+</fieldset>

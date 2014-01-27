@@ -1,0 +1,44 @@
+<div id="modal-dialog-add-watchers">
+  <% m = url_for({
+    :controller => 'watchers',
+    :action => 'autocomplete_for_user',
+    :object_type => watched.class.name.underscore,
+    :object_id => watched}) %>
+  <%= render( :partial => 'modal_selectors/modal_selector_freetext', :locals => {
+    :remote_function_url => m,
+    :remote_function_method => 'get',
+    :freetext_reset => url_for({:controller => 'watchers', :action => 'autocomplete_for_user', :object_type => (watched && watched.class.name.underscore), :object_id => watched, :reset => true})
+  }) -%>
+  <%= form_tag({:controller => 'watchers', :action => (watched ? 'create' : 'append'), :object_type => (watched && watched.class.name.underscore), :object_id => watched},
+    :remote => true,
+    :method => :post,
+    :id => 'new-watcher-form') do %>
+
+    <%= content_tag :h1, l(:permission_add_issue_watchers), :class => 'title floatleft' -%>
+    <div style="clear:both"></div>
+
+    <% users_groups = available_watchers.collect(&:groups).flatten.uniq %>
+    <div id="modal-selector-entities">
+      <% if users_groups.any? %>
+      <%= content_tag :h3, l(:label_group_plural), :onclick => "ToggleDiv('watcher-modal-user-groups'); $(this).toggleClass('open')", :class => 'toggler right-toggle' %>
+      <div id="watcher-modal-user-groups" style="display:none">
+        <% users_groups.each do |group| %>
+        <p style="display:none">
+          <%= check_box_tag 'watcher_user_groups[]', group.id, false, :id => "watcher_user_groups_#{group.id}" %>
+        </p>
+        <p class="floating"><%= link_to(group.name, {:controller => 'watchers', :action => 'toggle_members', :group_id => group}, :remote => true, :class => ' icon icon-group') -%></p>
+        <% end %>
+      </div>
+
+      <hr />
+      <%= content_tag :h3, l(:label_user_plural) %>
+      <% end %>
+      <%= render :partial => 'watchers/watchers_avatar_and_checkbox', :collection => available_watchers , :as => :watcher, :locals => {:issue => watched, :project => @project, :object_name => 'watcher', :method => 'user_ids'} -%>
+    </div>
+
+    <p class="buttons">
+      <%= submit_tag l(:button_add), :name => nil, :class => 'button-1' -%>
+      <%= submit_tag l(:button_add_and_close), :name => 'close', :class => 'button-1' -%>
+    </p>
+    <% end %>
+  </div>

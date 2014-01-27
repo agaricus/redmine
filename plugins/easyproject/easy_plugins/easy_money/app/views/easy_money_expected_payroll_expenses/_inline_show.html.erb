@@ -1,0 +1,5 @@
+<%= content_tag :span, l(:label_easy_money_expected_payroll_expenses) -%>
+<%= format_easy_money_price(sum_expected_payroll_expenses, project) -%>
+<% if User.current.allowed_to?(:easy_money_manage_expected_payroll_expense, project) %>
+  <%= link_to('', {:controller => 'easy_money_expected_payroll_expenses', :action => 'inline_edit', :project_id => project.id, :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id}, :class => 'icon icon-edit', :title => l(:button_edit), :remote => true) -%>
+<% end -%>

@@ -1,0 +1,10 @@
+<% modul_uniq_id ||= controller_name + '_' + action_name ; category ||= nil-%>
+<% if grouped.empty? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+<% grouped.keys.each do |group| %>
+  <div class="<%= cycle('even','odd') -%>">
+    <%= content_tag :h5, h(group) -%>
+    <%= render :partial => 'documents/document', :collection => grouped[group] %>
+  </div>
+<% end %>

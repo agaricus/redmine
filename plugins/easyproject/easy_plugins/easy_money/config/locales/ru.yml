@@ -1,0 +1,377 @@
+---
+ru:
+  easy_money_plugin_name: Управление финансами - деньги
+  easy_money_plugin_author: Easy Software
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- Мониторинг и управление ожидаемыми и фактическими
+    финансовыми результатами проектов'
+  project_module_easy_money: Деньги
+  menu_easy_money: Деньги
+  permission_view_easy_money: Общий доступ к модулю упарвление финансов (деньги)
+  permission_easy_money_show_expected_revenue: Показывать ожидаемые доходы
+  permission_easy_money_show_expected_expense: Показывать ожидаемые расходы
+  permission_easy_money_show_expected_payroll_expense: Показывать ожидаемые расходы на ЗП
+  permission_easy_money_show_expected_profit: Показывать ожидаемые прибыли
+  permission_easy_money_show_other_revenue: Показывать реальные доходы
+  permission_easy_money_show_other_expense: Показывать реальные расходы
+  permission_easy_money_show_time_entry_expenses: Показывать реальные расходы на ЗП
+  permission_easy_money_show_other_profit: Показывать реальную прибыль
+  permission_easy_money_manage_expected_revenue: Изменение ожидаемых доходов
+  permission_easy_money_manage_expected_expense: Изменение ожидаемых расходов
+  permission_easy_money_manage_expected_payroll_expense: Изменение ожидаемых расходов
+    на ЗП
+  permission_easy_money_manage_other_revenue: Изменение реальных доходов
+  permission_easy_money_manage_other_expense: Изменение реальных расходов
+  permission_easy_money_settings: Доступ к настрйокам плагина "Управление персоналом"
+  permission_easy_money_move: Перемещение средств между проектами
+  label_easy_money: Деньги
+  label_easy_money_settings: Деньги - настройки
+  label_easy_money_rate_priorities_settings: Расходы на персонал - настройка тарифных ставок
+  label_easy_money_project_index: Деньги
+  label_easy_money_other_expenses: Расходы - обзор
+  label_easy_money_other_expense_new: Новый расход
+  label_easy_money_other_expense_show: Расходы
+  label_easy_money_other_expense_edit: Расходы редактирования
+  label_easy_money_other_revenues: Доходы обзор
+  label_easy_money_other_revenue_new: Новый доход
+  label_easy_money_other_revenue_show: Доход
+  label_easy_money_other_revenue_edit: Доходы редактирования
+  label_easy_money_time_entry_expenses: Обзор расходов на оплату труда
+  label_easy_money_project_index_profit: ! 'Прибыль:'
+  label_easy_money_expected_expenses: Ожидаемые расходы - обзор
+  label_easy_money_expected_revenues: Ожидаемые доходы - обзор
+  label_easy_money_expected_expense_new: Новый ожидаемый расход
+  label_easy_money_expected_expense_show: Ожидаемые расходы
+  label_easy_money_expected_expense_edit: Редактировать ожидаемый расход
+  label_easy_money_expected_revenue_new: Новый ожидаемый доход
+  label_easy_money_expected_revenue_show: Ожидаемые доходы
+  label_easy_money_expected_revenue_edit: Редактировать ожидаемый доход
+  label_easy_money_other_settings: Другие настройки
+  label_easy_money_other_settings_price_visibility: ! 'Стоимость показывать как:'
+  label_easy_money_other_settings_rate_type: ! 'При расчете расходов на ЗП использовать:'
+  label_easy_money_other_settings_include_childs: ! 'Отображать  в родительском проекте доходы и расходы
+    из подпроекотв:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Включение разделения денег на проекте на
+    планированные и ожидаемые (задаются в настройках):'
+  label_easy_money_project_usage_type: ! 'Использование в проекте:'
+  label_easy_money_other_settings_vat: ! 'Если сумма указана без НДС, НДС будет:'
+  label_easy_money_use_vat: считать с НДС
+  label_easy_money_expected_budget: План
+  label_easy_money_real_budget: Реальность
+  label_easy_money_project_name: ! 'Бюджет проекта:'
+  label_easy_money_hour: ! '%{hours} часов.'
+  label_easy_money_expected_payroll_expense_per_hours: заплпнированная почасовая ставка
+  label_easy_money_expected_payroll_expenses: ! 'Расходы на оплату труда:'
+  label_easy_money_subproject_sum_revenues: Доходы *
+  label_easy_money_subproject_sum_expenses: Расходы *
+  label_easy_money_subproject_sum_payroll_expenses: Расходы на оплату труда
+  label_easy_money_subproject_profit: Результат *
+  label_easy_money_subproject_explication: ! '* (План / реальность)'
+  label_easy_money_attachments: ! 'Прикрепленные документы:'
+  label_easy_money_project_time_entry_expenses: Расходы на заработную плату исключительно
+    на проекте
+  label_easy_money_project_issues_time_entry_expenses: Расходы на ЗП для задач проекта
+  label_easy_money_total: ! 'всего:'
+  label_easy_money_all_project: Деньги на всех проекты
+  label_easy_money_currency_visible: ! 'Разрешить изменение валюты на проектах:'
+  label_easy_money_currency: ! 'Валюта:'
+  label_easy_money_select_project: Выберите проект
+  label_easy_money_mass_copy_rates: Значения тарифов расходов
+  label_easy_money_project_index_estimated_hours: ! 'Расчетное время:'
+  text_easy_money_rate_priorities_settings: Тарифы используются зависимости от роли пользователя, от типа деятельности или от конкретного пользователя. Если
+    первая ставка равна нулю, то для пересчета будет использован другой ненулевой тариф.
+  button_easy_money_rate_use_in_all_projects: Использовать тарифы во всех проектах
+  button_easy_money_rate_use_in_all_subprojects: Использовать тарифы во всех подпроектах
+  button_easy_money_priorities_use_in_all_projects: Использовать данные настройки тарифов
+    во всех проектах
+  button_easy_money_priorities_use_in_all_subprojects: Использовать данные настройки тарифов
+    во всех подпроектах
+  button_easy_money_project_expected_expenses: ! 'Прочие расходы:'
+  button_easy_money_project_expected_revenues: ! 'Доходы:'
+  button_easy_money_project_other_expenses: ! 'Прочие расходы:'
+  button_easy_money_project_other_revenues: ! 'Доходы:'
+  button_easy_money_project_time_entry_expenses: ! 'Расходы на ЗП:'
+  button_easy_money_project_new_revenue: Новые доходы
+  button_easy_money_project_new_expense: Новые расходы
+  button_easy_money_project_time_entry_hours: ! 'Отработанное время:'
+  button_easy_money_project_index_show_details: Подробнее
+  button_easy_money_project_index_show_empty: Показать пустые поля
+  button_easy_money_save_in_all_projects: Использовать во всех проектах
+  button_easy_money_save_in_all_subprojects: Использовать во всех подпроектах
+  button_easy_money_project_settings: Деньги - настройки
+  button_easy_money_save_expected_revenue: Сохранить ожидаемый дохоа
+  button_easy_money_save_other_revenue: Сохранить реальный доход
+  button_easy_money_save_expected_hours: Сохранить запланированное время
+  button_easy_money_save_expected_expense: Сохранить ожидаемый расход
+  button_easy_money_save_other_expense: Сохранить реальный расход
+  button_easy_money_update_project_time_entry_expenses: Перерасчет расходов на ЗП на проекте
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: Пересчитать расходы на
+    ЗП на проекте и всех подпроектах
+  button_easy_money_update_all_projects_time_entry_expenses: Перерасчет расходов на
+    оплату труда по всем проектам
+  button_easy_money_move: Переместить выбранное
+  title_easy_money_project_new_revenue: Добавить новый доход
+  title_easy_money_project_new_expense: Добавить новый расход
+  title_easy_money_project_expected_revenues: Показать запланированные доходы проекта
+  title_easy_money_project_other_revenues: Показать реальные доходы проекта
+  title_easy_money_project_expected_expenses: Показать запланированные расходы проекта
+  title_easy_money_project_other_expenses: Показать реальные расходы проекта
+  title_easy_money_project_time_entry_expenses: Показать реальные расходы проекта на ЗП
+  title_easy_money_rates_save: Сохранить тарифы
+  title_easy_money_rate_use_in_all_projects: Сохранить тарифы и применять их ко всем
+    проектам
+  title_easy_money_rate_use_in_all_subprojects: Сохранить тарифы и применять их ко всем
+    подпроектам
+  title_easy_money_priorities_use_in_all_projects: Использовать последовательность применения тарифов на всех
+    проектах
+  title_easy_money_priorities_use_in_all_subprojects: Использовать последовательность применения тарифов на всех
+    подпроектах
+  title_easy_money_other_repeating_expense_show: Показать повторяющиеся расходы.
+  title_easy_money_other_repeating_revenue_show: Показать повторяющиеся доходы.
+  title_easy_money_settings: Перейти к настройкам модуля "Деньги" на проекте.
+  title_easy_money_project_index_show_empty: Показать пустые поля.
+  title_close: Нажатием Вы закроете эту панель.
+  title_easy_money_update_project_time_entry_expenses: Перерасчет расходов на ЗП по проекту.
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Нажмите, чтобы
+    начать перерасчет ЗП стоимости проекта и всех подпроектов (может
+    занять несколько минут).
+  title_easy_money_update_all_projects_time_entry_expenses: Перерасчет расходов на оплату
+    труда по всем проектам.
+  title_easy_money_link_to_subproject: Перейти к деньгам проекта %{subproject}.
+  title_easy_money_link_to_project: Перейти к деньгам проекта %{project}.
+  field_spent_hours: Отработанные часы
+  field_easy_money_rate_entity_time_entry_activity_name: Деятельность
+  field_easy_money_rate_entity_role_name: Роль
+  field_easy_money_rate_entity_user_name: Пользователь
+  field_easy_money_other_expense_spent_on: ! 'Дата:'
+  field_easy_money_other_expense_name: ! 'Имя:'
+  field_easy_money_other_expense_description: ! 'Описание:'
+  field_easy_money_other_expense_price1: ! 'Сумма с НДС:'
+  field_easy_money_other_expense_price2: ! 'Сумма без НДС:'
+  field_easy_money_other_expense_vat: ! 'НДС:'
+  field_easy_money_other_revenue_spent_on: ! 'Дата:'
+  field_easy_money_other_revenue_name: ! 'Имя:'
+  field_easy_money_other_revenue_description: ! 'Описание:'
+  field_easy_money_other_revenue_price1: ! 'Общая сумма:'
+  field_easy_money_other_revenue_price2: ! 'Сумма без НДС:'
+  field_easy_money_other_revenue_vat: ! 'НДС:'
+  field_easy_money_expected_expense_spent_on: ! 'Дата:'
+  field_easy_money_expected_expense_name: ! 'Имя:'
+  field_easy_money_expected_expense_description: ! 'Описание:'
+  field_easy_money_expected_expense_price1: ! 'Общая сумма:'
+  field_easy_money_expected_expense_price2: ! 'Сумма без НДС:'
+  field_easy_money_expected_expense_vat: ! 'НДС:'
+  field_easy_money_expected_revenue_spent_on: ! 'Дата:'
+  field_easy_money_expected_revenue_name: ! 'Имя:'
+  field_easy_money_expected_revenue_description: ! 'Описание:'
+  field_easy_money_expected_revenue_price1: ! 'Общая сумма:'
+  field_easy_money_expected_revenue_price2: ! 'Сумма без НДС:'
+  field_easy_money_expected_revenue_vat: ! 'НДС:'
+  field_easy_money_expected_revenue: Ожидаемый доход
+  field_easy_money_expected_expense: Ожидаемые расходы
+  field_easy_money_sum_other_revenues: Доходы
+  field_easy_money_sum_time_entry_expenses: Расходы на оплату труда
+  field_easy_money_sum_other_expenses: Расходы
+  field_easy_money_sum_other_profit: Прибыль
+  field_easy_money_rate_type_internal: Внутренние тарифы
+  field_easy_money_rate_type_external: Внешние тарифы
+  field_price1: Общая сумма
+  field_price2: Сумма без НДС
+  field_vat: НДС
+  tab_easy_money_rate_priorities: Последовательность применения тарифов
+  tab_easy_money_rate_role: Тарифы по ролям
+  tab_easy_money_rate_time_entry_activity: Тарифы по видам деятельности
+  tab_easy_money_rate_user: Тарифы по пользователям
+  tab_easy_money_other_settings: Другие настройки
+  easy_money_other_expense_custom_field: Реальные расходы
+  easy_money_other_revenue_custom_field: Реальные доходы
+  notice_easy_money_recalculate: Прерсчитанные значения появятся при следующем визите
+    на страницу.
+  error_easy_money_project_selector_select_values: не выбрано значение
+  project_default_page:
+    easy_money: Деньги
+  warning_easy_money_settings:
+    project_question: Вы хотите, чтобы настройки в проекте сохранились?
+    global_question: Вы хотите сохранить глобальные настройки?
+    revenues_type: Вы изменили способ ввода доходов (все ранее введенные доходы будут удалены).
+    expenses_type: Вы изменили способ ввода расходов (все расходы, введенные
+      ранее, будут удалены).
+  warning_easy_money_all_projects:
+    question: Вы уверены, что хотите использовать настройки по всем проектам?
+    revenues_type: ! 'Все введенные ранее доходы на следующие проекты будут удалены:
+      %{projects}'
+    expenses_type: ! 'Все введенные ранее расходы на следующие проекты будут удалены:
+      %{projects}'
+  easy_money_rate_type:
+    one: Тариф
+    internal: Внутренниы тариы
+    external: Внешние тарифы
+  easy_money_entity:
+    user: Пользователь
+    role: Роль
+    time_entry_activity: Деятельность
+  easy_money_rate_entity:
+    user: Тарифы по пользователям
+    role: Тарифы по ролям
+    time_entry_activity: Тарифы по видам деятельности
+  easy_money_period:
+    daily: Ежедневно
+    monthly: Ежемесячно
+    weekly: Еженедельно
+    yearly: Годовой
+  easy_money_other_settings_price_visibility:
+    price1: только общая сумма
+    price2: только сумма без НДС
+    all: сумма без НДС и общая сумма
+  easy_money_other_settings_rate_type:
+    internal: только внутренние тарифы
+    all: внутренние и внешние тарифы
+  easy_money_other_settings_expected_count_price:
+    price1: общая сумма
+    price2: сумма без НДС
+  easy_money_other_settings_expected_rate_type:
+    internal: внутренние тарифы
+    external: внешние тарифы
+  easy_reports_fields:
+    _time_entry_internalrate: Расходы на оплату труда - Внутренние тарифы
+    _time_entry_externalrate: Расходы на оплату труда - Внешние тарифы
+    easy_money_other_revenue_id: Реальные доходы
+    easy_money_other_revenue_name: Реальные доходы - Имя
+    easy_money_other_revenue_price1: Реальные доходы - Цена
+    easy_money_other_revenue_price2: Реальные доходы населения - цена без НДС
+    easy_money_other_expense_id: Реальные расходы
+    easy_money_other_expense_name: Реальные расходы - Имя
+    easy_money_other_expense_price1: Реальные расходы - Общая стоимость
+    easy_money_other_expense_price2: Реальные затраты - цена без НДС
+    easy_money_expected_expense_id: Ожидаемые расходы
+    easy_money_expected_expense_name: Ожидаемые расходы - Имя
+    easy_money_expected_expense_price1: Ожидаемые расходы - Общая стоимость
+    easy_money_expected_expense_price2: Ожидаемые расходы - цена без НДС
+    easy_money_expected_revenue_id: Ожидаемый доход
+    easy_money_expected_revenue_name: Ожидаемый доход - Имя
+    easy_money_expected_revenue_price1: Ожидаемый доход - Цена
+    easy_money_expected_revenue_price2: Ожидаемый доход - цена без НДС
+    project_expected_hours: Ожидаемое часов работы
+    project_expected_payroll_expense: Ожидаемые расходы заработной платы
+    _project_recovery: Восстановление
+    _project_timeentry_average_hourly_expense: Средняя почасовая ставка
+    _project_other_profit: Прибыль
+  easy_reports_categories:
+    easy_money: Деньги
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: Перерасчет расходов на заработную плату
+  tooltip_real_hourly_rate: Проект основан на средней почасовой ставке %{average_hourly_rate}
+    / час.
+  label_easy_money_new_revenue_text: Доход
+  label_easy_money_new_revenue_description: доход
+  label_easy_money_new_expense_text: Загрузка
+  label_easy_money_new_expense_description: загрузка
+  label_easy_money_sidebar:
+    project: Бюджет проекта
+    issue: Деньги на задаче
+    version: Деньги на этапе проекта
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Прочие доходы
+      easy_money_other_expense_query: Прочие расходы
+      easy_money_expected_revenue_query: Ожидаемые доходы
+      easy_money_expected_expense_query: Ожидаемые расходы
+      easy_money_project_cache_query: Проекты бюджета обзор
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: Личные фильтры на прочие доходы
+        easy_money_other_expense_query: Личные фильтры на другие расходы
+        easy_money_expected_revenue_query: Личные фильтры на ожидаемые доходы
+        easy_money_expected_expense_query: Личные фильтры на ожидаемые расходы
+        easy_money_project_cache_query: Личные фильтры на финансовый результат по проектам
+      public:
+        easy_money_other_revenue_query: Публичные фильтры на другие доходы
+        easy_money_other_expense_query: Публичные фильтры на другие расходы
+        easy_money_expected_revenue_query: Публичные фильтры на ожидаемые доходы
+        easy_money_expected_expense_query: Публичные фильтры на ожидаемые расходы
+        easy_money_project_cache_query: Публичные фильтры на финансовый результат по проектам
+  label_easy_money_other_settings_project_use_easy_money_for_versions: Включить плагин "Деньги" на этапах работ
+  label_easy_money_other_settings_project_use_easy_money_for_issues: Включить плагин "Деньги" на задачах
+  title_easy_money_sum_expected_revenues: Сумма ожидаемых доходов по проекту%{project} составляет %{value}.
+  title_easy_money_sum_other_revenues: Сумма прочих доходов по проекту%{project}составляет%{value}.
+  title_easy_money_sum_expected_expenses: Сумма ожидаемых затрат по проекту%{project}составляет%{value}.
+  title_easy_money_sum_other_expenses: Сумма прочих расходов по проекту%{project}составляет%{value}.
+  title_easy_money_sum_expected_payroll_expenses: Сумма ожидаемой заработной платы
+    на проекте %{project}составляет%{value}.
+  title_easy_money_sum_time_entry_expenses: Сумма заработной платы на проекте %{project}составляет%{value}.
+  title_easy_money_expected_profit: Ожидаемая прибыль от проекта %{project}составляет%{value}.
+  title_easy_money_other_profit: Прибыль от проекта %{project}составляет%{value}.
+  permission_easy_budgetsheet_view_internal_rates: Отчетность - показать внутренние тарифы
+  permission_easy_budgetsheet_view_external_rates: Отчетность - показать внешние тарифы
+  label_filter_group_easy_money_other_revenue_query: Прочие доходы
+  label_filter_group_easy_money_other_expense_query: Прочие расходы
+  label_filter_group_easy_money_expected_revenue_query: Ожидаемые доходы
+  label_filter_group_easy_money_expected_expense_query: Ожидаемые расходы
+  field_inherit_easy_money_settings: Наследовать настройки модуля "Деньги"
+  heading_easy_money_other_settings_project_overview: Отображение проекта - настройки
+  heading_easy_money_other_settings_prices_and_rates: Цены и тарифы
+  label_easy_money_project_index_sum_hours: ! 'Ожидаемое время:'
+  label_easy_money_other_settings_expected_count_price: При расчете доходов и других расходов
+    использовать
+  label_easy_money_other_settings_expected_rate_type: Реальные расходы на ЗП
+    рассчитывать использованием
+  label_filter_group_easy_money_project_cache_query: Другие
+  label_filter_group_easy_money_project_cache_expenses: Расходы
+  label_filter_group_easy_money_project_cache_revenues: Поступления
+  label_filter_group_easy_money_project_cache_profit: Прибыль
+  label_easy_money_project_cache: Проекты бюджета обзор
+  label_easy_money_other_settings_revenues_type: Доходы будут выступать в качестве
+  label_easy_money_other_settings_expenses_type: Остальные расходы отображать как
+  label_easy_money_other_settings_expected_payroll_expense_type: Плановые затраты
+    на ЗП будут учитываться как
+  field_sum_of_expected_hours: Ожидаемые часы
+  field_sum_of_expected_payroll_expenses: Ожидаемая ЗП
+  field_sum_of_expected_expenses_price_1: Ожидаемые расходы (с НДС)
+  field_sum_of_expected_revenues_price_1: Ожидаемые доходы (с НДС)
+  field_sum_of_other_expenses_price_1: Прочие расходы (с НДС)
+  field_sum_of_other_revenues_price_1: Прочие доходы (с НДС)
+  field_sum_of_expected_expenses_price_2: Ожидаемые расходы (без НДС)
+  field_sum_of_expected_revenues_price_2: Ожидаемые доходы (без НДС)
+  field_sum_of_other_expenses_price_2: Прочие расходы (без НДС)
+  field_sum_of_other_revenues_price_2: Прочие доходы (без НДС)
+  field_sum_of_time_entries_expenses_internal: Заработная плата (внутренний тариф)
+  field_sum_of_time_entries_expenses_external: Заработная плата (внешний тариф)
+  field_sum_of_all_expected_expenses_price_1: Всего ожидаемых расходов (с НДС)
+  field_sum_of_all_expected_revenues_price_1: Всего ожидаемых доходов (с НДС)
+  field_sum_of_all_other_revenues_price_1: Общей выручки (с НДС)
+  field_sum_of_all_expected_expenses_price_2: Всего ожидаемых расходов (без НДС)
+  field_sum_of_all_expected_revenues_price_2: Всего ожидаемых доходов (без НДС)
+  field_sum_of_all_other_revenues_price_2: Итого выручка (без НДС)
+  field_sum_of_all_other_expenses_price_1_internal: Всего расходов (с НДС, внутренний тариф)
+  field_sum_of_all_other_expenses_price_2_internal: Всего расходов (без НДС, внутренний тариф)
+  field_sum_of_all_other_expenses_price_1_external: Всего расходов (с НДС, внешний тариф)
+  field_sum_of_all_other_expenses_price_2_external: Всего расходов (без НДС, внешний тариф)
+  field_expected_profit_price_1: Ожидаемая прибыль (с НДС)
+  field_expected_profit_price_2: Ожидаемая прибыль (без НДС)
+  field_other_profit_price_1_internal: Прибыль (с НДС, внутренний тариф)
+  field_other_profit_price_2_internal: Прибыль (без учета НДС, внутренний тариф)
+  field_other_profit_price_1_external: Прибыль (с НДС, внешний тариф)
+  field_other_profit_price_2_external: Прибыль (без учета НДС, внешний тариф)
+  field_average_hourly_rate_price_1: Средняя почасовая ставка (с НДС)
+  field_average_hourly_rate_price_2: Средняя почасовая ставка (без НДС)
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Деньги - главная
+    pages_description:
+      easy_money_projects_overview: Деньги - главная
+  easy_money_revenues_type:
+    list: Подробный список
+    sum: Общая сумма
+  easy_money_expenses_type:
+    list: Подробный список
+    sum: Общая сумма
+  easy_money_expected_payroll_expense_type:
+    amount: Расходы на ЗП (общая сумма)
+    hours: Расходы на ЗП (ожидаемое кол-во  часов(задается в настройках) * почасовая ставка)
+    estimated_hours: Расходы на ЗП (запланированное кол-во часов (берется из задач)
+      * почасовая ставка)
+    planned_hours_and_rate: задача без исполнителя (запланированное кол-во часов * почасовая ставка), задачи назначенные исполнителю (запланированное кол-во часов * соответствующий тариф)
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: Бюджет проекта - перерасчет
+  label_easy_money_round_money_on_list: Округлять суммы

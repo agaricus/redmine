@@ -1,0 +1,42 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => project_heading(@project, l(:label_issue_index)), :free_search_options => {:free_search_after_function => "contextMenuInit('#{ issues_context_menu_path }', 'table.list.issues')"}} %>
+<%= easy_render_csv_format_options_dialog(@query, params) if @query.new_record? %>
+
+<% if @query.valid? %>
+  <% if @prepared_issues.empty? %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else %>
+    <div id="issues">
+      <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:entities => @prepared_issues, :query => @query, :go_to_url => {:controller => 'issues', :action => 'show'}, :options => {:render_query_tooltip_box => true, :hascontextmenu => true, :hide_sums_in_group_by => true}} %>
+    </div>
+    <p class="pagination" style="display:none;"><%= pagination_links_full(@issue_pages, @issue_count, :query => @query, :entities => @issues) %></p>
+  <% end %>
+
+  <%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+<% end %>
+<%= call_hook(:view_issues_index_bottom, { :issues => @issues, :project => @project, :query => @query }) %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :sidebar do %>
+  <%= render(:partial => 'sidebar/issues_buttons', :locals => {:project => @project}) if @project.nil? %>
+  <%= call_hook(:view_issues_sidebar_issues_bottom) %>
+  <%= call_hook(:view_issues_sidebar_planning_bottom) %>
+  <%= render :partial => 'sidebar/project_info', :locals => {:project => @project} %>
+  <%= render :partial => 'sidebar/project_members', :locals => {:project => @project} %>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} %>
+  <%= render :partial => 'sidebar/all_users_queries' if @project.nil? && User.current.internal_client? %>
+  <%= call_hook(:view_issues_sidebar_queries_bottom) %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= auto_discovery_link_tag(:atom, {:query_id => @query, :format => 'atom', :page => nil, :key => User.current.rss_key}, :title => l(:label_issue_plural)) %>
+  <%= auto_discovery_link_tag(:atom, {:controller => 'journals', :action => 'index', :query_id => @query, :format => 'atom', :page => nil, :key => User.current.rss_key}, :title => l(:label_changes_details)) %>
+<% end %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <ul class="menu-manager  menu-issues-easy-page-layout-service-box">
+    <%= content_tag :li, link_to(l(:label_issue_new), {:controller => 'easy_issues', :action => 'new'}, :class => 'button-1 icon icon-add orange', :accesskey => accesskey(:new_issue)) unless @project -%>
+  </ul>
+<% end %>
+
+<%= context_menu issues_context_menu_path %>

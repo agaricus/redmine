@@ -1,0 +1,21 @@
+<div id="easy-page-zones">
+  <h2><%= l(:label_easy_page_zones, :pagename => @page.translated_name) -%></h2>
+  <span class="link-page-zones-new-assignments"><%= link_to l(:label_easy_page_zones_new_assignments), { :action => 'assign_zone', :page_id => @page.id }, {:class => 'icon icon-add', :title => l(:title_easy_page_zones_new_assignments)} -%></span>
+
+  <% if (@zones.empty?) -%>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else -%>
+    <table class="list">
+      <% @zones.each do |page_zone| %>
+        <tr class="<%= cycle('odd', 'even') %>">
+          <td><%=page_zone.zone_definition.zone_name-%></td>
+          <td>
+            <div><%= link_to l(:button_delete), { :action => 'destroy', :zone_id => page_zone.id, :page_id => page_zone.easy_pages_id}, { :method => :delete, :class => 'icon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :title => l(:title_button_delete)} -%></div>
+          </td>
+        </tr>
+      <% end -%>
+    </table>
+  <% end -%>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>

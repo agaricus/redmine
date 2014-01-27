@@ -1,0 +1,64 @@
+<% prefix = @fullscreen ? 'fullscreen-' : '' %>
+
+<div id="<%= prefix %>issues">
+  <div class="resalloc-buttons">
+    <p>
+      <span id="<%= prefix %>split-help" class="split-help" style="display:none;">
+        <%= l('resalloc.split_issue_help') %>
+      </span>
+
+      <% if User.current.allowed_to_globally?(:edit_easy_user_allocations, {}) %>
+        <%= link_to_function l('resalloc.button_undo'), "window.location.reload();", :class => 'button-2 icon icon-reload' %>
+        <a class="button-1 icon icon-save" href="javascript:void(0);" onclick="$('#<%= prefix %>resalloc-container').resalloc('saveProjects');"><%= l('resalloc.button_save') %></a>
+      <% end -%>
+
+      <% unless @fullscreen %>
+        <%= easy_modal_selector_link_to_fullscreen_by_ajax(
+          url_for(params.merge({:action => 'index', :fullscreen => true})),
+          {
+            :class => 'button-2 icon icon-fullscreen'
+          }) %>
+      <% end -%>
+    </p>
+  </div>
+
+  <div style="clear:both;"></div>
+
+  <div id="<%= prefix %>resalloc-container">
+  </div>
+
+</div>
+  <%= javascript_tag "$(function(){window.csrf_token = '#{h(form_authenticity_token)}';
+  $('##{prefix}resalloc-container').resalloc({loadParams: {
+    period_type: '#{@period[:period_type]}',
+    period: '#{@period[:period]}',
+    from: '#{@period[:from]}',
+    to: '#{@period[:to]}'
+  },
+  saveIssuesUrl: '#{url_for(:action => 'save_projects')}',
+  lang: {
+    est: '#{l(:field_estimated_hours)}',
+    activity: '#{l(:label_activity)}',
+    spenttime: '#{l(:label_spent_time)}',
+    hoursleft: '#{l(:field_remaining_timeentries)}',
+    issueid: '#{l(:label_issue_id)}',
+    startdate: '#{l(:field_start_date)}',
+    duedate: '#{l(:field_due_date)}',
+    percentcompleted: '#{l(:field_done_ratio)}',
+    assignedto: '#{l(:field_assigned_to)}',
+    author: '#{l(:field_author)}',
+    successfulUpdate: '#{l(:notice_successful_update)}'
+  },
+  changed_title: '#{l(:label_allocation_changed_title)}',
+  readonly: #{User.current.allowed_to_globally?(:edit_easy_user_allocations, {}) ? 'false' : 'true'}
+  });});" -%>
+
+<% if @fullscreen %>
+  <script type="text/javascript">
+    $('#resalloc-container').hide();
+    $('#modal-dialog-loader-wrapper').bind('dialogbeforeclose', function(event, ui) {
+      $('#resalloc-container').show();
+      $('#modal-dialog-loader-wrapper').empty();
+    });
+  </script>
+<% end -%>

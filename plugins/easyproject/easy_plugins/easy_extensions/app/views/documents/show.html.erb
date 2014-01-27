@@ -1,0 +1,29 @@
+<div class="contextual">
+  <%= link_to(l(:button_edit), edit_document_path(@document), :class => 'icon icon-edit', :accesskey => accesskey(:edit)) if User.current.allowed_to?(:edit_documents, @project) %>
+  <%= delete_link document_path(@document) if User.current.allowed_to?(:delete_documents, @project) %>
+</div>
+
+<h2><%=h @document.title %></h2>
+
+<% if @document.visible_custom_field_values.any? %>
+  <%= render :partial => 'custom_field_values', :locals => {:custom_field_values => @document.visible_custom_field_values} %>
+<% end -%>
+
+<div class="wiki">
+  <%= textilizable(@document, :description, :headings => false, :attachments => @document.attachments) %>
+</div>
+
+<%= link_to_attachments @document %>
+
+<% if authorize_for('documents', 'add_attachment') %>
+  <p><%= link_to l(:label_attachment_new), {}, :onclick => "$('#add_attachment_form').show(); return false;",
+      :id => 'attach_files_link', :class => 'button-1 icon icon-add' %></p>
+  <%= form_tag({ :controller => 'documents', :action => 'add_attachment', :id => @document }, :multipart => true, :id => "add_attachment_form", :style => "display:none;") do %>
+    <div class="box gray-background">
+      <p><%= render :partial => 'attachments/form', :locals => {:container => @document} %></p>
+    </div>
+    <%= submit_tag l(:button_add), :class => 'button-1' %>
+  <% end %>
+<% end %>
+
+<% html_title @document.title -%>

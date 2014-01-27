@@ -1,0 +1,147 @@
+<% project = tab[:project]
+settings = project.nil? ? EasyMoneySettingsResolver.new((EasyMoneySettings.global_settings_names + EasyMoneySettings.project_settings_names), project) : project.easy_money_settings
+-%>
+<%= form_tag({ :controller => 'easy_money_settings', :action => 'update_settings', :project_id => project }, { :id => "easy-money-other-settings-form", :onsubmit => 'return easy_money_settings_save_warning()' }) do %>
+  <%= hidden_field_tag("project_id", project.id) unless project.nil? -%>
+
+  <div class="easy-money-other-settings-container tabular long4">
+
+    <h3><%= l(:heading_easy_money_other_settings_prices_and_rates) -%></h3>
+    <% if project.nil? -%>
+      <p>
+        <%= label_tag 'settings_currency_visible', l(:label_easy_money_currency_visible) -%>
+        <%= check_box_tag 'settings[currency_visible]', '1', settings['currency_visible'] -%>
+      </p>
+    <% end -%>
+    <% if project.nil? || settings['currency_visible'] == '1' -%>
+      <p>
+        <%= label_tag 'settings_currency', l(:label_easy_money_currency) -%>
+        <%= text_field_tag('settings[currency]', settings['currency'], :size => 10) -%>
+      </p>
+      <p>
+        <%= label_tag 'settings_currency_format', l(:label_easy_money_currency_format) -%>
+        <%= select_tag 'settings[currency_format]', options_for_select([[l('easy_money_other_settings_default_currency_format'), ''], ["#{settings['currency']} 1000", '%u %n'], ["1000 #{settings['currency']}", '%n %u']], settings['currency_format']) -%>
+      </p>
+    <% else %>
+      <%= hidden_field_tag('settings[currency]', settings['currency']) %>
+      <%= hidden_field_tag('settings[currency_format]', settings['currency_format']) %>
+    <% end -%>
+    <p>
+      <label for="settings_price_visibility"><%= l(:label_easy_money_other_settings_price_visibility) -%></label>
+      <%= select_tag 'settings[price_visibility]', options_for_select([[l('easy_money_other_settings_price_visibility.price1'), 'price1'], [l('easy_money_other_settings_price_visibility.all'), 'all']], settings['price_visibility']) -%>
+    </p>
+    <p>
+      <label><%= l(:label_easy_money_other_settings_vat) -%></label>
+      <%= text_field_tag 'settings[vat]', settings['vat'], :size => 1, :maxlength => 3 %>%
+    </p>
+    <p>
+      <label for="settings_rate_type"><%= l(:label_easy_money_other_settings_rate_type) -%></label>
+      <%= select_tag 'settings[rate_type]', options_for_select([[l('easy_money_other_settings_rate_type.internal'), 'internal'], [l('easy_money_other_settings_rate_type.all'), 'all']], settings['rate_type']) -%>
+    </p>
+    <p>
+      <label for="settings_round_on_list"><%= l(:label_easy_money_round_money_on_list) %></label>
+      <%= check_box_tag 'settings[round_on_list]', '1', settings['round_on_list'] == '1' %>
+      <%= hidden_field_tag 'settings[round_on_list]', '0' %>
+    </p>
+
+    <h3><%= l(:heading_easy_money_other_settings_project_overview) -%></h3>
+    <p>
+      <label for="settings_expected_count_price"><%= l(:label_easy_money_other_settings_expected_count_price) -%></label>
+      <%= select_tag 'settings[expected_count_price]', options_for_select([[l('easy_money_other_settings_expected_count_price.price1'), 'price1'], [l('easy_money_other_settings_expected_count_price.price2'), 'price2']], settings['expected_count_price']) -%>
+    </p>
+    <p>
+      <label for="settings_expected_rate_type"><%= l(:label_easy_money_other_settings_expected_rate_type) -%></label>
+      <%= select_tag 'settings[expected_rate_type]', options_for_select([[l('easy_money_other_settings_expected_rate_type.internal'), 'internal'], [l('easy_money_other_settings_expected_rate_type.external'), 'external']], settings['expected_rate_type']) -%>
+    </p>
+    <p>
+      <%= label_tag 'settings_revenues_type', l(:label_easy_money_other_settings_revenues_type) %>
+      <%= select_tag 'settings[revenues_type]', options_for_select([[l('easy_money_revenues_type.list'), 'list'], [l('easy_money_revenues_type.sum'), 'sum']], settings['revenues_type']) -%>
+    </p>
+    <p>
+      <%= label_tag 'settings_expenses_type', l(:label_easy_money_other_settings_expenses_type) %>
+      <%= select_tag 'settings[expenses_type]', options_for_select([[l('easy_money_expenses_type.list'), 'list'], [l('easy_money_expenses_type.sum'), 'sum']], settings['expenses_type']) -%>
+    </p>
+    <p>
+      <%= label_tag 'settings_expected_payroll_expense_type', l(:label_easy_money_other_settings_expected_payroll_expense_type) %>
+      <%= select_tag 'settings[expected_payroll_expense_type]',
+        options_for_select([[l('easy_money_expected_payroll_expense_type.amount'), 'amount'], [l('easy_money_expected_payroll_expense_type.hours'), 'hours'], [l('easy_money_expected_payroll_expense_type.estimated_hours'), 'estimated_hours'], [l('easy_money_expected_payroll_expense_type.planned_hours_and_rate'), 'planned_hours_and_rate']], settings['expected_payroll_expense_type']),
+        :onchange => 'toggleSettingsExpectedPayrollExpenseRateContainer()', :id => 'settings_expected_payroll_expense_type'
+      -%>
+    </p>
+    <p style="<%= (settings['expected_payroll_expense_type'] != 'amount') ? '' : 'display:none' -%>" id="settings_expected_payroll_expense_rate_container">
+      <%= label_tag 'settings_expected_payroll_expense_rate', l(:label_easy_money_expected_payroll_expense_per_hours) %>
+      <%= text_field_tag('settings[expected_payroll_expense_rate]', settings['expected_payroll_expense_rate'], :size => 10) -%>
+    </p>
+
+    <h3><%= l(:label_easy_money_other_settings) -%></h3>
+    <p>
+      <%= label_tag 'settings_include_childs', l(:label_easy_money_other_settings_include_childs) %>
+      <%= check_box_tag 'settings[include_childs]', '1', settings['include_childs'] -%>
+    </p>
+    <p>
+      <%= label_tag 'settings_expected_visibility', l(:label_easy_money_other_settings_project_expected_visibility) %>
+      <%= check_box_tag 'settings[expected_visibility]', '1', settings['expected_visibility'] -%>
+    </p>
+    <p>
+      <%= label_tag 'settings_use_easy_money_for_versions', l(:label_easy_money_other_settings_project_use_easy_money_for_versions) %>
+      <%= check_box_tag 'settings[use_easy_money_for_versions]', '1', settings['use_easy_money_for_versions'] == '1' -%>
+    </p>
+    <p>
+      <%= label_tag 'settings_use_easy_money_for_issues', l(:label_easy_money_other_settings_project_use_easy_money_for_issues) %>
+      <%= check_box_tag 'settings[use_easy_money_for_issues]', '1', settings['use_easy_money_for_issues'] == '1' -%>
+    </p>
+
+
+    <%= submit_tag l(:button_save), :class => 'button-1 floatleft' -%> &nbsp;
+
+    <% if project.nil? -%>
+      <% warning = String.new
+      warning += (l('warning_easy_money_all_projects.revenues_type', :projects => @different_settings[:revenues]) + "\n") if @different_settings && !@different_settings[:revenues].blank?
+      warning += (l('warning_easy_money_all_projects.expenses_type', :projects => @different_settings[:expenses]) + "\n") if @different_settings && !@different_settings[:expenses].blank?
+      warning += l('warning_easy_money_all_projects.question')
+      -%>
+      <%= link_to_function(l(:button_easy_money_save_in_all_projects), "$.post('#{url_for(:controller => 'easy_money_settings', :action => 'update_settings_to_projects')}', $('#easy-money-other-settings-form').serialize());", :confirm => warning,
+        :title => l(:title_easy_money_rate_use_in_all_projects), :class => 'button-2' ) -%>
+    <% elsif project.descendants.active.has_module(:easy_money).any? -%>
+      <%= link_to_function(l(:button_easy_money_save_in_all_subprojects), "$.post('#{url_for(:controller => 'easy_money_settings', :action => 'update_settings_to_subprojects')}', $('#easy-money-other-settings-form').serialize());",
+        :title => l(:title_easy_money_rate_use_in_all_subprojects), :class => 'button-2' ) -%>
+    <% end -%>
+
+    <div class="clear"></div>
+  </div>
+
+<% end -%>
+
+<script type="text/javascript">
+  function easy_money_settings_save_warning() {
+    var warning = '';
+    if ($('settings_revenues_type').getValue() != '<%= settings['revenues_type'] -%>') {
+      warning += '<%= l('warning_easy_money_settings.revenues_type') -%> \n';
+    }
+    if ($('settings_expenses_type').getValue() != '<%= settings['expenses_type'] -%>') {
+      warning += '<%= l('warning_easy_money_settings.expenses_type') -%> \n';
+    }
+    warning += '<%= project.nil? ? l('warning_easy_money_settings.global_question') : l('warning_easy_money_settings.project_question') -%>';
+    return confirm(warning);
+  }
+
+  function toggleSettingsExpectedPayrollExpenseRateContainer() {
+    var settings_expected_payroll_expense_rate_container = $('#settings_expected_payroll_expense_rate_container');
+    var settings_expected_payroll_expense_type = $('#settings_expected_payroll_expense_type');
+
+    switch (settings_expected_payroll_expense_type.val()) {
+      case 'amount':
+        settings_expected_payroll_expense_rate_container.hide();
+        break;
+      case 'hours':
+        settings_expected_payroll_expense_rate_container.show();
+        break;
+      case 'estimated_hours':
+        settings_expected_payroll_expense_rate_container.show();
+        break;
+      case 'planned_hours_and_rate':
+        settings_expected_payroll_expense_rate_container.show();
+        break;
+    }
+  }
+</script>

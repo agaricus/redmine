@@ -1,0 +1,16 @@
+  <div class="box tabular avatar-edit">
+    <div>
+      <p><label>Avatar</label></p>
+      <% if Setting.gravatar_enabled == '1' || Setting.gravatar_enabled.try(:to_boolean) %>
+          <div class="nodata">
+            <%= l(:text_avatar_not_available_because_gravatar) %>
+          </div>
+      <% else %>
+        <%= content_tag :div, avatar(@user, :no_link => true,), :id => 'entity_avatar_image_container', :class => 'floatleft' %>
+        <div class="floatright">
+          <div><%= file_field_tag 'user[avatar]' %></div>
+          <div><%= link_to(l(:button_delete_avatar), easy_avatar_path(:entity_id => @user.id, :entity_type => @user.class.name), :class => 'button-2', :remote => true, :method => :delete) %></div>
+        </div>
+      <% end -%>
+    </div>
+  </div>

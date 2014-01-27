@@ -1,0 +1,2487 @@
+---
+zh:
+  direction: ltr
+  jquery:
+    locale: zh-CN
+  date:
+    formats:
+      default: ! '%Y-%m-%d'
+      short: ! '%b%d日'
+      long: ! '%Y年%b%d日'
+    day_names:
+    - 星期天
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    abbr_day_names:
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
+    month_names:
+    -
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  time:
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S'
+      time: ! '%H:%M'
+      short: ! '%b%d日 %H:%M'
+      long: ! '%Y年%b%d日 %H:%M'
+    am: 上午
+    pm: 下午
+  datetime:
+    distance_in_words:
+      half_a_minute: 半分钟
+      less_than_x_seconds:
+        one: 一秒内
+        other: 少于 %{count} 秒
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+      less_than_x_minutes:
+        one: 一分钟内
+        other: 少于 %{count} 分钟
+      x_minutes:
+        one: 一分钟
+        other: ! '%{count} 分钟'
+      about_x_hours:
+        one: 大约一小时
+        other: 大约 %{count} 小时
+      x_hours:
+        one: 1 小时
+        other: ! '%{count} 小时'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      about_x_months:
+        one: 大约一个月
+        other: 大约 %{count} 个月
+      x_months:
+        one: 一个月
+        other: ! '%{count} 个月'
+      about_x_years:
+        one: 大约一年
+        other: 大约 %{count} 年
+      over_x_years:
+        one: 超过一年
+        other: 超过 %{count} 年
+      almost_x_years:
+        one: 将近 1 年
+        other: 将近 %{count} 年
+  number:
+    format:
+      separator: .
+      delimiter: ''
+      precision: 3
+    human:
+      format:
+        delimiter: ''
+        precision: 3
+        separator: ，
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+    currency:
+      format:
+        unit: $
+        format: 第％u％N
+        separator: 。
+        delimiter: ，
+  support:
+    array:
+      sentence_connector: 和
+      skip_last_comma: false
+  activerecord:
+    errors:
+      template:
+        header:
+          one: 发生了1个错误 %{model} 无法保存
+          other: ! '%{count} 个错误, %{model} 无法保存'
+      messages:
+        inclusion: 不包含于列表中
+        exclusion: 是保留关键字
+        invalid: 是无效的
+        confirmation: 与确认值不匹配
+        accepted: 必须是可被接受的
+        empty: 不能留空
+        blank: 不能为空字符
+        too_long: 过长（最长为 %{count} 个字符）
+        too_short: 过短（最短为 %{count} 个字符）
+        wrong_length: 长度非法（必须为 %{count} 个字符）
+        taken: 已经被使用
+        not_a_number: 不是数字
+        not_a_date: 不是合法日期
+        greater_than: 必须大于 %{count}
+        greater_than_or_equal_to: 必须大于或等于 %{count}
+        equal_to: 必须等于 %{count}
+        less_than: 必须小于 %{count}
+        less_than_or_equal_to: 必须小于或等于 %{count}
+        odd: 必须为单数
+        even: 必须为双数
+        greater_than_start_date: 必须在起始日期之后
+        not_same_project: 不属于同一个项目
+        circular_dependency: 此关联将导致循环依赖
+        cant_link_an_issue_with_a_descendant: 问题不能关联到它的子任务
+        cant_link_an_project_with_a_descendant: 一个项目不能被链接到其子
+        cant_link_an_version_with_a_descendant: 具有里程碑意义不能被链接到其子
+        not_a_amount: 没有有效的金额
+        before_milestone: （%{due_date}）必须是里程碑日期前（%{effective_date}）
+        before_project_end: （%{due_date}）必须是在项目到期日（%{project_due_date}）
+        after_project_start: （%{start_date}）必须大于项目的开始日期（%{project_start_date}）
+        less_than_duration: 太早根据估计小时
+        greater_than_soonest_start: （%{start_date}）必须大于尽快开始日期（%{soonest_start}相关的任务）
+        greater_than_start_date2: （%{due_date}）必须大于开始日期（%{start_date}）
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: 超出允许范围
+    models:
+      easy_user_working_time_calendar: 日历
+      easy_user_working_time_calendar_holiday: 假期
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: 家长日历
+        name: 名称
+        default_working_hours: 每日工作起始时间
+        first_day_of_week: 每周的第一天
+        is_default: 默认日历
+      easy_user_working_time_calendar_holiday:
+        name: 名称
+        holiday_date: 日
+        is_repeating: 连续假期
+  actionview_instancetag_blank_option: 请选择
+  general_text_No: 否
+  general_text_Yes: 是
+  general_text_no: 否
+  general_text_yes: 是
+  general_lang_name: Simplified Chinese (简体中文)
+  general_csv_separator: ! ','
+  general_csv_decimal_separator: .
+  general_csv_encoding: gb18030
+  general_pdf_encoding: gb18030
+  general_first_day_of_week: '7'
+  notice_account_updated: 帐号更新成功
+  notice_account_invalid_creditentials: 无效的用户名或密码
+  notice_account_password_updated: 密码更新成功
+  notice_account_wrong_password: 密码错误
+  notice_account_register_done: 帐号创建成功，请使用注册确认邮件中的链接来激活您的帐号。
+  notice_account_unknown_email: 未知用户
+  notice_can_t_change_password: 该帐号使用了外部认证，因此无法更改密码。
+  notice_account_lost_email_sent: 系统已将引导您设置新密码的邮件发送给您。
+  notice_account_activated: 您的帐号已被激活。您现在可以登录了。
+  notice_successful_create: 创建成功
+  notice_successful_update: 更新成功
+  notice_successful_delete: 删除成功
+  notice_successful_connection: 连接成功
+  notice_file_not_found: 您访问的页面不存在或已被删除。
+  notice_locking_conflict: 数据已被另一位用户更新
+  notice_not_authorized: 对不起，您无权访问此页面。
+  notice_not_authorized_archived_project: 要访问的项目已经归档。
+  notice_email_sent: 邮件已发送至 %{value}
+  notice_email_error: 发送邮件时发生错误 (%{value})
+  notice_feeds_access_key_reseted: 您的RSS存取键已被重置。
+  notice_api_access_key_reseted: 您的API访问键已被重置。
+  notice_failed_to_save_issues: ! '%{count} 个问题保存失败（共选择 %{total} 个问题）：%{ids}.'
+  notice_failed_to_save_members: ! '成员保存失败: %{errors}.'
+  notice_no_issue_selected: 未选择任何问题！请选择您要编辑的问题。
+  notice_account_pending: 您的帐号已被成功创建，正在等待管理员的审核。
+  notice_default_data_loaded: 成功载入默认设置。
+  notice_unable_delete_version: 无法删除版本
+  notice_unable_delete_time_entry: 无法删除工时
+  notice_issue_done_ratios_updated: 问题完成度已更新。
+  notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum
+    number of items that can be displayed (%{max})
+  error_can_t_load_default_data: 无法载入默认设置：%{value}
+  error_scm_not_found: 版本库中不存在该条目和（或）其修订版本。
+  error_scm_command_failed: 访问版本库时发生错误：%{value}
+  error_scm_annotate: 该条目不存在或无法追溯。
+  error_issue_not_found_in_project: 问题不存在或不属于此项目
+  error_no_tracker_in_project: 该项目未设定跟踪标签，请检查项目配置。
+  error_no_default_issue_status: 未设置默认的问题状态。请检查系统设置（"管理" -> "问题状态"）。
+  error_can_not_delete_custom_field: 无法删除自定义属性
+  error_can_not_delete_tracker: 该跟踪标签已包含问题,无法删除
+  error_can_not_remove_role: 该角色正在使用中，无法删除
+  error_can_not_reopen_issue_on_closed_version: 该问题被关联到一个已经关闭的版本，因此无法重新打开。
+  error_can_not_archive_project: 该项目无法被存档
+  error_issue_done_ratios_not_updated: 问题完成度未能被更新。
+  error_workflow_copy_source: 请选择一个源跟踪标签或者角色
+  error_workflow_copy_target: 请选择目标跟踪标签和角色
+  error_unable_delete_issue_status: 无法删除问题状态
+  error_unable_to_connect: 无法连接 (%{value})
+  warning_attachments_not_saved: ! '%{count} 个文件保存失败'
+  mail_subject_lost_password: 您的 %{value} 密码
+  mail_body_lost_password: 请点击以下链接来修改您的密码：
+  mail_subject_register: ! '%{value}帐号激活'
+  mail_body_register: 请点击以下链接来激活您的帐号：
+  mail_body_account_information_external: 您可以使用您的 %{value} 帐号来登录。
+  mail_body_account_information: 您的帐号信息
+  mail_subject_account_activation_request: ! '%{value}帐号激活请求'
+  mail_body_account_activation_request: 新用户（%{value}）已完成注册，正在等候您的审核：
+  mail_subject_reminder: ! '%{count} 个问题需要尽快解决 (%{days})'
+  mail_body_reminder: 指派给您的 %{count} 个问题需要在 %{days} 天内完成：
+  mail_subject_wiki_content_added: ! '''%{id}'' wiki页面已添加'
+  mail_body_wiki_content_added: ! '''%{id}'' wiki页面已由 %{author} 添加。'
+  mail_subject_wiki_content_updated: ! '''%{id}'' wiki页面已更新。'
+  mail_body_wiki_content_updated: ! '''%{id}'' wiki页面已由 %{author} 更新。'
+  field_name: 名称
+  field_description: 描述
+  field_summary: 摘要
+  field_is_required: 必填
+  field_firstname: 名字
+  field_lastname: 姓氏
+  field_mail: 邮件地址
+  field_filename: 文件
+  field_filesize: 大小
+  field_downloads: 下载次数
+  field_author: 作者
+  field_created_on: 创建于
+  field_updated_on: 更新于
+  field_field_format: 格式
+  field_is_for_all: 用于所有项目
+  field_possible_values: 可能的值
+  field_regexp: 正则表达式
+  field_min_length: 最小长度
+  field_max_length: 最大长度
+  field_value: 值
+  field_category: 类别
+  field_title: 标题
+  field_project: 项目
+  field_issue: 问题
+  field_status: 状态
+  field_notes: 说明
+  field_is_closed: 已关闭的问题
+  field_is_default: 默认值
+  field_tracker: 跟踪
+  field_subject: 主题
+  field_due_date: 计划完成日期
+  field_assigned_to: 指派给
+  field_priority: 优先级
+  field_fixed_version: 目标版本
+  field_user: 用户
+  field_principal: 用户/用户组
+  field_role: 角色
+  field_homepage: 主页
+  field_is_public: 公开
+  field_parent: 上级项目
+  field_is_in_roadmap: 在路线图中显示
+  field_login: 登录名
+  field_mail_notification: 邮件通知
+  field_admin: 管理员
+  field_last_login_on: 最后登录
+  field_language: 语言
+  field_effective_date: 日期
+  field_password: 密码
+  field_new_password: 新密码
+  field_password_confirmation: 确认
+  field_version: 版本
+  field_type: 类型
+  field_host: 主机
+  field_port: 端口
+  field_account: 帐号
+  field_base_dn: Base DN
+  field_attr_login: 登录名属性
+  field_attr_firstname: 名字属性
+  field_attr_lastname: 姓氏属性
+  field_attr_mail: 邮件属性
+  field_onthefly: 即时用户生成
+  field_start_date: 开始日期
+  field_done_ratio: ! '% 完成'
+  field_auth_source: 认证模式
+  field_hide_mail: 隐藏我的邮件地址
+  field_comments: 注释
+  field_url: URL
+  field_start_page: 起始页
+  field_subproject: 子项目
+  field_hours: 小时
+  field_activity: 活动
+  field_spent_on: 日期
+  field_identifier: 标识
+  field_is_filter: 作为过滤条件
+  field_issue_to: 相关问题
+  field_delay: 延期
+  field_assignable: 问题可指派给此角色
+  field_redirect_existing_links: 重定向到现有链接
+  field_estimated_hours: 预期时间
+  field_column_names: 列
+  field_time_entries: 工时
+  field_time_zone: 时区
+  field_searchable: 可用作搜索条件
+  field_default_value: 默认值
+  field_comments_sorting: 显示注释
+  field_parent_title: 上级页面
+  field_editable: 可编辑
+  field_watcher: 跟踪者
+  field_identity_url: OpenID URL
+  field_content: 内容
+  field_group_by: 根据此条件分组
+  field_sharing: 共享
+  field_parent_issue: 父任务
+  field_member_of_group: 用户组的成员
+  field_assigned_to_role: 角色的成员
+  field_text: 文本字段
+  field_visible: 可见的
+  setting_app_title: 应用程序标题
+  setting_app_subtitle: 应用程序子标题
+  setting_welcome_text: 欢迎文字
+  setting_default_language: 默认语言
+  setting_login_required: 要求认证
+  setting_self_registration: 允许自注册
+  setting_attachment_max_size: 附件大小限制
+  setting_issues_export_limit: 问题导出条目的限制
+  setting_mail_from: 邮件发件人地址
+  setting_bcc_recipients: 使用密件抄送 (bcc)
+  setting_plain_text_mail: 纯文本（无HTML）
+  setting_host_name: 主机名称
+  setting_text_formatting: 文本格式
+  setting_wiki_compression: 压缩Wiki历史文档
+  setting_feeds_limit: RSS Feed内容条数限制
+  setting_default_projects_public: 新建项目默认为公开项目
+  setting_autofetch_changesets: 自动获取程序变更
+  setting_sys_api_enabled: 启用用于版本库管理的Web Service
+  setting_commit_ref_keywords: 用于引用问题的关键字
+  setting_commit_fix_keywords: 用于解决问题的关键字
+  setting_autologin: 自动登录
+  setting_date_format: 日期格式
+  setting_time_format: 时间格式
+  setting_cross_project_issue_relations: 允许不同项目之间的问题关联
+  setting_issue_list_default_columns: 问题列表中显示的默认列
+  setting_emails_header: 邮件头
+  setting_emails_footer: 邮件签名
+  setting_protocol: 协议
+  setting_per_page_options: 每页显示条目个数的设置
+  setting_user_format: 用户显示格式
+  setting_activity_days_default: 在项目活动中显示的天数
+  setting_display_subprojects_issues: 在项目页面上默认显示子项目的问题
+  setting_enabled_scm: 启用 SCM
+  setting_mail_handler_body_delimiters: 在这些行之后截断邮件
+  setting_mail_handler_api_enabled: 启用用于接收邮件的服务
+  setting_mail_handler_api_key: API key
+  setting_sequential_project_identifiers: 顺序产生项目标识
+  setting_gravatar_enabled: 使用Gravatar用户头像
+  setting_gravatar_default: 默认的Gravatar头像
+  setting_diff_max_lines_displayed: 查看差别页面上显示的最大行数
+  setting_file_max_size_displayed: 允许直接显示的最大文本文件
+  setting_repository_log_display_limit: 在文件变更记录页面上显示的最大修订版本数量
+  setting_openid: 允许使用OpenID登录和注册
+  setting_password_min_length: 最短密码长度
+  setting_new_project_user_role_id: 非管理员用户新建项目时将被赋予的（在该项目中的）角色
+  setting_default_projects_modules: 新建项目默认启用的模块
+  setting_issue_done_ratio: 计算问题完成度：
+  setting_issue_done_ratio_issue_field: 使用问题（的完成度）属性
+  setting_issue_done_ratio_issue_status: 使用问题状态
+  setting_start_of_week: 日历开始于
+  setting_rest_api_enabled: 启用REST web service
+  setting_cache_formatted_text: 缓存格式化文字
+  setting_default_notification_option: 默认提醒选项
+  setting_commit_logtime_enabled: 激活时间日志
+  setting_commit_logtime_activity_id: 记录的活动
+  setting_gantt_items_limit: 在甘特图上显示的最大记录数
+  permission_add_project: 新建项目
+  permission_add_subprojects: 新建子项目
+  permission_edit_project: 编辑项目
+  permission_select_project_modules: 选择项目模块
+  permission_manage_members: 管理成员
+  permission_manage_project_activities: 管理项目活动
+  permission_manage_versions: 管理版本
+  permission_manage_categories: 管理问题类别
+  permission_view_issues: 查看问题
+  permission_add_issues: 新建问题
+  permission_edit_issues: 更新问题
+  permission_manage_issue_relations: 管理问题关联
+  permission_add_issue_notes: 添加说明
+  permission_edit_issue_notes: 编辑说明
+  permission_edit_own_issue_notes: 编辑自己的说明
+  permission_move_issues: 移动问题
+  permission_delete_issues: 删除问题
+  permission_manage_public_queries: 管理公开的查询
+  permission_save_queries: 保存查询
+  permission_view_gantt: 查看甘特图
+  permission_view_calendar: 查看日历
+  permission_view_issue_watchers: 查看跟踪者列表
+  permission_add_issue_watchers: 添加跟踪者
+  permission_delete_issue_watchers: 删除跟踪者
+  permission_log_time: 登记工时
+  permission_view_time_entries: 查看耗时
+  permission_edit_time_entries: 编辑耗时
+  permission_edit_own_time_entries: 编辑自己的耗时
+  permission_manage_news: 管理新闻
+  permission_comment_news: 为新闻添加评论
+  permission_view_documents: 查看文档
+  permission_manage_files: 管理文件
+  permission_view_files: 查看文件
+  permission_manage_wiki: 管理Wiki
+  permission_rename_wiki_pages: 重定向/重命名Wiki页面
+  permission_delete_wiki_pages: 删除Wiki页面
+  permission_view_wiki_pages: 查看Wiki
+  permission_view_wiki_edits: 查看Wiki历史记录
+  permission_edit_wiki_pages: 编辑Wiki页面
+  permission_delete_wiki_pages_attachments: 删除附件
+  permission_protect_wiki_pages: 保护Wiki页面
+  permission_manage_repository: 管理版本库
+  permission_browse_repository: 浏览版本库
+  permission_view_changesets: 查看变更
+  permission_commit_access: 访问提交信息
+  permission_manage_boards: 管理讨论区
+  permission_view_messages: 查看帖子
+  permission_add_messages: 发表帖子
+  permission_edit_messages: 编辑帖子
+  permission_edit_own_messages: 编辑自己的帖子
+  permission_delete_messages: 删除帖子
+  permission_delete_own_messages: 删除自己的帖子
+  permission_export_wiki_pages: 导出 wiki 页面
+  permission_manage_subtasks: 管理子任务
+  project_module_issue_tracking: 问题跟踪
+  project_module_time_tracking: 时间跟踪
+  project_module_news: 新闻
+  project_module_documents: 文档
+  project_module_files: 文件
+  project_module_wiki: Wiki
+  project_module_repository: 版本库
+  project_module_boards: 讨论区
+  project_module_calendar: 日历
+  project_module_gantt: 甘特图
+  label_user: 用户
+  label_user_plural: 用户
+  label_user_new: 新建用户
+  label_user_anonymous: 匿名用户
+  label_project: 项目
+  label_project_new: 新建项目
+  label_project_plural: 项目
+  label_x_projects:
+    zero: 无项目
+    one: 1 个项目
+    other: ! '%{count} 个项目'
+  label_project_all: 所有的项目
+  label_project_latest: 最近的项目
+  label_issue: 问题
+  label_issue_new: 新建问题
+  label_issue_plural: 问题
+  label_issue_view_all: 查看所有问题
+  label_issues_by: 按 %{value} 分组显示问题
+  label_issue_added: 问题已添加
+  label_issue_updated: 问题已更新
+  label_document: 文档
+  label_document_new: 新建文档
+  label_document_plural: 文档
+  label_document_added: 文档已添加
+  label_role: 角色
+  label_role_plural: 角色
+  label_role_new: 新建角色
+  label_role_and_permissions: 角色和权限
+  label_member: 成员
+  label_member_new: 新建成员
+  label_member_plural: 成员
+  label_tracker: 跟踪标签
+  label_tracker_plural: 跟踪标签
+  label_tracker_new: 新建跟踪标签
+  label_workflow: 工作流程
+  label_issue_status: 问题状态
+  label_issue_status_plural: 问题状态
+  label_issue_status_new: 新建问题状态
+  label_issue_category: 问题类别
+  label_issue_category_plural: 问题类别
+  label_issue_category_new: 新建问题类别
+  label_custom_field: 自定义属性
+  label_custom_field_plural: 自定义属性
+  label_custom_field_new: 新建自定义属性
+  label_enumerations: 枚举值
+  label_enumeration_new: 新建枚举值
+  label_information: 信息
+  label_information_plural: 信息
+  label_please_login: 请登录
+  label_register: 注册
+  label_login_with_open_id_option: 或使用OpenID登录
+  label_password_lost: 忘记密码
+  label_home: 主页
+  label_my_page: 我的工作台
+  label_my_account: 我的帐号
+  label_my_projects: 我的项目
+  label_my_page_block: 我的工作台模块
+  label_administration: 管理
+  label_login: 登录
+  label_logout: 退出
+  label_help: 帮助
+  label_reported_issues: 已报告的问题
+  label_assigned_to_me_issues: 指派给我的问题
+  label_last_login: 最后登录
+  label_registered_on: 注册于
+  label_activity: 活动
+  label_overall_activity: 活动概览
+  label_user_activity: ! '%{value} 的活动'
+  label_new: 新建
+  label_logged_as: 登录为
+  label_environment: 环境
+  label_authentication: 认证
+  label_auth_source: 认证模式
+  label_auth_source_new: 新建认证模式
+  label_auth_source_plural: 认证模式
+  label_subproject_plural: 子项目
+  label_subproject_new: 新建子项目
+  label_and_its_subprojects: ! '%{value} 及其子项目'
+  label_min_max_length: 最小 - 最大 长度
+  label_list: 列表
+  label_date: 日期
+  label_integer: 整数
+  label_float: 浮点数
+  label_boolean: 布尔值
+  label_string: 字符串
+  label_text: 文本
+  label_attribute: 属性
+  label_attribute_plural: 属性
+  label_no_data: 没有任何数据可供显示
+  label_change_status: 变更状态
+  label_history: 历史记录
+  label_attachment: 文件
+  label_attachment_new: 新建文件
+  label_attachment_delete: 删除文件
+  label_attachment_plural: 文件
+  label_file_added: 文件已添加
+  label_report: 报表
+  label_report_plural: 报表
+  label_news: 新闻
+  label_news_new: 添加新闻
+  label_news_plural: 新闻
+  label_news_latest: 最近的新闻
+  label_news_view_all: 查看所有新闻
+  label_news_added: 新闻已添加
+  label_settings: 配置
+  label_overview: 概述
+  label_version: 版本
+  label_version_new: 新建版本
+  label_version_plural: 版本
+  label_close_versions: 关闭已完成的版本
+  label_confirmation: 确认
+  label_export_to: 导出
+  label_read: 读取...
+  label_public_projects: 公开的项目
+  label_open_issues: 打开
+  label_open_issues_plural: 打开
+  label_closed_issues: 已关闭
+  label_closed_issues_plural: 已关闭
+  label_x_open_issues_abbr_on_total:
+    zero: 0 打开 / %{total}
+    one: 1 打开 / %{total}
+    other: ! '%{count} 打开 / %{total}'
+  label_x_open_issues_abbr:
+    zero: 0 打开
+    one: 1 打开
+    other: ! '%{count} 打开'
+  label_x_closed_issues_abbr:
+    zero: 0 已关闭
+    one: 1 已关闭
+    other: ! '%{count} 已关闭'
+  label_total: 合计
+  label_total_total: 合计：
+  label_permissions: 权限
+  label_current_status: 当前状态
+  label_new_statuses_allowed: 允许的新状态
+  label_all: 全部
+  label_none: 无
+  label_nobody: 无人
+  label_next: 下一页
+  label_previous: 上一页
+  label_used_by: 使用中
+  label_details: 详情
+  label_add_note: 添加说明
+  label_per_page: 每页
+  label_calendar: 日历
+  label_months_from: 个月以来
+  label_gantt: 甘特图
+  label_internal: 内部
+  label_last_changes: 最近的 %{count} 次变更
+  label_change_view_all: 查看所有变更
+  label_personalize_page: 个性化定制本页
+  label_comment: 评论
+  label_comment_plural: 评论
+  label_x_comments:
+    zero: 无评论
+    one: 1 条评论
+    other: ! '%{count} 条评论'
+    two: 2条评论
+    three: 3条评论
+    four: 4条评论
+  label_comment_add: 添加评论
+  label_comment_added: 评论已添加
+  label_comment_delete: 删除评论
+  label_query: 自定义查询
+  label_query_plural: 自定义查询
+  label_query_new: 新建查询
+  label_filter_add: 增加过滤器
+  label_filter_plural: 过滤器
+  label_equals: 等于
+  label_not_equals: 不等于
+  label_in_less_than: 剩余天数小于
+  label_in_more_than: 剩余天数大于
+  label_greater_or_equal: ! '>='
+  label_less_or_equal: <=
+  label_in: 在
+  label_today: 今天
+  label_all_time: 全部时间
+  label_yesterday: 昨天
+  label_this_week: 本周
+  label_last_week: 上周
+  label_last_n_days: 最后 %{count} 天
+  label_this_month: 本月
+  label_last_month: 上月
+  label_this_year: 今年
+  label_date_range: 日期范围
+  label_less_than_ago: 之前天数少于
+  label_more_than_ago: 之前天数大于
+  label_ago: 之前天数
+  label_contains: 包含
+  label_not_contains: 不包含
+  label_day_plural: 天
+  label_repository: 版本库
+  label_repository_plural: 版本库
+  label_browse: 浏览
+  label_branch: 分支
+  label_tag: 标签
+  label_revision: 修订
+  label_revision_plural: 修订
+  label_revision_id: 修订 %{value}
+  label_associated_revisions: 相关修订版本
+  label_added: 已添加
+  label_modified: 已修改
+  label_copied: 已复制
+  label_renamed: 已重命名
+  label_deleted: 已删除
+  label_latest_revision: 最近的修订版本
+  label_latest_revision_plural: 最近的修订版本
+  label_view_revisions: 查看修订
+  label_view_all_revisions: 查看所有修订
+  label_max_size: 最大尺寸
+  label_sort_highest: 置顶
+  label_sort_higher: 上移
+  label_sort_lower: 下移
+  label_sort_lowest: 置底
+  label_roadmap: 路线图
+  label_roadmap_due_in: 截止日期到  %{value}
+  label_roadmap_overdue: ! '%{value} 延期'
+  label_roadmap_no_issues: 该版本未包含任何问题
+  label_search: 搜索
+  label_result_plural: 结果
+  label_all_words: 所有单词
+  label_wiki: Wiki
+  label_wiki_edit: Wiki 编辑
+  label_wiki_edit_plural: Wiki 编辑记录
+  label_wiki_page: Wiki 页面
+  label_wiki_page_plural: Wiki 页面
+  label_index_by_title: 按标题索引
+  label_index_by_date: 按日期索引
+  label_current_version: 当前版本
+  label_preview: 预览
+  label_feed_plural: Feeds
+  label_changes_details: 所有变更的详情
+  label_issue_tracking: 问题跟踪
+  label_spent_time: 耗时
+  label_overall_spent_time: 总体耗时
+  label_f_hour: ! '%{value} 小时'
+  label_f_hour_plural: ! '%{value} 小时'
+  label_time_tracking: 时间跟踪
+  label_change_plural: 变更
+  label_statistics: 统计
+  label_commits_per_month: 依月份统计
+  label_commits_per_author: 依用户统计数
+  label_view_diff: 查看差别
+  label_diff_inline: 直列
+  label_diff_side_by_side: 并排
+  label_options: 选项
+  label_copy_workflow_from: 从以下选项复制工作流程
+  label_permissions_report: 权限报表
+  label_watched_issues: 跟踪的问题
+  label_related_issues: 相关的问题
+  label_applied_status: 应用后的状态
+  label_loading: 载入中...
+  label_relation_new: 新建关联
+  label_relation_delete: 删除关联
+  label_relates_to: 关联到
+  label_duplicates: 重复
+  label_duplicated_by: 与其重复
+  label_blocks: 阻挡
+  label_blocked_by: 被阻挡
+  label_precedes: 优先于
+  label_follows: 跟随于
+  label_end_to_start: 结束-开始
+  label_end_to_end: 结束-结束
+  label_start_to_start: 开始-开始
+  label_start_to_end: 开始-结束
+  label_stay_logged_in: 保持登录状态
+  label_disabled: 禁用
+  label_show_completed_versions: 显示已完成的版本
+  label_me: 我
+  label_board: 讨论区
+  label_board_new: 新建讨论区
+  label_board_plural: 讨论区
+  label_board_locked: 锁定
+  label_board_sticky: 置顶
+  label_topic_plural: 主题
+  label_message_plural: 帖子
+  label_message_last: 最新的帖子
+  label_message_new: 新贴
+  label_message_posted: 发帖成功
+  label_reply_plural: 回复
+  label_send_information: 给用户发送帐号信息
+  label_year: 年
+  label_month: 月
+  label_week: 周
+  label_date_from: 从
+  label_date_to: 到
+  label_language_based: 根据用户的语言
+  label_sort_by: 根据 %{value} 排序
+  label_send_test_email: 发送测试邮件
+  label_feeds_access_key: RSS存取键
+  label_missing_feeds_access_key: 缺少RSS存取键
+  label_feeds_access_key_created_on: RSS存取键是在 %{value} 之前建立的
+  label_module_plural: 模块
+  label_updated_time: ! ' 更新于 %{value} 之前'
+  label_updated_time_by: 由 %{author} 更新于 %{age} 之前
+  label_jump_to_a_project: 选择一个项目...
+  label_file_plural: 文件
+  label_changeset_plural: 变更
+  label_default_columns: 默认列
+  label_no_change_option: (不变)
+  label_bulk_edit_selected_issues: 批量修改选中的问题
+  label_theme: 主题
+  label_default: 默认
+  label_search_titles_only: 仅在标题中搜索
+  label_user_mail_option_all: 收取我的项目的所有通知
+  label_user_mail_option_selected: 收取选中项目的所有通知...
+  label_user_mail_option_none: 不收取任何通知
+  label_user_mail_option_only_my_events: 只收取我跟踪或参与的项目的通知
+  label_user_mail_option_only_assigned: 只收取分配给我的
+  label_user_mail_option_only_owner: 只收取由我创建的
+  label_user_mail_no_self_notified: 不要发送对我自己提交的修改的通知
+  label_registration_activation_by_email: 通过邮件认证激活帐号
+  label_registration_manual_activation: 手动激活帐号
+  label_registration_automatic_activation: 自动激活帐号
+  label_display_per_page: 每页显示：%{value}
+  label_age: 提交时间
+  label_change_properties: 修改属性
+  label_general: 一般
+  label_more: 更多
+  label_scm: SCM
+  label_plugins: 插件
+  label_ldap_authentication: LDAP 认证
+  label_downloads_abbr: D/L
+  label_optional_description: 可选的描述
+  label_add_another_file: 添加其它文件
+  label_preferences: 首选项
+  label_chronological_order: 按时间顺序
+  label_reverse_chronological_order: 按时间顺序（倒序）
+  label_planning: 计划
+  label_incoming_emails: 接收邮件
+  label_generate_key: 生成一个key
+  label_issue_watchers: 跟踪者
+  label_example: 示例
+  label_display: 显示
+  label_sort: 排序
+  label_ascending: 升序
+  label_descending: 降序
+  label_date_from_to: 从 %{start} 到 %{end}
+  label_wiki_content_added: Wiki 页面已添加
+  label_wiki_content_updated: Wiki 页面已更新
+  label_group: 组
+  label_group_plural: 组
+  label_group_new: 新建组
+  label_time_entry_plural: 耗时
+  label_version_sharing_none: 不共享
+  label_version_sharing_descendants: 与子项目共享
+  label_version_sharing_hierarchy: 与项目继承层次共享
+  label_version_sharing_tree: 与项目树共享
+  label_version_sharing_system: 与所有项目共享
+  label_update_issue_done_ratios: 更新问题的完成度
+  label_copy_source: 源
+  label_copy_target: 目标
+  label_copy_same_as_target: 与目标一致
+  label_display_used_statuses_only: 只显示被此跟踪标签使用的状态
+  label_api_access_key: API访问键
+  label_missing_api_access_key: 缺少API访问键
+  label_api_access_key_created_on: API访问键是在 %{value} 之前建立的
+  label_profile: 简介
+  label_subtask_plural: 子任务
+  label_project_copy_notifications: 复制项目时发送邮件通知
+  label_principal_search: 搜索用户或组：
+  label_user_search: 搜索用户：
+  button_login: 登录
+  button_submit: 提交
+  button_save: 保存
+  button_check_all: 全选
+  button_uncheck_all: 清除
+  button_delete: 删除
+  button_create: 创建
+  button_create_and_continue: 创建并继续
+  button_test: 测试
+  button_edit: 编辑
+  button_edit_associated_wikipage: ! '编辑相关wiki页面: %{page_title}'
+  button_add: 新增
+  button_change: 修改
+  button_apply: 应用
+  button_clear: 清除
+  button_lock: 锁定
+  button_unlock: 解锁
+  button_download: 下载
+  button_list: 列表
+  button_view: 查看
+  button_move: 移动
+  button_move_and_follow: 移动并转到新问题
+  button_back: 返回
+  button_cancel: 取消
+  button_activate: 激活
+  button_sort: 排序
+  button_log_time: 登记工时
+  button_rollback: 恢复到这个版本
+  button_watch: 跟踪
+  button_unwatch: 取消跟踪
+  button_reply: 回复
+  button_archive: 存档
+  button_unarchive: 取消存档
+  button_reset: 重置
+  button_rename: 重命名/重定向
+  button_change_password: 修改密码
+  button_copy: 复制
+  button_copy_and_follow: 复制并转到新问题
+  button_annotate: 追溯
+  button_update: 更新
+  button_configure: 配置
+  button_quote: 引用
+  button_duplicate: 副本
+  button_show: 显示
+  status_active: 活动的
+  status_registered: 已注册
+  status_locked: 已锁定
+  version_status_open: 打开
+  version_status_locked: 锁定
+  version_status_closed: 关闭
+  field_active: 活动
+  text_select_mail_notifications: 选择需要发送邮件通知的动作
+  text_regexp_info: 例如：^[A-Z0-9]+$
+  text_min_max_length_info: 0 表示没有限制
+  text_project_destroy_confirmation: 您确信要删除这个项目以及所有相关的数据吗？
+  text_subprojects_destroy_warning: 以下子项目也将被同时删除：%{value}
+  text_workflow_edit: 选择角色和跟踪标签来编辑工作流程
+  text_are_you_sure: 您确定？
+  text_journal_changed: ! '%{label} 从 %{old} 变更为 %{new}'
+  text_journal_set_to: ! '%{label} 被设置为 %{value}'
+  text_journal_deleted: ! '%{label} 已删除 (%{old})'
+  text_journal_added: ! '%{label} %{value} 已添加'
+  text_tip_issue_begin_day: 今天开始的任务
+  text_tip_issue_end_day: 今天结束的任务
+  text_tip_issue_begin_end_day: 今天开始并结束的任务
+  text_caracters_maximum: 最多 %{count} 个字符。
+  text_caracters_minimum: 至少需要 %{count} 个字符。
+  text_length_between: 长度必须在 %{min} 到 %{max} 个字符之间。
+  text_tracker_no_workflow: 此跟踪标签未定义工作流程
+  text_unallowed_characters: 非法字符
+  text_comma_separated: 可以使用多个值（用逗号,分开）。
+  text_line_separated: 可以使用多个值（每行一个值）。
+  text_issues_ref_in_commit_messages: 在提交信息中引用和解决问题
+  text_issue_added: 问题 %{id} 已由 %{author} 提交。
+  text_issue_updated: 问题 %{id} 已由 %{author} 更新。
+  text_wiki_destroy_confirmation: 您确定要删除这个 wiki 及其所有内容吗？
+  text_issue_category_destroy_question: 有一些问题（%{count} 个）属于此类别。您想进行哪种操作？
+  text_issue_category_destroy_assignments: 删除问题的所属类别（问题变为无类别）
+  text_issue_category_reassign_to: 为问题选择其它类别
+  text_user_mail_option: 对于没有选中的项目，您将只会收到您跟踪或参与的项目的通知（比如说，您是问题的报告者, 或被指派解决此问题）。
+  text_no_configuration_data: 角色、跟踪标签、问题状态和工作流程还没有设置。\n强烈建议您先载入默认设置，然后在此基础上进行修改。
+  text_load_default_configuration: 载入默认设置
+  text_status_changed_by_changeset: 已应用到变更列表 %{value}.
+  text_time_logged_by_changeset: 已应用到修订版本 %{value}.
+  text_issues_destroy_confirmation: 您确定要删除选中的问题吗？
+  text_select_project_modules: 请选择此项目可以使用的模块：
+  text_default_administrator_account_changed: 默认的管理员帐号已改变
+  text_file_repository_writable: 附件路径可写
+  text_plugin_assets_writable: 插件的附件路径可写
+  text_rmagick_available: RMagick 可用（可选的）
+  text_destroy_time_entries_question: 您要删除的问题已经上报了 %{hours} 小时的工作量。您想进行那种操作？
+  text_destroy_time_entries: 删除上报的工作量
+  text_assign_time_entries_to_project: 将已上报的工作量提交到项目中
+  text_reassign_time_entries: 将已上报的工作量指定到此问题：
+  text_user_wrote: ! '%{value} 写到：'
+  text_enumeration_destroy_question: ! '%{count} 个对象被关联到了这个枚举值。'
+  text_enumeration_category_reassign_to: 将它们关联到新的枚举值：
+  text_email_delivery_not_configured: 邮件参数尚未配置，因此邮件通知功能已被禁用。/n请在config/configuration.yml中配置您的SMTP服务器信息并重新启动以使其生效。
+  text_repository_usernames_mapping: 选择或更新与版本库中的用户名对应的Redmine用户。/n版本库中与Redmine中的同名用户将被自动对应。
+  text_diff_truncated: ! '... 差别内容超过了可显示的最大行数并已被截断'
+  text_custom_field_possible_values_info: 每项数值一行
+  text_wiki_page_destroy_question: 此页面有 %{descendants} 个子页面和下级页面。您想进行那种操作？
+  text_wiki_page_nullify_children: 将子页面保留为根页面
+  text_wiki_page_destroy_children: 删除子页面及其所有下级页面
+  text_wiki_page_reassign_children: 将子页面的上级页面设置为
+  text_own_membership_delete_confirmation: 你正在删除你现有的某些或全部权限，如果这样做了你可能将会再也无法编辑该项目了。你确定要继续吗？
+  text_zoom_in: 放大
+  text_zoom_out: 缩小
+  default_role_manager: 管理人员
+  default_role_developer: 开发人员
+  default_role_reporter: 报告人员
+  default_tracker_bug: 错误
+  default_tracker_feature: 功能
+  default_tracker_support: 支持
+  default_issue_status_new: 新建
+  default_issue_status_in_progress: 进行中
+  default_issue_status_resolved: 已解决
+  default_issue_status_feedback: 反馈
+  default_issue_status_closed: 已关闭
+  default_issue_status_rejected: 已拒绝
+  default_doc_category_user: 用户文档
+  default_doc_category_tech: 技术文档
+  default_priority_low: 低
+  default_priority_normal: 普通
+  default_priority_high: 高
+  default_priority_urgent: 紧急
+  default_priority_immediate: 立刻
+  default_activity_design: 设计
+  default_activity_development: 开发
+  enumeration_issue_priorities: 问题优先级
+  enumeration_doc_categories: 文档类别
+  enumeration_activities: 活动（时间跟踪）
+  enumeration_system_activity: 系统活动
+  field_warn_on_leaving_unsaved: 当离开未保存内容的页面时，提示我
+  text_warn_on_leaving_unsaved: 若离开当前页面，则该页面内未保存的内容将丢失。
+  label_my_queries: 我的自定义查询
+  text_journal_changed_no_detail: ! '%{label} 已更新。'
+  label_news_comment_added: 添加到新闻的评论
+  button_expand_all: 展开所有
+  button_collapse_all: 合拢所有
+  label_additional_workflow_transitions_for_assignee: 当用户是问题的分配对象时所允许的问题状态转换
+  label_additional_workflow_transitions_for_author: 当用户是问题作者时所允许的问题状态转换
+  label_bulk_edit_selected_time_entries: 批量修改选定的时间条目
+  text_time_entries_destroy_confirmation: 是否确定要删除选定的时间条目？
+  label_role_anonymous: Anonymous
+  label_role_non_member: Non member
+  label_issue_note_added: 问题备注已添加
+  label_issue_status_updated: 问题状态更新
+  label_issue_priority_updated: 问题优先级更新
+  label_issues_visibility_own: 创建或分配给用户的问题
+  field_issues_visibility: 问题可见
+  label_issues_visibility_all: 全部问题
+  permission_set_own_issues_private: 设置自己的问题为公开或私有
+  field_is_private: 私有
+  permission_set_issues_private: 设置问题为公开或私有
+  label_issues_visibility_public: 全部非私有问题
+  text_issues_destroy_descendants_confirmation: 此操作同时会删除 %{count} 个子任务。
+  field_commit_logs_encoding: 提交注释的编码
+  field_scm_path_encoding: 路径编码
+  text_scm_path_encoding_note: ! '默认: UTF-8'
+  field_path_to_repository: 库路径
+  field_root_directory: 根目录
+  field_cvs_module: CVS Module
+  field_cvsroot: CVSROOT
+  text_mercurial_repository_note: 本地库 (e.g. /hgrepo, c:\hgrepo)
+  text_scm_command: 命令
+  text_scm_command_version: 版本
+  label_git_report_last_commit: 报告最后一次文件/目录提交
+  text_scm_config: 您可以在config/configuration.yml中配置您的SCM命令。 请在编辑后，重启Redmine应用。
+  text_scm_command_not_available: Scm命令不可用。 请检查管理面板的配置。
+  text_git_repository_note: 库中无内容。(e.g. /gitrepo, c:\gitrepo)
+  notice_issue_successful_create: 问题 %{id} 已创建。
+  label_between: 介于
+  setting_issue_group_assignment: 允许问题被分配给组
+  label_diff: diff
+  description_query_sort_criteria_direction: 排序方式
+  description_project_scope: 搜索范围
+  description_filter: 过滤器
+  description_user_mail_notification: 邮件通知设置
+  description_date_from: 输入开始日期
+  description_message_content: 信息内容
+  description_available_columns: 备选列
+  description_date_range_interval: 按开始日期和结束日期选择范围
+  description_issue_category_reassign: 选择问题类别
+  description_search: 搜索字段
+  description_notes: 批注
+  description_date_range_list: 从列表中选择范围
+  description_choose_project: 项目
+  description_date_to: 输入结束日期
+  description_query_sort_criteria_attribute: 排序方式
+  description_wiki_subpages_reassign: 选择父页面
+  description_selected_columns: 已选列
+  label_parent_revision: 父修订
+  label_child_revision: 子修订
+  error_scm_annotate_big_text_file: 输入文本内容超长，无法输入。
+  setting_default_issue_start_date_to_creation_date: 使用当前日期作为新问题的开始日期
+  button_edit_section: 编辑此区域
+  setting_repositories_encodings: 附件和版本库编码
+  description_all_columns: 所有列
+  button_export: 导出
+  label_export_options: ! '%{export_format} 导出选项'
+  error_attachment_too_big: 该文件无法上传。超过文件大小限制 (%{max_size})
+  notice_failed_to_save_time_entries: 无法保存下列所选取的 %{total} 个项目中的 %{count} 工时： %{ids}。
+  label_x_issues:
+    zero: 0 问题
+    one: 1 问题
+    other: ! '%{count} 问题'
+  label_repository_new: 新建版本库
+  field_repository_is_default: 主版本库
+  label_copy_attachments: 复制附件
+  label_item_position: ! '%{position}/%{count}'
+  label_completed_versions: 已完成的版本
+  text_project_identifier_info: 仅小写字母（a-z）、数字、破折号（-）和下划线（_）可以使用。<br />一旦保存，标识无法修改。
+  field_multiple: 多重取值
+  setting_commit_cross_project_ref: 允许引用/修复所有其他项目的问题
+  text_issue_conflict_resolution_add_notes: 添加说明并取消我的其他变更处理。
+  text_issue_conflict_resolution_overwrite: 直接套用我的变更 （先前的说明将被保留，但是某些变更内容可能会被覆盖）
+  notice_issue_update_conflict: 当您正在编辑这个问题的时候，它已经被其他人抢先一步更新过了。
+  text_issue_conflict_resolution_cancel: 取消我所有的变更并重新刷新显示 %{link} 。
+  permission_manage_related_issues: 相关问题管理
+  field_auth_source_ldap_filter: LDAP 过滤器
+  label_search_for_watchers: 通过查找方式添加跟踪者
+  notice_account_deleted: 您的账号已被永久删除（账号已无法恢复）。
+  setting_unsubscribe: 允许用户退订
+  button_delete_my_account: 删除我的账号
+  text_account_destroy_confirmation: 确定继续处理？/n您的账号一旦删除，将无法再次激活使用。
+  error_session_expired: 您的会话已过期。请重新登陆。
+  text_session_expiration_settings: 警告： 更改这些设置将会使包括你在内的当前会话失效。
+  setting_session_lifetime: 会话最大有效时间
+  setting_session_timeout: 会话闲置超时
+  label_session_expiration: 会话过期
+  permission_close_project: 关闭/重开项目
+  label_show_closed_projects: 查看已关闭的项目
+  button_close: 关闭
+  button_reopen: 重开
+  project_status_active: 已激活
+  project_status_closed: 已关闭
+  project_status_archived: 已存档
+  text_project_closed: 当前项目已被关闭。当前项目只读。
+  notice_user_successful_create: 用户 %{id} 已创建。
+  field_core_fields: 标准字段
+  field_timeout: 超时 (秒)
+  setting_thumbnails_enabled: 显示附件略缩图
+  setting_thumbnails_size: 略缩图尺寸 (像素)
+  label_status_transitions: 状态转换
+  label_fields_permissions: 字段权限
+  label_readonly: 只读
+  label_required: 必填
+  text_repository_identifier_info: 仅小写字母（a-z）、数字、破折号（-）和下划线（_）可以使用。<br />一旦保存，标识无法修改。
+  field_board_parent: 父论坛
+  label_attribute_of_project: 项目 %{name}
+  label_attribute_of_author: 作者 %{name}
+  label_attribute_of_assigned_to: 分配给 %{name}
+  label_attribute_of_fixed_version: 目标版本 %{name}
+  label_copy_subtasks: 复制子任务
+  label_copied_to: 复制到
+  label_copied_from: 复制于
+  label_any_issues_in_project: 项目内任意问题
+  label_any_issues_not_in_project: 项目外任意问题
+  field_private_notes: 私有注解
+  permission_view_private_notes: 查看私有注解
+  permission_set_notes_private: 设置为私有注解
+  label_no_issues_in_project: 项目内无相关问题
+  label_any: 全部
+  label_last_n_weeks: 上 %{count} 周前
+  setting_cross_project_subtasks: 支持跨项目子任务
+  label_cross_project_descendants: 与子项目共享
+  label_cross_project_tree: 与项目树共享
+  label_cross_project_hierarchy: 与项目继承层次共享
+  label_cross_project_system: 与所有项目共享
+  button_hide: 隐藏
+  setting_non_working_week_days: Non-working days
+  label_in_the_next_days: in the next
+  label_in_the_past_days: in the past
+  error_can_not_delete_auth_source: 此身份验证源正在使用中，无法删除。
+  field_versions: 里程碑
+  field_issue_to_id: 相关任务
+  permission_view_news: 查看新闻
+  permission_view_easy_attendances: 查看和使用的留言板
+  permission_edit_easy_attendances: 编辑记录在黑板上
+  permission_view_project_overview_users_query: 查看对项目overvie用户从文件管理器
+  label_no_change: 没有变化
+  label_change_to: 更改为：
+  option_only_selected: 唯一的选择
+  text_milestone_effective_date_from_issue: 生效日期调整表格任务：%{issue}
+  easyproject_name: EASY PROJECT 2013
+  easyproject_author: Easy Software
+  easyproject_author_url: http://www.easyproject.cz/en
+  easyproject_description: 管理信息系统项目管理。
+  project_module_easy_other_permissions: 他人
+  permission_create_project_from_template: 从模板创建项目
+  permission_create_project_template: 从项目创建模板
+  permission_edit_project_template: 编辑项目模板
+  permission_delete_project_template: 删除新的项目模板
+  permission_view_project_activity: 项目活动视图
+  permission_view_project_report: 项目统计视图
+  permission_action_duplicate_issue: 重复任务
+  permission_edit_own_issue: 自己的任务编辑
+  permission_view_restrictions_users: 选择用户查看评论
+  permission_view_personal_statement: 查看个人声明
+  permission_view_all_statements: 查看所有用户的表
+  permission_manage_page_project_overview: 管理项目概述
+  permission_supervisor: 管理项目是不是
+  permission_archive_project: 归档项目
+  permission_copy_project: 复制项目
+  permission_manage_my_page: 编辑我的网页
+  permission_view_bulk_time_entry: 散装时间进入
+  permission_manage_bulk_version: 散装版本管理
+  permission_manage_easy_project_relations: 管理项目的关系
+  permission_manage_easy_version_relations: 管理版本关系
+  permission_edit_issue_fixed_activity: 与一个固定的任务相关联的活动的改变
+  permission_view_easy_attendances_extra_info: 显示额外的信息（用户IP，...）
+  permission_edit_own_easy_attendances: 编辑自己的出席
+  permission_view_easy_attendance_other_users: 检视其他用户出席
+  heading_easy_user_working_time_calendar_index: 日历列表-工作时间
+  heading_easy_user_working_time_calendar_show: 日历%{calendarname}
+  heading_easy_user_working_time_calendar_edit: 编辑日历的基本属性
+  heading_easy_user_working_time_calendar_new: 新日历
+  heading_easy_user_working_time_calendars_holiday_index: 假日指数
+  heading_easy_user_working_time_calendars_holiday_edit: 编辑假日
+  heading_easy_user_working_time_calendars_holiday_new: 新的假日
+  heading_layout_from_template_selecting_projects: 选择的项目申请模板
+  heading_layout_from_template_selecting_users: 用于施加模板的用户的选择
+  heading_project_mass_copy_select_source_project: 选择源项目
+  heading_project_mass_copy_select_target_projects: 选择目标项目
+  heading_project_mass_copy_select_actions: 选择操作，您可以复制
+  heading_easy_issues_preview_external_email: 发送外部邮件
+  label_simple_add_project_task: 项目
+  label_simple_add_project_task_on_project: 子项目
+  label_done: 完成
+  label_issue_due_date: 到期日的时间
+  label_show_user_info: 上显示inforamtions人们%{username}。
+  label_show_assigned_issues: 显示任务分配给用户%{username}。
+  label_budget_draw: 预算抽奖
+  label_user_new_issue: 为用户创建新任务%{username}。
+  label_user_saved_query: 显示用户的过滤器%{queryname}。
+  label_show_project_info: 显示项目信息%{projectname}。
+  label_show_issue_info: 显示任务%{issuename}详细信息。
+  label_templates_plural: 项目模板
+  label_news_unread: 未读消息
+  label_new_project_name: 新项目名称
+  label_template_new: 从模板的新项目
+  label_easy_page_module_settings_missing: 请保存模块。
+  label_my_page_project_query_select: 保存的过滤器：
+  label_my_page_issue_query_select: 保存的过滤器：
+  label_my_page_user_query_select: 保存的过滤器：
+  label_my_page_project_output_select: 输出格式：
+  label_my_page_issue_output_select: 输出格式：
+  label_my_page_user_output_select: 输出格式：
+  label_my_page_issue_query: 保存的过滤器
+  label_my_page_issue_query_new_before: 您可以创建新的过滤器，任务列表或
+  label_my_page_issue_query_new_link: 这里
+  label_my_page_issue_query_new_after: 。
+  label_my_page_projects_row_count: 项目数：
+  label_my_page_issue_row_count: 任务数：
+  label_my_page_document_row_count: 文件数量：
+  label_my_page_users_row_count: 用户数：
+  label_my_page_news_row_count: 消息：
+  label_my_page_users_filter_visible: 显示选项筛选项目概况：
+  label_my_page_issue_enable_text_editor: 启用文本编辑器：
+  label_my_page_issue_show_fields_option_part1: 显示
+  label_my_page_issue_show_fields_option_part2: 表单域。
+  label_my_page_projects_query_settings_missing: 请更正模块的设置。
+  label_my_page_projects_query_select: 保存的过滤器：
+  label_my_page_document_query_select: 保存的过滤器：
+  label_my_page_projects_query: 保存的过滤器
+  label_my_page_projects_query_new_before: 项目列表中，您可以创建新的过滤器或
+  label_my_page_projects_query_new_link: 这里
+  label_my_page_projects_query_new_after: 。
+  label_my_page_issues_rss_reader: 从另一台服务器的任务
+  label_my_page_issues_rss_reader_url: 来源：
+  label_my_page_issues_rss_reader_row_limit: 传承：
+  label_my_page_issues_rss_reader_loading: 请稍候，装载数据。
+  label_my_page_google_maps_iframe_tag: HTML嵌入标签
+  label_version_show_closed_issues: 显示闭合的任务。
+  label_easy_pages_project_administration: 页面个性化
+  label_easy_pages: 个性化的页面列表
+  label_easy_page_zone: 区
+  label_easy_page_zones: 区域上页%{pagename}
+  label_easy_page_new: 新页面
+  label_easy_page_edit: 编辑页面
+  label_easy_page_zones_view: 页面区域概述
+  label_easy_page_zone_new: 区
+  label_easy_page_zone_edit: 编辑区
+  label_easy_page_zone_show: 显示区%{zonename}
+  label_easy_page_modules: 模块中区
+  label_easy_page_user_modules: 模块上页%{pagename}
+  label_personalize_user_page: 编辑或添加模块
+  label_personalize_user_page_from_layout: 覆盖页面的默认设置。
+  label_easy_page_templates: 列表页的模板%{pagename}
+  label_easy_page_templates_new: 新的模板
+  label_easy_page_template_new: 新的页面模板%{pagename}
+  label_easy_page_template_edit: 编辑页面模板%{pagename}
+  label_easy_page_user_layout_modules: 模块布局上页
+  label_easy_page_template_user_modules: 模块布局模板%{templatename}
+  label_easy_page_template_show: 模块布局
+  label_select_page_template: 选择页面模板：
+  label_select_my_page_template: 选择我的页面模板
+  label_easy_page_zones_new_assignments: 区到第页
+  label_easy_page_assign_zone: 添加到页面布局的区%{pagename}
+  label_select_page_assign_zone: 选择区域：
+  label_easy_page_no_zones: 没有区域的定义。
+  label_easy_page_no_pages: 页没有定义编辑。
+  label_easy_page_module_select: 从列表中选择模块：
+  label_user_my_page: 我的页面
+  label_project_custom_fields: 项目自定义字段
+  label_project_no_custom_fields: 没有项目的自定义字段。
+  label_easy_page_module_empty: ! '%{modulename}不能显示的模板。添加特定页面纠正。'
+  label_easy_page_module_missing: ! '%{modulename}因为不存在，不能被显示。'
+  label_project_templates_update_dates: 更新所有的项目数据该院项目开始日期。
+  label_user_saved_projectquery: 显示用户过滤器%{queryname}。
+  label_new_project_from_template: 从模板的新项目
+  label_easy_my_page_template_to_all: 模板应用到所有用户
+  label_custom_field_computed_string: 计算领域 - 文本
+  label_custom_field_computed_integer: 计算领域 - 整数
+  label_custom_field_computed_float: 计算领域 - 十进制数
+  label_custom_field_computed_date: 计算领域 - 日期
+  label_custom_field_computed_boolean: 计算领域 - 是/否
+  label_my_page_timelog_calendar: 时间表
+  label_my_page_timelog_calendar_period_select: 日历期间：
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: 小时
+  label_restrictions_users: 仅显示
+  label_timelog_view_all: 整个语句工作时间
+  label_personal_statement: 个人陈述
+  label_log_time: 散装时间进入
+  label_issue_assigned_to_users: 用户：
+  label_issue_assigned_to_groups: 群组：
+  label_last_year: 去年
+  label_template_to_selected_projects: 应用模板的项目
+  label_template_to_selected_users: 应用模板用户
+  label_my_page_timelog_simple_day_limit: 显示天
+  label_error_project_query: 有一个错误处理过滤器。请报告这个错误，您的系统管理员。
+  label_project_description: 描述
+  label_easy_lookup: 查找
+  label_custom_field_settings_entity_type: 实体
+  label_custom_field_settings_entity_attribute: 属性
+  label_link_with: 链接%{attribute}
+  label_issue_new_relation_before: 此任务
+  label_issue_new_relation_after: 任务：
+  label_project_new_relation_before: 该项目
+  label_project_new_relation_after: 项目：
+  label_version_new_relation_before: 这个版本
+  label_version_new_relation_after: 版本：
+  label_parenttask_plural: 父任务
+  label_revert_to_version: 恢复到这个版本
+  label_project_overview_project_info: 项目概况：
+  label_easy_user_queries_plural: 用户
+  label_menu_more: 更多
+  label_project_index: 项目列表
+  label_issue_index: 任务列表
+  label_issue_static_attributes_heading: 基本属性：
+  label_issue_updatable_attributes_heading: 附加属性：
+  label_issue_attachments_heading: 附件：
+  label_issue_watchers_heading: 同事们：
+  label_document_category_read_role: 在这个类别读取文件的权限
+  label_document_category_manage_role: 在此类别管理权限的文件
+  label_document_category_custom_roles_n: 使用默认设置
+  label_document_category_custom_roles_y: 使用自定义设置
+  label_datetime_custom_field_tag_hour: 小时
+  label_datetime_custom_field_tag_minute: 分钟。
+  label_datetime_custom_field: 日期和时间
+  label_menu_project_template: （模板）
+  label_with_non_shared_versions: 非共享的里程碑子项目
+  label_project_copy_tracker_issues:
+    zero: 没有任务
+    one: 1任务
+    two: 2个任务
+    three: 3个任务
+    four: 4个任务
+    other: ! '%{count}任务'
+  label_top_ten_projects: 最近10个项目
+  label_activity_all: 所有
+  label_working_time: 工作时间
+  label_admin_easy_user_working_time_calendars: 工作时间 - 模板
+  label_easy_user_working_time_calendar_explanatory_notes: 注释：
+  label_easy_user_working_time_calendar_explanatory_notes_default: 普通工作日
+  label_easy_user_working_time_calendar_explanatory_notes_today: 今天
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: 周末
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: 节日
+  label_easy_user_working_time_calendar_explanatory_notes_exception: 工作异常
+  label_easy_user_working_time_calendar_none: 用户没有选择任何工作时间的日历。
+  label_easy_user_working_time_calendar_default_time: 默认工作时间%{count}小时，每一天。
+  label_easy_user_working_time_calendar_change_calendar: 更改工作时间日历：
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: 从选定的日历，保存工作时间​​异常
+  label_easy_user_working_time_calendar_settings: 设置
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: 复制从
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: 复制的例外
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: 复制假期
+  label_easy_user_working_time_mass_exceptions: 质量例外
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: 设置工作小时数
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: 为每
+  label_easy_query_settings: 过滤器设置
+  label_field_format_autoincrement_from_to: ! '-'
+  label_field_format_autoincrement_entity_limitation: 自动计数：
+  label_project_templates_custom_fields: 项目自定义字段设置
+  label_source_project: 源项目
+  label_target_projects: 目标项目
+  label_easy_page_modules_on_project_overview: 模块项目概况
+  label_project_templates_change_issues_author: 更改作者的所有任务
+  label_easy_system_flag: （不显示在项目的成员等）
+  label_timelog_comment_editor_enabled: 在编写报告时，使用编辑器对此事发表评论？
+  label_time_entry_spent_on_at_issue_update_enabled: 设定日期登记者的时间来更新的任务吗？
+  label_user_form_other_settings: 其他选择
+  label_user_copy_roles_from: 应用从用户的角色和权限
+  label_easy_page_tab_default_name: 标签%{count}
+  label_mass_copy_select_actions: 复制（选择的行动将被删除，不是复制）：
+  label_select_none_assignee: “没有受让人>>
+  label_select_no_change_assignee: “没有变化受让人>>
+  label_unread_entity: 未读
+  label_switch_to_mobile_version: 移动页面
+  label_switch_to_full_version: 桌面页
+  label_default_project_page: 默认的项目页面
+  label_too_many_mambers: 有太多的用户，请使用“搜索”：
+  label_gantt_pdf_date: 开始日期
+  label_gantt_show_all_versions: 所有里程碑
+  label_gantt_versions_above: 上述任务的里程碑
+  label_custom_field_settings_multiple: 多种
+  label_last_user_assigned_to: “最后受让人”
+  label_author_assigned_to: “作者>>
+  label_default_color_schema: 默认颜色
+  label_template_easy_start_date: 设置项目的启动日期
+  label_templates_easy_start_date: 设置项目的启动日期
+  label_eqdt: ''
+  label_bulk_time_entries: Bulk time entry
+  label_bulk_time_add_another: 添加另一个
+  label_bulk_time_flash_project: 项目名称：
+  label_bulk_time_flash_issue: 任务：
+  label_bulk_time_flash_comment: 点评：
+  label_bulk_time_flash_user: 用户名：
+  label_bulk_time_flash_hours: 时间：
+  label_bulk_time_flash_spent_on: 日期：
+  label_issue_priority: 任务优先级
+  label_issue_priority_plural: 任务的优先级
+  label_amount: 量
+  label_version_update_database: 移动的所有任务吗？
+  label_my_issues_plural: 我的
+  label_other_issues_plural: 其他
+  label_projectquery_plural: 项目过滤器
+  label_userquery_plural: 用户过滤器
+  label_related_projects: 相关项目
+  label_related_versions: 产品版本
+  label_add_related_issues: 添加相关的任务
+  label_add_related_projects: 添加相关的项目
+  label_add_related_versions: 相关的版本
+  label_preceding: 之前
+  label_following: 以下
+  label_send_email_to_all_users: 所有的用户发送电子邮件至
+  label_updated_on: 更新日期：
+  label_less: 少
+  label_project_info_time_entry: ! '%{value}Ĥ'
+  label_group_by: 集团通过%{value}
+  label_period_past: 过去
+  label_period_present: 目前
+  label_period_future: 未来
+  label_to_today: 今天
+  label_after_due_date: 截止日期后
+  label_next_n_days: 下%{days}天
+  label_next_week: 下周
+  label_next_month: 下个月
+  label_next_year: 明年
+  label_tomorrow: 明天
+  label_user_role_select: 为角色：
+  label_document_global: 文件
+  label_milestone_sharing_info: 注释：
+  label_milestone_sharing_info_none: 在创建项目里程碑上使用。
+  label_milestone_sharing_info_descendants: 创建项目和子项目里程碑。
+  label_milestone_sharing_info_hierarchy: 里程碑上使用的项目中创建的，其父母和其子项目。
+  label_milestone_sharing_info_tree: 里程碑上使用的项目中创建，所有的项目，有一个共同的上级的任何项目。
+  label_milestone_sharing_info_system: 在所有项目中使用的里程碑。
+  label_autoincrement: AUTOINCREMENT
+  label_quick_search: 快速搜索
+  label_search_result_journal_header: 杂志中的搜索字符串（%{count}）：
+  label_journal_as_search_result: 日志
+  label_not_available: N / A
+  label_search_entities: 搜索：
+  label_fixed_version: 目标里程碑
+  label_easy_color_schemes: 选择颜色方案：
+  label_issue_color_scheme_for: 用户的配色方案：
+  label_easy_setting_new_subproject_user_role_id: 给一个非管理员用户创建一个子项目的角色
+  label_easy_setting_new_subproject_user_role_id_info: （合适的情况下，当用户有权限只创建子项目）
+  label_easy_setting_attachment_description: 附件说明
+  label_easy_setting_attachment_description_required: 需要
+  label_easy_setting_attachment_description_enabled: 启用
+  label_easy_setting_attachment_description_disabled: 禁用
+  label_issue_by_unassigned_to: 未分配
+  label_issue_notice_recipients: E-mail发送到：
+  label_email: 电子邮件
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: 开始工作时间
+  label_easy_user_working_time_calendar_time_to: 工作结束时间
+  label_issue_open_plural: 问题 - 开放
+  label_issue_close_plural: 问题 - 关闭
+  label_easy_version_queries_plural: 里程碑
+  label_issues_assigned_to_me_visible_issues_assigned: 只有我被分到的任务。
+  label_issues_assigned_to_me_visible_issues_conserns: 我是作者，或转让或同事的任务。
+  label_match_starting_dates: 设置的项目开始日期的任务，
+  label_next_issue: 下一个任务
+  label_previous_issue: 上一任务
+  label_issue_automatic_recalculate_attributes: 从子任务自动变化%{issue_id}
+  label_easy_query_export_links: 出口
+  label_easy_attendance_spent_time: 耗时
+  label_easy_attendance_plural: 出席
+  label_easy_attendance_queries_plural: 出席
+  label_easy_google_maps_address: ! '- 谷歌地图'
+  label_day:
+    zero: '0'
+    one: 1天
+    other: ! '%{count}天'
+    two: ! '%{count}天'
+    three: ! '%{count}天'
+    four: ! '%{count}天'
+    half: ! '%{count}日'
+  button_context_menu: 显示快速任务菜单。
+  button_attachment_context_menu: 显示的版本历史记录。
+  button_new_project_from_template: 创建新项目
+  button_new_template_from_project: 创建新模板
+  button_create_project_from_template: 创建新项目
+  button_template_restore_project: 恢复项目
+  button_easy_page_templates: 模板概述
+  button_save_easy_page: 保存页面，回去
+  button_edit_projectquery: 编辑筛选器
+  button_delete_projectquery: 删除过滤器
+  button_apply_projectquery: 使用
+  button_clear_projectquery: 默认的过滤器
+  button_save_projectquery: 保存
+  button_timelog_calendar_new: 添加时间
+  button_uninstall: 卸载
+  button_easy_lookup_modal_selector_assign: 分配选择
+  button_new_issue_relation: 添加相关的任务
+  button_issue_put_between: 把之间
+  button_new_subtask: 添加子任务
+  button_easy_lookup_modal_close: 关闭
+  button_go_up: UP
+  button_issue_create: 保存任务
+  button_issue_create_and_continue: 保存并继续
+  button_issue_update: 更新任务：
+  button_issue_submit: 保存更新
+  button_gantt_issue_update: 更新任务
+  button_gantt_issue_update_plural: 更新
+  button_easy_user_working_time_calendar_show: 详细的日历
+  button_easy_user_working_time_calendars_new: 新日历
+  button_easy_user_working_time_calendar_holidays: 假期
+  button_easy_user_working_time_calendar_holidays_new: 新的假日
+  button_easy_user_working_time_back_to_calendar: 返回到日历
+  button_easy_user_working_time_back_to_calendars: 备份的日历
+  button_easy_user_working_time_reset_to_parent: 复位日历起源
+  button_easy_user_working_time_parent: 转到父日历
+  button_check_subprojects: 检查子项目
+  button_uncheck_subprojects: 取消选中子项目
+  button_check_rootprojects: 检查根项目
+  button_uncheck_rootprojects: 取消选中根项目
+  button_edit_user_profile: 编辑个人资料
+  button_project_mass_copy: 质量变化
+  button_choose_actions: 选择行动
+  button_down: 下
+  button_check_and_uncheck_subprojects: 选中/取消选中子项目
+  button_gantt_show_sidebar: 显示已保存的过滤器
+  button_gantt_hide_sidebar: 隐藏保存的过滤器
+  button_easy_page_add_tab: 新增标签
+  button_manage_versions: 管理的里程碑
+  button_mobile_saved_filters: 保存的过滤器
+  button_edit_anonymous_user: 编辑匿名用户
+  button_back_to_calendar: 返回到日历
+  button_bulk_time_save_and_continue: 保存并添加新条目
+  button_gantt_zoom_day: 日
+  button_gantt_zoom_week: 周
+  button_gantt_zoom_month: 月
+  button_fullscreen: 全屏幕
+  button_fullscreen_close: X
+  button_add_and_close: 添加并关闭
+  button_generate_rss_key: 生成RSS关键“
+  button_generate_api_key: 生成的API密钥
+  button_back_to_top: 返回页首
+  button_advanced_search: 高级搜索
+  button_my_page_google_maps_url_helper: 从谷歌地图加入帮助
+  button_timelog_calendar_prev:
+    week: 上星期
+    month: 上月
+  button_timelog_calendar_next:
+    week: 下周
+    month: 下个月
+  button_send_email: 发送邮件
+  button_dont_send_email: 不要发送邮件
+  button_link_easy_google_map_address: 在谷歌地图中显示
+  title_button_template: 从项目创建模板%{projectname}。
+  title_button_template_create_project: 从模板创建项目。
+  title_button_template_restore_project: 编辑项目模板。
+  title_project_new_issue: 将任务添加到项目%{projectname}
+  title_project_edit: 编辑项目
+  title_project_show: 显示项目%{projectname}
+  title_other_formats_links_atom: 上传到RSS阅读器。
+  title_other_formats_links_csv: CSV文件保存到磁盘。
+  title_other_formats_links_pdf: PDF文件保存到磁盘。
+  title_other_formats_links_png: PNG文件保存到磁盘。
+  title_other_formats_links_ics: 保存到磁盘作为ICS（Outlook）的文件。
+  title_other_formats_links_ics_outlook: 订阅这个列表从MS Outlook日历的任务。
+  title_easy_page_zones_view: 通过点击显示页面区域概述。
+  title_easy_page_zone_edit: 通过点击编辑区。
+  title_easy_page_zone_show: 通过单击“显示区。
+  title_easy_page_zone_modules: 点击显示模块。
+  title_personalize_user_page: 你可以通过点击个性化这个页面。
+  title_personalize_user_page_from_layout: 单击“选择页面模板，该模板将取代实际的布局。
+  title_easy_page_templates: 通过点击显示页面的模板列表。
+  title_easy_page_templates_new: 单击创建新的模板。
+  title_easy_page_user_layout_modules: 点击显示模块布局。
+  title_easy_page_template_show: 通过单击“显示模块布局模板。
+  title_easy_page_zones_new_assignments: 通过单击添加到页面布局的新区域。
+  title_button_save_easy_page: 点击保存并返回。
+  title_my_page_issue_query_new_link: 按一下从任务列表中创建新的过滤器。
+  title_edit_projectquery: 通过点击用户过滤器编辑页面。
+  title_delete_projectquery: 单击“删除”实际用户过滤器。
+  title_apply_projectquery: 点击使用预先设定的项目过滤器。
+  title_clear_projectquery: 通过点击重新启动过滤器的默认设置。
+  title_save_projectquery: 点击保存预先设定的过滤器进一步使用。
+  title_new_project_from_template: 通过点击模板列表。
+  title_easy_my_page_template_to_all: APLY此模板的所有用户。
+  title_timelog_calendar_new: 通过单击添加到选定的日期。
+  title_template_to_selected_projects: 应用模板的项目
+  title_template_to_selected_users: 应用模板用户
+  title_easy_lookup_modal_selector_assign: 通过点击，你可以将选定的项目。
+  title_button_edit: 你可以通过点击编辑此条目。
+  title_button_delete: 按一下就可以删除该条目。
+  title_new_issue_relation: 添加相关的任务。
+  title_new_subtask: 添加子任务。
+  title_logo: 点击进入我的网页。
+  title_delete: 单击“删除项目”。
+  title_delete_selected: 单击“删除选定的项目。
+  title_go_up: 点击进入到页面顶部。
+  title_says: 说：
+  title_project_copy_tracker_issues: 按一下变化问题的跟踪。
+  title_user_profile: 点击显示%{username}的个人资料。
+  title_easy_user_working_time_calendar_show: 通过点击，您可以编辑日历天。
+  title_easy_user_working_time_calendars_new: 通过点击，您可以创建一个新的日历。
+  title_easy_user_working_time_calendar_holidays: 通过点击，您可以管理的假期。
+  title_easy_user_working_time_calendar_holidays_new: 通过点击，您可以创建一个新的节日。
+  title_easy_user_working_time_back_to_calendar: 通过点击，你可以回去日历。
+  title_easy_user_working_time_back_to_calendars: 通过点击，你就可以回去的日历。
+  title_easy_user_working_time_calendars_inline_edit: 你可以通过点击添加例外。
+  title_easy_user_working_time_calendars_inline_save: 通过点击，你可以保存例外。
+  title_easy_user_working_time_calendars_inline_close: 按一下，就可以关闭编辑例外。
+  title_easy_user_working_time_reset_to_parent: 按一下就可以删除所有当前的异常，并设置日历从父状态。
+  title_easy_user_working_time_parent: 通过点击，你可以去到父日历。
+  title_edit_user_profile: 您可以通过点击编辑您的个人资料。
+  title_easy_page_add_tab: 通过点击，您可以添加新的标签。
+  title_last_journal_link: 显示上杂志的问题。
+  title_edit_anonymous_user: 你可以通过点击编辑匿名用户。
+  title_fullscreen: 显示全屏
+  title_download_attachment: 下载文件
+  title_show_attachment: 显示文件的内容
+  title_timelog_calendar_prev:
+    week: 按一下去前一周。
+    month: 按一下去前一个月。
+  title_timelog_calendar_next:
+    week: 通过点击到下周。
+    month: 按一下去到下个月。
+  title_easy_modal_selector_trigger:
+    issue: 单击从列表中选择任务。
+    project: 单击从列表中选择项目。
+    version: 单击以选中从列表中的里程碑。
+    user: 单击“从列表中选择用户。
+    group: 单击从列表中选择组。
+    document: 单击“从列表中选择文件。
+  project_template:
+    label_name: 模板名称
+    label_new_project: 新项目的名称
+  sidebar_all_users_queries: 工人的任务
+  sidebar_issue_button_update: 新增笔记或编辑任务
+  sidebar_issue_button_log_time: 花费的时间
+  sidebar_issue_button_duplicate: 重复任务
+  sidebar_issue_button_copy: 复制任务
+  sidebar_issue_button_move: 移动任务
+  sidebar_issue_button_delete: 删除任务
+  sidebar_issue_spent_time: 任务花费的时间概述
+  sidebar_issue_info: 任务信息
+  sidebar_issues_buttons: Harmonogram
+  sidebar_project_info: 项目信息
+  sidebar_project_spent_time: 项目花费的时间概述
+  sidebar_project_members: 项目团队
+  sidebar_budget_costs_info: 成本
+  sidebar_project_family_info: 项目树
+  field_easy_due_date: 到期日期。
+  field_easy_start_date: 开始日期
+  field_spinned: 坚持在上面
+  field_zone_name: 区域名称
+  field_page_name: 页面名称
+  field_is_primary: 主要
+  field_show_empty: 显示空字段
+  field_show_on_list: 在列表中显示
+  field_predicted_cost: 预算
+  field_computed_token: 公式
+  field_member: 项目成员
+  field_groups: 组
+  field_roles: 角色
+  field_xproject: 项目
+  field_cached_group_names: 组
+  field_parent_user: 优越
+  field_template_name: 模板名称
+  field_parent_project: 父项目
+  field_root: 主要项目
+  field_main_project: 主要项目
+  field_sum_of_timeentries: 耗时
+  field_remaining_timeentries: 剩余时间
+  field_completed_percent: ％完成
+  field_attachment_created_on: 附件 - 创建
+  field_user_roles: 角色
+  field_show_on_more_form: 显示“更多”
+  field_spent_estimated_timeentries: ％耗时
+  field_easy_system_flag: 系统组
+  field_easy_global_rating: 全球评级
+  field_id: ID
+  field_at_work: 在工作​​吗？
+  field_arrival: 未来
+  field_departure: 出发
+  field_easy_attendance_activity: 活动
+  field_arrival_user_ip: 到达IP
+  field_departure_user_ip: 出发IP
+  field_color_schema: Barevné的架构
+  field_group: 用户组
+  field_rss_key: RSS关键
+  field_api_key: API密钥
+  field_global_fixing_activity: 项目的任务是预设的活动。
+  field_project_fixed_activity_true: 创建任务时，预先选定的活动。
+  field_project_fixed_activity_false: 写作时，可以选择时间的活动。
+  field_user_time_entry_setting: 报名时间：
+  field_easy_range_from: 耗时通过
+  field_easy_range_to: 花时间在
+  field_easy_range_form_to: 在
+  field_enable_activity_roles: 将activitites分配给角色
+  field_limit_assignable_users: 问题只能返回作者
+  field_easy_version_category_id: 类别
+  field_easy_version_category: 类别
+  field_relations_from: 关系
+  field_created_at: 创建
+  field_updated_at: 编辑
+  field_easy_send_invitation: 通过电子邮件发送邀请
+  field_easy_do_not_allow_close_if_subtasks_opened: 如果打开子任务，不要让关闭任务
+  field_easy_do_not_allow_close_if_no_attachments: 不要让关闭的任务，除非附加文件
+  field_easy_issue_prefix: 任务前缀
+  field_send_to_external_mails: 发送更新的邮件？
+  field_attachments: 附件
+  field_ckeditor_toolbar_config: HTML编辑器工具栏
+  status_archived: 归档
+  filter_active: 活跃
+  notice_successful_create_template: 成功地创建模板。
+  notice_successful_create_project_from_template: 项目已成功创建。
+  notice_failed_create_project_from_template: 项目没有被创建：%{errors}
+  notice_almost_successful_create_project_from_template: 创建没有完整的项目复制的项目。
+  notice_successful_restore_template: 模板已成功恢复。
+  notice_template_successful_applied: 模板已成功应用。
+  notice_plugin_successful_uninstall: 插件%{plugin}成功删除了，现在需要重新启动您的Web服务器。
+  notice_project_successful_archive: 项目已成功地归档。
+  notice_failed_to_update: 在节能的错误。
+  notice_project_successful_unarchive: 项目存档。
+  error_invalid_authenticity_token: 页面过期。
+  error_rss_reader_timeout: 在设定（页面没有连接，请确保您有正确的任务的来源;的来源目前存在的问题，不能简单的项目！）的错误。
+  error_rss_reader_bad_url: 错误的设置（页当前没有连接，请确保您有正确的任务的来源）。
+  error_rss_reader_old_ep: 错误的任务设置（来源必须是简单的项目2012及更高版本）。
+  error_validates_max_size: 文件过大
+  error_custom_value_autoincrement_greater: 必须大于%{count}
+  error_custom_value_autoincrement_equal: 必须要%{count}
+  error_can_not_unarchive_project: 不能未归档的项目。
+  error_can_not_delete_project: 项目不能被删除。
+  error_can_not_delete_project_template: 项目模板不能被删除。
+  error_can_not_create_project_template: 从项目创建项目模板的过程中发生错误%{projectname}。
+  error_bulk_update_save: ! '%{count}对象不能保存。'
+  error_no_file_selected_to_upload: 没有选择文件上传。
+  error_cannot_close_issue_due_to_subtasks: 任务不能被关闭，因为包含打开的任务：%{issues}
+  error_cannot_close_issue_due_to_no_attachments: 任务不能被关闭，因为没有附件
+  confirm_admininstration_display_all_project: 所有项目都需要很长的时间。你要继续吗？
+  text_commit_example_1: 文献＃1523 @ 5h30m日历整理
+  text_commit_example_2: 登录时间5小时30分钟的任务。 1523
+  text_easy_settings_time_entry_heading: 花了时间限制
+  text_easy_settings_time_entry_limit: 允许添加/编辑时间
+  text_easy_settings_time_entry_limit_note: 如果你想禁止时间限制，这些文本框为空。
+  text_easy_settings_time_entry_limit_past: 几天过去
+  text_easy_settings_time_entry_limit_future: 天的未来
+  setting_issue_recalculate_attributes: 创建子任务的影响母公司的任务（优先级，估计的时间，％完成，开始日期和截止日期）
+  my_page_timelog_calendar_period:
+    month: 每月一次
+    week: 每周
+  easy_pages:
+    pages:
+      my_page: 我的页面
+      project_overview: 项目 - 网站首页
+    pages_description:
+      my_page: 我的页面
+      project_overview: 项目 - 网站首页
+    modules:
+      issues_create_new: 新任务
+      issue_query: 从过滤器的任务
+      projects_query: 从过滤器项目
+      documents: 文件
+      issues_assigned_to_me: 我的任务
+      issues_reported_by_me: 我的任务报道
+      issues_watched_by_me: 我的任务观看
+      my_calendar: 我的日历
+      my_projects_simple: 项目列表
+      news: 新闻
+      saved_queries: 保存的过滤器列表
+      timelog_simple: 时间使用
+      timelog_calendar: 时间日志日历
+      issues_rss_reader: 从另一台服务器的任务
+      project_news: 新
+      project_tree: 子项目
+      project_sidebar_all_users_queries: 工人的任务
+      project_sidebar_project_info: 项目信息
+      project_sidebar_project_members: 项目组成员
+      project_sidebar_saved_queries: 保存的过滤器
+      project_issues: 任务
+      noticeboard: 布告
+      project_sidebar_family_info: 项目树
+      project_info: 项目信息
+      attendance: Attendace
+      users_query: 项目组从过滤器
+      resource_availability: 资源可用性
+      google_maps: 谷歌 Maps
+      project_history: 项目历史
+    module_category:
+      calendars: 日历
+      issues: 任务
+      lists: 列表
+      others: 他人
+      projects: 项目
+      project_sidebar: 边栏
+      timelog: 时间使用
+      users: 用户
+      redmine: 项目管理平台
+    zones:
+      top_left: 左上图
+      top_middle: 顶部中间
+      top_right: 右上图
+      middle_left: 左中
+      middle_middle: 中间
+      middle_right: 中间偏右
+      bottom_left: 左下角
+      bottom_middle: 底部中间
+      bottom_right: 右下图
+      right_sidebar: 侧边栏右侧
+    zones_description:
+      top_left: 描述
+      top_middle: 描述
+      top_right: 描述
+      middle_left: 描述
+      middle_middle: 描述
+      middle_right: 描述
+      bottom_left: 描述
+      bottom_middle: 描述
+      bottom_right: 描述
+      right_sidebar: 描述
+  label_my_page_project_output:
+    list: 表
+    calendar: 日历
+  label_my_page_issue_output:
+    list: 表
+    calendar: 日历
+  select_easy_page_module_project_info:
+    label: 要查看的属性
+    description: 描述
+    customfields: 项目自定义字段
+  easy_page_module:
+    project_query:
+      adhoc_query: AD-HOC的过滤器名称
+      adhoc_query_default_text: 过滤器名称
+    issue_query:
+      adhoc_query: AD-HOC的过滤器名称
+      adhoc_query_default_text: 过滤器名称
+    document_query:
+      adhoc_query: AD-HOC的过滤器名称
+      adhoc_query_default_text: 过滤器名称
+    user_query:
+      adhoc_query: AD-HOC的过滤器名称
+      adhoc_query_default_text: 过滤器名称
+    attendance:
+      adhoc_query: AD-HOC的过滤器名称
+      adhoc_query_default_text: 我出席
+    resource_availability:
+      label_resource_name: 资源名称
+      label_day_start_time: 开始时间
+      label_day_end_time: 结束时间
+      label_set_available: 设置为可用
+      label_set_unavailable: 设置为“不可用”
+      label_available: 可用的
+      label_unavailable: 无法使用
+      label_set_day_available: 设置为可供全日
+      label_set_day_unavailable: 设置为不可用整整一天
+      label_description_prompt: 请键入一个原因：
+    new_issue:
+      field: 领域
+      show: 显示
+      default_value: 默认值（空白表示没有变化）
+    project_history:
+      heading_project_edit_custom_fields: 编辑项目的自定义字段
+  menu:
+    admin:
+      easy_pages_administration: 页面个性化
+  breadcrumb:
+    label:
+      easy_pages_administration: 页面个性化
+      easy_page_templates: 页面模板%{pagename}
+      easy_page_new: 新页面
+      easy_page_show: 模块上页%{pagename}
+      easy_page_edit: 页%{pagename}编辑
+      easy_page_templates_edit: 模板%{templatename}编辑
+      easy_page_templates_new: 新的页面模板
+      easy_page_template_view: 模块布局
+      easy_page_template_edit: 模块布局editation
+      easy_page_template_user_modules: 模块布局
+    title:
+      easy_pages_administration: 通过点击页面行政。
+      easy_page_templates: 通过点击模板列表%{pagename}。
+      easy_page_new: 单击创建新页。
+      easy_page_show: 通过点击页面显示模块%{pagename}。
+      easy_page_edit: 点击编辑页面%{pagename}。
+      easy_page_templates_edit: 点击编辑模板%{templatename}。
+      easy_page_templates_new: 单击创建新模板页%{pagename}。
+      easy_page_template_view: 点击查看模块布局。
+      easy_page_template_edit: 通过单击“编辑模块布局的模板。
+      easy_page_template_user_modules: 点击查看模块布局。
+  easy_user_working_time_calendar_names:
+    standard: 标准
+  easy_lookup:
+    document:
+      label: 文件
+    group:
+      label: 组
+    issue:
+      label: 问题
+    project:
+      label: 项目
+    user:
+      label: 用户
+    version:
+      label: 里程碑
+  project_default_page:
+    project_overview: 项目概况：
+    roadmap: 里程碑
+    issue_tracking: 任务
+    time_tracking: 耗时
+    news: 新闻
+    documents: 文件
+    repository: 知识库
+    calendar: 日历
+    gantt: 甘特图
+    boards: 板
+    files: 档
+    wiki: 维基
+  select_option_issue_restrictions_users_blank: ! '>>选择<<'
+  mail:
+    field_author: 作者
+    field_updated_by: 更新的
+    field_before: 前
+    field_updated_time: 更新前
+    label_attachment_new: 增加了一个新的文件
+    text_attachment_added: 用户%{user}添加%{time}对%{added_to}以下文件（S）：
+  attachments:
+    no_more_versions: 没有更多的版本
+    revert_to:
+      successfully: 附件成功地恢复到%{version}版本。
+      failed: 附件没有恢复到%{version}版本。目前的版本是：%{current_v}。
+  easy_query:
+    name:
+      easy_issue_query: 问题
+      easy_project_query: 项目
+      easy_user_query: 用户
+      easy_document_query: 文件
+      easy_version_query: 里程碑
+      easy_attendance_query: 勤
+      easy_time_entry_query: 时间条目
+      easy_group_query: 组
+    label:
+      default_columns: 默认栏目
+      default_fitlers: 默认的过滤器
+    button_apply:
+      project: 应用设置
+      user: 应用设置
+      issue: 应用设置
+    sidebar_filters:
+      personal:
+        easy_issue_query: 私人过滤器的任务
+        easy_user_query: 对用户的私人过滤器
+        easy_project_query: 私人过滤器项目
+        easy_document_query: 私人过滤器文件
+        other: 私人过滤器
+        easy_attendance_query: 出席私人过滤器
+        easy_group_query: 私人过滤器组
+        easy_member_query: 对成员的私人过滤器
+        easy_time_entry_query: 私人过滤器上花费的时间
+        easy_version_query: 私人过滤器版本
+      public:
+        easy_issue_query: 公共过滤器的任务
+        easy_user_query: 用户的公共过滤器
+        easy_project_query: 公共过滤器项目
+        easy_document_query: 公共过滤器文件
+        other: 公共过滤器
+        easy_attendance_query: 出席公共过滤器
+        easy_group_query: 公共组过滤器
+        easy_member_query: 对成员的公共过滤器
+        easy_time_entry_query: 公共过滤器上花费的时间
+        easy_version_query: 公共过滤器版本
+    easy_lookup:
+      name:
+        issue:
+          default: 选择问题
+          issue_relation: 选择相关的任务
+        project:
+          default: 选择项目
+          project_relation: 选择相关项目
+        user:
+          default: 选择用户
+        group:
+          default: 选择组
+        version:
+          default: 选择的里程碑
+          version_relation: 选择相关的版本
+        document:
+          default: 选择文件
+  bulk_time_entry_title: 散装时间进入
+  text_bulk_time_entry_permission: 该用户没有正确的时间报告的项目。
+  label_avatar: 头像
+  message_avatar_uploaded: 头像上传成功
+  button_change_avatar: 更改本地头像
+  are_you_sure_delete_avatar: 你确定要删除你的头像吗？
+  avatar_deleted: 头像被删除
+  unable_to_delete_avatar: 抱歉。有一个错误删除的头像。
+  avatar_invalid_file: 无效的文件类型
+  text_settings_gravatar_enabled: 如果的gravatar项目没有选择比经典的头像是从用户配置文件中使用。
+  license_manager:
+    user_limit: 你的最大用户数已经用尽，延长在%{email}，请与我们联系。
+    user_limit_unlock_button: 活跃​​用户数已经达到了最大。
+  image_tag:
+    alt:
+      bullet_toggle_plus: 切换到多选
+  collapse_expand: 折叠/展开
+  gantt_day: 日
+  gantt_day_plural: 天
+  gantt_day_plural5: 天
+  gantt_start: 开始日期
+  gantt_end: 截止日期
+  gantt_duration: 截止日期
+  gantt_completed: 已完成
+  issue_predecessor_error: 任务%{issue_name}另一项任务。
+  project_predecessor_error: 项目%{project_name}另一个项目。
+  version_predecessor_error: 版本%{version_name}另一个版本。
+  label_easy_publishing_module: 模
+  label_easy_publishing_modules: 出版模块
+  easy_publishing_setting: 模
+  easy_publishing_setting_new: 新发布设置
+  label_easy_publishing_setting_url: URL示例
+  button_easy_publishing_settings_new: 新模块
+  label_easy_publishing_module_info: 信息
+  label_easy_publishing_module_contact: 联系
+  label_easy_publishing_module_help: 选择您的解决方案
+  label_easy_publishing_module_info_header: 为了你易于管理平台
+  label_easy_publishing_invalid_file_type: 这些文件没有图像，并没有保存：%{files}。
+  helper_module:
+    button_show_help: 显示帮助
+    button_close_help: 关闭帮助
+    alt_image_help: 图片帮助
+    title_help: 选择您的解决方案
+    title_contact: 联系
+    button_show_youtube: 播放视频
+  user_time_entry_setting:
+    all: 小时或范围
+    hours: 小时
+    range: 范围（从 - 到）
+  label_rating: 等级
+  label_easy_global_rating: 全球评级
+  easy_attendance:
+    label: 出席
+    label_menu_more: 出席
+    label_back_to_basic: 关闭
+    label_setting: 抵港及离港的使用记录
+    label_mail: 通知邮件
+    new: 注册抵港/离港
+    arrival: 的到来
+    departure: 出发
+    advanced_settings: 调度程序
+    label_activities: 活动
+    project_mapping_0: 如果没有绑定到项目
+    project_mapping_1: 绑定到项目
+    project_mapping_1_1: 和活动
+    link_to_easy_attendance: 出席者名单
+    error_can_not_delete_activity: 活动包含的记录不能被删除。
+    change_easy_attendance_activity_to: 更改的活动：
+    description:
+      arrival: 我只是来工作
+      departure: 离开工作
+      advanced_infobox: 例：我假期从%{from}对%{to}。
+    activities:
+      enumerations:
+        label: 活动（电子公告板）
+        new: 在公告板上的新活动
+    title:
+      advanced_settings: 计划你的工作从家里或者离开。
+    arrival_date_error: 可以不大于分裂国家。
+    arrival_already_taken: 日期已经采取的另一项活动。
+    invalid_date: 无日期
+    departure_is_same_as_arrival: 须具有相同的时间作为到达。
+    notice:
+      notice_arrivaled: 录制的到来。通过点击，你可以改变你抵港或离港航班。
+      warning_missing_departure: 董事会缺少出发，从第一天开始%{arrival_date}。请键入它。
+    calendar:
+      legend:
+        starting: 活动开始
+        ending: 活动结束
+        starting_ending: 这一天的活动
+    mail_added:
+      subject: ! '%{user}宣布没有从工作场所'
+      body_top: ! '%{user}宣布%{activity}在工作​​场所从%{from}对%{to}。'
+      body_link: 在这里看到的出席名单。
+    mail_updated:
+      subject: ! '%{user}宣布没有从工作场所'
+      body_top: ! '%{user}宣布%{activity}在工作​​场所从%{from}对%{to}。'
+      body_link: 在这里看到的出席名单。
+    label_report_sum_time_entry: 总计一年%{year}[时间]
+    label_report_sum_attendance: 的总和%{year}[考勤]
+    text_activity_destroy_with_attendances: 活动报告总%{count}考勤记录。您确定您要删除的活动和所有的记录吗？
+    label_statistic_worked: 工作
+    label_statistic_attendance: 勤
+    label_statistic_supplement: 从%{hours}，例如。%{percent}％
+    field_range: 在撰写出席：
+    range:
+      full_day: 全日
+      forenoon: 午前
+      afternoon: 下午
+  sidebar_easy_attendances_all_users_queries: 出席会议的用户
+  error_put_between_issue_count: 请选择两个问题
+  label_xml_data_export: XML数据导出
+  label_xml_data_select_exportables: 选择要导出的数据
+  label_xml_data_select_projects: 选择项目
+  button_xml_data_export: 出口
+  button_xml_data_import: 进口
+  button_xml_data_continue: 继续
+  label_xml_data_import: XML数据导入
+  label_user_mapping: 用户映射
+  label_map_to: 映射到
+  option_map_to_new_user: 新用户
+  label_tracker_mapping: 跟踪映射
+  option_map_to_new_tracker: 新的追踪
+  label_xml_data_notify: 发送通知
+  label_role_mapping: 角色映射
+  label_issue_status_mapping: 问题状态映射
+  label_issue_priority_mapping: 发行优先级映射
+  label_time_entry_activity_mapping: 活动映射
+  label_custom_field_mapping: 自定义字段映射
+  option_map_to_new_role: 新角色
+  option_map_to_new_project_custom_field: 新领域
+  option_map_to_new_issue_custom_field: 新领域
+  option_map_to_new_issue_priority: 新的优先级
+  option_map_to_new_issue_status: 新的状态
+  option_map_to_new_time_entry_activity: 新活动
+  label_auto_mapping: 自动映射
+  label_import_success: 数据成功导入
+  label_import_zip_error: 数据格式不正确
+  xml_data_users: 用户
+  xml_data_trackers: 跟踪
+  xml_data_roles: 角色
+  xml_data_issue_priorities: 任务的优先级
+  xml_data_project_custom_fields: 自定义字段
+  xml_data_issue_custom_fields: 自定义字段
+  xml_data_issue_statuses: 工作状态
+  xml_data_document_categories: 文档类别
+  xml_data_time_entry_activities: 活动
+  sample_text: 简单的项目
+  easy_color_scheme_not_available: 配色方案%{current}，你可以改变它
+  notice_issues_successful_create: 成功创建用户：
+  notice_failed_to_save_issues2: 无法保存任务%{issue}由于错误：%{error}
+  notice_too_many_projects: 太多的项目（%{count}），使用搜索功能。
+  general_all: 所有
+  general_only_required: 只需要
+  mail_subject_easy_query_migration_nonsaved_query: 简单的项目 - 过滤器迁移 - 失败
+  mail_body_easy_query_migration_nonsaved_query_begin: 您好，您的已保存的过滤器的迁移保存此过滤器：
+  mail_body_easy_query_migration_nonsaved_query_end: 请点击上面的链接，并更换过滤器（列中包含的某个日期范围 -
+    建立，更新，到期日，...）。
+  mail_subject_easy_query_migration_unsupported_query: 简单的项目 - 过滤器迁移 - 不支持的设置
+  mail_body_easy_query_migration_unsupported_query_begin: 您好，您的已保存的过滤器的迁移保存此过滤器：
+  mail_body_easy_query_migration_unsupported_query_end: 请点击上面的链接，并更换过滤器。它包含此设置：
+  setting_project_list_default_columns: 默认显示的列上的项目清单
+  setting_default_projects_tree_display: 显示项目树
+  setting_projects_tree_display_with_siblings: 与兄弟姐妹
+  setting_projects_tree_display_without_siblings: 没有兄弟姐妹
+  setting_issue_created_on_date_format_label: 显示上创建像
+  setting_issue_created_on_date_format_date: 日期
+  setting_issue_created_on_date_format_datetime: 日期和时间
+  setting_enable_private_issues: 启用私人问题
+  setting_show_personal_statement: 显示菜单中的个人陈述
+  setting_show_bulk_time_entry: 在菜单中显示散装时间
+  setting_project_calculate_start_date: 计算从任务的开始日期
+  setting_project_calculate_due_date: 计算到期日从任务
+  setting_show_issue_id: 显示任务ID
+  setting_quick_jump_to_an_issue: 如果ID搜索跳转到任务
+  setting_milestone_effective_date_from_issue_due_date: 允许设定一个截止日期的任务结束后的里程碑。
+  workflow_button_edit: 工作流设置
+  easy_search:
+    legend_entities: 搜索：
+    legend_column_types: 搜索：
+    label_column_type:
+      name: 名称
+      description: 描述
+      comment: 评论
+      other: 他人
+  enumeration_easy_version_cetegory: 版本类别
+  label_tracker_move_issues: 发行重新分配
+  label_tracker_move_issues_explanation: 更改跟踪到：
+  button_tracker_move_issues: 重新分配和删除
+  option_dont_map: ! '- 不映射 -'
+  move_auth_source_users_explanation: 选择一个新的用户验证源：
+  button_auth_source_move_users: 重新分配和删除
+  dashboard:
+    legends:
+      others: 他人
+      projects: 项目
+      issues: 任务
+      users: 用户
+      security: 安全
+      xml: XML
+      extensions: 扩展
+      settings: 设置
+  label_easy_user_working_time_calendar_no_of_days: 个工作日内
+  label_easy_user_working_time_calendar_no_of_hours: 工作时间
+  label_easy_attendance_report_working_time: 工作%{sum_timeentries}的%{total_working_hours}，即%{timeentries_percent}
+  label_easy_attendance_report_attendence_time: 出席有%{sum_attendance}的%{total_working_hours}，即%{working_percent}
+  button_settings: 调整
+  button_history: 历史
+  field_started_at: 开始于
+  field_finished_at: 结束在
+  field_note: 注意
+  easy_rake_tasks:
+    views:
+      heading_index: 预定的任务概述
+      button_index: 预定的任务概述
+      heading_settings: 作业设置%{task_name}
+      heading_task_infos: 工作总结 -%{task_name}
+      interval: 间隔
+      next_run_at: 接下来开始
+      last_action: 最后行动
+    periods:
+      daily: 所有的%{interval}
+      hourly: 所有的%{interval}小时
+      minutes: 所有的%{interval}分钟
+    easy_rake_task_receive_mail:
+      caption: 接收邮件
+    easy_rake_task_repeating_entities:
+      caption: 问题守护Reccuring的
+    easy_rake_task_history_cleaner:
+      caption: 删除旧的计划任务历史
+    easy_rake_task_check_failure_tasks:
+      caption: 故障检查预定任务
+      email_type:
+        all_admins: 向管理员发送电子邮件
+        email: 发送电​​子邮件至
+      mail:
+        heading: 这些预定任务失败%{date}
+        footer: 可以更改设置，在计划任务
+  easy_rake_task_infos:
+    status:
+      running: 这是
+      ended_ok: 为了完成
+      ended_failed: 错误而终止
+  button_delete_avatar: 删除头像
+  label_issue_due_date_overdue: 左来完成：
+  label_issue_due_date_not_overdue: 截止期限之后
+  label_project_due_date_overdue: 完成剩余的
+  label_project_due_date_not_overdue: 之后的最后期限
+  label_easy_setting_use_personal_theme: 允许用户改变自己的外表？
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: 新的关系
+  title_permission_flag_r: 不能写 - 读
+  title_permission_flag_p: 需要登录
+  title_permission_flag_m: 所需的是一个项目成员
+  title_permission_flag_l: 需要登录
+  setting_display_issue_relations_on_new_form: 查看相关的任务的新形式
+  gantt_new_following_issue: 新的下一个任务
+  gantt_new_preceding_issue: 新的前任务
+  gantt_new_child_issue: 新的子任务
+  themes:
+    easy: Easy
+    easy_widescreen: Easy-Wide
+  label_easy_user_working_time_day_settings: 将天
+  editor_config_names:
+    basic: 基本的
+    extended: 先进
+    full: 满
+  custom_field_names:
+    external_mails:
+      label: 外部邮件
+  label_added_time_by: 张贴者%{author}
+  easy_scheduler_task_info:
+    planned: 任务%{task_name}计划。
+    running: 任务%{task_name}正在运行。
+    ended_failed: 任务%{task_name}失败了。
+    ended_ok: 任务%{task_name}圆满结束。
+    initialized: 任务%{task_name}已创建。
+  field_is_planned: 计划
+  label_permissions_global: 全局权限
+  label_permissions_project: 项目权限
+  label_project_gantt: 项目甘特图
+  label_allow_log_time_to_closed_issue: 允许登录的时间已解决的问题
+  project_status_planned: 计划
+  text_project_archive_confirmation: 你确定你要这个项目和相关的数据归档吗？
+  text_project_close_confirmation: 你确定要关闭这个项目吗？
+  text_project_reopen_confirmation: 你确定要重新讨论这个项目吗？
+  permission_manage_global_versions: 管理全球里程碑
+  label_bulk_time_entries_edit: 编辑花费的时间
+  label_preview_external_email_mail_sender: 邮件发送者
+  label_preview_external_email_mail_recepient: 邮件recepient
+  label_preview_external_email_mail_cc: 邮件的副本
+  label_preview_external_email_mail_subject: 邮件主题
+  label_preview_external_email_mail_body_html: 在HTML邮件内容
+  label_preview_external_email_mail_body_plain: 以纯文本格式的邮件内容
+  label_easy_versions: 里程碑
+  label_easy_versions_top_menu: 里程碑
+  label_easy_repository_source_easy_repository_url: 到版本库的URL
+  title_user_detail: 你可以通过点击显示详细的用户。
+  title_version_detail: 按一下，就可以显示详细的里程碑。
+  error_create_repo_from_url_cannot_create_dir: 无法创建目录%{dir}
+  error_create_repo_from_url_cannot_determine_repo_name: 不能确定信息库名称
+  error_create_repo_from_url_repo_already_exists: 存储库已经存在
+  error_create_repo_from_url_repo_cannot_be_created: 库不能被创建
+  text_git_repository_url_note: URL的形式HTTP（S）:/ /用户名：密码@，URL / repo.git。库将在本地自动创建表单提交后。
+  text_external_email_sent: 一个附加的邮件发送到外部邮件%{email}。
+  text_textile_migration: 对于迁移保存文本从纺织品到HTML使用应用程序的命令行：“捆绑执行的耙easyproject：纺织：migrate_all
+    RAILS_ENV =生产”
+  label_field_format_rating_star_no: 明星
+  label_easy_gantt_theme_plural: PDF甘特图的主题
+  label_easy_gantt_theme_new: 新主题
+  label_header_style: 头风格
+  label_logo: 标志
+  field_header_color: 背景颜色
+  field_header_font_color: 文本颜色
+  label_with_theme: 使用主题
+  label_is_null: 是空的
+  label_is_not_null: 不为空
+  field_closed_on: 关闭
+  field_inherit_members: 继承成员
+  setting_jsonp_enabled: 启用JSONP支持
+  setting_default_projects_tracker_ids: 新项目的默认跟踪
+  permission_add_documents: 添加文档
+  permission_edit_documents: 编辑文件
+  permission_delete_documents: 删除文件
+  label_total_time: 总时间
+  label_attribute_of_issue: 任务%{name}
+  label_attribute_of_user: 用户%{name}
+  label_gantt_progress_line: 进度线
+  text_turning_multiple_off: 如果你禁用了多个值，多个值将被删除，以维护每个项目只能有一个值。
+  permission_manage_easy_issue_timers: 访问任务定时器的设置
+  permission_edit_project_custom_fields: 编辑项目的自定义字段
+  heading_issues_settings_display: 显示
+  heading_issues_settings_behaviour: 行为
+  label_template_copy: 复制到现有的项目模板
+  label_easy_issue_timer: 任务定时器
+  label_easy_issue_timer_settings: 任务定时器设置
+  label_easy_issue_timer_start: 开始
+  label_easy_issue_timer_end: 完成
+  label_easy_issue_easy_is_repeating: 重复
+  label_easy_issue_easy_repeating_period: 重复周期
+  label_easy_issue_easy_repeating_period_daily: 日常
+  label_easy_issue_easy_repeating_period_weekly: 每周
+  label_easy_issue_easy_repeating_period_monthly: 每月一次
+  label_easy_issue_easy_repeating_period_custom: 习俗
+  label_easy_issue_easy_reccuring_daily_every: 所有的
+  label_easy_issue_easy_reccuring_daily_each: 天
+  label_easy_issue_easy_reccuring_daily_work: 个工作日内
+  label_easy_issue_easy_repeating_endtype: 结束
+  label_easy_issue_easy_repeating_endtype_date: 在日期
+  label_easy_issue_easy_repeating_endtype_count: 经过X重复
+  label_easy_issue_easy_repeating_endtype_endless: 由于项目结束
+  label_easy_issue_easy_repeating_start: 开始
+  label_easy_issue_reccuring_after: 后
+  label_easy_issue_reccuring_day_plural: 天
+  label_easy_issue_reccuring_month: 月
+  label_easy_issue_subject_reccuring_suffix: （Reccuring）
+  label_easy_issue_reccuring_monthly_orders:
+    1: 第一
+    2: 第二
+    3: 第三
+    4: 第四
+    5: 最后
+  button_copy_project_from_template: 复制到项目
+  button_select_file: 选择文件
+  button_easy_issue_timer_play: 我
+  button_easy_issue_timer_stop: 这是做
+  title_button_template_copy_project: 复制到现有的项目模板。
+  title_easy_issue_timer_button_play: 更新任务，并开始测量时间。
+  title_easy_issue_timer_button_stop: 更新的任务和预填充时间的参赛表格
+  title_jump_to_project: 选择项目
+  field_easy_issue_timer_assign_to_me: 分配给我的
+  field_easy_issue_timer_round: 回合时间
+  field_attachment_reminder_words: 附件的话
+  field_easy_is_repeating: 重复
+  error_update_easy_issue_timer_settings: 设置不被保存
+  error_project_not_selected: 项目未选择
+  text_easy_attachment_reminder_confirm: 你提到附件，但你不重视，你要继续吗？
+  text_easy_attachment_reminder_explanatory_html: ？ =任何字符<br />* =任意数量的<br /><dd style="margin-left:15px;">任意字符</dd>
+  setting_project_display_identifiers: 显示项目标识符
+  search_field_placeholders:
+    issues: 搜索任务
+    projects: 搜索项目
+  label_easy_issue_easy_reccuring_monthly_every: 每
+  permission_delete_project: 删除项目
+  label_easy_lesser_admin_for: 面积较小的管理员可以访问：
+  title_issue_remove_parent: 通过点击这个任务不会是更长的子任务。
+  field_easy_lesser_admin: 次级管理员
+  field_easy_user_type: 用户类型
+  field_easy_repeat_settings: Reccuring选项
+  error_repeat_period_missing: 重复的期间内，必须选择
+  error_repeat_endtype_missing: 重复结束，必须选择
+  error_repeat_endtype_count_blank: ，计数不能reccuring空白
+  error_repeat_endtype_count_numeric: reccuring计数是一个数字
+  error_repeat_endtype_date_blank: 结束日期不能为空
+  error_repeat_daily_option_missing: reccuring类型（工作或每天）必须被选择
+  error_repeat_daily_x_blank: reccuring天数期间不能为空
+  error_repeat_daily_x_numeric: reccuring天计数周期是一个数字
+  error_repeat_weekly_days_selected: 必须选择至少一个星期的天
+  error_repeat_monthly_option_missing: 选择类型reccuring（第x天/定制）
+  error_repeat_monthly_day_numeric: reccuring一天是数字1到31之间
+  error_repeat_monthly_month_numeric: reccuring月之间的数字
+  user:
+    easy_user_type:
+      internal: 用户
+      external: 客户
+  setting_issue_set_done_after_close: 设置完成100％的封闭任务
+  setting_allow_repeating_issues: 允许重复任务
+  button_gantt_relation_destroy: 删除关系
+  label_zoom: 放大
+  field_send_all_planned_emails: 所有计划的邮件发送
+  text_project_is_planned: 如果一个项目计划，没有邮件被发送。
+  label_easy_issue_easy_repeating_further_options: 的reccuring方式
+  label_easy_issue_easy_repeating_time: 创建设置
+  label_easy_issue_easy_repeating_time_hour: 重复在
+  label_easy_issue_easy_repeating_create_time: 创建时间
+  label_easy_issue_easy_repeating_in_advance: 提前
+  label_easy_issue_easy_repeating_on_start_date: 于reccuring一天
+  label_easy_issue_easy_repeating_dont_create_now: 现在不要创建
+  label_easy_issue_easy_repeating_create_now_all: 现在创建的所有
+  label_easy_issue_easy_repeating_create_now_count: 现在创建AMOUT
+  label_added_datetime_by: 张贴者%{author}在%{datetime}
+  label_updated_datetime_by: 更新%{author}在%{datetime}
+  label_user_mail_no_notified_if_issue_closing: 我不想从封闭任务通知
+  label_user_mail_no_notification_ever: 不要通知任何人关于我的更新
+  button_release_cache: 释放缓存
+  setting_use_easy_cache: 启用格外缓存
+  label_easy_issue_easy_repeating_create_now: 现在创建
+  label_easy_attendance_user_arrival_add_notify_title: 在该用户登录后，请通知我
+  label_easy_setting_required_issue_id_at_time_entry: 问题是需要在时间进入
+  button_journal_unprivate_note: 出版
+  title_journal_unprivate_note: 更新所有用户
+  notice_journal_published: 更新发布！
+  text_easy_attendance_user_detail_online_at: 用户到达
+  text_easy_attendance_user_detail_offline_at: 用户休假
+  text_easy_attendance_user_detail_no_data_today: 用户还没有到来
+  text_easy_attendance_user_notify_default_message: ! '%{user}刚登入'
+  text_easy_attendance_user_notify_title: 通知将发送到：%{email}
+  text_easy_attendance_user_notify_already_exists_warning: 警告！通知已经存在。总%{count} x
+  setting_just_one_issue_mail: 发送任务更新后只有一个邮件（邮件将不会分拆为我和其他人）
+  label_easy_issue_easy_repeating_period_yearly: 每年
+  label_easy_issue_easy_repeating_create_time_time: 建立时间
+  label_easy_issue_easy_reccuring_recur_every: 复发间隔
+  label_easy_issue_easy_reccuring_recur_years: 年（次）
+  label_easy_issue_easy_reccuring_recur_months: 月（s）
+  label_easy_issue_easy_reccuring_yearly_month_of: 的
+  label_easy_issue_easy_reccuring_after_recurs: 迭代
+  label_last_n_days_next_m_days: -%{last}天+%{next}天
+  label_email_field:
+    from: 从
+    to: TO
+  button_execute: 执行
+  title_easy_copy_to_project: 创建项目发行
+  field_easy_next_start: 接下来开始
+  text_easy_issue_reccuring_create_now: 在本节中，你可以定义多少的问题，你现在要创建的。接下来的问题将创建天设置reccuring决定。小时定义见下文。
+  label_easy_publishing_module_youtube: YouTube的
+  setting_close_subtask_after_parent: 封闭的任务后，关闭子任务
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: 未知
+        received: 收稿
+        processed_and_deleted: 处理和删除
+        not_processed_and_deleted: 不处理被删除
+        not_processed_and_left_on_server: 不处理，并在服务器上留下
+        cannot_be_processed: 不能被处理
+  label_video_url: 视频网址
+  button_easy_copy_to_project: 创建一个项目
+  permission_edit_own_projects: 编辑自己的项目
+  label_easy_attendance_is_repeating: 重复？
+  label_easy_attendance_repeating_to: 重复此步骤
+  label_easy_custom_field_disable: 关闭
+  label_easy_custom_field_enable: 启用
+  label_filter_group_project_fields: 项目
+  label_filter_group_relations: 关系
+  label_filter_group_custom_fields_suffix: 自定义字段
+  label_filter_group_unknown: 未知
+  label_filter_group_easy_issue_query: 问题
+  label_filter_group_easy_project_query: 项目
+  label_filter_group_easy_user_query: 用户
+  label_filter_group_easy_document_query: 文件
+  label_filter_group_easy_version_query: 里程碑
+  label_filter_group_easy_attendance_query: 护理
+  label_filter_group_easy_time_entry_query: 时间条目
+  label_filter_group_easy_group_query: 组
+  label_easy_setting_show_time_entry_range_select: 显示/范围选择
+  lable_should_send_invitation_update: 发送通知
+  button_easy_issue_timer_pause: 暂停
+  button_easy_issue_timer_resume: 继续
+  button_download_email: 下载邮件
+  title_easy_issue_timer_button_pause: 暂停措施时间
+  title_easy_issue_timer_button_resume: 继续measuere时间
+  field_easy_is_meeting: 会议
+  field_easy_meeting_day: 会议日
+  field_easy_meeting_time: 会议时间
+  field_easy_start_date_time: 开始时间
+  field_easy_due_date_time: 到期时间
+  field_mail_to_admin: 管理员的邮件
+  notice_easy_custom_field_disabled: 自定义字段被禁用
+  notice_easy_custom_field_enabled: 启用自定义字段
+  error_easy_custom_field_disable_deletable: 此定制字段不能被禁用
+  text_easy_rake_task_failure_email: 在失败的情况下将信息传递到这个邮件
+  label_customize_gantt_export: 自定义导出设置
+  label_not_updated_on: 没有现实
+  label_easy_rake_period: 一切
+  label_easy_rake_period_monthly: 月
+  label_easy_rake_period_daily: 天
+  label_easy_rake_period_hourly: 小时
+  label_easy_rake_period_minutes: 分钟
+  button_create_issue_from_journal: 建立问题
+  button_additional_context_menu: 其他选项
+  title_create_issue_from_journal: 创建新的问题，这本杂志的文字描述
+  title_additional_context_menu: 与其他选项，点击打开一个菜单
+  field_time_entry: 耗时
+  label_new_subproject_from_template: 新的子项目模板
+  permission_view_estimated_hours: 估计小时
+  label_easy_repeat_left_reccurs: 还剩Reccurs
+  button_load_additional_records: 加载额外的记录
+  field_sum_estimated_hours: 估计总小时
+  button_print: 打印
+  button_pdf: PDF

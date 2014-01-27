@@ -1,0 +1,9 @@
+<% unless controller_name == 'admin' && action_name == 'index' %>
+  <% if EasyExtensions.render_sidebar?(controller_name, action_name, params) -%>
+    <% content_for :sidebar do %>
+      <h3><%=l(:label_administration)%></h3>
+      <%= render :partial => 'admin/menu' %>
+    <% end if menu_items_for(:admin_menu).any? %>
+  <% end %>
+<% end %>
+<%= render :file => "layouts/base" %>

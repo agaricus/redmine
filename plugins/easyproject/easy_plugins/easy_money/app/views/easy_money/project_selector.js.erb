@@ -1,0 +1,4 @@
+$('#modal-dialog-loader').html("<%= j(render :partial => 'easy_money/project_selector') %>");
+$("#modal-dialog-loader form").append('<div id="modal-hidden-entity-ids" style="display: none"></div>');
+$("#modal-hidden-entity-ids").append($('input[name="ids[]"]:checked').clone());
+createModalSelectorWindow("650px");

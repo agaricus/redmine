@@ -1,0 +1,51 @@
+<%= form_tag({:action => 'edit', :tab => 'timeentries'}, :class => 'tabular long2') do %>
+  <%= fields_for :easy_setting do |f| %>
+    <div>
+      <div>
+        <fieldset>
+          <legend><%= l(:text_easy_settings_time_entry_heading)  -%></legend>
+          <div class="gray-background">
+            <p>
+              <%= l(:text_easy_settings_time_entry_limit) -%> <%= text_field_tag 'easy_setting[spent_on_limit_before_today]', EasySetting.value('spent_on_limit_before_today'), :size => 3, :maxlength => 3 %> <%= l(:text_easy_settings_time_entry_limit_past) -%>.
+            </p>
+            <p>
+              <%= l(:text_easy_settings_time_entry_limit) -%> <%= text_field_tag 'easy_setting[spent_on_limit_after_today]', EasySetting.value('spent_on_limit_after_today'), :size => 3, :maxlength => 3 %> <%= l(:text_easy_settings_time_entry_limit_future) -%>.
+            </p>
+            <p>
+              <%= l(:text_easy_settings_time_entry_limit_note) -%>
+            </p>
+          </div>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend></legend>
+          <div class="gray-background">
+            <p>
+              <%= f.label :timelog_comment_editor_enabled, l(:label_timelog_comment_editor_enabled) -%>
+              <%= f.check_box :timelog_comment_editor_enabled, :checked => EasySetting.value('timelog_comment_editor_enabled') -%>
+            </p>
+            <p>
+              <%= f.label :time_entry_spent_on_at_issue_update_enabled, l(:label_time_entry_spent_on_at_issue_update_enabled) -%>
+              <%= f.check_box :time_entry_spent_on_at_issue_update_enabled, :checked => EasySetting.value('time_entry_spent_on_at_issue_update_enabled') -%>
+            </p>
+            <p>
+              <%= f.label :allow_log_time_to_closed_issue, l(:label_allow_log_time_to_closed_issue) %>
+              <%= f.check_box :allow_log_time_to_closed_issue, :checked => EasySetting.value('allow_log_time_to_closed_issue') %>
+            </p>
+            <p>
+              <%= f.label(:required_issue_id_at_time_entry, l(:label_easy_setting_required_issue_id_at_time_entry)) %>
+              <%= f.check_box(:required_issue_id_at_time_entry, :checked => EasySetting.value('required_issue_id_at_time_entry')) %>
+            </p>
+            <p>
+              <%= f.label(:show_time_entry_range_select, l(:label_easy_setting_show_time_entry_range_select)) %>
+              <%= f.check_box(:show_time_entry_range_select, :checked => EasySetting.value('show_time_entry_range_select')) %>
+            </p>
+            <%= call_hook(:view_settings_timeentries_form, :f => f) %>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <%= submit_tag l(:button_save), :class => 'button-1' -%>
+  <% end %>
+<% end %>

@@ -1,0 +1,17 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => (l('easy_pages.modules.issues_assigned_to_me') + ' (' + @easy_page_modules_data[block_name][:issues_count].to_s + ')'), :container_html => {:class => 'module-content'}}) do %>
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => { :query => @easy_page_modules_data[block_name][:query], :entities => @easy_page_modules_data[block_name][:assigned_issues], :options => { :disable_sort => true } } %>
+  <% if @easy_page_modules_data[block_name][:issues_count] > 0 %>
+    <% 
+    url_options = {:controller => 'issues', :action => 'index', :set_filter => 1, :status_id => 'o', :sort => EasySetting.value('issue_default_sorting_string_short') }
+    if @easy_page_modules_data[block_name][:only_assigned] 
+      url_options[:assigned_to_id] = user.id
+    else
+      url_options[:participant_id] = user.id
+    end
+    %>
+    <p class="small"><%= link_to l(:label_issue_view_all), url_options %></p>
+  <% end %>
+<% end %>
+<% content_for :header_tags do %>
+  <%= auto_discovery_link_tag(:atom, {:controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => user.id, :format => 'atom', :key => User.current.rss_key}, {:title => l(:label_assigned_to_me_issues)}) %>
+<% end %>

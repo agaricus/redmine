@@ -1,0 +1,24 @@
+<p>
+  <%= f.label :url, l(:label_easy_publishing_setting_url) %>
+  <%= f.text_field :url %>
+</p>
+<p>
+  <%= f.label :easy_publishing_module, l(:label_easy_publishing_module) %>
+  <%= f.select :easy_publishing_module_id, EasyPublishingModule.all.collect{|epm| [l("label_easy_publishing_module_#{epm.name}".to_sym), epm.id]} %>
+</p>
+<div id="publishing-dependent-fields">
+  <% if @publishing_setting.easy_publishing_module %>
+    <%= render :partial => "dependent_fields_#{@publishing_setting.easy_publishing_module.name}", :locals => {:f => f} %>
+  <% end -%>
+</div>
+
+<% content_for :header_tags do %>
+  <script type="text/javascript">
+    $(function () {
+      $("#easy_publishing_setting_easy_publishing_module_id").change(function () {
+        $("#publishing-dependent-fields").load("<%= publishing_dependent_fields_path %>?easy_publishing_module_id=" + $(this).val());
+      });
+    });
+  </script>
+<% end -%>
+<% include_attachment_headers_tags %>

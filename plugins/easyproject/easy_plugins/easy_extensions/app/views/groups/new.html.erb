@@ -1,0 +1,15 @@
+<%= title [l(:label_group_plural), groups_path], l(:label_group_new) %>
+
+<%= labelled_form_for @group do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <p>
+    <%= f.submit l(:button_create), :class => 'button-1' %>
+    <%= f.submit l(:button_create_and_continue), :name => 'continue' %>
+  </p>
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to l(:label_group_new), new_group_path, :class => 'button-1' %>
+<% end %>

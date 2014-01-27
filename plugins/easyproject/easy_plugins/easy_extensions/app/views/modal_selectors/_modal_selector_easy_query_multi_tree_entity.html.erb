@@ -1,0 +1,17 @@
+<% css_entity_name, css_classes, uniq_id = 'entity_' + entity.class.name.underscore, '', '' -%>
+<% if entity.respond_to?(:self_and_descendants) %>
+  <%  css_classes = ((' ' + uniq_prefix + 'parent' + css_entity_name + '_' + entity.parent_id.to_s) if entity.child?) || ''
+  uniq_id = uniq_prefix + css_entity_name + '-' + entity.id.to_s -%>
+  <%= render :partial => 'modal_selector_easy_query_multi_tree_entity_tree', :locals => {:entities => entities, :entity => entity, :subentities => subentities, :columns => columns, :level => level, :selected_values => selected_values, :entity_name => entity_name, :uniq_prefix => uniq_prefix, :css_entity_name => css_entity_name, :css_classes => css_classes, :uniq_id => uniq_id, :options => options } -%>
+<% else %>
+  <%  css_classes = ''
+  uniq_id = uniq_prefix + css_entity_name + '-' + entity.id.to_s -%>
+  <%= render :partial => 'modal_selector_easy_query_multi_tree_entity_list', :locals => {:entities => entities, :entity => entity, :subentities => subentities, :columns => columns, :level => level, :selected_values => selected_values, :entity_name => entity_name, :uniq_prefix => uniq_prefix, :css_entity_name => css_entity_name, :css_classes => css_classes, :uniq_id => uniq_id, :options => options } -%>
+<% end %>
+<% unless subentities.blank? %>
+  <tr style="display: none" class="<%= uniq_prefix + 'parent' + css_entity_name + '_' + entity.id.to_s -%>">
+    <td colspan="<%= 2 + columns[level].size -%>">
+      <%= render :partial => 'modal_selector_easy_query_multi_tree_entities', :locals => {:entities => subentities, :columns => columns, :level => (level + 1), :selected_values => selected_values, :entity_name => entity_name, :uniq_prefix => uniq_prefix, :options => options } -%>
+    </td>
+  </tr>
+<% end %>

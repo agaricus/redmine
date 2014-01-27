@@ -1,0 +1,93 @@
+<% project_easy_money_settings_show_rate = @project.easy_money_settings.show_rate?('all')
+easy_money_rate_type_active  = EasyMoneyRateType.active
+rate_type_size = 0
+total_money = []
+total_hours = 0.0 -%>
+<h3><%= l(:label_easy_money_project_issues_time_entry_expenses) -%></h3>
+<%= form_tag({}) do -%>
+  <%= hidden_field_tag 'back_url', url_for(params) -%>
+  <div class="autoscroll">
+    <table class="list">
+      <thead>
+        <tr>
+          <%= sort_header_tag('project', :caption => l(:label_project)) -%>
+          <%= sort_header_tag('subject', :caption => l(:label_issue)) -%>
+          <th><%= l(:field_spent_hours) -%></th>
+          <% easy_money_rate_type_active.each do |rate_type| -%>
+            <% total_money << 0
+            rate_type_size += 1 -%>
+            <th><%= rate_type.translated_name -%></th>
+          <% end -%>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @issues.any? %>
+          <% @issues.each do |issue| -%>
+            <tr class="<%= cycle('odd', 'even', :name => 'issue') -%>">
+              <td class="column"><%= link_to(issue.project.name, { :controller => 'projects', :action => 'show', :id => issue.project.id }, { :class => 'link' }) -%></td>
+              <td class="column"><%= link_to_issue issue -%></td>
+              <% issue_hours = issue.spent_hours
+              total_hours += issue_hours -%>
+              <td class="column"><%= l(:label_easy_money_hour, :hours => issue_hours.round(2)) -%></td>
+              <% easy_money_rate_type_active.each_with_index do |rate_type, i| -%>
+                <% issue_expenses = issue.easy_money.sum_time_entry_expenses(rate_type)
+                total_money[i] += issue_expenses -%>
+                <td class="column1"><%= format_easy_money_price(issue.easy_money.sum_time_entry_expenses(rate_type), @project) -%></td>
+              <% end -%>
+              <td class="column"><%= toggle_link l(:button_easy_money_project_index_show_details), "entry-#{issue.id}",{:class => 'small button-2'}  -%></td>
+            </tr>
+            <tr id='entry-<%= issue.id -%>' style="display:none">
+              <td colspan="<%= 4 + rate_type_size -%>">
+                <table class="list">
+                  <thead>
+                    <tr>
+                      <th><%= l(:label_project) -%></th>
+                      <th><%= l(:field_spent_on) -%></th>
+                      <th><%= l(:field_user) -%></th>
+                      <th><%= l(:field_activity) -%></th>
+                      <th><%= l(:field_spent_hours) -%></th>
+                      <% easy_money_rate_type_active.each do |rate_type| -%>
+                        <th><%=  rate_type.translated_name -%></th>
+                      <% end -%>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% issue.time_entries.each do |time_entry| -%>
+                      <tr>
+                        <td class="column"><%= link_to(time_entry.project.name, { :controller => 'projects', :action => 'show', :id => time_entry.project.id }, { :class => 'link' }) -%></td>
+                        <td class="column"><%= format_date(time_entry.spent_on) -%></td>
+                        <td class="column"><%= time_entry.user.name -%></td>
+                        <td class="column"><%= time_entry.activity.name -%></td>
+                        <td class="column"><%= l(:label_easy_money_hour, :hours => time_entry.hours.round(2)) -%></td>
+                        <%= time_entry_expenses_columns_per_rate_type(@project, time_entry) -%>
+                      </tr>
+                    <% end -%>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          <% end -%>
+        <% else -%>
+          <tr><td colspan="<%= 3 + rate_type_size -%>"><%= l(:label_no_data) -%></td></tr>
+        <% end -%>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td class="column" colspan="2"><%= l(:label_easy_money_total) -%></td>
+          <td class="column"><%= l(:label_easy_money_hour, :hours => total_hours.round(2)) -%></td>
+          <% total_money.each do |i| -%>
+            <td class="column"><%= format_easy_money_price(i, @project) -%></td>
+          <% end -%>
+          <td class="column"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="entity-index-footer">
+    <p class="pagination"><%= pagination_links_full @issues_pages, @issues_count %></p>
+    <% other_formats_links do |f| %>
+      <%= f.link_to 'CSV', :url => { }.merge(url_params), :title => l(:title_other_formats_links_csv) %>
+    <% end %>
+  </div>
+<% end -%>

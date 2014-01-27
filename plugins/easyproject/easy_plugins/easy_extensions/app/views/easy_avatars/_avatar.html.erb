@@ -1,0 +1,27 @@
+<% if !defined?(entity) && defined?(tab)
+  entity = tab[:user]
+end
+back_url ||= url_for(params)
+%>
+<%= content_tag :h2,  l(:label_avatar)%>
+<% if entity && entity.is_a?(User) && (Setting.gravatar_enabled == '1' || Setting.gravatar_enabled.try(:to_boolean)) %>
+  <div class="nodata">
+    <%= l(:text_avatar_not_available_because_gravatar) %>
+  </div>
+<% else %>
+  <%= form_tag(easy_avatar_path, :multipart => true) do %>
+    <%= hidden_field_tag(:entity_id, entity.id) %>
+    <%= hidden_field_tag(:entity_type, entity.class.name) %>
+    <%= hidden_field_tag('back_url', back_url) %>
+    <div class="box gray-background">
+      <%= content_tag :div, avatar(entity), :id => 'entity_avatar_image_container' %>
+
+      <%= file_field_tag 'avatar' %><br />
+
+      <div style="clear:both"></div>
+    </div>
+    <%= submit_tag l(:button_save), :class => 'button-1' %>
+    <%= link_to(l(:button_delete), easy_avatar_path(:entity_id => entity.id, :entity_type => entity.class.name, :back_url => back_url), :class => 'button-2', :method => :delete, :data => {:confirm => l(:are_you_sure_delete_avatar)}, :remote => true) %>
+
+  <% end %>
+<% end -%>

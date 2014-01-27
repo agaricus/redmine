@@ -1,0 +1,5 @@
+<h3><%=l(:label_spent_time)%></h3>
+<p>
+  <span><%= l(:label_my_page_timelog_simple_day_limit) -%></span>
+  <span><%= select_tag "#{block_name}[time_period]", options_for_period_select(settings['time_period'] || '7_days') %></span>
+</p>

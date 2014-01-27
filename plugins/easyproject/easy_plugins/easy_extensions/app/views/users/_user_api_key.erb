@@ -1,0 +1,5 @@
+<p>
+  <label class="" for="user_api_key"><%= l(:field_api_key) -%></label>
+  <input id="user_api_key" type="text" value="<%= api_key -%>" size="41" name="user[api_key]" <%= 'readonly' unless User.current.admin? -%>>
+  <%= link_to(l(:button_generate_api_key), {:controller => 'users', :action => 'generate_api_key', :div_id => div_id}, :remote => true, :title => l(:button_generate_api_key)) -%>
+</p>

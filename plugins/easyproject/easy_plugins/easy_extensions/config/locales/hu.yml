@@ -1,0 +1,2643 @@
+---
+hu:
+  direction: ltr
+  date:
+    formats:
+      default: ! '%Y/%m/%d'
+      short: ! '%b %d'
+      long: ! '%B %Y, %d'
+    day_names:
+    - Vasárnap
+    - Hétfő
+    - Kedd
+    - Szerda
+    - Csütörtök
+    - Péntek
+    - Szombat
+    abbr_day_names:
+    - Vas
+    - Hét
+    - Ke
+    - Sze
+    - Csü
+    - Pé
+    - Szo
+    month_names:
+    -
+    - Január
+    - Február
+    - Március
+    - Április
+    - Május
+    - Június
+    - Július
+    - Augusztus
+    - Szeptember
+    - Október
+    - November
+    - December
+    abbr_month_names:
+    -
+    - Jan
+    - Feb
+    - Már
+    - Ápr
+    - Máj
+    - Jún
+    - Júll
+    - Aug
+    - Sze
+    - Okt
+    - Nov
+    - Dec
+    order:
+    - :year
+    - :month
+    - :day
+  time:
+    formats:
+      default: ! '%Y/%m/%d %I:%M %p'
+      time: ! '%I:%M %p'
+      short: ! '%b %d  %H:%M'
+      long: ! '%Y%B, %d  %H:%M'
+    am: de
+    pm: du
+  datetime:
+    distance_in_words:
+      half_a_minute: fél perc
+      less_than_x_seconds:
+        one: kevesebb, mint 1 másodperc
+        other: kevesebb, mint %{count} másodperc
+      x_seconds:
+        one: 1 másodperc
+        other: ! '%{count} másodperc'
+      less_than_x_minutes:
+        one: kevesebb, mint 1 perc
+        other: kevesebb, mint %{count} perc
+      x_minutes:
+        one: 1 perc
+        other: ! '%{count} perc'
+      about_x_hours:
+        one: körülbelül 1 óra
+        other: körülbelül %{count} óra
+      x_hours:
+        one: 1 óra
+        other: ! '%{count} óra'
+      x_days:
+        one: 1 nap
+        other: ! '%{count} nap'
+      about_x_months:
+        one: körülbelül 1 hónap
+        other: körülbelül %{count} hónap
+      x_months:
+        one: 1 hónap
+        other: ! '%{count} hónap'
+      about_x_years:
+        one: körülbelül 1 év
+        other: körülbelül %{count} év
+      over_x_years:
+        one: több, mint 1 év
+        other: több,mint %{count} év
+      almost_x_years:
+        one: majdnem 1 év
+        other: majdnem %{count} év
+  number:
+    format:
+      separator: .
+      delimiter: ''
+      precision: 2
+    currency:
+      format:
+        unit: Ft
+        format: ! '%u %n'
+        separator: .
+        delimiter: ! ','
+        precision: 0
+    human:
+      format:
+        delimiter: ''
+        precision: 1
+        separator: ! ','
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: kB
+          mb: MB
+          gb: GB
+          tb: TB
+  support:
+    array:
+      sentence_connector: és
+      skip_last_comma: hamis
+  activerecord:
+    models:
+      easy_user_working_time_calendar: Naptár
+      easy_user_working_time_calendar_holiday: Szabadságok
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: Főnaptár
+        name: Név
+        default_working_hours: Napi munkaórák száma
+        first_day_of_week: A hét első munka napja
+        is_default: Alapértelmezett naptár
+      easy_user_working_time_calendar_holiday:
+        name: Név
+        holiday_date: Nap
+        is_repeating: ismétlődő ünnepnap
+    errors:
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: több mint a megengedett
+      messages:
+        cant_link_an_project_with_a_descendant: A projekt nem társítható egy részfeladatával
+        cant_link_an_version_with_a_descendant: A mérföldkő nem társítható egy részfeladatával
+        not_a_amount: érvénytelen összeg
+        before_milestone: (%{due_date}) korábbi időpontra kell hogy essen, mint a
+          mérföldkő (%{effective_date})
+        before_project_end: (%{due_date}) korábbi időpontra kell hogy essen, mint
+          a (%{project_due_date })
+        after_project_start: (%{start_date}) nem eshet a projekt kezdő dátuma elé
+          (%{project_start_date})
+        less_than_duration: túl korai időpontra esik a becsült órák számához képest
+        greater_than_soonest_start: (%{start_date}) nem eshet korábbi időpontra mint
+          a kapcsolódó feladatok legkorábbi időpontja (%{soonest_start})
+        greater_than_start_date2: (%{due_date}) Nem eshet korábbi időpontra, mint
+          a kezdődátum (%{start_date})
+  actionview_instancetag_blank_option: Kérem válasszon
+  general_text_No: Nem
+  general_text_Yes: Igen
+  general_text_no: nem
+  general_text_yes: igen
+  general_lang_name: Magyar
+  general_csv_separator: ;
+  general_csv_decimal_separator: .
+  general_csv_encoding: ISO-8859-2
+  general_pdf_encoding: UTF-8
+  general_first_day_of_week: '1'
+  notice_account_updated: Profil sikeresen frissítve. .
+  notice_account_invalid_creditentials: Hibás felhasználónév vagy jelszó.
+  notice_account_password_updated: A jelszó megváltozott.
+  notice_account_wrong_password: Hibás jelszó.
+  notice_account_register_done: Profil sikeresen létrehozva. Az aktiváláshoz kattintson
+    a e-mail üzenetben elküldött hivatkozásra.
+  notice_account_unknown_email: Ismeretlen felhasználónév.
+  notice_can_t_change_password: Ez a fiók külső hitelesítési forrást használ. A jelszóváltoztatás
+    nem lehetséges.
+  notice_account_lost_email_sent: Új jelszó kéréséhez kérjük kövesse az e-mail üzenetben
+    küldött utasításokat.
+  notice_account_activated: A fiók sikeresen aktiválva. Mostmár bejelentkezhet.
+  notice_successful_create: Létrehozás sikerült.
+  notice_successful_update: Sikeres frissítés.
+  notice_successful_delete: Törlés befejezve.
+  notice_successful_connection: Sikeres kapcsolódás.
+  notice_file_not_found: Az oldal nem létezik vagy el lett távolítva.
+  notice_locking_conflict: Az adatot egy másik felhasználó módosította.
+  notice_not_authorized: A lap megtekintése nem engedélyezett.
+  notice_not_authorized_archived_project: Ez a projekt már archiválásra került.
+  notice_email_sent: ! 'E-mail üzenet küldve: %{value}'
+  notice_email_error: ! 'Hiba történt az e-mail küldés során: (%{value})'
+  notice_feeds_access_key_reseted: Az RSS hozzáférési kulcs visszaállítva.
+  notice_api_access_key_reseted: API hozzáférési kulcs visszaállítva.
+  notice_failed_to_save_issues: ! ' %{count} feladat mentése sikertelen a kijelöltek
+    %{total} közül:   %{ids}.'
+  notice_failed_to_save_time_entries: (%{count} idő bejegyzés a(z) %{total}) közül
+    nem került mentésre.
+  notice_failed_to_save_members: ! 'Tag(ok) mentése sikertelen: %{errors}.'
+  notice_no_issue_selected: Nincs feladat kiválasztva. Kérem jelölje ki a feladatokat,
+    amelyeket szerkeszteni kíván.
+  notice_account_pending: Fiók létrehozva, jelenleg adminisztrátori jóváhagyásra vár.
+  notice_default_data_loaded: Alapértelmezett beállítások betöltve.
+  notice_unable_delete_version: Mérföldkő törlése sikertelen.
+  notice_unable_delete_time_entry: Időbejegyzés törlése sikertelen.
+  notice_issue_done_ratios_updated: Elvégzett feladatok aránya frissítve.
+  notice_gantt_chart_truncated: A táblázat csonkolva lett, mert túllépte a maximálisan
+    (%{max}) megjeleníthető elemek számát.
+  notice_issue_successful_create: Feladat %{id} létrehozva.
+  notice_issue_update_conflict: Szerkesztés közben egy másik felhasználó is módosította
+    a feladatot.
+  notice_account_deleted: A fiók véglegesen törölve lett.
+  notice_user_successful_create: Felhasználó %{id} létrehozva.
+  error_can_t_load_default_data: ! 'Alapértelmezett beállítás betöltése nem sikerült:
+    %{value}'
+  error_scm_not_found: A bejegyzés vagy az összefoglalás nem található a készletben.
+  error_scm_command_failed: ! 'Hiba történt a készlethez való hozzáférés során: %{value}'
+  error_scm_annotate: A bejegyzés nem található, vagy nem jelölhető meg.
+  error_scm_annotate_big_text_file: A bejegyzés nem jelölhető meg, mert túl lépi a
+    maximális szöveges fájl méretet.
+  error_issue_not_found_in_project: Feladat nem található, vagy nem ehhez a projekthez
+    tartozik.
+  error_no_tracker_in_project: Nincs nyomkövetés társítva ehhez a projekthez. Kérem
+    ellenőrizze a Projekt beállításokat.
+  error_no_default_issue_status: Nincs alapértelmezett feladat állapot definiálva.
+    Kérem ellenőrizze a beállításokat. ( "Adminisztráció -> Feladat állapotok").
+  error_can_not_delete_custom_field: Egyedi mező törlése sikertelen.
+  error_can_not_delete_tracker: Ez a nyomkövető feladatokat tartalmaz, ezért nem lehet
+    törölni.
+  error_can_not_delete_auth_source: Ez a hitelesítési forrás használatban van, ezért
+    nem lehet törölni.
+  error_can_not_remove_role: Ezt a szerepet nem lehet eltávolítani.
+  error_can_not_reopen_issue_on_closed_version: A feladat egy lezárt mérföldkőhöz
+    van rendelve, nem lehet újranyitni.
+  error_can_not_archive_project: Ezt a projektet nem lehet archiválni.
+  error_issue_done_ratios_not_updated: Elvégzett feladatok aránya nem került frissítésre.
+  error_workflow_copy_source: Kérem válasszon egy forrás követést vagy szerepet.
+  error_workflow_copy_target: Kérem válasszon cél követést vagy szerepet.
+  error_unable_delete_issue_status: Feladat állapotának törlése sikertelen
+  error_unable_to_connect: Sikertelen kapcsolódás (%{value})
+  error_attachment_too_big: Fájl feltöltése sikertelen, túllépi a megengedett méretet.
+    (%{max_size})
+  error_session_expired: A munkamenet lejárt. Kérem jelentkezzen be újra.
+  warning_attachments_not_saved: ! '%{count} fájl(ok) mentése sikertelen.'
+  mail_subject_lost_password: Az Ön jelszava %{value}
+  mail_body_lost_password: ! 'A jelszó változtatásához kattintson az alábbi hivatkozásra:'
+  mail_subject_register: ! '%{value} nevű fiók aktiválása'
+  mail_body_register: ! 'Fiók aktiválásához kattintson az alábbi hivatkozásra:'
+  mail_body_account_information_external: Bejelentkezhet %{value} fiókjával.
+  mail_body_account_information: A fiókhoz tartozó adatok
+  mail_subject_account_activation_request: ! '%{value} fiók aktiválás elindítva'
+  mail_body_account_activation_request: ! 'Új felhasználó (%{value}) regisztrált.
+    Fiókja az Ön megerősítésére vár:'
+  mail_subject_reminder: ! '%{count} feladat(ok) határideje jár le a következő %{days}
+    napon belül'
+  mail_body_reminder: ! '%{count} Önnek kiosztott feladat(ok) határ ideje jár le a
+    következő %{days} napon belül:'
+  mail_subject_wiki_content_added: ! '''%{id}'' wiki oldal került hozzáadásra'
+  mail_body_wiki_content_added: ! 'A ''%{id}'' wiki oldalt adta hozzá a következő
+    szerző: %{author}.'
+  mail_subject_wiki_content_updated: ! '''%{id}'' wiki oldal frissítésre került.'
+  mail_body_wiki_content_updated: ! 'A ''%{id}'' wiki oldalt frissítette: %{author}.'
+  field_name: Név
+  field_description: Leírás
+  field_summary: Statisztika
+  field_is_required: Kötelező
+  field_firstname: Keresztnév
+  field_lastname: Vezetéknév
+  field_mail: Email
+  field_filename: File
+  field_filesize: Méret
+  field_downloads: Letöltések
+  field_author: Szerző
+  field_created_on: Létrehozva
+  field_updated_on: Frissítve
+  field_closed_on: Lezárva
+  field_field_format: Formátum
+  field_is_for_all: Az összes projektre érvényes
+  field_possible_values: Lehetséges értékek
+  field_regexp: Szövegminta
+  field_min_length: Minimum karakterszám
+  field_max_length: Maximum karakterszám
+  field_value: Érték
+  field_category: Kategória
+  field_title: Cím
+  field_project: Projekt
+  field_issue: Feladat
+  field_status: Állapot
+  field_notes: Megjegyzések
+  field_is_closed: Feladat lezárva
+  field_is_default: Alapértelmezett érték
+  field_tracker: Követés
+  field_subject: Tárgy
+  field_due_date: Határidő
+  field_assigned_to: Felelős
+  field_priority: Prioritás
+  field_fixed_version: Kitűzött mérföldkő
+  field_user: Felhasználó
+  field_principal: Felettes
+  field_role: Szerep
+  field_homepage: Weboldal
+  field_is_public: Nyilvános
+  field_is_planned: Tervezett
+  field_parent: Alprojektje
+  field_is_in_roadmap: Feladatok megjelenítve az ütemtervben
+  field_login: Bejelentkezés
+  field_mail_notification: Email értesítések
+  field_admin: Adminisztrátor
+  field_last_login_on: Utolsó csatlakozás
+  field_language: Nyelv
+  field_effective_date: Dátum
+  field_password: Jelszó
+  field_new_password: Új jelszó
+  field_password_confirmation: Megerősítés
+  field_version: Mérföldkő
+  field_versions: Mérföldkövek
+  field_type: Típus
+  field_host: Host név
+  field_port: Port
+  field_account: Fiók
+  field_base_dn: Alap DN
+  field_attr_login: Login név attribútum
+  field_attr_firstname: Keresztnév attribútum
+  field_attr_lastname: Vezetéknév attribútum
+  field_attr_mail: Email attribútum
+  field_onthefly: Felhasználó létrehozása gyorsan
+  field_start_date: Kezdő dátum
+  field_done_ratio: ! '% Készültségi szint'
+  field_auth_source: Autentikáció módja
+  field_hide_mail: Ne mutassa az e-mail címem
+  field_comments: Hozzászólás
+  field_url: URL
+  field_start_page: Kezdő oldal
+  field_subproject: Alprojekt
+  field_hours: Órák
+  field_activity: Tevékenység
+  field_spent_on: Dátum
+  field_identifier: Azonosító
+  field_is_filter: Használat szűrőként
+  field_issue_to_id: Kapcsolódó feladatok
+  field_delay: Késés
+  field_assignable: Ehhez a szerephez kapcsolható feladatok
+  field_redirect_existing_links: Meglévő kapcsolatok átadása
+  field_estimated_hours: Becsült idő
+  field_column_names: Oszlopok
+  field_time_entries: Idő bejegyzése
+  field_time_zone: Időzóna
+  field_searchable: Kereshető
+  field_default_value: Alapértelmezett érték
+  field_comments_sorting: Hozzászólások megjelenítése
+  field_parent_title: Szülő oldal
+  field_editable: Szerkeszthető
+  field_watcher: Munkatárs
+  field_identity_url: OpenID URL
+  field_content: Tartalom
+  field_group_by: Eredmények csoportosítása
+  field_sharing: Megosztás
+  field_parent_issue: Megelőző feladat
+  field_member_of_group: Felelős csoportja
+  field_assigned_to_role: Felelős szerepe
+  field_text: Szövegmező
+  field_visible: Látható
+  field_warn_on_leaving_unsaved: Figyelmeztessen kilépés előtt ha nem mentett adatok
+    vannak az oldalon
+  field_issues_visibility: Feladatok láthatósága
+  field_is_private: Személyes
+  field_commit_logs_encoding: Verziókövetés naplójának karakterkódolása
+  field_scm_path_encoding: Útvonal karakterkódolása
+  field_path_to_repository: Tároló útvonala
+  field_root_directory: Gyökér könyvtár
+  field_cvsroot: CVSROOT
+  field_cvs_module: Modul
+  field_repository_is_default: Alapértelmezett tároló
+  field_multiple: Többszörös érték
+  field_auth_source_ldap_filter: LDAP szűrő
+  field_core_fields: Szabvány mezők
+  field_timeout: Időtúllépés (másodpercekben)
+  field_board_parent: Szülő fórum
+  field_private_notes: Személyes feljegyzések
+  field_inherit_members: Tagok öröklése
+  setting_app_title: Alkalmazás cím
+  setting_app_subtitle: Alkalmazás alcím
+  setting_welcome_text: Üdvözlő szöveg
+  setting_default_language: Alapértelmezett nyelv
+  setting_login_required: Bejelentkezés szükséges
+  setting_self_registration: Regisztráció
+  setting_attachment_max_size: Melléklet maximális mérerte
+  setting_issues_export_limit: Exportálható feladatok korlátozása
+  setting_mail_from: Feladó email cím
+  setting_bcc_recipients: Titkos másolat címzettek (bcc)
+  setting_plain_text_mail: Egyszerű szöveges levél (nem HTML)
+  setting_host_name: Kiszolgáló név és útvonal
+  setting_text_formatting: Szöveg formázása
+  setting_wiki_compression: Wiki előzmények tömörítése
+  setting_feeds_limit: Atom feed-ekben megjelenő elemek maximális száma
+  setting_default_projects_public: Új projektek alapértelmezetten nyilvánosak
+  setting_autofetch_changesets: Változások automatikus végrehajtása
+  setting_sys_api_enabled: WebSocket (WS) engedélyezése a tároló kezeléséhez
+  setting_commit_ref_keywords: Hivatkozott kulcsszavak
+  setting_commit_fix_keywords: Helyesbítő kulcsszavak
+  setting_autologin: Automatikus bejelentkezés
+  setting_date_format: Dátum formátum
+  setting_time_format: Idő formátum
+  setting_cross_project_issue_relations: Kapcsolat engedélyezése keresztprojektek
+    feladatai között
+  setting_cross_project_subtasks: Keresztprojektek közötti alfeladatok engedélyezése
+  setting_issue_list_default_columns: Alapértelmezett oszlopok megjelenítése a feladatlistán
+  setting_repositories_encodings: Mellékletek és tárolók titkosítása
+  setting_emails_header: Email fejléc
+  setting_emails_footer: Email lábléc
+  setting_protocol: Protokoll
+  setting_per_page_options: Oldalankénti elemet számának beállítása
+  setting_user_format: Felhasználói megjelenítési formátum
+  setting_activity_days_default: Napok megjelenítése a projekt tevékenység oldalán
+  setting_display_subprojects_issues: Alprojektek feladatainak alapértelmezett megjelenítése
+    a fő projektek oldalán
+  setting_enabled_scm: SCM engedélyezve
+  setting_mail_handler_body_delimiters: Email csonkolása az alábbi sor(ok) után
+  setting_mail_handler_api_enabled: WebSocket (WS) engedélyezése bejövő email-ekre
+  setting_mail_handler_api_key: API kulcs
+  setting_sequential_project_identifiers: projekt azonosítók generálása folyamatos
+    számozással
+  setting_gravatar_enabled: Gravatar felhasználói ikonok használata
+  setting_gravatar_default: Alapértelmezett Gravatar kép
+  setting_diff_max_lines_displayed: Maximálisan megjelenítendő ‘diff’ sorok száma
+  setting_file_max_size_displayed: Szövegszerűen megjelenített szövegesfájlok maximális
+    mérete
+  setting_repository_log_display_limit: A fájlnaplóban megjelenő módosítások maximális
+    száma
+  setting_openid: OpenID bejelentkezés és regisztráció engedélyezése
+  setting_password_min_length: Minimális jelszóhossz
+  setting_new_project_user_role_id: A projektet (nem adminisztrátorként) létrehozó
+    felhasználónak adott szerep
+  setting_default_projects_modules: Alapértelmezett modulok az új projektekhez
+  setting_issue_done_ratio: Feladat készültségi szintjének kiszámítása a következővel
+  setting_issue_done_ratio_issue_field: Feladat mező használata
+  setting_issue_done_ratio_issue_status: Feladat állapot használata
+  setting_start_of_week: Naptárak kezdése a következővel
+  setting_rest_api_enabled: REST web-es szolgáltatás engedélyezése
+  setting_cache_formatted_text: Szövegformázás gyorsítótárból (cache)
+  setting_default_notification_option: Alapértelmezett értesítési beállítás
+  setting_commit_logtime_enabled: Ráfordított idő naplózása
+  setting_commit_logtime_activity_id: Naplózott időre könyvelt tevékenységfajta
+  setting_gantt_items_limit: GANTT diagramon megjelenített elemek maximális száma
+  setting_issue_group_assignment: Feladat csoporthoz való rendelésének engedélyezése
+  setting_default_issue_start_date_to_creation_date: Aktuális dátum használata az
+    új feladatok kezdő időpontjához
+  setting_commit_cross_project_ref: Módosítások érvényesítése az összes többi projektnél
+  setting_unsubscribe: A felhasználók törölhetik a saját fiókjukat
+  setting_session_lifetime: Munkamenet maximális élettartatama
+  setting_session_timeout: Üresjárati (inaktív) időkorlát
+  setting_thumbnails_enabled: Mellékletek bélyegképének megjelenítése
+  setting_thumbnails_size: Bélyegkép mérete (pixel)
+  setting_non_working_week_days: Pihenőnapok
+  setting_jsonp_enabled: JSONP támogatás engedélyezése
+  setting_default_projects_tracker_ids: Új projektek alapértelmezett nyomkövetői
+  permission_add_project: Projekt létrehozása
+  permission_add_subprojects: Alprojektek létrehozása
+  permission_edit_project: Projekt szerkesztése
+  permission_close_project: Projekt lezárása / újranyitása
+  permission_select_project_modules: Projekt modulok kiválasztása
+  permission_manage_members: Csoporttagok kezelése
+  permission_manage_project_activities: Projekt tevékenységek kezelése
+  permission_manage_versions: Mérföldkövek kezelése
+  permission_manage_categories: Feladat típusok kezelése
+  permission_view_issues: Feladatok megtekintése
+  permission_add_issues: Feladatok hozzáadása
+  permission_edit_issues: Feladatok szerkesztése
+  permission_manage_issue_relations: Feladatok közötti kapcsolatok kezelése
+  permission_set_issues_private: Feladatok adatvédelmi beállításainak kezelése
+  permission_set_own_issues_private: Saját feladatok adatvédelmi beállításainak kezelése
+  permission_add_issue_notes: Jegyzetek hozzáadása
+  permission_edit_issue_notes: Jegyzetek szerkesztése
+  permission_edit_own_issue_notes: Saját jegyzetek szerkesztése
+  permission_view_private_notes: Személyes jegyzetek megtekintése
+  permission_set_notes_private: Jegyzetek megjelölése személyesként
+  permission_move_issues: Feladatok áthelyezése
+  permission_delete_issues: Feladatok törlése
+  permission_manage_public_queries: Közös szűrők kezelése
+  permission_save_queries: Szűrők mentése
+  permission_view_gantt: GANTT diagram megtekintése
+  permission_view_calendar: Naptár megtekintése
+  permission_view_issue_watchers: Munkatársak listájának megtekintése
+  permission_add_issue_watchers: Munkatársak hozzáadása
+  permission_delete_issue_watchers: Munkatársak eltávolítása
+  permission_log_time: Munkaidő naplózása
+  permission_view_time_entries: Naplózott idő megtekintése
+  permission_edit_time_entries: Naplózott idő szerkesztése
+  permission_edit_own_time_entries: Saját naplózott idő szerkesztése
+  permission_view_news: Hírek megtekintése
+  permission_manage_news: Hírek kezelése
+  permission_comment_news: Hozzászólás hírekhez
+  permission_view_documents: Dokumentumok megtekintése
+  permission_add_documents: Dokumentumok hozzáadása
+  permission_edit_documents: Dokumentumok szerkesztése
+  permission_delete_documents: Dokumentumok törlése
+  permission_manage_files: Fájlok kezelése
+  permission_view_files: Fájlok megtekintése
+  permission_manage_wiki: Wiki kezelése
+  permission_rename_wiki_pages: Wiki oldalak átnevezése
+  permission_delete_wiki_pages: Wiki oldalak törlése
+  permission_view_wiki_pages: Wiki megtekintése
+  permission_view_wiki_edits: Wiki előzmények megtekintése
+  permission_edit_wiki_pages: Wiki oldalak szerkesztése
+  permission_delete_wiki_pages_attachments: Mellékletek törlése
+  permission_protect_wiki_pages: Wiki oldalak levédése
+  permission_manage_repository: Tároló kezelése
+  permission_browse_repository: Tároló tallózása
+  permission_view_changesets: Módosításcsomagok megtekintése
+  permission_commit_access: Hozzáférés módosításokhoz
+  permission_manage_boards: Üzenőfalak kezelése
+  permission_view_messages: Üzenetek megtekintése
+  permission_add_messages: Üzenetek közzététele
+  permission_edit_messages: Üzenetek szerkesztése
+  permission_edit_own_messages: Saját üzenetek szerkesztése
+  permission_delete_messages: Üzenetek törlése
+  permission_delete_own_messages: Saját üzenetek törlése
+  permission_export_wiki_pages: Wiki oldalak exportálása
+  permission_manage_subtasks: Részfeladatok kezelése
+  permission_manage_related_issues: Kapcsolódó feladatok kezelése
+  permission_view_easy_attendances: Üzenőfal megtekintése és használata
+  permission_edit_easy_attendances: Üzenőfal bejegyzéseinek módosítása
+  permission_view_project_overview_users_query: Szűrt felhasználói lista megtekintése
+    a projekt összegzőn
+  project_module_issue_tracking: Feladat követés
+  project_module_time_tracking: Idő követés
+  project_module_news: Hírek
+  project_module_documents: Dokumentumok
+  project_module_files: Fájlok
+  project_module_wiki: Wiki
+  project_module_repository: Tárhely
+  project_module_boards: Üzenőfalak
+  project_module_calendar: Naptár
+  project_module_gantt: Gantt
+  label_user: Felhasználó
+  label_user_plural: Felhasználók
+  label_user_new: Új felhasználó
+  label_user_anonymous: Névtelen
+  label_project: Projekt
+  label_project_new: Új projekt
+  label_project_plural: Projektek
+  label_x_projects:
+    zero: no projects
+    one: 1 project
+    other: ! '%{count} projektek'
+  label_project_all: Minden projekt
+  label_project_latest: Legutóbbi projektek
+  label_issue: Feladat
+  label_issue_new: Új feladat
+  label_issue_plural: Feladatok
+  label_issue_view_all: Összes feladat
+  label_issues_by: Feladatok %{value} szerint
+  label_issue_added: Feladat hozzáadva
+  label_issue_updated: Feladat frissítve
+  label_issue_note_added: Feljegyzés hozzáadva
+  label_issue_status_updated: Állapot frissítve
+  label_issue_priority_updated: Prioritás frissítve
+  label_document: Dokumentum
+  label_document_new: Új dokumentum
+  label_document_plural: Dokumentumok
+  label_document_added: Dokumentum hozzáadva
+  label_role: Szerep
+  label_role_plural: Szerepek
+  label_role_new: Új szerep
+  label_role_and_permissions: Szerepek és engedélyek
+  label_role_anonymous: Névtelen
+  label_role_non_member: Nem tag
+  label_member: Tag
+  label_member_new: Új tag
+  label_member_plural: Tagok
+  label_tracker: Követő
+  label_tracker_plural: Követők
+  label_tracker_new: Új követő
+  label_workflow: Workflow
+  label_issue_status: Feladat állapot
+  label_issue_status_plural: Feladatok állapotai
+  label_issue_status_new: Új állapot
+  label_issue_category: Feladat kategória
+  label_issue_category_plural: Feladat kategóriák
+  label_issue_category_new: Új kategória
+  label_custom_field: Egyedi mező
+  label_custom_field_plural: Egyedi mezők
+  label_custom_field_new: Új egyedi mező
+  label_enumerations: Kategóriák
+  label_enumeration_new: Új érték
+  label_information: Információ
+  label_information_plural: Információk
+  label_please_login: Kérem jelentkezzen be
+  label_register: Regisztráció
+  label_login_with_open_id_option: vagy bejelentkezés OpenID-val
+  label_password_lost: Elfelejtett jelszó
+  label_home: Főoldal
+  label_my_page: Főoldal
+  label_my_account: Fiókom
+  label_my_projects: Projektjeim
+  label_my_page_block: Saját oldalam
+  label_administration: Adminisztráció
+  label_login: Bejelentkezés
+  label_logout: Kijelentkezés
+  label_help: Segítség
+  label_reported_issues: Jelentett feladatok
+  label_assigned_to_me_issues: Részemre kiosztott feladatok
+  label_last_login: Utolsó kapcsolódás
+  label_registered_on: Regisztrálva
+  label_activity: Tevékenység
+  label_overall_activity: Teljes tevékenység
+  label_user_activity: ! '%{value}'' tevékenysége'
+  label_new: Új
+  label_logged_as: Bejelentkezve, mint
+  label_environment: Környezet
+  label_authentication: Hitelesítés
+  label_auth_source: Hitelesítési mód
+  label_auth_source_new: Új hitelesítési mód
+  label_auth_source_plural: Hitelesítési módok
+  label_subproject_plural: Alprojektek
+  label_subproject_new: Új alprojekt
+  label_and_its_subprojects: ! '%{value} és alprojektjei'
+  label_min_max_length: Min - Max hosszúság
+  label_list: Lista
+  label_date: Dátum
+  label_integer: Egész szám
+  label_float: Lebegőpontos
+  label_boolean: Boolean
+  label_string: Szöveg
+  label_text: Hosszú szöveg
+  label_attribute: Tulajdonság
+  label_attribute_plural: Tulajdonságok
+  label_no_data: Nincs megjeleníthető adat
+  label_change_status: Állapot megváltoztatása
+  label_history: Előzmények
+  label_attachment: Fájl
+  label_attachment_new: Új fájl
+  label_attachment_delete: Fájl törlése
+  label_attachment_plural: Fájlok
+  label_file_added: Fájl hozzáadva
+  label_report: Jelentés
+  label_report_plural: Jelentések
+  label_news: Hírek
+  label_news_new: Hírek hozzáadása
+  label_news_plural: Hírek
+  label_news_latest: Legfrissebb hírek
+  label_news_view_all: Összes hír megtekintése
+  label_news_added: Hír hozzáadva
+  label_news_comment_added: Hozzászólás a hírhez elküldve
+  label_settings: Beállítások
+  label_overview: Project áttekintés
+  label_version: Mérföldkő
+  label_version_new: Új mérföldkő
+  label_version_plural: Mérföldkövek
+  label_close_versions: Teljesített mérföldkövek lezárása
+  label_confirmation: Megerősítés
+  label_export_to: ! 'Szint elérhető itt:'
+  label_read: Olvasás...
+  label_public_projects: Nyilvános projektek
+  label_open_issues: megnyitás
+  label_open_issues_plural: megnyitás
+  label_closed_issues: lezárt
+  label_closed_issues_plural: lezárt
+  label_x_open_issues_abbr_on_total:
+    zero: 0 nyitott / %{total}
+    one: 1 nyitott / %{total}
+    other: ! '%{count} nyitott / %{total}'
+  label_x_open_issues_abbr:
+    zero: 0 nyitott
+    one: 1 nyitott
+    other: ! '%{count} nyitott'
+  label_x_closed_issues_abbr:
+    zero: 0 lezárt
+    one: 1 lezárt
+    other: ! '%{count} lezárt'
+  label_x_issues:
+    zero: 0 feladat
+    one: 1 feladat
+    other: ! '%{count} feladat(ok)'
+  label_total: Összes
+  label_total_total: "Összesen: "
+  label_total_time: Összes idő
+  label_permissions: Jogosultságok
+  label_permissions_global: Globális jogosultságok
+  label_permissions_project: Projekt jogosultságok
+  label_current_status: Jelenlegi állapot
+  label_new_statuses_allowed: Új állapotok engedélyezése
+  label_all: mind
+  label_any: bármelyik
+  label_none: egyik sem
+  label_nobody: senki
+  label_next: Következő
+  label_previous: Előző
+  label_used_by: Használja
+  label_details: Részletek
+  label_add_note: Jegyzet hozzáadása
+  label_per_page: Oldalanként
+  label_calendar: Naptár
+  label_months_from: hónapoktól
+  label_gantt: Gantt
+  label_project_gantt: Projekt Gantt
+  label_internal: Belső
+  label_last_changes: utolsó %{count} módosítás(ok)
+  label_change_view_all: Összes módosítás megtekintése
+  label_personalize_page: Oldal személyre szabása
+  label_comment: Hozzászólás
+  label_comment_plural: Hozzászólások
+  label_x_comments:
+    zero: nincsenek hozzászólások
+    one: 1 hozzászólás
+    two: 2 hozzászólás
+    three: 3 hozzászólás
+    four: 4 hozzászólás
+    other: ! '%{count} hozzászólás'
+  label_comment_add: Hozzászólás
+  label_comment_added: Hozzászólás elküldve
+  label_comment_delete: Hozzászólások törlése
+  label_query: Egyedi szűrő
+  label_query_plural: Egyedi szűrők
+  label_query_new: Új szűrő
+  label_my_queries: Saját lekérdezéseim
+  label_filter_add: Szűrő hozzáadása
+  label_filter_plural: Szűrők
+  label_equals: egyenlő
+  label_not_equals: nem egyenlő
+  label_in_less_than: kevesebb, mint
+  label_in_more_than: több, mint
+  label_in_the_next_days: a következő
+  label_in_the_past_days: az elmúlt
+  label_greater_or_equal: ! '>='
+  label_less_or_equal: <=
+  label_between: között
+  label_in: benne
+  label_today: ma
+  label_all_time: állandóan
+  label_yesterday: tegnap
+  label_this_week: ezen a héten
+  label_last_week: múlt héten
+  label_last_n_weeks: elmúlt %{count} hétben
+  label_last_n_days: elmúlt %{count} napban
+  label_this_month: ebben a hónapban
+  label_last_month: előző hónapban
+  label_this_year: ebben az évben
+  label_date_range: Idő intervallum
+  label_less_than_ago: kevesebb, mint nappal ezelőtt
+  label_more_than_ago: több, mint nappal ezelőtt
+  label_ago: nappal ezelőtt
+  label_contains: tartalmazza
+  label_not_contains: nem tartalmazza
+  label_any_issues_in_project: bármelyik feladat a projektben
+  label_any_issues_not_in_project: bármelyik feladat a projekten kívül
+  label_no_issues_in_project: Nem a projekthez tartozó feladatok
+  label_day_plural: napok
+  label_repository: Tároló
+  label_repository_new: Új tároló
+  label_repository_plural: Tárolók
+  label_browse: Tallózás
+  label_branch: Ág
+  label_tag: Címke
+  label_revision: Verzió
+  label_revision_plural: Verziók
+  label_revision_id: Verzió %{value}
+  label_associated_revisions: Kapcsolódó verziók
+  label_added: hozzáadva
+  label_modified: módosítva
+  label_copied: másolva
+  label_renamed: átnevezve
+  label_deleted: törölve
+  label_latest_revision: Aktuális verzió
+  label_latest_revision_plural: Aktuális verziók
+  label_view_revisions: Verziók megtekintése
+  label_view_all_revisions: Összes verzió megtekintése
+  label_max_size: Maximális méret
+  label_sort_highest: Mozgatás legfelülre
+  label_sort_higher: Mozgatás felülre
+  label_sort_lower: Mozgatás lefelé
+  label_sort_lowest: Mozgatás legalulra
+  label_roadmap: Ütemterv
+  label_roadmap_due_in: Határidő lejár %{value}
+  label_roadmap_overdue: ! '%{value} késés'
+  label_roadmap_no_issues: Nincsenek feladatok ehhez a mérföldkőhöz
+  label_search: Keresés
+  label_result_plural: Eredmények
+  label_all_words: Minden szó
+  label_wiki: Wiki
+  label_wiki_edit: Wiki szerkesztés
+  label_wiki_edit_plural: Wiki szerkesztések
+  label_wiki_page: Wiki oldal
+  label_wiki_page_plural: Wiki oldalak
+  label_index_by_title: Rendezés cím szerint
+  label_index_by_date: Rendezés dátum szerint
+  label_current_version: Jelenlegi mérföldkő
+  label_preview: Előnézet
+  label_feed_plural: Feed-ek
+  label_changes_details: Összes módosítás részletei
+  label_issue_tracking: Feladat nyomonkövetése
+  label_spent_time: Eltöltött idő
+  label_overall_spent_time: Teljes eltöltött idő
+  label_f_hour: ! '%{value} órar'
+  label_f_hour_plural: ! '%{value} óra'
+  label_time_tracking: Idő nyomonkövetése
+  label_change_plural: Módosítások
+  label_statistics: Statisztika
+  label_commits_per_month: Módosítás havonta
+  label_commits_per_author: Módosítás szerzőnként
+  label_diff: diff
+  label_view_diff: Különbségek megtekintése
+  label_diff_inline: szövegszerűen
+  label_diff_side_by_side: oldalról oldalra
+  label_options: Opciók
+  label_copy_workflow_from: Workflow másolása a következőről
+  label_permissions_report: Jelentés az engedélyekről
+  label_watched_issues: Megfigyelt feladatok
+  label_related_issues: Kapcsolódó feladatok
+  label_applied_status: Kiosztott feladatok
+  label_loading: Betöltés...
+  label_relation_new: Új kapcsolat
+  label_relation_delete: Kapcsolat törlése
+  label_relates_to: Kapcsolódik hozzá
+  label_duplicates: Másolat
+  label_duplicated_by: Másolva általa
+  label_blocks: Blokkolja
+  label_blocked_by: Blokkolva általa
+  label_precedes: Megelőz
+  label_follows: Követ
+  label_copied_to: Másolva ide
+  label_copied_from: Másolva innen
+  label_end_to_start: befejezéstől a kezdésig
+  label_end_to_end: befejezéstől a befejezésig
+  label_start_to_start: kezdéstől a kezdésig
+  label_start_to_end: kezdéstől a befejezésig
+  label_stay_logged_in: Maradjon bejelentkezve
+  label_disabled: Letiltva
+  label_show_completed_versions: Teljesített mérföldkövek mutatása
+  label_me: én
+  label_board: Fórum
+  label_board_new: Új fórum
+  label_board_plural: Fórumok
+  label_board_locked: Zárolva
+  label_board_sticky: Kockázatos
+  label_topic_plural: Témakörök
+  label_message_plural: Üzenetek
+  label_message_last: Utolsó üzenet
+  label_message_new: Új üzenet
+  label_message_posted: Üzenet elküldve
+  label_reply_plural: Válaszok
+  label_send_information: Fiók adatainak elküldése a felhasználónak
+  label_year: Év
+  label_month: Hónap
+  label_week: Hét
+  label_date_from: -tól
+  label_date_to: -ig
+  label_language_based: A felhasználó nyelvén
+  label_sort_by: Rendezés %{value} által
+  label_send_test_email: Teszt üzenet küldése
+  label_feeds_access_key: RSS hozzáférési kulcs
+  label_missing_feeds_access_key: Hiányzó RSS hozzáférési kulcs
+  label_feeds_access_key_created_on: RSS hozzáférési kulcs létrehozva %{value} ezelőtt
+  label_module_plural: Modulok
+  label_added_time_by: Hozzáadva %{author} által
+  label_updated_time_by: Frissítve %{author} által %{age} ezelőtt
+  label_updated_time: Frissítve %{value} ezelőtt
+  label_jump_to_a_project: Ugrás egy projekthez...
+  label_file_plural: Fájlok
+  label_changeset_plural: Módosításcsomagok
+  label_default_columns: Alapértelmezett oszlopok
+  label_no_change_option: (Nincs változás)
+  label_no_change: Nincs változás
+  label_change_to: ! 'Változás erre:'
+  label_bulk_edit_selected_issues: Kijelölt feladatok módosítása
+  label_bulk_edit_selected_time_entries: Kijelölt időbejegyzések módosítása
+  label_theme: Téma
+  label_default: Alapértelmezett
+  option_only_selected: csak a kijejölt
+  label_search_titles_only: Csak a címben keres
+  label_user_mail_option_all: Bármilyen eseményről a projektjeimnél
+  label_user_mail_option_selected: Bármilyen eseményről a kijelölt projekteknél
+  label_user_mail_option_none: Nincsenek események
+  label_user_mail_option_only_my_events: Csak azokról, amelyeket figyelek, vagy amelyekbe
+    be vagyok vonva
+  label_user_mail_option_only_assigned: Csak azokról, amelyeket nekem osztottak ki
+  label_user_mail_option_only_owner: Csak azokról, amelyeknek én vagyok a tulajdonosa
+  label_user_mail_no_self_notified: Nem szeretnék a saját módosításaimról értesítést
+    kapni.
+  label_registration_activation_by_email: Fiók aktiválás email-en keresztül
+  label_registration_manual_activation: kézi fiók aktiválás
+  label_registration_automatic_activation: automatikus fiók aktiválás
+  label_display_per_page: ! 'Oldalanként: %{value}'
+  label_age: Kor
+  label_change_properties: Kattintson ide további tulajdonságok megváltoztatásához
+  label_general: Általános
+  label_more: Több
+  label_scm: SCM
+  label_plugins: Plugin-ok
+  label_ldap_authentication: LDAP hitelesítés
+  label_downloads_abbr: DL
+  label_optional_description: Leírás (választható)
+  label_add_another_file: További fájl hozzáadása
+  label_preferences: Beállítások
+  label_chronological_order: Időrendi sorrendben
+  label_reverse_chronological_order: Fordított időrendi sorrendben
+  label_planning: Tervezés
+  label_incoming_emails: Bejövő levelek
+  label_generate_key: Kulcs generálása
+  label_issue_watchers: Munkatársak
+  label_example: Példa
+  label_display: Megjelenítés
+  label_sort: Rendezés
+  label_ascending: Növekvő
+  label_descending: Csökkenő
+  label_date_from_to: ! '%{start}-tól  %{end}-ig'
+  label_wiki_content_added: Wiki oldal hozzáadva
+  label_wiki_content_updated: Wiki oldal frissítve
+  label_group: Csoport
+  label_group_plural: Csoportok
+  label_group_new: Új csoport
+  label_time_entry_plural: Eltöltött idő
+  label_version_sharing_none: Nincs megosztva
+  label_version_sharing_descendants: Alprojektekkel együtt
+  label_version_sharing_hierarchy: Projekt hiearchiával együtt
+  label_version_sharing_tree: Projekt fával együtt
+  label_version_sharing_system: Minden projekttel
+  label_update_issue_done_ratios: Elvégzett feladatok arányának frissítése
+  label_copy_source: Forrás
+  label_copy_target: Cél
+  label_copy_same_as_target: Ugyanaz, mint a cél
+  label_display_used_statuses_only: Csak e nyomkövető által használt állapotok megjelenítése
+  label_api_access_key: API hozzáférési kulcs
+  label_missing_api_access_key: Hiányzó API hozzáférési kulcs
+  label_api_access_key_created_on: API hozzáférési kulcs létrehozva %{value} ezelőtt
+  label_profile: Profil
+  label_subtask_plural: Alfeladatok
+  label_project_copy_notifications: Email értesítések küldése a projekt másolása alatt
+  label_principal_search: ! 'Felhasználó vagy csoport keresése:'
+  label_user_search: ! 'Felhasználó keresése:'
+  label_additional_workflow_transitions_for_author: További átmenetek engedélyezése
+    ha a felhasználó a szerző
+  label_additional_workflow_transitions_for_assignee: További átmenetek engedélyezése
+    ha a felhasználó a megbízott
+  label_issues_visibility_all: Minden feladat
+  label_issues_visibility_public: Minden nyilvános feladat
+  label_issues_visibility_own: A felhasználó által létrehozott vagy megfigyelt vagy
+    a felhasználónak kiosztott feladatok
+  label_git_report_last_commit: Utolsó módosítás jelentése a fájlokról és a mappákról
+  label_parent_revision: Szülő
+  label_child_revision: Gyerek
+  label_export_options: ! '%{export_format} export opciók'
+  label_copy_attachments: Mellékletek másolása
+  label_copy_subtasks: Alfeladatok másolása
+  label_item_position: ! '%{count} %{position}-ja '
+  label_completed_versions: Teljesített mérföldkövek
+  label_search_for_watchers: Munkatársak keresése hozzáadásra
+  label_session_expiration: Munkamenet lejárata
+  label_show_closed_projects: Lezárt projektek megtekintése
+  label_status_transitions: Állapot átmenetek
+  label_fields_permissions: Mezők engedélyei
+  label_readonly: Csak olvasható
+  label_required: Kötelező
+  label_attribute_of_project: A projekt %{name}
+  label_attribute_of_issue: A feladat %{name}
+  label_attribute_of_author: A szerző %{name}
+  label_attribute_of_assigned_to: A megbízott %{name}
+  label_attribute_of_user: A felhasználó %{name}
+  label_attribute_of_fixed_version: A cél mérföldkő %{name}
+  label_cross_project_descendants: Alprojektekkel
+  label_cross_project_tree: Projekt fával
+  label_cross_project_hierarchy: Projekt hierarchiával
+  label_cross_project_system: Minden projekttel
+  label_allow_log_time_to_closed_issue: Időbejegyzések engedélyezése lezárt ügyekhez
+  label_gantt_progress_line: Végrehajtási vonal
+  button_login: Bejeletkezés
+  button_submit: Elküld
+  button_save: Mentés
+  button_check_all: Összes kijelölése
+  button_uncheck_all: Teljes kijelölés megszüntetése
+  button_collapse_all: Mindent összezár
+  button_expand_all: Mindent kinyit
+  button_delete: Törlés
+  button_create: Létrehozás
+  button_create_and_continue: Létrehozás és folytatás
+  button_test: Teszt
+  button_edit: Szerkesztés
+  button_edit_associated_wikipage: ! 'Kapcsolódó Wiki oldal szerkesztése: %{page_title}'
+  button_add: Hozzáadás
+  button_change: Módosítás
+  button_apply: Alkalmazás
+  button_clear: Törlés
+  button_lock: Zárolás
+  button_unlock: Zárolás feloldása
+  button_download: Letöltés
+  button_list: Lista
+  button_view: Megtekint
+  button_move: Áthelyez
+  button_move_and_follow: Áthelyez és követ
+  button_back: Vissza
+  button_cancel: Megszakítás
+  button_activate: Aktiválás
+  button_sort: Rendezés
+  button_log_time: Idő bejegyzése
+  button_rollback: Visszalépés ehhez a mérföldkőhöz
+  button_watch: Figyelés
+  button_unwatch: Figyelés megszüntetése
+  button_reply: Válasz
+  button_archive: Archiválás
+  button_unarchive: Archiválás visszavonása
+  button_reset: Visszaállítás
+  button_rename: Átnevezés
+  button_change_password: Jelszó módosítása
+  button_copy: Másolás
+  button_copy_and_follow: Másolás és követés
+  button_annotate: Jegyzet hozzáadása
+  button_update: Frissítés
+  button_configure: Konfiguráció
+  button_quote: Idéz
+  button_duplicate: Másolatot készít
+  button_show: Megmutat
+  button_hide: Elrejt
+  button_edit_section: Bekezdés szerkesztése
+  button_export: Export
+  button_delete_my_account: Saját fiók törlése
+  button_close: Zárás
+  button_reopen: Újranyitás
+  status_active: aktív
+  status_registered: regisztrált
+  status_locked: zárolt
+  project_status_planned: tervezett
+  project_status_active: aktív
+  project_status_closed: lezárt
+  project_status_archived: archivált
+  version_status_open: nyitott
+  version_status_locked: zárolt
+  version_status_closed: lezárt
+  field_active: Aktív
+  text_select_mail_notifications: Válassza ki, mely műveletekről szeretne értesítést
+    kapni email-ben
+  text_regexp_info: pl. ^[A-Z0-9]+$
+  text_min_max_length_info: 0 esetén nincs korlátozás
+  text_project_destroy_confirmation: Biztos benne, hogy törli a projektet és a hozzátartozó
+    adatokat?
+  text_project_archive_confirmation: Biztos benne, hogy archiválja a projektet és
+    a hozzátartozó adatokat?
+  text_project_close_confirmation: Biztos, hogy le akarja zárni ezt a projektet?
+  text_project_reopen_confirmation: Biztos, hogy újra akarja nyitni ezt a projektet?
+  text_subprojects_destroy_warning: ! '%{value} minden alprojektje törlésre kerül!'
+  text_workflow_edit: Válasszon szerepet és egy nyomon követőt a Workflow szerkesztéséhez
+  text_are_you_sure: Biztos benne?
+  text_journal_changed: ! '%{label} megváltoztatva erről %{old} erre %{new}'
+  text_journal_changed_no_detail: ! '%{label} frissítve'
+  text_journal_set_to: ! '%{label} beállítva erre %{value}'
+  text_journal_deleted: ! '%{label} törölve(%{old})'
+  text_journal_added: ! '%{label} %{value} hozzáadva'
+  text_tip_issue_begin_day: a feladat ezen a napon kezdődik
+  text_tip_issue_end_day: a feladat ezen a napon befejeződik
+  text_tip_issue_begin_end_day: a feladat ezen a napon kezdődik és fejeződik be
+  text_project_identifier_info: Csak kisbetűk (a-z), számok, kötőjelek és aláhúzásjelek
+    használhatók, az első karakter kisbetű legyen <br />Mentés után a projekt azonosító
+    nem módosítható.
+  text_caracters_maximum: ! '%{count} karakter maximum.'
+  text_caracters_minimum: Legalább %{count} karakter hosszú.
+  text_length_between: Karakterszám  %{min} - %{max} között.
+  text_tracker_no_workflow: Ehhez a nyomonkövetőhöz nincs workflow definiálva
+  text_unallowed_characters: Nem engedélyezett karakterek
+  text_comma_separated: Több érték is megadható (vesszővel tagolva).
+  text_line_separated: Több érték is megadható (minden sor egy érték).
+  text_issues_ref_in_commit_messages: Feladathivatkozások és javítások a módosító
+    üzenetek által
+  text_issue_added: ! '%{author} bejelentett egy feladatot %{id}.'
+  text_issue_updated: ! '%{author} frissítette az alábbi feladatot %{id}.'
+  text_wiki_destroy_confirmation: Biztos benne, hogy törli az alábbi wiki oldalt és
+    annak tartalmát?
+  text_issue_category_destroy_question: Néhány feladat (%{count}) ebbe a kategóriába
+    van besorolva. Mit kíván tenni?
+  text_issue_category_destroy_assignments: Kategória hozzárendelések eltávolítása
+  text_issue_category_reassign_to: Feladatok újbóli hozzárendelése ehhez a kategóriához
+  text_user_mail_option: A nem kijelölt projektekről csak abban az esetben kap értesítést,
+    amennyiben van valamilyen szerepe az adott projektekben. (Például feladatok amelyek
+    a szerzője vagy a végrehajtója)
+  text_no_configuration_data: A szerepkörök, nyomonkövetők, feladatállapotok, workflow
+    még nem lettek konfigurálva. Ajánlott az alapértelmezett konfiguráció betöltése,
+    mely később módosítható.
+  text_load_default_configuration: Alapértelmezett beállítások betöltése
+  text_status_changed_by_changeset: Érvényesítve a módosításcsomagban.%{value}.
+  text_time_logged_by_changeset: Érvényesítve a módosításcsomagban. %{value}.
+  text_issues_destroy_confirmation: Biztos benne, hogy törli a kijelölt feladato(ka)t?
+  text_issues_destroy_descendants_confirmation: Ezzel további %{count} alfeladato(ka)t
+    is törölni fog.
+  text_time_entries_destroy_confirmation: Biztos benne hogy törli a kijelölt időbejegyzés(eke)t?
+  text_select_project_modules: ! 'Válassza ki a projekt számára engedélyezett modulokat:'
+  text_default_administrator_account_changed: Az alapértelmezett adminisztrátor fiók
+    módosult
+  text_file_repository_writable: Módosítható melléklet könyvtár
+  text_plugin_assets_writable: Módosítható plugin-készlet könyvtár
+  text_rmagick_available: RMagick elérhető (opcionális)
+  text_destroy_time_entries_question: ! '%{hours} órát készül törölni, mely korábban
+    valamilyen feladathoz be lett jegyezve. Mit kíván tenni?'
+  text_destroy_time_entries: Bejegyzett órák törlése
+  text_assign_time_entries_to_project: Bejegyzett órák társítása a projekthez
+  text_reassign_time_entries: ! 'Bejegyzett órák újratársítása ehhez a feladathoz:'
+  text_user_wrote: ! '%{value} írta:'
+  text_enumeration_destroy_question: ! '%{count} objektum van társítva ehhez az értékhez.'
+  text_enumeration_category_reassign_to: ! 'Újratársításuk ehhez az értékhez:'
+  text_email_delivery_not_configured: Az email küldés nincs konfigurálva és az értesítések
+    ki vannak kapcsolva. Módosítsa az SMTP szerver beállításait a konfigurációban
+    / configuration.yml fájlban és indítsa újra az alkalmazást az aktiváláshoz.
+  text_repository_usernames_mapping: Jelölje ki, vagy módosítsa a Redmine felhasználót,
+    amelyhez tartoznak a tárolóban (repository) szereplő egyes felhasználónevek.   Azon
+    felhasználok, akiknek megegyezik a Redmine és a tárolóban rögzített felhasználóneve
+    vagy e-mail címe, a társítás automatikusan létrejön.
+  text_diff_truncated: A diff csonkolva lett, mert túllépi a maximálisan megjeleníthető
+    méretet.
+  text_custom_field_possible_values_info: Minden sor egy külön érték
+  text_wiki_page_destroy_question: Ennek az oldalnak van egy vagy több %{descendants}
+    aloldala. Mit kíván tenni?
+  text_wiki_page_nullify_children: Tartsuk meg az aloldalakat főoldalakként.
+  text_wiki_page_destroy_children: Töröljük az aloldalakat az összes kapcsoló aloldallal
+    együtt.
+  text_wiki_page_reassign_children: Aloldalak újratársítása ehhez a szülőoldalhoz
+  text_own_membership_delete_confirmation: Ezzel a művelettel részben vagy teljesen
+    eltávolítja jogosultságait, így ezt a projektet a továbbiakban nem szerkesztheti.
+    Biztos hogy ezt szeretné?
+  text_zoom_in: Nagyítás
+  text_zoom_out: Kicsinyítés
+  text_warn_on_leaving_unsaved: Az oldal nem mentett adatokat tartalmaz, melyek elvesznek
+    ha bezárja ezt az oldalt.
+  text_scm_path_encoding_note: ! 'Alapértelmezett: UTF-8'
+  text_git_repository_note: A tároló helyi és megosztott. (pl. /gitrepo, c:\gitrepo)
+  text_mercurial_repository_note: Helyi tároló (repository) (e.g. /hgrepo, c:\hgrepo)
+  text_scm_command: Parancs
+  text_scm_command_version: Verzió
+  text_scm_config: Az SCM parancsok beállíthatóak a config-ban vagy a configuration.yml
+    fájlban. Kérem indítsa újra az alkalmazást szerkesztés után.
+  text_scm_command_not_available: SCM parancs nem található. Kérem ellenőrizze a beállításokat
+    az Admnisztrációs panelen.
+  text_issue_conflict_resolution_overwrite: Mindenképp alkalmazza a beállításokat.
+    Apply my changes anyway (korábbi jegyzetek nem kerülnek törlésre, de néhány változás
+    felülírásra kerülhet)
+  text_issue_conflict_resolution_add_notes: Jegyzetek hozzáadása, és minden más módosítás
+    elvetése
+  text_issue_conflict_resolution_cancel: Minden módosítás elvetése és az adatok frissítése.%{link}
+  text_account_destroy_confirmation: Biztos benne? A fiók véglegesen törölve lesz,
+    és nincs mód az újraaktiválásra.
+  text_session_expiration_settings: ! 'Figyelem: ezen beállítások módosítása megszakíthatja
+    a jelenlegi munkameneteket, köztük az önét is.'
+  text_project_closed: Ez a projekt lezárásra került és csak olvasható.
+  text_turning_multiple_off: Ha a többszörös értékeket inaktiválja, azok eltávolításra
+    kerülnek az elemenkénti egyszeres értékek megőrzése érdekében.
+  text_milestone_effective_date_from_issue: ! 'Tényleges dátum beállítási űrlap a
+    feladathoz: #%{issue}'
+  default_role_manager: Vezető
+  default_role_developer: Fejlesztő
+  default_role_reporter: Jelentést tevő
+  default_tracker_bug: Hiba
+  default_tracker_feature: Jellemző
+  default_tracker_support: Támogatás
+  default_issue_status_new: Új
+  default_issue_status_in_progress: Folyamatban
+  default_issue_status_resolved: Megoldva
+  default_issue_status_feedback: Visszajelzés
+  default_issue_status_closed: Lezárva
+  default_issue_status_rejected: Visszautasítva
+  default_doc_category_user: Felhasználói kézikönyv
+  default_doc_category_tech: Műszaki kézikönyv
+  default_priority_low: Alacsony
+  default_priority_normal: Normál
+  default_priority_high: Magas
+  default_priority_urgent: Sürgős
+  default_priority_immediate: Azonnali
+  default_activity_design: Tervezés
+  default_activity_development: Fejlesztés
+  enumeration_issue_priorities: Feladat prioritások
+  enumeration_doc_categories: Dokumentum kategóriák
+  enumeration_activities: Tevékenységek (idő naplózás)
+  enumeration_system_activity: rendszer tevékenység
+  description_filter: Szűrő
+  description_search: Kereső mező
+  description_choose_project: Projektek
+  description_project_scope: Keresési hatókör
+  description_notes: Jegyzetek
+  description_message_content: Üzenet tartalom
+  description_query_sort_criteria_attribute: Rendezési feltétel
+  description_query_sort_criteria_direction: Rendezési irány
+  description_user_mail_notification: E-mail értesítési beállítások
+  description_available_columns: Rendelkezésre álló oszlopok
+  description_selected_columns: Kiválasztott oszlopok
+  description_all_columns: Minden oszlop
+  description_issue_category_reassign: Válasszon feladatkategóriát
+  description_wiki_subpages_reassign: Válasszon új szülőoldalt
+  description_date_range_list: Válasszon tartományt a listából
+  description_date_range_interval: Válassza ki az időtartományt a kezdő és a befejeződátumok
+    kijelölésével
+  description_date_from: Adja meg a kezdődátumot
+  description_date_to: Adja meg a befejezési dátumot
+  text_repository_identifier_info: csak kisbetűk (a-z), számok, kötőjelek, alsóvonás
+    jelek engedélyezettek. <br />Mentés után az azonosító nem módosítható.
+  easyproject_name: EASY PROJECT 2013
+  easyproject_author: Easy Software
+  easyproject_author_url: http://www.easyproject.hu
+  easyproject_description: Információ kezelő rendszer projektmenedzsmenthez.
+  easyproject_version_description: 2013
+  project_module_easy_other_permissions: Egyéb
+  permission_create_project_from_template: Projekt létrehozása sablon alapján
+  permission_create_project_template: Sablon létrehozása projekt alapján
+  permission_edit_project_template: Projekt sablon szerkesztése
+  permission_delete_project_template: Projekt sablon törlése
+  permission_view_project_activity: Projekt aktivitás nézet
+  permission_view_project_report: Projekt statisztikai nézet
+  permission_action_duplicate_issue: Másolat létrehozása feladatról
+  permission_edit_own_issue: Saját feladatok szerkesztése
+  permission_view_restrictions_users: Kommentek megtekintése a kijelölt felhasználóknál
+  permission_view_personal_statement: Személyes nyilatkozat megtekintése
+  permission_view_all_statements: Személyes nyilatkozat megtekintése az összes felhasználónál
+  permission_manage_page_project_overview: Projekt áttekintés kezelése
+  permission_supervisor: Projekt áttekintés kezelése ott is ahol nem résztvevő
+  permission_archive_project: Projekt archiválása
+  permission_copy_project: Projekt másolása
+  permission_manage_my_page: Saját oldalam szerkesztése
+  permission_view_bulk_time_entry: Többszörös (tömeges) időbejegyzés
+  permission_manage_bulk_version: Többszörös (tömeges) verziókezelés
+  permission_manage_easy_project_relations: Projekt kapcsolatok kezelése
+  permission_manage_easy_version_relations: Verzió kapcsolatok kezelése
+  permission_edit_issue_fixed_activity: Rögzített feladathoz társított tevékenység
+    módosítása
+  permission_view_easy_attendances_extra_info: Több információ megjelenítése (Felhasználói
+    IP, ...)
+  permission_manage_global_versions: Globális mérföldkövek kezelése
+  permission_edit_own_easy_attendances: Saját jelenléti adatok szerkesztése
+  permission_view_easy_attendance_other_users: Más felhasználók jelenléti adatainak
+    szerkesztése
+  permission_manage_easy_issue_timers: Hozzáférés feladat időzítő beállításaihoz
+  permission_edit_project_custom_fields: Projekt egyedi mezőinek szerkesztése
+  permission_delete_project: Projekt törlése
+  heading_easy_user_working_time_calendar_index: Naptárak listája - munkaidő
+  heading_easy_user_working_time_calendar_show: Naptár %{calendarname}
+  heading_easy_user_working_time_calendar_edit: Naptár alap beállításainak szerkesztése
+  heading_easy_user_working_time_calendar_new: Új naptár
+  heading_easy_user_working_time_calendars_holiday_index: Munkaszüneti napok jegyzéke
+  heading_easy_user_working_time_calendars_holiday_edit: Munkaszüneti nap szerkesztése
+  heading_easy_user_working_time_calendars_holiday_new: Új munkaszüneti nap
+  heading_layout_from_template_selecting_projects: Projektek kijelölése sablonok alkalmazására
+  heading_layout_from_template_selecting_users: Felhasználók kijelölése sablonok alkalmazására
+  heading_project_mass_copy_select_source_project: Válasszon forrás projektet
+  heading_project_mass_copy_select_target_projects: Válasszon cél projektet
+  heading_project_mass_copy_select_actions: Válassza ki a másolható műveleteket
+  heading_easy_issues_preview_external_email: Külső levél küldése
+  heading_issues_settings_display: Megjelenítés
+  heading_issues_settings_behaviour: Működés
+  label_simple_add_project_task: Projektek
+  label_simple_add_project_task_on_project: Alprojektek
+  label_done: befejezve
+  label_issue_due_date: Határidőig hátralévő idő
+  label_show_user_info: Információk megjelenítése %{username} -ról
+  label_show_assigned_issues: ! '%{username} felhasználónak kiosztott feladatok megjelenítése'
+  label_budget_draw: Költségvetés készítése
+  label_user_new_issue: Új feladat létrehozása %{username} számára.
+  label_user_saved_query: Felhasználói szűrők megjelenítése %{queryname}.
+  label_show_project_info: ! '%{projectname} projekt információk megjelenítése.'
+  label_show_issue_info: ! '%{issuename} feladat részletes megjelenítése.'
+  label_templates_plural: Projekt sablonok
+  label_news_unread: Olvasatlan hírek
+  label_new_project_name: Új projekt név
+  label_template_new: Új projekt sablon alapján
+  label_template_copy: Sablon másolása létező projektbe
+  label_easy_page_module_settings_missing: Kérem, mentse újra a modult.
+  label_my_page_project_query_select: ! 'Mentett szűrők:'
+  label_my_page_issue_query_select: ! 'Mentett szűrők:'
+  label_my_page_user_query_select: ! 'Mentett szűrők:'
+  label_my_page_project_output_select: ! 'Kimeneti adatok formátuma:'
+  label_my_page_issue_output_select: ! 'Kimeneti adatok formátuma:'
+  label_my_page_user_output_select: ! 'Kimeneti adatok formátuma:'
+  label_my_page_issue_query: Mentett szűrők
+  label_my_page_issue_query_new_before: Létrehozhat új szűrőt a feladatlistán, vagy
+  label_my_page_issue_query_new_link: itt
+  label_my_page_issue_query_new_after: .
+  label_my_page_projects_row_count: ! 'Projektek száma:'
+  label_my_page_issue_row_count: ! 'Feladatok száma:'
+  label_my_page_document_row_count: ! 'Dokumentumok száma:'
+  label_my_page_users_row_count: ! 'Felhasználók száma:'
+  label_my_page_news_row_count: ! 'Hírek száma:'
+  label_my_page_users_filter_visible: ! 'Projekt áttekintésnél használható szűrők
+    megjelenítése:'
+  label_my_page_issue_enable_text_editor: ‘Szöveges szerkesztő engedélyezése:'
+  label_my_page_issue_show_fields_option_part1: Megjelenítés
+  label_my_page_issue_show_fields_option_part2: űrlap mezők.
+  label_my_page_projects_query_settings_missing: Kérem javítsa a modul beállításokat.
+  label_my_page_projects_query_select: ! 'Mentett szűrők:'
+  label_my_page_document_query_select: ! 'Mentett szűrők:'
+  label_my_page_projects_query: Mentett szűrők
+  label_my_page_projects_query_new_before: ! 'Hozhat létre új szűrőt a projektlistánál,
+    vagy '
+  label_my_page_projects_query_new_link: itt
+  label_my_page_projects_query_new_after: .
+  label_my_page_issues_rss_reader: Más szerverről származó feladatok
+  label_my_page_issues_rss_reader_url: ! 'Forrás:'
+  label_my_page_issues_rss_reader_row_limit: ! 'Származási hely:'
+  label_my_page_issues_rss_reader_loading: Adatok betöltése, kérem várjon.
+  label_my_page_google_maps_iframe_tag: HTML-be ágyazott elem
+  label_version_show_closed_issues: Teljesített feladatok megjelenítése.
+  label_easy_pages_project_administration: Oldalak testreszabása
+  label_easy_pages: Testreszabásra jelölt oldalak listája
+  label_easy_page_zone: sáv
+  label_easy_page_zones: sávok a(z) %{pagename} oldalon
+  label_easy_page_new: új oldal
+  label_easy_page_edit: oldal szerkesztése
+  label_easy_page_zones_view: Oldal sávok áttekintése
+  label_easy_page_zone_new: sáv
+  label_easy_page_zone_edit: sáv szerkesztése
+  label_easy_page_zone_show: ! '%{zonename} sáv megtekintése'
+  label_easy_page_modules: Modulok a sávban
+  label_easy_page_user_modules: Modulok a(z) %{pagename} oldalon
+  label_personalize_user_page: modulok hozzáadása vagy szerkesztése
+  label_personalize_user_page_from_layout: Oldal felülírása az alapértelmezett beállításokkal.
+  label_easy_page_templates: Sablonok listája a(z) %{pagename} oldalon
+  label_easy_page_templates_new: Új sablon
+  label_easy_page_template_new: Új  %{pagename} oldalsablon
+  label_easy_page_template_edit: ! '%{pagename} oldalsablon szerkesztése'
+  label_easy_page_user_layout_modules: Modulok elrendezése az oldalon
+  label_easy_page_template_user_modules: Modulok elrendezése a %{templatename} sablonban
+  label_easy_page_template_show: Modulok elrendezése
+  label_back_to_easy_page_templates: Vissza a sablonokhoz
+  label_select_page_template: ! 'Oldalsablon választása:'
+  label_select_my_page_template: Sablon kiválasztása saját oldalhoz
+  label_easy_page_zones_new_assignments: Sáv hozzáadása az oldalhoz
+  label_easy_page_assign_zone: Sáv hozzáadása a(z) %{pagename} elrendezéséhez
+  label_select_page_assign_zone: ! 'Sáv választása:'
+  label_easy_page_no_zones: Nincsenek definiált sávok.
+  label_easy_page_no_pages: Szerkesztendő odalak nincsenek definiálva.
+  label_easy_page_module_select: ! 'Válasszon modult a listából:'
+  label_user_my_page: Oldalam
+  label_project_custom_fields: Projekt egyedi mezők
+  label_project_no_custom_fields: Nem tartoznak a projekthez egyedi mezők.
+  label_easy_page_module_empty: <b>%{modulename}</b>modul nem jeleníthető meg a sablonban.
+    Adjon meg egy oldalt a javításhoz.
+  label_easy_page_module_missing: <b>%{modulename}</b> modul nem jeleníthető meg,
+    mert nem létezik.
+  label_project_templates_update_dates: Frissítse a projekt összes adatát a projekt
+    kezdődátuma szerint
+  label_user_saved_projectquery: Felhasználói szűrő %{queryname} megjelenítése .
+  label_new_project_from_template: Új projekt sablon alapján
+  label_easy_my_page_template_to_all: Sablon alkalmazása az összes felhasználóra
+  label_custom_field_computed_string: Számított mező - Szöveg
+  label_custom_field_computed_integer: Számított mező - Egész szám
+  label_custom_field_computed_float: Számított mező - Tizedes szám
+  label_custom_field_computed_date: Számított mező - Dátum
+  label_custom_field_computed_boolean: Számított mező - Igen / Nem
+  label_my_page_timelog_calendar: Munkaidő napló
+  label_my_page_timelog_calendar_period_select: ! 'Naptári időszak:'
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: ! ' órák'
+  label_restrictions_users: Mutassa csak
+  label_timelog_view_all: Ledolgozott munkaórák teljes jegyzékét
+  label_personal_statement: Személyes jegyzéket
+  label_log_time: Tömeges időbejegyzés
+  label_issue_assigned_to_users: ! 'Felhasználók:'
+  label_issue_assigned_to_groups: ! 'Csoportok:'
+  label_last_year: tavalyi év
+  label_template_to_selected_projects: Sablonok alkalmazása projektekre
+  label_template_to_selected_users: Sablon alkalmazása felhasználókra
+  label_my_page_timelog_simple_day_limit: Napok megjelenítése
+  label_error_project_query: Hiba a szűrő feldolgozásakor. Kérem jelentse a hibát
+    az adminisztrátornak.
+  label_project_description: Leírás
+  label_easy_lookup: Keresés
+  label_custom_field_settings_entity_type: Egység
+  label_custom_field_settings_entity_attribute: Tulajdonság
+  label_link_with: ! 'Összekötés ezzel: %{attribute}'
+  label_issue_new_relation_before: Ez a feladat
+  label_issue_new_relation_after: ! 'feladatok:'
+  label_project_new_relation_before: Ez a projekt
+  label_project_new_relation_after: ! 'projektek:'
+  label_version_new_relation_before: Ez a változat
+  label_version_new_relation_after: ! 'változatok:'
+  label_parenttask_plural: Forrás (szülő) feladatok
+  label_revert_to_version: Visszatérés ehhez a változathoz
+  label_project_overview_project_info: Projekt áttekintés
+  label_easy_user_queries_plural: Felhasználók
+  label_menu_more: Több
+  label_project_index: Projektek listája
+  label_issue_index: Feladatok listája
+  label_issue_static_attributes_heading: ! 'Általános tulajdonságok:'
+  label_issue_updatable_attributes_heading: ! 'További tulajdonságok:'
+  label_issue_attachments_heading: ! 'Mellékletek:'
+  label_issue_watchers_heading: ! 'Munkatársak:'
+  label_document_category_read_role: Engedély a dokumentumok olvasásáshoz ebben a
+    kategóriában
+  label_document_category_manage_role: Engedély a dokumentumok kezeléséhez ebben a
+    kategóriában
+  label_document_category_custom_roles_n: Alapértelmezett beállítások használata
+  label_document_category_custom_roles_y: Egyedi beállítások használata
+  label_datetime_custom_field_tag_hour: órák
+  label_datetime_custom_field_tag_minute: perc
+  label_datetime_custom_field: Dátum és Idő
+  label_menu_project_template: (SABLON)
+  label_with_non_shared_versions: Az alprojektek nem megosztott mérföldköveinek megjelenítése
+  label_project_copy_tracker_issues:
+    zero: nincs feladat
+    one: 1 feladat
+    two: 2 feladat
+    three: 3 feladat
+    four: 4 feladat
+    other: ! '%{count} feladat'
+  label_top_ten_projects: Utolsó 10 projekt
+  label_activity_all: Mindegyik
+  label_working_time: Munkaidő
+  label_admin_easy_user_working_time_calendars: Munkaidő - sablonok
+  label_easy_user_working_time_calendar_explanatory_notes: ! 'Értelmező jegyzetek:'
+  label_easy_user_working_time_calendar_explanatory_notes_default: Általános munkanap
+  label_easy_user_working_time_calendar_explanatory_notes_today: Ma
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: Hétvége
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: Munkaszüneti nap
+  label_easy_user_working_time_calendar_explanatory_notes_exception: Extra munka
+  label_easy_user_working_time_calendar_none: A felhasználó nem választott ki egy
+    munkaidő naptárat sem.
+  label_easy_user_working_time_calendar_default_time: Az alapértelmezett munkaidő
+    %{count} óra naponta.
+  label_easy_user_working_time_calendar_change_calendar: ! 'Munkaidő naptár módosítása
+    erre:'
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: Extra munkaórák
+    megtartása a kiválasztott naptárból
+  label_easy_user_working_time_calendar_settings: Beállítások
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: Másolás innen
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: Extra
+    munkaórák másolása
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: Munkaszüneti
+    napok másolása
+  label_easy_user_working_time_mass_exceptions: Tömeges kivételek
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: Munkaórák számának
+    beállítása
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: ! ' minden '
+  label_easy_query_settings: Szűrő beállításai
+  label_field_format_autoincrement_from_to: Tól - ig
+  label_field_format_autoincrement_entity_limitation: ! 'Automatikus számlálás ebben:'
+  label_project_templates_custom_fields: Projekt egyedi mezőinek beállításai
+  label_source_project: Forrás projekt
+  label_target_projects: Cél projektek
+  label_easy_page_modules_on_project_overview: Projekt áttekintő moduljai
+  label_project_templates_change_issues_author: Szerző módosítása az összes feladaton
+  label_easy_system_flag: (Ne mutatassa a projekt tagjainál, stb.)
+  label_timelog_comment_editor_enabled: Szeretne szerkesztőt használni a megjegyzésekhez
+    a jelentések írásakor?
+  label_time_entry_spent_on_at_issue_update_enabled: Beállítja a dátumot és a bejegyzési
+    időt a feladat frissítéséhez?
+  label_user_form_other_settings: Egyéb választások
+  label_user_copy_roles_from: Szerepek és engedélyek átvétele felhasználótól
+  label_easy_page_tab_default_name: Lap %{count}
+  label_mass_copy_select_actions: ! 'Másolás (a kiválasztott műveletek törölve és
+    másolva lesznek):'
+  label_select_none_assignee: << nincs megbízott >>
+  label_select_no_change_assignee: << nem módosított megbízott >>
+  label_unread_entity: Olvasatlan
+  label_switch_to_mobile_version: Mobil oldal
+  label_switch_to_full_version: Teljes oldal
+  label_default_project_page: Alapértelmezett projektoldal
+  label_too_many_mambers: ! 'Túl sok felhasználó, használja a keresőmezőt:'
+  label_gantt_pdf_date: ! 'Dátumtól '
+  label_gantt_show_all_versions: Összes mérföldkő mutatása
+  label_gantt_versions_above: Mérföldkövek mutatása a feladatok felett
+  label_custom_field_settings_multiple: Többszörös
+  label_last_user_assigned_to: << Utolsó megbízott >>
+  label_author_assigned_to: << Szerző >>
+  label_default_color_schema: Alapértelmezett szín
+  label_template_easy_start_date: Projekt kezdődátumának beállítása
+  label_templates_easy_start_date: Projektek kezdődátumának beállítása
+  label_eqdt: ''
+  label_bulk_time_entries: Tömeges időbejegyzés
+  label_bulk_time_entries_edit: Eltöltött idő szerkesztése
+  label_bulk_time_add_another: További hozzáadása
+  label_bulk_time_flash_project: ! 'Projekt:'
+  label_bulk_time_flash_issue: ! 'Feladat:'
+  label_bulk_time_flash_comment: ! 'Megjegyzés:'
+  label_bulk_time_flash_user: ! 'Felhasználó:'
+  label_bulk_time_flash_hours: ! 'Órák:'
+  label_bulk_time_flash_spent_on: ! 'Dátum:'
+  label_issue_priority: Feladat prioritása
+  label_issue_priority_plural: Feladat prioritások
+  label_amount: Mennyiség
+  label_version_update_database: Továbblépés minden feladattal?
+  label_my_issues_plural: saját
+  label_other_issues_plural: másik
+  label_projectquery_plural: Projekt szűrők
+  label_userquery_plural: Felhasználói szűrők
+  label_related_projects: Kapcsolódó projektek
+  label_related_versions: Kapcsolódó változatok
+  label_add_related_issues: Kapcsolódó feladatok hozzáadása
+  label_add_related_projects: Kapcsolódó projektek hozzáadása
+  label_add_related_versions: Kapcsolódó változatok hozzáadása
+  label_preceding: megelőzi
+  label_following: követi
+  label_send_email_to_all_users: E-mail küldése az összes felhasználónak
+  label_updated_on: Frissítve
+  label_less: Kevesebb
+  label_group_by: Csoportosítás %{value} szerint
+  label_period_past: Múlt
+  label_period_present: Jelen
+  label_period_future: Jövő
+  label_to_today: máig
+  label_after_due_date: határidő után
+  label_next_n_days: a következő %{days} napban
+  label_next_week: következő hét
+  label_next_month: következő hónap
+  label_next_year: következő év
+  label_tomorrow: holnap
+  label_user_role_select: ! ' a szerepre:'
+  label_document_global: ! 'Dokumentumok:'
+  label_milestone_sharing_info: ! 'Értelmező jegyzetek:'
+  label_milestone_sharing_info_none: Mérföldkő használata projekteknél (ahol létrehozásra
+    került.)
+  label_milestone_sharing_info_descendants: Mérföldkő használata a projektnél és annak
+    összes alprojektjénél.
+  label_milestone_sharing_info_hierarchy: Mérföldkő használata a projektnél és annak
+    szülő- és alprojektjeinél.
+  label_milestone_sharing_info_tree: Mérföldkő használata a projektnél és az összes
+    projektnél melyek rendelkeznek közös felsőbb projekttel.
+  label_milestone_sharing_info_system: Mérföldkő használata az összes projektnél.
+  label_autoincrement: Érték automatikus növekedése
+  label_quick_search: Gyorskeresés
+  label_search_result_journal_header: ! 'Találatok száma a rendszernaplóban (%{count}):'
+  label_journal_as_search_result: Rendszernapló
+  label_not_available: N/A
+  label_search_entities: ! 'Keresés :'
+  label_fixed_version: Cél mérföldkő
+  label_easy_color_schemes: ! 'Színséma kiválasztása:'
+  label_issue_color_scheme_for: ! 'Felhasználói színséma a következőre:'
+  label_easy_setting_new_subproject_user_role_id: Az alprojektet létrehozó (nem adminisztrátor
+    jogú) felhasználónak adott szerep
+  label_easy_setting_new_subproject_user_role_id_info: (azokra az esetekre, amikor
+    a felhasználónak csak alprojektek létrehozására van jogosultsága)
+  label_easy_setting_attachment_description: Mellékelet leírása
+  label_easy_setting_attachment_description_required: kötelező
+  label_easy_setting_attachment_description_enabled: engedélyezve
+  label_easy_setting_attachment_description_disabled: letiltva
+  label_issue_by_unassigned_to: Nincs kiosztva
+  label_issue_notice_recipients: ! 'E-mail elküldve ide: '
+  label_email: E-mail
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: ! 'Munkaidő kezdete '
+  label_easy_user_working_time_calendar_time_to: ! 'Munkaidő vége '
+  label_issue_open_plural: Problémák - nyitott
+  label_issue_close_plural: Problémák - lezárt
+  label_easy_version_queries_plural: Mérföldkövek
+  label_issues_assigned_to_me_visible_issues_assigned: Csak azoknál a feladatoknál,
+    ahol megbízott vagyok.
+  label_issues_assigned_to_me_visible_issues_conserns: Feladatoknál, ahol szerző,
+    megbízott vagy együttműködő vagyok.
+  label_match_starting_dates: Feladatok beállítása a projekt kezdődátuma szerint
+  label_next_issue: Következő feladat
+  label_previous_issue: Előző feladat
+  label_issue_automatic_recalculate_attributes: Automatikus módosítás a (z) %{issue_id}
+    részfeladatról
+  label_easy_query_export_links: Exportok
+  label_easy_attendance_spent_time: Eltöltött idő
+  label_easy_attendance_plural: Jelenlét
+  label_easy_attendance_queries_plural: Jelenléti adatok
+  label_easy_google_maps_address: Address - Google térkép
+  label_preview_external_email_mail_sender: E-mail küldő
+  label_preview_external_email_mail_recepient: E-mail címzett
+  label_preview_external_email_mail_cc: E-mail másolat
+  label_preview_external_email_mail_subject: Email tárgy
+  label_preview_external_email_mail_body_html: E-mail HTML formátumban
+  label_preview_external_email_mail_body_plain: E-mail egyszerű szöveges formátumban
+  label_easy_issue_timer: Feladat időzítő
+  label_easy_issue_timer_settings: Feladat időzító beállításai
+  label_easy_issue_timer_start: Kezdés
+  label_easy_issue_timer_end: Befejezés
+  label_easy_issue_easy_is_repeating: Ismétlés
+  label_easy_issue_easy_repeating_period: Ismétlési gyakoriság
+  label_easy_issue_easy_repeating_period_daily: Napi
+  label_easy_issue_easy_repeating_period_weekly: Heti
+  label_easy_issue_easy_repeating_period_monthly: Havi
+  label_easy_issue_easy_repeating_period_custom: Egyedi
+  label_easy_issue_easy_repeating_further_options: Ismétlődés módja
+  label_easy_issue_easy_repeating_time: Beállítások létrehozása
+  label_easy_issue_easy_repeating_time_hour: Ismétlés ekkor
+  label_easy_issue_easy_repeating_create_time: Létrehozási idő
+  label_easy_issue_easy_repeating_in_advance: Előre
+  label_easy_issue_easy_repeating_on_start_date: Ismétlődő napon
+  label_easy_issue_easy_repeating_dont_create_now: Ne hozza most létre
+  label_easy_issue_easy_repeating_create_now_all: Összes létrehozása most
+  label_easy_issue_easy_repeating_create_now_count: Most létrehozandó (k)
+  label_easy_issue_easy_reccuring_daily_every: Minden
+  label_easy_issue_easy_reccuring_daily_each: ismétlések
+  label_easy_issue_easy_reccuring_daily_work: munkanapok
+  label_easy_issue_easy_repeating_endtype: Befejezés
+  label_easy_issue_easy_repeating_endtype_date: Adott napon
+  label_easy_issue_easy_repeating_endtype_count: x számú ismétlés után
+  label_easy_issue_easy_repeating_endtype_endless: Projekt befejezéséig
+  label_easy_issue_easy_repeating_start: Kezdés
+  label_easy_issue_reccuring_after: Után
+  label_easy_issue_reccuring_day_plural: napok
+  label_easy_issue_reccuring_month: hónap
+  label_easy_issue_subject_reccuring_suffix: (Ismétlődő)
+  label_easy_issue_reccuring_monthly_orders:
+    1: Első
+    2: Második
+    3: Harmadik
+    4: Negyedik
+    5: Utolsó
+  label_day:
+    zero: '0'
+    one: 1 Nap
+    other: ! '%{count} Nap'
+    two: ! '%{count} Nap'
+    three: ! '%{count} Nap'
+    four: ! '%{count} Nap'
+    half: ! '%{count} Nap'
+  label_easy_versions: Mérföldkövek
+  label_easy_versions_top_menu: Mérföldkövek
+  label_easy_repository_source_easy_repository_url: Tároló (repository) URL
+  label_easy_lesser_admin_for: ! 'A terület ahol kevesebb adminisztrátor férhet hozzá:'
+  label_added_datetime_by: ! 'Hozzáadva %{author}  által, ekkor: %{datetime}'
+  label_updated_datetime_by: Frissítve %{author} által, ekkor %{datetime}
+  label_user_mail_no_notified_if_issue_closing: Nem szeretnék értesítést kapni a lezárt
+    feladatokról.
+  label_user_mail_no_notification_ever: Senki ne értesüljön a frissítéseimről.
+  button_context_menu: Gyors feladatmenü megjelenítés.
+  button_attachment_context_menu: Verziótörténet megjelenítése.
+  button_new_project_from_template: Új projekt létrehozása
+  button_new_template_from_project: Új sablon létrehozása
+  button_create_project_from_template: Új projekt létrehozása
+  button_copy_project_from_template: Másolás projektbe
+  button_template_restore_project: Projekt visszaállítása
+  button_easy_page_templates: Sablonok áttekintése
+  button_save_easy_page: Mentés és visszalépés
+  button_edit_projectquery: Szűrő szerkesztése
+  button_delete_projectquery: Szűrő törlése
+  button_apply_projectquery: Használat
+  button_clear_projectquery: Alapértelmezett szűrők
+  button_save_projectquery: Mentés
+  button_timelog_calendar_new: Idő hozzáadása
+  button_uninstall: Eltávolítás
+  button_easy_lookup_modal_selector_assign: Kijelölt kiosztása
+  button_new_issue_relation: Kapcsolódó feladatok hozzáadása
+  button_issue_put_between: Közé elhelyezés
+  button_new_subtask: Részfeladat létrehozása
+  button_easy_lookup_modal_close: Lezárás
+  button_go_up: FEL
+  button_issue_create: Feladat mentése
+  button_issue_create_and_continue: Mentés és folytatás
+  button_issue_update: ! 'Feladat frissítése:'
+  button_issue_submit: Változtatás mentése
+  button_gantt_issue_update: Feladat frissítése
+  button_gantt_issue_update_plural: Frissítés
+  button_easy_user_working_time_calendar_show: Naptár részletei
+  button_easy_user_working_time_calendars_new: Új naptár
+  button_easy_user_working_time_calendar_holidays: Munkaszüneti napok
+  button_easy_user_working_time_calendar_holidays_new: Új munkaszüneti nap
+  button_easy_user_working_time_back_to_calendar: Vissza a naptárhoz
+  button_easy_user_working_time_back_to_calendars: Vissza a naptárakhoz
+  button_easy_user_working_time_reset_to_parent: Naptár visszaállítása az eredeti
+    állapotra
+  button_easy_user_working_time_parent: Továbblépés a törzsnaptárra
+  button_check_subprojects: Alprojektek kijelölése
+  button_uncheck_subprojects: Alprojektek kijelölésének megszüntetése
+  button_check_rootprojects: Fő projektek kijelölése
+  button_uncheck_rootprojects: Fő projektek kijelölésének megszüntetése
+  button_edit_user_profile: Profil szerkesztése
+  button_project_mass_copy: Tömeges másolás
+  button_choose_actions: Továbblépés a műveletek kiválasztásához
+  button_down: Le
+  button_check_and_uncheck_subprojects: Alprojektek kijelölése / kijelölés megszüntetése
+  button_gantt_show_sidebar: Mentett szűrők megjelenítése
+  button_gantt_hide_sidebar: Mentett szűrők elrejtése
+  button_easy_page_add_tab: Lap hozzáadása
+  button_manage_versions: Mérföldkövek kezelése
+  button_mobile_saved_filters: Mentett szűrők
+  button_edit_anonymous_user: Névtelen felhasználó szerkesztése
+  button_back_to_calendar: Vissza a naptárhoz
+  button_bulk_time_save_and_continue: Mentés és új bejegyzés hozzáadása
+  button_gantt_zoom_day: Nap
+  button_gantt_zoom_week: Hét
+  button_gantt_zoom_month: Hónap
+  button_fullscreen: Teljes képernyő
+  button_fullscreen_close: X
+  button_add_and_close: Hozzáadás és bezárás
+  button_generate_rss_key: RSS kulcs generálása
+  button_generate_api_key: API kulcs generálása
+  button_back_to_top: Vissza a lap tetejére
+  button_advanced_search: Részletes keresés
+  button_my_page_google_maps_url_helper: Segítség Google térkép hozzáadásához
+  button_timelog_calendar_prev:
+    week: Előző hét
+    month: Előző hónap
+  button_timelog_calendar_next:
+    week: Következő hét
+    month: Következő hónap
+  button_send_email: E-mail küldése
+  button_dont_send_email: Ne küldjön e-mail-t.
+  button_link_easy_google_map_address: Megjelenítés Google térképen
+  button_select_file: Fájl kiválasztása
+  button_easy_issue_timer_play: Folyamatban
+  button_easy_issue_timer_stop: Kész
+  button_release_cache: Cache törlése
+  title_button_template: Sablon létrehozása a(z) %{projectname} projekt alapján.
+  title_button_template_create_project: Projekt létrehozása sablon alapján.
+  title_button_template_copy_project: Sablon alkalmazása létező projektre.
+  title_button_template_restore_project: Projekt sablon szerkesztése.
+  title_project_new_issue: ! 'Feladat hozzáadása az alábbi projekthez: %{projectname}'
+  title_project_edit: Projekt szerkesztése
+  title_project_show: ! '%{projectname} projekt megjelenítése '
+  title_other_formats_links_atom: Feltöltés RSS olvasóba.
+  title_other_formats_links_csv: Mentés lemezre CSV formátumban.
+  title_other_formats_links_pdf: Mentés lemezre PDF formátumban.
+  title_other_formats_links_png: Mentés lemezre PNG formátumban.
+  title_other_formats_links_ics: Mentés lemezre ICS (Outlook) formátumban.
+  title_other_formats_links_ics_outlook: Feliratkozás erre a listára Outlook naptár
+    használatával
+  title_easy_page_zones_view: Kattintásra megjelenik az oldalsávok áttekintése.
+  title_easy_page_zone_edit: Kattintás után szerkeszthető lesz a sáv.
+  title_easy_page_zone_show: Kattintásra megjelenik a sáv.
+  title_easy_page_zone_modules: Modulok megjelenítése kattintás után.
+  title_personalize_user_page: Kattintás után egyénre szabható ez az oldal.
+  title_personalize_user_page_from_layout: Kattintással jelölje ki a sablont, amelyre
+    cserélni szeretné a jelenlegit.
+  title_easy_page_templates: Kattintásra jelenjen meg az oldalsablonok listája.
+  title_easy_page_templates_new: Kattintásra új sablon létrehozása.
+  title_easy_page_user_layout_modules: Kattintásra modul elrendezés megjelenítése.
+  title_easy_page_template_show: Kattintásra jelenjen meg a modulok elrendezése a
+    sablonban.
+  title_back_to_easy_page_templates:
+  title_easy_page_zones_new_assignments: Kattintásra adjon hozzá egy új sávot az elrendezéshez.
+  title_button_save_easy_page: Kattintásra mentse az oldalt és lépjen vissza.
+  title_my_page_issue_query_new_link: Kattintásra készítsen új szűrőt a feladatok
+    listájáról.
+  title_edit_projectquery: Kattintás után ugorjon a felhasználó szűrők szerkesztéséhez.
+  title_delete_projectquery: Kattintásra törölje az aktuális felhasználói szűrőt.
+  title_apply_projectquery: Kattintásra alkalmazza az előre beállított felhasználói
+    projektszűrőt.
+  title_clear_projectquery: Kattintásra állítsa vissza az alapértelmezett szűrőbeállítást..
+  title_save_projectquery: Kattintásra mentse az előre beállított szűrőt további felhasználásra.
+  title_new_project_from_template: Kattintásra továbblépés a sablonok listájához.
+  title_easy_my_page_template_to_all: Sablon alkalmazása az összes felhasználóra.
+  title_timelog_calendar_new: Kattintásra idő hozzáadása a kijelölt naphoz.
+  title_template_to_selected_projects: Sablon alkalmazása projektekre
+  title_template_to_selected_users: Sablon alkalmazása felhasználókra
+  title_easy_lookup_modal_selector_assign: Kattintással hozzá társítani tudja a kijelölt
+    elemet.
+  title_button_edit: Kattintásra Kattintás után módosíthatja ezt a bejegyzést.
+  title_button_delete: Kattintással törölheti ezt a bejegyzést.
+  title_new_issue_relation: Kapcsolódó feladatok hozzáadása.
+  title_new_subtask: Alfeladat hozzáadása.
+  title_logo: Kattintson a saját oldal megtekintéséhez.
+  title_delete: Kattintson az elem eltávolításához.
+  title_delete_selected: Kattintson a kijelölt elem eltávolításához.
+  title_go_up: Kattintson a lap tetejére ugráshoz.
+  title_says: ! ' azt mondja:'
+  title_project_copy_tracker_issues: Kattintásra módosítja a problémák nyomkövetőjét.
+  title_user_profile: Kattintásra mutassa %{username} profilját.
+  title_easy_user_working_time_calendar_show: Kattintásra módosíthat napokat a naptárban.
+  title_easy_user_working_time_calendars_new: Kattintásra létrehozhat új naptárat.
+  title_easy_user_working_time_calendar_holidays: Kattintásra kezelheti a munkaszüneti
+    napokat.
+  title_easy_user_working_time_calendar_holidays_new: Kattintás után létrehozhat új
+    munkaszüneti napot.
+  title_easy_user_working_time_back_to_calendar: Kattintásra visszaléphet a naptárhoz.
+  title_easy_user_working_time_back_to_calendars: Kattintásra visszaléphet a naptárakhoz.
+  title_easy_user_working_time_calendars_inline_edit: Kattintásra hozzáadhat egy kivételt.
+  title_easy_user_working_time_calendars_inline_save: Kattintásra mentheti a kivételt.
+  title_easy_user_working_time_calendars_inline_close: Kattintásra befejezheti a kivétel
+    szerkesztését.
+  title_easy_user_working_time_reset_to_parent: Kattintással törölheti az összes jelenlegi
+    kivételt, és visszaállíthatja a naptárat a törzs állapotba.
+  title_easy_user_working_time_parent: Kattintással továbbléphet a törzsnaptárhoz.
+  title_edit_user_profile: Kattintásra módosíthatja profilját.
+  title_easy_page_add_tab: Kattintással új lapot adhat hozzá.
+  title_last_journal_link: Probléma utolsó naplóbejegyzésének megjelenítése.
+  title_edit_anonymous_user: Kattintás után módosíthatja a névtelen felhasználó adatait.
+  title_fullscreen: Teljes képernyős megjelenítés
+  title_download_attachment: Fájl letöltése
+  title_show_attachment: Fájl tartalmának megjelenítése
+  title_user_detail: Kattintás után megjelenítheti a felhasználó részletes adatait.
+  title_version_detail: Kattintás után megjelenítheti a mérföldkő részletes adatait.
+  title_easy_issue_timer_button_play: Feladat frissítése és az idő mérésének indítása.
+  title_easy_issue_timer_button_stop: Feladat frissítése és az időbejegyzési űrlap
+    előzetes kitöltése
+  title_jump_to_project: Projekt választása
+  title_issue_remove_parent: Kattintás után a feladatok nem szerepelnek alfeladatokként.
+  title_timelog_calendar_prev:
+    week: Kattintás után ugrás az előző hétre.
+    month: Kattintás után ugrás az előző hónapra.
+  title_timelog_calendar_next:
+    week: Kattintás után ugrás az következő hétre.
+    month: Kattintás után ugrás az következő hónapra.
+  title_easy_modal_selector_trigger:
+    issue: Kattintson a feladatok kiválasztásához.
+    project: Kattintson a projektek kiválasztásához.
+    version: Kattintson a mérföldkövek kiválasztásához
+    user: Kattintson a felhasználók kiválasztásához
+    group: Kattintson a csoportok kiválasztásához
+    document: Kattintson a dokumentumok kiválasztásához
+  project_template:
+    label_name: Sablon név
+    label_new_project: Új projekt neve
+  sidebar_all_users_queries: Munkatársak feladatai
+  sidebar_issue_button_update: Jegyzet hozzáadása vagy feladat módosítása
+  sidebar_issue_button_log_time: Ráfordított idő hozzáadása
+  sidebar_issue_button_duplicate: Feladatmásolat létrehozása
+  sidebar_issue_button_copy: Feladat másolása
+  sidebar_issue_button_move: Feladat áthelyezése
+  sidebar_issue_button_delete: Feladat törlése
+  sidebar_issue_spent_time: Feladatra fordított idő áttekintése
+  sidebar_issue_info: Feladat információk
+  sidebar_issues_buttons: Harmonogram (ütemterv)
+  sidebar_project_info: Projekt információk
+  sidebar_project_spent_time: Projektre fordított idő áttekintése
+  sidebar_project_members: Projekt csapat
+  sidebar_budget_costs_info: Költségek
+  sidebar_project_family_info: Projekt hierarchia (fa elrendezés)
+  field_easy_due_date: Határidő.
+  field_easy_start_date: Kezdődátum
+  field_spinned: Rögzítés az oldal tetején
+  field_zone_name: zóna név
+  field_page_name: Oldal név
+  field_is_primary: Elsődleges
+  field_show_empty: Megjelenítés üres mezőkkel
+  field_show_on_list: Megjelenítés listában
+  field_predicted_cost: Költségvetés
+  field_computed_token: Képlet
+  field_member: Projekt résztvevő
+  field_groups: Csoport
+  field_roles: Szerep
+  field_xproject: Projektek
+  field_cached_group_names: Csoportok
+  field_parent_user: Felettes
+  field_template_name: Sablon név
+  field_parent_project: Törzsprojekt
+  field_root: Fő projekt
+  field_main_project: Fő projekt
+  field_sum_of_timeentries: Ráfordított idő
+  field_remaining_timeentries: Hátralévő idő
+  field_completed_percent: ! '% Kész'
+  field_attachment_created_on: Melléklet létrehozva ekkor
+  field_user_roles: Szerep
+  field_show_on_more_form: Megjelenítés részletesen
+  field_spent_estimated_timeentries: ! '% Ráfordított idő'
+  field_easy_system_flag: Rendszer csoport
+  field_easy_global_rating: Átfogó értékelés
+  field_id: ID
+  field_at_work: Benn tartózkodik?
+  field_arrival: Érkezés
+  field_departure: Távozás
+  field_easy_attendance_activity: Tevékenység
+  field_arrival_user_ip: Érkezés időpontja
+  field_departure_user_ip: Távozás időpontja
+  field_color_schema: Szín séma
+  field_group: Felhasználói csoport
+  field_rss_key: RSS kulcs
+  field_api_key: API kulcs
+  field_global_fixing_activity: A projekt feladatok előre beállított tevékenységek.
+  field_project_fixed_activity_true: A tevékenység előzetes kiválasztásra kerül egy
+    feladat létrehozásakor.
+  field_project_fixed_activity_false: A tevékenység kiválasztható az időbejegyzés
+    készítésekor.
+  field_user_time_entry_setting: ! 'Feliratkozás idő alapján:'
+  field_easy_range_from: Ráfordított idő ekkortól
+  field_easy_range_to: Ráfordított idő eddig
+  field_easy_range_form_to: Benne van
+  field_enable_activity_roles: Tevékenységek hozzárendelése szerepekhez
+  field_limit_assignable_users: A hibabejegyzést kizárólag a szerzőhöz lehet visszaküldeni.
+  field_easy_version_category_id: Kategória
+  field_easy_version_category: Kategória
+  field_relations_from: kapocsalat
+  field_created_at: Létrehozva
+  field_updated_at: Módosítva
+  field_easy_send_invitation: Meghívó küldése e-mailben.
+  field_easy_do_not_allow_close_if_subtasks_opened: Ne engedje bezárni a feladatot,
+    ha egy alfeladat nyitva van
+  field_easy_do_not_allow_close_if_no_attachments: Ne engedje bezárni a feladatot,
+    ha nincs melléklet csatolva
+  field_easy_issue_prefix: Feladat előtag
+  field_send_to_external_mails: Frissítés küldése e-mail címre?
+  field_attachments: Mellékletek
+  field_ckeditor_toolbar_config: HTML szerkesztő eszköztár
+  field_easy_issue_timer_assign_to_me: Részemre kiosztott
+  field_easy_issue_timer_round: Idő kerekítése
+  field_attachment_reminder_words: Melléklet szöveg
+  field_easy_is_repeating: Ismétlés
+  field_easy_lesser_admin: Kevesebb joggal rendelkező adminisztrátor
+  field_easy_user_type: Felhasználó típus
+  field_easy_repeat_settings: Ismétlődő opciók
+  field_send_all_planned_emails: Összes tervezett levél elküldése
+  status_archived: arhiválva
+  filter_active: aktív
+  notice_successful_create_template: Sablon sikeresen létrehozva.
+  notice_successful_create_project_from_template: Projekt sikeresen létrehozva.
+  notice_failed_create_project_from_template: ! 'Projekt létrehozás sikertelen: %{errors}'
+  notice_almost_successful_create_project_from_template: Projekt létrehozva teljes
+    elemkészlet másolása nélkül.
+  notice_successful_restore_template: Sablon sikeresen visszaállítva.
+  notice_template_successful_applied: Sablon sikeresen alkalmazva.
+  notice_plugin_successful_uninstall: Plugin %{plugin} sikeresen eltávolítva, az érvényesítéshez
+    a webszerver újraindítása szükséges.
+  notice_project_successful_archive: Projekt sikeresen arhiválva.
+  notice_failed_to_update: Hiba a mentés során.
+  notice_project_successful_unarchive: Projekt arhivumból visszahelyezve.
+  error_invalid_authenticity_token: Lejárt .
+  error_rss_reader_timeout: Hibás beállítás(az oldal jelenleg nem csatlakozik, ellenőrizze
+    a feladatok forrását, az Easy Project nem okozhat ilyen hibát).
+  error_rss_reader_bad_url: Hibás beállítás (az oldal jelenleg nem csatlakozik, ellenőrizze
+    a feladatok forrását).
+  error_rss_reader_old_ep: Hibás beállítás (a feladatok forrása 2012-es, vagy újabb
+    Easy Project).
+  error_validates_max_size: a fájl mérete túl nagy
+  error_custom_value_autoincrement_greater: Nagyobb legyen, mint %{count}
+  error_custom_value_autoincrement_equal: Legyen annyi, mint %{count}
+  error_can_not_unarchive_project: A projektet nem lehet visszatölteni az arhívumból.
+  error_can_not_delete_project: A projekt nem törölhető.
+  error_can_not_delete_project_template: A projekt sablon nem törölhető.
+  error_can_not_create_project_template: Hiba történt a projekt sablon %{projectname}
+    projekt alapján történő  létrehozásakor.
+  error_bulk_update_save: ! '%{count} számú elem mentése nem sikerült.'
+  error_no_file_selected_to_upload: Nincs feltöltésre kijelölt fájl.
+  error_cannot_close_issue_due_to_subtasks: ! 'A feladat nem zárható, mert nyitott
+    feladatokat tartalmaz: %{issues}'
+  error_cannot_close_issue_due_to_no_attachments: A feladat nem zárható, mert nem
+    tartalmaz mellékletet.
+  error_create_repo_from_url_cannot_create_dir: ! '%{dir} könyvtár létrehozása nem
+    sikerült'
+  error_create_repo_from_url_cannot_determine_repo_name: Nem sikerült a tároló (repository)
+    nevének meghatározása
+  error_create_repo_from_url_repo_already_exists: Tároló (repository) már létezik
+  error_create_repo_from_url_repo_cannot_be_created: Tároló (repository) létrehozása
+    sikertelen
+  error_update_easy_issue_timer_settings: A beállítások nincsenek elmentve
+  error_project_not_selected: Nincs kiválasztva projekt
+  error_repeat_period_missing: Ki kell választani az ismétlés gyakoriságát
+  error_repeat_endtype_missing: Az ismétlési időtartam végét meg kell határozni
+  error_repeat_endtype_count_blank: az ismétlés mennyisége nem lehet üres
+  error_repeat_endtype_count_numeric: az ismétlés mennyiségét szám formátumban
+    kell megadni
+  error_repeat_endtype_date_blank: a befejezés dátuma nem lehet üres
+  error_repeat_daily_option_missing: az ismétlés típusát (csak munkanap vagy
+    mindennap) meg kell adni (munkanap vagy mindennap)
+  error_repeat_daily_x_blank: a napi ismétlés számlálója nem lehet üres
+  error_repeat_daily_x_numeric: a napi ismétlés számlálóját szám formátumban
+    kell megadni
+  error_repeat_weekly_days_selected: legalább egy napot ki kell választani
+  error_repeat_monthly_option_missing: az ismétlés típusát (minden x. napon
+    / egyéni) meg kell adni
+  error_repeat_monthly_day_numeric: az ismétlődő napok számának 1 és 31 közé
+    kell esnie
+  error_repeat_monthly_month_numeric: Havi ismétlések számának 1 és 12 közé
+    kell esnie
+  confirm_admininstration_display_all_project: Az összes projekt megjelenítése sok
+    időt vehet igénybe. Biztos benne?
+  text_commit_example_1: ! ' ref. #1523 @5h30m befejezve'
+  text_commit_example_2: 5 óra és 30 perc naplózása a 1523-as számú feladathoz
+  text_easy_settings_time_entry_heading: Ráfordított idő határértékei
+  text_easy_settings_time_entry_limit: Idő hozzáadásának / szerkesztésének engedélyezése
+  text_easy_settings_time_entry_limit_note: Az idő határértékek kikapcsolásához az
+    alábbi szövegmezőket hagyja üresen.
+  text_easy_attachment_reminder_confirm: Bejelölt mellékletet, de nem csatolt egyet
+    sem, biztos hogy folytassuk?
+  text_easy_attachment_reminder_explanatory_html: ! '? = Bármilyen karakter <br />*
+    = bármilyen szám <br /><dd style="margin-left:15px;">tetszőleges karakterek</dd>'
+  text_easy_settings_time_entry_limit_past: eltelt napok
+  text_easy_settings_time_entry_limit_future: hátralévő napok
+  text_git_repository_url_note: URL a következő formában http(s)://felhasználó:jelszó@url/repo.git.
+    A tároló (repository) automatikusan létrehozásra kerül küldés után.
+  text_external_email_sent: A csatolt üzenet külső e-mail címre elküldve%{email}.
+  text_textile_migration: ! 'Textile-ban mentett szövegek HTML-be történő migrációjához
+    használja a következőt a parancssorból: "bundle exec rake easyproject:textile:migrate_all
+    RAILS_ENV=production"'
+  text_project_is_planned: Ha a projekt tervezett, egy e-mail sem kerül kiküldésre.
+  setting_issue_recalculate_attributes: Alfeladat létrehozása hatással lesz a főfeladatra
+    (prioritás, becsült idő, %-os készültség, kezdő és befejező dátum)
+  setting_project_display_identifiers: Projekt azonosítók megjelenítése
+  setting_use_easy_cache: Egyedi cache engedélyezése
+  my_page_timelog_calendar_period:
+    month: Havi
+    week: Heti
+  easy_pages:
+    pages:
+      my_page: Saját oldalam
+      project_overview: Projekt  - Kezdőoldal
+    pages_description:
+      my_page: Saját oldalam
+      project_overview: Projekt  - Kezdőoldal
+    modules:
+      issues_create_new: Új feladat
+      issue_query: Feladatok a szűrőből
+      projects_query: Projektek a szűrőből
+      documents: Dokumentumok
+      issues_assigned_to_me: Feladataim
+      issues_reported_by_me: Jelentett feladataim
+      issues_watched_by_me: Általam Figyelt feladatok
+      my_calendar: Naptáram
+      my_projects_simple: Projekt lista
+      news: Hírek
+      saved_queries: Elmentett szűrők listája
+      timelog_simple: Felhasznált idő
+      timelog_calendar: Idő bejegyzések naptára
+      issues_rss_reader: Feladatok másik szerverről
+      project_history: Projekt történeti adatai
+      project_news: Új
+      project_tree: Alprojektek
+      project_sidebar_all_users_queries: Beosztott feladatai
+      project_sidebar_project_info: Projekt információ
+      project_sidebar_project_members: Projekt résztvevők
+      project_sidebar_saved_queries: Elmentett szűrők
+      project_issues: Problémák
+      noticeboard: Hirdetőtábla
+      project_sidebar_family_info: Projekt (hierarchia) fa
+      project_info: Projekt információ
+      attendance: Jelenlét
+      users_query: Projekt csapat szűrés alapján
+      resource_availability: Erőforrás rendelkezésre állása
+      google_maps: Google Maps
+    module_category:
+      calendars: Naptárak
+      issues: Problémák
+      lists: Listák
+      others: Egyebek
+      projects: Projektek
+      project_sidebar: Oldalsáv
+      timelog: Felhasznált idő
+      users: Felhasználók
+      redmine: Redmine
+    zones:
+      top_left: felül balra
+      top_middle: felül középen
+      top_right: felül jobbra
+      middle_left: középen balra
+      middle_middle: középen
+      middle_right: középen jobbra
+      bottom_left: alul balra
+      bottom_middle: alul középen
+      bottom_right: alul jobbra
+      right_sidebar: oldalsáv (jobb)
+    zones_description:
+      top_left: leírás
+      top_middle: leírás
+      top_right: leírás
+      middle_left: leírás
+      middle_middle: leírás
+      middle_right: leírás
+      bottom_left: leírás
+      bottom_middle: leírás
+      bottom_right: leírás
+      right_sidebar: leírás
+  label_my_page_project_output:
+    list: lista
+    calendar: naptár
+  label_my_page_issue_output:
+    list: lista
+    calendar: naptár
+  select_easy_page_module_project_info:
+    label: tulajdonság megtekintése
+    description: leírás
+    customfields: projekt egyedi mező
+  easy_page_module:
+    project_history:
+      heading_project_edit_custom_fields: Projekt egyedi mezőinek szerkesztése
+    project_query:
+      adhoc_query: Ad-hoc név vagy szűrő
+      adhoc_query_default_text: szűrő neve
+    issue_query:
+      adhoc_query: Szűrő ad-hocneve
+      adhoc_query_default_text: szűrő neve
+    document_query:
+      adhoc_query: Szűrő ad-hocneve
+      adhoc_query_default_text: szűrő neve
+    user_query:
+      adhoc_query: Ad-hoc szűrő neve
+      adhoc_query_default_text: szűrő neve
+    attendance:
+      adhoc_query: Ad-hoc szűrő neve
+      adhoc_query_default_text: Saját jelenléti adataim
+    resource_availability:
+      label_resource_name: Erőforrás neve
+      label_day_start_time: ! 'Kezdés időpontja '
+      label_day_end_time: ! 'Befejezés időpontja '
+      label_set_available: Beállítás elérhetőként
+      label_set_unavailable: Beállítás nem elérhetőként
+      label_available: elérhető
+      label_unavailable: nem elérhető
+      label_set_day_available: Beállítás elérhetőként egész napra
+      label_set_day_unavailable: Beállítás nem elérhetőként egész napra
+      label_description_prompt: ! 'Kérem írjon be egy okot:'
+    new_issue:
+      field: Mező
+      show: Megjelenítve
+      default_value: Alapértelmezett érték (üresen hagyva nincs változtatás)
+  menu:
+    admin:
+      easy_pages_administration: Oldal testreszabása
+  breadcrumb:
+    label:
+      easy_pages_administration: Oldalak testreszabása
+      easy_page_templates: ! '%{pagename} oldal sablonok'
+      easy_page_new: Új oldal
+      easy_page_show: ! 'modulok az oldalon: %{pagename}'
+      easy_page_edit: ! 'Oldal szerkesztése: %{pagename}'
+      easy_page_templates_edit: ! 'Sablon szerkesztése: %{templatename}'
+      easy_page_templates_new: Új oldalsablon
+      easy_page_template_view: Modulok elrendezése
+      easy_page_template_edit: Modul elrendezés szerkesztése
+      easy_page_template_user_modules: Modulok elrendezése
+    title:
+      easy_pages_administration: Kattintásra továbblépés az oldal adminisztrációjához.
+      easy_page_templates: Kattintásra továbblépés a sablonok listájához %{pagename}.
+      easy_page_new: ! 'Kattintásra új oldal létrehozása. '
+      easy_page_show: Kattintásra a(z) %{pagename} oldal moduljainak megjelenítése
+        .
+      easy_page_edit: Kattintásra továbblépés a(z) %{pagename} oldal szerkesztéséhez
+        .
+      easy_page_templates_edit: Kattintásra továbblépés a(z) %{templatename} sablon
+        szerkesztéséhez.
+      easy_page_templates_new: ! 'Kattintásra új sablon létrehozása a következő oldalon:
+        %{pagename}.'
+      easy_page_template_view: Kattintásra továbblépés a modul elrendezés megtekintéséhez.
+      easy_page_template_edit: Kattintásra továbblépés a sablon modul-elrendezésének
+        szerkesztéséhez.
+      easy_page_template_user_modules: Kattintásra továbblépés a modul elrendezés
+        nézethez.
+      easy_user_working_time_calendar_names:
+    standard: Szabványos
+  easy_lookup:
+    document:
+      label: Dokumentumok
+    group:
+      label: Csoportok
+    issue:
+      label: Problémák
+    project:
+      label: Projektek
+    user:
+      label: Felhasználók
+    version:
+      label: Mérföldkövek
+  project_default_page:
+    project_overview: Projekt áttekintés
+    roadmap: Mérföldkövek
+    issue_tracking: Feladatok
+    time_tracking: Ráfordított idő
+    news: Hírek
+    documents: Dokumentumok
+    repository: Tároló (Repository)
+    calendar: Naptár
+    gantt: Gantt
+    boards: Táblák
+    files: Fájlok
+    wiki: Wiki
+  select_option_issue_restrictions_users_blank: ! '>> Válasszon <<'
+  mail:
+    field_author: Szerző
+    field_updated_by: Feltöltve a következő által
+    field_before: előtt
+    field_updated_time: Frissítve korábban mint
+    label_attachment_new: Új fájl hozzáadva
+    text_attachment_added: ! ' %{user} Felhasználó hozzáadta ekkor %{time}%{added_to}-hoz
+      a következő fájl(oka)t:'
+  attachments:
+    no_more_versions: Nincsenek további változatok
+    revert_to:
+      successfully: Melléklet visszaállítva erre a változatra:%{version}.
+      failed: ! 'A mellékletet nem sikerült visszaállítani az alábbi verzióra: %{version}.
+        A jelenlegi verzió: %{current_v}.'
+  easy_query:
+    name:
+      easy_issue_query: Problémák
+      easy_project_query: Projektek
+      easy_user_query: Felhasználók
+      easy_document_query: Dokumentumok
+      easy_version_query: Mérföldkövek
+      easy_attendance_query: Jelenlét
+      easy_time_entry_query: Idő bejegyzések
+      easy_group_query: Csoportok
+    label:
+      default_columns: Alapértelmezett oszlopok
+      default_fitlers: Alapértelmezett szűrők
+    button_apply:
+      project: Beállítások alkalmazása
+      user: Beállítások alkalmazása
+      issue: Beállítások alkalmazása
+    sidebar_filters:
+      personal:
+        easy_issue_query: Egyéni szűrő a feladatokhoz
+        easy_user_query: Egyéni szűrő a felhasználókhoz
+        easy_project_query: Egyéni szűrő a projektekhez
+        easy_document_query: Egyéni szűrő a dokumentumokhoz
+        other: Egyéni szűrők
+        easy_attendance_query: Jelenléti adatok egyéni szűrője
+        easy_group_query: Csoportok egyéni szűrője
+        easy_member_query: Munkatársak egyéni szűrője
+        easy_time_entry_query: Naplózott idő egyéni szűrője
+        easy_version_query: Verzió szűrő
+      public:
+        easy_issue_query: Általános szűrő a feladatokhoz
+        easy_user_query: Általános szűrő a felhasználókhoz
+        easy_project_query: Általános szűrő a projektekhez
+        easy_document_query: Általános szűrő a dokumentumokhoz
+        other: Általános szűrők
+        easy_attendance_query: Állami szűrők részvétel
+        easy_group_query: Nyilvános szűrők csoportok
+        easy_member_query: Állami szűrők tagjai
+        easy_time_entry_query: Állami szűrők töltött időt
+        easy_version_query: Állami szűrők verzió
+    easy_lookup:
+      name:
+        issue:
+          default: Problémák kiválasztása
+          issue_relation: Kapcsolódó feladatok kiválasztása
+        project:
+          default: Projektek kiválasztása
+          project_relation: Kapcsolódó projektek kiválasztása
+        user:
+          default: Felhasználók kiválasztása
+        group:
+          default: Csoportok kiválasztása
+        version:
+          default: Mérföldkövek kiválasztása
+          version_relation: Kapcsolódó változatok kiválasztása
+        document:
+          default: Dokumentumok kiválasztása
+  easy_scheduler_task_info:
+    planned: A(z) %{task_name} feladat tervezett.
+    running: A(z) %{task_name} feladat végrehajtás alatt van.
+    ended_failed: A(z) %{task_name} feladat nem sikerült.
+    ended_ok: A(z) %{task_name} feladat sikeresen végrehajtva.
+    initialized: A(z) %{task_name} feladat sikeresen létrehozva.
+  user:
+    easy_user_type:
+      internal: Felhasználó
+      external: Ügyfél
+  bulk_time_entry_title: Tömeges időbejegyzés
+  text_bulk_time_entry_permission: Ennek a felhasználónak nincs jogosultsága idő riportok
+    készítésére a projekteknél.
+  label_avatar: Avatar
+  message_avatar_uploaded: Avatar sikeresen feltöltve
+  button_change_avatar: Helyi avatar módosítása
+  are_you_sure_delete_avatar: Biztos benne hogy törölni akarja az avatar-ját?
+  avatar_deleted: Avatar törölve
+  unable_to_delete_avatar: Sajnáljuk. Hiba történt az avatar törlése során.
+  avatar_invalid_file: Érvénytelen fájlformátum
+  text_settings_gravatar_enabled: Amennyiben a gravatar (globális avatar) nincs kiválasztva,
+    a hagyományos avatar lesz használatra kijelölve a felhasználói profilból.
+  license_manager:
+    user_limit: Elérte a maximális felhasználói létszámot. További felhasználók létrehozásához
+      kérjük lépjen velünk kapcsolatba az alábbi e-mail címen:%{email}.
+    user_limit_unlock_button: Elérte az aktív felhasználók maximális számát.
+  image_tag:
+    alt:
+      bullet_toggle_plus: Váltás többszörös kijelölésre.
+  collapse_expand: Bezár / Kinyit
+  gantt_day: nap
+  gantt_day_plural: napok
+  gantt_day_plural5: napok
+  gantt_start: Kezdő dátum
+  gantt_end: Befejező dátum
+  gantt_duration: Befejező dátum
+  gantt_completed: Befejezve
+  issue_predecessor_error: A feladat %{issue_name} már követ egy másik feladatot.
+  project_predecessor_error: A projekt %{project_name} már követ egy másik projektet.
+  version_predecessor_error: A változat %{version_name} már követ egy másik változatot.
+  label_easy_publishing_module: Modul
+  label_easy_publishing_modules: Modulok közzététele
+  easy_publishing_setting: Modul
+  easy_publishing_setting_new: Új közzéteteli beállítások
+  label_easy_publishing_setting_url: URL példa
+  button_easy_publishing_settings_new: Új modul
+  label_easy_publishing_module_info: Infórmáció
+  label_easy_publishing_module_contact: Kapcsolat
+  label_easy_publishing_module_help: Válassza ki a megfelelő modult
+  label_easy_publishing_module_info_header: Rendeljen most saját Easy Redmine-t.
+  label_easy_publishing_invalid_file_type: Ezek a fájlok nem képek és nem kerültek
+    mentésre:%{files}.
+  helper_module:
+    button_show_help: Súgó megjelenítése
+    button_close_help: Súgó bezárása
+    alt_image_help: Kép segítség
+    title_help: Válassza ki a megfelelő modult
+    title_contact: Kapcsolat
+    button_show_youtube: Videó lejátszása
+  user_time_entry_setting:
+    all: órák vagy időszak
+    hours: órák
+    range: időszak (ettől-eddig)
+  label_rating: Osztályozás
+  label_easy_global_rating: Átfogó osztályozás
+  easy_attendance:
+    label: Jelenlét
+    label_menu_more: Jelenlét
+    label_back_to_basic: Bezárás
+    label_setting: Érkezési és távozási adatok használata
+    label_mail: E-mail értesítés
+    label_statistic_worked: dolgozott
+    label_statistic_attendance: jelenlét
+    label_statistic_supplement: ettől %{hours}, pl. %{percent} %
+    new: Érkezés / távozás jelzése
+    arrival: Az érkezés
+    departure: Távozás
+    advanced_settings: Ütemező
+    label_activities: Tevékenység
+    project_mapping_0: Nincs projekthez kapcsolás
+    project_mapping_1: Projekthez kapcsolás
+    project_mapping_1_1: és tevékenység
+    link_to_easy_attendance: Jelenléti lista
+    error_can_not_delete_activity: A tevékenység bejegyzéseket tartalmaz így nem törölhető.
+    change_easy_attendance_activity_to: ! 'Tevékenység módosítása erre: '
+    text_activity_destroy_with_attendances: A tevékenység összesen %{count} jelenléti
+      bejegyzést tartalmaz. Biztos benne, hogy törli a tevékenységet és az összes
+      bejegyzést?
+    description:
+      arrival: Épp most érkeztem.
+      departure: Távozás
+      advanced_infobox: ! 'Például: Szabadságot veszek ki ettől %{from} eddig% {to}.'
+    activities:
+      enumerations:
+        label: Tevékenységek (hirdetőtábla)
+        new: Új tevékenység a táblán
+    title:
+      advanced_settings: Tervezze meg a beosztását otthonról vagy a távollét alatt.
+    arrival_date_error: nem lehet későbbi dátum mint a távozásé.
+    arrival_already_taken: A dátumra már be van jegyezve egy másik tevékenység.
+    invalid_date: Nincs dátum
+    departure_is_same_as_arrival: Ugyanaz legyen mint az érkezési idő.
+    notice:
+      notice_arrivaled: Rögzített érkezés. Kattintás után módosíthatja az érkezések
+        és távozások időpontját.
+      warning_missing_departure: ! 'A tábláról hiányoznak távozási adatok az alábbi
+        naptól: %{arrival_date}. Kérem adja meg.'
+      legend:
+        starting: Tevékenység kezdete
+        ending: Tevékenység vége
+        starting_ending: Mai napi tevékenység
+    mail_added:
+      subject: ! '%{user} jelzi távollétét a munkahelyről'
+      body_top: ! '%{user} jelzi %{activity} tevékenységet a munkahelyen ekkortól
+        %{from} eddig %{to}.'
+      body_link: Jelenléti adatok megtekintése itt.
+    mail_updated:
+      subject: ! '%{user} jelzi távollétét a munkahelytől. '
+      body_top: ! '%{user} jelzi %{activity} tevékenységet a munkahelyen ekkortól
+        %{from} eddig %{to}.'
+      body_link: Jelenléti adatok megtekintése itt.
+    label_report_sum_time_entry: ! 'Összesen ebben az évben: %{year}   [Jelentett
+      idő]'
+    label_report_sum_attendance: ! 'Összegzés erre az évre: %{year} [Jelenlét]'
+    field_range: ! 'Jelenlét beírása ide:'
+    range:
+      full_day: Minden nap
+      forenoon: délelőtt
+      afternoon: délután
+    calendar:
+      legend:
+        starting: Tevékenység kezdete
+        ending: Tevékenység véget
+        starting_ending: Ezen a napon tevékenység
+  sidebar_easy_attendances_all_users_queries: Felhasználói jelenlét
+  error_put_between_issue_count: Kérem válasszon ki két problémát
+  label_xml_data_export: XML adat export
+  label_xml_data_select_exportables: Válassza ki az exportálni kívánt adatokat
+  label_xml_data_select_projects: Projektek kiválasztása
+  button_xml_data_export: Exportálás
+  button_xml_data_import: Importálás
+  button_xml_data_continue: Folytatás
+  label_xml_data_import: XML adat import
+  label_user_mapping: Felhasználó csatolása
+  label_map_to: Csatolás ide
+  option_map_to_new_user: új felhasználó
+  label_tracker_mapping: Nyomkövető csatolása
+  option_map_to_new_tracker: Új nyomkövető
+  label_xml_data_notify: Értesítés küldése
+  label_role_mapping: Szerep csatolása
+  label_issue_status_mapping: Probléma állapotának csatolása
+  label_issue_priority_mapping: Probléma prioritásának csatolása
+  label_time_entry_activity_mapping: Tevékenység csatolása
+  label_custom_field_mapping: Egyedi mező csatolása
+  option_map_to_new_role: új szerep
+  option_map_to_new_project_custom_field: új mező
+  option_map_to_new_issue_custom_field: új mező
+  option_map_to_new_issue_priority: új prioritás
+  option_map_to_new_issue_status: új státusz
+  option_map_to_new_time_entry_activity: új tevékenység
+  label_auto_mapping: automatikus csatolás ehhez
+  label_import_success: Adatok importálása sikeresen megtörtént.
+  label_import_zip_error: Hibás adatformátum.
+  xml_data_users: Felhaszálók.
+  xml_data_trackers: Nyomkövetők.
+  xml_data_roles: Szerepek.
+  xml_data_issue_priorities: Feladat prioritások.
+  xml_data_project_custom_fields: Egyedi mezők.
+  xml_data_issue_custom_fields: Egyedi mezők.
+  xml_data_issue_statuses: Feladat állapotok.
+  xml_data_document_categories: Dokumentum kategóriák
+  xml_data_time_entry_activities: Tevékenységek
+  sample_text: Easy Project
+  easy_color_scheme_not_available: ! 'Színséma  %{current} szerint, módosíthatja amennyiben
+    szeretné. '
+  notice_issues_successful_create: ! 'Sikeresen létrehozva a felhasználók részére: '
+  notice_failed_to_save_issues2: ! '%{issue} mentése sikertelen a következő hiba miatt:
+    %{error}'
+  notice_too_many_projects: Túl sok projekt (%{count}), használja a keresőt.
+  general_all: mind
+  general_only_required: csak a szükséges
+  mail_subject_easy_query_migration_nonsaved_query: Easy Project - szűrő migráció  -
+    sikertelen
+  mail_body_easy_query_migration_nonsaved_query_begin: ! 'Hello, a mentett szűrőinek
+    a migrációja nem sikerült ennek a szűrőnek a mentése előtt:'
+  mail_body_easy_query_migration_nonsaved_query_end: Kérem kattintson a fenti link-re
+    és módosítsa a szűrőt (oszlopok melyek tartalmaznak valamilyen időszakot - létrehozva,
+    frissítve, határidő, …).
+  mail_subject_easy_query_migration_unsupported_query: Easy Project - szűrő migráció
+    - nem támogatott feladat.
+  mail_body_easy_query_migration_unsupported_query_begin: ! 'Hello, a mentett szűrőinek
+    a migrációja nem sikerült ennek a szűrőnek a mentése előtt:'
+  mail_body_easy_query_migration_unsupported_query_end: ! 'Kérem kattintson a fenti
+    link-re a szűrő módosításához. Ez jelenlegi beállítás:'
+  setting_project_list_default_columns: Alapértelmezett oszlopok megjelenítése a projekt
+    listán.
+  setting_default_projects_tree_display: A projekt-fa megjelenítése
+  setting_projects_tree_display_with_siblings: oldalágakkal
+  setting_projects_tree_display_without_siblings: oldalágak nélkül
+  setting_issue_created_on_date_format_label: Hasonló módon létrehozottak megjelenítése
+  setting_issue_created_on_date_format_date: Dátum
+  setting_issue_created_on_date_format_datetime: Dátum és idő
+  setting_enable_private_issues: Privát megjegyzések engedélyezése
+  setting_show_personal_statement: Bemutatkozás megjelenítése a menüben
+  setting_show_bulk_time_entry: Összesített idő megjelenítése a menüben
+  setting_project_calculate_start_date: Feladat kezdő dátumának megjelenítése
+  setting_project_calculate_due_date: Feladat határidejének megjelenítése
+  setting_show_issue_id: Feladat azonosító megjelenítése
+  setting_quick_jump_to_an_issue: Ugrás a feladatra ID keresése során
+  setting_milestone_effective_date_from_issue_due_date: Feladat befejezési időpontja
+    lehet a mérföldkő után is
+  setting_issue_set_done_after_close: Befejezett feladatok 100%-ra állitása
+  setting_allow_repeating_issues: Feladatok ismétlésének engedélyezése
+  workflow_button_edit: Munkafolyamat-beállítások
+  easy_search:
+    legend_entities: ! 'Keresés:'
+    legend_column_types: ! 'Keresés itt:'
+    label_column_type:
+      name: Név
+      description: Leírás
+      comment: Megjegyzés
+      other: Egyéb
+  enumeration_easy_version_cetegory: Kategória változat
+  label_tracker_move_issues: Feladat áthelyezése
+  label_tracker_move_issues_explanation: ! 'Tracker valtoztatása:'
+  button_tracker_move_issues: Átminősítése és törlése
+  option_dont_map: -- ne csatlakoztassa --
+  move_auth_source_users_explanation: ! 'Válasszon ki egy új hitelesítési forrást
+    felhasználók számára: '
+  button_auth_source_move_users: Átminősítése és törlése
+  dashboard:
+    legends:
+      others: Egyéb
+      projects: Projektek
+      issues: Feladatok
+      users: Felhasználók
+      security: Biztonság
+      xml: XML
+      extensions: Kiegészítők
+      settings: Beállítások
+  label_easy_user_working_time_calendar_no_of_days: Ledolgozott napok
+  label_easy_user_working_time_calendar_no_of_hours: Ledolgozott órák
+  label_easy_attendance_report_working_time: dolgozott %{sum_timeentries} ebből %{total_working_hours},
+    ami %{timeentries_percent} %
+  label_easy_attendance_report_attendence_time: jelen volt %{sum_attendance} ebből
+    %{total_working_hours}, ami %{working_percent} %
+  button_settings: Beállítások
+  button_history: Előzmények
+  field_started_at: Kezdődött
+  field_finished_at: Befejezve
+  field_note: Megjegyzés
+  easy_rake_tasks:
+    views:
+      heading_index: Ütemezett feladatok áttekintése
+      button_index: Ütemezett feladatok áttekintése
+      heading_settings: Beállítások %{task_name}
+      heading_task_infos: Összegzés - %{task_name}
+      interval: Időköz
+      next_run_at: Következő indításkor
+      last_action: Utolsó művelet
+    periods:
+      daily: every %{interval} napi
+      hourly: every %{interval} óránként
+      minutes: every %{interval} percenként
+    easy_rake_task_receive_mail:
+      caption: Bejövő üzenetek fogadása
+    easy_rake_task_repeating_entities:
+      caption: Visszatérő kérdés kiszolgálója
+    easy_rake_task_history_cleaner:
+      caption: Ütemezett feladatok előzményeinek törlése
+    easy_rake_task_check_failure_tasks:
+      caption: Ütemezett feladatok hibaellenőrzése
+      email_type:
+        all_admins: E-mail küldése adminisztrátoroknak
+        email: E-mail küldése
+      mail:
+        heading: 'Ezek az ütemezett feladatok nem teljesültek ekkor %{date}'
+        footer: 'Az ütemezett feladatok beállításai módosíthatók'
+  easy_rake_task_infos:
+    status:
+      running: Folyamatban
+      ended_ok: Sikeresen befejezve
+      ended_failed: Egy hiba miatt sikertelen
+  button_delete_avatar: Avatar eltávolítása
+  label_issue_due_date_overdue: ! 'Hátra van még:'
+  label_issue_due_date_not_overdue: Határidőt követően
+  label_project_due_date_overdue: Befejezni a fennmaradást
+  label_project_due_date_not_overdue: Határidőt követően
+  label_easy_setting_use_personal_theme: A felhasználói profil változtatásának engedélyezése?
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: Új kapcsolat
+  button_gantt_relation_destroy: Kapcsolat eltávolítása
+  title_permission_flag_r: Nem lehet írni - csak olvasható
+  title_permission_flag_p: Bejelentkezés szükséges
+  title_permission_flag_m: Szükséges, hogy a projekt résztvevője legyen
+  title_permission_flag_l: Bejelentkezés szükséges
+  setting_display_issue_relations_on_new_form: Kapcsolódó feladatok megtekintése
+  gantt_new_following_issue: Új következő feladat
+  gantt_new_preceding_issue: Új előző feladat
+  gantt_new_child_issue: Új részfeladat
+  themes:
+    easy: Egyszerű
+    easy_widescreen: Széles képernyő
+  label_easy_user_working_time_day_settings: Munkaidő beallítása
+  editor_config_names:
+    basic: Általános
+    extended: Speciális
+    full: Teljes
+  custom_field_names:
+    external_mails:
+      label: Külső mail
+  label_field_format_rating_star_no: Csillag
+  label_easy_gantt_theme_plural: PDF Gantt témák
+  label_easy_gantt_theme_new: Új téma
+  label_header_style: Fejléc stílus
+  label_logo: Logó
+  field_header_color: Háttérszín
+  field_header_font_color: Szöveg színe
+  label_with_theme: Téma használata
+  label_is_null: üres
+  label_is_not_null: nem üres
+  search_field_placeholders:
+    issues: Keresés a feladatokban
+    projects: Keresés a projektekben
+  label_easy_issue_easy_reccuring_monthly_every: mindegyn
+  label_zoom: Nagyítás
+  label_easy_issue_easy_repeating_create_now: Létrehozás most
+  permission_edit_own_projects: Saját projektek szerkesztése
+  permission_view_estimated_hours: Becsült órák megtekintése
+  label_new_subproject_from_template: Új alprojekt sablon alapján
+  label_easy_attendance_user_arrival_add_notify_title: Felhasználói bejelentkezés utáni értesítés
+  label_easy_attendance_is_repeating: Ismételje meg?
+  label_easy_attendance_repeating_to: Ismételje meg a
+  label_easy_custom_field_disable: Letiltás
+  label_easy_custom_field_enable: Engedélyezés
+  label_filter_group_project_fields: Terv
+  label_filter_group_relations: Kapcsolatok
+  label_filter_group_custom_fields_suffix: egyéni mezők
+  label_filter_group_unknown: Ismeretlen
+  label_filter_group_easy_issue_query: Kérdések
+  label_filter_group_easy_project_query: Projektek
+  label_filter_group_easy_user_query: Felhasználók
+  label_filter_group_easy_document_query: Dokumentumok
+  label_filter_group_easy_version_query: Mérföldkövek
+  label_filter_group_easy_attendance_query: Részvétel
+  label_filter_group_easy_time_entry_query: Idő bejegyzések
+  label_filter_group_easy_group_query: Csoportok
+  label_easy_issue_easy_repeating_period_yearly: Évente
+  label_easy_issue_easy_repeating_create_time_time: Időbejegyzés
+  label_easy_issue_easy_reccuring_recur_every: Ismétlés minden
+  label_easy_issue_easy_reccuring_recur_years: évben
+  label_easy_issue_easy_reccuring_recur_months: hónapban
+  label_easy_issue_easy_reccuring_yearly_month_of: A
+  label_easy_issue_easy_reccuring_after_recurs: ismétlések
+  label_easy_repeat_left_reccurs: Hátralévő ismétlések
+  label_not_updated_on: Nem volt frissítve
+  label_easy_rake_period: Minden
+  label_easy_rake_period_monthly: hónap
+  label_easy_rake_period_daily: nap
+  label_easy_rake_period_hourly: óra
+  label_easy_rake_period_minutes: perc
+  label_easy_setting_required_issue_id_at_time_entry: A probléma azonosító megadása szükséges az időbejegyzéskor
+  label_easy_setting_show_time_entry_range_select: Időtartomány kiválasztás megjelenítése
+  label_last_n_days_next_m_days: -%{last} nap +%{next} nap
+  lable_should_send_invitation_update: Meghívó küldése
+  label_email_field:
+    from: "Ettől:"
+    to: "Eddig:"
+  button_execute: Végrehajtás
+  button_easy_issue_timer_pause: Szünet
+  button_easy_issue_timer_resume: Folytatás
+  button_journal_unprivate_note: Kiadás
+  button_create_issue_from_journal: Létrehozás rendszernaplóból
+  button_download_email: E-mail letöltése
+  button_additional_context_menu: Egyéb opciók
+  button_load_additional_records: További nyilvántartások betöltése
+  title_easy_issue_timer_button_pause: Időmérés megállítása
+  title_easy_issue_timer_button_resume: Időmérés folytatása
+  title_easy_copy_to_project: Projekt létrehozása feladat alapján
+  title_journal_unprivate_note: Megtekintése frissíti az összes felhasználó számára
+  title_create_issue_from_journal: Új probléma, és szövege a Journal leírás
+  title_additional_context_menu: Ide kattintva megnyithatja a menüt további beállítások
+  field_easy_next_start: Következő indításkor
+  field_easy_is_meeting: Megbeszélés
+  field_easy_meeting_day: Megbeszélés dátuma
+  field_easy_meeting_time: Megbeszélés időpontja
+  field_easy_start_date_time: Kezdés ideje
+  field_easy_due_date_time: Határidő
+  field_mail_to_admin: E-mail a rendszergazdának
+  field_time_entry: Bejegyzett idő
+  field_sum_estimated_hours: Becsült órák
+  notice_journal_published: Új frissítés!
+  notice_easy_custom_field_disabled: Egyedi mező letiltva
+  notice_easy_custom_field_enabled: Egyedi mező engedélyezve
+  error_easy_custom_field_disable_deletable: Ezt a mezőt nem lehet kikapcsolni.
+  text_easy_attendance_user_detail_online_at: Felhasználó megérkezett
+  text_easy_attendance_user_detail_offline_at: Felhasználó szabadságon van
+  text_easy_attendance_user_detail_no_data_today: Felhasználó még nem érkezett meg
+  text_easy_attendance_user_notify_default_message: ! '%{user} bejelentkezett'
+  text_easy_attendance_user_notify_title: Értesítés kell küldeni:%{email}
+  text_easy_attendance_user_notify_already_exists_warning: Figyelem! Értesítés már
+    létezik. Teljes %{count} x
+  text_easy_issue_reccuring_create_now: Ennél a résznél adhatja meg, hogy most hány feladatot szeretne rögzíteni.A további feladatok az ismétlési beállítások alapján lesznek létrehozva. Az órák meghatározása lejjebb.
+  text_easy_rake_task_failure_email: Sikertelen feladatmegoldásnál e-mail küldés
+  setting_just_one_issue_mail: Csak egy e-mail küldése
+  easy_user_working_time_calendar_names:
+    standard: Standard
+  label_easy_publishing_module_youtube: YouTube
+  setting_close_subtask_after_parent: Alfeladat bezárása főfeladat zárásakor
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: Ismeretlen
+        received: Fogadott
+        processed_and_deleted: Feldolgozott, törölt
+        not_processed_and_deleted: Nem feldolgozott, törölt
+        not_processed_and_left_on_server: Feldolgozás nem történt meg, adatok a szerveren maradnak
+        cannot_be_processed: Feldolgozás sikertelen
+  label_video_url: Videó URL
+  label_customize_gantt_export: Egyedi export beállítások
+  button_easy_copy_to_project: Projekt létrehozásához

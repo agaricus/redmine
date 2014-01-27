@@ -1,0 +1,2 @@
+<%= l(:'easy_attendance.mail_added.body_top', :user => @easy_attendance.user.name, :activity => @easy_attendance.easy_attendance_activity.name, :from => format_time(@easy_attendance.arrival), :to => format_time(@easy_attendance.departure)) %>
+<%= link_to(l(:'easy_attendance.mail_added.body_link'), {:controller => 'easy_attendances', :action => 'index', :set_filter => '1', :user_id => @easy_attendance.user, :only_path => false}) %>

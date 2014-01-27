@@ -1,0 +1,28 @@
+<p>
+  <%= label_tag 'mail_sender', l(:label_preview_external_email_mail_sender) %>
+  <%= hidden_field_tag 'mail_sender', @mail_template.mail_sender, :id => nil %>
+  <%= text_field_tag 'mail_sender', @mail_template.mail_sender, :disabled => true %>
+</p>
+<p>
+  <%= label_tag 'mail_recepient', l(:label_preview_external_email_mail_recepient) %>
+  <%= text_field_tag 'mail_recepient', @mail_template.mail_recepient %>
+</p>
+<p>
+  <%= label_tag 'mail_cc', l(:label_preview_external_email_mail_cc) %>
+  <%= text_field_tag 'mail_cc', @mail_template.mail_cc %>
+</p>
+<p>
+  <%= label_tag 'mail_subject', l(:label_preview_external_email_mail_subject) %>
+  <%= text_field_tag 'mail_subject', @mail_template.mail_subject %>
+</p>
+<p>
+  <%= label_tag 'mail_body_html', l(:label_preview_external_email_mail_body_html) %>
+  <%= text_area_tag 'mail_body_html', @mail_template.mail_body_html, :cols => '70', :rows => '10' %>
+  <%= wikitoolbar_for 'mail_body_html', {:toolbar => 'Full'} %>
+</p>
+<p>
+  <%= label_tag 'mail_body_plain', l(:label_preview_external_email_mail_body_plain) %>
+</p>
+<p>
+  <%= text_area_tag 'mail_body_plain', @mail_template.mail_body_plain, :cols => '70', :rows => '10' %>
+</p>

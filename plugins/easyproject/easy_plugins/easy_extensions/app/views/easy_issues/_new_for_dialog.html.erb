@@ -1,0 +1,19 @@
+<%= labelled_form_for @issue, :html => {:class => 'tabular new-issue-form', :id => 'issue-form', :remote => true}, :url => polymorphic_path([@project, :issues], :for_dialog => true) do |f| %>
+
+  <%= hidden_field_tag('subtask_for_id', params[:subtask_for_id]) if params[:subtask_for_id] %>
+  <%= hidden_field_tag('issue_first_controller', controller_name) %>
+
+  <%= error_messages_for 'issue' %>
+
+  <div class="box issue_fields splitcontent">
+    <div id="issue_descr_text" class="issue_common_static_fields splitcontentleft">
+      <%= render :partial => 'issues/new_form_static_attributes', :locals => {:issue => @issue, :modul_uniq_id => 'easy_modal'} -%>
+    </div>
+    <div id="issue-dependent-fields" class="issue-dependent-fields tabular splitcontentright">
+      <%= render :partial => 'issues/new_form_dependent_fields_for_modal', :locals => {:issue => @issue, :modul_uniq_id => 'easy_modal'}  %>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+
+<% end -%>

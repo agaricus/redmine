@@ -1,0 +1,13 @@
+<div id="easy-page-assign-zone-form">
+  <h2><%= l(:label_easy_page_assign_zone, :pagename => @page.translated_name) %></h2>
+
+  <%= form_tag({:action => "assign_zone", :page_id => @page.id}, {:method => :post}) do -%>
+
+    <%= select_tag 'zone_id', "<option>#{l(:label_select_page_assign_zone)}</option>" + options_for_select(@zones.collect{|p| [p.zone_name, p.id]})%>
+
+    <%= submit_tag l(:button_apply), :class => "small", :name => nil %>
+  <% end -%>
+
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>

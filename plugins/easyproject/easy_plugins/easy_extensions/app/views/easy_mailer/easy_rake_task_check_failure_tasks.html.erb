@@ -1,0 +1,15 @@
+<h2><%= l(:'easy_rake_tasks.easy_rake_task_check_failure_tasks.mail.heading', :date => format_date(@task.day_to_search)) -%>:</h2>
+<br />
+<table>
+  <% @failed_tasks.each do |task| -%>
+    <tr>
+      <td>
+        <%= link_to task.caption, {:controller => 'easy_rake_tasks', :action => 'task_infos', :id => task, :only_path => false}, :title => task.caption %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<p>
+  <%= link_to l(:'easy_rake_tasks.easy_rake_task_check_failure_tasks.mail.footer'), {:controller => 'easy_rake_tasks', :action => 'edit', :id => @task, :only_path => false}, :title => l(:'easy_rake_tasks.easy_rake_task_check_failure_tasks.mail.footer') %>
+</p>

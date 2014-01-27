@@ -1,0 +1,22 @@
+<% if EasySetting.value('show_billable_things') %>
+  <li class="folder">
+    <a href="#" class="submenu"><%= l(:field_easy_is_billable) %></a>
+    <ul>
+      <li><%= context_menu_link l(:general_text_Yes), {:controller => 'timelog', :action => 'bulk_update', :ids => time_entries.collect(&:id), :time_entry => {'easy_is_billable' => '1'}, :back_url => back}, :method => :post,
+          :selected => time_entries.inject(true){|memo, t| memo && t.easy_is_billable?}, :disabled => !can[:edit] %></li>
+      <li><%= context_menu_link l(:general_text_No), {:controller => 'timelog', :action => 'bulk_update', :ids => time_entries.collect(&:id), :time_entry => {'easy_is_billable' => '0'}, :back_url => back}, :method => :post,
+          :selected => time_entries.inject(true){|memo, t| memo && !t.easy_is_billable?}, :disabled => !can[:edit] %></li>
+    </ul>
+  </li>
+  <% if time_entries.inject(true){|memo, t| memo && t.easy_is_billable?} %>
+    <li class="folder">
+      <a href="#" class="submenu"><%= l(:field_easy_billed) %></a>
+      <ul>
+        <li><%= context_menu_link l(:general_text_Yes), {:controller => 'timelog', :action => 'bulk_update', :ids => time_entries.collect(&:id), :time_entry => {'easy_billed' => '1'}, :back_url => back}, :method => :post,
+            :selected => time_entries.inject(true){|memo, t| memo && t.easy_billed?}, :disabled => !can[:edit]  %></li>
+        <li><%= context_menu_link l(:general_text_No), {:controller => 'timelog', :action => 'bulk_update', :ids => time_entries.collect(&:id), :time_entry => {'easy_billed' => '0'}, :back_url => back}, :method => :post,
+            :selected => time_entries.inject(true){|memo, t| memo && !t.easy_billed?}, :disabled => !can[:edit] %></li>
+      </ul>
+    </li>
+  <% end %>
+<% end %>

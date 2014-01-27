@@ -1,0 +1,11 @@
+<hr />
+<div class="custom-fields splitcontent">
+  <div class="splitcontentleft">
+    <%= l(:field_easy_next_start) + ': ' + format_date(issue.easy_next_start) %>
+  </div>
+  <div class="splitcontentright">
+    <% if issue.easy_repeat_settings['endtype'] == 'count' %>
+      <%= l(:label_easy_repeat_left_reccurs) + ': ' + (issue.easy_repeat_settings['endtype_count_x'].to_i - issue.easy_repeat_settings['repeated'].to_i).to_s %>
+    <% end %>
+  </div>
+</div>

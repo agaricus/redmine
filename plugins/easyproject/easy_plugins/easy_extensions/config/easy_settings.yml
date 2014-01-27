@@ -1,0 +1,351 @@
+---
+user_limit:
+  default: 0
+issue_default_sorting_array:
+  default:
+  - - priority
+    - desc
+  - due_date
+  - parent
+issue_default_sorting_string_short:
+  default: priority:desc,due_date,parent:asc
+issue_default_sorting_string_long:
+  default: enumerations.position DESC, issues.due_date,  issues.root_id,  issues.lft
+default_projects_tree_display:
+  default: with_siblings
+use_easy_cache:
+  default: false
+issue_created_on_date_format:
+  default: datetime
+new_issue_columns_list:
+  default: []
+edit_issue_columns_list:
+  default: []
+calculation:
+  tracker_ids: []
+avatar_enabled:
+  default: true
+quick_jump_to_an_issue:
+  default: false
+show_personal_statement:
+  default: true
+show_bulk_time_entry:
+  default: true
+enable_private_issues:
+  default: false
+project_fixed_activity:
+  default: false
+easy_issue_query_default_sorting_array:
+  default:
+  - - priority
+    - desc
+  - due_date
+  - parent
+easy_issue_query_default_sorting_string_short:
+  default: priority:desc,due_date:asc,parent:asc
+easy_issue_query_default_sorting_string_long:
+  default: ! 'enumerations.position DESC, issues.due_date , issues.parent_id '
+easy_issue_query_list_default_columns:
+  default:
+  - tracker
+  - status
+  - priority
+  - subject
+  - assigned_to
+  - updated_on
+easy_user_query_list_default_columns:
+  default:
+  - login
+  - firstname
+  - lastname
+easy_project_query_list_default_columns:
+  default:
+  - name
+  - description
+easy_version_query_list_default_columns:
+  default:
+  - project
+  - name
+  - effective_date
+  - description
+  - status
+  - sharing
+project_calculate_start_date:
+  default: true
+project_calculate_due_date:
+  default: false
+easy_issue_query_default_filters:
+  default:
+    status_id:
+      :operator: o
+      :values:
+      - ''
+easy_user_query_default_filters:
+  default:
+    status:
+      :operator: =
+      :values:
+      - '1'
+easy_version_query_default_filters:
+  default:
+    status:
+      :operator: =
+      :values:
+      - open
+easy_attendance_query_list_default_columns:
+  default:
+  - arrival
+  - departure
+  - easy_attendance_activity
+easy_attendance_query_default_filters:
+  default:
+    user_id:
+      :operator: =
+      :values:
+      - me
+    arrival:
+      :operator: date_period_1
+      :values:
+        :period: current_month
+        :to: ''
+        :from: ''
+timelog_comment_editor_enabled:
+  default: false
+time_entry_spent_on_at_issue_update_enabled:
+  default: false
+easy_select_limit:
+  default: 25
+commit_ref_keywords:
+  default: refs,references,IssueID
+commit_fix_keywords:
+  default: fixes,closes
+commit_fix_status_id:
+  default: '0'
+commit_fix_done_ratio:
+  default: '100'
+commit_fix_assignee_id:
+  default: ''
+commit_logtime_enabled:
+  default: false
+commit_logtime_activity_id:
+  default: '0'
+default_project_page:
+  default: project_overview
+show_issue_id:
+  default: false
+enable_activity_roles:
+  default: false
+issue_color_scheme_for:
+  default: issue_priority
+new_subproject_user_role_id:
+  default: ''
+commit_cross_project_ref:
+  default: false
+issue_recalculate_attributes:
+  default: true
+show_journal_id:
+  default: false
+attachment_description:
+  default: false
+attachment_description_required:
+  default: false
+show_issue_custom_field_values_layout:
+  default: two_columns
+spent_on_limit_before_today:
+  default: ''
+spent_on_limit_after_today:
+  default: ''
+use_personal_theme:
+  default: false
+display_issue_relations_on_new_form:
+  default: false
+timeentry_hours_selector:
+  default: textbox
+ckeditor_toolbar_config:
+  default: Basic
+milestone_effective_date_from_issue_due_date:
+  default: false
+git_repository_path:
+  default: git_repositories
+allow_log_time_to_closed_issue:
+  default: true
+easy_issue_timer_settings:
+  default:
+    :active: false
+    :round: 0.25
+    :start:
+      :assigned_to_me: true
+      :status_id: 
+    :end:
+      :assigned_to: :author
+      :status_id: 
+      :done_ratio: 100
+project_display_identifiers:
+  default: false
+attachment_reminder_words:
+  default: ! 'attachment?,attach??
+
+    příloh?;přilož*'
+issue_set_done_after_close:
+  default: false
+allow_repeating_issues:
+  default: true
+just_one_issue_mail:
+  default: false
+required_issue_id_at_time_entry:
+  default: false
+easy_attendance_use_time_select:
+  default: false
+close_subtask_after_parent:
+  default: false
+show_time_entry_range_select:
+  default: false
+easy_time_entry_query_list_default_columns:
+  default:
+  - project
+  - issue
+  - spent_on
+  - user
+  - activity
+  - hours
+easy_time_entry_query_default_filters:
+  default:
+    spent_on:
+      :operator: date_period_1
+      :values:
+        :from: ''
+        :period: current_month
+        :to: ''
+easy_budget_sheet_query_list_default_columns:
+  default:
+  - spent_on
+  - user
+  - activity
+  - issue
+  - hours
+easy_budget_sheet_query_grouped_by:
+  default: project
+easy_budget_sheet_query_default_filters:
+  default:
+    spent_on:
+      :operator: date_period_1
+      :values:
+        :from: ''
+        :period: last_month
+        :to: ''
+show_billable_things:
+  default: false
+billable_things_default_state:
+  default: true
+easy_contact_format_name:
+  default: :firstname_lastname
+easy_contact_query_list_default_columns:
+  default:
+  - contact_name
+easy_contact_group_query_list_default_columns:
+  default:
+  - group_name
+is_demo:
+  default: true
+easy_enum_state_query_list_default_columns:
+  default:
+  - name
+  - code
+easy_enum_territory_query_list_default_columns:
+  default:
+  - name
+  - code
+  - state
+easy_enum_area_query_list_default_columns:
+  default:
+  - name
+  - code
+  - state
+easy_enum_region_query_list_default_columns:
+  default:
+  - name
+  - code
+  - state
+easy_enum_district_query_list_default_columns:
+  default:
+  - name
+  - region
+easy_enum_city_query_list_default_columns:
+  default:
+  - name
+  - district
+  - region
+easy_helpdesk_project_query_list_default_columns:
+  default:
+  - project
+  - tracker
+  - assigned_to
+  - matching_emails
+  - monthly_hours
+easy_money_other_revenue_query_list_default_columns:
+  default:
+  - project
+  - spent_on
+  - name
+  - price1
+easy_money_other_expense_query_list_default_columns:
+  default:
+  - project
+  - spent_on
+  - name
+  - price1
+easy_money_expected_revenue_query_list_default_columns:
+  default:
+  - project
+  - spent_on
+  - name
+  - price1
+easy_money_expected_expense_query_list_default_columns:
+  default:
+  - project
+  - spent_on
+  - name
+  - price1
+easy_money_project_cache_query_list_default_columns:
+  default:
+  - main_project
+  - project
+  - sum_of_all_expected_revenues_price_2
+  - sum_of_all_expected_expenses_price_2
+  - expected_profit_price_2
+  - sum_of_all_other_revenues_price_2
+  - sum_of_all_other_expenses_price_2_internal
+  - other_profit_price_2_internal
+easy_printable_template_query_list_default_columns:
+  default:
+  - project
+  - name
+  - author
+easy_project_attachment_query_list_default_columns:
+  default:
+  - container_type
+  - container_link
+  - filename
+  - filesize
+  - author
+  - created_on
+easy_user_allocation_query_default_filters:
+  default:
+    range:
+      :operator: date_period_1
+      :values: !ruby/hash:ActiveSupport::HashWithIndifferentAccess
+        period: next_90_days
+        from: ''
+        to: ''
+    issue_status_id:
+      :operator: o
+      :values:
+      - '1'
+    issue_is_planned:
+      :operator: =
+      :values:
+      - '0'
+    user_status:
+      :operator: =
+      :values:
+      - '1'

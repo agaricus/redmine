@@ -1,0 +1,9 @@
+module <%= plugin_title %>
+  class Hooks < Redmine::Hook::ViewListener
+
+    def view_layouts_base_html_head(context={})
+      stylesheet_link_tag '<%= plugin_name_underscored -%>', :plugin => '<%= plugin_name_underscored -%>'
+    end
+
+  end
+end

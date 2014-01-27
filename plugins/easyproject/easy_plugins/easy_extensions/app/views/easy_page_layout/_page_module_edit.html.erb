@@ -1,0 +1,10 @@
+<% modul_uniq_id = "module_inside_#{page_module.uuid.dasherize}" -%>
+<form action="<%= url_for({}) -%>" class="easy-page-module-form" id="module_<%= page_module.uuid.dasherize %>_form">
+  <div class="close-icon-container"><%= link_to "",
+  	url_for(page_params[:url_remove_module].merge(:uuid => page_module.uuid.underscore)),
+  	:class => "icon icon-close close-icon",
+  	:onclick => 'PageLayout.removeModule(this);return false;' -%></div>
+  <div class="handle" id="module_handle_<%= page_module.uuid.dasherize %>">
+    <%= render(:partial => page_module.module_definition.edit_path, :locals => { :user => (page_params[:user] || User.current), :block_name => page_module.module_name, :settings => (page_module.settings || {}).merge(params[page_module.module_name] || {}), :page_module => page_module, :modul_uniq_id => modul_uniq_id, :page_params => page_params }) -%>
+  </div>
+</form>

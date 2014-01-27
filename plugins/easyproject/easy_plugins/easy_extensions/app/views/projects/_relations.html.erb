@@ -1,0 +1,16 @@
+<% if @relations.present? %>
+  <%= content_tag :h3, l(:label_related_projects), :class => 'sidebar-style-h3' %>
+  <table class="list projects project-relations">
+    <% @relations.each do |relation| %>
+      <tr class="hascontextmenu project project-<%=  relation.other_project(@project).id -%> <%= relation.other_project(@project).css_classes -%>">
+        <td class="hide-when-print checkbox"><%= check_box_tag("ids[]", relation.other_project(@project).id, false, :style => 'display:none;') -%></td>
+        <td class="subject"><%= l(relation.gerund_label_for(@project)) %> - <%= "(#{l('datetime.distance_in_words.x_days', :count => relation.delay)})" if relation.delay && relation.delay != 0 -%>
+          <%= link_to_project(relation.other_project(@project), :truncate => 60) %>
+        </td>
+        <td class="assigned_to"><%= link_to_user(relation.other_project(@project).author) -%></td>
+        <td class="buttons"><%= link_to(image_tag('link_break.png', :alt => l(:label_relation_delete)), { :controller => 'easy_project_relations', :action => 'destroy', :project_id => @project, :id => relation}, :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :title => l(:label_relation_delete)) if authorize_for('easy_project_relations', 'destroy') -%></td>
+      </tr>
+    <% end %>
+  </table>
+<% end -%>
+<%= render :partial => 'project_relations/form' -%>

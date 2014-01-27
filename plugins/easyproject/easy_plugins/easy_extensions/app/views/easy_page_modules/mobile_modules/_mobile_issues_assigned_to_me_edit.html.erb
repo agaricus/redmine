@@ -1,0 +1,20 @@
+<%= render(:partial => 'easy_page_modules/issues/issues_assigned_to_me_edit', :locals => { :user => user, :block_name => block_name, :settings => settings, :page_module => page_module, :modul_uniq_id => modul_uniq_id, :page_params => page_params }) %>
+<%= form_tag('', :id => "#{modul_uniq_id}query_form", :method => :get) do -%>
+  <div class="columns-container gray-background">
+    <h4 class="columns-heading"><%= l(:field_column_names) %></h4>
+    <%= render :partial => 'easy_queries/columns', :locals => {:query => @easy_page_modules_data[block_name][:query], :modul_uniq_id => modul_uniq_id, :block_name => block_name} %>
+  </div>
+<% end -%>
+<p>
+  <i class="icon-warning"></i><%= l(:text_mobile_issue_query_notice) %>
+</p>
+
+<div class="box">
+  <%= render(:partial => 'easy_page_modules/mobile_modules/mobile_issue_end_buttons_select', :locals => {:block_name => block_name, :settings => settings}) %>
+</div>
+
+<script type="text/javascript">
+  before_submit_<%= modul_uniq_id.underscore -%> = function() {
+    selectAllOptions('<%= modul_uniq_id -%>selected_columns');
+  }
+</script>

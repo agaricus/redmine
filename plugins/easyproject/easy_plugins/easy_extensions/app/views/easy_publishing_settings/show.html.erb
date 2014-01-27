@@ -1,0 +1,14 @@
+<div id="easy-publishing-settings-container">
+  <h2><%= l(:easy_publishing_setting) %></h2>
+  <p><strong><%= l(:label_easy_publishing_setting_url) %>:</strong> <%= @publishing_setting.url %></p>
+  <p><strong><%= l(:label_easy_publishing_module) %>:</strong> <%= l("label_easy_publishing_module_#{@publishing_setting.easy_publishing_module.name}") %></p>
+  <% if @publishing_setting.easy_publishing_module_id == 3 %>
+    <%= link_to_attachments(@publishing_setting) %>
+  <% else %>
+    <div><%= @publishing_setting.body.html_safe %></div>
+  <% end %>
+</div>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to(l(:button_back), {:controller => 'easy_publishing_settings', :action => 'index' }, :class => 'button-2') %>
+<% end %>

@@ -1,0 +1,62 @@
+<table class="filters-table">
+  <% filters.sort{|a,b| a[1][:order]<=>b[1][:order]}.each do |filter|
+    field, options = filter[0], filter[1]
+    fields << field
+    field_values = options[:values].respond_to?(:call) ? options[:values].call : options[:values]
+    next if [:list, :list_optional, :list_status, :list_subprojects].include?(options[:type]) && field_values.blank?
+    -%>
+    <tr style="<%= 'display:none;' unless query.has_filter?(field) %>" id="<%= modul_uniq_id -%>tr_<%= field %>" class="filter">
+      <td style="width:200px;">
+        <%= check_box_tag (block_name.blank? ? 'fields[]' : "#{block_name}[fields][]"), field, query.has_filter?(field), :onclick => "toggle_filter('#{field}', '#{modul_uniq_id}');", :id => "#{modul_uniq_id}cb_#{field}", :style => field.to_s == 'range' ? 'display:none' : ''%>
+        <label for="<%= modul_uniq_id -%>cb_<%= field %>"><%= filter[1][:name] || l(("field_"+field.to_s.gsub(/\_id$/, "")).to_sym) %></label>
+      </td>
+      <% if options[:type] == :date_period %>
+        <td colspan="2">
+          <div id="<%= modul_uniq_id -%>operators_<%= field %>" style="display:none;"></div>
+          <div id="<%= modul_uniq_id -%>div_values_<%= field %>" style="">
+            <% period_values = query.values_for(field); period_values ||= {} %>
+            <p>
+              <%= radio_button_tag (block_name.blank? ? "operators[#{field}]" : "#{block_name}[operators][#{field}]"), 'date_period_1', (query.operator_for(field) != 'date_period_2'), :id => "#{modul_uniq_id}#{field}_date_period_1" %>
+              <%= select_tag (block_name.blank? ? "values[#{field}][period]" : "#{block_name}[values][#{field}][period]"), options_for_period_select(period_values[:period], field, query.extended_period_options), :onfocus => "$('##{modul_uniq_id}#{field}_date_period_1').attr('checked', 'checked');" %>
+            </p>
+            <p>
+              <%= radio_button_tag (block_name.blank? ? "operators[#{field}]" : "#{block_name}[operators][#{field}]"), 'date_period_2', (query.operator_for(field) == 'date_period_2'), :id => "#{modul_uniq_id}#{field}_date_period_2" %>
+              <span onclick="<%= "$('##{modul_uniq_id}#{field}_date_period_2').attr('checked', 'checked');" -%>">
+                <%= l(:label_date_from_to, :start => (text_field_tag((block_name.blank? ? "values[#{field}][from]" : "#{block_name}[values][#{field}][from]"), period_values[:from], :size => 10, :id => "#{modul_uniq_id}#{field}_from", :onchange => "$(this).closest('span').click();") + calendar_for("#{modul_uniq_id}#{field}_from")), :end => (text_field_tag((block_name.blank? ? "values[#{field}][to]" : "#{block_name}[values][#{field}][to]"), period_values[:to], :size => 10, :id => "#{modul_uniq_id}#{field}_to", :onchange => "$(this).closest('span').click();") + calendar_for("#{modul_uniq_id}#{field}_to"))).html_safe %>
+              </span>
+            </p>
+          </div>
+        </td>
+      <% else %>
+        <td style="width:150px;">
+          <%= select_tag (block_name.blank? ? "operators[#{field}]" : "#{block_name}[operators][#{field}]"), options_for_select(query.operators_for_select(options[:type]), query.operator_for(field)), :id => "#{modul_uniq_id}operators_#{field}", :onchange => "toggle_operator('#{field}', '#{modul_uniq_id}');", :class => "select-small", :style => "vertical-align: top;" %>
+        </td>
+        <td>
+          <div id="<%= modul_uniq_id -%>div_values_<%= field %>" style="">
+            <% case options[:type]
+            when :list, :list_optional, :list_status, :list_subprojects %>
+              <span class="<%= modul_uniq_id -%> span_values_<%= field %>">
+                <select <%= "multiple=true" if query.values_for(field) && query.values_for(field).length > 1 %> name="<%= (block_name.blank? ? "values[#{field}][]" : "#{block_name}[values][#{field}][]") -%>" id="<%= modul_uniq_id -%>values_<%= field %>" class="values_<%= field -%>" style="vertical-align: top;">
+                  <%= options_for_select field_values, query.values_for(field) %>
+                </select>
+                <%= link_to_function( '', "toggle_multi_select('#{field}', '#{modul_uniq_id}')" , :class => 'toggle-bullet textcon-plus') %>
+              </span>
+            <% when :date, :date_past %>
+              <span class="<%= modul_uniq_id -%> span_values_<%= field %>"><%= text_field_tag (block_name.blank? ? "values[#{field}][]" : "#{block_name}[values][#{field}][]"), query.value_for(field), :id => "#{modul_uniq_id}values_#{field}", :size => 3, :class => "values_#{field}" %> <%= l(:label_day_plural) %></span>
+            <% when :string, :text %>
+              <span class="<%= modul_uniq_id -%> span_values_<%= field %>"><%= text_field_tag (block_name.blank? ? "values[#{field}][]" : "#{block_name}[values][#{field}][]"), query.value_for(field), :id => "#{modul_uniq_id}values_#{field}", :size => 30, :class => "values_#{field}" %></span>
+            <% when :integer, :float %>
+              <span class="<%= modul_uniq_id -%> span_values_<%= field %>"><%= text_field_tag (block_name.blank? ? "values[#{field}][]" : "#{block_name}[values][#{field}][]"), query.value_for(field), :id => "#{modul_uniq_id}values_#{field}_1", :size => 6, :class => "values_#{field}" %></span>
+              <span class="<%= modul_uniq_id -%> span_values_<%= field %>"><%= text_field_tag (block_name.blank? ? "values[#{field}][]" : "#{block_name}[values][#{field}][]"), query.value_for(field, 1), :id => "#{modul_uniq_id}values_#{field}_2", :size => 6, :class => "values_#{field}" %></span>
+            <% end %>
+          </div>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+<script type="text/javascript">
+  $(document).ready(function() {
+    <%= fields.collect{|field| "toggle_filter('#{field}', '#{modul_uniq_id}');"}.join('').html_safe -%>
+  });
+</script>

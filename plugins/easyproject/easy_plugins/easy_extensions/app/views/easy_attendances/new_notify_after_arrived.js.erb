@@ -1,0 +1,17 @@
+
+<% s = form_tag({}, :class => 'tabular') do %>
+  <%= content_tag(:div, l(:text_easy_attendance_user_notify_already_exists_warning, :count => @easy_attendance_notify_count), :class => 'flash warning') if @easy_attendance_notify_count > 0 %>
+
+  <%= hidden_field_tag(:user_id, @user.id) %>
+  <%= content_tag(:h3, l(:label_easy_attendance_user_arrival_add_notify_title), :class => 'title', :style => 'display:none') %>
+  <%= content_tag(:h4, l(:text_easy_attendance_user_notify_title, :email => @me.mail)) %>
+    <%= text_area_tag(:notify_message, l(:text_easy_attendance_user_notify_default_message, :user => @user.name)) + wikitoolbar_for('notify_message') %>
+  </p>
+  <p>
+    <%= submit_tag(l(:button_submit), :class => 'button-1') %>
+  </p>
+
+<% end -%>
+
+$("#ajax-modal").html('<%= j(s) %>');
+showModal('ajax-modal', '80%');

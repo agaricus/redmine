@@ -1,0 +1,46 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => l(:label_easy_money_expected_revenues), :easy_query_clear_url => {:set_filter => 0, :'easy_money[entity_type]' => @entity_type, :'easy_money[entity_id]' => @entity_id}, :options => {:query_sub_heading => easy_money_sub_heading}} %>
+
+<div id="easy_money_expected_revenues">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @entities, :options => {:hascontextmenu => true}} -%>
+  <p class="pagination">
+    <%= pagination_links_full @entity_pages, @entity_count, :query => @query, :entities => @entities %>
+  </p>
+</div>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<%= context_menu easy_money_expected_revenues_context_menu_path %>
+
+<% if @entity_type && @entity_id %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+    var form = $('#query_form');
+
+    var el1 = $('<input/>')
+    .attr('type', 'hidden')
+    .attr('name', 'easy_money[entity_type]')
+    .addClass('serialize')
+    .val('<%= @entity_type -%>')
+    .appendTo(form);
+
+    var el2 = $('<input/>')
+    .attr('type', 'hidden')
+    .attr('name', 'easy_money[entity_id]')
+    .addClass('serialize')
+    .val('<%= @entity_id -%>')
+    .appendTo(form);
+    })
+  <% end %>
+<% end %>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} -%>
+<% end -%>

@@ -1,0 +1,4 @@
+<p>
+  <%= label_tag 'copy_roles_from', l(:label_user_copy_roles_from) %>
+  <%= select_tag 'copy_roles_from', options_for_select([['', '']] + User.active.sorted.collect{|u| [u.name, u.id]}) %>
+</p>

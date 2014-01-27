@@ -1,0 +1,77 @@
+---
+it:
+  easy_user_allocations_name: Gestione delle risorse
+  easy_user_allocations_description: ! '- Risorse di gestione / persone'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Vista la gestione delle risorse
+  permission_view_my_easy_user_allocations: Di vista della gestione delle risorse
+  permission_edit_easy_user_allocations: Modifica la gestione delle risorse
+  project_module_user_allocations: Gestione delle risorse
+  label_user_allocations: Gestione delle risorse
+  label_user_allocation_gantt: Assegnazione delle risorse gantt
+  label_user_allocation_gantt_users: Utenti
+  label_user_allocation_gantt_user_selection: Selezione
+  label_user_allocation_gantt_range: Date
+  label_unassigned_issues: Compiti assegnati
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Scegli un intervallo di date diverso per visualizzare
+    tutto il compito
+  label_allocation_changed_title: Task è stato modificato e sarà aggiornato al momento
+    del salvataggio
+  resalloc:
+    title: Assegnazione delle risorse
+    settings: Impostazioni
+    button_apply_settings: Applicare le impostazioni
+    button_recalculate: Ricalcola assegnazione
+    button_save: Salvare le modifiche
+    button_undo: Annullare le modifiche non salvate
+    button_split_issue: Split compito
+    split_issue_help: Scegli una data facendo clic su un compito assegnato.
+    error_date_range_too_long: deve essere inferiore a 1 anno
+    legend_hours_worked: Il tempo trascorso
+    legend_hours_overtime: Il tempo di lavoro oltre il tempo prescritto
+  easy_pages:
+    modules:
+      user_allocation: Assegnazione delle risorse
+      user_allocation_working_plan: Piano di assegnazione / lavoro risorsa
+  permission_edit_my_easy_user_allocations_plan: Modifica proprio piano di lavoro
+  label_user_allocation_plan: Piano di lavoro
+  user_allocation_plan:
+    label_plan: Piano
+    label_real: Effettivo
+    label_comment: Commento
+  easy_query:
+    name:
+      easy_user_allocation_query: Assegnazione delle risorse
+      easy_user_allocation_by_project_query: Allocazione delle risorse da progetto
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Filtri privati ​​in materia di assegnazione delle
+          risorse
+        easy_user_allocation_by_project_query: Filtri privati ​​in materia di assegnazione
+          delle risorse da parte del progetto
+      public:
+        easy_user_allocation_query: Filtri pubbliche in materia di assegnazione delle
+          risorse
+        easy_user_allocation_by_project_query: Filtri pubbliche in materia di assegnazione
+          delle risorse da parte del progetto
+  label_allocations_by_project: Allocazione delle risorse da progetto
+  text_easy_user_allocation_working_plan_bottom_info: Permette di pianificare il carico
+    di lavoro dell'utente nella settimana selezionata. Tabella indica il tempo previsto
+    e il tempo effettivo segnalati.
+  label_setting_keep_issue_start_dates: Non modificare le date di inizio delle attività.
+  text_setting_keep_issue_start_dates: Se ora abilitati e compito stimati sono troppo
+    bassi, il compito non sarà ridotto, ma sarà destinato a 0 ore, invece.
+  project_module_easy_user_allocations: Utilizzo delle risorse / persone
+  label_setting_allocate_evenly: Allocare in modo uniforme
+  text_setting_allocate_evenly: Se abilitata e un compito viene ridimensionato in
+    Gantt allocazione, ore stimate sono distribuiti in modo uniforme per tutta la
+    durata del compito.
+  label_setting_allocate_from_start: Allocare le date di inizio di attività
+  text_overallocation: somma delle ore assegnate è superiore ore allora stimati.
+  permission_view_easy_user_allocations_by_project: Visualizza assegnazioni di progetto
+  easy_user_allocations_sidebar_all_users_queries: Assegnazioni da parte degli utenti
+  easy_user_allocations_label_show_assigned_issues: Visualizzare stanziamento per
+    utente %{username}
+  label_filter_group_easy_user_allocation_query: Assegnazione delle risorse
+  label_edit_estimated_hours: Modifica ore stimate

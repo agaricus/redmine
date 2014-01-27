@@ -1,0 +1,14 @@
+$("#modal-dialog-loader").html("<%=j render(:partial => 'easy_documents/attachment_form', :locals => {:document => @document}) %>");
+
+$('#modal-dialog-loader-wrapper').dialog({
+  width: 550,
+  modal: true,
+  resizable: false,
+  dialogClass: 'modal',
+  title: '<%= l(:label_attachment_new) %>',
+  zIndex: 0,
+  open: function(event, ui) {
+    setupFileDrop();
+    initFileUploads();
+  }
+});

@@ -1,0 +1,15 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => l(:label_easy_money_other_expenses)} %>
+
+<div id="easy_money_other_expenses">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @entities, :options => {:hascontextmenu => true}} -%>
+</div>
+
+<p class="pagination">
+  <%= pagination_links_full @entity_pages, @entity_count, :query => @query, :entities => @entities %>
+</p>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<%= context_menu easy_money_other_expenses_context_menu_path %>

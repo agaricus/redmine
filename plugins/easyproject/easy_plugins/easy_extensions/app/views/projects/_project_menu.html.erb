@@ -1,0 +1,17 @@
+<table id="project-menu-table">
+  <tr>
+    <td id="left-button" class="tabs-button" style="display:none">
+      <button class="tab-left" onclick="moveTabLeft(this);"></button>
+    </td>
+    <td id="project-buttons">
+      <%= render_menu :project_menu, project -%>
+    </td>
+    <td id="right-button" class="tabs-button" style="display:none">
+      <button class="tab-right" onclick="moveTabRight(this);"></button>
+    </td>
+  </tr>
+</table>
+<script type="text/javascript">
+$(window).load(function() { displayTabsButtons2('#project-menu-table'); });
+$(window).resize(function() { displayTabsButtons2('#project-menu-table'); });
+</script>

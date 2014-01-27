@@ -1,0 +1,27 @@
+<%= form_for(@budgetsheet, :url =>{:action => 'index'}, :html => {:id => 'budgetsheet_form'}) do |f|  %>
+<p>
+  <%= f.label(:period, l(:label_date)) %>
+
+  <%= f.radio_button(:period_type, '1', { :id => "#{f.object_name}_period_type_1" }) %>
+  <%= f.select(:period, options_for_period_select((params[:budgetsheet].nil? ? nil : params[:budgetsheet][:period])), {}, { :onfocus => "$('##{f.object_name}_period_type_1').attr('checked', 'checked');" } ) %>
+  <%= f.radio_button(:period_type, '2', { :id => "#{f.object_name}_period_type_2" }) %>
+
+  <span onclick="<%= "$('##{f.object_name}_period_type_2').attr('checked', 'checked');" %>">
+    <%= f.label(:date_from, l(:budgetsheet_date_from_label)) %>
+    <%= f.text_field(:date_from, :size => 10) %><%= calendar_for("#{f.object_name}_date_from") %>
+    <%= f.label(:date_to, l(:budgetsheet_date_to_label)) %>
+    <%= f.text_field(:date_to, :size => 10) %><%= calendar_for("#{f.object_name}_date_to") %>
+  </span>
+</p>
+
+<p>
+  <%= f.label(:projects, l(:budgetsheet_project_label)) %>
+  <%= f.select(:projects, options_from_collection_for_select(Project.visible.active.find(:all, :order => 'name ASC'), :id, :name), {},  { :multiple => true, :size => 10}) %>
+</p>
+
+<p class="buttons">
+    <%= link_to_remote(l(:button_apply), { :url => { :set_filter => 1 }, :update => "content", :with => "Form.serialize('budgetsheet_form')"}, :class => 'icon icon-checked') %>
+    <%= link_to_remote(l(:button_clear), { :url => { :set_filter => 1 }, :update => "content", :method => :get}, :class => 'icon icon-reload')  %>
+</p>
+
+<% end %>

@@ -1,0 +1,6 @@
+# Easy Helpers-easy_cocoon Language File [redimine-path]/plugins/easyproject/easy_helpers/easy_cocoon/spec/dummy/config/locales/sv.yml
+# Swedish Translation by Patrick Hvid (patrick (a) plan42.se)
+# Version 1.0 (2013-09-01)
+
+sv:
+  hello: "Hej Världen"

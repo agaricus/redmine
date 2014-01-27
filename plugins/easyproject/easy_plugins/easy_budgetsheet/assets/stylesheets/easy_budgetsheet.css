@@ -1,0 +1,44 @@
+#total-sum-bottom {
+    padding-right: 50px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3em;
+    border-top: 2px solid black;
+}
+#total-sum-bottom div.summary {
+    display: inline-block;
+    margin: 0px 5px;
+}
+#main div#budgetsheet .tooltip {
+    background-color: transparent;
+    border: none;
+    max-width: 150px;
+}
+div#budgetsheet-form p {
+    padding:0px 10px;
+    float:left;
+}
+td.summary span {
+    font-weight: bold;
+}
+div#budgetsheet table.list.timeentries tbody tr td.fast-icons {
+    width: 100px
+}
+table.list.timeentries tr.group td.inline_expander div.tooltip {
+    background: none;
+    display: inline;
+}
+table#budgetsheet-sum-summary {
+    margin-top: 10px;
+    border-top: 2px solid #000;
+}
+table#budgetsheet-sum-summary  tr {
+    background-color: #FFFFCA;
+}
+table#budgetsheet-sum-summary td {
+    font-weight: bold;
+    font-style: italic;
+}
+table#budgetsheet-sum-summary td:last-child {
+    padding-right: 10px;
+}

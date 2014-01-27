@@ -1,0 +1,11 @@
+<% block_name ||= nil; uniq_id ||= nil %>
+<div id="<%= "#{block_name}-#{uniq_id}easy-query-tooltip-box" %>" class="easy-query-tooltip-box" style="display:none;min-height: 50px; width: 500px">
+  <div style="position: relative">
+    <%= link_to_function('', "$(this).closest('.easy-query-tooltip-box').fadeOut()", :class => 'icon-close easy-query-tooltip-box-close-button') -%>
+    <div id="<%= "#{block_name}-#{uniq_id}easy-query-tooltip-box-content" %>">
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#<%= "#{block_name}-#{uniq_id}easy-query-tooltip-box" %>').draggable();
+</script>

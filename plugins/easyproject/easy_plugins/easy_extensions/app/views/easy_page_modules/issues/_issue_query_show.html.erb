@@ -1,0 +1,14 @@
+<% issues, query = @easy_page_modules_data[block_name][:issues], @easy_page_modules_data[block_name][:query] %>
+<% if query && issues %>
+  <% query_name = "#{h(query.name)} (#{query.entity_count})" %>
+  <%= toggling_container(modul_uniq_id, user, {:heading => (settings['query_type'] == '2' ? query_name : link_to(query_name, { :controller => 'issues', :action => 'index', :project_id => query.project, :query_id => query}, :title => l(:label_user_saved_query, :queryname => query.name))), :container_html => {:class => 'module-content'}}) do %>
+    <% if (settings["output"] == "calendar") -%>
+      <%= render :partial => 'easy_page_modules/issues/issue_query_calendar', :locals => {:issues => issues, :query => query, :block_name => block_name, :user => user, :modul_uniq_id => modul_uniq_id, :settings => settings} -%>
+    <% else -%>
+      <%= render :partial => 'issues/list', :locals => {:issues => issues, :query => query, :modul_uniq_id => modul_uniq_id + '_list', :options => {:disable_sort => true}} %>
+    <% end -%>
+  <% end %>
+<% else %>
+  <%= l(:label_easy_page_module_settings_missing) %>
+<% end %>
+<%= context_menu issues_context_menu_path, "##{modul_uniq_id}" %>

@@ -1,0 +1,136 @@
+<div class="splitcontent">
+  <div class="splitcontentleft">
+    <%= label_tag 'price_type', l(:label_easy_money_cash_flow_change_price_type) %>
+    <%= select_tag 'price_type', options_for_select([[l(:field_price1), 'price1'], [l(:field_price2), 'price2']], @price_type.to_s), :onchange => "window.location = '#{url_for(params.merge({:price_type => (@price_type == :price1 ? :price2 : :price1)}))}'" %>
+  </div>
+  <div class="splitcontentright">
+    <%= link_to('« ' + l(:'button_timelog_calendar_prev.year'), url_for(params.merge({:from_date => @from_date - 1.year}))) %>
+    |
+    <%= link_to(l(:'button_timelog_calendar_next.year') + ' »', url_for(params.merge({:from_date => @from_date + 1.year}))) %>
+  </div>
+  <div class="clear"></div>
+</div>
+<br />
+<div id="easy_money_cash_flow_prediction" class="grid_9 alpha omega tableDiv">
+  <table class="FixedTables" id="easy_money_cash_flow_prediction_table">
+    <thead>
+      <tr>
+        <th><div><%= l(:label_total) -%>:</div></th>
+    <% 0.upto(11).each do |month_shift|
+      current_date = @from_date + month_shift.month
+      current_key = [current_date.year, current_date.month] -%>
+      <th>
+      <div class="total">
+        <%= @sums[current_key] == 0.0 ? '&nbsp;'.html_safe : format_easy_money_price(@sums[current_key], nil) -%>
+      </div>
+      </th>
+    <% end %>
+    </tr>
+    <tr>
+      <th>&nbsp;</th>
+      <% 0.upto(11).each do |month_shift|
+        current_date = @from_date + month_shift.month -%>
+        <th><div><%= "#{current_date.month}/#{current_date.year}" -%></div></th>
+    <% end %>
+    </tr>
+    </thead>
+    <tbody>
+      <% @result.each do |project, grouped_expenses, grouped_revenues| -%>
+        <tr>
+          <td>
+            <div class="project nowrap">
+              <%= link_to(project.family_name(:self_only => true), {:controller => 'easy_money', :action => 'project_index', :project_id => project}, :target => '_blank', :title => l(:title_easy_money_link_to_project, :project => project.name)) -%>
+            </div>
+          </td>
+          <% 0.upto(11).each do |month_shift|
+            current_date = @from_date + month_shift.month
+            current_key = [current_date.year, current_date.month]
+            expense_price = grouped_expenses[current_key]
+            revenue_price = grouped_revenues[current_key] -%>
+            <td>
+              <div class="values">
+                <%= revenue_price.nil? ? '&nbsp;'.html_safe : link_to(format_easy_money_price(revenue_price, project), {:controller => @revenues_controller, :action => 'index', :'easy_money[entity_id]' => project.id, :'easy_money[entity_type]' => 'Project', :project_id => project, :set_filter => 1, :spent_on => "#{current_date}|#{current_date.end_of_month}"}, :target => '_blank', :class => 'revenues', :title => l(:title_easy_money_project_revenues_per_month)) -%>
+                <%= expense_price.nil? ? '&nbsp;'.html_safe : link_to(format_easy_money_price(-1 * expense_price, project), {:controller => @expenses_controller, :action => 'index', :'easy_money[entity_id]' => project.id, :'easy_money[entity_type]' => 'Project', :project_id => project, :set_filter => 1, :spent_on => "#{current_date}|#{current_date.end_of_month}"}, :target => '_blank', :class => 'expenses', :title => l(:title_easy_money_project_expenses_per_month)) -%>
+              </div>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'jquery.fixedtable.js', :plugin => 'easy_extensions' -%>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var fixedColumnWidth = $("#easy_money_cash_flow_prediction_table tbody td:first-child").width() + 5;
+      $('#easy_money_cash_flow_prediction_table').fixedTable({
+        height: $(window).height() - $("#header").height() - $("#footer").height() - 150,
+        width: $('#easy_money_cash_flow_prediction').width() - 20,
+        classHeader: "fixedHead",
+        classFooter: "fixedFoot",
+        classColumn: "fixedColumn",
+        fixedColumns: 1,
+        fixedColumnWidth: fixedColumnWidth,
+        outerId: 'easy_money_cash_flow_prediction'});
+    });
+  </script>
+  <style type="text/css">
+    #easy_money_cash_flow_prediction_table td a {
+      display: block;
+      line-height: 25px;
+      text-align: right;
+    }
+    #easy_money_cash_flow_prediction_table td div.project {
+      height: 50px;
+    }
+    #easy_money_cash_flow_prediction_table td div.values {
+      width: 85px;
+      height: 50px;
+    }
+    #easy_money_cash_flow_prediction_table td div.values a.revenues span {
+      color: green;
+    }
+    #easy_money_cash_flow_prediction_table td div.values a.expenses span {
+      color: red;
+    }
+    #easy_money_cash_flow_prediction td div.total {
+      text-align: right;
+      font-weight: bold;
+      width: 85px;
+    }
+    #easy_money_cash_flow_prediction td div.total span {
+      color: green;
+    }
+    #easy_money_cash_flow_prediction td div.total span.overdrawn {
+      color: red;
+    }
+    #easy_money_cash_flow_prediction div.fixedHead td {
+      text-align: center;
+      padding: 0px;
+    }
+    #easy_money_cash_flow_prediction table {
+      border-collapse: collapse;
+    }
+    #easy_money_cash_flow_prediction .fixedHead td div.total, #easy_money_cash_flow_prediction .fixedTable td div.values {
+      padding-right: 5px;
+    }
+    #easy_money_cash_flow_prediction .fixedContainer td:nth-child(odd) {
+      background-color:#F6F7F8;
+    }
+    #easy_money_cash_flow_prediction .fixedColumn .fixedHead table:first-child td {
+      text-align: right;
+      font-weight: bold;
+    }
+  </style>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} -%>
+<% end -%>

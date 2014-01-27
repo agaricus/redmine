@@ -1,0 +1,11 @@
+<%= form_tag({}, :method => 'post') do %>
+  <div class="attachments">
+
+    <% attachments.each do |attachment| -%>
+      <div class="mobile-attachment <%= cycle('odd', 'even') -%>">
+        <%= attachment_row(attachment, options) -%>
+      </div>
+    <% end -%>
+
+  </div>
+<% end %>

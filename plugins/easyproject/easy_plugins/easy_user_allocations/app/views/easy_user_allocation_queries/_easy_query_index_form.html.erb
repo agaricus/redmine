@@ -1,0 +1,73 @@
+<% modul_uniq_id ||= ''; block_name ||= ''; filter_active ||= ''; query_heading ||= query.name; options ||= {}
+unless defined?(show_sort_criteria)
+  show_sort_criteria = false
+end
+unless defined?(show_query_heading)
+  show_query_heading = true
+end
+unless defined?(show_filters_opened)
+  show_filters_opened = false
+end
+%>
+<div class="easy-query-heading">
+  <%= content_tag(:h2, query_heading) if show_query_heading && query_heading != '_' %>
+  <div class="buttons">
+    <div class="filters<%= ' open' if show_filters_opened -%>" id="<%= modul_uniq_id -%>easy-query-toggle-button-filters">
+      <i class="icon-toggler"></i>
+      <%= l(:label_filter_plural) -%>
+      <%= content_tag :span, :class => 'active-filters' do -%>
+        <%= l(:filter_active) -%>
+      <% end if query.filters_active? -%>
+    </div>
+    <%= javascript_tag do %>
+      $("#<%= modul_uniq_id -%>easy-query-toggle-button-filters").click(function(e, el) {
+      ToggleDivAndChangeOpen('<%= modul_uniq_id -%>filters', $("#<%= modul_uniq_id -%>easy-query-toggle-button-filters"));
+      toggleFilterButtons('<%= modul_uniq_id -%>filter_buttons', '<%= modul_uniq_id -%>filters', '<%= modul_uniq_id -%>filters_settings');
+      });
+    <% end %>
+    <% if query.display_filter_sort_on_index || query.display_filter_columns_on_index || query.display_filter_group_by_on_index -%>
+      <div class="settings" id="<%= modul_uniq_id -%>easy-query-toggle-button-settings">
+        <i class="icon-toggler"></i>
+        <%= l(:label_options) -%></div>
+      <%= javascript_tag do %>
+        $("#<%= modul_uniq_id -%>easy-query-toggle-button-settings").click(function(e, el) {
+        ToggleDivAndChangeOpen('<%= modul_uniq_id -%>filters_settings', $("#<%= modul_uniq_id -%>easy-query-toggle-button-settings"));
+        toggleFilterButtons('<%= modul_uniq_id -%>filter_buttons', '<%= modul_uniq_id -%>filters', '<%= modul_uniq_id -%>filters_settings');
+        });
+      <% end %>
+    <% end -%>
+
+    <%= content_tag(:div, easy_modal_selector_link_to_fullscreen(query.entity.to_s.underscore.pluralize, {:button_close_label => l(:button_fullscreen_close)}), :class => 'settings icon-toggler') if query.display_filter_fullscreen_button -%>
+  </div>
+</div>
+<div class="easy-query-filter-settings">
+  <div id="<%= modul_uniq_id -%>filters" class="gray-background filters collapsible<%= ' collapsed' if !show_filters_opened -%>" style="<%= 'display: none;' if !show_filters_opened -%>">
+    <%= render :partial => 'easy_user_allocation_queries/filters', :locals => {:query => query, :modul_uniq_id => modul_uniq_id, :block_name => block_name} %>
+  </div>
+  <div id="<%= modul_uniq_id -%>filters_settings" class="gray-background others collapsible collapsed" style="display: none;">
+    <% if show_sort_criteria || query.display_filter_sort_on_index -%>
+      <div class="sort-container">
+        <h4 class="sort-heading"><%= l(:label_sort) -%></h4>
+        <table class="sort-settings">
+          <% 3.times do |i| -%>
+            <tr>
+              <td><%= i+1 -%>:</td>
+              <td>
+                <%= select_tag((block_name.blank? ? "easy_query[sort_criteria][#{i}][]" : "#{block_name}[easy_query][sort_criteria][#{i}][]"),
+                  options_for_select([[]] + query.available_columns.select(&:sortable?).collect {|column| [column.caption, column.name.to_s]}, query.sort_criteria_key(i))) -%>
+              </td>
+              <td>
+                <%= select_tag((block_name.blank? ? "easy_query[sort_criteria][#{i}][]" : "#{block_name}[easy_query][sort_criteria][#{i}][]"),
+                  options_for_select([[], [l(:label_ascending), 'asc'], [l(:label_descending), 'desc']], query.sort_criteria_order(i))) -%>
+              </td>
+            </tr>
+          <% end -%>
+        </table>
+      </div>
+    <% end -%>
+    <div class="group-container gray-background"  <%= 'style="display:none"' unless query.display_filter_group_by_on_index -%>>
+      <h4 class="columns-heading"><%= l(:field_group_by) %></h4>
+      <%= select_tag((block_name.blank? ? 'group_by' : "#{block_name}[group_by]"), options_for_select([[]] + query.groupable_columns.collect {|c| [c.caption, c.name.to_s]}, query.group_by), :id => modul_uniq_id + 'group_by') -%>
+    </div>
+  </div>
+</div>

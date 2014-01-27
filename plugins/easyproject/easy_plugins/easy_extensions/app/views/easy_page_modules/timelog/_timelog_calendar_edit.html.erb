@@ -1,0 +1,5 @@
+<h3><%= l('easy_pages.modules.timelog_calendar') -%></h3>
+<p>
+  <span class="my-page-timelog-calendar-period-label"><%= l(:label_my_page_timelog_calendar_period_select) -%></span>
+  <span class="my-page-timelog-calendar-period"><%= select_tag "#{block_name}[period]", options_for_select([[l("my_page_timelog_calendar_period.month"), "month"], [l("my_page_timelog_calendar_period.week"), "week"]], settings["period"]) -%></span>
+</p>

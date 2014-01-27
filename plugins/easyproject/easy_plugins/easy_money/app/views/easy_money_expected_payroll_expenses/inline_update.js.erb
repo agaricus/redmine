@@ -1,0 +1,2 @@
+$("#expected-payroll-expenses").html('<%= j(render :partial => 'easy_money_expected_payroll_expenses/inline_show', :locals => {:project => @project, :sum_expected_payroll_expenses => @entity.easy_money.sum_expected_payroll_expenses, :entity_type => @entity_type, :entity_id => @entity_id}) %>');
+renderExpectedProfit();

@@ -1,0 +1,25 @@
+<div class="easy-money-other-expense-container">
+  <h2><%= l(:label_easy_money_other_expense_edit) -%></h2>
+  <%= form_for(@easy_money_object, :as => :easy_money, :html => { :multipart => true, :id => "easy-money-other-expense-form", :class => "easy-money-form tabular" }) do |f| -%>
+    <%= error_messages_for @easy_money_object %>
+    <%= hidden_field_tag('back_url', params[:back_url], :id => nil) unless params[:back_url].blank? %>
+    <div class="box">
+      <%= render :partial => 'easy_money_other_expenses/form', :locals => { :f => f, :project => @project, :other_expense => @easy_money_object}  %>
+    </div>
+    <p class="links">
+      <%= f.submit l(:button_update), :class => 'button-1' -%>
+    </p>
+  <% end -%>
+  <%= link_to_attachments @easy_money_object, :thumbnails => true %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+<% end -%>

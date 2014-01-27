@@ -1,0 +1,32 @@
+---
+es:
+  budgetsheet_name: Hoja
+  budgetsheet_author: Easy Software
+  budgetsheet_description: Descripción general del tiempo dedicado por los usuarios
+    en los proyectos.
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: Hoja
+  budgetsheet_date_from_label: De
+  budgetsheet_date_to_label: A
+  budgetsheet_project_label: Proyecto
+  budgetsheet_activities_label: Actividad
+  budgetsheet_users_label: Usuarios
+  budgetsheet_export_button: Utilizar
+  budgetsheet_export_to_csv: exportar a CSV
+  budgetsheet_export_to_pdf: exportar a PDF
+  budgetsheet_export_to_html: ver
+  budgetsheet_costs: Costo
+  budgetsheet_per_hour: por hora
+  budgetsheet_top_menu: Hoja
+  permission_view_budgetsheet: Ver Hoja de
+  label_easy_budget_sheet_queries_plural: Budgetsheet
+
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budgetsheet
+  field_project_root: Proyecto principal
+  sidebar_budgetsheet_all_users_queries: Trabajadores de las hojas
+  label_show_billable_things: Mostrar 'facturable? elección
+  field_easy_is_billable: Facturable?
+  field_easy_billed: Mandado la cuenta?
+  label_billable_things_default_state: Estado predeterminado

@@ -1,0 +1,3 @@
+<% if !disabled_modules.include?('easy_money') && source_project_and_descendants.has_module(:easy_money).any? %>
+  <label class="block"><%= check_box_tag 'only[]', 'easy_money', true -%> <%= l(:menu_easy_money) %></label>
+<% end -%>

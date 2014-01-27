@@ -1,0 +1,15 @@
+<h2><%=l(:label_administration)%></h2>
+
+<div id="admin-index">
+  <%= render :partial => 'no_data' if @no_configuration_data %>
+<%# easy_cache ['administration_dashboard', User.current, I18n.locale] do %>
+  <%= render_dashboard_menu :admin_dashboard%>
+<%# end %>
+</div>
+
+<% html_title(l(:label_administration)) -%>
+<% content_for :sidebar do %>
+  <%# easy_cache ['administration_menu', User.current, I18n.locale] do %>
+  <%= render(:partial => 'menu') -%>
+  <%# end %>
+<% end %>

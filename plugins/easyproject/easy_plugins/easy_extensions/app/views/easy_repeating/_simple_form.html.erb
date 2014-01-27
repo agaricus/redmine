@@ -1,0 +1,61 @@
+<% object_name ||= nil %>
+<% if EasySetting.value('allow_repeating_issues') %>
+  <div id="<%= object_name %>_easy_is_easy_repeating_form_loader">
+        <% if object.easy_is_repeating? %>
+            <%= label_tag('', l(:field_easy_repeat_settings)) %>
+            <%= link_to('', show_repeating_options_path(object.class, object.id, :object_name => object_name), :class => 'icon icon-edit', :remote => true) %>
+        <% else %>
+          <%= fields_for(object) do |f| %>
+            <%= f.fields_for(:easy_repeat_settings) do |e| %>
+            <p>
+              <%= e.label(:simple_period, l(:label_easy_attendance_is_repeating)) %><%= e.select(:simple_period, f.object.available_simple_repeatings.map{|i| [l(i, :scope => :easy_repeating_simple_options), i]}, {:prompt => l(:prompt_easy_repeat_simple_repeat)}, {:class => 'auto'}) %>
+            </p>
+            <p style="display:none">
+              <%= f.label(:easy_repeat_simple_repeat_end_at, l(:label_easy_issue_easy_repeating_endtype)) %><%= f.select(:easy_repeat_simple_repeat_end_at, [[l(:label_easy_is_easy_repeating_endtype_count), :endtype_count_x], [l(:label_easy_is_easy_repeating_endtype_date), :end_date]],{:prompt => l(:prompt_easy_repeat_simple_repeat)}, {:disabled => true, :class => 'auto'}) %>
+
+                <span class="nowrap" style="display:none" id="end_date_easy_repeat_simple_repeat_end_at">
+                  <%= e.text_field(:end_date, :size => 10, :id => "#{f.object_name}_easy_repeating_simple_form_end_date") %>
+                  <%= calendar_for("#{f.object_name}_easy_repeating_simple_form_end_date") %>
+                </span>
+                <span class="nowrap" style="display:none" id="endtype_count_x_easy_repeat_simple_repeat_end_at">
+                  <%= e.number_field(:endtype_count_x, :placeholder => 'x', :size => 2, :maxlength => 2, :style => 'width: 50px;') %>
+                  <%= content_tag(:span, l(:label_easy_is_easy_repeating_endtype_count_hint), :class => '') %>
+                </span>
+
+            </p>
+
+              <script type="text/javascript">
+                $("#<%= f.object_name %>_easy_repeat_simple_repeat_end_at").change(function(e) {
+                  var value = $(e.target).val();
+                  $(e.target).parent().find('span.nowrap').hide();
+                  $("#"+value+"_easy_repeat_simple_repeat_end_at").show();
+                })
+
+                $("#<%= f.object_name %>_easy_repeat_settings_simple_period").change(function(e) {
+                  var value = $(e.target).val();
+
+                  switch (value) {
+                    case '':
+                      toggleEasyRepeatingOptions(false);
+                    break;
+                    case 'custom':
+                      toggleEasyRepeatingOptions(false);
+                      $.get('<%= show_repeating_options_path(object.class, object.id, :object_name => object_name) %>');
+                    break;
+                    default:
+                      toggleEasyRepeatingOptions(true);
+                    break;
+                  }
+                })
+
+                function toggleEasyRepeatingOptions(show) {
+                  $("#<%= f.object_name %>_easy_repeat_simple_repeat_end_at").attr('disabled', !show);
+                  $("#<%= f.object_name %>_easy_repeat_simple_repeat_end_at").parent().toggle(show);
+                }
+
+              </script>
+            <% end -%>
+          <% end -%>
+        <% end -%>
+</div>
+<% end -%>

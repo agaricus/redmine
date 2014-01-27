@@ -1,0 +1,9 @@
+<% if @issue.new_record? %>
+  $("#attributes").html("<%= j(render(:partial => 'new_form_updatable_attributes')) %>");
+  <%= call_hook :view_new_issue_update_form_js, {:issue => @issue} %>
+<% else %>
+  $("#attributes").html("<%= j(render(:partial => 'edit_form_updatable_attributes', :locals => {:show_on_more_form => true})) %>");
+  $("#visible-custom-fields").html("<%= j(render(:partial => 'edit_form_updatable_attributes', :locals => {:show_on_more_form => false})) %>");
+  $("#issue_due_date").val("<%= @issue.due_date.to_s %>");
+  $("#issue_old_fixed_version_id").val("<%= @issue.fixed_version.nil? ? '' : @issue.fixed_version.id %>");
+<% end %>

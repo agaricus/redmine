@@ -1,0 +1,26 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name =>  l(:label_user_plural), :free_search_options => {:free_search_after_function => "$('.other-formats').remove()"}} %>
+<div class="autoscroll" id="users">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @users} -%>
+</div>
+<p class="pagination" style="display:none;">
+  <%= pagination_links_full @user_pages, @user_count, :query => @query, :entities => @users %>
+</p>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+<% html_title(l(:label_user_plural)) -%>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} %>
+<% end %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <% if EasyLicenseManager.has_license_limit?(:user_limit) %>
+    <%= link_to(l(:label_user_new), {:action => 'new'}, :class => 'button-1 icon icon-add')  %>
+  <% else %>
+    <span style="color:red"><%= l('license_manager.user_limit', :email => EasyExtensions::EasyProjectSettings.app_email) %></span>
+  <% end %>
+  <%= mail_to(User.active.collect(&:mail).join(','), l(:label_send_email_to_all_users), :class => 'button-2', :id => 'users-send-mail-all') -%>
+<% end %>

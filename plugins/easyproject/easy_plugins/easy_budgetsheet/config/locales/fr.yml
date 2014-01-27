@@ -1,0 +1,31 @@
+---
+fr:
+  budgetsheet_activities_label: Activité
+  budgetsheet_author: Easy Software
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_costs: Frais
+  budgetsheet_date_from_label: De
+  budgetsheet_date_to_label: À
+  budgetsheet_description: ! '- Vue d''ensemble du temps passé par les utilisateurs
+    sur les projets.'
+  budgetsheet_export_button: Utiliser
+  budgetsheet_export_to_csv: exporter vers un fichier .CSV
+  budgetsheet_export_to_html: afficher
+  budgetsheet_export_to_pdf: exporter vers un fichier .PDF
+  budgetsheet_name: Feuille
+  budgetsheet_per_hour: par heure
+  budgetsheet_project_label: Projet
+  budgetsheet_title: feuille
+  budgetsheet_top_menu: Feuille
+  budgetsheet_users_label: Utilisateurs
+  easy_query:
+    name:
+      easy_budget_sheet_query: Feuille de budget
+  field_easy_billed: Facturé?
+  field_easy_is_billable: Facturable?
+  field_project_root: Project principal
+  label_billable_things_default_state: État par défault
+  label_easy_budget_sheet_queries_plural: Feuille de Budget
+  label_show_billable_things: Voir 'Facturable?' choix
+  permission_view_budgetsheet: Afficher Feuille
+  sidebar_budgetsheet_all_users_queries: Feuille de travail de l'employé

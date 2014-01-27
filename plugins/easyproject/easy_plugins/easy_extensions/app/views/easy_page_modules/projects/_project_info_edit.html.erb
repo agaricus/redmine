@@ -1,0 +1,7 @@
+<%= module_minus_button(user, l(:label_project_overview_project_info), modul_uniq_id)  %>
+<div id="<%= modul_uniq_id -%>" <%= detect_hide_elements(modul_uniq_id, user) -%> class="module-content">
+  <p>
+    <span class="label"><%= label_tag l('select_easy_page_module_project_info.label') -%></span>
+    <span class="select"><%= select_tag "#{block_name}[action]", options_for_select([[l('select_easy_page_module_project_info.description'), 'description'], [l('select_easy_page_module_project_info.customfields'), 'customfields']], settings["action"]) -%></span>
+  </p>
+</div>

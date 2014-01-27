@@ -1,0 +1,29 @@
+<table class="list">
+  <thead>
+    <tr>
+      <th width="30%"><%=l(:field_name)%></th>
+      <th><%=l(:field_field_format)%></th>
+      <th><%=l(:field_is_required)%></th>
+      <th><%=l(:button_sort)%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% (@custom_fields_by_type[tab[:name]] || []).sort.each do |custom_field| -%>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= link_to custom_field.translated_name, :controller => 'custom_fields', :action => 'edit', :id => custom_field, :back_url => url_for(params) %></td>
+        <td align="center"><%= l(Redmine::CustomFieldFormat.label_for(custom_field.field_format)) %></td>
+        <td align="center"><%= image_tag( 'true.png', :alt => l(:general_text_Yes)) if custom_field.is_required %></td>
+        <td align="center"><%= reorder_links('custom_field', {:controller => 'custom_fields', :action => 'update', :id => custom_field, :back_url => url_for(params)}, :put) %></td>
+        <td class="buttons">
+          <%= link_to(l(:button_delete), {:controller => 'custom_fields', :action => 'destroy', :id => custom_field, :back_url => url_for(params)},
+            :method => :delete,
+            :data => {:confirm => l(:text_are_you_sure)},
+            :class => 'icon icon-del') unless custom_field.non_deletable? -%>
+        </td>
+      </tr>
+    <% end; reset_cycle -%>
+  </tbody>
+</table>
+
+<p><%= link_to l(:label_custom_field_new), {:controller => 'custom_fields', :action => 'new', :type => tab[:name], :back_url => url_for(params)}, :class => 'button-1' %></p>

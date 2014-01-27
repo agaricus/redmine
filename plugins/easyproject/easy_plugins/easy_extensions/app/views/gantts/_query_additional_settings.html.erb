@@ -1,0 +1,8 @@
+<% if params[:controller] == 'gantts' && params[:action] == 'show' && query && query.project %>
+  <div class="columns-container gray-background">
+    <p><%= check_box_tag 'easy_query[settings][gantt_show_all_versions]', 1, !!EasySetting.value('gantt_show_all_versions', query.project), :class => 'serialize' %>
+    <label for="easy_query_settings_gantt_show_all_versions"><%= l(:label_gantt_show_all_versions) %></label></p>
+    <p><%= check_box_tag 'easy_query[settings][gantt_versions_above]', 1, !!EasySetting.value('gantt_versions_above', query.project), :class => 'serialize' %>
+    <label for="easy_query_settings_gantt_versions_above"><%= l(:label_gantt_versions_above) %></label></p>
+  </div>
+<% end -%>

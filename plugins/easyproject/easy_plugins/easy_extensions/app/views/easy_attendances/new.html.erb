@@ -1,0 +1,6 @@
+<div id="easy-attendance-new">
+  <%= content_tag :h2, l(:new, :scope => :easy_attendance) -%>
+
+  <%= render :partial => 'form', :locals => {:easy_attendance  => @easy_attendance, :modul_uniq_id => '', :easy_attendance_activities => @easy_attendance_activities} -%>
+</div>
+<%= javascript_tag('initShorRangeTimeSelectEasyAttendance();') %>

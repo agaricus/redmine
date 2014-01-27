@@ -1,0 +1,31 @@
+---
+pt-BR:
+  budgetsheet_name: Folha
+  budgetsheet_author: Fácil Software
+  budgetsheet_description: ! '- Visão geral do tempo gasto pelos usuários em projetos.'
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: Folha
+  budgetsheet_date_from_label: De
+  budgetsheet_date_to_label: A
+  budgetsheet_project_label: Projeto
+  budgetsheet_activities_label: Atividade
+  budgetsheet_users_label: Usuários
+  budgetsheet_export_button: Usar
+  budgetsheet_export_to_csv: exportar para CSV
+  budgetsheet_export_to_pdf: exportar para PDF
+  budgetsheet_export_to_html: ver
+  budgetsheet_costs: Custo
+  budgetsheet_per_hour: por hora
+  budgetsheet_top_menu: Folha
+  permission_view_budgetsheet: Ver Folha
+  label_easy_budget_sheet_queries_plural: Budgetsheet
+
+  label_show_billable_things: Mostre-faturável? escolha
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budgetsheet
+  field_project_root: Projeto principal
+  field_easy_is_billable: Faturável?
+  field_easy_billed: Faturado?
+  sidebar_budgetsheet_all_users_queries: Folhas do trabalhador
+  label_billable_things_default_state: O estado padrão

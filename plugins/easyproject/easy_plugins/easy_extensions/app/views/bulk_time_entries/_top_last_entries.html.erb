@@ -1,0 +1,19 @@
+<h3><%= l(:label_top_ten_projects) -%></h3>
+
+<% if in_mobile_view? %>
+  <%= select_tag(:top_ten_project_id, content_tag(:option, l(:label_top_ten_projects), :value => '') + options_for_select(top_last_entries.collect{|i| [i.name, i.id]})) -%>
+  <script type="text/javascript">
+    $("#top_ten_project_id").change(function() {
+      $("#project_id").val($("#top_ten_project_id").val());
+      $.ajax({url: '<%= j( url_for({:action => 'index', :format => 'mobile'})).html_safe %>', data: $('#bulk-time-entry-form').serialize()}).done(function(data) {
+        $("#entries").html(data);
+      })
+    })
+  </script>
+<% else %>
+  <ol class="top-ten-project-container">
+    <% top_last_entries.each do |project| %>
+      <li><%= link_to_function(project.name, "setEasyAutoCompleteValue('project_id', #{project.id}, '#{project.name}')", :class => 'top-ten-project-item') -%></li>
+    <% end %>
+  </ol>
+<% end %>

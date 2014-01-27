@@ -1,0 +1,73 @@
+<% layout_style ||= 'two_column_header_first_wider' %>
+
+<% if layout_style == 'two_column_header_first_wider' %>
+  <%= yield :easy_page_zone_top_middle %>
+  <div class="clear"></div>
+  <div class="grid_8 alpha">
+    &nbsp;
+    <%= yield :easy_page_zone_middle_left %>
+  </div>
+  <div class="grid_4 omega">
+    &nbsp;
+    <%= yield :easy_page_zone_middle_right %>
+  </div>
+  <div class="clear"></div>
+<% elsif layout_style == 'two_column_header_and_footer' %>
+  <div class="grid_12">
+    <%= yield :easy_page_zone_top_middle -%>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_6 alpha">
+    <%= yield :easy_page_zone_middle_left -%>
+  </div>
+  <div class="grid_6 omega">
+    <%= yield :easy_page_zone_middle_right -%>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_6 alpha">
+    <%= yield :easy_page_zone_middle2_left -%>
+  </div>
+  <div class="grid_6 omega">
+    <%= yield :easy_page_zone_middle2_right -%>
+  </div>
+  <div class="grid_6 alpha">
+    <%= yield :easy_page_zone_middle3_left -%>
+  </div>
+  <div class="grid_6 omega">
+    <%= yield :easy_page_zone_middle3_right -%>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_12">
+    <%= yield :easy_page_zone_bottom_middle -%>
+  </div>
+<% elsif layout_style == 'two_column_header_right_sidebar' %>
+  <div class="clear"></div>
+  <div class="grid_9 alpha">
+    <%= yield :easy_page_zone_top_left -%>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_5 alpha">
+    &nbsp;
+    <%= yield :easy_page_zone_middle_left -%>
+  </div>
+  <div class="grid_4 omega">
+    &nbsp;
+    <%= yield :easy_page_zone_middle_right -%>
+  </div>
+<% elsif layout_style == 'two_column_header_three_rows_right_sidebar' %>
+  <div class="clear"></div>
+  <div class="">
+    <%= yield :easy_page_zone_top_left -%>
+  </div>
+
+  <div class="grid_5 alpha">
+    &nbsp;<%= yield :easy_page_zone_middle_left -%>
+  </div>
+  <div class="grid_4 omega">
+    &nbsp;<%= yield :easy_page_zone_middle_right -%>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_9 alpha omega">
+    &nbsp;<%= yield :easy_page_zone_bottom_left -%>
+  </div>
+<% end %>

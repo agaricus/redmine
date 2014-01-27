@@ -1,0 +1,31 @@
+---
+ja:
+  budgetsheet_name: シート
+  budgetsheet_author: 簡単なソフトウェア
+  budgetsheet_description: ! '- プロジェクトでユーザーが費やした時間の概要。'
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: シート
+  budgetsheet_date_from_label: から
+  budgetsheet_date_to_label: へ
+  budgetsheet_project_label: プロジェクト
+  budgetsheet_activities_label: 活動
+  budgetsheet_users_label: ユーザー
+  budgetsheet_export_button: 使用
+  budgetsheet_export_to_csv: CSVへのエクスポート
+  budgetsheet_export_to_pdf: PDFにエクスポート
+  budgetsheet_export_to_html: ビュー
+  budgetsheet_costs: コスト
+  budgetsheet_per_hour: 1時間当たり
+  budgetsheet_top_menu: シート
+  permission_view_budgetsheet: シートを見る
+
+  label_show_billable_things: ! '''請求可能？''を表示する選択'
+  easy_query:
+    name:
+      easy_budget_sheet_query: Budgetsheet
+  field_project_root: メインプロジェクト
+  field_easy_is_billable: 請求可能？
+  field_easy_billed: 請求される？
+  sidebar_budgetsheet_all_users_queries: 労働者シート
+  label_billable_things_default_state: デフォルトの状態
+  label_easy_budget_sheet_queries_plural: Budgetsheet

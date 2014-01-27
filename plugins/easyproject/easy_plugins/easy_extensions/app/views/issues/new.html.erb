@@ -1,0 +1,54 @@
+<% render_watchers_column = User.current.allowed_to?(:add_issue_watchers, @project || @issue.project) %>
+<%= title l(:label_issue_new) %>
+
+<%= call_hook(:view_issues_new_top, {:issue => @issue}) %>
+
+<%= labelled_form_for @issue, :url => @project ? project_issues_path(@project) : issues_path,
+  :html => {:id => 'issue-form', :multipart => true, :class => 'tabular new-issue-form'} do |f| %>
+  <%= hidden_field_tag('issue[parent_issue_id]', params[:issue][:parent_issue_id]) if params[:issue] && params[:issue][:parent_issue_id] -%>
+  <%= hidden_field_tag('issue_first_controller', controller_name) %>
+  <%= hidden_field_tag('copy_from', params[:copy_from]) if params[:copy_from] %>
+  <%= hidden_field_tag('subtask_for_id', params[:subtask_for_id]) if params[:subtask_for_id] %>
+  <%= error_messages_for 'issue' %>
+  <%= error_messages_for 'new_issues' %>
+  <div class="box issue_fields tabular">
+    <div id="all_fields" class="container_12">
+      <div id="issue_descr_text" class="issue_common_static_fields grid_<%= render_watchers_column ? '5' : '8 no-watchers' %> alpha omega ">
+        <%= render :partial => 'issues/new_form_static_attributes', :locals => {:issue => @issue} -%>
+        <% if @copy_from && @copy_from.attachments.any? %>
+
+          <p>
+            <label for="copy_attachments"><%= l(:label_copy_attachments) %></label><%= check_box_tag 'copy_attachments', '1', @copy_attachments %>
+          </p>
+        <% end %>
+        <% if @copy_from && !@copy_from.leaf? %>
+          <p>
+            <label for="copy_subtasks"><%= l(:label_copy_subtasks) %></label><%= check_box_tag 'copy_subtasks', '1', @copy_subtasks %>
+          </p>
+        <% end %>
+
+        <div class="issue_submit_buttons">
+          <%= submit_tag l(:button_issue_create), :class => 'button-1', :tabindex => 900 %>
+          <%= submit_tag l(:button_issue_create_and_continue), :name => 'continue', :class => 'link_new icon-save-issue button-2', :tabindex => 910 %>
+          <%= preview_link({:controller => 'previews', :action => 'issue'}, 'issue-form') %>
+          <%= javascript_tag "$('#issue_subject').focus();" %>
+        </div>
+      </div>
+      <div id="issue-dependent-fields" class="issue-dependent-fields grid_<%= render_watchers_column ? '7' : '4' %> alpha">
+        <%= render :partial => 'issues/new_form_dependent_fields' %>
+      </div>
+    </div>
+
+    <div style="clear: both"></div>
+  </div>
+<% end %>
+
+<div id="preview" class="wiki"></div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do %>
+  <%= robot_exclusion_tag %>
+<% end %>
+
+<% include_calendar_headers_tags %>

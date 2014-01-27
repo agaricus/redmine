@@ -1,0 +1,21 @@
+<% entity_type, project = tab[:entity_type], tab[:project]  -%>
+<% valid_from, valid_to = nil, nil  -%>
+<%= form_tag({:controller => 'easy_money_rates', :action => 'update_rates'}, { :id => "easy-money-entity-#{entity_type.underscore.dasherize}-rates-form" }) do -%>
+  <%= hidden_field_tag('project_id', project.id) unless project.nil? -%>
+  <%= hidden_field_tag('valid_from', valid_from) unless valid_from.nil? -%>
+  <%= hidden_field_tag('valid_to', valid_to) unless valid_to.nil? -%>
+  <%= hidden_field_tag('back_url', url_for(params)) -%>
+
+  <%= render :partial => "easy_money_rates/entity_#{entity_type.underscore}_index", :locals => { :project => project, :project_id => (project.nil? ? nil : project.id), :valid_from => valid_from, :valid_to => valid_to } %>
+  <p>
+    <%= submit_tag l(:button_save), :title => l(:title_easy_money_rates_save) %>
+
+    <% if project.nil? -%>
+      <%= link_to_function(l(:button_easy_money_rate_use_in_all_projects), "$.post('#{j(url_for({:controller => 'easy_money_rates', :action => 'update_rates_to_projects', :entity_type => entity_type}))}', $('#easy-money-entity-#{entity_type.underscore.dasherize}-rates-form').serialize())",
+        :class => 'button-2', :title => l(:title_easy_money_rate_use_in_all_projects)) -%>
+    <% elsif project.descendants.active.has_module(:easy_money).any? -%>
+      <%= link_to_function(l(:button_easy_money_rate_use_in_all_subprojects), "$.post('#{j(url_for({:controller => 'easy_money_rates', :action => 'update_rates_to_subprojects', :entity_type => entity_type, :project_id => project.id}))}', $('#easy-money-entity-#{entity_type.underscore.dasherize}-rates-form').serialize())",
+        :class => 'button-2', :title => l(:title_easy_money_rate_use_in_all_subprojects)) -%>
+    <% end -%>
+  </p>
+<% end -%>

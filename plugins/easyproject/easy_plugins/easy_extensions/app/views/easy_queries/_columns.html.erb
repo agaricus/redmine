@@ -1,0 +1,23 @@
+<% modul_uniq_id ||= ''; block_name ||= '' %>
+<table style="border-collapse: collapse; border:0;">
+  <tr>
+    <td style="padding-left:0"><%= select_tag (block_name.blank? ? 'available_columns' : "#{block_name}[available_columns]"),
+        options_for_select(query_available_inline_columns_options(query)),
+        :multiple => true, :size => 10, :id => modul_uniq_id + 'available_columns', :class => 'easy-query-columns' %>
+    </td>
+    <td align="center" valign="middle">
+      <input type="button" value="&#8594;"
+       onclick="moveOptions($(this.form).find('#<%= modul_uniq_id + 'available_columns' %>')[0], $(this.form).find('#<%= modul_uniq_id + 'selected_columns' %>')[0]);" /><br />
+      <input type="button" value="&#8592;"
+       onclick="moveOptions($(this.form).find('#<%= modul_uniq_id + 'selected_columns' %>')[0], $(this.form).find('#<%= modul_uniq_id + 'available_columns' %>')[0]);" />
+    </td>
+    <td><%= select_tag (block_name.blank? ? 'easy_query[column_names][]' : "#{block_name}[easy_query][column_names][]"),
+        options_for_select(query_selected_inline_columns_options(query)),
+        :id => modul_uniq_id + 'selected_columns', :multiple => true, :size => 10, :class => 'easy-query-columns' %>
+    </td>
+    <td class="buttons">
+      <input type="button" value="&#8593;" onclick="moveOptionUp($(this.form).find('#<%= modul_uniq_id + 'selected_columns' %>')[0]);" /><br />
+      <input type="button" value="&#8595;" onclick="moveOptionDown($(this.form).find('#<%= modul_uniq_id + 'selected_columns' %>')[0]);" />
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,11 @@
+<em><%= l(:text_easy_rake_task_failure_email) -%></em>
+<p>
+  <%= radio_button_tag 'easy_rake_task[settings][email_type]', 'all_admins', task.settings['email_type'] == 'all_admins', :id => 'easy_rake_task_settings_email_type_all_admins' %>
+  <%= label_tag 'easy_rake_task_settings_email_type_all_admins', l(:'easy_rake_tasks.easy_rake_task_check_failure_tasks.email_type.all_admins') %>:
+  <%= select_tag 'easy_rake_task[settings][admins]', options_for_select(User.active.where(:admin => true).all.collect{|u| [u.name, u.id.to_s]}, task.settings['admins']), :multiple => true %>
+</p>
+<p>
+  <%= radio_button_tag 'easy_rake_task[settings][email_type]', 'email', task.settings['email_type'] == 'email', :id => 'easy_rake_task_settings_email_type_email' %>
+  <%= label_tag 'easy_rake_task_settings_email_type_email', l(:'easy_rake_tasks.easy_rake_task_check_failure_tasks.email_type.email') %>:
+  <%= text_field_tag 'easy_rake_task[settings][email]', task.settings['email'] %>
+</p>

@@ -1,0 +1,1 @@
+$("#expected-hours").html('<%= j(render :partial => 'easy_money_expected_hours/inline_edit', :locals => {:project => @project, :expected_hours => @entity.easy_money.sum_expected_hours, :entity_type => @entity_type, :entity_id => @entity_id}) %>');

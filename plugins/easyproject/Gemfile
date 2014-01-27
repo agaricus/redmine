@@ -1,0 +1,37 @@
+gem 'unicode'
+gem 'nokogiri', '< 1.6.0'
+gem 'rubyzip', '< 1.0.0'
+gem 'zippy'
+gem 'icalendar'
+gem 'rufus-scheduler'
+gem 'simple-rss'
+gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'loofah-activerecord'
+gem 'activeresource-response'
+
+group :service do
+  gem 'eventmachine'
+  gem 'daemons'
+end
+
+if RUBY_VERSION > '1.9'
+  gem 'cache_digests'
+end
+
+# gem 'guard-rspec', :group => :development
+group :development, :test do
+  gem "factory_girl_rails"
+  gem 'rspec-rails'
+  gem 'launchy'
+  gem 'poltergeist'
+end
+
+Dir.glob File.expand_path("../easy_helpers/*/Gemfile", __FILE__) do |file|
+  puts "Loading #{file} ..." if $DEBUG # `ruby -d` or `bundle -v`
+  instance_eval File.read(file), file
+end
+
+Dir.glob File.expand_path("../easy_plugins/*/Gemfile", __FILE__) do |file|
+  puts "Loading #{file} ..." if $DEBUG # `ruby -d` or `bundle -v`
+  instance_eval File.read(file), file
+end

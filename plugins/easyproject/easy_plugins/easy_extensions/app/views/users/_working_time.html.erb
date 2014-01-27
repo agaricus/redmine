@@ -1,0 +1,15 @@
+<% user ||= tab[:user] unless tab.nil?
+easy_user_working_time_calendar = user.current_working_time_calendar
+easy_user_working_time_calendar.initialize_inner_calendar(params[:start_date]) if easy_user_working_time_calendar
+-%>
+<% if easy_user_working_time_calendar.nil? -%>
+  <p>
+    <%= l(:label_easy_user_working_time_calendar_none) -%>
+  </p>
+  <p>
+    <%= l(:label_easy_user_working_time_calendar_default_time, :count => user.working_hours) -%>
+  </p>
+<% else -%>
+  <%= render :partial => 'easy_user_working_time_calendars/calendar', :locals => {:easy_user_working_time_calendar => easy_user_working_time_calendar} %>
+<% end -%>
+<%= render :partial => 'easy_user_working_time_calendars/calendar_settings', :locals => {:easy_user_working_time_calendar => easy_user_working_time_calendar, :user => user} %>

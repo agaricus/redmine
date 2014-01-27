@@ -1,0 +1,25 @@
+<div id="move-tracker-issues" class="gray-background border-radius-3">
+  <p>
+    <%= l(:label_tracker_move_issues_explanation) -%>
+    <%= select_tag(
+      'tracker_to_id',
+      options_from_collection_for_select(@trackers, 'id', 'name'),
+      :onchange => "loadCustomFieldMapping('#{tracker_cf_mapping_path(@tracker)}', this);"
+    ) -%>
+  </p>
+
+  <fieldset id="custom-field-mapping-fs" style="display:none">
+    <legend><%= l(:label_custom_field_mapping) %></legend>
+    <div id="custom-field-mapping">
+<%# loaded through js %>
+    </div>
+  </fieldset>
+</div>
+<p>
+  <%= submit_tag l(:button_tracker_move_issues) %>
+  <%= link_to(l(:button_back), {:action => 'index'}, :class => 'button-2') %>
+</p>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'tracker_move_issues', :plugin => 'easy_extensions' %>
+<% end -%>

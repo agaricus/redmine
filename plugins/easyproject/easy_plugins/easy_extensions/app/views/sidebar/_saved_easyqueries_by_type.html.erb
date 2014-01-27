@@ -1,0 +1,43 @@
+<%
+modul_uniq_id ||= ''
+modul_uniq_id = modul_uniq_id + '_user-easyquery_' + query_class.to_s
+query_link ||= Hash.new
+unless defined?(project)
+  project = nil
+  end
+
+user ||= User.current
+private_queries ||= query_class.private_queries(user, project)
+public_queries ||= query_class.public_queries(user, project) if user.internal_client?
+user_roles = project.nil? ? user.roles : user.roles_for_project(project)
+
+if !private_queries.blank?  -%>
+  <div class="box <%= query_class.name.underscore -%> personal-filters">
+    <%= toggling_container(modul_uniq_id + '_private', User.current, {:heading => l("easy_query.sidebar_filters.personal.#{query_class.name.underscore}", :default => l("easy_query.sidebar_filters.personal.other"))}) do %>
+      <% private_queries.each do |query| -%>
+        <%= link_to(h(query.name), {:controller => query.easy_query_entity_controller, :action => 'index', :query_id => query, :project_id => @project}.merge(query_link), :title => l(:label_user_saved_query, :queryname => query.name)) -%>
+      <% end -%>
+    <% end %>
+  </div>
+<%end%>
+
+<% user_roles.inject({}){|memo,r| memo[r] = r.easy_queries.role_queries; memo}.reject{|k,v| v.blank?}.each do |role, queries| %>
+  <div class="box role-filters">
+    <%= toggling_container(modul_uniq_id  + '_role', User.current, {:heading => l('easy_query.sidebar_filters.role', :role => role.name)}) do %>
+      <% queries.each do |query| -%>
+        <%= link_to(h(query.name), { :controller => query.easy_query_entity_controller, :action => 'index', :query_id => query, :project_id => @project}.merge(query_link), :title => l(:label_user_saved_query, :queryname => query.name) ) -%>
+      <% end -%>
+    <% end %>
+  </div>
+<% end %>
+
+<% if !public_queries.blank? && user.internal_client? %>
+  <div class="box <%= query_class.name.underscore -%> public-filters">
+  <%#= l  [:public, :personal], :scope => 'easy_query.sidebar_filters.' %>
+    <%= toggling_container(modul_uniq_id  + '_public', User.current, {:heading => l("easy_query.sidebar_filters.public.#{query_class.name.underscore}", :default => l("easy_query.sidebar_filters.public.other"))}) do %>
+      <% public_queries.each do |query| -%>
+        <%= link_to(h(query.name), { :controller => query.easy_query_entity_controller, :action => 'index', :query_id => query, :project_id => @project}.merge(query_link), :title => l(:label_user_saved_query, :queryname => query.name) ) -%>
+      <% end -%>
+    <% end %>
+  </div>
+<% end -%>

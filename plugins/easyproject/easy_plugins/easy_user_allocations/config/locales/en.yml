@@ -1,0 +1,72 @@
+---
+en:
+  easy_user_allocations_name: Resources management
+  easy_user_allocations_description: ! ' - resources management / people'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: View resources management
+  permission_view_my_easy_user_allocations: View own resources management
+  permission_edit_easy_user_allocations: Edit resources management
+  permission_edit_my_easy_user_allocations_plan: Edit own working plan
+  permission_view_easy_user_allocations_by_project: 'View allocations by project'
+  project_module_user_allocations: Resources management
+  label_user_allocations: Resources management
+  label_user_allocation_gantt: Resource allocation gantt
+  label_user_allocation_gantt_users: Users
+  label_user_allocation_gantt_user_selection: Selection
+  label_user_allocation_gantt_range: Dates
+  label_allocations_by_project: Resource allocation by project
+  label_unassigned_issues: Unassigned tasks
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Choose a different date range to display the
+    whole task
+  label_allocation_changed_title: Task was changed and will be updated on save
+  label_user_allocation_plan: Working plan
+  label_filter_group_easy_user_allocation_query: 'Resource allocation'
+
+  text_easy_user_allocation_working_plan_bottom_info: ! "Allows to schedule user workload
+    in the selected week. \n Table shows the scheduled time and actual time reported."
+  resalloc:
+    title: Resource allocation
+    settings: Settings
+    button_apply_settings: Apply settings
+    button_recalculate: Recalculate allocation
+    button_save: Save changes
+    button_undo: Undo unsaved changes
+    button_split_issue: Split task
+    split_issue_help: Choose a date by clicking on an unassigned task.
+    error_date_range_too_long: must be less than 1 year
+    legend_hours_worked: Time spent
+    legend_custom: Manually allocated hours
+    legend_hours_overtime: Time worked beyond the prescribed time
+  easy_pages:
+    modules:
+      user_allocation: Resource allocation
+      user_allocation_working_plan: Resource allocation / working plan
+  user_allocation_plan:
+    label_plan: Plan
+    label_real: Real
+    label_comment: Comment
+  easy_query:
+    name:
+      easy_user_allocation_query: 'Resource allocation'
+      easy_user_allocation_by_project_query: 'Resource allocation by project'
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Private filters on resource allocation
+        easy_user_allocation_by_project_query: Private filters on resource allocation by project
+      public:
+        easy_user_allocation_query: Public filters on resource allocation
+        easy_user_allocation_by_project_query: Public filters on resource allocation by project
+
+  label_setting_keep_issue_start_dates: "Don't change task start dates."
+  text_setting_keep_issue_start_dates: "If enabled and task estimated hours are too low, task won't be shortened but it will be allocated to 0 hours instead."
+  label_setting_allocate_evenly: Allocate evenly
+  text_setting_allocate_evenly: "If enabled and a task is resized in allocation gantt, estimated hours are distributed evenly through the whole duration of task."
+  label_setting_allocate_from_start: Allocate from start dates of tasks
+
+  project_module_easy_user_allocations: "Quick project planner"
+  text_overallocation: sum of allocated hours is greater then estimated hours.
+
+  easy_user_allocations_sidebar_all_users_queries: 'Allocations by users'
+  easy_user_allocations_label_show_assigned_issues: 'Display allocation for user %{username}'
+  label_edit_estimated_hours: Edit estimated hours

@@ -1,0 +1,13 @@
+<% if User.current.allowed_to_globally?(:add_timeentries_for_other_users, {}) %>
+  <p>
+    <%= label_for_field(:user_id, {:required => true }) -%><%= easy_select_tag(
+      'user_id',
+      {:name => @time_entry.user.name, :id => @time_entry.user_id},
+      @users ? options_for_select(@users.collect{|u| [u.name, u.id]}, {:selected => @time_entry.user_id}) : nil,
+      url_for(:action => 'load_users', :format => 'json'),
+      :onchange => "$.ajax({url: '#{j(url_for(:action => 'index', :user_changed => '1', :format => 'js')).html_safe}', data: $('#bulk-time-entry-form').serialize()});"
+    ) -%>
+  </p>
+<% else %>
+  <%= hidden_field_tag 'user_id', @user.id %>
+<% end %>

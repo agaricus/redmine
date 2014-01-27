@@ -1,0 +1,8 @@
+api.array :events do
+  @events.each do |event|
+    api.event do
+      api.id issue.id
+      api.value issue.to_s
+    end
+  end
+end

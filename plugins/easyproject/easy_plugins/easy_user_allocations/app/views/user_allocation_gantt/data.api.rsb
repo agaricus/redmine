@@ -1,0 +1,89 @@
+api.start @period[:from]
+api.end @period[:to]
+
+call_hook :view_user_allocation_gantt, :api => api, :query => @query, :period => @period
+
+unless @hide_unassigned_issues
+  api.unassigned do
+    api.url url_for(:controller => 'issues', :action => 'index', :set_filter => 1, :assigned_to_id => '!*')
+    if @query.new_record?
+      api.name l(:label_unassigned_issues)
+    else
+      api.name @query.name
+    end
+    api.array :issues do
+      @unassigned_issues.each do |i|
+        api.issue do
+          api.id i.id
+          api.name i.subject
+          api.href issue_path(i)
+          api.est((100*i.estimated_hours).round.to_f/100) if i.estimated_hours
+          api.activity i.activity.name if i.activity
+          if i.spent_hours && i.spent_hours > 0
+            api.spenttime((100*i.spent_hours).round.to_f/100)
+            api.hoursleft((100*(i.estimated_hours - i.spent_hours)).round.to_f/100) if i.estimated_hours
+          end
+          api.project i.project.name
+          api.status i.status.name
+          api.projecthref project_path(i.project)
+          api.originalstart i.start_date
+          api.start i.start_date
+          api.end i.due_date
+          api.startdate i.start_date
+          api.duedate i.due_date
+          api.percentcompleted i.done_ratio if i.done_ratio && i.done_ratio > 0
+          api.author i.author.name
+          call_hook :view_user_allocation_gantt_data_issue, :api => api, :issue => i
+        end
+      end
+    end
+  end
+end
+
+api.array(:users) do
+  @users.each do |u|
+    api.user do
+      user_timeline = u.easy_user_allocations.includes(:issue => :project).where(:date => @period[:from]..@period[:to], :projects => {:easy_is_easy_template => false}).group_by &:issue
+      api.timeline(user_timeline)
+      api.id(u.id)
+      api.name(u.name)
+      api.url(url_for({:controller => 'issues', :set_filter => 1, :assigned_to_id => u.id, :status_id => 'o', :sort => EasySetting.value('issue_default_sorting_string_short')}))
+
+      allocation_issues_data(api, user_timeline, @period, @allocated_issues_ids)
+
+      allocation_sums = {}
+      user_timeline.each do |i, data|
+        data.each do |allocation|
+          allocation_sums[allocation.date] ||= 0
+          allocation_sums[allocation.date] += allocation.hours
+        end
+      end
+
+      non_working_attendances = u.easy_attendances.non_working.between(@period[:from], @period[:to]).group_by{|a| a.arrival.to_date}
+
+      call_hook :view_user_allocation_gantt_user, :api => api, :query => @query, :period => @period, :allocatio_sums => allocation_sums, :user => u
+
+      api.array(:allocations) do
+        days_working_hours = u.working_hours_between(@period[:from], @period[:to])
+        @period[:from].upto(@period[:to]) do |curr_date|
+          api.allocation do
+            call_hook :view_user_allocation_gantt_user_allocation, :api => api, :query => @query, :period => @period, :allocation_sums => allocation_sums, :date => curr_date, :user => u
+            hours = (allocation_sums[curr_date].nil? ? 0.0 : ((100*allocation_sums[curr_date]).round.to_f/100))
+            working_hours = days_working_hours[curr_date]
+            api.hours(hours > 0 || (working_hours == 0 && ![0, 6].include?(curr_date.wday)) ? hours : nil)
+            api.over(hours > working_hours)
+            if (activity = non_working_attendances[curr_date].try(:first).try(:easy_attendance_activity))
+              api.activity_name activity.name
+              api.color_schema activity.color_schema
+            end
+            if (holiday = u.current_working_time_calendar.holiday(curr_date))
+              api.activity_name holiday.name
+              api.activity_short_name l(:label_easy_user_working_time_calendar_explanatory_notes_holiday).first
+            end
+          end
+        end
+      end
+
+    end
+  end
+end

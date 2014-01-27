@@ -1,0 +1,16 @@
+<%  modul_uniq_id ||= controller_name + '_' + action_name %>
+<%= toggling_container(modul_uniq_id, User.current, {:heading => l(:label_add_related_versions), :default_button_state => false, :wrapping_heading_element => :h4}) do %>
+  <%= error_messages_for 'relation' -%>
+  <p class="gray-background">
+    <span class="label-before"><%= l(:label_version_new_relation_before) -%></span>
+    <span class="relation-type">
+      <%= select_tag 'version[relation][relation_type]', options_for_select(collection_for_relation_type_select) -%>
+    </span>
+    <span class="label-after"><%= l(:label_version_new_relation_after) -%></span>
+    <span class="versions-selector"><%= versions_relations_field_tag 'version[relation][version_to_id]', 'relation_version_to_id', [], :url => {:version_id => @version.id, :query_name => 'version_relation'} %></span>
+    <span class="predecessor-fields" id="predecessor_fields">
+      <%= l(:field_delay) %>: <%= text_field_tag 'version[relation][delay]', nil, :size => 3 -%>
+      <%= l(:label_day_plural) -%>
+    </span>
+  </p>
+<% end %>

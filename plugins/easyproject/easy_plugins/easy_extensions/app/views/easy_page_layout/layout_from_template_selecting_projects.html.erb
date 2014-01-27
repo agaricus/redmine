@@ -1,0 +1,24 @@
+<h1><%= l(:heading_layout_from_template_selecting_projects) -%></h1>
+
+<%= form_tag({:controller => 'easy_page_layout', :action => 'layout_from_template_selected_projects'}, :class => 'layout-from-template-selecting-projects-form') do -%>
+  <%= hidden_field_tag 'back_url', params[:back_url] -%>
+  <%= hidden_field_tag 'page_template_id', params[:page_template_id] -%>
+  <span>
+    <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_all)}/#{l(:button_uncheck_all)}", "toggleCheckboxesBySelector('input.cbx-project')", :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}") -%>
+    <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_rootprojects)}/#{l(:button_uncheck_rootprojects)}", "toggleCheckboxesBySelector('input.cbx-root-project')", :title => "#{l(:button_check_rootprojects)}/#{l(:button_uncheck_rootprojects)}") -%>
+  </span>
+  <%= render_project_nested_lists(Project.non_templates.visible) do |project|
+    lbl_text = ' ' + project.name
+    cbx_class = 'cbx-project'
+    cbx_class = ' cbx-root-project' if project.root?
+    cbx_class << ' ' + project.ancestors.collect{|a| "cbx-parent-project-#{a.id}"}.join(' ')
+
+    if !project.leaf? && project.descendants.active.size > 0
+      lbl_text << ' ' + link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_subprojects)}/#{l(:button_uncheck_subprojects)}", "toggleCheckboxesBySelector('input.cbx-parent-project-#{project.id}')", :title => "#{l(:button_check_subprojects)}/#{l(:button_uncheck_subprojects)}")
+    end
+
+    content_tag('label', check_box_tag('projects[]', project.id, false, :id => nil, :class => cbx_class) + lbl_text.html_safe)
+  end -%>
+  <%= submit_tag l(:button_save), :class => 'button-1' -%>
+  <%= link_to(l(:button_back), params[:back_url], :class => 'button-2', :title => l(:button_back)) -%>
+<% end -%>

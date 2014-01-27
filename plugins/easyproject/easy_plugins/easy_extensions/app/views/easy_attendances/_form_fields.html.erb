@@ -1,0 +1,75 @@
+<%= fields_for(easy_attendance) do |f| %>
+  <%= call_hook(:view_easy_attendances_form_fields_top, {:easy_attendance => easy_attendance, :activity => activity, :f => f}) %>
+  <p>
+    <span class="nowrap">
+      <%= f.label(:arrival, l(:label_date)) %>
+      <%= content_tag(:span, l(:label_date_from)) unless activity.at_work? %>
+      <%= text_field_tag 'arrival[date]', easy_attendance.arrival && easy_attendance.arrival.strftime('%Y-%m-%d'), :size => 10, :required => true, :readonly => true, :onchange => "$('#departure_date').val($(this).val())" -%><%= calendar_for(:arrival_date) -%>
+
+      <% if activity.at_work? %>
+
+        <%= render(:partial => 'easy_attendances/form_field_time_select', :locals => {:easy_attendance => easy_attendance, :attribute => 'arrival'}) %>
+
+      <% end -%>
+
+    </span>
+    <%= content_tag(:span, '-', :class => 'easy-attendance-time-delimiter') if activity.at_work? %>
+    <span class="nowrap">
+      <% unless activity.at_work? %>
+      <%= label_tag(:departure, l(:label_date_to), :class => 'inline') -%>
+      <%= text_field_tag 'departure[date]', easy_attendance.departure && easy_attendance.departure.strftime('%Y-%m-%d'), :size => 10 -%><%= calendar_for(:departure_date) -%>
+      <% end -%>
+
+      <% if activity.at_work? %>
+
+        <%= render(:partial => 'easy_attendances/form_field_time_select', :locals => {:easy_attendance => easy_attendance, :attribute => 'departure'}) %>
+
+      <% end -%>
+    </span>
+    <% if activity.at_work? %>
+      <span class="nowrap">
+        <%= check_box_tag(:is_repeating, true, params[:is_repeating], :onchange => "$.post('#{j url_for(change_activity_easy_attendances_path)}', $('.easy-attendance-advanced-datetime-fields input, .easy-attendance-advanced-datetime-fields select').serialize())") %>
+        <%= label_tag(:is_repeating, l(:label_easy_attendance_is_repeating), :class => 'inline') %>
+      </span>
+    <% end -%>
+  </p>
+  <% if activity.at_work? && params[:is_repeating] %>
+    <p>
+      <%= label_tag(:departure_date, l(:label_easy_attendance_repeating_to)) %>
+      <%= text_field_tag 'departure[date]', easy_attendance.departure && easy_attendance.departure.strftime('%Y-%m-%d'), :size => 10 -%><%= calendar_for(:departure_date) -%>
+    </p>
+  <% end -%>
+  <% unless activity.at_work? %>
+    <p id="easy-attendance-range-select">
+      <%= content_tag(:label, l(:field_range, :scope => :easy_attendance)) %>
+      <span class="floating">
+        <%= label_tag( "easy_attendance_range_#{EasyAttendance::RANGE_FULL_DAY}", l(:full_day, :scope => [:easy_attendance, :range]), :class => 'inline') -%>
+        <%= f.radio_button(:range, EasyAttendance::RANGE_FULL_DAY, :onchange => '$(".easy-attendance-time-dropper").remove();') %>
+      </span>
+      <% half_day_hours = ((easy_attendance.working_time || 8) / 2) %>
+      <span class="floating easy-attendance-range-half-day-radio">
+        <%= label_tag( "easy_attendance_range_#{EasyAttendance::RANGE_FORENOON}", l(:forenoon, :scope => [:easy_attendance, :range]), :class => 'inline') -%>
+        <%
+        if easy_attendance.range == EasyAttendance::RANGE_FORENOON
+          time = easy_attendance.range_start_time || easy_attendance.user.user_time_in_zone(easy_attendance.arrival)
+        else
+          time = easy_attendance.user.user_time_in_zone(easy_attendance.morning(easy_attendance.arrival))
+        end
+        -%>
+        <%= f.radio_button(:range, EasyAttendance::RANGE_FORENOON, :data => {:start_time => time.strftime('%H:%M'), :half_day_hours => half_day_hours, :label_from => l(:label_date_from), :label_to => l(:label_date_to)}) %>
+      </span>
+      <span class="floating easy-attendance-range-half-day-radio">
+        <%= label_tag( "easy_attendance_range_#{EasyAttendance::RANGE_AFTERNOON}", l(:afternoon, :scope => [:easy_attendance, :range]), :class => 'inline') -%>
+        <%
+        if easy_attendance.range == EasyAttendance::RANGE_AFTERNOON
+          time = easy_attendance.range_start_time || easy_attendance.user.user_time_in_zone(easy_attendance.arrival)
+          else
+          time = easy_attendance.user.user_time_in_zone((easy_attendance.evening(easy_attendance.arrival) - half_day_hours.hours))
+          end
+        -%>
+        <%= f.radio_button(:range, EasyAttendance::RANGE_AFTERNOON, :data => {:start_time => time.strftime('%H:%M'), :half_day_hours => half_day_hours, :label_from => l(:label_date_from), :label_to => l(:label_date_to)}) %>
+      </span>
+    </p>
+  <% end -%>
+  <%= call_hook(:view_easy_attendances_form_fields_bottom, {:easy_attendance => easy_attendance, :activity => activity, :f => f}) %>
+<% end if activity -%>

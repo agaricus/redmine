@@ -1,0 +1,23 @@
+<% unless @time_entry.project.blank? %>
+  <p>
+    <%= label_for_field :spent_on, {:required => true } -%><%= text_field_tag :spent_on, @time_entry.spent_on, :size => 10, :class => 'spent_on' -%><%= calendar_for('spent_on') unless in_mobile_view? -%>
+  </p>
+  <%= javascript_tag do %>
+    $('#spent_on').change(function(){
+    $.ajax({url: '<%= j(url_for(:action => 'index', :spent_on_changed => '1', :format => 'js')) %>', data: $('#bulk-time-entry-form').serialize()});
+    });
+  <% end -%>
+  <div id="timelog-user-time-entry-container">
+    <% tag_name_prefix = 'time_entry' %>
+    <%= render :partial => 'timelog/user_time_entry', :locals => {
+      :required => true,
+      :tag_name_prefix => tag_name_prefix,
+      :time_entry => @time_entry,
+      :activities => @activity_collection,
+      :project => @time_entry.project, :issue => @time_entry.issue}
+    -%>
+  </div>
+<% end %>
+<% @time_entry.visible_custom_field_values.each do |value| %>
+  <p><%= custom_field_tag_with_label :time_entry, value %></p>
+<% end %>

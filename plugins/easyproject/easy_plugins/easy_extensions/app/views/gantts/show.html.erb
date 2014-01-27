@@ -1,0 +1,128 @@
+<%
+modul_uniq_id ||= 'gantt_user-easyquery_' + @query.class.to_s
+%>
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => @query.new_record? ? l(:label_gantt) : h(@query.name), :back_url => url_for({:controller => 'gantts', :action => 'show', :project_id => @project})} -%>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var zoom = '<%= @zoom -%>';
+    var form = $('#query_form');
+    var el = $('<input/>')
+      .attr('type', 'hidden')
+      .attr('id', 'zoom')
+      .attr('name', 'easy_query[settings][zoom]')
+      .val(zoom)
+      .addClass('serialize')
+      .appendTo(form);
+    var back = $('<input/>')
+      .attr('type', 'hidden')
+      .attr('id', 'back_url')
+      .attr('name', 'back_url')
+      .val('<%= url_for(:controller => 'gantts', :action => 'show', :project_id => @project) -%>')
+      .appendTo(form);
+
+    toggleSidebar();
+
+  });
+<% end %>
+<% @sidebar = render(:partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :query_link => {:controller => 'gantts', :action => 'show'}, :project => @project}) %>
+<%= error_messages_for 'query' %>
+<% if @query.valid? %>
+
+  <div id="issues">
+    <%= render :partial => 'super_gantt', :locals => {:element_id => 'easygantt-container'} -%>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        GenerateGantt('easygantt-container', 'gantt');
+      });
+
+      function GenerateGantt(el_id, gantt_object_name) {
+        <%
+          load_params = []
+          load_params << "query_id: #{@query.id}" if @query.id
+          load_params << "set_filter: 0" if params[:set_filter] == '0'
+          plus_button_statuses = User.current.pref.others[:plus_button_status]
+          relation_types = %w(follows blocks relates duplicates copied_to)
+          cal = EasyUserWorkingTimeCalendar.default
+          holidays = cal.holidays.select([:holiday_date, :is_repeating]) if cal
+        %>
+        window[gantt_object_name] = $("#" + el_id).easygantt({
+          loadParams: {<%= load_params.join(',')  %>},
+          relativeUrlRoot: '<%= Redmine::Utils::relative_url_root %>',
+          zoom: '<%= @zoom %>',
+          allowParentIssueMovement: <%= !EasySetting.value('issue_recalculate_attributes') %>,
+          newIssueUrl: '<%= url_for({:controller => 'easy_issues', :action => 'new_for_dialog', :project_id => @project}) %>',
+          newMilestoneUrl: '<%= url_for({:controller => 'easy_versions', :action => 'new', :project_id => @project}) %>',
+          humanDateFormat: '<%= momentjs_date_format %>',
+          <% if plus_button_statuses %>
+            <% visible_relations = relation_types.select{|rt| plus_button_statuses["easy_gantt_relation_#{rt}"] } %>
+            <% visible_relations << 'follows' unless plus_button_statuses.include?('easy_gantt_relation_follows') %>
+            <% visible_relations << 'blocks' unless plus_button_statuses.include?('easy_gantt_relation_blocks') %>
+            visibleRelations: <%= visible_relations.to_json.html_safe %>,
+          <% end -%>
+          permissions: {
+            issueCreation: <%= !!User.current.allowed_to?(:add_issues, @project) %>,
+            issueRelationManagment: <%= !!User.current.allowed_to?(:manage_issue_relations, @project) %>,
+          },
+          <% if holidays %>
+            holidays: <%= holidays.collect{|h| {:date => h.holiday_date, :isRepeating => h.is_repeating}}.to_json.html_safe %>,
+          <% end -%>
+          lang: {
+            day: '<%= l(:gantt_day) %>',
+            dayPlural: '<%= l(:gantt_day_plural) %>',
+            dayPlural5: '<%= l(:gantt_day_plural5) %>',
+            start: '<%= l(:gantt_start) %>',
+            end: '<%= l(:gantt_end) %>',
+            est: '<%= l(:field_estimated_hours) %>',
+            duration: '<%= l(:gantt_duration) %>',
+            completed: '<%= l(:gantt_completed) %>',
+            assignedTo: '<%= l(:field_assigned_to) %>',
+            newIssue: '<%= l(:label_issue_new) %>',
+            createIssue: '<%= l(:button_issue_create) %>',
+            createMilestone: '<%= l(:button_create) %>',
+            createIssueAndContinue: '<%= l(:button_issue_create_and_continue) %>',
+            cancel: '<%= l(:button_cancel) %>',
+            newFollowingIssue: '<%= l(:gantt_new_following_issue) %>',
+            newPrecedingIssue: '<%= l(:gantt_new_preceding_issue) %>',
+            newChildIssue: '<%= l(:gantt_new_child_issue) %>',
+            newMilestoneIssue: '<%= l(:label_issue_new) %>',
+            follows: '<%= l(:label_follows) %>',
+            blocks: '<%= l(:label_blocks) %>',
+            relates: '<%= l(:label_relates_to) %>',
+            duplicates: '<%= l(:label_duplicates) %>',
+            copied_to: '<%= l(:label_copied_to) %>',
+            confirmUnsavedChanges: '<%= l(:text_gantt_unsaved_changes) %>',
+            monthNames: <%= l(:month_names, :scope => :date)[1..12].to_json.html_safe %>
+          }
+        });
+      }
+      $(".gantt-export").live('click', function() {
+        var url = $(this).attr('href');
+        if(url.indexOf('?') < 0) {
+          url += '?';
+        } else {
+          url += '&';
+        }
+        url += 'easy_gantt_theme_id=' + $('#easy_gantt_theme').val();
+        url += '&pdf_format=' + $('#pdf_format').val();
+        window.location.href = url;
+        return false;
+      });
+    </script>
+  </div>
+
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= @sidebar -%>
+<% end unless @sidebar.blank? %>
+
+<% content_for :header_tags do %>
+  <%= call_hook :view_gantts_show_html_head %>
+  <%= javascript_include_tag 'easygantt/json2.js', :plugin => 'easy_extensions' %>
+  <%= javascript_include_tag 'easygantt/jquery.jsPlumb.js', :plugin => 'easy_extensions' %>
+  <%= javascript_include_tag 'easygantt/jquery.easygantt.js', :plugin => 'easy_extensions' %>
+  <%= stylesheet_link_tag 'easygantt/easygantt.css', :plugin => 'easy_extensions' %>
+<% end %>
+
+<% html_title(l(:label_gantt)) -%>

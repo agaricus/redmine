@@ -1,0 +1,11 @@
+<h1><%= link_to l(:label_custom_field_plural), :controller => 'easy_money_settings', :action => 'index' %>
+  &#187; <%= link_to l(@custom_field.type_name), :controller => 'easy_money_settings', :action => 'index', :tab => @custom_field.type %>
+  &#187; <%=h @custom_field.translated_name %></h1>
+
+<%= labelled_form_for @custom_field, :url => { :action => 'custom_field_edit', :id => @custom_field }, :html => {:method => :put, :id => 'custom-field-form'} do |f| %>
+  <%= hidden_field_tag('back_url', params[:back_url]) if params[:back_url] %>
+  <div class="gray-background">
+    <%= render :partial => 'custom_fields/form', :locals => { :f => f } %>
+  </div>
+  <%= submit_tag l(:button_save), :class => 'button-1' %>
+<% end %>

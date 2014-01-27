@@ -1,0 +1,36 @@
+<%
+query, easy_attendance, easy_user_working_time_calendar = @easy_page_modules_data[block_name][:query], @easy_page_modules_data[block_name][:easy_attendance], @easy_page_modules_data[block_name][:easy_user_working_time_calendar];
+first_non_closed_attendance = @easy_page_modules_data[block_name][:first_non_closed_attendance]
+flash.now[:warning] = l('easy_attendance.notice.warning_missing_departure', :arrival_date => link_to(format_date(first_non_closed_attendance.arrival), {:controller => 'easy_attendances', :action => 'edit', :id => first_non_closed_attendance, :back_url => url_for(params)})).html_safe if first_non_closed_attendance && controller_name != 'users'
+%>
+<% if query %>
+  <%= toggling_container(modul_uniq_id, user, {:heading => (settings['query_type'] == '2' ? h(query.name) : link_to(h(query.name), {:controller => 'easy_attendances', :action => 'index', :project_id => query.project, :query_id => query}, :title => l(:label_user_saved_query, :queryname => query.name))), :container_html => {:class => 'module-content'}}) do %>
+    <div id="<%= modul_uniq_id -%>_easy_attendances_toolbar_container" class="easy-attendances-toolbar-container">
+      <%= render :partial => 'easy_attendances/toolbar', :locals => {:modul_uniq_id => (modul_uniq_id + '_easy_attendances_toolbar_container'), :easy_attendance => easy_attendance, :user => user, :back_url => url_for(:controller => 'my', :t => params[:t])} %>
+    </div>
+    <div class="easy-attendances">
+      <% if (settings["output"] == "calendar") -%>
+        <%= render :partial => 'easy_page_modules/calendar_listing_links', :locals => {:page_module => page_module, :period => @easy_page_modules_data[block_name][:period], :calendar => @easy_page_modules_data[block_name][:calendar], :user => user} -%>
+        <div class="easy-attendace-calendar-container">
+          <%= render :partial => 'common/calendar', :locals => {:calendar => @easy_page_modules_data[block_name][:calendar], :modul_uniq_id => block_name, :easy_user_working_time_calendar => easy_user_working_time_calendar} -%>
+        </div>
+        <script type="text/javascript">
+      <% day = @easy_page_modules_data[block_name][:calendar].startdt
+      while day <= @easy_page_modules_data[block_name][:calendar].enddt %>
+        add = $('<a>').attr({'class':'easy-attendance-calendar-add-quick-event icon icon-add floatright', 'title': '<%= l :new, :scope => :easy_attendance -%>'});
+        add.click(function() {
+          $.get('<%= j url_for(:controller => 'easy_attendances', :action => 'new', :arrival_at => day, :back_url => url_for(:controller => 'my', :t => params[:t])).html_safe %>')
+        });
+        $('#<%= "#{block_name}-day-num-#{day.month}-#{day.day}" %>').append(add);
+        <% day += 1 %>
+      <% end %>
+        </script>
+      <% else -%>
+        <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:entities =>  @easy_page_modules_data[block_name][:prepared_result_entities], :query => query, :block_name => block_name, :user => user, :options => {:disable_sort => true, :hascontextmenu => true}} -%>
+        <%= context_menu({:controller =>'context_menus', :action => 'easy_attendances' }, "##{modul_uniq_id}" )%>
+      <% end -%>
+    </div>
+  <% end %>
+<% else %>
+  <%= l(:label_easy_page_module_settings_missing) %>
+<% end %>

@@ -1,0 +1,10 @@
+<% if @wiki && @wiki.sidebar -%>
+  <%= textilizable @wiki.sidebar.content, :text %>
+<% end -%>
+
+<h3><%= l(:label_wiki) %></h3>
+<div class="box">
+  <%= link_to l(:field_start_page), {:action => 'show', :id => nil} %>
+  <%= link_to l(:label_index_by_title), {:action => 'index'} %>
+  <%= link_to l(:label_index_by_date), {:controller => 'wiki', :project_id => @project, :action => 'date_index'} %>
+</div>

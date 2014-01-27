@@ -1,0 +1,30 @@
+html, body {
+    background: none;
+    margin: 0px;
+    padding: 0px;
+    width: inherit;
+    height: inherit;
+    min-height: inherit;
+    min-width: inherit;
+}
+
+html > body div#content {
+    min-height: 0px;
+    overflow: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper, #wrapper2 {
+    width: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+#main {
+    min-height: inherit;
+}
+
+#main div.easy-project-contingency-table-container div.contingency-table-container #contingency-table-body {
+    overflow: inherit
+}

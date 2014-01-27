@@ -1,0 +1,11 @@
+<div id="move-auth-source-users" class="gray-background border-radius-3">
+  <p>
+    <%= l(:move_auth_source_users_explanation) %>
+    <%= select_tag 'auth_source_replacement', 
+      options_for_select([[l(:label_internal), ""]] + @auth_sources.collect { |a| [a.name, a.id] }) %>
+  </p>
+</div>
+<p>
+	<%= submit_tag l(:button_auth_source_move_users) %>
+	<%= link_to l(:button_back), {:action => 'index'}, :class => 'button-2' %>
+</p>

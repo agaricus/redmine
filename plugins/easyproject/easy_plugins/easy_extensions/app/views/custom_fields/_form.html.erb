@@ -1,0 +1,140 @@
+<%= error_messages_for 'custom_field' %>
+<%= hidden_field_tag('back_url', params[:back_url]) if params[:back_url] %>
+
+<%= '<div class="splitcontentleft">'.html_safe if @custom_field.is_a?(IssueCustomField) %>
+
+<div class="box tabular">
+  <p><%= f.text_field :name, :required => true %></p>
+  <p><%= f.select :field_format, custom_field_formats_for_select(@custom_field), {}, :disabled => !@custom_field.new_record?, :id => 'custom_field_field_format' %></p>
+
+  <div id="field_format_settings">
+    <%= render :partial => 'custom_fields/field_format_settings' %>
+  </div>
+
+  <% if @custom_field.format_in? 'list', 'user', 'version', 'easy_lookup' %>
+    <p>
+      <%= f.check_box :multiple, :id => 'custom_field_multiple' %>
+      <% if !@custom_field.new_record? && @custom_field.multiple %>
+        <em class="info"><%= l(:text_turning_multiple_off) %></em>
+      <% end %>
+    </p>
+  <% end %>
+
+  <% if @custom_field.format_in? 'string', 'int', 'float', 'autoincrement', 'amount' %>
+    <p>
+      <label for="custom_field_min_length"><%=l(:label_min_max_length)%></label><%= f.text_field :min_length, :size => 5, :no_label => true, :id => 'custom_field_min_length' %> - <%= f.text_field :max_length, :size => 5, :no_label => true, :id => 'custom_field_max_length' %>
+      <br/>(<%=l(:text_min_max_length_info)%>)
+    </p>
+  <% end %>
+
+  <% if false # not for general user %>
+    <p><%= f.text_field :regexp, :size => 50, :id => 'custom_field_regexp' %><br/>(<%=l(:text_regexp_info)%>)</p>
+  <% end %>
+
+  <% if @custom_field.format_in? 'list' %>
+    <p>
+      <%= f.text_area :possible_values, :value => @custom_field.possible_values.to_a.join("\n"), :rows => 15, :id => 'custom_field_possible_values' %>
+      <br /><em><%= l(:text_custom_field_possible_values_info) %></em>
+    </p>
+  <% end %>
+
+  <p>
+    <% case @custom_field.field_format %>
+    <% when 'bool' %>
+      <%= f.check_box(:default_value, :id => 'custom_field_default_value') %>
+    <% when 'float', 'int' %>
+      <%= f.text_field(:default_value, :id => 'custom_field_default_value') %>
+    <% when 'url' %>
+      <%= f.url_field(:default_value, :id => 'custom_field_default_value') %>
+    <% when 'email' %>
+      <%= f.email_field(:default_value, :id => 'custom_field_default_value') %>
+    <% when 'text' %>
+      <%= f.text_area(:default_value, :id => 'custom_field_default_value', :rows => 8) %>
+      <%= wikitoolbar_for('custom_field_default_value') %>
+    <% when 'date' %>
+      <%= f.text_field(:default_value, :size => 10) %>
+      <%= calendar_for('custom_field_default_value') %>
+    <% else %>
+      <% if !@custom_field.format_in?('datetime', 'easy_lookup', 'easy_rating', 'user', 'version', 'easy_google_map_address', 'easy_computed_token') %>
+        <%= f.text_field(:default_value, :id => 'custom_field_default_value') %>
+      <% end %>
+    <% end %>
+  </p>
+
+  <%= call_hook(:view_custom_fields_form_upper_box, :custom_field => @custom_field, :form => f) %>
+</div>
+<div class="box tabular">
+  <% @custom_field.available_form_fields.each do |field| %>
+    <%= content_tag :p, f.check_box(field, :id => "custom_field_#{field.to_s}" ) %>
+  <% end %>
+
+  <% if @custom_field.is_a?(IssueCustomField) %>
+    <p>
+      <label><%= l(:field_visible) %></label><label class="block floating">
+        <%= radio_button_tag 'custom_field[visible]', 1, @custom_field.visible?, :id => 'custom_field_visible_on' %>
+        <%= l(:label_visibility_public) %>
+      </label>
+      <label class="block floating">
+        <%= radio_button_tag 'custom_field[visible]', 0, !@custom_field.visible?, :id => 'custom_field_visible_off' %>
+        <%= l(:label_visibility_roles) %>:
+      </label>
+      <% Role.givable.sorted.each do |role| %>
+        <label class="block custom_field_role" style="padding-left:2em;">
+          <%= check_box_tag 'custom_field[role_ids][]', role.id, @custom_field.roles.include?(role) %>
+          <%= role.name %>
+        </label>
+      <% end %>
+      <%= hidden_field_tag 'custom_field[role_ids][]', '' %>
+    </p>
+  <% end %>
+
+  <%= call_hook(:"view_custom_fields_form_#{@custom_field.type.to_s.underscore}", :custom_field => @custom_field, :form => f) %>
+</div>
+<%= submit_tag(l(:button_save), :class => 'button-1') unless @custom_field.non_editable? %>
+
+<%= '</div>'.html_safe if @custom_field.is_a?(IssueCustomField) %>
+
+<% if @custom_field.is_a?(IssueCustomField) %>
+
+  <div class="splitcontentright">
+    <fieldset class="issue-custom-field-trackers">
+      <legend>
+        <%= link_to('', 'javascript:void(0)', :onclick => "javascript:$(this).closest('fieldset').find('input:checkbox').attr('checked', function(idx, chck) {return !chck;})", :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked') %>
+        <%= l(:label_tracker_plural) %>
+      </legend>
+      <% Tracker.sorted.all.each do |tracker| %>
+        <label class="floating">
+          <%= check_box_tag "custom_field[tracker_ids][]", tracker.id, (@custom_field.trackers.include? tracker) %>
+          <%= tracker.name %>
+        </label>
+      <% end %>
+      <%= hidden_field_tag "custom_field[tracker_ids][]", '' %>
+    </fieldset>
+    <fieldset class="box" id="custom_field_project_ids"><legend><%= l(:label_project_plural) %></legend>
+      <%= render_project_nested_lists(Project.non_templates.all) do |p|
+        content_tag('label', check_box_tag('custom_field[project_ids][]', p.id, @custom_field.projects.to_a.include?(p), :id => nil) + ' ' + h(p))
+        end %>
+      <%= hidden_field_tag('custom_field[project_ids][]', '', :id => nil) %>
+      <p><%= check_all_links 'custom_field_project_ids' %></p>
+    </fieldset>
+  </div>
+<% end %>
+
+<%= javascript_tag do %>
+  function toggleCustomFieldRoles(){
+  var checked = $("#custom_field_visible_on").is(':checked');
+  $('.custom_field_role input').attr('disabled', checked);
+  }
+  $("#custom_field_visible_on, #custom_field_visible_off").change(toggleCustomFieldRoles);
+  $(document).ready(toggleCustomFieldRoles);
+
+  $("#custom_field_is_for_all").change(function(){
+  $("#custom_field_project_ids input").attr("disabled", $(this).is(":checked"));
+  }).trigger('change');
+<% end %>
+
+<% if false && @custom_field.class.name == 'IssueCustomField' %>
+  <div class="projects-by-tracker">
+    <%= render :partial => 'projects_by_tracker', :locals => { :form => f, :custom_field => @custom_field } %>
+  </div>
+<% end %>

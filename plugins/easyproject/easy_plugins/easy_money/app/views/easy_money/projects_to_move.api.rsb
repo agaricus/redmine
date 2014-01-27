@@ -1,0 +1,8 @@
+api.array :projects do
+  Project.each_with_easy_level(@projects) do |project, level|
+    api.project do
+      api.value project.family_name(:level => level, :separator => ' » ', :prefix => ' ', :self_only => @self_only)
+      api.id project.id
+    end
+  end
+end

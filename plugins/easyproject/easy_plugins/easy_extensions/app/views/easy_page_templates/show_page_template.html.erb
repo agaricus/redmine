@@ -1,0 +1,13 @@
+<% content_for :easy_page_layout_service_box_bottom do %>
+  <%= link_to l(:label_personalize_page), { :action => 'edit_page_template', :id => @page_template.id }, :class => 'customize-button button-2' %>
+<% end %>
+
+<h2><%= l(:label_easy_page_template_user_modules, :templatename => @page_template.template_name) -%></h2>
+<%= breadcrumb [
+  link_to(l('breadcrumb.label.easy_pages_administration'), { :controller => 'easy_pages', :action => 'index' }, { :title => l('breadcrumb.title.easy_pages_administration') }),
+  link_to(l('breadcrumb.label.easy_page_templates', :pagename => @page.translated_name), {:controller => 'easy_page_templates', :action => 'index', :page_id => @page.id }, { :title => l('breadcrumb.title.easy_page_templates', :pagename => @page.translated_name) }),
+  l('breadcrumb.label.easy_page_template_user_modules')
+] -%>
+
+<% html_title(l(:label_easy_page_template_show)) -%>
+<%= context_menu issues_context_menu_path, 'table.issues' -%>

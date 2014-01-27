@@ -1,0 +1,20 @@
+<% ### PAGE CUSTOMS ########################################################## %>
+<% if User.current.allowed_to?(:manage_my_page, nil, :global => true) %>
+  <% if in_mobile_view? %>
+  <script type="text/javascript">
+    function redirectToPageLayout() {
+        alert("<%= l(:text_my_mobile_page_mobile_view_redirect_to_page_layout_warning) %>");
+    }
+  </script>
+  <% else %>
+    <% content_for :easy_page_layout_service_box_bottom do %>
+      <div class="customize-button-container">
+        <%= link_to l(:label_personalize_page),{ :action => 'page_layout', :t => params[:t]}, :class => 'customize-button button-2' %>
+      </div>
+    <% end %>
+  <% end -%>
+<% end %>
+
+<% html_title(l(:label_my_page)) -%>
+
+<%= context_menu issues_context_menu_path, 'table.issues' %>

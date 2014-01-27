@@ -1,0 +1,3 @@
+<br />
+<%= label_tag 'mapped_time_entry_activity_id', l(:'easy_attendance.project_mapping_1_1') -%>
+<%= select_tag 'easy_attendance_activity[mapped_time_entry_activity_id]', options_for_select(project.project_time_entry_activities.collect{|a| [a.name, a.id.to_s]}, selected), {:disabled => (!selected && !(params[:easy_attendance_activity] && params[:easy_attendance_activity][:mapped_project_id])), :id => 'mapped_time_entry_activity_id'} -%>

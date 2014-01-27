@@ -1,0 +1,66 @@
+<% modul_uniq_id ||= controller_name + '_' + action_name %>
+<div class="easy-user-working-time-calendar-settings-container">
+  <% if user -%>
+    <%= toggling_container(modul_uniq_id + '_easy_user_working_time_calendar_settings', User.current, {:heading => l(:label_easy_user_working_time_calendar_settings), :container_html => {:class => 'easy-user-working-time-calendar-settings'}}) do %>
+      <%= form_tag({:controller => 'easy_user_working_time_calendars', :action => 'assign_to_user'}) do -%>
+        <%= hidden_field_tag 'back_url', url_for(params) -%>
+        <%= hidden_field_tag 'user_id', user.id -%>
+        <p>
+          <%= label_tag 'select_working_time_calendar', l(:label_easy_user_working_time_calendar_change_calendar) -%>
+          <%= select_tag 'working_time_calendar', options_for_select([['', '']] + EasyUserWorkingTimeCalendar.templates.collect{|c| [c.translated_name, c.id.to_s]}), :id => 'select_working_time_calendar' -%>
+        </p>
+        <% if easy_user_working_time_calendar -%>
+          <p>
+            <%= label_tag 'preserve_calendar_exceptions', l(:label_easy_user_working_time_calendar_preserve_calendar_exceptions) -%>
+            <%= check_box_tag 'preserve_calendar_exceptions', 1, true -%>
+          </p>
+        <% else -%>
+          <%= hidden_field_tag 'preserve_calendar_exceptions', '1' -%>
+        <% end -%>
+        <%= submit_tag l(:button_save), :class => 'button-1' -%>
+      <% end -%>
+      <% if easy_user_working_time_calendar -%>
+        <p>
+          <%= link_to(l(:button_easy_user_working_time_reset_to_parent), {:controller => 'easy_user_working_time_calendars', :action => 'reset', :id => easy_user_working_time_calendar, :back_url => url_for(params)}, :class => 'button-2', :title => l(:title_easy_user_working_time_reset_to_parent), :data => {:confirm => l(:text_are_you_sure)}) -%>
+          <%= link_to(l(:button_easy_user_working_time_parent), {:controller => 'easy_user_working_time_calendars', :action => 'show', :id => easy_user_working_time_calendar.parent}, :class => 'button-2', :title => l(:title_easy_user_working_time_parent)) -%>
+        </p>
+      <% end -%>
+    <% end %>
+  <% end %>
+  <% if easy_user_working_time_calendar -%>
+    <% if easy_user_working_time_calendar.user %>
+      <%= toggling_container(modul_uniq_id + '_easy_user_working_time_day_settings', User.current, :heading => l(:label_easy_user_working_time_day_settings)) do %>
+        <%= labelled_form_for easy_user_working_time_calendar, :url => {:controller => 'easy_user_working_time_calendars', :action => 'update', :id => easy_user_working_time_calendar.id}, :html => {:method => :put} do |f| %>
+            <%= hidden_field_tag 'back_url', url_for(params) -%>
+            <p>
+              <%= label_tag :time_from, l(:label_easy_user_working_time_calendar_time_from) %>
+              <%= f.time_select :time_from %>
+            </p>
+            <p>
+              <%= label_tag :time_from, l(:label_easy_user_working_time_calendar_time_to) %>
+              <%= f.time_select :time_to %>
+            </p>
+            <p>
+              <%= f.text_field :default_working_hours, :required => true, :label => 'activerecord.attributes.easy_user_working_time_calendar.default_working_hours'.to_sym, :size => 5 %>
+            </p>
+            <%= submit_tag l(:button_save), :class => 'button-1' -%>
+        <% end -%>
+      <% end -%>
+    <% end -%>
+    <%= toggling_container(modul_uniq_id + '_easy_user_working_time_mass_exceptions', User.current, {:heading => l(:label_easy_user_working_time_mass_exceptions), :container_html => {:class => 'easy-user-working-time-mass-exceptions'}}) do %>
+      <%= form_tag({:controller => 'easy_user_working_time_calendars', :action => 'mass_exceptions', :id => easy_user_working_time_calendar}) do -%>
+        <%= hidden_field_tag 'mass_exception[back_url]', url_for(params) -%>
+        <p>
+          <%= label_tag 'mass_exception_working_hours', l(:label_easy_user_working_time_calendar_mass_exceptions_working_hours) -%>
+          <%= text_field_tag 'mass_exception[working_hours]', 0, :size => 2, :maxlength => 4 -%>
+          <%= label_tag 'mass_exception_day_period', l(:label_easy_user_working_time_calendar_mass_exceptions_day_period) -%>
+          <%= select_tag 'mass_exception[day_period]', options_for_select(7.times.collect{|d| [day_name(d+1), d+1]}) -%>
+        </p>
+        <p>
+          <%= l(:label_date_from_to, :start => (text_field_tag('mass_exception[from]', User.current.today.to_s, :size => 10) + calendar_for('mass_exception_from')), :end => (text_field_tag('mass_exception[to]', User.current.today.to_s, :size => 10) + calendar_for('mass_exception_to'))).html_safe -%>
+        </p>
+        <%= submit_tag l(:button_save), :class => 'button-1' -%>
+      <% end -%>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,39 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name =>  l(:label_document_global)} %>
+<% modul_uniq_id ||= controller_name + '_' + action_name-%>
+<div id="documents">
+  <% @categories_documents.each_pair do |category, documents| %>
+    <% group_modul_uniq_id = modul_uniq_id + "#{category.hash}_category_#{@sort_by}" %>
+    <%= toggling_container(group_modul_uniq_id, User.current, {:heading => h(category), :default_button_state => !@project.nil?}) do %>
+      <%= render :partial => 'documents/index', :locals => {:grouped => documents.group_by(&:project), :category => category.to_s} %>
+    <% end %>
+  <% end -%>
+</div>
+<p class="pagination"><%= pagination_links_full @document_pages, @document_count %></p>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+<% content_for :easy_page_layout_service_box do %>
+  <% if User.current.allowed_to?(:add_documents, @project, :global => true) %>
+    <ul class="menu-manager">
+      <%= content_tag :li, link_to(l(:label_document_new), {:controller => 'easy_documents', :action => 'new'}, :class => 'button-1 icon icon-add') -%>
+    </ul>
+  <% end %>
+<% end -%>
+
+<% content_for :sidebar do %>
+  <div id="documents-sidebar-order-box">
+    <%= content_tag :h3, l(:label_group_by, '') -%>
+    <%= form_tag({:controller => 'easy_documents', :action => 'index'}, :method => :get) do %>
+      <div class="order">
+        <label><%= radio_button_tag 'sort_by', 'category', (@sort_by == 'category'), :onclick => 'this.form.submit();' %> <%= l(:field_category) %></label>
+        <label><%= radio_button_tag 'sort_by', 'date', (@sort_by == 'date'), :onclick => 'this.form.submit();' %> <%= l(:label_date) %></label>
+        <label><%= radio_button_tag 'sort_by', 'title', (@sort_by == 'title'), :onclick => 'this.form.submit();' %> <%= l(:field_title) %></label>
+        <label><%= radio_button_tag 'sort_by', 'author', (@sort_by == 'author'), :onclick => 'this.form.submit();' %> <%= l(:field_author) %></label>
+        <label><%= radio_button_tag 'sort_by', 'project', (@sort_by == 'project'), :onclick => 'this.form.submit();' %> <%= l(:field_project) %></label>
+      </div>
+    <% end %>
+  </div>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} %>
+<% end -%>
+<div id="context-menu" style="display: none;"></div>
+
+<%= include_attachment_headers_tags %>

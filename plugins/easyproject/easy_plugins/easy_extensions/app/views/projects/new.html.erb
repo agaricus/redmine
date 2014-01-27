@@ -1,0 +1,7 @@
+<%= title l(:label_project_new) %>
+<%= labelled_form_for @project, :html => {:id => 'project-form'} do |f| %>
+  <%= render :partial => 'projects/form', :locals => { :f => f } %>
+  <%= submit_tag l(:button_save), :class => 'button-1' %>
+  <%= submit_tag l(:button_create_and_continue), :name => 'continue' %>
+  <%= javascript_tag "$('#project_name').focus();" %>
+<% end %>

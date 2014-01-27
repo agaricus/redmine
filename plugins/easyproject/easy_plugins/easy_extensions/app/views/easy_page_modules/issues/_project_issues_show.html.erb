@@ -1,0 +1,9 @@
+<% if page_module.entity_id.blank? -%>
+  <%= render :partial => 'easy_page_modules/page_module_cannot_be_displayed', :locals => { :page_module => page_module } %>
+<% else -%>
+  <% query = @easy_page_modules_data[block_name][:query] -%>
+  <%= toggling_container(modul_uniq_id, user, {:heading => l(:label_issue_plural)}) do %>
+    <%= render :partial => 'issues/list', :locals => {:issues => @easy_page_modules_data[block_name][:prepared_result_entities], :query => query, :modul_uniq_id => modul_uniq_id, :options => {:disable_sort => true}} %>
+    <p class="small"><%= link_to l(:label_issue_view_all), :controller => 'issues', :action => 'index', :project_id => query.project, :set_filter => 1, :status_id => 'o', :sort => @easy_page_modules_data[block_name][:sort] %></p>
+  <% end %>
+<% end -%>

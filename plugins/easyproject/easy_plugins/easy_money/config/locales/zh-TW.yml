@@ -1,0 +1,350 @@
+---
+zh-TW:
+  easy_money_plugin_name: 錢
+  easy_money_plugin_author: 易軟件
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- 監測和管理項目的預期和實際的財務業績'
+  project_module_easy_money: 錢
+  menu_easy_money: 錢
+  permission_view_easy_money: 獲得金錢模塊（一般）
+  permission_easy_money_show_expected_revenue: 預期收入
+  permission_easy_money_show_expected_expense: 預期的支出，
+  permission_easy_money_show_expected_payroll_expense: 預期的工資費用
+  permission_easy_money_show_expected_profit: 顯示預期利潤
+  permission_easy_money_show_other_revenue: 實際收入
+  permission_easy_money_show_other_expense: 顯示實際支出
+  permission_easy_money_show_time_entry_expenses: 實際工資費用
+  permission_easy_money_show_other_profit: 顯示真正的利潤
+  permission_easy_money_manage_expected_revenue: Addig預期收入
+  permission_easy_money_manage_expected_expense: 添加預期的支出，
+  permission_easy_money_manage_expected_payroll_expense: 添加預期的工資費用
+  permission_easy_money_manage_other_revenue: 增加實際收入
+  permission_easy_money_manage_other_expense: 添加實際支出
+  permission_easy_money_settings: ACCES錢設置
+  permission_easy_money_move: 將項目資金分配
+  label_easy_money: 錢
+  label_easy_money_settings: 貨幣設置
+  label_easy_money_rate_priorities_settings: 費用率設定
+  label_easy_money_project_index: 錢
+  label_easy_money_other_expenses: 費用概覽
+  label_easy_money_other_expense_new: 新的費用
+  label_easy_money_other_expense_show: 費用
+  label_easy_money_other_expense_edit: 費用編輯
+  label_easy_money_other_revenues: 收入概述
+  label_easy_money_other_revenue_new: 新的收入
+  label_easy_money_other_revenue_show: 收入
+  label_easy_money_other_revenue_edit: 所得稅編輯
+  label_easy_money_time_entry_expenses: 工資費用概覽
+  label_easy_money_project_index_profit: 利潤：
+  label_easy_money_expected_expenses: 預計費用概述
+  label_easy_money_expected_revenues: 預期收入概述
+  label_easy_money_expected_expense_new: 新的預期支出
+  label_easy_money_expected_expense_show: 預計費用
+  label_easy_money_expected_expense_edit: 預期支出編輯
+  label_easy_money_expected_revenue_new: 新的預期收入
+  label_easy_money_expected_revenue_show: 預期收入
+  label_easy_money_expected_revenue_edit: 編輯預計收入
+  label_easy_money_other_settings: 其他設置
+  label_easy_money_other_settings_price_visibility: 按量使用：
+  label_easy_money_other_settings_rate_type: 通過工資支出使用：
+  label_easy_money_other_settings_include_childs: 從分項目，項目總資金的計算量：
+  label_easy_money_other_settings_project_expected_visibility: 打開項目規劃/期望：
+  label_easy_money_other_settings_project_use_easy_money_for_versions: 用錢的里程碑
+  label_easy_money_other_settings_project_use_easy_money_for_issues: 用錢的任務
+  label_easy_money_project_usage_type: 使用項目：
+  label_easy_money_other_settings_vat: 如果顯示的金額不包括增值稅，增值稅是：
+  label_easy_money_use_vat: 使用增值稅計數
+  label_easy_money_expected_budget: 計劃
+  label_easy_money_real_budget: 現實
+  label_easy_money_project_name: 項目預算：
+  label_easy_money_hour: ! '%{hours}小時。'
+  label_easy_money_expected_payroll_expense_per_hours: 計劃每小時收費
+  label_easy_money_expected_payroll_expenses: 工資費用：
+  label_easy_money_subproject_sum_revenues: 收入*
+  label_easy_money_subproject_sum_expenses: 費用*
+  label_easy_money_subproject_sum_payroll_expenses: 工資費用
+  label_easy_money_subproject_profit: 結果*
+  label_easy_money_subproject_explication: ! '*）（計劃/現實）'
+  label_easy_money_attachments: 附件：
+  label_easy_money_project_time_entry_expenses: 工資成本純粹的項目
+  label_easy_money_project_issues_time_entry_expenses: 項目任務的薪金成本
+  label_easy_money_total: 總計：
+  label_easy_money_all_project: 所有項目的錢
+  label_easy_money_currency_visible: 允許更改的交換項目：
+  label_easy_money_currency: 貨幣：
+  label_easy_money_select_project: 選擇項目
+  label_easy_money_mass_copy_rates: 速率值費用
+  label_easy_money_project_index_estimated_hours: 估計時間：
+  label_easy_money_new_revenue_text: 收入
+  label_easy_money_new_revenue_description: 收入
+  label_easy_money_new_expense_text: 費用
+  label_easy_money_new_expense_description: 費用
+  text_easy_money_rate_priorities_settings: 費用率的基本層次結構。如果所述第一速率是零，將被用於下一個非零率。
+  button_easy_money_rate_use_in_all_projects: 在所有項目中的使用率
+  button_easy_money_rate_use_in_all_subprojects: 用率在所有子項目
+  button_easy_money_priorities_use_in_all_projects: 率在所有項目中的優先事項
+  button_easy_money_priorities_use_in_all_subprojects: 使用速度優先次序所有子項目
+  button_easy_money_project_expected_expenses: 其他費用：
+  button_easy_money_project_expected_revenues: 收入：
+  button_easy_money_project_other_expenses: 其他費用：
+  button_easy_money_project_other_revenues: 收入：
+  button_easy_money_project_time_entry_expenses: 工資費用：
+  button_easy_money_project_new_revenue: 新的收入
+  button_easy_money_project_new_expense: 新的費用
+  button_easy_money_project_time_entry_hours: 工作時間：
+  button_easy_money_project_index_show_details: 顯示詳細信息
+  button_easy_money_project_index_show_empty: 顯示空字段
+  button_easy_money_save_in_all_projects: 在所有的項目中使用
+  button_easy_money_save_in_all_subprojects: 在所有子項目
+  button_easy_money_project_settings: 貨幣設置
+  button_easy_money_save_expected_revenue: 保存的預期收入
+  button_easy_money_save_other_revenue: 保存的實際收入
+  button_easy_money_save_expected_hours: 除預期時間
+  button_easy_money_save_expected_expense: 保存預計費用
+  button_easy_money_save_other_expense: 節省的開支
+  button_easy_money_update_project_time_entry_expenses: 重新計算工資開支項目
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: 重新計算工資開支項目和所有子項目
+  button_easy_money_update_all_projects_time_entry_expenses: 在所有項目中的重新計算工資費用
+  button_easy_money_move: 重新分配選擇
+  title_easy_money_project_new_revenue: 添加新的收入來源
+  title_easy_money_project_new_expense: 添加新的費用
+  title_easy_money_project_expected_revenues: 計劃項目的收入
+  title_easy_money_project_other_revenues: 顯示項目的實際收入
+  title_easy_money_project_expected_expenses: 計劃費用的項目
+  title_easy_money_project_other_expenses: 顯示項目的實際支出
+  title_easy_money_project_time_entry_expenses: 顯示項目的實際工資費用
+  title_easy_money_rates_save: 保存率
+  title_easy_money_rate_use_in_all_projects: 保存率，並將其應用在所有項目中
+  title_easy_money_rate_use_in_all_subprojects: 保存率，並將其應用在所有子項目
+  title_easy_money_priorities_use_in_all_projects: 在所有項目中使用的價格訂購
+  title_easy_money_priorities_use_in_all_subprojects: 使用排序所有子項目率
+  title_easy_money_other_repeating_expense_show: 顯示反复開支。
+  title_easy_money_other_repeating_revenue_show: 顯示反复的收入。
+  title_easy_money_settings: 項目資金的設置。
+  title_easy_money_project_index_show_empty: 顯示空字段。
+  title_close: 按一下關閉此窗格中。
+  title_easy_money_update_project_time_entry_expenses: 重新計算工資開支項目。
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: 單擊“開始轉換的工資成本項目和所有子項目（可能需要幾分鐘）。
+  title_easy_money_update_all_projects_time_entry_expenses: 重新計算工資開支的所有項目。
+  title_easy_money_link_to_subproject: 轉到錢%{subproject}。
+  title_easy_money_link_to_project: 轉到錢的項目%{project}。
+  field_spent_hours: 花了幾個小時
+  field_easy_money_rate_entity_time_entry_activity_name: 活動名稱
+  field_easy_money_rate_entity_role_name: 角色名稱
+  field_easy_money_rate_entity_user_name: 用戶名
+  field_easy_money_other_expense_spent_on: 日期：
+  field_easy_money_other_expense_name: 產品名稱：
+  field_easy_money_other_expense_description: 說明：
+  field_easy_money_other_expense_price1: （含增值稅）金額：
+  field_easy_money_other_expense_price2: 不含增值稅金額：
+  field_easy_money_other_expense_vat: 增值稅：
+  field_easy_money_other_revenue_spent_on: 日期：
+  field_easy_money_other_revenue_name: 產品名稱：
+  field_easy_money_other_revenue_description: 說明：
+  field_easy_money_other_revenue_price1: 合計金額：
+  field_easy_money_other_revenue_price2: 不含增值稅金額：
+  field_easy_money_other_revenue_vat: 增值稅：
+  field_easy_money_expected_expense_spent_on: 日期：
+  field_easy_money_expected_expense_name: 產品名稱：
+  field_easy_money_expected_expense_description: 說明：
+  field_easy_money_expected_expense_price1: 合計金額：
+  field_easy_money_expected_expense_price2: 不含增值稅金額：
+  field_easy_money_expected_expense_vat: 增值稅：
+  field_easy_money_expected_revenue_spent_on: 日期：
+  field_easy_money_expected_revenue_name: 產品名稱：
+  field_easy_money_expected_revenue_description: 說明：
+  field_easy_money_expected_revenue_price1: 合計金額：
+  field_easy_money_expected_revenue_price2: 不含增值稅金額：
+  field_easy_money_expected_revenue_vat: 增值稅：
+  field_easy_money_expected_revenue: 預期收入
+  field_easy_money_expected_expense: 預計費用
+  field_easy_money_sum_other_revenues: 收入
+  field_easy_money_sum_time_entry_expenses: 工資費用
+  field_easy_money_sum_other_expenses: 支出
+  field_easy_money_sum_other_profit: 利潤
+  field_easy_money_rate_type_internal: 內部收益率
+  field_easy_money_rate_type_external: External_rate
+  field_price1: 總金額
+  field_price2: 不含增值稅金額
+  field_vat: 增值稅
+  tab_easy_money_rate_priorities: 匯率的層次結構
+  tab_easy_money_rate_role: 價格的作用
+  tab_easy_money_rate_time_entry_activity: 價格由活動
+  tab_easy_money_rate_user: 價格由用戶
+  tab_easy_money_other_settings: 其他設置
+  easy_money_other_expense_custom_field: 實際支出
+  easy_money_other_revenue_custom_field: 實際收入
+  notice_easy_money_recalculate: 金額於未來的概述頁面訪問將重新計算。
+  error_easy_money_project_selector_select_values: 沒有選中的值
+  project_default_page:
+    easy_money: 錢
+  warning_easy_money_settings:
+    project_question: 你要保存在項目的設置嗎？
+    global_question: 你要保存全局設置？
+    revenues_type: 您可以更改輸入法的收入（先前輸入的所有收入將被刪除）。
+    expenses_type: 您可以更改輸入法的費用（先前輸入的所有費用都將被刪除）。
+  warning_easy_money_all_projects:
+    question: 您確定您要使用的所有項目的設置嗎？
+    revenues_type: 以下項目以前輸入的所有收入將被刪除：%{projects}
+    expenses_type: 以下項目以前輸入的所有費用都將被刪除：%{projects}
+  easy_money_rate_type:
+    one: 率
+    internal: 內部收益率
+    external: 外部率
+  easy_money_entity:
+    user: 用戶
+    role: 角色
+    time_entry_activity: 活動
+  easy_money_rate_entity:
+    user: 用戶的評分
+    role: 評分角色
+    time_entry_activity: 評分活動
+  easy_money_period:
+    daily: 日常
+    monthly: 每月一次
+    weekly: 每週
+    yearly: 每年
+  easy_money_other_settings_price_visibility:
+    price1: 只有總量
+    price2: 不含增值稅的金額只有
+    all: 不含增值稅的金額和總金額
+  easy_money_other_settings_rate_type:
+    internal: 只有一個速度
+    all: 內部和外部率
+  easy_money_other_settings_expected_count_price:
+    price1: 總金額
+    price2: 不含增值稅金額
+  easy_money_other_settings_expected_rate_type:
+    internal: 內部價格
+    external: 外部價格
+  easy_reports_fields:
+    _time_entry_internalrate: 工資費用 - 內部收益率
+    _time_entry_externalrate: 工資費用 - 外部率
+    easy_money_other_revenue_id: 實際收入
+    easy_money_other_revenue_name: 實際收入 - 產品名稱
+    easy_money_other_revenue_price1: 實際收入 - 總價格
+    easy_money_other_revenue_price2: 實際收入 - 不含增值稅的價格
+    easy_money_other_expense_id: 實際支出
+    easy_money_other_expense_name: 實際支出 - 產品名稱
+    easy_money_other_expense_price1: 實際支出 - 總價格
+    easy_money_other_expense_price2: 真正的開支 - 價格不包括增值稅
+    easy_money_expected_expense_id: 預期開支
+    easy_money_expected_expense_name: 預期的開支 - 產品名稱
+    easy_money_expected_expense_price1: 預計費用 - 總價格
+    easy_money_expected_expense_price2: 預計費用 - 價格不包括增值稅
+    easy_money_expected_revenue_id: 預期收入
+    easy_money_expected_revenue_name: 預期收入 - 產品名稱
+    easy_money_expected_revenue_price1: 預期收入 - 總價格
+    easy_money_expected_revenue_price2: 預期收益 - 價格不包括增值稅
+    project_expected_hours: 預計工作時間
+    project_expected_payroll_expense: 預計工資開支
+    _project_recovery: 復甦
+    _project_timeentry_average_hourly_expense: 平均每小時費用
+    _project_other_profit: 利潤
+  easy_reports_categories:
+    easy_money: 錢
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: 工資成本轉換
+  tooltip_real_hourly_rate: 該項目的基礎上平均時薪%{average_hourly_rate}/小時。
+  label_easy_money_sidebar:
+    project: 錢的項目
+    issue: 錢的任務
+    version: 為里程碑的錢
+  easy_query:
+    name:
+      easy_money_other_revenue_query: 其他收入
+      easy_money_other_expense_query: 其他開支
+      easy_money_expected_revenue_query: 預期收益
+      easy_money_expected_expense_query: 預期開支
+      easy_money_project_cache_query: 項目預算概述
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: 其他收入的個人過濾器
+        easy_money_other_expense_query: 其他費用的個人過濾器
+        easy_money_expected_revenue_query: 個人預期收入的過濾器
+        easy_money_expected_expense_query: 個人預期的支出，過濾器
+        easy_money_project_cache_query: 個人過濾預算概述
+      public:
+        easy_money_other_revenue_query: 公共過濾器其他收入
+        easy_money_other_expense_query: 公共過濾器其他費用
+        easy_money_expected_revenue_query: 預期收入的公共過濾器
+        easy_money_expected_expense_query: 預期的支出，公共過濾器
+        easy_money_project_cache_query: 公共過濾預算概述
+  title_easy_money_sum_expected_revenues: 對項目的預期收入的總和%{project}是%{value}。
+  title_easy_money_sum_other_revenues: 其他收入項目的總和%{project}是%{value}。
+  title_easy_money_sum_expected_expenses: 的預期開支項目總和%{project}是%{value}。
+  title_easy_money_sum_other_expenses: 其他開支項目的總和%{project}是%{value}。
+  title_easy_money_sum_expected_payroll_expenses: 對項目的預期工資的總和%{project}是%{value}。
+  title_easy_money_sum_time_entry_expenses: 工資項目的總和%{project}是%{value}。
+  title_easy_money_expected_profit: 對項目的預期利潤%{project}是%{value}。
+  title_easy_money_other_profit: 項目溢利%{project}是%{value}。
+  permission_easy_budgetsheet_view_internal_rates: Budgetsheet  - 顯示內部利率
+  permission_easy_budgetsheet_view_external_rates: Budgetsheet  - 顯示外部率
+  label_filter_group_easy_money_other_revenue_query: 其他收入
+  label_filter_group_easy_money_other_expense_query: 其他開支
+  label_filter_group_easy_money_expected_revenue_query: 預期收入
+  label_filter_group_easy_money_expected_expense_query: 預計費用
+  field_inherit_easy_money_settings: 繼承錢設置
+  heading_easy_money_other_settings_project_overview: 項目概況設定
+  heading_easy_money_other_settings_prices_and_rates: 價格及利率
+  label_easy_money_project_index_sum_hours: 預計時間：
+  label_easy_money_other_settings_expected_count_price: 收入及其他費用算使用
+  label_easy_money_other_settings_expected_rate_type: 實際工資費用算使用
+  label_filter_group_easy_money_project_cache_query: 他人
+  label_filter_group_easy_money_project_cache_expenses: 支出
+  label_filter_group_easy_money_project_cache_revenues: 收入
+  label_filter_group_easy_money_project_cache_profit: 利潤
+  label_easy_money_project_cache: 項目預算概述
+  label_easy_money_other_settings_revenues_type: 收入將作為
+  label_easy_money_other_settings_expenses_type: 其他開支將作為
+  label_easy_money_other_settings_expected_payroll_expense_type: 計劃的工資支出將算作
+  field_sum_of_expected_hours: 預期小時
+  field_sum_of_expected_payroll_expenses: 預期工資
+  field_sum_of_expected_expenses_price_1: 預計費用（含增值稅）
+  field_sum_of_expected_revenues_price_1: 預期收入（含增值稅）
+  field_sum_of_other_expenses_price_1: 其他費用（含增值稅）
+  field_sum_of_other_revenues_price_1: 其他收入（含增值稅）
+  field_sum_of_expected_expenses_price_2: 預計費用（不含增值稅）
+  field_sum_of_expected_revenues_price_2: 預期收入（不含增值稅）
+  field_sum_of_other_expenses_price_2: 其他費用（不含增值稅）
+  field_sum_of_other_revenues_price_2: 其他收入（不含增值稅）
+  field_sum_of_time_entries_expenses_internal: 工資（內部收益率）
+  field_sum_of_time_entries_expenses_external: 工資率（外部）
+  field_sum_of_all_expected_expenses_price_1: 預計總費用（含增值稅）
+  field_sum_of_all_expected_revenues_price_1: 預計總收入（含增值稅）
+  field_sum_of_all_other_revenues_price_1: 總收入（含增值稅）
+  field_sum_of_all_expected_expenses_price_2: 預計總費用（不含增值稅）
+  field_sum_of_all_expected_revenues_price_2: 預計總收入（不含增值稅）
+  field_sum_of_all_other_revenues_price_2: 總收入（不含增值稅）
+  field_sum_of_all_other_expenses_price_1_internal: 總費用（含增值稅，內部收益率）
+  field_sum_of_all_other_expenses_price_2_internal: 總費用（不含增值稅，內部收益率）
+  field_sum_of_all_other_expenses_price_1_external: 總費用（含增值稅，外部速率）
+  field_sum_of_all_other_expenses_price_2_external: 總支出（不含增值稅，外部速率）
+  field_expected_profit_price_1: 預期利潤（含增值稅）
+  field_expected_profit_price_2: 預期利潤（不含增值稅）
+  field_other_profit_price_1_internal: 利潤（含增值稅，內部收益率）
+  field_other_profit_price_2_internal: 溢利（不含增值稅，內部收益率）
+  field_other_profit_price_1_external: 利潤（含增值稅，外部速率）
+  field_other_profit_price_2_external: 溢利（不含增值稅，外部速率）
+  field_average_hourly_rate_price_1: 平均時薪（含增值稅）
+  field_average_hourly_rate_price_2: 平均每小時收費（不含增值稅）
+  easy_pages:
+    pages:
+      easy_money_projects_overview: 錢 - 首頁
+    pages_description:
+      easy_money_projects_overview: 錢 - 首頁
+  easy_money_revenues_type:
+    list: 清冊
+    sum: 總收入
+  easy_money_expenses_type:
+    list: 清冊
+    sum: 總開支
+  easy_money_expected_payroll_expense_type:
+    amount: 工資費用（總額）
+    hours: 工資支出（預期小時*每小時收費計劃）
+    estimated_hours: 工資費用（估計時間*計劃的每小時收費）
+    planned_hours_and_rate: 無受讓人（估計24小時每小時收費計劃）的任務，任務與受讓人（估計小時*層次率）
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: 項目預算概述重新計算
+  label_easy_money_round_money_on_list: 回合對列表

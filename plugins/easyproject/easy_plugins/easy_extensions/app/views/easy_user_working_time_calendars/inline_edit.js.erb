@@ -1,0 +1,1 @@
+$('#<%= @day.to_s.underscore %>_inner').html('<%= j(render :partial => 'easy_user_working_time_calendars/inline_edit', :locals => {:day => @day, :working_hours => @working_hours, :easy_user_working_time_calendar => @easy_user_working_time_calendar}) %>');

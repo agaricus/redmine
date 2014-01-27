@@ -1,0 +1,385 @@
+---
+fi:
+  easy_money_plugin_name: Raha
+  easy_money_plugin_author: Easy Software
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- Seuranta ja hallinta odotuksen ja toteutuneen
+    tuloksen hankkeiden'
+  project_module_easy_money: Raha
+  menu_easy_money: Raha
+  permission_view_easy_money: Pääsy Money moduuli (yleinen)
+  permission_easy_money_show_expected_revenue: Näytä odotetut tulot
+  permission_easy_money_show_expected_expense: Näytä odotettavissa kulut
+  permission_easy_money_show_expected_payroll_expense: Näytä odotettavissa palkkakuluihin
+  permission_easy_money_show_expected_profit: Näytä odotettu voitto
+  permission_easy_money_show_other_revenue: Näytä reaalitulot
+  permission_easy_money_show_other_expense: Näytä todellisia kuluja
+  permission_easy_money_show_time_entry_expenses: Näytä reaalipalkka kulut
+  permission_easy_money_show_other_profit: Näytä todellinen voitto
+  permission_easy_money_manage_expected_revenue: Addig odotetut tulot
+  permission_easy_money_manage_expected_expense: Lisääminen odotetut kulut
+  permission_easy_money_manage_expected_payroll_expense: Lisäämällä odotettavissa
+    palkkakuluihin
+  permission_easy_money_manage_other_revenue: Lisääminen reaalitulot
+  permission_easy_money_manage_other_expense: Lisääminen todellisia kuluja
+  permission_easy_money_settings: Acces rahaa asetukset
+  permission_easy_money_move: Siirrä rahaa hankkeiden välillä
+  label_easy_money: Raha
+  label_easy_money_settings: Raha asetukset
+  label_easy_money_rate_priorities_settings: Kulut hinnat asettaminen
+  label_easy_money_project_index: Raha
+  label_easy_money_other_expenses: Kulut yleiskatsaus
+  label_easy_money_other_expense_new: Uusi kustannuksella
+  label_easy_money_other_expense_show: Kulu
+  label_easy_money_other_expense_edit: Expense edit
+  label_easy_money_other_revenues: Tulot yleiskatsaus
+  label_easy_money_other_revenue_new: Uusi tulot
+  label_easy_money_other_revenue_show: Tulo
+  label_easy_money_other_revenue_edit: Tuotot edit
+  label_easy_money_time_entry_expenses: Palkkakuluihin yleiskatsaus
+  label_easy_money_project_index_profit: ! 'Voitto:'
+  label_easy_money_expected_expenses: Odotettu kulut yleiskatsaus
+  label_easy_money_expected_revenues: Odotettu tulot yleiskatsaus
+  label_easy_money_expected_expense_new: Uusi odotettu kustannuksella
+  label_easy_money_expected_expense_show: Odotettu kustannuksella
+  label_easy_money_expected_expense_edit: Odotettu kustannuksella edit
+  label_easy_money_expected_revenue_new: Uusi odotettu tuotto
+  label_easy_money_expected_revenue_show: Odotettu tuotto
+  label_easy_money_expected_revenue_edit: Muokkaa odotettu tuotto
+  label_easy_money_other_settings: Muut asetukset
+  label_easy_money_other_settings_price_visibility: ! 'Tekijä määrä käyttää:'
+  label_easy_money_other_settings_rate_type: ! 'Palkkapolitiikka menot käyttää:'
+  label_easy_money_other_settings_include_childs: ! 'Laske summia osa hankkeista hankkeen
+    kokonaiskustannusten rahaa:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Kytke projektin
+    suunnittelu / odotukset:'
+  label_easy_money_project_usage_type: ! 'Käyttö projekti:'
+  label_easy_money_other_settings_vat: ! 'Jos näkyy summa ilman arvonlisäveroa, arvonlisävero
+    on:'
+  label_easy_money_use_vat: käyttää arvonlisäveron määrä
+  label_easy_money_expected_budget: Suunnitelma
+  label_easy_money_real_budget: Todellisuus
+  label_easy_money_project_name: ! 'Hankkeen budjetti:'
+  label_easy_money_hour: ! '%{hours} tuntia.'
+  label_easy_money_expected_payroll_expense_per_hours: Suunnitellut tuntitaksa
+  label_easy_money_expected_payroll_expenses: ! 'Palkkakuluihin:'
+  label_easy_money_subproject_sum_revenues: Tulot *
+  label_easy_money_subproject_sum_expenses: Kulut *
+  label_easy_money_subproject_sum_payroll_expenses: Palkkakuluihin
+  label_easy_money_subproject_profit: Tulos *
+  label_easy_money_subproject_explication: ! '*) (Suunnitelma / todellisuus)'
+  label_easy_money_attachments: ! 'Liitteet:'
+  label_easy_money_project_time_entry_expenses: Palkkakustannukset puhtaasti hankkeen
+  label_easy_money_project_issues_time_entry_expenses: Payroll kustannukset projektitehtäviä
+  label_easy_money_total: ! 'yhteensä:'
+  label_easy_money_all_project: Rahaa kaikkien hankkeiden
+  label_easy_money_currency_visible: ! 'Salli muuttaa vaihto projektin:'
+  label_easy_money_currency: ! 'Valuutta:'
+  label_easy_money_select_project: Valitse projekti
+  label_easy_money_mass_copy_rates: Rate arvot kulut
+  label_easy_money_project_index_estimated_hours: ! 'Arvioitu aika:'
+  label_easy_money_new_revenue_text: Tulot
+  label_easy_money_new_revenue_description: tulot
+  label_easy_money_new_expense_text: Kulu
+  label_easy_money_new_expense_description: kulu
+  text_easy_money_rate_priorities_settings: Perusrakenne kulujen hinnat. Jos ensimmäinen
+    nopeus on nolla, seuraava nollasta poikkeava hinnan käytetään.
+  button_easy_money_rate_use_in_all_projects: Käytä korko kaikissa hankkeissa
+  button_easy_money_rate_use_in_all_subprojects: Käytä korko kaikkien osaprojektien
+  button_easy_money_priorities_use_in_all_projects: Käytä korko prioriteetteja kaikissa
+    hankkeissa
+  button_easy_money_priorities_use_in_all_subprojects: Käyttää nopeuden toimintalinjat
+    kaikkiin osaprojektien
+  button_easy_money_project_expected_expenses: ! 'Muut kulut:'
+  button_easy_money_project_expected_revenues: ! 'Tulot:'
+  button_easy_money_project_other_expenses: ! 'Muut kulut:'
+  button_easy_money_project_other_revenues: ! 'Tulot:'
+  button_easy_money_project_time_entry_expenses: ! 'Palkkakuluihin:'
+  button_easy_money_project_new_revenue: Uusi tulot
+  button_easy_money_project_new_expense: Uusi kustannuksella
+  button_easy_money_project_time_entry_hours: ! 'Työajasta:'
+  button_easy_money_project_index_show_details: Näytä tiedot
+  button_easy_money_project_index_show_empty: Näytä tyhjät kentät
+  button_easy_money_save_in_all_projects: Käytä kaikissa hankkeissa
+  button_easy_money_save_in_all_subprojects: Käytä kaikissa osaprojektien
+  button_easy_money_project_settings: Raha asetukset
+  button_easy_money_save_expected_revenue: Tallenna odotettu tuotto
+  button_easy_money_save_other_revenue: Tallenna reaalitulot
+  button_easy_money_save_expected_hours: Tallenna odotettavissa tuntia
+  button_easy_money_save_expected_expense: Tallenna odotettavissa kustannuksella
+  button_easy_money_save_other_expense: Tallenna todellinen kulu
+  button_easy_money_update_project_time_entry_expenses: Laske palkkakuluihin hankkeen
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: Laske palkkakuluihin
+    projektin ja kaikki osahankkeet
+  button_easy_money_update_all_projects_time_entry_expenses: Laske palkkakuluihin
+    kaikissa hankkeissa
+  button_easy_money_move: Määritä uudelleen valittu
+  title_easy_money_project_new_revenue: Lisää uusi tulot
+  title_easy_money_project_new_expense: Lisää uusi kustannuksella
+  title_easy_money_project_expected_revenues: Näytä suunniteltua tulot hankkeen
+  title_easy_money_project_other_revenues: Näytä reaalitulot hankkeen
+  title_easy_money_project_expected_expenses: Näytä suunnitelma kulut hankkeen
+  title_easy_money_project_other_expenses: Näytä todellisista kustannuksista hankkeen
+  title_easy_money_project_time_entry_expenses: Näytä todellinen palkkakuluihin hankkeen
+  title_easy_money_rates_save: Tallenna hinnat
+  title_easy_money_rate_use_in_all_projects: Tallenna hinnat ja soveltaa niitä kaikissa
+    hankkeissa
+  title_easy_money_rate_use_in_all_subprojects: Tallenna hinnat ja soveltaa niitä
+    kaikkiin osaprojektien
+  title_easy_money_priorities_use_in_all_projects: Käytä tilaaminen hinnat kaikista
+    hankkeista
+  title_easy_money_priorities_use_in_all_subprojects: Käytä tilaaminen hinnat kaikkien
+    osaprojektien
+  title_easy_money_other_repeating_expense_show: Näytä toistuva kustannuksella.
+  title_easy_money_other_repeating_revenue_show: Näytä toistuvia tuloja.
+  title_easy_money_settings: Siirry projektin rahaa asetus.
+  title_easy_money_project_index_show_empty: Näytä tyhjät kentät.
+  title_close: Klikkaamalla Sulje tämä ruutu.
+  title_easy_money_update_project_time_entry_expenses: Laske palkkakuluihin projektin.
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Napsauta Käynnistä
+    muuntaminen palkkakustannuksiin hankkeen ja kaikkien osahankkeiden (voi kestää
+    useita minuutteja).
+  title_easy_money_update_all_projects_time_entry_expenses: Laske palkkakuluihin kaikissa
+    hankkeissa.
+  title_easy_money_link_to_subproject: Siirry rahoja %{subproject}.
+  title_easy_money_link_to_project: Mene rahaa hankkeen %{project}.
+  field_spent_hours: Tuntikausia
+  field_easy_money_rate_entity_time_entry_activity_name: Aktiivisuus nimi
+  field_easy_money_rate_entity_role_name: Rooli nimi
+  field_easy_money_rate_entity_user_name: Käyttäjätunnus
+  field_easy_money_other_expense_spent_on: ! 'Päivämäärä:'
+  field_easy_money_other_expense_name: ! 'Nimi:'
+  field_easy_money_other_expense_description: ! 'Kuvaus:'
+  field_easy_money_other_expense_price1: ! 'Määrä kanssa Alv:'
+  field_easy_money_other_expense_price2: ! 'Summa ilman alv:'
+  field_easy_money_other_expense_vat: ! 'Alv:'
+  field_easy_money_other_revenue_spent_on: ! 'Päivämäärä:'
+  field_easy_money_other_revenue_name: ! 'Nimi:'
+  field_easy_money_other_revenue_description: ! 'Kuvaus:'
+  field_easy_money_other_revenue_price1: ! 'Kokonaismäärä:'
+  field_easy_money_other_revenue_price2: ! 'Summa ilman alv:'
+  field_easy_money_other_revenue_vat: ! 'Alv:'
+  field_easy_money_expected_expense_spent_on: ! 'Päivämäärä:'
+  field_easy_money_expected_expense_name: ! 'Nimi:'
+  field_easy_money_expected_expense_description: ! 'Kuvaus:'
+  field_easy_money_expected_expense_price1: ! 'Kokonaismäärä:'
+  field_easy_money_expected_expense_price2: ! 'Summa ilman alv:'
+  field_easy_money_expected_expense_vat: ! 'Alv:'
+  field_easy_money_expected_revenue_spent_on: ! 'Päivämäärä:'
+  field_easy_money_expected_revenue_name: ! 'Nimi:'
+  field_easy_money_expected_revenue_description: ! 'Kuvaus:'
+  field_easy_money_expected_revenue_price1: ! 'Kokonaismäärä:'
+  field_easy_money_expected_revenue_price2: ! 'Summa ilman alv:'
+  field_easy_money_expected_revenue_vat: ! 'Alv:'
+  field_easy_money_expected_revenue: Odotettu tuotto
+  field_easy_money_expected_expense: Odotettu kustannuksella
+  field_easy_money_sum_other_revenues: Tulot
+  field_easy_money_sum_time_entry_expenses: Palkkakuluihin
+  field_easy_money_sum_other_expenses: Kulut
+  field_easy_money_sum_other_profit: Voitto
+  field_easy_money_rate_type_internal: Sisäinen korko
+  field_easy_money_rate_type_external: External_rate
+  field_price1: Kokonaismäärä
+  field_price2: Summa ilman alv
+  field_vat: Arvonlisävero
+  tab_easy_money_rate_priorities: Arvostele hierarkia
+  tab_easy_money_rate_role: Hinnat by rooli
+  tab_easy_money_rate_time_entry_activity: Hinnat toimialan
+  tab_easy_money_rate_user: Hinnat käyttäjän
+  tab_easy_money_other_settings: Muut asetukset
+  easy_money_other_expense_custom_field: Real kulut
+  easy_money_other_revenue_custom_field: Reaalitulot
+  notice_easy_money_recalculate: Määrät lasketaan uudelleen kuluessa seuraavan vierailun
+    yleiskatsaus sivulla.
+  error_easy_money_project_selector_select_values: Ei valittua arvoa
+  project_default_page:
+    easy_money: Raha
+  warning_easy_money_settings:
+    project_question: Haluatko tallentaa asetukset hankkeessa?
+    global_question: Haluatko säästää yleiset asetukset?
+    revenues_type: Voit vaihtaa syöttötavan tulojen (kaikki tulot aiemmin tuli poistetaan).
+    expenses_type: Voit vaihtaa syöttötavan kulujen (kaikki kulut aiemmin tuli poistetaan).
+  warning_easy_money_all_projects:
+    question: Oletko varma, että haluat käyttää asetuksia kaikissa hankkeissa?
+    revenues_type: Kaikki aikaisemmin tulleet tulot seuraaville hankkeille poistetaan:%{projects}
+    expenses_type: Kaikki aiemmin kirjattu kuluksi seuraaville hankkeille poistetaan:%{projects}
+  easy_money_rate_type:
+    one: Hinta
+    internal: Sisäinen korko
+    external: Ulkoinen korko
+  easy_money_entity:
+    user: Käyttäjä
+    role: Rooli
+    time_entry_activity: Aktiivisuus
+  easy_money_rate_entity:
+    user: Rate käyttäjän
+    role: Korkoa rooli
+    time_entry_activity: Korkoa toiminta
+  easy_money_period:
+    daily: Päivittäin
+    monthly: Kuukausittain
+    weekly: Viikoittain
+    yearly: Vuosittain
+  easy_money_other_settings_price_visibility:
+    price1: Vain kokonaismäärä
+    price2: Määrää ilman arvonlisäveroa
+    all: määrä ilman arvonlisäveroa ja kokonaismäärä
+  easy_money_other_settings_rate_type:
+    internal: vain yksi kurssi
+    all: sisäinen ja ulkoinen korko
+  easy_money_other_settings_expected_count_price:
+    price1: kokonaismäärä
+    price2: määrä ilman arvonlisäveroa
+  easy_money_other_settings_expected_rate_type:
+    internal: sisäiset hinnat
+    external: ulkoinen hinnat
+  easy_reports_fields:
+    _time_entry_internalrate: Palkkakuluihin - Sisäinen
+    _time_entry_externalrate: Palkkakuluihin - Ulkoinen korko
+    easy_money_other_revenue_id: Reaalitulot
+    easy_money_other_revenue_name: Reaalitulot - Nimi
+    easy_money_other_revenue_price1: Reaalitulot - Kokonaishinta
+    easy_money_other_revenue_price2: Reaalitulot - Hinta ilman ALV
+    easy_money_other_expense_id: Real kulut
+    easy_money_other_expense_name: Real kulut - Nimi
+    easy_money_other_expense_price1: Real kulut - Kokonaishinta
+    easy_money_other_expense_price2: Real kulut - Hinta ilman ALV
+    easy_money_expected_expense_id: Odotettu kulut
+    easy_money_expected_expense_name: Odotettu kulut - Nimi
+    easy_money_expected_expense_price1: Odotettu kulut - Kokonaishinta
+    easy_money_expected_expense_price2: Odotettu kulut - Hinta ilman ALV
+    easy_money_expected_revenue_id: Odotettu tuotto
+    easy_money_expected_revenue_name: Odotettu tulot - Nimi
+    easy_money_expected_revenue_price1: Odotettu tulot - Yhteensä hinta
+    easy_money_expected_revenue_price2: Odotettu tulot - Hinta ilman ALV
+    project_expected_hours: Odotettu työtunteja
+    project_expected_payroll_expense: Odotettu palkkakuluihin
+    _project_recovery: Toipuminen
+    _project_timeentry_average_hourly_expense: Keskimääräinen tunneittain Expense
+    _project_other_profit: Voitto
+  easy_reports_categories:
+    easy_money: Raha
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: muuntaminen palkkakustannukset
+  tooltip_real_hourly_rate: Hanke perustuu keskimääräisen tuntipalkan %{average_hourly_rate}/
+    Tuntia.
+  label_easy_money_sidebar:
+    project: Rahaa hankkeeseen
+    issue: Rahaa tehtävän
+    version: Rahaa virstanpylväs
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Muut tulot
+      easy_money_other_expense_query: Muut kulut
+      easy_money_expected_revenue_query: Odotetuista tuloista
+      easy_money_expected_expense_query: Odotettu kulut
+      easy_money_project_cache_query: Projektit budjetti yleiskatsaus
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: Henkilökohtaiset suodattimet muut tulot
+        easy_money_other_expense_query: Henkilökohtaiset suodattimet muut kulut
+        easy_money_expected_revenue_query: Henkilökohtaiset suodattimet odotetuista
+          tuloista
+        easy_money_expected_expense_query: Henkilökohtaiset suodattimet odotettavissa
+          kulut
+        easy_money_project_cache_query: Henkilökohtaiset suodattimet budjetin yleiskatsaus
+      public:
+        easy_money_other_revenue_query: Julkinen suodattimia muista tuloista
+        easy_money_other_expense_query: Julkinen suodattimet muut kulut
+        easy_money_expected_revenue_query: Julkinen suodattimia odotetuista tuloista
+        easy_money_expected_expense_query: Julkinen suodattimia odotettavissa kulut
+        easy_money_project_cache_query: Julkinen suodattimia talousarvioon yleiskatsaus
+  label_easy_money_other_settings_project_use_easy_money_for_versions: Käytä rahaa
+    välitavoitteita
+  label_easy_money_other_settings_project_use_easy_money_for_issues: Käytä rahaa tehtäviä
+  title_easy_money_sum_expected_revenues: Summa odotettavissa tulojen hankkeiden %{project}
+    on %{value}.
+  title_easy_money_sum_other_revenues: Summa muiden tulojen hankkeiden %{project}
+    on %{value}.
+  title_easy_money_sum_expected_expenses: Summa odotettavissa kulut hankkeeseen %{project}
+    on %{value}.
+  title_easy_money_sum_other_expenses: Summa muut kulut hankkeeseen %{project} on
+    %{value}.
+  title_easy_money_sum_expected_payroll_expenses: Summa odotettavissa palkkojen hankkeiden
+    %{project} on %{value}.
+  title_easy_money_sum_time_entry_expenses: Palkkasumma hankkeiden %{project} on %{value}.
+  title_easy_money_expected_profit: Odotettu tulos hankkeen %{project} on %{value}.
+  title_easy_money_other_profit: Voitto hankkeen %{project} on %{value}.
+  permission_easy_budgetsheet_view_internal_rates: Budgetsheet - näyttää sisäiset
+    hinnat
+  permission_easy_budgetsheet_view_external_rates: Budgetsheet - näytä ulkoinen hinnat
+  label_filter_group_easy_money_other_revenue_query: Muut tulot
+  label_filter_group_easy_money_other_expense_query: Muut kulut
+  label_filter_group_easy_money_expected_revenue_query: Odotetuista tuloista
+  label_filter_group_easy_money_expected_expense_query: Odotettu kulut
+  field_inherit_easy_money_settings: Peri rahaa asetukset
+  heading_easy_money_other_settings_project_overview: Projektin kuvaus asetukset
+  heading_easy_money_other_settings_prices_and_rates: Hinnat ja hinnat
+  label_easy_money_project_index_sum_hours: ! 'Odotettu tuntia:'
+  label_easy_money_other_settings_expected_count_price: Liikevaihto ja muut kulut
+    laskea käyttäen
+  label_easy_money_other_settings_expected_rate_type: Real palkkakuluja laskea käyttäen
+  label_filter_group_easy_money_project_cache_query: Muut
+  label_filter_group_easy_money_project_cache_expenses: Kulut
+  label_filter_group_easy_money_project_cache_revenues: Liikevaihto
+  label_filter_group_easy_money_project_cache_profit: Voitto
+  label_easy_money_project_cache: Projektit budjetti yleiskatsaus
+  label_easy_money_other_settings_revenues_type: Tulot ovat toimivat
+  label_easy_money_other_settings_expenses_type: Muut kulut ovat toimivat
+  label_easy_money_other_settings_expected_payroll_expense_type: Suunnitellut palkka
+    kulut lasketaan
+  field_sum_of_expected_hours: Odotettu tuntia
+  field_sum_of_expected_payroll_expenses: Odotettu palkat
+  field_sum_of_expected_expenses_price_1: Odotettu kulut (sis. alv)
+  field_sum_of_expected_revenues_price_1: Myynnistä saatavat tuotot (sis. alv)
+  field_sum_of_other_expenses_price_1: Muut kulut (sis. alv)
+  field_sum_of_other_revenues_price_1: Muut tuotot (sis. alv)
+  field_sum_of_expected_expenses_price_2: Odotettu kulut (ilman alv)
+  field_sum_of_expected_revenues_price_2: Myynnistä saatavat tuotot (ilman alv)
+  field_sum_of_other_expenses_price_2: Muut kulut (ilman alv)
+  field_sum_of_other_revenues_price_2: Muut tulot (ilman alv)
+  field_sum_of_time_entries_expenses_internal: Palkat (sisäisen korkokannan)
+  field_sum_of_time_entries_expenses_external: Palkat (ulkoinen korko)
+  field_sum_of_all_expected_expenses_price_1: Yhteensä odotetaan kulut (sis. alv)
+  field_sum_of_all_expected_revenues_price_1: Yhteensä saatavat tuotot (sis. alv)
+  field_sum_of_all_other_revenues_price_1: Kokonaisliikevaihdosta (sis. alv)
+  field_sum_of_all_expected_expenses_price_2: Yhteensä odotetaan kulut (ilman alv)
+  field_sum_of_all_expected_revenues_price_2: Yhteensä saatavat tuotot (ilman alv)
+  field_sum_of_all_other_revenues_price_2: Kokonaisliikevaihdosta (ilman alv)
+  field_sum_of_all_other_expenses_price_1_internal: Kulut yhteensä (sis. alv, sisäinen
+    korko)
+  field_sum_of_all_other_expenses_price_2_internal: Kulut yhteensä (ilman alv, sisäinen
+    korko)
+  field_sum_of_all_other_expenses_price_1_external: Kulut yhteensä (sis. alv, ulkoinen
+    korko)
+  field_sum_of_all_other_expenses_price_2_external: Kulut yhteensä (ilman alv, ulkoinen
+    rate)
+  field_expected_profit_price_1: Odotettu tulos (sis. alv)
+  field_expected_profit_price_2: Odotettu tulos (ilman alv)
+  field_other_profit_price_1_internal: Voitto (sis. alv, sisäinen korko)
+  field_other_profit_price_2_internal: Voitto (ilman ALV, sisäinen korko)
+  field_other_profit_price_1_external: Voitto (sis. alv, ulkoinen korko)
+  field_other_profit_price_2_external: ! 'Voitto (ilman ALV: ulkoinen rate)'
+  field_average_hourly_rate_price_1: Keskimääräinen tuntipalkka (sis. alv)
+  field_average_hourly_rate_price_2: Keskimääräinen tuntipalkka (ilman alv)
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Money - kotisivu
+    pages_description:
+      easy_money_projects_overview: Money - kotisivu
+  easy_money_revenues_type:
+    list: yksityiskohtainen luettelo
+    sum: tuotot
+  easy_money_expenses_type:
+    list: yksityiskohtainen luettelo
+    sum: kulut yhteensä
+  easy_money_expected_payroll_expense_type:
+    amount: palkkakuluja (kokonaismäärä)
+    hours: palkkakuluja (odotetaan tuntia * suunniteltua tuntitaksa)
+    estimated_hours: palkkakuluja (arvioitu aika * suunniteltua tuntitaksa)
+    planned_hours_and_rate: tehtävä ilman siirronsaajan (arvioitu tuntia * suunniteltua
+      tuntitaksa), tehtävän siirronsaajan (arvioitu tuntia * korkoa hierarkia)
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: Projektit budjetti katsaus uudelleenlaskenta
+  label_easy_money_round_money_on_list: Pyöreä luettelossa

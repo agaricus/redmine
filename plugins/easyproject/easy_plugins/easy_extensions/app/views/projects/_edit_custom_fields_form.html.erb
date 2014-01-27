@@ -1,0 +1,18 @@
+<h3 class="title"><%= l(:'easy_page_module.project_history.heading_project_edit_custom_fields') -%></h3>
+<%= labelled_form_for(project, :url => {:controller => 'projects', :action => 'update_custom_fields_form', :id => project}, :html => {:method => :put, :class => 'tabular', :remote => true}) do %>
+  <%= error_messages_for project %>
+  <div class="easy-lookup-modal-selector-container">
+    <div class="autoscroll">
+      <%= render :partial => 'projects/form_project_custom_fields', :locals => {:custom_field_values => project.custom_field_values, :project => project } -%>
+      <p>
+        <%= label_tag 'notes', l(:label_comment) %>
+        <%= text_area_tag 'notes', '', :cols => 60, :rows => 10 %>
+      </p>
+    </div>
+    <p>
+      <%= submit_tag l(:button_update), :title => l(:button_update) %>
+      <%= link_to_function l(:button_close), 'hideModal(this)', :title => l(:button_close), :class => 'button-2' %>
+    </p>
+  </div>
+<% end %>
+<%= wikitoolbar_for('notes') %>

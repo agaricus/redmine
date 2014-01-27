@@ -1,0 +1,2639 @@
+---
+fi:
+  direction: ltr
+  date:
+    formats:
+      default: ! '%e. %Bta %Y'
+      long: ! '%A%e. %Bta %Y'
+      short: ! '%e.%m.%Y'
+    day_names:
+    - Sunnuntai
+    - Maanantai
+    - Tiistai
+    - Keskiviikko
+    - Torstai
+    - Perjantai
+    - Lauantai
+    abbr_day_names:
+    - Su
+    - Ma
+    - Ti
+    - Ke
+    - To
+    - Pe
+    - La
+    month_names:
+    -
+    - Tammikuu
+    - Helmikuu
+    - Maaliskuu
+    - Huhtikuu
+    - Toukokuu
+    - Kesäkuu
+    - Heinäkuu
+    - Elokuu
+    - Syyskuu
+    - Lokakuu
+    - Marraskuu
+    - Joulukuu
+    abbr_month_names:
+    -
+    - Tammi
+    - Helmi
+    - Maalis
+    - Huhti
+    - Touko
+    - Kesä
+    - Heinä
+    - Elo
+    - Syys
+    - Loka
+    - Marras
+    - Joulu
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: ! '%a, %e. %b %Y %H:%M:%S %z'
+      time: ! '%H:%M'
+      short: ! '%e. %b %H:%M'
+      long: ! '%B %d, %Y %H:%M'
+    am: aamupäivä
+    pm: iltapäivä
+  support:
+    array:
+      words_connector: ! ', '
+      two_words_connector: ! ' ja '
+      last_word_connector: ! ' ja '
+      sentence_connector: ja
+  number:
+    format:
+      separator: ! ','
+      delimiter: .
+      precision: 3
+    currency:
+      format:
+        format: ! '%n %u'
+        unit: €
+        separator: ! ','
+        delimiter: .
+        precision: 2
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+    human:
+      format:
+        delimiter: ''
+        precision: 3
+        separator: ! ','
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Tavua
+            other: Tavua
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+  datetime:
+    distance_in_words:
+      half_a_minute: puoli minuuttia
+      less_than_x_seconds:
+        one: aiemmin kuin sekunti
+        other: aiemmin kuin %{count} sekuntia
+      x_seconds:
+        one: sekunti
+        other: ! '%{count} sekuntia'
+      less_than_x_minutes:
+        one: aiemmin kuin minuutti
+        other: aiemmin kuin %{count} minuuttia
+      x_minutes:
+        one: minuutti
+        other: ! '%{count} minuuttia'
+      about_x_hours:
+        one: noin tunti
+        other: noin %{count} tuntia
+      x_hours:
+        one: 1 hour
+        other: ! '%{count} hours'
+      x_days:
+        one: päivä
+        other: ! '%{count} päivää'
+      about_x_months:
+        one: noin kuukausi
+        other: noin %{count} kuukautta
+      x_months:
+        one: kuukausi
+        other: ! '%{count} kuukautta'
+      about_x_years:
+        one: vuosi
+        other: noin %{count} vuotta
+      over_x_years:
+        one: yli vuosi
+        other: yli %{count} vuotta
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+    prompts:
+      year: Vuosi
+      month: Kuukausi
+      day: Päivä
+      hour: Tunti
+      minute: Minuutti
+      second: Sekuntia
+  activerecord:
+    errors:
+      template:
+        header:
+          one: 1 virhe esti tämän %{model} mallinteen tallentamisen
+          other: ! '%{count} virhettä esti tämän %{model} mallinteen tallentamisen'
+        body: ! 'Seuraavat kentät aiheuttivat ongelmia:'
+      messages:
+        inclusion: ei löydy listauksesta
+        exclusion: on jo varattu
+        invalid: on kelvoton
+        confirmation: ei vastaa varmennusta
+        accepted: täytyy olla hyväksytty
+        empty: ei voi olla tyhjä
+        blank: ei voi olla sisällötön
+        too_long: on liian pitkä (maksimi on %{count} merkkiä)
+        too_short: on liian lyhyt (minimi on %{count} merkkiä)
+        wrong_length: on väärän pituinen (täytyy olla täsmälleen %{count} merkkiä)
+        taken: on jo käytössä
+        not_a_number: ei ole numero
+        greater_than: täytyy olla suurempi kuin %{count}
+        greater_than_or_equal_to: täytyy olla suurempi tai yhtä suuri kuin%{count}
+        equal_to: täytyy olla yhtä suuri kuin %{count}
+        less_than: täytyy olla pienempi kuin %{count}
+        less_than_or_equal_to: täytyy olla pienempi tai yhtä suuri kuin %{count}
+        odd: täytyy olla pariton
+        even: täytyy olla parillinen
+        greater_than_start_date: tulee olla aloituspäivän jälkeinen
+        not_same_project: ei kuulu samaan projektiin
+        circular_dependency: Tämä suhde loisi kehän.
+        cant_link_an_issue_with_a_descendant: An issue can not be linked to one of
+          its subtasks
+        cant_link_an_project_with_a_descendant: Hanke ei voi liittää johonkin sen
+          osatehtävistä
+        cant_link_an_version_with_a_descendant: Virstanpylväs ei voi liittää johonkin
+          sen osatehtävistä
+        not_a_amount: ei kelvollinen summa
+        before_milestone: (%{due_date}) On oltava ennen välitavoite (%{effective_date})
+        before_project_end: (%{due_date}) Tulee olla ennen projektin eräpäivää (%{project_due_date})
+        after_project_start: (%{start_date}) On oltava suurempi kuin hankkeen aloituspäivä
+          (%{project_start_date})
+        less_than_duration: on liian aikaista mukaan arvioidun tuntia
+        greater_than_soonest_start: (%{start_date}) On oltava suurempi kuin pikimmin
+          aloituspäivä (%{soonest_start}) Liittyvien tehtävien
+        greater_than_start_date2: (%{due_date}) On oltava suurempi kuin aloituspäivä
+          (%{start_date})
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: on yli sallitun määrän
+    models:
+      easy_user_working_time_calendar: Kalenteri
+      easy_user_working_time_calendar_holiday: Holidays
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: Parent kalenteri
+        name: Nimi
+        default_working_hours: Numero työaika päivässä
+        first_day_of_week: Viikon ensimmäinen päivä
+        is_default: Oletuskalenteriin
+      easy_user_working_time_calendar_holiday:
+        name: Nimi
+        holiday_date: Päivä
+        is_repeating: Toistuva loma
+  actionview_instancetag_blank_option: Valitse, ole hyvä
+  general_text_No: Ei
+  general_text_Yes: Kyllä
+  general_text_no: ei
+  general_text_yes: kyllä
+  general_lang_name: Finnish (Suomi)
+  general_csv_separator: ! ','
+  general_csv_decimal_separator: .
+  general_csv_encoding: ISO-8859-15
+  general_pdf_encoding: UTF-8
+  general_first_day_of_week: '1'
+  notice_account_updated: Tilin päivitys onnistui.
+  notice_account_invalid_creditentials: Virheellinen käyttäjätunnus tai salasana
+  notice_account_password_updated: Salasanan päivitys onnistui.
+  notice_account_wrong_password: Väärä salasana
+  notice_account_register_done: Tilin luonti onnistui. Aktivoidaksesi tilin seuraa
+    linkkiä joka välitettiin sähköpostiisi.
+  notice_account_unknown_email: Tuntematon käyttäjä.
+  notice_can_t_change_password: Tämä tili käyttää ulkoista tunnistautumisjärjestelmää.
+    Salasanaa ei voi muuttaa.
+  notice_account_lost_email_sent: Sinulle on lähetetty sähköposti jossa on ohje kuinka
+    vaihdat salasanasi.
+  notice_account_activated: Tilisi on nyt aktivoitu, voit kirjautua sisälle.
+  notice_successful_create: Luonti onnistui.
+  notice_successful_update: Päivitys onnistui.
+  notice_successful_delete: Poisto onnistui.
+  notice_successful_connection: Yhteyden muodostus onnistui.
+  notice_file_not_found: Hakemaasi sivua ei löytynyt tai se on poistettu.
+  notice_locking_conflict: Toinen käyttäjä on päivittänyt tiedot.
+  notice_not_authorized: Sinulla ei ole oikeutta näyttää tätä sivua.
+  notice_email_sent: Sähköposti on lähetty osoitteeseen %{value}
+  notice_email_error: Sähköpostilähetyksessä tapahtui virhe (%{value})
+  notice_feeds_access_key_reseted: RSS salasana on nollaantunut.
+  notice_failed_to_save_issues: ! '%{count} Tapahtum(an/ien) tallennus epäonnistui
+    %{total} valitut: %{ids}.'
+  notice_no_issue_selected: Tapahtumia ei ole valittu! Valitse tapahtumat joita haluat
+    muokata.
+  notice_account_pending: Tilisi on luotu ja odottaa ylläpitäjän hyväksyntää.
+  notice_default_data_loaded: Vakioasetusten palautus onnistui.
+  error_can_t_load_default_data: ! 'Vakioasetuksia ei voitu ladata: %{value}'
+  error_scm_not_found: Syötettä ja/tai versiota ei löydy tietovarastosta.
+  error_scm_command_failed: ! 'Tietovarastoon pääsyssä tapahtui virhe: %{value}'
+  mail_subject_lost_password: Sinun %{value} salasanasi
+  mail_body_lost_password: ! 'Vaihtaaksesi salasanasi, napsauta seuraavaa linkkiä:'
+  mail_subject_register: ! '%{value} tilin aktivointi'
+  mail_body_register: ! 'Aktivoidaksesi tilisi, napsauta seuraavaa linkkiä:'
+  mail_body_account_information_external: Voit nyt käyttää %{value} tiliäsi kirjautuaksesi
+    järjestelmään.
+  mail_body_account_information: Sinun tilin tiedot
+  mail_subject_account_activation_request: ! '%{value} tilin aktivointi pyyntö'
+  mail_body_account_activation_request: ! 'Uusi käyttäjä (%{value}) on rekisteröitynyt.
+    Hänen tili odottaa hyväksyntääsi:'
+  field_name: Nimi
+  field_description: Kuvaus
+  field_summary: Yhteenveto
+  field_is_required: Vaaditaan
+  field_firstname: Etunimi
+  field_lastname: Sukunimi
+  field_mail: Sähköposti
+  field_filename: Tiedosto
+  field_filesize: Koko
+  field_downloads: Latausta
+  field_author: Tekijä
+  field_created_on: Luotu
+  field_updated_on: Päivitetty
+  field_field_format: Muoto
+  field_is_for_all: Kaikille projekteille
+  field_possible_values: Mahdolliset arvot
+  field_regexp: Säännöllinen lauseke (reg exp)
+  field_min_length: Minimipituus
+  field_max_length: Maksimipituus
+  field_value: Arvo
+  field_category: Luokka
+  field_title: Otsikko
+  field_project: Projekti
+  field_issue: Tapahtuma
+  field_status: Tila
+  field_notes: Muistiinpanot
+  field_is_closed: Tapahtuma suljettu
+  field_is_default: Vakioarvo
+  field_tracker: Tapahtuma
+  field_subject: Aihe
+  field_due_date: Määräaika
+  field_assigned_to: Nimetty
+  field_priority: Prioriteetti
+  field_fixed_version: Kohdeversio
+  field_user: Käyttäjä
+  field_role: Rooli
+  field_homepage: Kotisivu
+  field_is_public: Julkinen
+  field_parent: Aliprojekti
+  field_is_in_roadmap: Tapahtumat näytetään roadmap näkymässä
+  field_login: Kirjautuminen
+  field_mail_notification: Sähköposti muistutukset
+  field_admin: Ylläpitäjä
+  field_last_login_on: Viimeinen yhteys
+  field_language: Kieli
+  field_effective_date: Päivä
+  field_password: Salasana
+  field_new_password: Uusi salasana
+  field_password_confirmation: Vahvistus
+  field_version: Versio
+  field_type: Tyyppi
+  field_host: Verkko-osoite
+  field_port: Portti
+  field_account: Tili
+  field_base_dn: Base DN
+  field_attr_login: Kirjautumismääre
+  field_attr_firstname: Etuminenmääre
+  field_attr_lastname: Sukunimenmääre
+  field_attr_mail: Sähköpostinmääre
+  field_onthefly: Automaattinen käyttäjien luonti
+  field_start_date: Alku
+  field_done_ratio: ! '% Tehty'
+  field_auth_source: Varmennusmuoto
+  field_hide_mail: Piiloita sähköpostiosoitteeni
+  field_comments: Kommentti
+  field_url: URL
+  field_start_page: Aloitussivu
+  field_subproject: Aliprojekti
+  field_hours: Tuntia
+  field_activity: Historia
+  field_spent_on: Päivä
+  field_identifier: Tunniste
+  field_is_filter: Käytetään suodattimena
+  field_issue_to: Liittyvä tapahtuma
+  field_delay: Viive
+  field_assignable: Tapahtumia voidaan nimetä tälle roolille
+  field_redirect_existing_links: Uudelleenohjaa olemassa olevat linkit
+  field_estimated_hours: Arvioitu aika
+  field_column_names: Saraketta
+  field_time_zone: Aikavyöhyke
+  field_searchable: Haettava
+  field_default_value: Vakioarvo
+  setting_app_title: Ohjelman otsikko
+  setting_app_subtitle: Ohjelman alaotsikko
+  setting_welcome_text: Tervehdysteksti
+  setting_default_language: Vakiokieli
+  setting_login_required: Pakollinen kirjautuminen
+  setting_self_registration: Itserekisteröinti
+  setting_attachment_max_size: Liitteen maksimikoko
+  setting_issues_export_limit: Tapahtumien vientirajoite
+  setting_mail_from: Lähettäjän sähköpostiosoite
+  setting_bcc_recipients: Vastaanottajat piilokopiona (bcc)
+  setting_host_name: Verkko-osoite
+  setting_text_formatting: Tekstin muotoilu
+  setting_wiki_compression: Wiki historian pakkaus
+  setting_feeds_limit: Syötteen sisällön raja
+  setting_autofetch_changesets: Automaattisten muutosjoukkojen haku
+  setting_sys_api_enabled: Salli WS tietovaraston hallintaan
+  setting_commit_ref_keywords: Viittaavat hakusanat
+  setting_commit_fix_keywords: Korjaavat hakusanat
+  setting_autologin: Automaatinen kirjautuminen
+  setting_date_format: Päivän muoto
+  setting_time_format: Ajan muoto
+  setting_cross_project_issue_relations: Salli projektien väliset tapahtuminen suhteet
+  setting_issue_list_default_columns: Vakiosarakkeiden näyttö tapahtumalistauksessa
+  setting_emails_footer: Sähköpostin alatunniste
+  setting_protocol: Protokolla
+  setting_per_page_options: Sivun objektien määrän asetukset
+  label_user: Käyttäjä
+  label_user_plural: Käyttäjät
+  label_user_new: Uusi käyttäjä
+  label_project: Projekti
+  label_project_new: Uusi projekti
+  label_project_plural: Projektit
+  label_x_projects:
+    zero: no projects
+    one: 1 project
+    other: ! '%{count} projects'
+  label_project_all: Kaikki projektit
+  label_project_latest: Uusimmat projektit
+  label_issue: Tapahtuma
+  label_issue_new: Uusi tapahtuma
+  label_issue_plural: Tapahtumat
+  label_issue_view_all: Näytä kaikki tapahtumat
+  label_issues_by: Tapahtumat %{value}
+  label_document: Dokumentti
+  label_document_new: Uusi dokumentti
+  label_document_plural: Dokumentit
+  label_role: Rooli
+  label_role_plural: Roolit
+  label_role_new: Uusi rooli
+  label_role_and_permissions: Roolit ja oikeudet
+  label_member: Jäsen
+  label_member_new: Uusi jäsen
+  label_member_plural: Jäsenet
+  label_tracker: Tapahtuma
+  label_tracker_plural: Tapahtumat
+  label_tracker_new: Uusi tapahtuma
+  label_workflow: Työnkulku
+  label_issue_status: Tapahtuman tila
+  label_issue_status_plural: Tapahtumien tilat
+  label_issue_status_new: Uusi tila
+  label_issue_category: Tapahtumaluokka
+  label_issue_category_plural: Tapahtumaluokat
+  label_issue_category_new: Uusi luokka
+  label_custom_field: Räätälöity kenttä
+  label_custom_field_plural: Räätälöidyt kentät
+  label_custom_field_new: Uusi räätälöity kenttä
+  label_enumerations: Lista
+  label_enumeration_new: Uusi arvo
+  label_information: Tieto
+  label_information_plural: Tiedot
+  label_please_login: Kirjaudu ole hyvä
+  label_register: Rekisteröidy
+  label_password_lost: Hukattu salasana
+  label_home: Koti
+  label_my_page: Omasivu
+  label_my_account: Oma tili
+  label_my_projects: Omat projektit
+  label_administration: Ylläpito
+  label_login: Kirjaudu sisään
+  label_logout: Kirjaudu ulos
+  label_help: Ohjeet
+  label_reported_issues: Raportoidut tapahtumat
+  label_assigned_to_me_issues: Minulle nimetyt tapahtumat
+  label_last_login: Viimeinen yhteys
+  label_registered_on: Rekisteröity
+  label_activity: Historia
+  label_new: Uusi
+  label_logged_as: Kirjauduttu nimellä
+  label_environment: Ympäristö
+  label_authentication: Varmennus
+  label_auth_source: Varmennustapa
+  label_auth_source_new: Uusi varmennustapa
+  label_auth_source_plural: Varmennustavat
+  label_subproject_plural: Aliprojektit
+  label_min_max_length: Min - Max pituudet
+  label_list: Lista
+  label_date: Päivä
+  label_integer: Kokonaisluku
+  label_float: Liukuluku
+  label_boolean: Totuusarvomuuttuja
+  label_string: Merkkijono
+  label_text: Pitkä merkkijono
+  label_attribute: Määre
+  label_attribute_plural: Määreet
+  label_no_data: Ei tietoa näytettäväksi
+  label_change_status: Muutos tila
+  label_history: Historia
+  label_attachment: Tiedosto
+  label_attachment_new: Uusi tiedosto
+  label_attachment_delete: Poista tiedosto
+  label_attachment_plural: Tiedostot
+  label_report: Raportti
+  label_report_plural: Raportit
+  label_news: Uutinen
+  label_news_new: Lisää uutinen
+  label_news_plural: Uutiset
+  label_news_latest: Viimeisimmät uutiset
+  label_news_view_all: Näytä kaikki uutiset
+  label_settings: Asetukset
+  label_overview: Yleiskatsaus
+  label_version: Versio
+  label_version_new: Uusi versio
+  label_version_plural: Versiot
+  label_confirmation: Vahvistus
+  label_export_to: Vie
+  label_read: Lukee...
+  label_public_projects: Julkiset projektit
+  label_open_issues: avoin, yhteensä
+  label_open_issues_plural: avointa, yhteensä
+  label_closed_issues: suljettu
+  label_closed_issues_plural: suljettua
+  label_x_open_issues_abbr_on_total:
+    zero: 0 open / %{total}
+    one: 1 open / %{total}
+    other: ! '%{count} open / %{total}'
+  label_x_open_issues_abbr:
+    zero: 0 open
+    one: 1 open
+    other: ! '%{count} open'
+  label_x_closed_issues_abbr:
+    zero: 0 closed
+    one: 1 closed
+    other: ! '%{count} closed'
+  label_total: Yhteensä
+  label_total_total: ! 'Yhteensä: '
+  label_permissions: Oikeudet
+  label_current_status: Nykyinen tila
+  label_new_statuses_allowed: Uudet tilat sallittu
+  label_all: kaikki
+  label_none: ei mitään
+  label_nobody: ei kukaan
+  label_next: Seuraava
+  label_previous: Edellinen
+  label_used_by: Käytetty
+  label_details: Yksityiskohdat
+  label_add_note: Lisää muistiinpano
+  label_per_page: Per sivu
+  label_calendar: Kalenteri
+  label_months_from: kuukauden päässä
+  label_gantt: Gantt
+  label_internal: Sisäinen
+  label_last_changes: viimeiset %{count} muutokset
+  label_change_view_all: Näytä kaikki muutokset
+  label_personalize_page: Personoi tämä sivu
+  label_comment: Kommentti
+  label_comment_plural: Kommentit
+  label_x_comments:
+    zero: no comments
+    one: 1 comment
+    other: ! '%{count} comments'
+    two: 2 kommenttia
+    three: 3 kommenttia
+    four: 4 kommenttia
+  label_comment_add: Lisää kommentti
+  label_comment_added: Kommentti lisätty
+  label_comment_delete: Poista kommentti
+  label_query: Räätälöity haku
+  label_query_plural: Räätälöidyt haut
+  label_query_new: Uusi haku
+  label_filter_add: Lisää suodatin
+  label_filter_plural: Suodattimet
+  label_equals: sama kuin
+  label_not_equals: eri kuin
+  label_in_less_than: pienempi kuin
+  label_in_more_than: suurempi kuin
+  label_today: tänään
+  label_this_week: tällä viikolla
+  label_less_than_ago: vähemmän kuin päivää sitten
+  label_more_than_ago: enemän kuin päivää sitten
+  label_ago: päiviä sitten
+  label_contains: sisältää
+  label_not_contains: ei sisällä
+  label_day_plural: päivää
+  label_repository: Tietovarasto
+  label_repository_plural: Tietovarastot
+  label_browse: Selaus
+  label_revision: Versio
+  label_revision_plural: Versiot
+  label_added: lisätty
+  label_modified: muokattu
+  label_deleted: poistettu
+  label_latest_revision: Viimeisin versio
+  label_latest_revision_plural: Viimeisimmät versiot
+  label_view_revisions: Näytä versiot
+  label_max_size: Suurin koko
+  label_sort_highest: Siirrä ylimmäiseksi
+  label_sort_higher: Siirrä ylös
+  label_sort_lower: Siirrä alas
+  label_sort_lowest: Siirrä alimmaiseksi
+  label_roadmap: Roadmap
+  label_roadmap_due_in: Määräaika %{value}
+  label_roadmap_overdue: ! '%{value} myöhässä'
+  label_roadmap_no_issues: Ei tapahtumia tälle versiolle
+  label_search: Haku
+  label_result_plural: Tulokset
+  label_all_words: kaikki sanat
+  label_wiki: Wiki
+  label_wiki_edit: Wiki muokkaus
+  label_wiki_edit_plural: Wiki muokkaukset
+  label_wiki_page: Wiki sivu
+  label_wiki_page_plural: Wiki sivut
+  label_index_by_title: Hakemisto otsikoittain
+  label_index_by_date: Hakemisto päivittäin
+  label_current_version: Nykyinen versio
+  label_preview: Esikatselu
+  label_feed_plural: Syötteet
+  label_changes_details: Kaikkien muutosten yksityiskohdat
+  label_issue_tracking: Tapahtumien seuranta
+  label_spent_time: Käytetty aika
+  label_f_hour: ! '%{value} tunti'
+  label_f_hour_plural: ! '%{value} tuntia'
+  label_time_tracking: Ajan seuranta
+  label_change_plural: Muutokset
+  label_statistics: Tilastot
+  label_commits_per_month: Tapahtumaa per kuukausi
+  label_commits_per_author: Tapahtumaa per tekijä
+  label_view_diff: Näytä erot
+  label_diff_inline: sisällössä
+  label_diff_side_by_side: vierekkäin
+  label_options: Valinnat
+  label_copy_workflow_from: Kopioi työnkulku
+  label_permissions_report: Oikeuksien raportti
+  label_watched_issues: Seurattavat tapahtumat
+  label_related_issues: Liittyvät tapahtumat
+  label_applied_status: Lisätty tila
+  label_loading: Lataa...
+  label_relation_new: Uusi suhde
+  label_relation_delete: Poista suhde
+  label_relates_to: liittyy
+  label_duplicates: kopio
+  label_blocks: estää
+  label_blocked_by: estetty
+  label_precedes: edeltää
+  label_follows: seuraa
+  label_end_to_start: lopusta alkuun
+  label_end_to_end: lopusta loppuun
+  label_start_to_start: alusta alkuun
+  label_start_to_end: alusta loppuun
+  label_stay_logged_in: Pysy kirjautuneena
+  label_disabled: poistettu käytöstä
+  label_show_completed_versions: Näytä valmiit versiot
+  label_me: minä
+  label_board: Keskustelupalsta
+  label_board_new: Uusi keskustelupalsta
+  label_board_plural: Keskustelupalstat
+  label_topic_plural: Aiheet
+  label_message_plural: Viestit
+  label_message_last: Viimeisin viesti
+  label_message_new: Uusi viesti
+  label_reply_plural: Vastaukset
+  label_send_information: Lähetä tilin tiedot käyttäjälle
+  label_year: Vuosi
+  label_month: Kuukausi
+  label_week: Viikko
+  label_language_based: Pohjautuen käyttäjän kieleen
+  label_sort_by: Lajittele %{value}
+  label_send_test_email: Lähetä testi sähköposti
+  label_feeds_access_key_created_on: RSS salasana luotiin %{value} sitten
+  label_module_plural: Moduulit
+  label_updated_time: Päivitetty %{value} sitten
+  label_jump_to_a_project: Siirry projektiin...
+  label_file_plural: Tiedostot
+  label_changeset_plural: Muutosryhmät
+  label_default_columns: Vakiosarakkeet
+  label_no_change_option: (Ei muutosta)
+  label_bulk_edit_selected_issues: Perusmuotoile valitut tapahtumat
+  label_theme: Teema
+  label_default: Vakio
+  label_search_titles_only: Hae vain otsikot
+  label_user_mail_option_all: Kaikista tapahtumista kaikissa projekteistani
+  label_user_mail_option_selected: Kaikista tapahtumista vain valitsemistani projekteista...
+  label_user_mail_no_self_notified: En halua muistutusta muutoksista joita itse teen
+  label_registration_activation_by_email: tilin aktivointi sähköpostitse
+  label_registration_manual_activation: tilin aktivointi käsin
+  label_registration_automatic_activation: tilin aktivointi automaattisesti
+  label_display_per_page: ! 'Per sivu: %{value}'
+  label_age: Ikä
+  label_change_properties: Vaihda asetuksia
+  label_general: Yleinen
+  button_login: Kirjaudu
+  button_submit: Lähetä
+  button_save: Tallenna
+  button_check_all: Valitse kaikki
+  button_uncheck_all: Poista valinnat
+  button_delete: Poista
+  button_create: Luo
+  button_test: Testaa
+  button_edit: Muokkaa
+  button_add: Lisää
+  button_change: Muuta
+  button_apply: Ota käyttöön
+  button_clear: Tyhjää
+  button_lock: Lukitse
+  button_unlock: Vapauta
+  button_download: Lataa
+  button_list: Lista
+  button_view: Näytä
+  button_move: Siirrä
+  button_back: Takaisin
+  button_cancel: Peruuta
+  button_activate: Aktivoi
+  button_sort: Järjestä
+  button_log_time: Seuraa aikaa
+  button_rollback: Siirry takaisin tähän versioon
+  button_watch: Seuraa
+  button_unwatch: Älä seuraa
+  button_reply: Vastaa
+  button_archive: Arkistoi
+  button_unarchive: Palauta
+  button_reset: Nollaus
+  button_rename: Uudelleen nimeä
+  button_change_password: Vaihda salasana
+  button_copy: Kopioi
+  button_annotate: Lisää selitys
+  button_update: Päivitä
+  status_active: aktiivinen
+  status_registered: rekisteröity
+  status_locked: lukittu
+  text_select_mail_notifications: Valitse tapahtumat joista tulisi lähettää sähköpostimuistutus.
+  text_regexp_info: esim. ^[A-Z0-9]+$
+  text_min_max_length_info: 0 tarkoittaa, ei rajoitusta
+  text_project_destroy_confirmation: Oletko varma että haluat poistaa tämän projektin
+    ja kaikki siihen kuuluvat tiedot?
+  text_workflow_edit: Valitse rooli ja tapahtuma muokataksesi työnkulkua
+  text_are_you_sure: Oletko varma?
+  text_tip_issue_begin_day: tehtävä joka alkaa tänä päivänä
+  text_tip_issue_end_day: tehtävä joka loppuu tänä päivänä
+  text_tip_issue_begin_end_day: tehtävä joka alkaa ja loppuu tänä päivänä
+  text_caracters_maximum: ! '%{count} merkkiä enintään.'
+  text_caracters_minimum: Täytyy olla vähintään %{count} merkkiä pitkä.
+  text_length_between: Pituus välillä %{min} ja %{max} merkkiä.
+  text_tracker_no_workflow: Työnkulkua ei määritelty tälle tapahtumalle
+  text_unallowed_characters: Kiellettyjä merkkejä
+  text_comma_separated: Useat arvot sallittu (pilkku eroteltuna).
+  text_issues_ref_in_commit_messages: Liitän ja korjaan ongelmia syötetyssä viestissä
+  text_issue_added: Issue %{id} has been reported by %{author}.
+  text_issue_updated: Issue %{id} has been updated by %{author}.
+  text_wiki_destroy_confirmation: Oletko varma että haluat poistaa tämän wiki:n ja
+    kaikki sen sisältämän tiedon?
+  text_issue_category_destroy_question: Jotkut tapahtumat (%{count}) ovat nimetty
+    tälle luokalle. Mitä haluat tehdä?
+  text_issue_category_destroy_assignments: Poista luokan tehtävät
+  text_issue_category_reassign_to: Vaihda tapahtuma tähän luokkaan
+  text_user_mail_option: Valitsemattomille projekteille, saat vain muistutuksen asioista
+    joita seuraat tai olet mukana (esim. tapahtumat joissa olet tekijä tai nimettynä).
+  text_no_configuration_data: ! 'Rooleja, tapahtumien tiloja ja työnkulkua ei vielä
+    olla määritelty.
+
+    On erittäin suotavaa ladata vakioasetukset. Voit muuttaa sitä latauksen jälkeen.'
+  text_load_default_configuration: Lataa vakioasetukset
+  default_role_manager: Päälikkö
+  default_role_developer: Kehittäjä
+  default_role_reporter: Tarkastelija
+  default_tracker_bug: Ohjelmointivirhe
+  default_tracker_feature: Ominaisuus
+  default_tracker_support: Tuki
+  default_issue_status_new: Uusi
+  default_issue_status_in_progress: In Progress
+  default_issue_status_resolved: Hyväksytty
+  default_issue_status_feedback: Palaute
+  default_issue_status_closed: Suljettu
+  default_issue_status_rejected: Hylätty
+  default_doc_category_user: Käyttäjä dokumentaatio
+  default_doc_category_tech: Tekninen dokumentaatio
+  default_priority_low: Matala
+  default_priority_normal: Normaali
+  default_priority_high: Korkea
+  default_priority_urgent: Kiireellinen
+  default_priority_immediate: Valitön
+  default_activity_design: Suunnittelu
+  default_activity_development: Kehitys
+  enumeration_issue_priorities: Tapahtuman tärkeysjärjestys
+  enumeration_doc_categories: Dokumentin luokat
+  enumeration_activities: Historia (ajan seuranta)
+  label_associated_revisions: Liittyvät versiot
+  setting_user_format: Käyttäjien esitysmuoto
+  text_status_changed_by_changeset: Päivitetty muutosversioon %{value}.
+  text_issues_destroy_confirmation: Oletko varma että haluat poistaa valitut tapahtumat
+    ?
+  label_more: Lisää
+  label_issue_added: Tapahtuma lisätty
+  label_issue_updated: Tapahtuma päivitetty
+  label_document_added: Dokumentti lisätty
+  label_message_posted: Viesti lisätty
+  label_file_added: Tiedosto lisätty
+  label_scm: SCM
+  text_select_project_modules: ! 'Valitse modulit jotka haluat käyttöön tähän projektiin:'
+  label_news_added: Uutinen lisätty
+  project_module_boards: Keskustelupalsta
+  project_module_issue_tracking: Tapahtuman seuranta
+  project_module_wiki: Wiki
+  project_module_files: Tiedostot
+  project_module_documents: Dokumentit
+  project_module_repository: Tietovarasto
+  project_module_news: Uutiset
+  project_module_time_tracking: Ajan seuranta
+  text_file_repository_writable: Kirjoitettava tiedostovarasto
+  text_default_administrator_account_changed: Vakio hallinoijan tunnus muutettu
+  text_rmagick_available: RMagick saatavilla (valinnainen)
+  button_configure: Asetukset
+  label_plugins: Lisäosat
+  label_ldap_authentication: LDAP tunnistautuminen
+  label_downloads_abbr: D/L
+  label_add_another_file: Lisää uusi tiedosto
+  label_this_month: tässä kuussa
+  text_destroy_time_entries_question: ! '%{hours} tuntia on raportoitu tapahtumasta
+    jonka aiot poistaa. Mitä haluat tehdä ?'
+  label_last_n_days: viimeiset %{count} päivää
+  label_all_time: koko ajalta
+  error_issue_not_found_in_project: Tapahtumaa ei löytynyt tai se ei kuulu tähän projektiin
+  label_this_year: tänä vuonna
+  text_assign_time_entries_to_project: Määritä tunnit projektille
+  label_date_range: Aikaväli
+  label_last_week: viime viikolla
+  label_yesterday: eilen
+  label_optional_description: Lisäkuvaus
+  label_last_month: viime kuussa
+  text_destroy_time_entries: Poista raportoidut tunnit
+  text_reassign_time_entries: ! 'Siirrä raportoidut tunnit tälle tapahtumalle:'
+  label_chronological_order: Aikajärjestyksessä
+  label_date_to: ''
+  setting_activity_days_default: Päivien esittäminen projektien historiassa
+  label_date_from: ''
+  label_in: ''
+  setting_display_subprojects_issues: Näytä aliprojektien tapahtumat pääprojektissa
+    oletusarvoisesti
+  field_comments_sorting: Näytä kommentit
+  label_reverse_chronological_order: Käänteisessä aikajärjestyksessä
+  label_preferences: Asetukset
+  setting_default_projects_public: Uudet projektit ovat oletuksena julkisia
+  label_overall_activity: Kokonaishistoria
+  error_scm_annotate: Merkintää ei ole tai siihen ei voi lisätä selityksiä.
+  label_planning: Suunnittelu
+  text_subprojects_destroy_warning: ! 'Tämän aliprojekti(t): %{value} tullaan myös
+    poistamaan.'
+  label_and_its_subprojects: ! '%{value} ja aliprojektit'
+  mail_body_reminder: ! '%{count} sinulle nimettyä tapahtuma(a) erääntyy %{days} päivä
+    sisään:'
+  mail_subject_reminder: ! '%{count} tapahtuma(a) erääntyy %{days} lähipäivinä'
+  text_user_wrote: ! '%{value} kirjoitti:'
+  label_duplicated_by: kopioinut
+  setting_enabled_scm: Versionhallinta käytettävissä
+  text_enumeration_category_reassign_to: ! 'Siirrä täksi arvoksi:'
+  text_enumeration_destroy_question: ! '%{count} kohdetta on sijoitettu tälle arvolle.'
+  label_incoming_emails: Saapuvat sähköpostiviestit
+  label_generate_key: Luo avain
+  setting_mail_handler_api_enabled: Ota käyttöön WS saapuville sähköposteille
+  setting_mail_handler_api_key: API avain
+  text_email_delivery_not_configured: ! 'Sähköpostin jakelu ei ole määritelty ja sähköpostimuistutukset
+    eivät ole käytössä.
+
+    Konfiguroi sähköpostipalvelinasetukset (SMTP) config/configuration.yml tiedostosta
+    ja uudelleenkäynnistä sovellus jotta asetukset astuvat voimaan.'
+  field_parent_title: Aloitussivu
+  label_issue_watchers: Tapahtuman seuraajat
+  button_quote: Vastaa
+  setting_sequential_project_identifiers: Luo peräkkäiset projektien tunnisteet
+  notice_unable_delete_version: Version poisto epäonnistui
+  label_renamed: uudelleennimetty
+  label_copied: kopioitu
+  setting_plain_text_mail: vain muotoilematonta tekstiä (ei HTML)
+  permission_view_files: Näytä tiedostot
+  permission_edit_issues: Muokkaa tapahtumia
+  permission_edit_own_time_entries: Muokka omia aikamerkintöjä
+  permission_manage_public_queries: Hallinnoi julkisia hakuja
+  permission_add_issues: Lisää tapahtumia
+  permission_log_time: Lokita käytettyä aikaa
+  permission_view_changesets: Näytä muutosryhmät
+  permission_view_time_entries: Näytä käytetty aika
+  permission_manage_versions: Hallinnoi versioita
+  permission_manage_wiki: Hallinnoi wikiä
+  permission_manage_categories: Hallinnoi tapahtumien luokkia
+  permission_protect_wiki_pages: Suojaa wiki sivut
+  permission_comment_news: Kommentoi uutisia
+  permission_delete_messages: Poista viestit
+  permission_select_project_modules: Valitse projektin modulit
+  permission_edit_wiki_pages: Muokkaa wiki sivuja
+  permission_add_issue_watchers: Lisää seuraajia
+  permission_view_gantt: Näytä gantt kaavio
+  permission_move_issues: Siirrä tapahtuma
+  permission_manage_issue_relations: Hallinoi tapahtuman suhteita
+  permission_delete_wiki_pages: Poista wiki sivuja
+  permission_manage_boards: Hallinnoi keskustelupalstaa
+  permission_delete_wiki_pages_attachments: Poista liitteitä
+  permission_view_wiki_edits: Näytä wiki historia
+  permission_add_messages: Jätä viesti
+  permission_view_messages: Näytä viestejä
+  permission_manage_files: Hallinnoi tiedostoja
+  permission_edit_issue_notes: Muokkaa muistiinpanoja
+  permission_manage_news: Hallinnoi uutisia
+  permission_view_calendar: Näytä kalenteri
+  permission_manage_members: Hallinnoi jäseniä
+  permission_edit_messages: Muokkaa viestejä
+  permission_delete_issues: Poista tapahtumia
+  permission_view_issue_watchers: Näytä seuraaja lista
+  permission_manage_repository: Hallinnoi tietovarastoa
+  permission_commit_access: Tee pääsyoikeus
+  permission_browse_repository: Selaa tietovarastoa
+  permission_view_documents: Näytä dokumentit
+  permission_edit_project: Muokkaa projektia
+  permission_add_issue_notes: Lisää muistiinpanoja
+  permission_save_queries: Tallenna hakuja
+  permission_view_wiki_pages: Näytä wiki
+  permission_rename_wiki_pages: Uudelleennimeä wiki sivuja
+  permission_edit_time_entries: Muokkaa aika lokeja
+  permission_edit_own_issue_notes: Muokkaa omia muistiinpanoja
+  setting_gravatar_enabled: Käytä Gravatar käyttäjä ikoneita
+  label_example: Esimerkki
+  text_repository_usernames_mapping: ! 'Valitse päivittääksesi Redmine käyttäjä jokaiseen
+    käyttäjään joka löytyy tietovaraston lokista.
+
+    Käyttäjät joilla on sama Redmine ja tietovaraston käyttäjänimi tai sähköpostiosoite,
+    yhdistetään automaattisesti.'
+  permission_edit_own_messages: Muokkaa omia viestejä
+  permission_delete_own_messages: Poista omia viestejä
+  label_user_activity: Käyttäjän %{value} historia
+  label_updated_time_by: Updated by %{author} %{age} ago
+  text_diff_truncated: ! '... This diff was truncated because it exceeds the maximum
+    size that can be displayed.'
+  setting_diff_max_lines_displayed: Max number of diff lines displayed
+  text_plugin_assets_writable: Plugin assets directory writable
+  warning_attachments_not_saved: ! '%{count} file(s) could not be saved.'
+  button_create_and_continue: Create and continue
+  text_custom_field_possible_values_info: One line for each value
+  label_display: Display
+  field_editable: Editable
+  setting_repository_log_display_limit: Maximum number of revisions displayed on file
+    log
+  setting_file_max_size_displayed: Max size of text files displayed inline
+  field_watcher: Watcher
+  setting_openid: Allow OpenID login and registration
+  field_identity_url: OpenID URL
+  label_login_with_open_id_option: or login with OpenID
+  field_content: Content
+  label_descending: Descending
+  label_sort: Sort
+  label_ascending: Ascending
+  label_date_from_to: From %{start} to %{end}
+  label_greater_or_equal: ! '>='
+  label_less_or_equal: <=
+  text_wiki_page_destroy_question: This page has %{descendants} child page(s) and
+    descendant(s). What do you want to do?
+  text_wiki_page_reassign_children: Reassign child pages to this parent page
+  text_wiki_page_nullify_children: Keep child pages as root pages
+  text_wiki_page_destroy_children: Delete child pages and all their descendants
+  setting_password_min_length: Minimum password length
+  field_group_by: Group results by
+  mail_subject_wiki_content_updated: ! '''%{id}'' wiki page has been updated'
+  label_wiki_content_added: Wiki page added
+  mail_subject_wiki_content_added: ! '''%{id}'' wiki page has been added'
+  mail_body_wiki_content_added: The '%{id}' wiki page has been added by %{author}.
+  label_wiki_content_updated: Wiki page updated
+  mail_body_wiki_content_updated: The '%{id}' wiki page has been updated by %{author}.
+  permission_add_project: Create project
+  setting_new_project_user_role_id: Role given to a non-admin user who creates a project
+  label_view_all_revisions: View all revisions
+  label_tag: Tag
+  label_branch: Branch
+  error_no_tracker_in_project: No tracker is associated to this project. Please check
+    the Project settings.
+  error_no_default_issue_status: No default issue status is defined. Please check
+    your configuration (Go to "Administration -> Issue statuses").
+  text_journal_changed: ! '%{label} changed from %{old} to %{new}'
+  text_journal_set_to: ! '%{label} set to %{value}'
+  text_journal_deleted: ! '%{label} deleted (%{old})'
+  label_group_plural: Groups
+  label_group: Group
+  label_group_new: New group
+  label_time_entry_plural: Spent time
+  text_journal_added: ! '%{label} %{value} added'
+  field_active: Active
+  enumeration_system_activity: System Activity
+  permission_delete_issue_watchers: Delete watchers
+  version_status_closed: closed
+  version_status_locked: locked
+  version_status_open: open
+  error_can_not_reopen_issue_on_closed_version: An issue assigned to a closed version
+    can not be reopened
+  label_user_anonymous: Anonymous
+  button_move_and_follow: Move and follow
+  setting_default_projects_modules: Default enabled modules for new projects
+  setting_gravatar_default: Default Gravatar image
+  field_sharing: Sharing
+  label_version_sharing_hierarchy: With project hierarchy
+  label_version_sharing_system: With all projects
+  label_version_sharing_descendants: With subprojects
+  label_version_sharing_tree: With project tree
+  label_version_sharing_none: Not shared
+  error_can_not_archive_project: This project can not be archived
+  button_duplicate: Duplicate
+  button_copy_and_follow: Copy and follow
+  label_copy_source: Source
+  setting_issue_done_ratio: Calculate the issue done ratio with
+  setting_issue_done_ratio_issue_status: Use the issue status
+  error_issue_done_ratios_not_updated: Issue done ratios not updated.
+  error_workflow_copy_target: Please select target tracker(s) and role(s)
+  setting_issue_done_ratio_issue_field: Use the issue field
+  label_copy_same_as_target: Same as target
+  label_copy_target: Target
+  notice_issue_done_ratios_updated: Issue done ratios updated.
+  error_workflow_copy_source: Please select a source tracker or role
+  label_update_issue_done_ratios: Update issue done ratios
+  setting_start_of_week: Start calendars on
+  permission_view_issues: View Issues
+  label_display_used_statuses_only: Only display statuses that are used by this tracker
+  label_revision_id: Revision %{value}
+  label_api_access_key: API access key
+  label_api_access_key_created_on: API access key created %{value} ago
+  label_feeds_access_key: RSS access key
+  notice_api_access_key_reseted: Your API access key was reset.
+  setting_rest_api_enabled: Enable REST web service
+  label_missing_api_access_key: Missing an API access key
+  label_missing_feeds_access_key: Missing a RSS access key
+  button_show: Show
+  text_line_separated: Multiple values allowed (one line for each value).
+  setting_mail_handler_body_delimiters: Truncate emails after one of these lines
+  permission_add_subprojects: Create subprojects
+  label_subproject_new: New subproject
+  text_own_membership_delete_confirmation: ! 'You are about to remove some or all
+    of your permissions and may no longer be able to edit this project after that.
+
+    Are you sure you want to continue?'
+  label_close_versions: Close completed versions
+  label_board_sticky: Sticky
+  label_board_locked: Locked
+  permission_export_wiki_pages: Export wiki pages
+  setting_cache_formatted_text: Cache formatted text
+  permission_manage_project_activities: Manage project activities
+  error_unable_delete_issue_status: Unable to delete issue status
+  label_profile: Profile
+  permission_manage_subtasks: Manage subtasks
+  field_parent_issue: Parent task
+  label_subtask_plural: Subtasks
+  label_project_copy_notifications: Send email notifications during the project copy
+  error_can_not_delete_custom_field: Unable to delete custom field
+  error_unable_to_connect: Unable to connect (%{value})
+  error_can_not_remove_role: This role is in use and can not be deleted.
+  error_can_not_delete_tracker: This tracker contains issues and can't be deleted.
+  field_principal: Principal
+  label_my_page_block: My page block
+  notice_failed_to_save_members: ! 'Failed to save member(s): %{errors}.'
+  text_zoom_out: Zoom out
+  text_zoom_in: Zoom in
+  notice_unable_delete_time_entry: Unable to delete time log entry.
+  label_overall_spent_time: Overall spent time
+  field_time_entries: Log time
+  project_module_gantt: Gantt
+  project_module_calendar: Calendar
+  button_edit_associated_wikipage: ! 'Edit associated Wiki page: %{page_title}'
+  field_text: Text field
+  label_user_mail_option_only_owner: Only for things I am the owner of
+  setting_default_notification_option: Default notification option
+  label_user_mail_option_only_my_events: Only for things I watch or I'm involved in
+  label_user_mail_option_only_assigned: Only for things I am assigned to
+  label_user_mail_option_none: No events
+  field_member_of_group: Assignee's group
+  field_assigned_to_role: Assignee's role
+  notice_not_authorized_archived_project: The project you're trying to access has
+    been archived.
+  label_principal_search: ! 'Search for user or group:'
+  label_user_search: ! 'Search for user:'
+  field_visible: Visible
+  setting_emails_header: Emails header
+  setting_commit_logtime_activity_id: Activity for logged time
+  text_time_logged_by_changeset: Applied in changeset %{value}.
+  setting_commit_logtime_enabled: Enable time logging
+  notice_gantt_chart_truncated: The chart was truncated because it exceeds the maximum
+    number of items that can be displayed (%{max})
+  setting_gantt_items_limit: Maximum number of items displayed on the gantt chart
+  field_warn_on_leaving_unsaved: Warn me when leaving a page with unsaved text
+  text_warn_on_leaving_unsaved: The current page contains unsaved text that will be
+    lost if you leave this page.
+  label_my_queries: My custom queries
+  text_journal_changed_no_detail: ! '%{label} updated'
+  label_news_comment_added: Comment added to a news
+  button_expand_all: Expand all
+  button_collapse_all: Collapse all
+  label_additional_workflow_transitions_for_assignee: Additional transitions allowed
+    when the user is the assignee
+  label_additional_workflow_transitions_for_author: Additional transitions allowed
+    when the user is the author
+  label_bulk_edit_selected_time_entries: Bulk edit selected time entries
+  text_time_entries_destroy_confirmation: Are you sure you want to delete the selected
+    time entr(y/ies)?
+  label_role_anonymous: Anonymous
+  label_role_non_member: Non member
+  label_issue_note_added: Note added
+  label_issue_status_updated: Status updated
+  label_issue_priority_updated: Priority updated
+  label_issues_visibility_own: Issues created by or assigned to the user
+  field_issues_visibility: Issues visibility
+  label_issues_visibility_all: All issues
+  permission_set_own_issues_private: Set own issues public or private
+  field_is_private: Private
+  permission_set_issues_private: Set issues public or private
+  label_issues_visibility_public: All non private issues
+  text_issues_destroy_descendants_confirmation: This will also delete %{count} subtask(s).
+  field_commit_logs_encoding: Tee viestien koodaus
+  field_scm_path_encoding: Path encoding
+  text_scm_path_encoding_note: ! 'Default: UTF-8'
+  field_path_to_repository: Path to repository
+  field_root_directory: Root directory
+  field_cvs_module: Module
+  field_cvsroot: CVSROOT
+  text_mercurial_repository_note: Local repository (e.g. /hgrepo, c:\hgrepo)
+  text_scm_command: Command
+  text_scm_command_version: Version
+  label_git_report_last_commit: Report last commit for files and directories
+  text_scm_config: You can configure your scm commands in config/configuration.yml.
+    Please restart the application after editing it.
+  text_scm_command_not_available: Scm command is not available. Please check settings
+    on the administration panel.
+  notice_issue_successful_create: Issue %{id} created.
+  label_between: between
+  setting_issue_group_assignment: Allow issue assignment to groups
+  label_diff: diff
+  text_git_repository_note: Repository is bare and local (e.g. /gitrepo, c:\gitrepo)
+  description_query_sort_criteria_direction: Sort direction
+  description_project_scope: Search scope
+  description_filter: Filter
+  description_user_mail_notification: Mail notification settings
+  description_date_from: Enter start date
+  description_message_content: Message content
+  description_available_columns: Available Columns
+  description_date_range_interval: Choose range by selecting start and end date
+  description_issue_category_reassign: Choose issue category
+  description_search: Searchfield
+  description_notes: Notes
+  description_date_range_list: Choose range from list
+  description_choose_project: Projects
+  description_date_to: Enter end date
+  description_query_sort_criteria_attribute: Sort attribute
+  description_wiki_subpages_reassign: Choose new parent page
+  description_selected_columns: Selected Columns
+  label_parent_revision: Parent
+  label_child_revision: Child
+  error_scm_annotate_big_text_file: The entry cannot be annotated, as it exceeds the
+    maximum text file size.
+  setting_default_issue_start_date_to_creation_date: Use current date as start date
+    for new issues
+  button_edit_section: Edit this section
+  setting_repositories_encodings: Attachments and repositories encodings
+  description_all_columns: All Columns
+  button_export: Export
+  label_export_options: ! '%{export_format} export options'
+  error_attachment_too_big: This file cannot be uploaded because it exceeds the maximum
+    allowed file size (%{max_size})
+  notice_failed_to_save_time_entries: ! 'Failed to save %{count} time entrie(s) on
+    %{total} selected: %{ids}.'
+  label_x_issues:
+    zero: 0 tapahtuma
+    one: 1 tapahtuma
+    other: ! '%{count} tapahtumat'
+  label_repository_new: New repository
+  field_repository_is_default: Main repository
+  label_copy_attachments: Copy attachments
+  label_item_position: ! '%{position}/%{count}'
+  label_completed_versions: Completed versions
+  text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
+    underscores are allowed.<br />Once saved, the identifier cannot be changed.
+  field_multiple: Multiple values
+  setting_commit_cross_project_ref: Allow issues of all the other projects to be referenced
+    and fixed
+  text_issue_conflict_resolution_add_notes: Add my notes and discard my other changes
+  text_issue_conflict_resolution_overwrite: Apply my changes anyway (previous notes
+    will be kept but some changes may be overwritten)
+  notice_issue_update_conflict: The issue has been updated by an other user while
+    you were editing it.
+  text_issue_conflict_resolution_cancel: Discard all my changes and redisplay %{link}
+  permission_manage_related_issues: Manage related issues
+  field_auth_source_ldap_filter: LDAP filter
+  label_search_for_watchers: Search for watchers to add
+  notice_account_deleted: Your account has been permanently deleted.
+  setting_unsubscribe: Allow users to delete their own account
+  button_delete_my_account: Delete my account
+  text_account_destroy_confirmation: ! 'Are you sure you want to proceed?
+
+    Your account will be permanently deleted, with no way to reactivate it.'
+  error_session_expired: Your session has expired. Please login again.
+  text_session_expiration_settings: ! 'Warning: changing these settings may expire
+    the current sessions including yours.'
+  setting_session_lifetime: Session maximum lifetime
+  setting_session_timeout: Session inactivity timeout
+  label_session_expiration: Session expiration
+  permission_close_project: Close / reopen the project
+  label_show_closed_projects: View closed projects
+  button_close: Close
+  button_reopen: Reopen
+  project_status_active: active
+  project_status_closed: closed
+  project_status_archived: archived
+  text_project_closed: This project is closed and read-only.
+  notice_user_successful_create: User %{id} created.
+  field_core_fields: Standard fields
+  field_timeout: Timeout (in seconds)
+  setting_thumbnails_enabled: Display attachment thumbnails
+  setting_thumbnails_size: Thumbnails size (in pixels)
+  label_status_transitions: Status transitions
+  label_fields_permissions: Fields permissions
+  label_readonly: Read-only
+  label_required: Required
+  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes
+    and underscores are allowed.<br />Once saved, the identifier cannot be changed.
+  field_board_parent: Parent forum
+  label_attribute_of_project: Project's %{name}
+  label_attribute_of_author: Author's %{name}
+  label_attribute_of_assigned_to: Assignee's %{name}
+  label_attribute_of_fixed_version: Target version's %{name}
+  label_copy_subtasks: Copy subtasks
+  label_copied_to: copied to
+  label_copied_from: copied from
+  label_any_issues_in_project: any issues in project
+  label_any_issues_not_in_project: any issues not in project
+  field_private_notes: Private notes
+  permission_view_private_notes: View private notes
+  permission_set_notes_private: Set notes as private
+  label_no_issues_in_project: no issues in project
+  label_any: kaikki
+  label_last_n_weeks: last %{count} weeks
+  setting_cross_project_subtasks: Allow cross-project subtasks
+  label_cross_project_descendants: With subprojects
+  label_cross_project_tree: With project tree
+  label_cross_project_hierarchy: With project hierarchy
+  label_cross_project_system: With all projects
+  button_hide: Hide
+  setting_non_working_week_days: Non-working days
+  label_in_the_next_days: in the next
+  label_in_the_past_days: in the past
+  error_can_not_delete_auth_source: Tämä todennus lähde on käytössä ja ei voi poistaa.
+  field_versions: Virstanpylväät
+  field_issue_to_id: Liittyvä tehtävä
+  permission_view_news: Katso uutiset
+  permission_view_easy_attendances: Tarkastele ja käytä viestitaulu
+  permission_edit_easy_attendances: Muokkaa kirjaa aluksella
+  permission_view_project_overview_users_query: Näytä hankkeen overvie käyttäjiä Filer
+  label_no_change: Ei muutosta
+  label_change_to: ! 'Vaihda:'
+  option_only_selected: Vain valitut
+  text_milestone_effective_date_from_issue: ! 'Voimaantulo säädä muotoa tehtävän:
+    #%{issue}'
+  easyproject_name: EASY PROJECT 2013
+  easyproject_author: Easy Software
+  easyproject_author_url: http://www.easyproject.cz/en
+  easyproject_description: Johdon tietojärjestelmä projektinhallintaan.
+  project_module_easy_other_permissions: Muut
+  permission_create_project_from_template: Luo projekti mallin
+  permission_create_project_template: Luo malli projektista
+  permission_edit_project_template: Muokkaa projektin mallia
+  permission_delete_project_template: Poista projekti malli
+  permission_view_project_activity: Hanketoimintaa näkymä
+  permission_view_project_report: Projektin tilastotieto näkymä
+  permission_action_duplicate_issue: Monista tehtävä
+  permission_edit_own_issue: Omat tehtävänsä muokata
+  permission_view_restrictions_users: Näytä kommentit valikoiduille käyttäjille
+  permission_view_personal_statement: Katso henkilökohtaisen lausuman
+  permission_view_all_statements: Katso ilmoitus kaikille käyttäjille
+  permission_manage_page_project_overview: Hallitse hanke yleiskatsaus
+  permission_supervisor: Hallitse hanke, jossa ei ole jäsen
+  permission_archive_project: Arkisto hanke
+  permission_copy_project: Kopioi projekti
+  permission_manage_my_page: Muokkaa sivuni
+  permission_view_bulk_time_entry: Bulk aika merkintä
+  permission_manage_bulk_version: Bulk versio hallinta
+  permission_manage_easy_project_relations: Hallitse hanke suhteet
+  permission_manage_easy_version_relations: Hallitse versio suhteet
+  permission_edit_issue_fixed_activity: Muutos aktiivisuutta, joka liittyy kiinteän
+    tehtävän
+  permission_view_easy_attendances_extra_info: Näytä extra info (User IP, ...)
+  permission_edit_own_easy_attendances: Muokkaa omia käyntejä
+  permission_view_easy_attendance_other_users: Katso osallistuminen muiden käyttäjien
+  heading_easy_user_working_time_calendar_index: Kalenterilistaltasi - työajan
+  heading_easy_user_working_time_calendar_show: Kalenteri %{calendarname}
+  heading_easy_user_working_time_calendar_edit: Muokkaa perus määritteitä kalenteri
+  heading_easy_user_working_time_calendar_new: Uusi kalenteri
+  heading_easy_user_working_time_calendars_holiday_index: Holidays indeksi
+  heading_easy_user_working_time_calendars_holiday_edit: Muokkaa loma
+  heading_easy_user_working_time_calendars_holiday_new: Uudet loma
+  heading_layout_from_template_selecting_projects: Hankkeiden valinta soveltamista
+    mallin
+  heading_layout_from_template_selecting_users: Valinta käyttäjille soveltamista mallin
+  heading_project_mass_copy_select_source_project: Valitse lähdekoodin projekti
+  heading_project_mass_copy_select_target_projects: Valitse kohdehankkeista
+  heading_project_mass_copy_select_actions: Valitse toiminnot, jotka voit kopioida
+  heading_easy_issues_preview_external_email: Lähetä ulkoinen mail
+  label_simple_add_project_task: Hankkeet
+  label_simple_add_project_task_on_project: Osahankkeet
+  label_done: tehty
+  label_issue_due_date: Aika eräpäivä
+  label_show_user_info: Näytä inforamtions noin %{username}.
+  label_show_assigned_issues: Näytä tehtävät käyttäjälle %{username}.
+  label_budget_draw: Budjetti Draw
+  label_user_new_issue: Luo uusi tehtävä käyttäjälle %{username}.
+  label_user_saved_query: Näytä käyttäjän suodatin %{queryname}.
+  label_show_project_info: Näytä projektin tiedot %{projectname}.
+  label_show_issue_info: Näytä tehtävän %{issuename} yksityiskohtia.
+  label_templates_plural: Projektin mallit
+  label_news_unread: Lukemattomat uutiset
+  label_new_project_name: Uusi projekti nimi
+  label_template_new: Uusi projekti malli
+  label_easy_page_module_settings_missing: Pyydän, tallenna moduuli uudelleen.
+  label_my_page_project_query_select: ! 'Tallennetut suodattimet:'
+  label_my_page_issue_query_select: ! 'Tallennetut suodattimet:'
+  label_my_page_user_query_select: ! 'Tallennetut suodattimet:'
+  label_my_page_project_output_select: ! 'Tulostusmuoto:'
+  label_my_page_issue_output_select: ! 'Tulostusmuoto:'
+  label_my_page_user_output_select: ! 'Tulostusmuoto:'
+  label_my_page_issue_query: Tallennetut suodattimet
+  label_my_page_issue_query_new_before: Voit luoda uusi suodatin tehtäväluettelossa
+    tai
+  label_my_page_issue_query_new_link: täällä
+  label_my_page_issue_query_new_after: .
+  label_my_page_projects_row_count: ! 'Hankkeiden määrä:'
+  label_my_page_issue_row_count: ! 'Useita tehtäviä:'
+  label_my_page_document_row_count: ! 'Asiakirjojen määrä:'
+  label_my_page_users_row_count: ! 'Käyttäjien määrä:'
+  label_my_page_news_row_count: ! 'Lukumäärä uutisia:'
+  label_my_page_users_filter_visible: ! 'Näytä lisää hakutoimintoja hankkeen yleiskatsaus:'
+  label_my_page_issue_enable_text_editor: ! 'Ota tekstieditori:'
+  label_my_page_issue_show_fields_option_part1: Näyttää
+  label_my_page_issue_show_fields_option_part2: lomakekentät.
+  label_my_page_projects_query_settings_missing: Pyydän, korjaa Modul asetus.
+  label_my_page_projects_query_select: ! 'Tallennetut suodattimet:'
+  label_my_page_document_query_select: ! 'Tallennetut suodattimet:'
+  label_my_page_projects_query: Tallennetut suodattimet
+  label_my_page_projects_query_new_before: Voit luoda uuden suodattimen hankkeen luetteloon
+    tai
+  label_my_page_projects_query_new_link: täällä
+  label_my_page_projects_query_new_after: .
+  label_my_page_issues_rss_reader: Tehtävät toiselta palvelimelta
+  label_my_page_issues_rss_reader_url: ! 'Lähde:'
+  label_my_page_issues_rss_reader_row_limit: ! 'Lineage:'
+  label_my_page_issues_rss_reader_loading: Odota, lastaus tietoja.
+  label_my_page_google_maps_iframe_tag: HTML embeded tag
+  label_version_show_closed_issues: Näytäsuljetut tehtäviä.
+  label_easy_pages_project_administration: Sivut personointi
+  label_easy_pages: Luettelo sivujen muokata
+  label_easy_page_zone: vyöhyke
+  label_easy_page_zones: vyöhykkeiden sivulla %{pagename}
+  label_easy_page_new: uusi sivu
+  label_easy_page_edit: muokkaa sivua
+  label_easy_page_zones_view: Page alueet yleiskatsaus
+  label_easy_page_zone_new: vyöhyke
+  label_easy_page_zone_edit: edit vyöhyke
+  label_easy_page_zone_show: Näytä vyöhyke %{zonename}
+  label_easy_page_modules: moduulit vyöhykkeellä
+  label_easy_page_user_modules: Moduulit sivulla %{pagename}
+  label_personalize_user_page: Muokkaa tai lisää moduuleja
+  label_personalize_user_page_from_layout: Korvataanko sivun oletusasetusta.
+  label_easy_page_templates: Luettelo malleja sivulla %{pagename}
+  label_easy_page_templates_new: Uusi malli
+  label_easy_page_template_new: Uusi sivupohja %{pagename}
+  label_easy_page_template_edit: Sivun mallipohjan muokkaus %{pagename}
+  label_easy_page_user_layout_modules: Moduulit asettelu sivulla
+  label_easy_page_template_user_modules: Moduulit layout template %{templatename}
+  label_easy_page_template_show: Moduulit layout
+  label_select_page_template: ! 'Valitse sivun malli:'
+  label_select_my_page_template: Valitse sivuni malli
+  label_easy_page_zones_new_assignments: Lisää vyöhyke sivulle
+  label_easy_page_assign_zone: Lisää vyöhyke asettelun %{pagename}
+  label_select_page_assign_zone: ! 'Valitse alue:'
+  label_easy_page_no_zones: Ei määriteltyjä vyöhykkeitä.
+  label_easy_page_no_pages: Sivut muokata ole määritelty.
+  label_easy_page_module_select: ! 'Valitse moduuli luettelosta:'
+  label_user_my_page: Oma sivu
+  label_project_custom_fields: Projektin mukautetut kentät
+  label_project_no_custom_fields: Ei projektin mukautettuja kenttiä.
+  label_easy_page_module_empty: Moduuli %{modulename} ei esitetty malli. Lisää tietylle
+    sivulle sen korjaamiseksi.
+  label_easy_page_module_missing: Modul %{modulename} ei voida osoittaa, koska ei
+    ole olemassa.
+  label_project_templates_update_dates: Päivitä kaikki projektin tiedot acording hankkeen
+    aloituspäivää.
+  label_user_saved_projectquery: Näytä käyttäjän suodatin %{queryname}.
+  label_new_project_from_template: Uusi projekti malli
+  label_easy_my_page_template_to_all: Levitä mallia kaikille käyttäjille
+  label_custom_field_computed_string: Laskettu kenttä - Text
+  label_custom_field_computed_integer: Laskettu kenttä - Kokonaisluku
+  label_custom_field_computed_float: Laskettu kenttä - desimaaliluvun
+  label_custom_field_computed_date: Laskettu kenttä - Päivämäärä
+  label_custom_field_computed_boolean: Laskettu kenttä - Kyllä / Ei
+  label_my_page_timelog_calendar: Kellokortti
+  label_my_page_timelog_calendar_period_select: ! 'Kalenteri jakso:'
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: tuntia
+  label_restrictions_users: Näytä vain
+  label_timelog_view_all: Koko ilmoitus työajasta
+  label_personal_statement: Henkilökohtainen lausuma
+  label_log_time: Bulk aika merkintä
+  label_issue_assigned_to_users: ! 'Käyttäjät:'
+  label_issue_assigned_to_groups: ! 'Ryhmät:'
+  label_last_year: viime vuonna
+  label_template_to_selected_projects: Levitä malli hankkeisiin
+  label_template_to_selected_users: Levitä mallin käyttäjille
+  label_my_page_timelog_simple_day_limit: Näytön päivää
+  label_error_project_query: Oli virhe käsittely suodatin. Ilmoita tästä virheestä
+    pääkäyttäjältä.
+  label_project_description: Kuvaus
+  label_easy_lookup: Lookup
+  label_custom_field_settings_entity_type: Entity
+  label_custom_field_settings_entity_attribute: Attribuutti
+  label_link_with: Yhteys %{attribute}
+  label_issue_new_relation_before: Tämä tehtävä
+  label_issue_new_relation_after: ! 'tehtävät:'
+  label_project_new_relation_before: Tämä hanke
+  label_project_new_relation_after: ! 'hankkeita:'
+  label_version_new_relation_before: Tämä versio
+  label_version_new_relation_after: ! 'versiot:'
+  label_parenttask_plural: Parent tehtävät
+  label_revert_to_version: Palauta tähän versioon
+  label_project_overview_project_info: Hankkeen yleiskuva
+  label_easy_user_queries_plural: Käyttäjät
+  label_menu_more: Lisää
+  label_project_index: Projektit lista
+  label_issue_index: Tehtävät-luettelo
+  label_issue_static_attributes_heading: ! 'Perus attribuutteja:'
+  label_issue_updatable_attributes_heading: ! 'Muita ominaisuuksia:'
+  label_issue_attachments_heading: ! 'Liitteet:'
+  label_issue_watchers_heading: ! 'Työtoverit:'
+  label_document_category_read_role: Lupa lukea asiakirjoja tässä kategoriassa
+  label_document_category_manage_role: Lupa hallita asiakirjoja tässä kategoriassa
+  label_document_category_custom_roles_n: Käytä oletusasetuksia
+  label_document_category_custom_roles_y: Käytä mukautettuja asetuksia
+  label_datetime_custom_field_tag_hour: tuntia
+  label_datetime_custom_field_tag_minute: min.
+  label_datetime_custom_field: Päivämäärä ja aika
+  label_menu_project_template: (Malli)
+  label_with_non_shared_versions: Näytä ei-jaettua virstanpylväitä osaprojektien
+  label_project_copy_tracker_issues:
+    zero: none tehtävä
+    one: 1 tehtävä
+    two: 2 tehtävät
+    three: 3 tehtävät
+    four: 4 tehtävät
+    other: ! '%{count} tehtävät'
+  label_top_ten_projects: Viimeiset 10 hanketta
+  label_activity_all: Kaikki
+  label_working_time: Työaika
+  label_admin_easy_user_working_time_calendars: Työaika - malleja
+  label_easy_user_working_time_calendar_explanatory_notes: ! 'Selitykset:'
+  label_easy_user_working_time_calendar_explanatory_notes_default: Yhteinen työpäivä
+  label_easy_user_working_time_calendar_explanatory_notes_today: Tänään
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: Viikonloppu
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: Loma
+  label_easy_user_working_time_calendar_explanatory_notes_exception: Työskentely poikkeus
+  label_easy_user_working_time_calendar_none: Käyttäjä ei ole valinnut mitään työaikaa
+    kalenteri.
+  label_easy_user_working_time_calendar_default_time: Oletus työaika on %{count} tuntia
+    päivässä.
+  label_easy_user_working_time_calendar_change_calendar: ! 'Muuta työaika kalenteri:'
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: Säilytä työaika
+    poikkeuksia valitusta kalenterista
+  label_easy_user_working_time_calendar_settings: Asetukset
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: Kopioi
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: Kopioi
+    poikkeukset
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: Kopioi
+    lomat
+  label_easy_user_working_time_mass_exceptions: Mass poikkeukset
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: Aseta työtuntien
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: jokaista
+  label_easy_query_settings: Suodattimet asetukset
+  label_field_format_autoincrement_from_to: Alkaen - ja
+  label_field_format_autoincrement_entity_limitation: ! 'Automaattinen numero laskemalla:'
+  label_project_templates_custom_fields: Projektin mukautetut kentät asetukset
+  label_source_project: Source projekti
+  label_target_projects: Kohdehankkeista
+  label_easy_page_modules_on_project_overview: Moduulit hankkeen yleiskatsaus
+  label_project_templates_change_issues_author: Muuta kirjoittajan kaikki tehtävät
+  label_easy_system_flag: (Älä näytä hanke jäsenet jne.)
+  label_timelog_comment_editor_enabled: Käytä editori comment tekohetkellä raportointiin?
+  label_time_entry_spent_on_at_issue_update_enabled: Aseta päivämäärä kirjautujan
+    aika päivittää tehtävän?
+  label_user_form_other_settings: Muut valinnat
+  label_user_copy_roles_from: Levitä roolit ja käyttöoikeudet käyttäjälle
+  label_easy_page_tab_default_name: Kieleke %{count}
+  label_mass_copy_select_actions: ! 'Copy (valitut toimet poistetaan ja kuin kopioitu):'
+  label_select_none_assignee: << None siirronsaajalle >>
+  label_select_no_change_assignee: << Mitään muutosta siirronsaajan >>
+  label_unread_entity: Lukemattomat
+  label_switch_to_mobile_version: Mobile sivu
+  label_switch_to_full_version: Desktop sivu
+  label_default_project_page: Oletus hanke sivu
+  label_too_many_mambers: ! 'Liian monet käyttäjät, käytön hakua:'
+  label_gantt_pdf_date: Alkaen päivästä
+  label_gantt_show_all_versions: Näytä kaikki välitavoitteet
+  label_gantt_versions_above: Näytä virstanpylväitä edellä mainittuja tehtäviä
+  label_custom_field_settings_multiple: Moninkertainen
+  label_last_user_assigned_to: << Viimeinen siirronsaajalle >>
+  label_author_assigned_to: << Kirjoittaja >>
+  label_default_color_schema: Oletusväri
+  label_template_easy_start_date: Aseta aloituspäivä hankkeen
+  label_templates_easy_start_date: Aseta aloituspäivä hankkeiden
+  label_eqdt: ''
+  label_bulk_time_entries: Bulk aika merkintä
+  label_bulk_time_add_another: Lisää toinen
+  label_bulk_time_flash_project: ! 'Projekti:'
+  label_bulk_time_flash_issue: ! 'Tehtävä:'
+  label_bulk_time_flash_comment: ! 'Kommentti:'
+  label_bulk_time_flash_user: ! 'Käyttäjä:'
+  label_bulk_time_flash_hours: ! 'Tunnit:'
+  label_bulk_time_flash_spent_on: ! 'Päivämäärä:'
+  label_issue_priority: Tehtävän prioriteetti
+  label_issue_priority_plural: Tehtävän painopistealueet
+  label_amount: Määrä
+  label_version_update_database: Siirrä kaikki tehtävät?
+  label_my_issues_plural: minun
+  label_other_issues_plural: muut
+  label_projectquery_plural: Projektin suodattimet
+  label_userquery_plural: Käyttäjä suodattimet
+  label_related_projects: Liittyvät hankkeet
+  label_related_versions: Liittyvät versiot
+  label_add_related_issues: Lisää liittyvät tehtävät
+  label_add_related_projects: Lisää liittyvien hankkeiden
+  label_add_related_versions: Lisää liittyvien versiot
+  label_preceding: edeltää
+  label_following: jälkeen
+  label_send_email_to_all_users: Lähetä sähköpostia kaikille käyttäjille
+  label_updated_on: Päivitetty
+  label_less: Vähemmän
+  label_group_by: Ryhmittele %{value}
+  label_period_past: Ohi
+  label_period_present: Esitä
+  label_period_future: Tulevaisuus
+  label_to_today: nykypäivään
+  label_after_due_date: eräpäivän jälkeen
+  label_next_n_days: seuraava %{days} päivän
+  label_next_week: ensi viikolla
+  label_next_month: ensi kuussa
+  label_next_year: ensi vuonna
+  label_tomorrow: huomenna
+  label_user_role_select: ! 'for rooli:'
+  label_document_global: Asiakirjat
+  label_milestone_sharing_info: ! 'Selitykset:'
+  label_milestone_sharing_info_none: virstanpylväs käytetään hankkeeseen, jossa luotiin.
+  label_milestone_sharing_info_descendants: virstanpylväs käytetään hankkeeseen, jossa
+    luodaan ja kaikki sen osaprojektien.
+  label_milestone_sharing_info_hierarchy: virstanpylväs käytetään hankkeeseen, jossa
+    luodaan, sen vanhemmista ja sen osaprojektien.
+  label_milestone_sharing_info_tree: virstanpylväs käytetään hankkeeseen, jossa luodaan
+    ja kaikki hankkeet, jotka ovat yhteisiä ylivoimainen mihin tahansa projektiin.
+  label_milestone_sharing_info_system: virstanpylväs on kaikissa hankkeissa käytetään.
+  label_autoincrement: Autoincrement
+  label_quick_search: Pikahaku
+  label_search_result_journal_header: ! 'Etsi merkkijono esiintyy lehdissä (%{count}):'
+  label_journal_as_search_result: Päiväkirja
+  label_not_available: N / A
+  label_search_entities: ! 'Haku:'
+  label_fixed_version: Target virstanpylväs
+  label_easy_color_schemes: ! 'Valitse värimalli:'
+  label_issue_color_scheme_for: ! 'Käyttäjä värimalli:'
+  label_easy_setting_new_subproject_user_role_id: Rooli annetaan ei-admin käyttäjä
+    luo osahanke
+  label_easy_setting_new_subproject_user_role_id_info: (Sopii tapauksissa, kun käyttäjä
+    on oikeudet luoda vain osaprojektien)
+  label_easy_setting_attachment_description: Attachment kuvaus
+  label_easy_setting_attachment_description_required: vaaditaan
+  label_easy_setting_attachment_description_enabled: käytössä
+  label_easy_setting_attachment_description_disabled: vammaiset
+  label_issue_by_unassigned_to: määrittämätön
+  label_issue_notice_recipients: ! 'Sähköposti lähetetään:'
+  label_email: E-mail
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: Työ alkaa ajoissa
+  label_easy_user_working_time_calendar_time_to: Työ päättyy ajoissa
+  label_issue_open_plural: Kysymykset - avoin
+  label_issue_close_plural: Kysymykset - sulje
+  label_easy_version_queries_plural: Virstanpylväät
+  label_issues_assigned_to_me_visible_issues_assigned: Vain tehtäviä, joissa olen
+    määritetty.
+  label_issues_assigned_to_me_visible_issues_conserns: Tehtävät missä olen kirjailija
+    tai luovuttaa tai työtoveri.
+  label_match_starting_dates: Aseta tehtävät aloituspäivä hankkeen
+  label_next_issue: Seuraava tehtävä
+  label_previous_issue: Edellinen tehtävä
+  label_issue_automatic_recalculate_attributes: Automaattinen muutos alitehtävä %{issue_id}
+  label_easy_query_export_links: Vienti
+  label_easy_attendance_spent_time: Käytetty aika
+  label_easy_attendance_plural: Osallistuminen
+  label_easy_attendance_queries_plural: Osallistuminen
+  label_easy_google_maps_address: Osoite - Google kartta
+  label_day:
+    zero: '0'
+    one: 1 päivä
+    other: ! '%{count} Päivää'
+    two: ! '%{count} Päivää'
+    three: ! '%{count} Päivää'
+    four: ! '%{count} Päivää'
+    half: ! '%{count} Päivä'
+  button_context_menu: Show Quick tehtävä valikosta.
+  button_attachment_context_menu: Näytä versiohistoria.
+  button_new_project_from_template: Luo uusi projekti
+  button_new_template_from_project: Luo uusi malli
+  button_create_project_from_template: Luo uusi projekti
+  button_template_restore_project: Palauta projekti
+  button_easy_page_templates: Mallit yleiskatsaus
+  button_save_easy_page: Tallenna sivu ja palaa
+  button_edit_projectquery: Muokkaa suodatinta
+  button_delete_projectquery: Poista suodatin
+  button_apply_projectquery: Käyttää
+  button_clear_projectquery: Default suodattimet
+  button_save_projectquery: Tallentaa
+  button_timelog_calendar_new: Lisää aikaa
+  button_uninstall: Poista
+  button_easy_lookup_modal_selector_assign: Määritä valitut
+  button_new_issue_relation: Lisää liittyvät tehtävät
+  button_issue_put_between: Laita väliin
+  button_new_subtask: Lisää sub tehtävä
+  button_easy_lookup_modal_close: Lähellä
+  button_go_up: UP
+  button_issue_create: Tallenna tehtävä
+  button_issue_create_and_continue: Tallenna ja jatka
+  button_issue_update: ! 'Päivitä tehtävä:'
+  button_issue_submit: Tallenna päivittää
+  button_gantt_issue_update: Päivitys tehtävä
+  button_gantt_issue_update_plural: Päivittää
+  button_easy_user_working_time_calendar_show: Yksityiskohta kalenteri
+  button_easy_user_working_time_calendars_new: Uusi kalenteri
+  button_easy_user_working_time_calendar_holidays: Holidays
+  button_easy_user_working_time_calendar_holidays_new: Uudet loma
+  button_easy_user_working_time_back_to_calendar: Takaisin kalenteriin
+  button_easy_user_working_time_back_to_calendars: Takaisin kalenterit
+  button_easy_user_working_time_reset_to_parent: Palauta kalenteri alkuperän
+  button_easy_user_working_time_parent: Siirry vanhemman kalenteri
+  button_check_subprojects: Tarkista osaprojektien
+  button_uncheck_subprojects: Poista valinnat osaprojektien
+  button_check_rootprojects: Tarkista root hankkeet
+  button_uncheck_rootprojects: Poista valinnat root hankkeet
+  button_edit_user_profile: Muokkaa profiilia
+  button_project_mass_copy: Massan muutoksen
+  button_choose_actions: Siirry valinnassa toimia
+  button_down: Alas
+  button_check_and_uncheck_subprojects: Tarkista / poista osaprojektien
+  button_gantt_show_sidebar: Näytä tallennetut suodattimet
+  button_gantt_hide_sidebar: Piilota tallennetut suodattimet
+  button_easy_page_add_tab: Lisää välilehti
+  button_manage_versions: Hallitse virstanpylväitä
+  button_mobile_saved_filters: Tallennetut suodattimet
+  button_edit_anonymous_user: Muokkaa anonyymi käyttäjä
+  button_back_to_calendar: Takaisin kalenteriin
+  button_bulk_time_save_and_continue: Tallenna ja lisää uusi merkintä
+  button_gantt_zoom_day: Päivä
+  button_gantt_zoom_week: Viikko
+  button_gantt_zoom_month: Kuukausi
+  button_fullscreen: Koko näyttö
+  button_fullscreen_close: X
+  button_add_and_close: Lisää ja sulje
+  button_generate_rss_key: Luo RSS avain
+  button_generate_api_key: Luo API avain
+  button_back_to_top: Takaisin alkuun
+  button_advanced_search: Tarkennettu haku
+  button_my_page_google_maps_url_helper: Apua lisäämällä kartan Google
+  button_timelog_calendar_prev:
+    week: Edellinen viikko
+    month: Edellinen kuukausi
+  button_timelog_calendar_next:
+    week: Ensi viikolla
+    month: Ensi kuussa
+  button_send_email: Lähetä sähköposti
+  button_dont_send_email: Älä lähetä postia
+  button_link_easy_google_map_address: Näytä Google kartta
+  title_button_template: Luo malli projektista %{projectname}.
+  title_button_template_create_project: Luo projekti mallin.
+  title_button_template_restore_project: Muokkaa projektin mallia.
+  title_project_new_issue: Lisää tehtävä projektin %{projectname}
+  title_project_edit: Muokkaa hanke
+  title_project_show: Näytä projektin %{projectname}
+  title_other_formats_links_atom: Lataa RSS-lukija.
+  title_other_formats_links_csv: Tallenna levylle CSV-tiedosto.
+  title_other_formats_links_pdf: Tallenna levylle PDF-tiedostona.
+  title_other_formats_links_png: Tallenna levylle PNG.
+  title_other_formats_links_ics: Tallenna levylle ICS (Outlook) tiedosto.
+  title_other_formats_links_ics_outlook: Tilaa tämä lista tehtäviä MS Outlookin kalenteriin.
+  title_easy_page_zones_view: Klikkaamalla näytä sivu alueilla yleiskatsaus.
+  title_easy_page_zone_edit: Klikkaamalla Muokkaa vyöhyke.
+  title_easy_page_zone_show: Klikkaamalla Show vyöhyke.
+  title_easy_page_zone_modules: Näytä moduulit klikkaamalla.
+  title_personalize_user_page: Klikkaamalla voit muokata tämän sivun.
+  title_personalize_user_page_from_layout: Klikkaamalla valitse sivupohja joka korvaa
+    varsinaisen layout.
+  title_easy_page_templates: Klikkaamalla Näytä sivu listaa pohjista.
+  title_easy_page_templates_new: Klikkaamalla luoda uuden mallin.
+  title_easy_page_user_layout_modules: Klikkaamalla näytä moduulit asettelu.
+  title_easy_page_template_show: Klikkaamalla näytä moduulit layout malli.
+  title_easy_page_zones_new_assignments: Klikkaamalla lisätä uusia vyöhykkeen sivuasettelun.
+  title_button_save_easy_page: Klikkaamalla tallenna sivu ja palaa.
+  title_my_page_issue_query_new_link: Klikkaamalla luoda uusi suodatin tehtäväluettelo.
+  title_edit_projectquery: Klikkaamalla siirry käyttäjälle suodattimen muokkaussivulla.
+  title_delete_projectquery: Klikkaamalla poistaa todellinen käyttäjä suodatin.
+  title_apply_projectquery: Klikkaamalla käyttö esiaseteltavat projekti suodatin.
+  title_clear_projectquery: Klikkaamalla käynnistä suodatin oletusasetus.
+  title_save_projectquery: Klikkaamalla tallentaa valmiiksi asetettu suodatin edelleen
+    käyttöä.
+  title_new_project_from_template: Klikkaamalla mennä listaa pohjista.
+  title_easy_my_page_template_to_all: Aply tätä mallia kaikille käyttäjille.
+  title_timelog_calendar_new: Klikkaamalla lisätä aikaa valitun päivän.
+  title_template_to_selected_projects: Levitä malli hankkeisiin
+  title_template_to_selected_users: Levitä mallin käyttäjille
+  title_easy_lookup_modal_selector_assign: Klikkaamalla voit määrittää valitun kohteen.
+  title_button_edit: Klikkaamalla voit muokata tätä merkintää.
+  title_button_delete: Klikkaamalla voit poistaa tämän merkinnän.
+  title_new_issue_relation: Lisää liittyviin tehtäviin.
+  title_new_subtask: Lisää sub tehtävä.
+  title_logo: Klikkaa päästäksesi minun sivulle.
+  title_delete: Napsauta poistaaksesi kohteen.
+  title_delete_selected: Napsauta poistaaksesi valitun kohteen.
+  title_go_up: Klikkaa päästäksesi alkuun sivun.
+  title_says: ! 'sanoo:'
+  title_project_copy_tracker_issues: Klikkaamalla muutos kysymyksiä tracker.
+  title_user_profile: Valitsemalla Näytä%{username} profiili.
+  title_easy_user_working_time_calendar_show: Klikkaamalla voit muokata päivän kalenteriin.
+  title_easy_user_working_time_calendars_new: Klikkaamalla voit luoda uuden kalenterin.
+  title_easy_user_working_time_calendar_holidays: Klikkaamalla voit hallita vapaapäiviä.
+  title_easy_user_working_time_calendar_holidays_new: Klikkaamalla voit luoda uuden
+    loma.
+  title_easy_user_working_time_back_to_calendar: Klikkaamalla voit palata kalenteriin.
+  title_easy_user_working_time_back_to_calendars: Klikkaamalla voit palata kalentereita.
+  title_easy_user_working_time_calendars_inline_edit: Klikkaamalla voit lisätä poikkeus.
+  title_easy_user_working_time_calendars_inline_save: Klikkaamalla voit tallentaa
+    poikkeus.
+  title_easy_user_working_time_calendars_inline_close: Klikkaamalla voit sulkea muokkaus
+    poikkeus.
+  title_easy_user_working_time_reset_to_parent: Klikkaamalla voit poistaa kaikki nykyiset
+    poikkeukset ja asettaa kalenterin vanhemman tilasta.
+  title_easy_user_working_time_parent: Klikkaamalla voit mennä vanhemman kalenteriin.
+  title_edit_user_profile: Klikkaamalla sinä cand muokata profiilia.
+  title_easy_page_add_tab: Klikkaamalla voit lisätä uuden välilehden.
+  title_last_journal_link: Näytä viimeinen lehdessä asiaa.
+  title_edit_anonymous_user: Klikkaamalla voit muokata anonyymi käyttäjä.
+  title_fullscreen: Näytä koko näytöllä
+  title_download_attachment: Lataa tiedosto
+  title_show_attachment: Näytä sisältö tiedoston
+  title_timelog_calendar_prev:
+    week: Klikkaamalla mennä edelliselläkin viikolla.
+    month: Klikkaamalla siirry edelliseen kuukauteen.
+  title_timelog_calendar_next:
+    week: Klikkaamalla mennä ensi viikolla.
+    month: Klikkaamalla mennä ensi kuussa.
+  title_easy_modal_selector_trigger:
+    issue: Valitse tehtävät luettelosta.
+    project: Valitse hankkeiden luettelosta.
+    version: Valitse virstanpylväitä listasta.
+    user: Valitse käyttäjät listasta.
+    group: Valitse ryhmien luettelosta.
+    document: Valitse asiakirjojen luettelosta.
+  project_template:
+    label_name: Malline nimi
+    label_new_project: Nimi Uuden projektin
+  sidebar_all_users_queries: Työntekijän tehtävät
+  sidebar_issue_button_update: Lisää merkintä tai muokkaa tehtävän
+  sidebar_issue_button_log_time: Lisää vietti aikaa
+  sidebar_issue_button_duplicate: Monista tehtävä
+  sidebar_issue_button_copy: Kopioi tehtävä
+  sidebar_issue_button_move: Siirrä tehtävä
+  sidebar_issue_button_delete: Poista tehtävä
+  sidebar_issue_spent_time: Tehtävä vietti aikaa yleiskatsaus
+  sidebar_issue_info: Tehtävän tiedot
+  sidebar_issues_buttons: Harmonogram
+  sidebar_project_info: Projektin tiedot
+  sidebar_project_spent_time: Projekti käytti aikaa yleiskatsaus
+  sidebar_project_members: Projektiryhmä
+  sidebar_budget_costs_info: Kustannukset
+  sidebar_project_family_info: Projektit puu
+  field_easy_due_date: Eräpäivä.
+  field_easy_start_date: Aloituspäivä
+  field_spinned: Stick päälle
+  field_zone_name: alueen nimi
+  field_page_name: Sivun nimi
+  field_is_primary: Ensisijainen
+  field_show_empty: Näytä joissa tyhjät kentät
+  field_show_on_list: Näytä luettelossa
+  field_predicted_cost: Talousarvio
+  field_computed_token: Kaava
+  field_member: Projektin jäsenenä
+  field_groups: Ryhmä
+  field_roles: Rooli
+  field_xproject: Hankkeet
+  field_cached_group_names: Ryhmät
+  field_parent_user: Esimies
+  field_template_name: Malline nimi
+  field_parent_project: Parent hanke
+  field_root: Tärkein hanke
+  field_main_project: Tärkein hanke
+  field_sum_of_timeentries: Käytetty aika
+  field_remaining_timeentries: Aikaa jäljellä
+  field_completed_percent: ! '% Done'
+  field_attachment_created_on: Kiinnitys - luotu
+  field_user_roles: Rooli
+  field_show_on_more_form: Näytä "lisää"
+  field_spent_estimated_timeentries: ! '% Käytti aikaa'
+  field_easy_system_flag: Järjestelmän ryhmä
+  field_easy_global_rating: Globaali luokitus
+  field_id: Tunnus
+  field_at_work: Töissä?
+  field_arrival: Tuleva
+  field_departure: Lähtö
+  field_easy_attendance_activity: Aktiivisuus
+  field_arrival_user_ip: saapuminen IP
+  field_departure_user_ip: lähtö IP
+  field_color_schema: Barevné Schema
+  field_group: Käyttäjäryhmä
+  field_rss_key: RSS avain
+  field_api_key: API avain
+  field_global_fixing_activity: Projektin tehtävät ovat valmiiksi toimintaa.
+  field_project_fixed_activity_true: Toiminta on ennalta valittu luotaessa tehtävä.
+  field_project_fixed_activity_false: Aktiivisuus voidaan valita, kun kirjoitat aikaa.
+  field_user_time_entry_setting: ! 'Ilmoittautuminen ajan:'
+  field_easy_range_from: Vietti aikaa
+  field_easy_range_to: Vietti aikaa
+  field_easy_range_form_to: Sisään
+  field_enable_activity_roles: Määritä activitites roolit
+  field_limit_assignable_users: Kysymykset voi palauttaa ainoastaan ​​laatija
+  field_easy_version_category_id: Luokka
+  field_easy_version_category: Luokka
+  field_relations_from: suhde
+  field_created_at: Luotu
+  field_updated_at: Muokattu
+  field_easy_send_invitation: Lähetä kutsu sähköpostilla
+  field_easy_do_not_allow_close_if_subtasks_opened: Älä anna sulkea tehtävä, jos alitehtävän
+    avataan
+  field_easy_do_not_allow_close_if_no_attachments: Älä anna sulkea tehtäviä, ellei
+    liitetiedosto
+  field_easy_issue_prefix: Tehtävä etuliite
+  field_send_to_external_mails: Lähetä päivittää postia?
+  field_attachments: Liitteet
+  field_ckeditor_toolbar_config: HTML-editori-työkalurivi
+  status_archived: arkistoitu
+  filter_active: aktiivinen
+  notice_successful_create_template: Malline onnistuneesti luotu.
+  notice_successful_create_project_from_template: Hanke luotiin onnistuneesti.
+  notice_failed_create_project_from_template: Projekti ei luotu:%{errors}
+  notice_almost_successful_create_project_from_template: Projekti syntyi ilman täydellistä
+    kohdetta kopio.
+  notice_successful_restore_template: Malline onnistuneesti palautettu.
+  notice_template_successful_applied: Malline sovellettiin onnistuneesti.
+  notice_plugin_successful_uninstall: Plug-%{plugin} poistettiin onnistuneesti, ja
+    nyt täytyy käynnistää web-palvelin.
+  notice_project_successful_archive: Projekti onnistui arkistoitu.
+  notice_failed_to_update: Virhe säästö.
+  notice_project_successful_unarchive: Hanke arkistosta.
+  error_invalid_authenticity_token: Page vanhentunut.
+  error_rss_reader_timeout: Virhe asetus (sivu ei ole kytketty, varmista, että sinulla
+    on oikein lähde tehtävien, lähde nykyisiä ongelmia ei voi olla helppo projekti!).
+  error_rss_reader_bad_url: Virhe asetus (sivu ei ole kytketty, varmista, että sinulla
+    on oikein lähde tehtävät).
+  error_rss_reader_old_ep: Virhe asetus (lähde tehtävät on helppo projekti 2012 ja
+    uudemmat).
+  error_validates_max_size: Tiedosto on liian suuri
+  error_custom_value_autoincrement_greater: on oltava suurempi kuin %{count}
+  error_custom_value_autoincrement_equal: on oltava %{count}
+  error_can_not_unarchive_project: Hanketta ei voitaisi poistaa arkistosta.
+  error_can_not_delete_project: Hanke ei voi poistaa.
+  error_can_not_delete_project_template: Project malli ei voi poistaa.
+  error_can_not_create_project_template: Virhe aikana luodaan projektin mallin projektista
+    %{projectname}.
+  error_bulk_update_save: ! '%{count} objekteja ei voi tallentaa.'
+  error_no_file_selected_to_upload: Ei tiedostoa valittuna ladata.
+  error_cannot_close_issue_due_to_subtasks: Tehtävä ei voida sulkea, koska sisältää
+    avattu tehtävät:%{issues}
+  error_cannot_close_issue_due_to_no_attachments: Tehtävä ei voida sulkea, koska ei
+    ole kiinnitys
+  confirm_admininstration_display_all_project: Katso kaikki hankkeet kestää hyvin
+    kauan. Haluatko jatkaa?
+  text_commit_example_1: ! 'viitteet # 1523 @ 5h30m kalenteri viimeistely'
+  text_commit_example_2: kirjautua aikaa 5 tuntia ja 30 minuuttia tehtävä ei ole.
+    1523
+  text_easy_settings_time_entry_heading: Käytetty määräajat
+  text_easy_settings_time_entry_limit: Salli lisätä / muokata aika
+  text_easy_settings_time_entry_limit_note: Jos haluat poistaa määräaikoja, ottaa
+    nämä tekstiruutuja tyhjäksi.
+  text_easy_settings_time_entry_limit_past: päivää aikaisemmin
+  text_easy_settings_time_entry_limit_future: päivää tulevien
+  setting_issue_recalculate_attributes: Luominen alitehtävä vaikuttaa vanhemman tehtävä
+    (prioriteetti, arvioitu aika,% valmis, aloituspäivämäärä ja eräpäivä)
+  my_page_timelog_calendar_period:
+    month: Kuukausittain
+    week: Viikoittain
+  easy_pages:
+    pages:
+      my_page: Oma sivu
+      project_overview: Project - kotisivut
+    pages_description:
+      my_page: Oma sivu
+      project_overview: Project - kotisivut
+    modules:
+      issues_create_new: Uusi tehtävä
+      issue_query: Tehtäviä suodatin
+      projects_query: Hankkeet suodatin
+      documents: Asiakirjat
+      issues_assigned_to_me: Omat tehtävät
+      issues_reported_by_me: Tehtävät ilmoittaneet minulle
+      issues_watched_by_me: Tehtävät katsellut minua
+      my_calendar: Oma kalenteri
+      my_projects_simple: Projektin lista
+      news: Uutiset
+      saved_queries: Tallennetut suodattimet lista
+      timelog_simple: Aika käyttö
+      timelog_calendar: Aika log kalenteri
+      issues_rss_reader: Tehtävät toiselta palvelimelta
+      project_news: Uusi
+      project_tree: Osahankkeet
+      project_sidebar_all_users_queries: Työntekijän tehtävät
+      project_sidebar_project_info: Projektin tiedot
+      project_sidebar_project_members: Projektin jäsenet
+      project_sidebar_saved_queries: Tallennetut suodattimet
+      project_issues: Tehtävät
+      noticeboard: Ilmoitustaulu
+      project_sidebar_family_info: Project tree
+      project_info: Projektin tiedot
+      attendance: Attendace
+      users_query: Projektiryhmää suodatin
+      resource_availability: Resurssien saatavuus
+      google_maps: Kartat Google
+      project_history: Projektin historia
+    module_category:
+      calendars: Kalenterit
+      issues: Tehtävät
+      lists: Luettelot
+      others: Muut
+      projects: Hankkeet
+      project_sidebar: Sivupalkin
+      timelog: Aika käyttö
+      users: Käyttäjät
+      redmine: Redmine
+    zones:
+      top_left: Ylhäällä vasemmalla
+      top_middle: top keskellä
+      top_right: ylhäällä oikealla
+      middle_left: keskelle vasen
+      middle_middle: keskimmäinen
+      middle_right: keskelle oikea
+      bottom_left: alhaalla vasemmalla
+      bottom_middle: alhaalla keskellä
+      bottom_right: Alhaalla oikealla
+      right_sidebar: sivupalkki oikealla
+    zones_description:
+      top_left: kuvaus
+      top_middle: kuvaus
+      top_right: kuvaus
+      middle_left: kuvaus
+      middle_middle: kuvaus
+      middle_right: kuvaus
+      bottom_left: kuvaus
+      bottom_middle: kuvaus
+      bottom_right: kuvaus
+      right_sidebar: kuvaus
+  label_my_page_project_output:
+    list: lista
+    calendar: kalenteri
+  label_my_page_issue_output:
+    list: lista
+    calendar: kalenteri
+  select_easy_page_module_project_info:
+    label: omaisuuden tarkastella
+    description: kuvaus
+    customfields: Hanke oma kenttä
+  easy_page_module:
+    project_query:
+      adhoc_query: Ad-hoc nimi suodattimen
+      adhoc_query_default_text: nimi suodatin
+    issue_query:
+      adhoc_query: Ad-hoc nimi suodattimen
+      adhoc_query_default_text: nimi suodatin
+    document_query:
+      adhoc_query: Ad-hoc nimi suodattimen
+      adhoc_query_default_text: nimi suodatin
+    user_query:
+      adhoc_query: Ad-hoc nimi suodattimen
+      adhoc_query_default_text: nimi suodatin
+    attendance:
+      adhoc_query: Ad-hoc nimi suodattimen
+      adhoc_query_default_text: Oma osallistuminen
+    resource_availability:
+      label_resource_name: Resurssin nimi
+      label_day_start_time: Aloitusaika
+      label_day_end_time: Päättymisaika
+      label_set_available: Aseta saatavilla
+      label_set_unavailable: Aseta käytettävissä
+      label_available: saatavissa
+      label_unavailable: poissa
+      label_set_day_available: Aseta kokonainen päivä käytettävissä
+      label_set_day_unavailable: Aseta kokonainen päivä käytettävissä
+      label_description_prompt: ! 'Kirjoita syy:'
+    new_issue:
+      field: Kenttä
+      show: Näkyy
+      default_value: Oletusarvo (tyhjä tarkoittaa ei muutosta)
+    project_history:
+      heading_project_edit_custom_fields: Muokkaa projektin mukautettuja kenttiä
+  menu:
+    admin:
+      easy_pages_administration: Page personointi
+  breadcrumb:
+    label:
+      easy_pages_administration: Sivut personointi
+      easy_page_templates: Sivumallit %{pagename}
+      easy_page_new: Uusi sivu
+      easy_page_show: Moduulit sivulla %{pagename}
+      easy_page_edit: Sivu %{pagename} muokata
+      easy_page_templates_edit: Sapluuna %{templatename} muokata
+      easy_page_templates_new: Uusi sivupohja
+      easy_page_template_view: Moduulit layout
+      easy_page_template_edit: Moduulit layout editation
+      easy_page_template_user_modules: Moduulit layout
+    title:
+      easy_pages_administration: Klikkaamalla siirry sivulle hallintoon.
+      easy_page_templates: Klikkaamalla siirry viestipohjaluetteloon %{pagename}.
+      easy_page_new: Klikkaamalla Luo uusi sivu.
+      easy_page_show: Klikkaamalla näytä moduulit sivulla %{pagename}.
+      easy_page_edit: Klikkaamalla muokkausivulle %{pagename}.
+      easy_page_templates_edit: Klikkaamalla Muokkaa mallia %{templatename}.
+      easy_page_templates_new: Klikkaamalla luoda uuden mallin sivulla %{pagename}.
+      easy_page_template_view: Klikkaamalla näkymä moduulien ulkoasua.
+      easy_page_template_edit: Klikkaamalla Muokkaa moduuleja layout malliin.
+      easy_page_template_user_modules: Klikkaamalla näkymä moduulien ulkoasua.
+  easy_user_working_time_calendar_names:
+    standard: Standardi
+  easy_lookup:
+    document:
+      label: Asiakirjat
+    group:
+      label: Ryhmät
+    issue:
+      label: Kysymykset
+    project:
+      label: Hankkeet
+    user:
+      label: Käyttäjät
+    version:
+      label: Virstanpylväät
+  project_default_page:
+    project_overview: Hankkeen yleiskuva
+    roadmap: Virstanpylväät
+    issue_tracking: Tehtävät
+    time_tracking: Käytetty aika
+    news: Uutiset
+    documents: Asiakirjat
+    repository: Varasto
+    calendar: Kalenteri
+    gantt: Gantt
+    boards: Taulut
+    files: Tiedostot
+    wiki: Wiki
+  select_option_issue_restrictions_users_blank: ! '>> Select <<'
+  mail:
+    field_author: Kirjoittaja
+    field_updated_by: Päivittäjä
+    field_before: ennen
+    field_updated_time: Päivitetty ennen
+    label_attachment_new: Lisätty uusi tiedosto
+    text_attachment_added: ! 'Käyttäjä%{user} Lisätään %{time} ja %{added_to} seuraava
+      tiedosto (t):'
+  attachments:
+    no_more_versions: Ei enää versiot
+    revert_to:
+      successfully: Kiinnitys onnistuneesti palautettu %{version} versio.
+      failed: Kiinnitys ei palata %{version} versio. Nykyinen versio on:%{current_v}.
+  easy_query:
+    name:
+      easy_issue_query: Kysymykset
+      easy_project_query: Hankkeet
+      easy_user_query: Käyttäjät
+      easy_document_query: Asiakirjat
+      easy_version_query: Virstanpylväät
+      easy_attendance_query: Osallistuminen
+      easy_time_entry_query: Aikamerkintöjen
+      easy_group_query: Ryhmät
+    label:
+      default_columns: Oletus sarakkeet
+      default_fitlers: Default suodattimet
+    button_apply:
+      project: Käytä asetuksia
+      user: Käytä asetuksia
+      issue: Käytä asetuksia
+    sidebar_filters:
+      personal:
+        easy_issue_query: Yksityinen suodattimia tehtäviin
+        easy_user_query: Yksityinen suodattimia käyttäjille
+        easy_project_query: Yksityinen suodattimia hankkeisiin
+        easy_document_query: Yksityinen suodattimia asiakirjojen
+        other: Yksityinen suodattimet
+        easy_attendance_query: Yksityinen suodattimia läsnäolo
+        easy_group_query: Yksityinen suodattimia ryhmät
+        easy_member_query: Yksityinen suodattimia jäseniä
+        easy_time_entry_query: Yksityinen suodattimia vietti aikaa
+        easy_version_query: Yksityinen suodattimia versiot
+      public:
+        easy_issue_query: Julkinen suodattimia tehtäviin
+        easy_user_query: Julkinen suodattimia käyttäjille
+        easy_project_query: Julkinen suodattimia hankkeisiin
+        easy_document_query: Julkinen suodattimia asiakirjojen
+        other: Julkinen suodattimet
+        easy_attendance_query: Julkinen suodattimia läsnäolo
+        easy_group_query: Julkinen suodattimia ryhmät
+        easy_member_query: Julkinen suodattimia jäseniä
+        easy_time_entry_query: Julkinen suodattimia vietti aikaa
+        easy_version_query: Julkinen suodattimia versiot
+    easy_lookup:
+      name:
+        issue:
+          default: Valitse kysymykset
+          issue_relation: Valitse liittyvät tehtävät
+        project:
+          default: Valitse hankkeet
+          project_relation: Valitse liittyviä hankkeita
+        user:
+          default: Valitse käyttäjät
+        group:
+          default: Valitse ryhmät
+        version:
+          default: Valitse virstanpylväitä
+          version_relation: Valitse liittyvä versiot
+        document:
+          default: Valitse asiakirjat
+  bulk_time_entry_title: Bulk aika merkintä
+  text_bulk_time_entry_permission: Tällä käyttäjällä ei ole oikeutta aikaa hankeraportointiin.
+  label_avatar: Avatar
+  message_avatar_uploaded: Avatar ladattu onnistuneesti
+  button_change_avatar: Vaihda paikallista avatar
+  are_you_sure_delete_avatar: Oletko varma, että haluat poistaa avatar?
+  avatar_deleted: Avatar poistettu
+  unable_to_delete_avatar: Anteeksi. Oli virhe poistamalla avatar.
+  avatar_invalid_file: Virheellinen tiedostotyyppi
+  text_settings_gravatar_enabled: Jos Gravatar kohde ei ole valittu kuin klassinen
+    avatar on käytetty käyttäjäprofiilin.
+  license_manager:
+    user_limit: Maksimimäärän käyttäjiä on täyttynyt, laajentaa ota meihin yhteyttä
+      %{email}.
+    user_limit_unlock_button: Olet saavuttanut enimmäismäärän aktiivisia käyttäjiä.
+  image_tag:
+    alt:
+      bullet_toggle_plus: Vaihda multi-valitse
+  collapse_expand: collapse / laajentaa
+  gantt_day: päivä
+  gantt_day_plural: päivän
+  gantt_day_plural5: päivän
+  gantt_start: Aloituspäivä
+  gantt_end: Eräpäivä
+  gantt_duration: Eräpäivä
+  gantt_completed: Valmistunut
+  issue_predecessor_error: Tehtävä%{issue_name} on jo johonkin toiseen tehtävään.
+  project_predecessor_error: Hanke %{project_name} on jo johonkin toiseen hankkeeseen.
+  version_predecessor_error: Versio %{version_name} on jo seuraavan toisen version.
+  label_easy_publishing_module: Moduuli
+  label_easy_publishing_modules: Kustannustoiminta moduulit
+  easy_publishing_setting: Moduuli
+  easy_publishing_setting_new: Uusi kustantaminen asetus
+  label_easy_publishing_setting_url: URL esimerkki
+  button_easy_publishing_settings_new: Uusi moduuli
+  label_easy_publishing_module_info: Tiedot
+  label_easy_publishing_module_contact: Yhteydenotto
+  label_easy_publishing_module_help: Valitse ratkaisu
+  label_easy_publishing_module_info_header: Tilaa helpon Redmine nyt
+  label_easy_publishing_invalid_file_type: Nämä tiedostot eivät ole kuvia, ja ei tallennettu:%{files}.
+  helper_module:
+    button_show_help: Näytä auttavat
+    button_close_help: Sulje auttaa
+    alt_image_help: Ohje
+    title_help: Valitse ratkaisu
+    title_contact: Yhteydenotto
+    button_show_youtube: Toista video
+  user_time_entry_setting:
+    all: tuntia tai alue
+    hours: tuntia
+    range: alue (alkoi - päättyi)
+  label_rating: Luokitus
+  label_easy_global_rating: Globaali luokitus
+  easy_attendance:
+    label: Osallistuminen
+    label_menu_more: Osallistuminen
+    label_back_to_basic: Lähellä
+    label_setting: Käyttämällä kirjaa saapumiset ja lähdöt
+    label_mail: Ilmoitus mail
+    new: Kirjaudu tulo / lähtö
+    arrival: Saapuminen
+    departure: Lähtö
+    advanced_settings: Scheduler
+    label_activities: Aktiivisuus
+    project_mapping_0: Ilman sitovaa hankkeen
+    project_mapping_1: Sido hankkeen
+    project_mapping_1_1: ja toiminta
+    link_to_easy_attendance: Läsnäololuettelon
+    error_can_not_delete_activity: Aktiivisuus sisältää tietueita ja ei voitu poistaa.
+    change_easy_attendance_activity_to: ! 'Muuta aktiivisuutta:'
+    description:
+      arrival: Tulin töihin
+      departure: Leaving työ
+      advanced_infobox: ! 'Esimerkki: Otan juhlapäivät %{from} ja %{to}.'
+    activities:
+      enumerations:
+        label: Toimet (ilmoitustaulu)
+        new: Uutta toimintaa aluksella
+    title:
+      advanced_settings: Suunnittele työsi kotoa tai jätä.
+    arrival_date_error: ei voi olla suurempi kuin irtautumista.
+    arrival_already_taken: Päivämäärä on jo ottanut muuhun toimintaan.
+    invalid_date: Ei päivämäärää
+    departure_is_same_as_arrival: on samaan aikaan kuin saapumista.
+    notice:
+      notice_arrivaled: Nauhoitettu saapumista. Klikkaamalla voit muuttaa saapuvien
+        tai lähtöjä.
+      warning_missing_departure: Hallituksen puuttuu lähtöä päivässä%{arrival_date}.
+        Kirjoita se.
+    calendar:
+      legend:
+        starting: Aktiivisuus alussa
+        ending: Toiminto päättyy
+        starting_ending: Tämä päivä toiminta
+    mail_added:
+      subject: ! '%{user} ilmoittaa poissaolonsa työpaikalla'
+      body_top: ! '%{user} ilmoittaa %{activity} on työpaikalla alkaen %{from} ja
+        %{to}.'
+      body_link: Luettelo läsnäolo nähdä täällä.
+    mail_updated:
+      subject: ! '%{user} ilmoittaa poissaolonsa työpaikalla'
+      body_top: ! '%{user} ilmoittaa %{activity} on työpaikalla alkaen %{from} ja
+        %{to}.'
+      body_link: Luettelo läsnäolo nähdä täällä.
+    label_report_sum_time_entry: Yhteensä vuoden %{year}[Raportoitu Time]
+    label_report_sum_attendance: Summa %{year}[Osallistuminen]
+    text_activity_destroy_with_attendances: Raportoineet yhteensä%{count} poissaoloja.
+      Oletko varma, että haluat poistaa toiminnan ja kaikki ennätykset?
+    label_statistic_worked: työskenteli
+    label_statistic_attendance: osallistuminen
+    label_statistic_supplement: alkaen %{hours} Esim..%{percent}%
+    field_range: ! 'Kirjoita osallistuminen:'
+    range:
+      full_day: Koko päivän
+      forenoon: Aamupäivä
+      afternoon: Iltapäivällä
+  sidebar_easy_attendances_all_users_queries: Läsnäolo käyttäjien
+  error_put_between_issue_count: Valitse kaksi kysymystä
+  label_xml_data_export: XML vienti
+  label_xml_data_select_exportables: Valitse tiedot viedään
+  label_xml_data_select_projects: Valitse hankkeet
+  button_xml_data_export: Vienti
+  button_xml_data_import: Tuoda
+  button_xml_data_continue: Jatkaa
+  label_xml_data_import: XML tuonti
+  label_user_mapping: Käyttäjä kartoitus
+  label_map_to: Karttaa
+  option_map_to_new_user: uusi käyttäjä
+  label_tracker_mapping: Tracker kartoitus
+  option_map_to_new_tracker: uusi tracker
+  label_xml_data_notify: Lähetä ilmoitus
+  label_role_mapping: Roolikartoituksen
+  label_issue_status_mapping: Julkaisutila kartoitus
+  label_issue_priority_mapping: Kysymys ensisijaisesti kartoitus
+  label_time_entry_activity_mapping: Aktiivisuus kartoitus
+  label_custom_field_mapping: Custom maastokartoituksista
+  option_map_to_new_role: uusi rooli
+  option_map_to_new_project_custom_field: uusi kenttä
+  option_map_to_new_issue_custom_field: uusi kenttä
+  option_map_to_new_issue_priority: uusi toimintalinja
+  option_map_to_new_issue_status: Uusi tila
+  option_map_to_new_time_entry_activity: uusi toiminta
+  label_auto_mapping: Automaattinen kartoitus
+  label_import_success: Data onnistuneesti tuotu
+  label_import_zip_error: Väärä tietomuoto
+  xml_data_users: Käyttäjät
+  xml_data_trackers: Trackers
+  xml_data_roles: Roolit
+  xml_data_issue_priorities: Tehtävän painopistealueet
+  xml_data_project_custom_fields: Mukautettuja kenttiä
+  xml_data_issue_custom_fields: Mukautettuja kenttiä
+  xml_data_issue_statuses: Tehtävä tilat
+  xml_data_document_categories: Asiakirjan luokkia
+  xml_data_time_entry_activities: Toiminta
+  sample_text: Helppo projekti
+  easy_color_scheme_not_available: Väriteema by %{current}, Voit muuttaa sen
+  notice_issues_successful_create: ! 'Onnistunut luotu käyttäjille:'
+  notice_failed_to_save_issues2: Tallennus epäonnistui tehtävässä%{issue} virheestä
+    johtuva:%{error}
+  notice_too_many_projects: Liian monet hankkeet (%{count}), Käytä hakua.
+  general_all: kaikki
+  general_only_required: tarvitaan vain
+  mail_subject_easy_query_migration_nonsaved_query: Easy Project - suodatin maahanmuutto
+    - epäonnistui
+  mail_body_easy_query_migration_nonsaved_query_begin: ! 'Hei, migraatio tallennettuja
+    suodattimia ei tallentaa suodattimen:'
+  mail_body_easy_query_migration_nonsaved_query_end: Klikkaa yllä olevaa linkkiä ja
+    vaihda suodatin (sarake sisältää joitakin ajanjakso - luotu, päivitetty, eräpäivä,
+    ...).
+  mail_subject_easy_query_migration_unsupported_query: Easy Project - suodatin maahanmuutto
+    - tuettu asetukset
+  mail_body_easy_query_migration_unsupported_query_begin: ! 'Hei, migraatio tallennettuja
+    suodattimia ei tallentaa suodattimen:'
+  mail_body_easy_query_migration_unsupported_query_end: ! 'Klikkaa yllä olevaa linkkiä
+    ja vaihda suodatin. Se sisältää tätä asetusta:'
+  setting_project_list_default_columns: Default sarakkeet näkyvät hankeluettelon
+  setting_default_projects_tree_display: Tuotteet hanke puu
+  setting_projects_tree_display_with_siblings: sisarukset
+  setting_projects_tree_display_without_siblings: ilman sisaruksia
+  setting_issue_created_on_date_format_label: Näyttö luotu kuten
+  setting_issue_created_on_date_format_date: päivämäärä
+  setting_issue_created_on_date_format_datetime: päivämäärä ja kellonaika
+  setting_enable_private_issues: Ota yksityisiä asioita
+  setting_show_personal_statement: Näytä henkilökohtaisen lausuman valikossa
+  setting_show_bulk_time_entry: Näytä irtotavarana aikaa valikossa
+  setting_project_calculate_start_date: Laske aloituspäivä alkaen tehtävät
+  setting_project_calculate_due_date: Laske eräpäivä alkaen tehtävät
+  setting_show_issue_id: Näytä tehtävän tunnus
+  setting_quick_jump_to_an_issue: Siirry tehtävä, jos tunnus etsitään
+  setting_milestone_effective_date_from_issue_due_date: Salli asetetaan määräpäivä
+    tehtävän loputtua virstanpylväs.
+  workflow_button_edit: Työnkulun asetukset
+  easy_search:
+    legend_entities: ! 'Haku:'
+    legend_column_types: ! 'Hakeminen:'
+    label_column_type:
+      name: Nimi
+      description: Kuvaus
+      comment: Kommentti
+      other: Muut
+  enumeration_easy_version_cetegory: Versio luokka
+  label_tracker_move_issues: Issue uudelleenjako
+  label_tracker_move_issues_explanation: ! 'Muuta Tracker:'
+  button_tracker_move_issues: Määritä uudelleen ja poistaa
+  option_dont_map: ! '- Älä kartoittaa -'
+  move_auth_source_users_explanation: ! 'Valitse uusi tunnistus lähde käyttäjille:'
+  button_auth_source_move_users: Määritä uudelleen ja poistaa
+  dashboard:
+    legends:
+      others: Muut
+      projects: Hankkeet
+      issues: Tehtävät
+      users: Käyttäjät
+      security: Turvallisuus
+      xml: XML
+      extensions: Laajennukset
+      settings: Asetukset
+  label_easy_user_working_time_calendar_no_of_days: Työpäivät
+  label_easy_user_working_time_calendar_no_of_hours: Työaika
+  label_easy_attendance_report_working_time: työskenteli %{sum_timeentries} ja %{total_working_hours},
+    Eli %{timeentries_percent}
+  label_easy_attendance_report_attendence_time: osallistuminen on %{sum_attendance}
+    ja %{total_working_hours}, Eli %{working_percent}
+  button_settings: Säätö
+  button_history: Historia
+  field_started_at: Vuodesta
+  field_finished_at: End
+  field_note: Huomata
+  easy_rake_tasks:
+    views:
+      heading_index: Yleiskatsaus ajoitetut tehtävät
+      button_index: Yleiskatsaus ajoitetut tehtävät
+      heading_settings: Job asetukset %{task_name}
+      heading_task_infos: Lisätietoa -%{task_name}
+      interval: Aikaväli
+      next_run_at: Seuraava käynnistys
+      last_action: Viimeisin toiminta
+    periods:
+      daily: joka %{interval}
+      hourly: joka %{interval} tuntia
+      minutes: joka %{interval} pöytäkirja
+    easy_rake_task_receive_mail:
+      caption: Vastaanottaminen sähköpostit
+    easy_rake_task_repeating_entities:
+      caption: Reccuring kysymyksiä daemon
+    easy_rake_task_history_cleaner:
+      caption: Poistamalla vanhoja ajoitetut tehtävät historia
+    easy_rake_task_check_failure_tasks:
+      caption: Checker jättämisestä ajoitetut tehtävät
+      email_type:
+        all_admins: Lähetä sähköpostia ylläpitäjät
+        email: Lähetä sähköpostia
+      mail:
+        heading: Nämä ajoitetut tehtävät epäonnistumisia %{date}
+        footer: Voit muuttaa asetuksia ajoitetut tehtävät
+  easy_rake_task_infos:
+    status:
+      running: Se on
+      ended_ok: Valmiiksi, jotta
+      ended_failed: Lopetettiin virheen
+  button_delete_avatar: Poista avatar
+  label_issue_due_date_overdue: ! 'Vasen loppuun:'
+  label_issue_due_date_not_overdue: Määräajan jälkeen
+  label_project_due_date_overdue: saattamaan jäljellä
+  label_project_due_date_not_overdue: määräajan jälkeen
+  label_easy_setting_use_personal_theme: Salli käyttäjien muuttaa omaa ulkonäköä?
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: Uusi suhde
+  title_permission_flag_r: Ei voi kirjoittaa - vain luku-
+  title_permission_flag_p: Vaatii sisäänkirjautumisen
+  title_permission_flag_m: Tarvitse olla jäsen hankkeen
+  title_permission_flag_l: Vaatii sisäänkirjautumisen
+  setting_display_issue_relations_on_new_form: Tarkastele liittyviä tehtäviä uudessa
+    muodossa
+  gantt_new_following_issue: Uudet seuraava tehtävä
+  gantt_new_preceding_issue: Uudet edellisen tehtävän
+  gantt_new_child_issue: Uusi alitehtävän
+  themes:
+    easy: Helppo
+    easy_widescreen: Leveä
+  label_easy_user_working_time_day_settings: Aseta päivä
+  editor_config_names:
+    basic: Perustiedot
+    extended: Kehittynyt
+    full: Koko
+  custom_field_names:
+    external_mails:
+      label: Ulkoinen posti
+  label_added_time_by: Added by %{author}
+  easy_scheduler_task_info:
+    planned: Tehtävä%{task_name} suunniteltiin.
+    running: Tehtävä%{task_name} on käynnissä.
+    ended_failed: Tehtävä%{task_name} epäonnistui.
+    ended_ok: Tehtävä%{task_name} päättyi onnistuneesti.
+    initialized: Tehtävä%{task_name} luotiin.
+  text_project_archive_confirmation: Oletko varma, että haluat arkistoida tämän hankkeen
+    ja siihen liittyvät tiedot?
+  text_project_close_confirmation: Oletko varma, että haluat sulkea tämän hankkeen?
+  text_project_reopen_confirmation: Oletko varma, että haluat avata uudelleen tämän
+    hankkeen?
+  permission_manage_global_versions: Hallitse maailmanlaajuinen virstanpylväitä
+  label_bulk_time_entries_edit: Edit vietti aikaa
+  label_easy_versions: Virstanpylväät
+  label_easy_versions_top_menu: Virstanpylväät
+  label_easy_repository_source_easy_repository_url: URL arkistoon
+  error_create_repo_from_url_cannot_create_dir: Ei voi luoda dir %{dir}
+  error_create_repo_from_url_cannot_determine_repo_name: Pysty määrittämään arkiston
+    nimi
+  error_create_repo_from_url_repo_already_exists: Repository jo olemassa
+  error_create_repo_from_url_repo_cannot_be_created: Repository ei voida luoda
+  text_git_repository_url_note: ! 'URL muodossa http (s) :/ / käyttäjä: salasana @
+    url / repo.git. Loppusijoituslaitoksen tulee paikallisesti luodaan automaattisesti
+    sen jälkeen lomakkeen lähettämistä.'
+  label_field_format_rating_star_no: Tähti
+  label_preview_external_email_mail_sender: Mail lähettäjä
+  label_preview_external_email_mail_recepient: Mail recepient
+  label_preview_external_email_mail_subject: Mail aihe
+  label_preview_external_email_mail_body_html: Mail runko HTML
+  label_preview_external_email_mail_body_plain: Mail elin selväkielisenä
+  text_external_email_sent: Liitteenä viesti lähetettiin ulkoisiin postia %{email}.
+  field_is_planned: Suunnitellut
+  label_permissions_global: Globaali käyttöoikeudet
+  label_permissions_project: Projektin käyttöoikeudet
+  label_project_gantt: Project Gantt
+  label_allow_log_time_to_closed_issue: Salli kirjautuminen aikaa suljettujen kysymysten
+  project_status_planned: suunnitteilla
+  label_preview_external_email_mail_cc: Mail kopio
+  title_user_detail: Klikkaamalla voit näyttää yksityiskohtia käyttäjälle.
+  title_version_detail: Klikkaamalla voit näyttää yksityiskohtia virstanpylväs.
+  text_textile_migration: ! 'Vaeltaville tallennettu tekstejä tekstiili HTML käyttösovelluksessa
+    komentoriviltä: "niputtaa exec rake easyproject: tekstiili: migrate_all RAILS_ENV
+    = tuotantoa"'
+  label_easy_gantt_theme_plural: PDF Gantt teemat
+  label_easy_gantt_theme_new: Uusi teema
+  label_header_style: Header tyyli
+  label_logo: Logo
+  field_header_color: Taustaväri
+  field_header_font_color: Tekstin väri
+  label_with_theme: käyttäen teema
+  label_is_null: on tyhjä
+  label_is_not_null: ei ole tyhjä
+  field_closed_on: Suljettu
+  field_inherit_members: Peri jäsenet
+  setting_jsonp_enabled: Ota JSONP tuki
+  setting_default_projects_tracker_ids: Default seurantoja uusiin hankkeisiin
+  permission_add_documents: Lisää asiakirjoja
+  permission_edit_documents: Muokata asiakirjoja
+  permission_delete_documents: Poista asiakirjat
+  label_total_time: Kokonaisaika
+  label_attribute_of_issue: Tehtävän %{name}
+  label_attribute_of_user: Käyttäjän %{name}
+  label_gantt_progress_line: Progress linja
+  text_turning_multiple_off: Jos poistat useita arvoja, useita arvoja poistetaan säilyttämiseksi
+    vain yksi arvo per tuote.
+  permission_manage_easy_issue_timers: Pääsy asetukset tehtävän ajastin
+  permission_edit_project_custom_fields: Muokkaa projektin mukautettuja kenttiä
+  heading_issues_settings_display: Näyttö
+  heading_issues_settings_behaviour: Käyttäytyminen
+  label_template_copy: Kopioi malleista olevan hankkeen
+  label_easy_issue_timer: Tehtävä ajastin
+  label_easy_issue_timer_settings: Tehtävä ajastinasetukset
+  label_easy_issue_timer_start: Alkaa
+  label_easy_issue_timer_end: Valmistuminen
+  label_easy_issue_easy_is_repeating: Toistuvat
+  label_easy_issue_easy_repeating_period: Toistuva ajan
+  label_easy_issue_easy_repeating_period_daily: Päivittäin
+  label_easy_issue_easy_repeating_period_weekly: Viikoittain
+  label_easy_issue_easy_repeating_period_monthly: Kuukausittain
+  label_easy_issue_easy_repeating_period_custom: Asiakassuhde
+  label_easy_issue_easy_reccuring_daily_every: Joka
+  label_easy_issue_easy_reccuring_daily_each: päivää
+  label_easy_issue_easy_reccuring_daily_work: arkipäivää
+  label_easy_issue_easy_repeating_endtype: Pää
+  label_easy_issue_easy_repeating_endtype_date: Päivämäärän
+  label_easy_issue_easy_repeating_endtype_count: Jälkeen x toistuu
+  label_easy_issue_easy_repeating_endtype_endless: Due hankkeen päättymisen
+  label_easy_issue_easy_repeating_start: Alkaa
+  label_easy_issue_reccuring_after: Jälkeen
+  label_easy_issue_reccuring_day_plural: päivää
+  label_easy_issue_reccuring_month: kuukausi
+  label_easy_issue_subject_reccuring_suffix: (Reccuring)
+  label_easy_issue_reccuring_monthly_orders:
+    1: Ensimmäinen
+    2: Toinen
+    3: Kolmas
+    4: Neljäs
+    5: Viime
+  button_copy_project_from_template: Kopioi hankkeen
+  button_select_file: Valitse tiedosto
+  button_easy_issue_timer_play: Olen sitä
+  button_easy_issue_timer_stop: Se on tehty
+  title_button_template_copy_project: Kopioi malli olemassa oleviin projekti.
+  title_easy_issue_timer_button_play: Päivitä tehtävän ja alkaa mitata aikaa.
+  title_easy_issue_timer_button_stop: Päivitä tehtävä ja esitäyttötoiminnon aika ilmoittautumislomake
+  title_jump_to_project: Valitse projekti
+  field_easy_issue_timer_assign_to_me: Sidotut minulle
+  field_easy_issue_timer_round: Kierros-/väliajat
+  field_attachment_reminder_words: Attachment sanat
+  field_easy_is_repeating: Toistuvat
+  error_update_easy_issue_timer_settings: Asetus ei ole tallennettu
+  error_project_not_selected: Hanke ei ole valittu
+  text_easy_attachment_reminder_confirm: Mainitsit kiinnitys, mutta et kiinnitä yksi,
+    haluatko jatkaa?
+  text_easy_attachment_reminder_explanatory_html: ! '? = Mikä tahansa merkki <br />*
+    = Mikä tahansa numero <br /><dd style="margin-left:15px;"> mielivaltaista merkkiä</dd>'
+  setting_project_display_identifiers: Näyttö projekti tunnisteiden
+  search_field_placeholders:
+    issues: Etsi tehtävät
+    projects: Etsi hankkeet
+  label_easy_issue_easy_reccuring_monthly_every: kukin
+  permission_delete_project: Poista projekti
+  label_easy_lesser_admin_for: ! 'Alue, jossa vähemmän ylläpitäjä voi:'
+  title_issue_remove_parent: Klikkaamalla tehtäviä ei ole enää subtask.
+  field_easy_lesser_admin: Lesser ylläpitäjä
+  field_easy_user_type: Käyttäjän tyyppi
+  field_easy_repeat_settings: Reccuring vaihtoehtoja
+  error_repeat_period_missing: Toimenpiteen toistuva on valittava
+  error_repeat_endtype_missing: Loppuun toistetaan on valittava
+  error_repeat_endtype_count_blank: reccuring määrä ei voi olla tyhjä
+  error_repeat_endtype_count_numeric: reccuring määrä on oltava useita
+  error_repeat_endtype_date_blank: päivämäärä lopussa ei voi olla tyhjä
+  error_repeat_daily_option_missing: reccuring tyyppi (työ tai joka päivä) on
+    valittava
+  error_repeat_daily_x_blank: reccuring päivä määrä ajan ei voi olla tyhjä
+  error_repeat_daily_x_numeric: reccuring päivä määrä ajan on oltava useita
+  error_repeat_weekly_days_selected: vähintään yksi viikonpäivä on valittava
+  error_repeat_monthly_option_missing: reccuring tyyppi (Xth päivä / custom)
+    on valittava
+  error_repeat_monthly_day_numeric: reccuring päivä on oltava väliltä 1 ja 31.
+  error_repeat_monthly_month_numeric: reccuring kuukausi on oltava väliltä
+  text_project_is_planned: Jos hanke on suunniteltu, mikään mailit lähetetään.
+  user:
+    easy_user_type:
+      internal: Käyttäjä
+      external: Asiakas
+  setting_issue_set_done_after_close: Aseta 100% tehdään suljettujen tehtävien
+  setting_allow_repeating_issues: Salli toistuvia tehtäviä
+  button_gantt_relation_destroy: Poista suhteessa
+  label_zoom: Zoomaus
+  field_send_all_planned_emails: Lähetä kaikki suunnitellut sähköpostit
+  label_easy_issue_easy_repeating_further_options: Way of reccuring
+  label_easy_issue_easy_repeating_time: Luominen asetukset
+  label_easy_issue_easy_repeating_time_hour: Toistan
+  label_easy_issue_easy_repeating_create_time: Luo aika
+  label_easy_issue_easy_repeating_in_advance: Etukäteen
+  label_easy_issue_easy_repeating_on_start_date: On reccuring päivä
+  label_easy_issue_easy_repeating_dont_create_now: Älä luo nyt
+  label_easy_issue_easy_repeating_create_now_all: Luo nyt kaikki
+  label_easy_issue_easy_repeating_create_now_count: Luo nyt amout
+  label_added_datetime_by: Lisännyt %{author} at %{datetime}
+  label_updated_datetime_by: Päivitetty %{author} at %{datetime}
+  label_user_mail_no_notified_if_issue_closing: En halua ilmoittaa suljetuista tehtävät
+  label_user_mail_no_notification_ever: Älä ilmoita kenellekään päivityksiin
+  button_release_cache: Release välimuisti
+  setting_use_easy_cache: Ota particulary välimuisti
+  label_easy_issue_easy_repeating_create_now: Luo nyt
+  label_easy_attendance_user_arrival_add_notify_title: Muistuta minua, kun kirjautunut
+    sisään tämän käyttäjän
+  label_easy_setting_required_issue_id_at_time_entry: Issue tarvitaan aikaa merkintä
+  button_journal_unprivate_note: Kustannustoiminta
+  title_journal_unprivate_note: Näytä päivittää kaikki käyttäjät
+  notice_journal_published: Päivitä julkaistu!
+  text_easy_attendance_user_detail_online_at: Käyttäjän saapui
+  text_easy_attendance_user_detail_offline_at: Käyttäjän lähteä
+  text_easy_attendance_user_detail_no_data_today: Käyttäjä ei ole vielä tullut
+  text_easy_attendance_user_notify_default_message: ! '%{user} vain kirjautuneena'
+  text_easy_attendance_user_notify_title: Muistuta tulee lähettää osoitteeseen:%{email}
+  text_easy_attendance_user_notify_already_exists_warning: Varoitus! Ilmoittaa jo
+    olemassa. Kokonais-%{count} x
+  setting_just_one_issue_mail: Lähetä yhdellä sähköpostiviestillä jälkeen tehtävän
+    päivityksen (postia ei halkaistu minun ja muut)
+  label_easy_issue_easy_repeating_period_yearly: Vuosittain
+  label_easy_issue_easy_repeating_create_time_time: Aika luoda
+  label_easy_issue_easy_reccuring_recur_every: Toistuvat joka
+  label_easy_issue_easy_reccuring_recur_years: year (s)
+  label_easy_issue_easy_reccuring_recur_months: month (s)
+  label_easy_issue_easy_reccuring_yearly_month_of: ja
+  label_easy_issue_easy_reccuring_after_recurs: toistojen
+  label_last_n_days_next_m_days: -%{last} päivää +%{next} päivää
+  label_email_field:
+    from: FROM
+    to: TO
+  button_execute: Suorittaa
+  title_easy_copy_to_project: Luo projekti kysymys
+  field_easy_next_start: Seuraava käynnistys
+  text_easy_issue_reccuring_create_now: Tässä osiossa voit määrittää, kuinka monta
+    numeroa haluat luoda nyt. Seuraava kysymykset luodaan päivänä määritetään asettaminen
+    reccuring. Tällä tunti määritelty alla.
+  label_easy_publishing_module_youtube: YouTube
+  setting_close_subtask_after_parent: Jälkeen suljettu tehtävä, lähellä osatehtävistä
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: Tuntematon
+        received: Saadut
+        processed_and_deleted: Jalostettu ja poistetut
+        not_processed_and_deleted: EI käsitelty ja poistettu
+        not_processed_and_left_on_server: EI käsitelty ja jäljellä palvelimelle
+        cannot_be_processed: Ei voida käsitellä
+  label_video_url: Videon URL-osoite
+  button_easy_copy_to_project: Projektin
+  permission_edit_own_projects: Muokkaa omia hankkeita
+  label_easy_attendance_is_repeating: Toista?
+  label_easy_attendance_repeating_to: Toista on
+  label_easy_custom_field_disable: Poista
+  label_easy_custom_field_enable: Mahdollistaa
+  label_filter_group_project_fields: Hanke
+  label_filter_group_relations: Suhteet
+  label_filter_group_custom_fields_suffix: mukautettuja kenttiä
+  label_filter_group_unknown: Tuntematon
+  label_filter_group_easy_issue_query: Kysymykset
+  label_filter_group_easy_project_query: Hankkeet
+  label_filter_group_easy_user_query: Käyttäjät
+  label_filter_group_easy_document_query: Asiakirjat
+  label_filter_group_easy_version_query: Virstanpylväitä
+  label_filter_group_easy_attendance_query: Läsnäolo
+  label_filter_group_easy_time_entry_query: Aikamerkintöjen
+  label_filter_group_easy_group_query: Ryhmät
+  label_easy_setting_show_time_entry_range_select: Show / vaihtelevan niin valitse
+  lable_should_send_invitation_update: Lähetä ilmoitus
+  button_easy_issue_timer_pause: Tauko
+  button_easy_issue_timer_resume: Jatkaa
+  button_download_email: Lataa mail
+  title_easy_issue_timer_button_pause: Tauko toimenpiteen ajan
+  title_easy_issue_timer_button_resume: Jatka measuere aika
+  field_easy_is_meeting: Kokous
+  field_easy_meeting_day: Päivä kokouksen
+  field_easy_meeting_time: Aika Kokous
+  field_easy_start_date_time: Alkamisaika
+  field_easy_due_date_time: Eräpäivä
+  field_mail_to_admin: Ylläpitäjän mail
+  notice_easy_custom_field_disabled: Oma kenttä on poistettu
+  notice_easy_custom_field_enabled: Custom kenttä on käytössä
+  error_easy_custom_field_disable_deletable: Tämä oma kenttä ei voi poistaa käytöstä
+  text_easy_rake_task_failure_email: Pettäessä tulee viesti toimitetaan tämän postin
+  label_customize_gantt_export: Custom vienti asetukset
+  label_not_updated_on: Ei toteutuneina
+  label_easy_rake_period: Joka
+  label_easy_rake_period_monthly: kuukausi
+  label_easy_rake_period_daily: päivä
+  label_easy_rake_period_hourly: tunti
+  label_easy_rake_period_minutes: minuutti
+  button_create_issue_from_journal: Luo kysymys
+  button_additional_context_menu: Muita vaihtoehtoja
+  title_create_issue_from_journal: Luo uusi kysymys, jossa teksti Tämän lehden kuin
+    kuvaus
+  title_additional_context_menu: Klikkaa Avaa valikko lisävaihtoehtoja
+  field_time_entry: Viettänyt aikaa
+  label_new_subproject_from_template: Uusi osaprojekti alkaen malli
+  permission_view_estimated_hours: Katso arvioitu tuntia
+  label_easy_repeat_left_reccurs: Reccurs jäljellä
+  button_load_additional_records: Lataa lisärekistereiden
+  field_sum_estimated_hours: Yhteensä arvioitu tuntia
+  button_print: Paino
+  button_pdf: PDF

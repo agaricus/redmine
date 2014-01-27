@@ -1,0 +1,24 @@
+<h2><%= l(:label_log_time) -%></h2>
+
+<%= labelled_form_for @time_entry, :url => project_time_entry_path(@time_entry.project, @time_entry), :html => {:id => 'time_log'} do |f| %>
+  <%= error_messages_for 'time_entry' -%>
+  <%= back_url_hidden_field_tag -%>
+  <div class="box" id="time-entry-container">
+    <%= render :partial => 'form', :locals => {:f => f} %>
+  </div>
+  <%= submit_tag l(:button_save), :class => 'button-1' %>
+<% end %>
+
+<div id="user-spent-time">
+  <%= render :partial => 'user_spent_time', :locals => {:spent_on => @time_entry.spent_on} -%>
+</div>
+
+<script type="text/javascript">
+  /* <![CDATA[ */
+  $('#time_entry_spent_on').keyup(function() {
+    $.post('<%= j(url_for({:controller => 'timelog', :action => 'user_spent_time'})).html_safe %>', 'spent_on=' + $(this).val(), function(data) {
+      $("#user-spent-time").html(data);
+    } )
+  })
+  /* ]]> */
+</script>

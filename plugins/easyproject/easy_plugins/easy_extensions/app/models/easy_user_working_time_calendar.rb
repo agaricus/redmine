@@ -1,0 +1,3 @@
+class EasyUserWorkingTimeCalendar < EasyUserTimeCalendar
+
+end

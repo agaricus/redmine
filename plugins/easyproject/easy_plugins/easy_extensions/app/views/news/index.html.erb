@@ -1,0 +1,64 @@
+<div class="contextual">
+  <p>
+    <%= link_to(l(:label_news_new),
+      new_project_news_path(@project),
+      :class => 'button-1',
+      :onclick => 'showAndScrollTo("add-news", "news_title"); return false;') if @project && User.current.allowed_to?(:manage_news, @project) %>
+  </p>
+</div>
+
+<div id="add-news" style="display:none;">
+  <h2><%=l(:label_news_new)%></h2>
+  <%= labelled_form_for @news, :url => project_news_index_path(@project),
+    :html => { :id => 'news-form', :multipart => true } do |f| %>
+    <%= render :partial => 'news/form', :locals => { :f => f } %>
+    <%= submit_tag l(:button_create) , :class => 'floatleft' %>
+    <%= preview_link preview_news_path(:project_id => @project), 'news-form' %> |
+    <%= link_to l(:button_cancel), "#", :onclick => '$("#add-news").hide()', :class => 'button-2' %>
+  <% end if @project %>
+  <div id="preview" class="wiki"></div>
+</div>
+
+<h2><%=l(:label_news_plural)%></h2>
+
+<% if @newss.empty? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+  <% @newss.each do |news| %>
+    <div class="news-container">
+      <div class="floatleft">
+        <%= avatar(news.author, :size => '60') %>
+        <p class="author"><%= link_to_user(news.author) %></p>
+      </div>
+      <div class="project-news<%= ' spinned' if news.spinned -%> bubble <%= cycle('odd','even') %>">
+        <h3>
+          <div class="floatleft">
+            <%= link_to_project(news.project) + ': ' unless news.project == @project %>
+            <%= link_to h(news.title), news_path(news) %>
+            <%= "(#{l(:label_x_comments, :count => news.comments_count)})" if news.comments_count > 0 %>
+            <% if news.unread?(User.current) -%>
+              <span class="news-unread"><%= l(:label_news_unread) -%></span>
+            <% end -%>
+          </div>
+          <span class="created_on"><%= format_time news.created_on %></span>
+        </h3>
+        <hr style="border-color: #CCCCCC; border-style: dashed;border-width: 0 0 1px;" />
+        <div class="wiki">
+          <%= truncate_html(textilizable(news.description, {:headings => false}), 120, "... #{link_to(l(:label_more),{:controller => 'news', :action => 'show', :id => news})}" )%>
+        </div>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  <% end %>
+<% end %>
+<p class="pagination"><%= pagination_links_full @news_pages %></p>
+<% other_formats_links do |f| %>
+  <%= f.link_to 'Atom', :url => {:project_id => @project, :key => User.current.rss_key, :title => l(:title_other_formats_links_atom)} %>
+<% end %>
+<% content_for :header_tags do %>
+  <%= auto_discovery_link_tag(:atom, params.merge({:format => 'atom', :page => nil, :key => User.current.rss_key})) %>
+  <%= stylesheet_link_tag 'scm' %>
+  <%= render :partial => 'easy_queries/infinite_scroll' ,
+    :locals => {:content_selector => '#content', :item_selector => 'div.news-container'} %>
+<% end %>
+<% html_title(l(:label_news_plural)) -%>

@@ -1,0 +1,19 @@
+<%= labelled_fields_for :document, @document do |f|  %>
+  <%= error_messages_for @document %>  
+  <div class="box tabular">
+    <p><%= f.select :category_id, DocumentCategory.active.reject{|c| c.active_record_restricted?(User.current, :manage, @project)}.collect{|c| [c.name, c.id]} %></p>
+    <p><%= f.text_field :title, {:required => true, :size => 60} %></p>
+    <% @document.custom_field_values.each do |value| %>
+      <p><%= custom_field_tag_with_label :document, value %></p>
+    <% end %>
+    <p><%= f.text_area :description, :cols => 60, :rows => 15, :class => 'wiki-edit' %></p>
+  </div>
+
+  <%= wikitoolbar_for 'document_description' %>
+
+  <% if @document.new_record? %>
+    <div class="box tabular">
+      <p><label><%=l(:label_attachment_plural)%></label><%= render :partial => 'attachments/form', :locals => {:container => @project} %></p>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,15 @@
+<% css_entity_name = 'entity_' + entity.class.name.underscore
+css_classes = ((' ' + uniq_prefix + 'parent' + css_entity_name + '_' + entity.parent_id.to_s) if entity.child?) || ''
+uniq_id = uniq_prefix + css_entity_name + '-' + entity.id.to_s -%>
+<tr id="<%= uniq_id %>" class="<%= "idnt idnt-#{entity.level}" if entity.respond_to?(:level) -%> <%= 'selectable' if entity_name == entity.class.name %> <%= cycle('odd', 'even') %><%= css_classes -%><%= ' context-menu-selection' if selected_values && selected_values.detect{|a,b| a == entity.id.to_s} -%>" <%= detect_hide_elements(uniq_id) %>  >
+  <%= content_tag(:td, '') %>
+
+  <% if entity_name == entity.class.name  %>
+  <td class="checkbox hide-when-print">
+    <%= entity_modal_selector_checker(entity, selected_values, options[:multiple]) %>
+  </td>
+  <% end %>
+  <% columns[level].each do |column| %>
+    <td class="<%= column.name.to_s.underscore -%>"><span><%= format_html_entity_attribute(entity.class, column, column.value(entity), :no_link => true, :entity => entity) -%></span></td>
+  <% end %>
+</tr>

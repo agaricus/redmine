@@ -1,0 +1,1 @@
+Dir[File.join(Rails.root, 'plugins/easyproject/*/*/lib/tasks/**/*.rake')].sort.each {|ext| load ext }

@@ -1,0 +1,9 @@
+$('#watchers').html('<%= j(render(:partial => 'watchers/watchers_list', :locals => {:watched => @watched})) %>');
+$('#modal-selector-entities input:checked').parents('.form-entity-watcher-container').hide();
+<% if params[:close] %>
+  closeModalSelectorWindow();
+<% end %>
+
+size = $(window).height() - $("#sidebar .issue_actions").height() - $("#header").height() - $("#footer").height();
+size = size - 200 // menu, header, paddings
+$('#sidebar-box-watchers_wrapper-container .watchers-list').first().css({"height" : size.toString() + "px"});

@@ -1,0 +1,17 @@
+<div id="easy-page">
+  <h2><%= l(:label_easy_page_edit) %></h2>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :controller => 'easy_pages', :action => 'index' }, { :title => l('breadcrumb.title.easy_pages_administration') }),
+    link_to(l('breadcrumb.label.easy_page_edit', :pagename => @page.translated_name), {:controller => 'easy_pages', :action => 'edit', :id => @page.id }, { :title => l('breadcrumb.title.easy_page_edit', :pagename => @page.translated_name) })
+  ] -%>
+
+  <%= form_for(@page) do |f| %>
+    <%= error_messages_for @page %>
+
+    <%= render :partial => 'form', :locals => {:f => f}  %>
+
+    <p><%= f.submit l(:button_update) %></p>
+  <% end %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>

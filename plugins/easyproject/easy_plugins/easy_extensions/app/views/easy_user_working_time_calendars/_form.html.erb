@@ -1,0 +1,42 @@
+<%= error_messages_for 'easy_user_working_time_calendar' %>
+
+<div class="box">
+  <p>
+    <%= f.text_field :name, :required => !easy_user_working_time_calendar.builtin?, :disabled => easy_user_working_time_calendar.builtin?, :label => 'activerecord.attributes.easy_user_working_time_calendar.name'.to_sym %>
+  </p>
+  <p>
+    <%= label_tag :time_from, l(:label_easy_user_working_time_calendar_time_from) %>
+    <%= f.time_select :time_from %>
+  </p>
+  <p>
+    <%= label_tag :time_from, l(:label_easy_user_working_time_calendar_time_to) %>
+    <%= f.time_select :time_to %>
+  </p>
+  <p>
+    <%= f.text_field :default_working_hours, :required => true, :label => 'activerecord.attributes.easy_user_working_time_calendar.default_working_hours'.to_sym, :size => 5 %>
+  </p>
+  <p>
+    <%= f.select :first_day_of_week, 7.times.collect{|d| [day_name(d+1), d+1]}, :required => true, :label => 'activerecord.attributes.easy_user_working_time_calendar.first_day_of_week'.to_sym %>
+  </p>
+  <p>
+    <%= f.check_box :is_default, :label => 'activerecord.attributes.easy_user_working_time_calendar.is_default'.to_sym %>
+  </p>
+  <% if easy_user_working_time_calendar.new_record? -%>
+    <p>
+      <%= label_tag 'inherit', l(:label_easy_user_working_time_calendar_inherit_from_parent_calendar) %>
+      <%= select_tag 'inherit', options_for_select([['', '']] + EasyUserWorkingTimeCalendar.templates.collect{|c| [c.translated_name, c.id.to_s]}, params[:inherit]) %>
+    </p>
+    <p>
+      <%= label_tag 'copy_exceptions', l(:label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions) %>
+      <%= hidden_field_tag 'copy_exceptions', 0 %>
+      <%= check_box_tag 'copy_exceptions', 1, (params[:copy_exceptions].nil? ? true : params[:copy_exceptions] == '1') %>
+    </p>
+    <p>
+      <%= label_tag 'copy_holidays', l(:label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays) %>
+      <%= hidden_field_tag 'copy_holidays', 0 %>
+      <%= check_box_tag 'copy_holidays', 1, (params[:copy_holidays].nil? ? true : params[:copy_holidays] == '1') %>
+    </p>
+  <% end -%>
+</div>
+
+<%= javascript_tag "$('#easy_user_working_time_calendar_name').focus();" %>

@@ -1,0 +1,68 @@
+<%= back_url_hidden_field_tag %>
+<%= error_messages_for 'version' %>
+
+<div class="box tabular">
+  <p>
+
+    <%= f.label_for_field(:project_id_autocomplete, :required => true, :label => :field_project) %><%= easy_select_tag(
+      'version[project_id]',
+      {:name => @project.try(:name), :id => @project.try(:id)},
+      nil,
+      url_for(
+        :controller => 'easy_auto_completes',
+        :action => @project && @project.easy_is_easy_template? ? 'project_templates' : 'visible_projects',
+        :format => 'json'
+      ),
+      :include_blank => true, :root_element => 'projects', :html_options => {:id => 'version_project_id'}
+    ) -%>
+  </p>
+  <p>
+    <%= f.text_field :name, :size => 60, :required => true, :maxlength => 60 -%>&nbsp;<em><%= l(:text_caracters_maximum, 60) %></em>
+  </p>
+  <%= label_tag(:version_description, l(:field_description)) %>
+  <p><%= f.text_area :description, :size => 60, :rows => 10, :accesskey => accesskey(:edit), :class => 'wiki-edit', :no_label => true %></p>
+  <%= wikitoolbar_for 'version_description' %>
+  <p>
+    <%= f.select :status, Version::VERSION_STATUSES.collect {|s| [l("version_status_#{s}"), s]} -%>
+  </p>
+  <% if EasyVersionCategory.active.any? || User.current.admin? %>
+    <p>
+      <%= label_tag(:version_easy_version_category_id, l(:field_easy_version_category_id)) %><%= f.collection_select :easy_version_category_id, EasyVersionCategory.active, :id, :name, :include_blank => true %>
+      <%= link_to('', {:controller => 'enumerations', :action => 'new', :type => 'EasyVersionCategory', :back_url => url_for({:project_id => @project})}, :class => 'icon icon-add', :title => l(:button_add)) if User.current.allowed_to?({:controller => 'enumrations', :action => 'new'}, nil, :global => true) -%>
+    </p>
+  <% end %>
+  <p>
+    <%= f.text_field :effective_date, :size => 10, :oninput => 'i = $("#update_database"); if (i[0]) {i.attr("checked", true)}' -%><%= calendar_for('version_effective_date') -%>
+    <script type="text/javascript">
+      $("#version_effective_date").change(function() {
+        i = $("#update_database"); if (i[0]) {i.attr("checked", true)}
+      })
+    </script>
+  </p>
+  <% unless @version.new_record? %>
+    <p id="form-checkbox" class="long-label">
+      <%= check_box_tag :update_database, true, false -%> <%= label_tag :update_database, l(:label_version_update_database) -%>
+    </p>
+  <% end %>
+  <% @version.custom_field_values.each do |value| %>
+    <p>
+      <%= custom_field_tag_with_label :version, value -%>
+    </p>
+  <% end %>
+  <div id="relations">
+    <%= render :partial => 'versions/relations', :locals => {:f => f} -%>
+  </div>
+  <p>
+    <%= f.select :sharing, @version.allowed_sharings.collect {|v| [format_version_sharing(v), v]} -%>
+  </p>
+  <div class="milestone-sharing-info">
+    <%= l(:label_milestone_sharing_info) -%>
+    <ul>
+      <li><%= format_version_sharing('none') -%> - <%= l(:label_milestone_sharing_info_none) -%></li>
+      <li><%= format_version_sharing('descendants') -%> - <%= l(:label_milestone_sharing_info_descendants) -%></li>
+      <li><%= format_version_sharing('hierarchy') -%> - <%= l(:label_milestone_sharing_info_hierarchy) -%></li>
+      <li><%= format_version_sharing('tree') -%> - <%= l(:label_milestone_sharing_info_tree) -%></li>
+      <li><%= format_version_sharing('system') -%> - <%= l(:label_milestone_sharing_info_system) -%></li>
+    </ul>
+  </div>
+</div>

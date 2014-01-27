@@ -1,0 +1,7 @@
+<%= form_tag({:controller => 'easy_user_working_time_calendars', :action => 'inline_update', :id => easy_user_working_time_calendar}, :id => "form_#{day.to_s.underscore}", :remote => true) do %>
+  <%= hidden_field_tag 'day', day.to_s %>
+  <%= hidden_field_tag 'start_date', params[:start_date] %>
+  <%= text_field_tag 'working_hours', working_hours, :maxlength => 4, :size => 2 %>
+  <%= link_to_function('', '$(this).closest("form").submit()', :class => 'icon icon-save', :title => l(:title_easy_user_working_time_calendars_inline_save)) -%>
+  <%= link_to('', {:controller => 'easy_user_working_time_calendars', :action => 'inline_show', :id => easy_user_working_time_calendar, :day => day, :start_date => params[:start_date]}, :class => 'icon icon-close', :title => l(:title_easy_user_working_time_calendars_inline_close), :remote => true) -%>
+<% end %>

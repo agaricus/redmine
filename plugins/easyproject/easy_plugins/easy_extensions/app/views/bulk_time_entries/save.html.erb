@@ -1,0 +1,28 @@
+<% html_title l(:label_bulk_time_entries) %>
+
+<h2><%= l(:label_bulk_time_entries) %></h2>
+
+<div class="box bulk-time-entry-container" id="entry-box">
+  <div id="entries">
+    <div class="flash notice">
+      <ul>
+        <li><span><%= l(:label_bulk_time_flash_project) %></span> <%= h @time_entry.project.family_name %></li>
+        <% if @time_entry.issue && @time_entry.project.module_enabled?('issue_tracking') %>
+          <li><span><%= l(:label_bulk_time_flash_issue) %></span> <%= h @time_entry.issue.subject %></li>
+        <% end %>
+        <li><span><%= l(:label_bulk_time_flash_comment) %></span> <%= (@time_entry.comments || '').html_safe %></li>
+        <li><span><%= l(:label_bulk_time_flash_user) %></span> <%= h @time_entry.user.name %></li>
+        <li><span><%= l(:label_bulk_time_flash_hours) %></span> <%= html_hours(@time_entry.hours.to_s) %> h</li>
+        <li><span><%= l(:label_bulk_time_flash_spent_on) %></span> <%= format_date(@time_entry.spent_on) %></li>
+      </ul>
+    </div>
+    <p>
+      <%= link_to(l(:label_bulk_time_add_another), bulk_time_entries_path(:page_module_uuid => params[:page_module_uuid], :spent_on => @time_entry.spent_on, :back_url => params[:back_url]), :class => 'button-1 icon icon-add') %>
+      <%= link_to(l(:button_back), params[:back_url], :class => 'button-2') if params[:back_url] %>
+    </p>
+  </div>
+
+  <div id="user-spent-time">
+    <%= render :partial => "timelog/user_spent_time", :locals => {:spent_on => @time_entry.spent_on, :user => @time_entry.user, :back_url => url_for(:controller => 'bulk_time_entries', :action => 'index', :spent_on => params[:spent_on])} %>
+  </div>
+</div>

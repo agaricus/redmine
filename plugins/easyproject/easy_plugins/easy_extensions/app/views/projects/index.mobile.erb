@@ -1,0 +1,30 @@
+
+  <%= render(:partial => 'common/freetext_quick_search', :locals => {:free_search_element_to_update => 'projects', :free_search_url => url_for({:controller => 'projects', :action => 'search'}), :free_search_after_function => "$('#projects table.list tr:last span.expander').hide();", :free_search_ajax_type => 'POST'}) %>
+
+  <%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name =>  l(:label_project_index), :show_free_search => false} -%>
+
+<div id="projects-index">
+  <% if @query.valid? %>
+    <div id="projects">
+      <% if @projects.empty? %>
+        <% if @entity_count && @entity_count > 0 %>
+          <p class="nodata">
+            <%= l(:notice_too_many_projects, :count => @entity_count) -%>
+          </p>
+        <% else %>
+          <%= content_tag(:p, l(:label_no_data), :class => 'nodata') -%>
+        <% end %>
+      <% else %>
+        <%= render :partial => 'projects', :locals => {:query => @query, :projects => @projects} -%>
+      <% end %>
+
+    </div>
+  <% end %>
+
+
+</div>
+
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'projectindex', :plugin => 'easy_extensions' %>
+<% end -%>

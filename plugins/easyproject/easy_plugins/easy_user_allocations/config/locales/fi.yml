@@ -1,0 +1,70 @@
+---
+fi:
+  easy_user_allocations_name: Voimavarojen hallinta
+  easy_user_allocations_description: ! '- Resurssien hallinta / ihmiset'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: Näytä voimavarojen hallinta
+  permission_view_my_easy_user_allocations: Tarkastele omien varojen hallintaa
+  permission_edit_easy_user_allocations: Edit resurssien hallinta
+  project_module_user_allocations: Voimavarojen hallinta
+  label_user_allocations: Voimavarojen hallinta
+  label_user_allocation_gantt: Resurssien jakaminen Gantt
+  label_user_allocation_gantt_users: Käyttäjät
+  label_user_allocation_gantt_user_selection: Valinta
+  label_user_allocation_gantt_range: Päivämäärät
+  label_unassigned_issues: Määrittämättömät tehtävät
+  label_issue_id: Tunnus
+  label_allocation_worm_out_of_range: Valitse toinen ajanjakso näyttää koko tehtävän
+  label_allocation_changed_title: Tehtävä oli muuttunut ja päivitetään tallentaa
+  resalloc:
+    title: Resurssien kohdentaminen
+    settings: Asetukset
+    button_apply_settings: Käytä asetuksia
+    button_recalculate: Laske jakaminen
+    button_save: Tallenna muutokset
+    button_undo: Kumoa tallentamattomat muutokset
+    button_split_issue: Split tehtävä
+    split_issue_help: Valitse päivämäärä napsauttamalla määrittämätön tehtävään.
+    error_date_range_too_long: on oltava pienempi kuin 1 vuosi
+    legend_hours_worked: Vietetty aika
+    legend_hours_overtime: Työajan ulkopuolella määräajassa
+  easy_pages:
+    modules:
+      user_allocation: Resurssien kohdentaminen
+      user_allocation_working_plan: Varojen jakaminen / työsuunnitelma
+  permission_edit_my_easy_user_allocations_plan: Muokkaa oma työsuunnitelma
+  label_user_allocation_plan: Työsuunnitelma
+  user_allocation_plan:
+    label_plan: Suunnitelma
+    label_real: Todellinen
+    label_comment: Kommentti
+  easy_query:
+    name:
+      easy_user_allocation_query: Varojen jakaminen
+      easy_user_allocation_by_project_query: Varojen jakaminen hankkeiden
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Yksityinen suodattimet voimavarojen kohdentamisesta
+        easy_user_allocation_by_project_query: Yksityinen suodattimia resurssien kohdentamista
+          hankkeiden
+      public:
+        easy_user_allocation_query: Julkinen suodattimet voimavarojen kohdentamisesta
+        easy_user_allocation_by_project_query: Julkinen suodattimia resurssien kohdentamista
+          hankkeiden
+  label_allocations_by_project: Varojen jakaminen hankkeiden
+  text_easy_user_allocation_working_plan_bottom_info: Avulla voidaan ajoittaa käyttäjän
+    työtaakkaa valitulla viikolla. Taulukossa aikataulun ja todellinen aika raportoitu.
+  label_setting_keep_issue_start_dates: Älä muuta tehtävää aloituspäivät.
+  text_setting_keep_issue_start_dates: Jos käytössä ja tehtävä arvioitu tuntia on
+    liian alhainen, tehtävä ei saa lyhentää, mutta se jaetaan 0 tuntia sijasta.
+  project_module_easy_user_allocations: Käytä resursseja / ihmisiä
+  label_setting_allocate_evenly: Jakaa tasaisesti
+  text_setting_allocate_evenly: Jos käytössä ja tehtävä kokoa on muutettu jakaminen
+    Gantt arvioitu tuntia jakautuvat tasaisesti koko ajan tehtävä.
+  label_setting_allocate_from_start: Jakaa alusta päivämäärät tehtävät
+  text_overallocation: summa jaetaan tuntia on suurempi silloin arvioitu tuntia.
+  permission_view_easy_user_allocations_by_project: Näytä määrärahojaan hankkeeseen
+  easy_user_allocations_sidebar_all_users_queries: Määrärahojaan käyttäjät
+  easy_user_allocations_label_show_assigned_issues: Näytön jakaminen käyttäjälle %{username}
+  label_filter_group_easy_user_allocation_query: Varojen jakaminen
+  label_edit_estimated_hours: Muokkaa arvioitu tuntia

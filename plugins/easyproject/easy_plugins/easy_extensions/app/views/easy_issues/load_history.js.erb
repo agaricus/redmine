@@ -1,0 +1,3 @@
+$("#history").html("<%=j render(:partial => 'issues/history', :locals => { :issue => @issue, :journals => @journals }) %>");
+collapseUnnecessaryJournals();
+ShowAndScrollTo('preview', -130);

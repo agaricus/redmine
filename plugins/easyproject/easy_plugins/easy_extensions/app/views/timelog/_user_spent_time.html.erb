@@ -1,0 +1,61 @@
+<% user ||= User.current
+scope = TimeEntry.where(:user_id => user.id, :spent_on => spent_on)
+total_hours = scope.sum(:hours)
+entries = scope.includes(:project, :issue, :user, :activity).order("#{TimeEntry.table_name}.spent_on DESC").all
+back_url ||= nil
+%>
+<h2><%= l(:label_spent_time) %></h2>
+<div class="total-hours">
+  <p><%= l(:label_total) %>: <%= html_hours(l_hours(total_hours)) %></p>
+</div>
+<table class="list time-entries">
+  <thead>
+    <tr>
+      <th><%= l(:label_date) -%></th>
+      <th><%= l(:label_member) -%></th>
+      <th><%= l(:label_activity) -%></th>
+      <th><%= l(:label_project) -%></th>
+      <th><%= l(:label_issue) -%></th>
+      <th><%= l(:field_comments) -%></th>
+      <% if user.user_time_entry_setting_range? -%>
+        <th><%= l(:field_easy_range_from) %></th>
+        <th><%= l(:field_easy_range_to) %></th>
+      <% end -%>
+      <th><%= l(:field_hours) -%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% entries.each do |entry| -%>
+      <tr class="time-entry <%= cycle('odd', 'even') %>">
+        <td class="spent_on"><%= format_date(entry.spent_on) %></td>
+        <td class="user"><%=h entry.user %></td>
+        <td class="activity"><%=h entry.activity %></td>
+        <td class="project"><%=h entry.project %></td>
+        <td class="subject">
+          <% if entry.issue -%>
+            <%= entry.issue.visible? ? link_to_issue(entry.issue, :truncate => 50) : "##{entry.issue.id}" -%>
+          <% end -%>
+        </td>
+        <td class="comments"><%= (entry.comments || '').html_safe -%></td>
+        <% if user.user_time_entry_setting_range? -%>
+          <td class="easy_range_from"><%= format_time(entry.easy_range_from, false) %></td>
+          <td class="easy_range_to"><%= format_time(entry.easy_range_to, false) %></td>
+        <% end -%>
+        <td class="hours"><%= html_hours("%.2f" % entry.hours) %></td>
+        <td class="fast-icons nowrap">
+          <% if entry.editable_by?(User.current) -%>
+            <%= link_to('', {:controller => 'timelog', :action => 'new', :'time_entry[project_id]' => entry.project, :'time_entry[issue_id]' => entry.issue, :'time_entry[spent_on]' => entry.spent_on, :'time_entry[activity_id]' => entry.activity_id}, :title => l(:button_log_time), :class => 'icon icon-time-add') %>
+            <%= link_to('', {:controller => 'bulk_time_entries', :action => 'index', :time_entry_id => entry, :back_url => back_url},
+              :title => l(:button_edit), :class => 'icon icon-edit') %>
+            <%= link_to('', {:controller => 'timelog', :action => 'destroy', :id => entry, :project_id => nil, :back_url => back_url},
+              :data => {:confirm => l(:text_are_you_sure)},
+              :method => :delete,
+              :title => l(:button_delete),
+              :class => 'icon icon-del') %>
+          <% end -%>
+        </td>
+      </tr>
+    <% end -%>
+  </tbody>
+</table>

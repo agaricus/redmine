@@ -1,0 +1,7 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => (settings['heading'] || l('easy_pages.modules.noticeboard')), :container_html => {:class => 'module-content wiki'}}) do %>
+  <%
+  txt = CGI.unescape(settings['text'] || '')
+  txt = Redmine::CodesetUtil.replace_invalid_utf8(txt)
+%>
+  <%= textilizable(txt, {:headings => false}).html_safe -%>
+<% end %>

@@ -1,0 +1,16 @@
+<%= l('mail.label_attachment_new') %>
+
+<%= l('mail.text_attachment_added', {
+    :user => @attachments.first.author,
+    :time => format_time(@attachments.first.current_version.updated_at),
+    :added_to => @added_to
+  }) %>
+
+<% @attachments.each do |attachment | %>
+  * <%= attachment.filename %> (<%= number_to_human_size attachment.filesize %>)
+  <% unless attachment.description.blank? %>
+    --- <%= " #{attachment.description}" %>
+  <% end %>
+<% end %>
+
+<%= @added_to_url %>

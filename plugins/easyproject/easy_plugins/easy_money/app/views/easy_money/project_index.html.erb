@@ -1,0 +1,18 @@
+<h2><%= l(:label_easy_money_project_name) -%><%= h(@project.name) -%></h2>
+
+<div id="project-overview-container">
+  <%= render :partial => 'easy_money/entity_overview', :locals => { :project => @project, :entity => @project, :url_params => { :project_id => @project } } %>
+</div>
+<br />
+<%= render :partial => 'easy_money/subprojects_overview', :locals => {:project => @project, :subprojects => @project.children.active.non_templates.has_module(:easy_money).reorder("#{Project.table_name}.lft")} -%>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<%= content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<%= content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+<% end -%>

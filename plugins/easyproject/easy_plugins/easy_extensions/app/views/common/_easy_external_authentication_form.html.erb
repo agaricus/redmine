@@ -1,0 +1,30 @@
+<%
+user ||= nil
+editable ||= User.current.admin?
+selectable ||= false
+name ||= 'authentication'
+attribute ||= :uid
+options ||= {}
+multiple ||= true
+%>
+
+<div class="authentications" style="overflow: auto;" data-name="<%= name %>">
+<%= form.hidden_field(name, :id => name.underscore) if selectable %>
+<% (authentications = EasyExternalAuthentication.where( :user_id => (user && user.id), :provider => provider )).each do |authentication| %>
+  <div class="authentication<%= ' selectable-authentication' if selectable %><%= ' selected' if selectable && form.object.send(name).to_s == authentication.send(attribute).to_s %>">
+    <%= image_tag "authbuttons/#{authentication.provider}_32.png", :plugin => 'easy_extensions', :size => "32x32" %>
+    <div class="provider"><%= authentication.provider.titleize if authentication.provider %></div>
+    <div class="uid" data-uid="<%= authentication.uid %>"><%= authentication.uid %></div>
+    <% if editable %>
+      <%= link_to "X", easy_external_authentication_destroy_path(authentication, :provider => authentication.provider), :confirm => l(:easy_external_authentication_confirm_removal), :method => :delete, :class => "remove" %>
+    <% end %>
+  </div>
+  <% break if options[:only_one] %>
+<% end %>
+<% if multiple || !authentications.any? %>
+  <%= link_to(easy_external_authentication_path(:provider => provider, :type => (user ? 'user' : 'application') ), :class => 'auth_provider') do %>
+    <%= image_tag "authbuttons/#{provider}_64.png", :plugin => 'easy_extensions', :size => "64x64", :alt => provider.camelize %>
+    <%= l :label_easy_external_authentication_attach, :provider => provider.camelize %>
+  <% end %>
+<% end %>
+</div>

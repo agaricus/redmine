@@ -1,0 +1,11 @@
+<% ### PAGE CUSTOMS ########################################################## %>
+<% if User.current.allowed_to?(:manage_easy_resource_booking_module, nil, :global => true) %>
+    <% content_for :easy_page_layout_service_box_bottom do %>
+      <div class="customize-button-container">
+        <%= link_to l(:label_personalize_page), easy_resource_availabilities_page_layout_path, :class => 'customize-button button-2' %>
+      </div>
+    <% end %>
+<% end %>
+
+<% html_title(l(:label_my_page)) -%>
+

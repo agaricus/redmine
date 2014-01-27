@@ -1,0 +1,22 @@
+<% back_url ||= url_for(params) -%>
+<div class="buttons">
+  <div class="button">
+    <% if easy_attendance.new_record? %>
+      <%= link_to(l(:'easy_attendance.description.arrival'), {:controller => 'easy_attendances', :action => 'arrival', :arrival_at => Date.today, :back_url => back_url}, :class => 'button-1', :remote => true) %>
+    <% elsif easy_attendance.arrival.to_date == Date.today %>
+      <%= link_to(l(:'easy_attendance.description.departure'), {:controller => 'easy_attendances', :action => 'departure', :id => easy_attendance, :back_url => back_url}, :class => 'button-1') %>
+    <% else %>
+      <%= link_to(l(:'easy_attendance.description.departure'), {:controller => 'easy_attendances', :action => 'edit', :id => easy_attendance, :back_url => back_url}, :class => 'button-1') %>
+    <% end %>
+  </div>
+  <div class="button">
+    <%= link_to(l(:advanced_settings, :scope => :easy_attendance),
+      {:controller => 'easy_attendances', :action => 'new', :back_url => back_url, :attendance => {:user_id => user.id}},
+      :title => l(:advanced_settings, :scope => [:easy_attendance, :title]),
+      :class => 'button-2',
+      :remote => true) -%>
+  </div>
+  <div class="button">
+    <%= link_to(l(:link_to_easy_attendance, :scope => [:easy_attendance]), {:controller => 'easy_attendances', :action => 'index', :tab => 'list', :back_url => back_url}, :class => 'button-2') %>
+  </div>
+</div>

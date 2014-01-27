@@ -1,0 +1,1 @@
+$("#other-expenses").html('<%= j(render :partial => 'easy_money_other_expenses/inline_edit', :locals => {:project => @project, :sum_other_expenses => @entity.easy_money.sum_other_expenses_on_entity(@project.easy_money_settings.expected_count_price.to_sym), :entity_type => @entity_type, :entity_id => @entity_id}) %>');

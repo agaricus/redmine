@@ -1,0 +1,12 @@
+<% url_options ||= {} %>
+<div class="easy-calendar-listing-links-container next-prev-links">
+  <p>
+    <%= link_to l("button_timelog_calendar_prev.#{period}"), {:start_date => calendar.prev_start_date, :t => params[:t], :tab => params[:tab]}.merge(url_options), :title => l("title_timelog_calendar_prev.#{period}"), :class => 'prev' -%>
+  </p>
+  <p>
+    <span class="period"><%= "#{calendar.startdt.cweek} / " if period.to_sym == :week %><%= month_name(calendar.month) -%> <%= calendar.year -%></span>
+  </p>
+  <p>
+    <%= link_to l("button_timelog_calendar_next.#{period}"), {:start_date => calendar.next_start_date, :t => params[:t], :tab => params[:tab]}.merge(url_options), :title => l("title_timelog_calendar_next.#{period}"), :class => 'next' -%>
+  </p>
+</div>

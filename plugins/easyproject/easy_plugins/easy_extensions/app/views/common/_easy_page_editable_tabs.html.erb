@@ -1,0 +1,23 @@
+<% selected_tab ||= params[:t].to_i if params[:t]
+if !params[:tab_id] && !params[:t]
+  selected_tab ||= 1
+end
+%>
+<% if tabs.size > 1 || editable -%>
+  <div class="<%= easy_page_context[:page_params][:edit] ? 'editable-tabs' : 'tabs' %> easy-page-editable-tabs">
+    <ul>
+      <% tabs.each do |tab|
+        if params[:tab_id] && tab.id == params[:tab_id].to_i
+          selected_tab = tab.position
+        end %>
+        <li id="easy_page_tab_container_<%= tab.id %>">
+          <%= render(:partial => 'common/easy_page_editable_tabs_inline_show', :locals => {:tab => tab, :editable => editable, :selected_tab => selected_tab}) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    $(window).load(function() { displayTabsButtons2('div.easy-page-editable-tabs'); });
+    $(window).resize(function() { displayTabsButtons2('div.easy-page-editable-tabs'); });
+  </script>
+<% end %>

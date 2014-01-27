@@ -1,0 +1,7 @@
+<% templs = EasyPage.page_my_page.templates(true) -%>
+<% unless templs.blank? %>
+  <p>
+    <%= label_tag(:page_template_id, l(:label_select_my_page_template)) %>
+    <%= select_tag 'page_template_id', "<option>#{l(:label_select_page_template)}</option>".html_safe + options_for_select(EasyPage.page_my_page.templates(true).collect{|p| [p.template_name, p.id]}, params[:page_template_id].to_i) -%>
+  </p>
+<% end %>

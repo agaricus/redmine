@@ -1,0 +1,8 @@
+<p id="<%= dom_id(t) %>" class="long2">
+  <span class="<%= "easy-translator-input-field #{t.lang}" %>">
+    <%= label_tag("easy_translations_#{t.id}", @translated_langs_from_cache[t.lang]) %>
+    <%= text_field_tag("easy_translations[#{t.id}]", t.value, :class => "easy-flag #{t.lang}") %>
+
+    <%= link_to('', destroy_easy_translation_path(t), :remote => true, :method => :delete, :title => l(:title_easy_translation_destroy), :class => 'icon-del', :data => {:confirm => l(:text_are_you_sure)}) %>
+  </span>
+</p>

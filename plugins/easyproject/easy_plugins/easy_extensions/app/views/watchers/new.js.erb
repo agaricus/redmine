@@ -1,0 +1,2 @@
+$('#modal-dialog-loader').html("<%= j(render(:partial => 'watchers/new', :locals => {:watched => @watched, :available_watchers => @available_watchers} )) %>");
+createModalSelectorWindow();

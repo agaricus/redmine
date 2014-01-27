@@ -1,0 +1,31 @@
+<% if @results %>
+  <div id="search-results-counts">
+    <%= render_results_by_type(@results_by_type) unless @scope.size == 1 %>
+  </div>
+  <h3><%= l(:label_result_plural) %> (<%= @results_by_type.values.sum %>)</h3>
+  <dl id="search-results">
+    <% @results.each do |e| %>
+      <div>
+        <dt class="">
+          <%= link_to highlight_tokens(truncate(e.event_title, :length => 255), @tokens), e.event_url %>
+          <%= content_tag('span', ', ' + l(:label_project) + ': ' +h(e.project)) unless @project == e.project %>
+        </dt>
+        <dd>
+          <%= content_tag :span, highlight_tokens(e.event_description, @tokens), :class => 'description' -%>
+          <%= content_tag :span, additional_search_results(e, @tokens), :class => 'additional-results' -%>
+          <%= content_tag :span, format_time(e.event_datetime), :class => 'author' -%>
+        </dd>
+      </div>
+    <% end %>
+  </dl>
+<% end %>
+<p class="search-pagination-container">
+  <% if @pagination_previous_date %>
+    <%= link_to_content_update(('&#171; ' + l(:label_previous)).html_safe,
+      params.merge(:previous => 1, :offset => @pagination_previous_date.strftime("%Y%m%d%H%M%S"))) %>&nbsp;
+  <% end %>
+  <% if @pagination_next_date %>
+    <%= link_to_content_update((l(:label_next) + ' &#187;').html_safe,
+      params.merge(:previous => nil, :offset => @pagination_next_date.strftime("%Y%m%d%H%M%S"))) %>
+  <% end %>
+</p>

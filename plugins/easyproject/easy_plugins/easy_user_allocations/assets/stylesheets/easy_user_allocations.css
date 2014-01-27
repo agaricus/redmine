@@ -1,0 +1,394 @@
+div.resalloc {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+div.resalloc .user-list-container {
+    width: 30%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    margin-top: 46px;
+}
+div.resalloc .grid-container {
+    width: 70%;
+    height: 100%;
+    float: right;
+}
+div.resalloc ul.user-list {
+    margin: 0;
+    padding: 0 0 0 5px;
+    list-style: none;
+}
+div.resalloc ul.user-list > li {
+    padding: 5px 5px 0 0;
+    display: block;
+    height: 17px;
+}
+div.resalloc ul.user-list > li > a {
+    color: rgb(0, 51, 102);
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+}
+div.resalloc ul.task-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+div.resalloc ul.task-list li {
+    white-space: nowrap;
+}
+div.resalloc ul.task-list li.changed {
+    background-image: url('../images/bullet_diamond.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+div.resalloc ul.task-list li > a, div.resalloc ul.task-list li > span.status-span {
+    width: 20%;
+    height: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    white-space: nowrap;
+}
+div.resalloc ul.task-list li.project > a {
+    color: #303030;
+    margin-left: -10px;
+}
+div.resalloc ul.task-list li > a:first-child {
+    width: 45%;
+}
+div.resalloc ul.task-list li > span:last-child {
+    font-weight: bold;
+    font-size: 11px;
+}
+div.resalloc ul.task-list > li {
+    padding: 5px 0 5px 20px;
+    height: 12px;
+}
+div.resalloc ul.task-list > li > a {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    padding-right: 5px;
+}
+div.resalloc ul.task-list li > span.status-span {
+    font-size: 11px;
+    display: inline-block;
+}
+div.resalloc div.grid-header {
+    padding-right: 20px;
+    height: 46px;
+    white-space: nowrap;
+}
+div.resalloc div.month-container {
+    display: inline-block;
+}
+div.resalloc div.grid-header-container {
+    overflow: hidden;
+}
+div.resalloc div.grid-body-container {
+    overflow: scroll;
+}
+div.resalloc div.grid-header div.month, div.resalloc div.grid-header div.days > span {
+    font-family: Tahoma, Arial;
+    font-weight: bold;
+    font-size: 9px;
+    color: #858585 !important;
+    display: inline-block;
+    padding-top: 6px;
+    height: 16px;
+    border-left: 1px solid rgb(243,243,243);
+}
+div.resalloc div.grid-header div.days > span {
+    border-top: 1px solid rgb(243,243,243);
+}
+div.resalloc div.grid-header div.days > span.weekend {
+    background-color: #f3f3f3;
+}
+div.resalloc div.grid-header div.month {
+    padding-left: 8px;
+}
+div.resalloc div.grid-header {
+    background-color: #ffffff;
+    border-top: 1px solid rgb(243,243,243);
+}
+div.resalloc div.grid-body {
+    background-image: url('../images/background.png');
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+div.resalloc div.grid-header div.days > span {
+    width: 23px;
+    text-align: center;
+}
+div.resalloc div.user-allocation {
+    position: absolute;
+    height: 14px;
+    margin-top: 4px;
+    background-color: #eee;
+    font-style: italic;
+    font-size: 12px;
+}
+div.resalloc div.worm {
+    background-image: url('../images/progress.png');
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    border: 1px solid #6589A9;
+    position: absolute;
+    height: 12px;
+    font-size: 10px;
+    margin-top: 5px;
+    cursor: move;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #efefef;
+}
+div.resalloc div.worm.overshot {
+    background-image: url('../images/progressos.png');
+}
+div.resalloc div.worm.planned {
+    background-image: url('../images/progress_planned.png');
+}
+div.resalloc div.user-allocation > span, div.resalloc div.worm > span {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+div.resalloc span.expander {
+    background-image: url('../images/plus.gif');
+}
+div.resalloc span.expander.expanded {
+    background-image: url('../images/minus.gif');
+}
+div.resalloc div.loader {
+    background-image: url('../images/loading.gif');
+    height: 32px;
+    width: 32px;
+    position: absolute;
+}
+div.resalloc span.over {
+    color: red;
+    font-weight: bold;
+}
+div.resalloc span.unspent {
+    font-weight: bold;
+}
+div.resalloc .todayLine {
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    border-left: 1px dashed red;
+}
+.resalloc .user-allocation {
+    z-index: 4;
+}
+.resalloc div.worm {
+    z-index: 5;
+}
+#fullscreen-resalloc-container .resalloc div.worm {
+    z-index: 5000;
+}
+.resalloc div.worm.unassigned {
+    z-index: 6;
+}
+.resalloc div.drop-area {
+    position: absolute;
+    width: 100%;
+}
+.resalloc div.drop-area.dropping {
+    border: 1px dashed #222222;
+}
+.resalloc div.drop-area.dropping.hover {
+    border: 1px solid #0da5dd;
+    z-index: 10;
+}
+.resalloc div.loader {
+    z-index: 7;
+}
+.resalloc div.worm input.custom-allocation {
+    width: 23px;
+    height: 100%;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9px;
+    text-align: center;
+}
+#resalloc-settings-buttons {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+#split-issue-button.pressed, #fullscreen-split-issue-button.pressed {
+    background: -moz-linear-gradient(top, #d9d9d9 0%, #b5b5b5 1%, #dddddd 2%, #e4e4e4 48%, #eaeaea 50%, #eaeaea 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d9d9d9), color-stop(1%,#b5b5b5), color-stop(2%,#dddddd), color-stop(48%,#e4e4e4), color-stop(50%,#eaeaea), color-stop(100%,#eaeaea)) !important;
+    background: -webkit-linear-gradient(top, #d9d9d9 0%,#b5b5b5 1%,#dddddd 2%,#e4e4e4 48%,#eaeaea 50%,#eaeaea 100%) !important;
+    background: -o-linear-gradient(top, #d9d9d9 0%,#b5b5b5 1%,#dddddd 2%,#e4e4e4 48%,#eaeaea 50%,#eaeaea 100%) !important;
+    background: -ms-linear-gradient(top, #d9d9d9 0%,#b5b5b5 1%,#dddddd 2%,#e4e4e4 48%,#eaeaea 50%,#eaeaea 100%) !important;
+    background: linear-gradient(top, #d9d9d9 0%,#b5b5b5 1%,#dddddd 2%,#e4e4e4 48%,#eaeaea 50%,#eaeaea 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#eaeaea',GradientType=0 ) !important;
+}
+#resalloc-container {
+    margin-bottom: 10px;
+}
+.qtip {
+    font-size: 10px;
+}
+.qtip h5 {
+    font-size: 12px;
+    color: #124012;
+    margin: 5px 0;
+}
+.qtip p {
+    margin: 0.1em 0;
+}
+div.resalloc div.worm.readonly {
+    border: 1px solid #aaa;
+    cursor: default;
+}
+div.resalloc div.worm.readonly span {
+    color: #aaa;
+}
+div.resalloc div.worm .ui-resizable-handle {
+    width: 10px;
+}
+
+/* legenda */
+div.resalloc-legend {
+    float: right;
+}
+div.resalloc-legend span.legend-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #6589A9;
+    vertical-align: middle;
+}
+div.resalloc-legend span.description {
+    padding-left: 5px;
+}
+div.worked-time > span.legend-icon {
+    background-image: url('../images/progress.png');
+}
+span.custom > span.legend-icon {
+    font-size: 10px;
+    text-align: center;
+    color: #0b9de5;
+    font-weight: bold;
+}
+span.over-time > span.legend-icon {
+    background-image: url('../images/progressos.png');
+}
+span.planned > span.legend-icon {
+    background-image: url('../images/progress_planned.png');
+}
+
+div.resalloc-buttons {
+    text-align: right;
+}
+span.decimal {
+    font-size: 11px;
+    color: inherit;
+}
+
+table.user-allocation-table-plan {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+table.user-allocation-table-plan td, table.user-allocation-table-plan th {
+    height: 28px;
+}
+table.user-allocation-table-plan th.day-name, table.user-allocation-table-plan th.border {
+    background-color: #DCDEE0;
+}
+table.user-allocation-table-plan tbody td {
+    border: 1px solid #d7d7d7;
+}
+table.user-allocation-table-plan tbody td.issue-subject a,table.user-allocation-table-plan tbody td.project-name a {
+    margin: 0 5px;
+    max-width: 300px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+table.user-allocation-table-plan tbody td.project-name a {
+    min-width: 150px;
+}
+table.user-allocation-table-plan tbody td:first-child {
+    border-left: none;
+}
+table.user-allocation-table-plan tbody td:last-child {
+    border-right: none;
+}
+table.user-allocation-table-plan td[class*=hour] {
+    width: 40px;
+}
+table.user-allocation-table-plan .plan-hour {
+    border-left: 1px solid #d7d7d7;
+    border-right: none;
+}
+table.user-allocation-table-plan .time-entry-hour {
+    border-right: 1px solid #d7d7d7;
+    border-left: none;
+}
+table.user-allocation-table-plan td.estimated {
+    text-align: center;
+}
+table.user-allocation-table-plan input {
+    border-radius: 5px;
+    font-size: 85%;
+}
+table.user-allocation-table-plan td.comment input{
+    width: 90%;
+}
+table.user-allocation-table-plan th[class*=hour] {
+    font-size: 80%;
+    color: #595959;
+}
+table.user-allocation-table-plan tfoot td[class*=hour] {
+    border-bottom: 1px solid #d7d7d7;
+}
+table.user-allocation-table-plan td.comment, table.user-allocation-table-plan td.plan-hour, table.user-allocation-table-plan td.time-entry-hour, table.user-allocation-table-plan td.plan-hour input, table.user-allocation-table-plan td.save-button{
+    text-align: center;
+}
+table.user-allocation-table-plan th.day-name {
+    border-color: #d7d7d7;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+}
+table.user-allocation-table-plan .icon.icon-add {
+    color: #96b927;
+}
+
+/* Resalloc by project */
+div.resalloc-by-project ul.user-list a {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div.resalloc-splitter {
+    border-right: 1px dotted #aaa;
+}
+div.resalloc-by-project div.ui-resizable-handle.ui-resizable-e {
+    background-color: rgb(204, 204, 204);
+    width: 9px;
+    height: 20000px;
+}
+div.resalloc-by-project div.user-allocation {
+    background: none;
+}
+div.resalloc-by-project span.no-hours, div.resalloc span.no-hours {
+    color: #aaa;
+}
+div.resalloc-by-project span.custom, div.resalloc span.custom {
+    color: #0b9de5;
+    font-weight: bold;
+}

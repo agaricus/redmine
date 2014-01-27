@@ -1,0 +1,7 @@
+<%= fields_for 'expected_hours' do |f| %>
+  <%= l(:label_easy_money_project_index_sum_hours) -%>
+  <%= f.text_field(:hours, :value => expected_hours, :size => 10) -%>
+  <% if User.current.allowed_to?(:easy_money_manage_expected_payroll_expense, project) -%>
+    <%= submit_tag(l(:button_save)) %>
+  <% end -%>
+<% end %>

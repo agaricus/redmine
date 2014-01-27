@@ -1,0 +1,43 @@
+<%= error_messages_for 'gantt_theme' %>
+
+<div class="box tabular">
+  <p><%= f.text_field :name, :required => true %></p>
+  <label style="float:left" class="error required"><%= l(:label_header_style) %> *</label>
+  <div id="easy-gantt-theme-header-style">
+    <div>
+      <label><%= l(:field_header_color) %></label>
+      <div id="header-colorpicker"></div>
+      <%= text_field_tag 'easy_gantt_theme[header_hex_color]', @gantt_theme.header_hex_color, :id => 'header-color' %>
+    </div>
+    <div>
+      <label><%= l(:field_header_font_color) %></label>
+      <div id="header-font-colorpicker"></div>
+      <%= text_field_tag 'easy_gantt_theme[header_font_hex_color]', @gantt_theme.header_font_hex_color, :id => 'header-font-color' %>
+    </div>
+    <div>
+      <label><%= l(:label_preview) %></label>
+      <div id="header-style-preview"><%= l(:label_gantt) %></div>
+    </div>
+  </div>
+
+  <label style="float:left"><%=l(:label_logo)%></label>
+  <div class="gantt_theme_logo_form">
+    <div>
+      <% if @gantt_theme.attachments.any? %>
+        <img src="<%= url_for(:controller => 'attachments', :action => 'download', :id => @gantt_theme.attachments.last) %>"/>
+      <% end -%>
+    </div>
+    <div class="attachments-container">
+      <span class="nowrap">
+        <%= file_field_tag 'easy_gantt_theme[logo]', :title => l(:button_select_file) %>
+      </span>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'farbtastic', :plugin => 'easy_extensions' %>
+  <%= javascript_include_tag 'easy_gantt_themes', :plugin => 'easy_extensions' %>
+  <%= stylesheet_link_tag 'farbtastic/farbtastic', :plugin => 'easy_extensions' %>
+<% end -%>

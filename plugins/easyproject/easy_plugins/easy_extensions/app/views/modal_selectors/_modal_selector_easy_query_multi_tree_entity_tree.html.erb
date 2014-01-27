@@ -1,0 +1,12 @@
+<% options ||= {} %>
+<tr id="<%= uniq_id-%>" class="<%= "idnt-#{entity.level}" -%> <%= 'child' if entity.child? %> hascontextmenu <%= 'selectable' if entity_name == entity.class.name %> <%= (cycle('odd', 'even') if entity.root?).to_s -%><%= css_classes -%><%= ' context-menu-selection' if selected_values && selected_values.detect{|a,b| a == entity.id.to_s} -%>"<%= ' style="display:none"' if !entity.root? -%>>
+  <td class="expander"><span class="<%= 'expander' if (entity.children && (entities.collect{|e| e.is_a?(Array) ? e[0] : e} & entity.children).size > 0) || !subentities.blank? -%>" onclick="ToggleTableRowVisibility('<%= uniq_prefix -%>', '<%= css_entity_name -%>', '<%= entity.id -%>', '<%= User.current.id -%>', false);" alt="Expander" title="<%=l :collapse_expand %>">&nbsp;</span></td>
+  <% if entity_name == entity.class.name %>
+  <td style="display: none">
+    <%= entity_modal_selector_checker(entity, selected_values, options[:multiple]) %>
+  </td>
+  <% end %>
+  <% columns[level].each_with_index do |column, index| %>
+    <td class="<%= column.name.to_s.underscore -%>"><span><%= format_html_entity_attribute(entity.class, column, column.value(entity), :no_link => true, :entity => entity) -%></span></td>
+  <% end -%>
+</tr>

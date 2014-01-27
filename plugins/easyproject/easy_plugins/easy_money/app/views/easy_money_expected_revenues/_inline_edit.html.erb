@@ -1,0 +1,7 @@
+<%= fields_for 'expected_revenues' do |f| %>
+  <%= link_to(l(:button_easy_money_project_expected_revenues), { :controller => 'easy_money_expected_revenues', :action => 'index', :project_id => project.id, :'easy_money[entity_type]' => entity_type, :'easy_money[entity_id]' => entity_id }, { :title => l(:title_easy_money_project_expected_revenues), :class => 'expected-revenue-index-link index-link' }) -%>
+  <%= f.text_field(:price, :value => sum_expected_revenues, :size => 15) -%>
+  <% if User.current.allowed_to?(:easy_money_manage_expected_revenue, project) %>
+    <%= submit_tag(l(:button_save)) -%>
+  <% end -%>
+<% end %>

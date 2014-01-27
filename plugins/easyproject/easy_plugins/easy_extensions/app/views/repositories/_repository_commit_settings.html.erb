@@ -1,0 +1,53 @@
+<fieldset class="box tabular">
+  <legend><%= l(:text_issues_ref_in_commit_messages) %></legend>
+  <p>
+    <%= label_tag 'easy_setting_commit_ref_keywords', l(:setting_commit_ref_keywords) %>
+    <%= text_field_tag 'easy_setting[commit_ref_keywords]', EasySetting.value('commit_ref_keywords', project), :size => 60 %>
+    <em><%= l(:text_comma_separated) %></em>
+    <br/>
+    <em><%= l(:text_commit_example_1) -%></em><br />
+    <em><%= l(:text_commit_example_2) -%></em>
+  </p>
+  <p>
+    <%= label_tag 'easy_setting_commit_fix_keywords', l(:setting_commit_fix_keywords) %>
+    <%= text_field_tag 'easy_setting[commit_fix_keywords]', EasySetting.value('commit_fix_keywords', project), :size => 60 %>
+    <em><%= l(:text_comma_separated) %></em>
+  </p>
+  <p>
+    <%= label_tag 'easy_setting_commit_fix_assignee_id', l(:field_assigned_to) %>
+    <%= select_tag 'easy_setting[commit_fix_assignee_id]', options_for_select(
+      [[l(:label_select_no_change_assignee), 'no_change'], [l(:label_select_none_assignee), 'none']] +
+        (project.nil? ? User.active.non_system_flag.sorted : project.users.sorted).collect{|u| [u.name, u.id.to_s]}, EasySetting.value('commit_fix_assignee_id', project)) %>
+  </p>
+  <p>
+    <%= label_tag 'easy_setting_commit_fix_status_id', l(:label_applied_status) %>
+    <%= select_tag 'easy_setting[commit_fix_status_id]', options_for_select([['', 0]] +
+        IssueStatus.sorted.all.collect{
+        |status| [status.name, status.id.to_s]
+      }, EasySetting.value('commit_fix_status_id', project)) %>
+  </p>
+  <p>
+    <%= label_tag 'easy_setting_commit_fix_done_ratio', l(:field_done_ratio) %>
+    <%= select_tag 'easy_setting[commit_fix_done_ratio]', options_for_select(
+      [[l(:label_no_change_option), '']] +
+        (0..10).to_a.collect {|r| ["#{r*10} %", "#{r*10}"]
+      }, EasySetting.value('commit_fix_done_ratio', project)) %>
+  </p>
+  <p>
+    <%= hidden_field_tag 'easy_setting[commit_cross_project_ref]', 0, :id => nil %>
+    <%= label_tag 'easy_setting_commit_cross_project_ref', l(:setting_commit_cross_project_ref) %>
+    <%= check_box_tag 'easy_setting[commit_cross_project_ref]', 1, EasySetting.value('commit_cross_project_ref', project) %>
+  </p>
+  <p>
+    <%= hidden_field_tag 'easy_setting[commit_logtime_enabled]', 0, :id => nil %>
+    <%= label_tag 'easy_setting_commit_logtime_enabled', l(:setting_commit_logtime_enabled) %>
+    <%= check_box_tag 'easy_setting[commit_logtime_enabled]', 1, EasySetting.value('commit_logtime_enabled', project), :onclick => "if (this.checked) { Form.Element.enable('easy_setting_commit_logtime_activity_id'); } else { Form.Element.disable('easy_setting_commit_logtime_activity_id'); }" %>
+  </p>
+  <p>
+    <%= label_tag 'easy_setting_commit_logtime_activity_id', l(:setting_commit_logtime_activity_id) %>
+    <%= select_tag 'easy_setting[commit_logtime_activity_id]', options_for_select(
+      [[l(:label_default), 0]] +
+        (project.nil? ? TimeEntryActivity.shared.active : project.activities).collect{|activity| [activity.name, activity.id.to_s]
+      }, EasySetting.value('commit_logtime_activity_id', project)), :disabled => !EasySetting.value('commit_logtime_enabled', project) %>
+  </p>
+</fieldset>

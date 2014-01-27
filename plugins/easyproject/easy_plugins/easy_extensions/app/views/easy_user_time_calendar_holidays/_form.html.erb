@@ -1,0 +1,14 @@
+<%= error_messages_for @easy_user_time_calendar_holiday %>
+
+<div class="box">
+  <p>
+    <%= f.text_field :holiday_date, :label => 'activerecord.attributes.easy_user_working_time_calendar_holiday.holiday_date'.to_sym, :required => true, :size => 10 %>
+    <%= calendar_for('easy_user_time_calendar_holiday_holiday_date') %>
+  </p>
+  <p>
+    <%= f.text_field :name, :label => 'activerecord.attributes.easy_user_working_time_calendar_holiday.name'.to_sym %>
+  </p>
+  <p>
+    <%= f.check_box :is_repeating, :label => 'activerecord.attributes.easy_user_working_time_calendar_holiday.is_repeating'.to_sym %>
+  </p>
+</div>

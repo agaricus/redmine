@@ -1,0 +1,11 @@
+$("#<%= "#{params[:block_name]}" %>attributes").html('<%= j(render :partial => 'issues/new_form_updatable_attributes', :locals => {
+    :issue => @issue,
+    :project => @issue.project,
+    :object_name => "#{params[:block_name]}issue",
+    :modul_uniq_id => params[:block_name],
+    :priorities => @issue_priorities,
+    :allowed_statuses => @allowed_statuses,
+    :projects => @projects,
+    :projects_ajax_url => url_for({ :controller => :my, :action => :update_my_page_new_issue_dependent_fields, :only_path => true}),
+    :issue_ajax_url => url_for({ :controller => :my, :action => :update_my_page_new_issue_attributes, :only_path => true}),
+    :select_project => true}) %>')

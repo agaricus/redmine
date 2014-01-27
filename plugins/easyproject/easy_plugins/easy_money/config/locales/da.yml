@@ -1,0 +1,385 @@
+---
+da:
+  easy_money_plugin_name: Penge
+  easy_money_plugin_author: Easy Software
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- Overvågning og styring af de forventede og den
+    faktiske økonomiske resultater af projekterne'
+  project_module_easy_money: Penge
+  menu_easy_money: Penge
+  permission_view_easy_money: Adgang til Money modul (generelt)
+  permission_easy_money_show_expected_revenue: Vis forventede indtægter
+  permission_easy_money_show_expected_expense: Vis forventede omkostninger
+  permission_easy_money_show_expected_payroll_expense: Vis forventede lønudgifter
+  permission_easy_money_show_expected_profit: Vis forventede resultat
+  permission_easy_money_show_other_revenue: Vis realindkomsterne
+  permission_easy_money_show_other_expense: Vis reelle udgifter
+  permission_easy_money_show_time_entry_expenses: Vis reelle lønudgifter
+  permission_easy_money_show_other_profit: Vis reel gevinst
+  permission_easy_money_manage_expected_revenue: Addig forventede indtægter
+  permission_easy_money_manage_expected_expense: Tilføjelse forventede omkostninger
+  permission_easy_money_manage_expected_payroll_expense: Tilføjelse forventede lønudgifter
+  permission_easy_money_manage_other_revenue: Tilføjelse realindkomster
+  permission_easy_money_manage_other_expense: Tilføjelse reelle udgifter
+  permission_easy_money_settings: Adgang til penge-indstillinger
+  permission_easy_money_move: Flytte penge mellem projekter
+  label_easy_money: Penge
+  label_easy_money_settings: Penge-indstillinger
+  label_easy_money_rate_priorities_settings: Omkostninger satser indstilling
+  label_easy_money_project_index: Penge
+  label_easy_money_other_expenses: Udgifter oversigt
+  label_easy_money_other_expense_new: Ny udgift
+  label_easy_money_other_expense_show: Udgift
+  label_easy_money_other_expense_edit: Expense edit
+  label_easy_money_other_revenues: Indkomst oversigt
+  label_easy_money_other_revenue_new: Ny indkomst
+  label_easy_money_other_revenue_show: Indkomst
+  label_easy_money_other_revenue_edit: Indkomst edit
+  label_easy_money_time_entry_expenses: Lønudgifter oversigt
+  label_easy_money_project_index_profit: ! 'Profit:'
+  label_easy_money_expected_expenses: Forventet udgifter oversigt
+  label_easy_money_expected_revenues: Forventet indkomst oversigt
+  label_easy_money_expected_expense_new: Ny forventede udgift
+  label_easy_money_expected_expense_show: Forventet udgift
+  label_easy_money_expected_expense_edit: Forventede udgift edit
+  label_easy_money_expected_revenue_new: Ny forventede indtægter
+  label_easy_money_expected_revenue_show: Forventet indkomst
+  label_easy_money_expected_revenue_edit: Rediger forventede indtægter
+  label_easy_money_other_settings: Andre indstillinger
+  label_easy_money_other_settings_price_visibility: ! 'Ved beløb brug:'
+  label_easy_money_other_settings_rate_type: ! 'Ved løn udgifter bruge:'
+  label_easy_money_other_settings_include_childs: ! 'Tæl beløb fra delprojekter til
+    projektets samlede penge:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Tænd for projektering
+    / forventninger:'
+  label_easy_money_project_usage_type: ! 'Anvendelse på projektet:'
+  label_easy_money_other_settings_vat: ! 'Hvis der viser beløb uden moms, moms er:'
+  label_easy_money_use_vat: bruge moms tæller
+  label_easy_money_expected_budget: Plan
+  label_easy_money_real_budget: Reality
+  label_easy_money_project_name: ! 'Projekt budget:'
+  label_easy_money_hour: ! '%{hours} timer.'
+  label_easy_money_expected_payroll_expense_per_hours: Planlagte timepris
+  label_easy_money_expected_payroll_expenses: ! 'Lønudgifter:'
+  label_easy_money_subproject_sum_revenues: Indkomst *
+  label_easy_money_subproject_sum_expenses: Udgifter *
+  label_easy_money_subproject_sum_payroll_expenses: Lønudgifter
+  label_easy_money_subproject_profit: Resultat *
+  label_easy_money_subproject_explication: ! '*) (Plan / virkelighed)'
+  label_easy_money_attachments: ! 'Vedhæftede filer:'
+  label_easy_money_project_time_entry_expenses: Lønomkostninger udelukkende på projektet
+  label_easy_money_project_issues_time_entry_expenses: Lønudgifter til projektopgaver
+  label_easy_money_total: ! 'total:'
+  label_easy_money_all_project: Penge til alle projekter
+  label_easy_money_currency_visible: ! 'Tillad ændring af udveksling på projektet:'
+  label_easy_money_currency: ! 'Valuta:'
+  label_easy_money_select_project: Vælg et projekt
+  label_easy_money_mass_copy_rates: Bedøm værdier udgifter
+  label_easy_money_project_index_estimated_hours: ! 'Estimeret tid:'
+  label_easy_money_new_revenue_text: Indtægter
+  label_easy_money_new_revenue_description: indtægter
+  label_easy_money_new_expense_text: Udgift
+  label_easy_money_new_expense_description: udgift
+  text_easy_money_rate_priorities_settings: Grundlæggende hierarki af udgifter satser.
+    Hvis den første sats er nul, vil næste nul sats anvendes.
+  button_easy_money_rate_use_in_all_projects: Brug sats i alle projekter
+  button_easy_money_rate_use_in_all_subprojects: Brug sats i alle delprojekter
+  button_easy_money_priorities_use_in_all_projects: Brug sats prioriteringer i alle
+    projekter
+  button_easy_money_priorities_use_in_all_subprojects: Brug sats prioriteter i alle
+    delprojekter
+  button_easy_money_project_expected_expenses: ! 'Andre udgifter:'
+  button_easy_money_project_expected_revenues: ! 'Indkomst:'
+  button_easy_money_project_other_expenses: ! 'Andre udgifter:'
+  button_easy_money_project_other_revenues: ! 'Indkomst:'
+  button_easy_money_project_time_entry_expenses: ! 'Lønudgifter:'
+  button_easy_money_project_new_revenue: Ny indkomst
+  button_easy_money_project_new_expense: Ny udgift
+  button_easy_money_project_time_entry_hours: ! 'Tid arbejdede:'
+  button_easy_money_project_index_show_details: Vis detaljer
+  button_easy_money_project_index_show_empty: Vis tomme felter
+  button_easy_money_save_in_all_projects: Anvendelse i alle projekter
+  button_easy_money_save_in_all_subprojects: Anvendelse i alle delprojekter
+  button_easy_money_project_settings: Penge-indstillinger
+  button_easy_money_save_expected_revenue: Gem forventede indtægter
+  button_easy_money_save_other_revenue: Gem realindkomst
+  button_easy_money_save_expected_hours: Gem forventede timer
+  button_easy_money_save_expected_expense: Gem forventede udgift
+  button_easy_money_save_other_expense: Gem reel udgift
+  button_easy_money_update_project_time_entry_expenses: Genberegn lønudgifter på projekt
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: Genberegn
+    lønudgifter på projektet og alle underprojekter
+  button_easy_money_update_all_projects_time_entry_expenses: Genberegn lønudgifter
+    på alle projekter
+  button_easy_money_move: Tildel valgt
+  title_easy_money_project_new_revenue: Tilføj ny indkomst
+  title_easy_money_project_new_expense: Tilføj ny udgift
+  title_easy_money_project_expected_revenues: Vis planlagte indkomster projekt
+  title_easy_money_project_other_revenues: Vis realindkomster af projekt
+  title_easy_money_project_expected_expenses: Vis planlægge udgifter projekt
+  title_easy_money_project_other_expenses: Vis reelle udgifter projekt
+  title_easy_money_project_time_entry_expenses: Vis reallønnen udgifter projekt
+  title_easy_money_rates_save: Gem satser
+  title_easy_money_rate_use_in_all_projects: Gem satser og anvende dem i alle projekter
+  title_easy_money_rate_use_in_all_subprojects: Gem satser og anvende dem i alle delprojekter
+  title_easy_money_priorities_use_in_all_projects: Brug bestilling af satserne på
+    alle projekter
+  title_easy_money_priorities_use_in_all_subprojects: Brug bestilling af satserne
+    på alle delprojekter
+  title_easy_money_other_repeating_expense_show: Vis gentaget regning.
+  title_easy_money_other_repeating_revenue_show: Vis gentaget indkomst.
+  title_easy_money_settings: Gå til projekt penge indstilling.
+  title_easy_money_project_index_show_empty: Vis tomme felter.
+  title_close: Ved at klikke lukke denne rude.
+  title_easy_money_update_project_time_entry_expenses: Genberegn lønudgifter på projektet.
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Klik for at
+    starte konverteringen af ​​lønomkostningerne forbundet med projektet, og alle
+    delprojekter (kan tage flere minutter).
+  title_easy_money_update_all_projects_time_entry_expenses: Genberegn lønudgifter
+    på alle projekter.
+  title_easy_money_link_to_subproject: Gå til penge %{subproject}.
+  title_easy_money_link_to_project: Gå til penge af projekt %{project}.
+  field_spent_hours: Brugt timer
+  field_easy_money_rate_entity_time_entry_activity_name: Aktivitet navn
+  field_easy_money_rate_entity_role_name: Rolle navn
+  field_easy_money_rate_entity_user_name: Brugernavn
+  field_easy_money_other_expense_spent_on: ! 'Dato:'
+  field_easy_money_other_expense_name: ! 'Navn:'
+  field_easy_money_other_expense_description: ! 'Beskrivelse:'
+  field_easy_money_other_expense_price1: ! 'Beløb med moms:'
+  field_easy_money_other_expense_price2: ! 'Beløb uden moms:'
+  field_easy_money_other_expense_vat: ! 'Moms:'
+  field_easy_money_other_revenue_spent_on: ! 'Dato:'
+  field_easy_money_other_revenue_name: ! 'Navn:'
+  field_easy_money_other_revenue_description: ! 'Beskrivelse:'
+  field_easy_money_other_revenue_price1: ! 'Samlet beløb:'
+  field_easy_money_other_revenue_price2: ! 'Beløb uden moms:'
+  field_easy_money_other_revenue_vat: ! 'Moms:'
+  field_easy_money_expected_expense_spent_on: ! 'Dato:'
+  field_easy_money_expected_expense_name: ! 'Navn:'
+  field_easy_money_expected_expense_description: ! 'Beskrivelse:'
+  field_easy_money_expected_expense_price1: ! 'Samlet beløb:'
+  field_easy_money_expected_expense_price2: ! 'Beløb uden moms:'
+  field_easy_money_expected_expense_vat: ! 'Moms:'
+  field_easy_money_expected_revenue_spent_on: ! 'Dato:'
+  field_easy_money_expected_revenue_name: ! 'Navn:'
+  field_easy_money_expected_revenue_description: ! 'Beskrivelse:'
+  field_easy_money_expected_revenue_price1: ! 'Samlet beløb:'
+  field_easy_money_expected_revenue_price2: ! 'Beløb uden moms:'
+  field_easy_money_expected_revenue_vat: ! 'Moms:'
+  field_easy_money_expected_revenue: Forventet indkomst
+  field_easy_money_expected_expense: Forventet udgift
+  field_easy_money_sum_other_revenues: Indkomst
+  field_easy_money_sum_time_entry_expenses: Lønudgifter
+  field_easy_money_sum_other_expenses: Omkostninger
+  field_easy_money_sum_other_profit: Profit
+  field_easy_money_rate_type_internal: Intern rente
+  field_easy_money_rate_type_external: External_rate
+  field_price1: Samlet beløb
+  field_price2: Beløb uden moms
+  field_vat: Moms
+  tab_easy_money_rate_priorities: Rate hierarki
+  tab_easy_money_rate_role: Priser fra rolle
+  tab_easy_money_rate_time_entry_activity: Priser efter aktivitet
+  tab_easy_money_rate_user: Priser af bruger
+  tab_easy_money_other_settings: Andre indstilling
+  easy_money_other_expense_custom_field: Rigtige udgifter
+  easy_money_other_revenue_custom_field: Realindkomsterne
+  notice_easy_money_recalculate: Beløbene vil blive genberegnet inden næste besøg
+    på oversigtssiden.
+  error_easy_money_project_selector_select_values: Der er ingen valgte værdi
+  project_default_page:
+    easy_money: Penge
+  warning_easy_money_settings:
+    project_question: Ønsker du at gemme indstillingerne i projektet?
+    global_question: Ønsker du at gemme globale indstillinger?
+    revenues_type: Du ændre input metode indkomster (alle indkomster tidligere indtastede
+      blive slettet).
+    expenses_type: Du ændre input metode udgifter (alle udgifter tidligere indtastede
+      blive slettet).
+  warning_easy_money_all_projects:
+    question: Er du sikker på, du vil bruge indstillingerne på alle projekter?
+    revenues_type: Alle tidligere indtastede indkomster for følgende projekter vil
+      blive slettet:%{projects}
+    expenses_type: Alle tidligere indtastede udgifter til følgende projekter vil blive
+      slettet:%{projects}
+  easy_money_rate_type:
+    one: Rate
+    internal: Intern rente
+    external: Ekstern rate
+  easy_money_entity:
+    user: Bruger
+    role: Rolle
+    time_entry_activity: Aktivitet
+  easy_money_rate_entity:
+    user: Rate af bruger
+    role: Rate efter rolle
+    time_entry_activity: Rate efter aktivitet
+  easy_money_period:
+    daily: Dagligt
+    monthly: Månedligt
+    weekly: Ugentligt
+    yearly: Årligt
+  easy_money_other_settings_price_visibility:
+    price1: kun samlet beløb
+    price2: kun beløb uden moms
+    all: beløb uden moms og det samlede beløb
+  easy_money_other_settings_rate_type:
+    internal: kun én sats
+    all: intern og ekstern hastighed
+  easy_money_other_settings_expected_count_price:
+    price1: samlede
+    price2: beløb uden moms
+  easy_money_other_settings_expected_rate_type:
+    internal: modregningspriser
+    external: eksterne kurser
+  easy_reports_fields:
+    _time_entry_internalrate: Lønudgifter - Intern rente
+    _time_entry_externalrate: Lønudgifter - Ekstern rente
+    easy_money_other_revenue_id: Realindkomsterne
+    easy_money_other_revenue_name: Realindkomsterne - Navn
+    easy_money_other_revenue_price1: Realindkomsterne - Samlet pris
+    easy_money_other_revenue_price2: Realindkomsterne - Pris uden moms
+    easy_money_other_expense_id: Rigtige udgifter
+    easy_money_other_expense_name: Rigtige udgifter - Navn
+    easy_money_other_expense_price1: Rigtige udgifter - Samlet pris
+    easy_money_other_expense_price2: Rigtige udgifter - Pris uden moms
+    easy_money_expected_expense_id: Forventede udgifter
+    easy_money_expected_expense_name: Forventede udgifter - Navn
+    easy_money_expected_expense_price1: Forventede udgifter - Samlet pris
+    easy_money_expected_expense_price2: Forventede udgifter - Pris uden moms
+    easy_money_expected_revenue_id: Forventet indkomst
+    easy_money_expected_revenue_name: Forventet indkomst - Navn
+    easy_money_expected_revenue_price1: Forventet indkomst - Samlet pris
+    easy_money_expected_revenue_price2: Forventet indkomst - Pris uden moms
+    project_expected_hours: Forventede arbejdstid
+    project_expected_payroll_expense: Forventede lønudgifter
+    _project_recovery: Recovery
+    _project_timeentry_average_hourly_expense: Gennemsnitlig time Expense
+    _project_other_profit: Profit
+  easy_reports_categories:
+    easy_money: Penge
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: konvertering af lønomkostningerne
+  tooltip_real_hourly_rate: Projektet er baseret på den gennemsnitlige timeløn %{average_hourly_rate}/
+    Timer.
+  label_easy_money_sidebar:
+    project: Penge til projektet
+    issue: Penge til opgaven
+    version: Penge til milepæl
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Andre indtægter
+      easy_money_other_expense_query: Andre udgifter
+      easy_money_expected_revenue_query: Forventede indtægter
+      easy_money_expected_expense_query: Forventede udgifter
+      easy_money_project_cache_query: Projekter budget oversigt
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: Personlige filtre på andre indtægter
+        easy_money_other_expense_query: Personlige filtre på andre udgifter
+        easy_money_expected_revenue_query: Personlige filtre på forventede indtægter
+        easy_money_expected_expense_query: Personlige filtre på forventede omkostninger
+        easy_money_project_cache_query: Personlige filtre på budgettet overblik
+      public:
+        easy_money_other_revenue_query: Offentlige filtre på andre indtægter
+        easy_money_other_expense_query: Offentlige filtre på andre udgifter
+        easy_money_expected_revenue_query: Offentlige filtre på forventede indtægter
+        easy_money_expected_expense_query: Offentlige filtre på forventede omkostninger
+        easy_money_project_cache_query: Offentlige filtre på budgettet overblik
+  label_easy_money_other_settings_project_use_easy_money_for_versions: Brug penge
+    på milepæle
+  label_easy_money_other_settings_project_use_easy_money_for_issues: Brug penge på
+    opgaver
+  title_easy_money_sum_expected_revenues: Summen af ​​de forventede indtægter på projektet
+    %{project} er %{value}.
+  title_easy_money_sum_other_revenues: Sum af andre indkomster på projekt %{project}
+    er %{value}.
+  title_easy_money_sum_expected_expenses: Summen af ​​de forventede udgifter på projektet
+    %{project} er %{value}.
+  title_easy_money_sum_other_expenses: Sum af andre udgifter på projektet %{project}
+    er %{value}.
+  title_easy_money_sum_expected_payroll_expenses: Summen af ​​de forventede løn på
+    projekt %{project} er %{value}.
+  title_easy_money_sum_time_entry_expenses: Summen af ​​løn på projekt %{project}
+    er %{value}.
+  title_easy_money_expected_profit: Forventet avance på projektet %{project} er %{value}.
+  title_easy_money_other_profit: Resultat af projektet %{project} er %{value}.
+  permission_easy_budgetsheet_view_internal_rates: Budgetsheet - viser interne satser
+  permission_easy_budgetsheet_view_external_rates: Budgetsheet - vis eksterne satser
+  label_filter_group_easy_money_other_revenue_query: Andre indtægter
+  label_filter_group_easy_money_other_expense_query: Andre udgifter
+  label_filter_group_easy_money_expected_revenue_query: Forventede indtægter
+  label_filter_group_easy_money_expected_expense_query: Forventede udgifter
+  field_inherit_easy_money_settings: Arve penge indstillinger
+  heading_easy_money_other_settings_project_overview: Projektoversigt indstillinger
+  heading_easy_money_other_settings_prices_and_rates: Priser og priser
+  label_easy_money_project_index_sum_hours: ! 'Forventede timer:'
+  label_easy_money_other_settings_expected_count_price: Indtægter og andre udgifter
+    tæller bruger
+  label_easy_money_other_settings_expected_rate_type: Rigtige lønudgifter tæller bruger
+  label_filter_group_easy_money_project_cache_query: Andre
+  label_filter_group_easy_money_project_cache_expenses: Udgifter
+  label_filter_group_easy_money_project_cache_revenues: Indtægter
+  label_filter_group_easy_money_project_cache_profit: Profit
+  label_easy_money_project_cache: Projekter budget oversigt
+  label_easy_money_other_settings_revenues_type: Indtægterne vil blive fungere som
+  label_easy_money_other_settings_expenses_type: Andre udgifter vil blive fungere
+    som
+  label_easy_money_other_settings_expected_payroll_expense_type: Planlagt lønudgifter
+    vil regnes som
+  field_sum_of_expected_hours: Forventede timer
+  field_sum_of_expected_payroll_expenses: Forventede løn
+  field_sum_of_expected_expenses_price_1: Forventede udgifter (moms incl)
+  field_sum_of_expected_revenues_price_1: Forventede indtægter (moms incl)
+  field_sum_of_other_expenses_price_1: Andre udgifter (moms incl)
+  field_sum_of_other_revenues_price_1: Andre indtægter (moms incl)
+  field_sum_of_expected_expenses_price_2: Forventede udgifter (uden moms)
+  field_sum_of_expected_revenues_price_2: Forventede indtægter (uden moms)
+  field_sum_of_other_expenses_price_2: Andre udgifter (uden moms)
+  field_sum_of_other_revenues_price_2: Andre indtægter (uden moms)
+  field_sum_of_time_entries_expenses_internal: Lønninger (intern rente)
+  field_sum_of_time_entries_expenses_external: Lønninger (ekstern sats)
+  field_sum_of_all_expected_expenses_price_1: Samlede forventede udgifter (moms incl)
+  field_sum_of_all_expected_revenues_price_1: Samlede forventede indtægter (moms incl)
+  field_sum_of_all_other_revenues_price_1: De samlede indtægter (moms incl)
+  field_sum_of_all_expected_expenses_price_2: Samlede forventede udgifter (uden moms)
+  field_sum_of_all_expected_revenues_price_2: Samlede forventede indtægter (uden moms)
+  field_sum_of_all_other_revenues_price_2: De samlede indtægter (uden moms)
+  field_sum_of_all_other_expenses_price_1_internal: Udgifter i alt (moms incl, intern
+    rente)
+  field_sum_of_all_other_expenses_price_2_internal: Udgifter i alt (uden moms, intern
+    rente)
+  field_sum_of_all_other_expenses_price_1_external: Udgifter i alt (moms incl, ekstern
+    Rate)
+  field_sum_of_all_other_expenses_price_2_external: Udgifter i alt (uden moms, ekstern
+    sats)
+  field_expected_profit_price_1: Forventet overskud (moms incl)
+  field_expected_profit_price_2: Forventet overskud (uden moms)
+  field_other_profit_price_1_internal: Profit (moms incl, intern rente)
+  field_other_profit_price_2_internal: Profit (uden moms, intern rente)
+  field_other_profit_price_1_external: Profit (moms incl, ekstern sats)
+  field_other_profit_price_2_external: Profit (uden moms, ekstern sats)
+  field_average_hourly_rate_price_1: Gennemsnitlig timeløn (moms incl)
+  field_average_hourly_rate_price_2: Gennemsnitlig timeløn (uden moms)
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Money - hjemmeside
+    pages_description:
+      easy_money_projects_overview: Money - hjemmeside
+  easy_money_revenues_type:
+    list: detaljeret liste
+    sum: samlede indtægter
+  easy_money_expenses_type:
+    list: detaljeret liste
+    sum: samlede udgifter
+  easy_money_expected_payroll_expense_type:
+    amount: lønudgifter (samlet sum)
+    hours: lønudgifter (forventede timer * planlagte timeløn)
+    estimated_hours: lønudgifter (anslået tid * planlagte timesats)
+    planned_hours_and_rate: opgave uden indehaver (anslået timer * planlagte timesats),
+      en opgave med erhververen (anslået timer * rate af hierarkiet)
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: Projekter budget overblik genberegning
+  label_easy_money_round_money_on_list: Rundt på listen

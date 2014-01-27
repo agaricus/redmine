@@ -1,0 +1,79 @@
+<% back_url ||= params[:back_url]
+back_url ||= url_for({:controller => 'easy_attendances'}) %>
+<%= javascript_tag "eaatf = true;" -%>
+<%= form_for(easy_attendance) do |f| %>
+  <%= error_messages_for easy_attendance -%>
+  <%= error_messages_for(easy_attendance.time_entry) if easy_attendance.time_entry -%>
+  <%= hidden_field_tag(:back_url, back_url) -%>
+  <div class="easy-attendance-advanced-datetime-fields gray-background <%= 'with-time-select' if EasySetting.value(:easy_attendance_use_time_select) %>">
+    <%= f.hidden_field( :user_id, :id => '') -%>
+
+    <%= call_hook :view_easy_attendances_form_top, {:easy_attendance => easy_attendance, :back_url => back_url, :f => f} %>
+
+    <div class="floatleft" style="width: 150px;">
+      <%= call_hook :view_easy_attendances_form_top_in_activity_bar, {:easy_attendance => easy_attendance, :back_url => back_url, :f => f} %>
+        <% easy_attendance_activities.each do |activity| %>
+          <p class="easy-attendance-activity">
+            <%= f.label "easy_attendance_activity_id_#{activity.id}", activity.name -%>
+            <%= f.radio_button(:easy_attendance_activity_id, activity.id, {:onchange => "$.post('#{j url_for(change_activity_easy_attendances_path)}', $('.easy-attendance-advanced-datetime-fields input, .easy-attendance-advanced-datetime-fields select').serialize())"}) -%>
+          </p>
+        <% end %>
+    </div>
+    <div class="" style="margin-left: 155px">
+      <div class="tabular">
+
+        <%= call_hook :view_easy_attendances_form_right_top, {:easy_attendance => easy_attendance, :back_url => back_url, :f => f} %>
+        <div id="easy_attendance_form_fields_container">
+          <% if params[:only_arrival] && easy_attendance.easy_attendance_activity && easy_attendance.easy_attendance_activity.at_work?  %>
+              <%= label_tag(:easy_attendance_arrival_time, l(:label_time)) %>
+              <%= render(:partial => 'easy_attendances/form_field_time_select', :locals => {:easy_attendance => easy_attendance, :attribute => 'arrival'}) %>
+          <% elsif easy_attendance.easy_attendance_activity %>
+              <%= render(:partial => 'easy_attendances/form_fields', :locals => {:activity => easy_attendance.easy_attendance_activity, :easy_attendance => easy_attendance}) %>
+          <% else %>
+            <%= f.hidden_field(:arrival) %>
+            <%= f.hidden_field(:departure) %>
+          <% end -%>
+        </div>
+
+        <% if User.current.allowed_to?(:edit_easy_attendances, nil, :global => true) %>
+          <p class="user-select">
+            <%= f.label(:user_id, l(:label_user)) %>
+            <%= f.collection_select(:user_id, User.active.non_system_flag.easy_type_internal.sorted, :id, :name) %>
+          </p>
+        <% end %>
+
+        <% if EasySetting.value('easy_setting_timelog_comment_editor_enabled') %>
+          <p class="text_area">
+            <%= f.text_area(:description, :size => '25x17') %>
+            <%= wikitoolbar_for('easy_attendance_description') %>
+          </p>
+        <% else %>
+          <p>
+            <%= f.label(:description, l(:field_description)) %>
+            <%= f.text_field(:description, :size => 100) %>
+          </p>
+        <% end -%>
+        <%= call_hook :view_easy_attendances_form_right_bottom, {:easy_attendance => easy_attendance, :back_url => back_url, :f => f} %>
+        <!-- <p id="easy-attendance-advanced-infobox">
+          <%#= l(:advanced_infobox, :scope => [:easy_attendance, :description], :from => format_time(Date.today + 8.hours), :to => format_time(Date.today + 2.days + 17.hours)) -%>
+        </p> -->
+      </div>
+    </div>
+    <div class="clear"></div>
+
+    <%= call_hook :view_easy_attendances_form_bottom, {:easy_attendance => easy_attendance, :back_url => back_url, :f => f} %>
+  </div>
+  <p>
+    <%= f.submit(l(:button_save), :class => 'button-1 floatleft') -%>&nbsp;
+
+      <% if request.xhr? %>
+        <%= link_to_function(l(:label_back_to_basic, :scope => :easy_attendance), 'closeModalSelectorWindow();', :class => 'button-2') -%>
+      <% else %>
+        <%= link_to l(:button_back), back_url, :class => 'button-2' -%>
+      <% end %>
+      <% if !easy_attendance.new_record? && easy_attendance.can_edit? %>
+        <%= link_to(l(:button_delete), {:controller => 'easy_attendances', :action => 'destroy', :id => easy_attendance, :back_url => back_url}, :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :class => 'icon icon-del') %>
+      <% end %>
+
+  </p>
+<% end %>

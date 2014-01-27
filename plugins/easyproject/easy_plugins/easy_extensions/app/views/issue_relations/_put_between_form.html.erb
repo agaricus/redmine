@@ -1,0 +1,10 @@
+<%= error_messages_for @relation_between %>
+<%# easy_cache ['issue_relations/_put_between_form', @issue.project, I18n.locale] do %>
+<p class="gray-background">
+  <span><%= issues_relations_field_tag 'relation_between[issue_ids]', 'relations_between_issue_ids', [], :url => {:project_id => @issue.project.id, :query_name => 'issue_relation'} %></span>
+  <span class="buttons">
+    <%= link_to_function l(:button_add), '$("#put-between-form")[0].submit()', :class => 'button-1' %>
+    <%= toggle_link l(:button_cancel), 'put-between-form', :class => 'button-2' %>
+  </span>
+</p>
+<%# end %>

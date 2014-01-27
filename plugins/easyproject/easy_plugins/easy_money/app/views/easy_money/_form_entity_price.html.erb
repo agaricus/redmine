@@ -1,0 +1,21 @@
+<% if project.easy_money_settings.show_price2? -%>
+  <p>
+    <%= f.label :price2, l(:field_easy_money_other_revenue_price2), :for => 'price2' -%>
+    <%= f.text_field :price2, :id => 'price2', :size => 10, :onblur => "javascript:if ($('#use_vat').attr('checked')) {computePriceWithVat('price1','price2','vat');}" -%>
+  </p>
+  <p>
+    <%= f.label :vat, l(:field_easy_money_other_revenue_vat), :for => 'vat' -%>
+    <%= f.text_field :vat, :id => 'vat', :readonly => project.easy_money_settings.vat_disabled?, :size => 3, :maxlength => 6, :value => easy_money_entity.new_record? ? project.easy_money_settings.vat : easy_money_entity.vat -%>%
+    <%= check_box_tag 'use_vat', '1', true -%><%= l(:label_easy_money_use_vat)-%>
+  </p>
+<% end -%>
+<% if project.easy_money_settings.show_price1? -%>
+  <p>
+    <%= f.label :price1, l(:field_easy_money_other_revenue_price1), :for => 'price1' -%>
+    <% if project.easy_money_settings.show_price2? -%>
+      <%= f.text_field :price1, :id => 'price1', :size => 10, :onblur => "javascript:if ($('#use_vat').attr('checked')) {computePriceWithoutVat('price1','price2','vat');}" -%>
+    <% else -%>
+      <%= f.text_field :price1, :id => 'price1', :size => 10 -%>
+    <% end -%>
+  </p>
+<% end -%>

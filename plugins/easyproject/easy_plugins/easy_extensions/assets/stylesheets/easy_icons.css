@@ -1,0 +1,515 @@
+@font-face {
+  font-family: 'EasyIcons';
+  src: url('../easy_fonts/easy_icons-webfont.eot');
+  src: url('../easy_fonts/easy_icons-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../easy_fonts/easy_icons-webfont.woff') format('woff'),
+  url('../easy_fonts/easy_icons-webfont.ttf') format('truetype'),
+  url('../easy_fonts/easy_icons-webfont.svg#easyiconsregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  position: relative;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+[class*=icon]:before, a.ics:before, a.pdf:before, a.csv:before, a.atom:before, a.txt:before, a.html:before, .ico-pic, a.print:before, a.vcf:before, a.msp:before {
+  font-family: EasyIcons;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline;
+  width: auto;
+  height: auto;
+
+  /*font-size: 16px;*/
+
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+  vertical-align: baseline;
+}
+[class*=textcon] {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  display: inline;
+  width: auto;
+  height: auto;
+
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+  vertical-align: baseline;
+}
+.icon:before,  a.ics:before, a.pdf:before, a.csv:before, a.atom:before, a.txt:before, a.html:before, .ico-pic, a.print:before, a.vcf:before, a.msp:before {
+  font-size: 16px;
+}
+.ico-pic, .ico-pic:before {
+  margin: 0;
+  padding: 0;
+}
+[class*=button-].icon {
+  padding-left: 35px;
+}
+[class*=button-].icon:before {
+  position: absolute;
+  left: 10px;
+  font-size: 22px;
+  color: inherit;
+}
+.icon:before {
+  margin-right: 5px;
+}
+.xl-icon, .icon.xl-icon:before {
+  font-size: 24px;
+}
+.xxl-icon, .icon.xxl-icon:before {
+  font-size: 32px
+}
+.button-1.orange.icon:before {
+  color: rgb(194, 104, 19);
+}
+.button-2.icon:before {
+  color: #999;
+}
+
+
+#before-quick-search > *[class*=icon], #before-quick-search > * >*[class*=icon] {
+  font-size: 24px;
+  float: none;
+  color: #f0f0f0;
+  text-shadow: 0 0 1px #0f0f0f;
+}
+td.fast-icons .icon{
+  margin: 0 5px;
+}
+table.issues .easy-query-additional-ending-buttons .icon:before {
+  color: #444;
+}
+/*== ICONS ==*/
+
+.green-icon, .icon-add:before, .icon-true:before, .icon-save:before, .icon-checked:before {
+  color: #97c246;
+}
+.blue-icon {
+  color: #359FD3;
+}
+.red-icon {
+  color: #e50026
+}
+
+.textcon-plus:before {
+  content: '+';
+}
+.textcon-minus:before, .textcon-plus.open:before {
+  content: '-';
+}
+.easy-helpdesk:before {
+
+}
+.icon-remove:before{content:'-';}
+.icon-del:before{content:'K';}
+.icon-user:before{content:'P';}
+.icon-group:before,a.vcf:before{content:'g';}
+.icon-time-add:before{content:'~';}
+.icon-timer:before{content:'.';}
+.icon-issue-update{background:none;}
+.icon-reload:before,.icon-issue-update:before{content:'r';}
+.icon-lock:before{content:'L';}
+.icon-split:before{content:'|';}
+.icon-unlock:before{content:'U';}
+.icon-details,.icon-zoom-in,.icon-details,.icon-zoom-in{content:'1';}
+.icon-magnifier:before{content:'z';}
+.icon-templates:before{content:'p';}
+.icon-list:before{content:'m';}
+.icon-slab:before{content:"\5c";}
+.icon-bullet-list:before{content:"°";}
+.icon-archive:before{content:'q';}
+.icon-adressbook:before{content:"ů";}
+.icon-false:before{content:'f';}
+.icon-edit:before{content:'e';}
+.icon-workflow:before{content:'W';}
+.icon-move:before{content:'=';}
+.icon-server:before{content:'N';}
+.icon-cancel:before{color:red;content:'f';}
+.icon-package:before{content:'\a3';}
+.icon-home:before{content:'o';}
+.icon-help:before{content:'H';}
+.icon-youtube:before{content:'Y';}
+.icon-dropbox:before{content:'%';}
+.icon-aws:before{content:'_';}
+.icon-cloud:before{content:'ú';}
+.icon-googledrive:before{content:'j';}
+.icon-time:before{content:'T';}
+.icon-stats:before{content:'S';}
+.icon-warning:before{content:'w';}
+.icon-fullscreen:before{content:'3';}
+.icon-fav:before{content:'v';}
+.icon-fav-off:before{color:#f0f0f0;content:'v';text-shadow:0 0 1px #000;}
+.icon-checked:before,.icon-true:before{content:'t';}
+.icon-checked-circle:before{content:'n';}
+.icon-report:before{content:'x';}
+.icon-comment:before{content:'b';}
+.icon-comments:before,h3.comments:before{content:'B';}
+.icon-summary:before,[class*=button-].icon.icon-lightning:before{content:'Z';}
+.icon-zoom-out:before{content:'0';}
+.icon-watcher:before{content:'4';}
+.icon-relation:before{content:'8';}
+.icon-integrate:before{content:'9';}
+.icon-tracker:before{content:'6';}
+.icon-issue-status:before{content:'7';}
+.icon-stack:before{content:'F';}
+.icon-help-bubble:before{content:'?';}
+.icon-money:before{content:'$';}
+.icon-calculator:before{content:'€';}
+.icon-calculation:before{content:'ø';}
+.icon-export:before{content:'<';}
+.icon-import:before{content:'>';}
+.icon-calendar-month:before,.icon-calendar.month:before{content:'Q';}
+.icon-calendar-week:before,.icon-calendar.week:before{content:'J';}
+.icon-calendar-day:before,.icon-calendar.day:before{content:'V';}
+.icon-linux:before{content:":";}
+.icon-link:before{content:'l';}
+.icon-unlink:before{content:'u';}
+.icon-issue-types{background-image:url(../images/task-types.png);}
+
+
+.icon-arrow:before {content:']';}
+.icon-toggler:before {content: '}'; color: #ccc; font-size: 100%;}
+
+.icon-arrow.up {
+  transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  display: inline-block;
+}
+.icon-arrow.down, .icon-arrow.open, .icon-toggler.down, .icon-toggler.open, .open > .icon-toggler, .open > .icon-arrow {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  writing-mode: lr-tb;
+  display: inline-block;
+}
+.icon-arrow.left {
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  display: inline-block;
+}
+
+.icon-easy-bell{background-image:url(../images/bell.png);}
+.icon-close:before{content:'X';}
+.icon-bulb:before{content:'O';}
+.icon-settings:before{content:'s';}
+.icon-filter:before{content:'d';}
+.icon-play:before{content:'§';}
+.icon-pause:before{content:'!';}
+.icon-file.text-plain:before,.icon-txt:before,a.txt:before{content:'/';}
+.icon-file.text-x-c{background-image:url(../images/files/c.png);}
+.icon-file.text-x-csharp{background-image:url(../images/files/csharp.png);}
+.icon-file.text-x-php{background-image:url(../images/files/php.png);}
+.icon-file.text-x-ruby{background-image:url(../images/files/ruby.png);}
+.icon-file.text-xml{background-image:url(../images/files/xml.png);}
+.icon-print:before,a.print:before{content:'^';}
+.icon-atom:before,a.atom:before{content:')';}
+a.atom:before{color:rgba(9,9,128,0.7);}
+.icon-csv:before,a.csv:before{content:'#';}
+a.csv:before{color:rgba(7,117,7,0.7);}
+.icon-pdf:before,a.pdf:before,.icon-file.application-pdf:before{content:'&';}
+a.pdf:before{color:rgba(189,47,47,0.7);}
+.icon-html:before,a.html:before{content:'@';}
+a.ics:before{color:rgba(209,138,7,0.7);}
+.icon-new-template:before,.icon-add:before{content:'+';}
+.icon-project:before,.icon-folder:before{content:'R';}
+.icon-new-document:before,.icon-file:before{content:'i';}
+.icon-copy:before,.icon-duplicate:before{content:'c';}
+.icon-issue:before,.icon-page:before{content:'I';}
+.icon-save:before,.icon-save-issue:before{content:'2';}
+.icon-server-authentication:before,.icon-roles:before{content:'y';}
+.icon-calendar:before,.icon-ics:before,a.ics:before{content:'C';}
+.icon-db-key:before,.icon-cf:before{content:'k';}
+.icon-cross-move:before{content:'¶';}
+.icon-star:before{content:"\2a";}
+.icon-globe:before{content:"\a2";}
+.icon-reorder:before{content:"\a4";}
+.icon-message:before{content:"\a5";}
+.icon-mute:before {content: "\a9";}
+.icon-unmute:before { content: "\aa";}
+.icon-apple:before {content: "\ab";}
+.icon-android:before {content: "\ac";}
+.icon-windows:before {content: "\ae";}
+.icon-basecamp:before {content: "\af";}
+.icon-euro:before {content: "\20ac";}
+.icon-person-euro:before {content: "\c0"}
+.icon-cash-desk:before {content: "\c1"}
+.icon-snowflake:before {content: "\c2"}
+.icon-christmas-tree:before {content: "\c3"}
+.icon-christmas-ball:before {content: "\c4"}
+.icon-present:before {content: "\c5"}
+.icon-christmas-linux:before {content: "\c6"}
+.icon-scrum:before, .icon-agile:before {content: "\c7"}
+.icon-ms-project:before, a.msp:before {content: "\c8"}
+
+.icon-file.image-gif,
+.icon-file.image-jpeg,.icon-file.image-png,.icon-file.image-tiff,.icon-file.image-gif,.icon-file.image-jpeg,.icon-file.image-png,
+.icon-file.image-tiff,.icon-file.application-zip,.icon-file.application-x-gzip,.icon-file.application-zip,.icon-file.application-x-gzip,
+.icon-attachment:before{content:'(';}
+  .icon-spin {
+   display: inline-block;
+   -moz-animation: spin 2s infinite linear;
+   -o-animation: spin 2s infinite linear;
+   -webkit-animation: spin 2s infinite linear;
+   animation: spin 2s infinite linear;
+ }
+ @-moz-keyframes spin {
+   0% { -moz-transform: rotate(359deg); }
+   100% { -moz-transform: rotate(0); }
+ }
+ @-webkit-keyframes spin {
+   0% { -webkit-transform: rotate(359deg); }
+   100% { -webkit-transform: rotate(0deg); }
+ }
+ @-o-keyframes spin {
+   0% { -o-transform: rotate(359deg); }
+   100% { -o-transform: rotate(0deg); }
+ }
+ @-ms-keyframes spin {
+   0% { -ms-transform: rotate(359deg); }
+   100% { -ms-transform: rotate(0deg); }
+ }
+ @keyframes spin {
+   0% { transform: rotate(359deg); }
+   100% { transform: rotate(0deg); }
+ }
+
+ span.expander {
+  padding: 0;
+  background: none;
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+/*CUSTOM ICONS WITHOUT CLASS*/
+#tab-content-members td.group:before, #tab-content-members td.group:before, #attachments_fields span[id^=attachments] a.remove-upload:before,
+span.expander:before, *[id^=error]:before, div.flash:before, .nodata:before, .warning:before, #attachments_fields span[id^=attachments]:before,
+div.journal.private-notes:after, button.ui-datepicker-trigger, h3.comments:before,
+table.list tr.child td.subject a:before, table.list tr.child td.name a:before {
+ font-family: EasyIcons;
+ font-weight: normal;
+ font-style: normal;
+ text-decoration: inherit;
+ -webkit-font-smoothing: antialiased;
+ display: inline;
+ width: auto;
+ height: auto;
+}
+h3.comments {
+  padding-left: 35px;
+  position: relative;
+}
+h3.comments:before {
+  position: absolute;
+  font-size: 150%;
+  left: 10px
+}
+
+span.expander:before{
+  content: '+';
+  position: absolute;
+}
+.journal span.expander.issue-journal-details-toggler:before {
+  position: static;
+}
+.journal span.expander.issue-journal-details-toggler {
+  width: auto;
+  float: none;
+}
+
+.open span.expander,span.expander.open {
+  background: none;
+}
+.open > span.expander:before,span.expander.open:before, tr.open span.expander:before {
+  content: '-';
+}
+#admin-menu li a.icon:before {
+  font-size: 18px;
+}
+div.menu-dashboard li i.icon:before {
+  color: #888;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 80px;
+  font-size: 80px;
+}
+div.menu-dashboard li a:hover i.icon.settings, div.menu-dashboard li a:hover i.icon.plugins, .menu-admin-menu a.settings:hover:before  {
+  display: inline-block;
+  -moz-animation: spin 5s infinite linear;
+  -o-animation: spin 5s infinite linear;
+  -webkit-animation: spin 5s infinite linear;
+  animation: spin 5s infinite linear;
+}
+div.menu-dashboard li i.icon:hover:before, div.menu-more li:hover a.icon:before, #admin-menu li a.icon:hover, #admin-menu li a.icon.selected  {
+  color: #359FD3;
+}
+.menu-more li a.icon:before {
+  position: absolute;
+  left:-1px;
+  font-size: 15pt;
+}
+
+*[id^=error], div.flash, .nodata, .warning{
+  font-size:100%;
+  margin-bottom:12px;
+  padding:20px 10px 20px 60px;
+  position: relative;
+}
+*[id^=error]:before, div.flash:before, .nodata:before, .warning:before{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  line-height: normal;
+
+}
+div.flash.error:before, *[id^=error]:before {
+  content: 'E';
+  color: #F25050;
+}
+div.flash.notice:before {
+  content: 'n';
+  color: #009900;
+}
+div.flash.warning:before {
+  content: 'w';
+  color: #F2C200;
+}
+#main div#context-menu li a:before {
+  position: absolute;
+  left: 2.5px;
+}
+#main #context-menu a.icon-checked {
+  background-image: none
+}
+*[class*=textcon].toggle-bullet {
+  border: 1px solid rgba(0,0,0,0.15);
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 12px;
+  margin: 0 2px;
+  padding: 0px 1px;
+  font-size: 14px;
+  font-weight: bolder;
+  display: inline-block;
+  width: 14px;
+  text-align: center;
+  height: 15px;
+}
+*[class*=textcon].toggle-bullet:before {
+  vertical-align: middle;
+}
+#attachments_fields span[id^=attachments] {
+  position: relative;
+}
+#attachments_fields span[id^=attachments]:before {
+  line-height: 25px;
+  left: 0;
+  position: absolute;
+  content: '(';
+}
+#attachments_fields span[id^=attachments] a.remove-upload:before {
+ content: 'K';
+}
+#tab-content-members td.group:before  {
+  font-size: 16px;
+
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+  vertical-align: middle;
+  margin-right: 5px;
+
+  content: 'g';
+}
+#history .details a.icon-magnifier:before {
+  padding-left: 5px;
+  margin-right: 0px;
+}
+div.journal.private-notes:after {
+  content: 'L';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 70px;
+  text-shadow: 0 0 10px #fff;
+  /*color: #359FD3;*/
+  opacity: 0.05;
+  margin-top: -35px;
+  margin-left: -35px;
+  z-index: -1;
+}
+div.flash > a.icon-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 22px;
+  height: 22px;
+  opacity: 0.5
+}
+div.flash > a.icon-close:hover {
+  opacity: 1
+}
+div.flash > a.icon-close:before {
+  font-size: 22px;
+}
+button.ui-datepicker-trigger {
+  content: 'C';
+  padding: 0 2.5px;
+  font-size: 26px;
+  vertical-align: middle;
+  -moz-vertical-align: bottom;
+  display: inline;
+  line-height: 25px;
+  cursor: pointer;
+  margin: 0;
+  border: 0;
+  background: none;
+  color: #666;
+}
+button.ui-datepicker-trigger:hover {
+  color: inherit;
+}
+span.editable {
+  border-bottom: 1px dashed #c7c7c7;
+}
+.editable + span.icon-edit {
+  font-size: 80%;
+  cursor: pointer;
+  position: absolute;
+  padding-left: 5px;
+  opacity: 0;
+}
+.editable:hover + span.icon-edit {
+  opacity: 0.5;
+}
+.editable + span.icon-edit:hover {
+  opacity: 1;
+}
+table.list tr.child td.subject a:before, table.list tr.child td.name a:before {
+  content: '}';
+  opacity: 0.5;
+  vertical-align: middle;
+  font-size: 80%;
+  padding: 0 5px 0 0;
+  text-shadow: .5px .5px 2px gray;
+}

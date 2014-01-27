@@ -1,0 +1,58 @@
+<%= form_tag(project_enumerations_path(@project), :method => :put, :class => 'tabular') do %>
+
+  <div class="box">
+    <%= radio_button_tag 'easy_setting[project_fixed_activity]', true, @project.fixed_activity? -%>
+    <%= label_tag :easy_setting_project_fixed_activity_true, l(:field_project_fixed_activity_true) -%>
+    <%= radio_button_tag  'easy_setting[project_fixed_activity]', false, !@project.fixed_activity? -%>
+    <%= label_tag :easy_setting_project_fixed_activity_false, l(:field_project_fixed_activity_false) -%>
+  </div>
+
+  <table class="list">
+    <thead>
+      <tr>
+        <th></th>
+        <%= content_tag :th, l(:field_name) -%>
+        <th>
+          <%= link_to_function(image_tag('toggle_check.png', :alt => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}"), "toggleCheckboxesBySelector('.active-field')",
+            :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}") -%>
+          <%= l(:field_active) -%>
+        </th>
+        <% @project.all_members_roles.each do |role| %>
+          <th>
+            <%= link_to_function(image_tag('toggle_check.png', :alt => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}"), "toggleCheckboxesBySelector('input.project-activitiy-for-role-#{role.id}')",
+              :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}") -%>
+            <%= role.name -%>
+          </th>
+        <% end if EasySetting.value('enable_activity_roles') %>
+      </tr>
+    </thead>
+
+    <% @project.activities(true).each do |enumeration| %>
+      <%= fields_for "enumerations[#{enumeration.id}]", enumeration do |ff| %>
+        <tr class="<%= cycle('odd', 'even') -%>">
+          <td class="tick">
+            <%= link_to_function(image_tag('toggle_check.png', :alt => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}"), "toggleCheckboxesBySelector('.project-activity-#{enumeration.id} input[type=checkbox]')",
+              :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}") -%>
+          </td>
+          <td class="name">
+            <%= h(enumeration) %>
+          </td>
+          <td class="<%= "project-activity-#{enumeration.id}" -%>">
+            <%= ff.check_box :active, :checked => @project.project_time_entry_activities.include?(enumeration), :class => "active-field" -%>
+          </td>
+          <% @project.all_members_roles.each do |role| %>
+            <%= content_tag :td, :class => "project-activity-#{enumeration.id}" do %>
+              <%= check_box_tag( "project_activity_roles[#{enumeration.parent_id || enumeration.id}][]", role.id, @project.enabled_role_activity?(role.id, enumeration.parent_id || enumeration.id), :class => "project-activitiy-for-role-#{role.id}") -%>
+            <% end %>
+          <% end if EasySetting.value('enable_activity_roles') %>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+
+  <div class="contextual">
+    <%= link_to(l(:button_project_mass_copy), {:controller => 'project_mass_copy', :action => 'select_target_projects', :source_project_id => @project, :'only[]' => 'activity', :back_url => url_for(params)}, :class => 'button-2') %>
+  </div>
+
+  <%= submit_tag l(:button_save), :class => 'button-1', :id => 'save-project-activities' -%>
+<% end %>

@@ -1,0 +1,392 @@
+---
+pt-BR:
+  easy_money_plugin_name: Dinheiro
+  easy_money_plugin_author: Fácil Software
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- Acompanhamento e gestão dos resultados financeiros
+    esperados e reais dos projetos'
+  project_module_easy_money: Dinheiro
+  menu_easy_money: Dinheiro
+  permission_view_easy_money: O acesso ao módulo monetário (geral)
+  permission_easy_money_show_expected_revenue: Mostrar rendimentos esperados
+  permission_easy_money_show_expected_expense: Mostrar despesas esperadas
+  permission_easy_money_show_expected_payroll_expense: Mostrar despesas salariais
+    esperados
+  permission_easy_money_show_expected_profit: Mostrar lucro esperado
+  permission_easy_money_show_other_revenue: Mostrar os rendimentos reais
+  permission_easy_money_show_other_expense: Mostrar despesas reais
+  permission_easy_money_show_time_entry_expenses: Mostrar as despesas dos salários
+    reais
+  permission_easy_money_show_other_profit: Mostrar lucro real
+  permission_easy_money_manage_expected_revenue: Addig rendimentos esperados
+  permission_easy_money_manage_expected_expense: Adicionando custos esperados
+  permission_easy_money_manage_expected_payroll_expense: Adicionando despesas salariais
+    esperados
+  permission_easy_money_manage_other_revenue: Adicionando os rendimentos reais
+  permission_easy_money_manage_other_expense: Adicionando despesas reais
+  permission_easy_money_settings: Acesso às configurações de dinheiro
+  permission_easy_money_move: Movimentar o dinheiro entre projetos
+  label_easy_money: Dinheiro
+  label_easy_money_settings: Configurações Dinheiro
+  label_easy_money_rate_priorities_settings: As taxas de despesas criação
+  label_easy_money_project_index: Dinheiro
+  label_easy_money_other_expenses: Resumo despesas
+  label_easy_money_other_expense_new: Nova despesa
+  label_easy_money_other_expense_show: Despesa
+  label_easy_money_other_expense_edit: Edição de despesa
+  label_easy_money_other_revenues: Resumo rendimentos
+  label_easy_money_other_revenue_new: New renda
+  label_easy_money_other_revenue_show: Renda
+  label_easy_money_other_revenue_edit: Edição de Renda
+  label_easy_money_time_entry_expenses: Salário visão despesas
+  label_easy_money_project_index_profit: ! 'Lucro:'
+  label_easy_money_expected_expenses: Esperado visão despesas
+  label_easy_money_expected_revenues: Resumo esperado rendimentos
+  label_easy_money_expected_expense_new: Nova despesa prevista
+  label_easy_money_expected_expense_show: Despesa esperado
+  label_easy_money_expected_expense_edit: Edição esperados de despesas
+  label_easy_money_expected_revenue_new: New rendimento esperado
+  label_easy_money_expected_revenue_show: Rendimento esperado
+  label_easy_money_expected_revenue_edit: Edite rendimento esperado
+  label_easy_money_other_settings: Outras configurações
+  label_easy_money_other_settings_price_visibility: ! 'Pelo uso montante:'
+  label_easy_money_other_settings_rate_type: ! 'Pelos gastos salariais usar:'
+  label_easy_money_other_settings_include_childs: ! 'Contar valores de sub projetos
+    para o dinheiro total do projeto:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Ligue Planejamento
+    / expectativas do projeto:'
+  label_easy_money_other_settings_project_use_easy_money_for_versions: Use o dinheiro
+    em marcos
+  label_easy_money_other_settings_project_use_easy_money_for_issues: Use o dinheiro
+    em tarefas
+  label_easy_money_project_usage_type: ! 'Use no projeto:'
+  label_easy_money_other_settings_vat: ! 'Se mostrando valor sem IVA, o IVA é:'
+  label_easy_money_use_vat: usar contagem de IVA
+  label_easy_money_expected_budget: Plano
+  label_easy_money_real_budget: Realidade
+  label_easy_money_project_name: ! 'Orçamento do projeto:'
+  label_easy_money_hour: ! '%{hours} hrs.'
+  label_easy_money_expected_payroll_expense_per_hours: Taxa horária planejada
+  label_easy_money_expected_payroll_expenses: ! 'Despesas salariais:'
+  label_easy_money_subproject_sum_revenues: Rendimentos *
+  label_easy_money_subproject_sum_expenses: Despesas *
+  label_easy_money_subproject_sum_payroll_expenses: Despesas salariais
+  label_easy_money_subproject_profit: Resultado *
+  label_easy_money_subproject_explication: ! '*) (Plan / realidade)'
+  label_easy_money_attachments: ! 'Anexos:'
+  label_easy_money_project_time_entry_expenses: Custo salarial puramente sobre o projeto
+  label_easy_money_project_issues_time_entry_expenses: Os custos com pessoal para
+    as tarefas do projeto
+  label_easy_money_total: ! 'Total:'
+  label_easy_money_all_project: Dinheiro para todos os projetos
+  label_easy_money_currency_visible: ! 'Permitir mudar de câmbio em projeto:'
+  label_easy_money_currency: ! 'Moeda:'
+  label_easy_money_select_project: Escolha um projeto
+  label_easy_money_mass_copy_rates: Despesas os valores de taxa de
+  label_easy_money_project_index_estimated_hours: ! 'Tempo estimado:'
+  label_easy_money_new_revenue_text: Receita
+  label_easy_money_new_revenue_description: receita
+  label_easy_money_new_expense_text: Despesa
+  label_easy_money_new_expense_description: despesa
+  text_easy_money_rate_priorities_settings: Hierarquia básica de taxas de despesas.
+    Se a primeira taxa é zero, será usado na próxima taxa zero.
+  button_easy_money_rate_use_in_all_projects: Use taxa em todos os projetos
+  button_easy_money_rate_use_in_all_subprojects: Use taxa em todos os subprojetos
+  button_easy_money_priorities_use_in_all_projects: Use prioridades taxa em todos
+    os projetos
+  button_easy_money_priorities_use_in_all_subprojects: Use prioridades taxa em todos
+    os subprojetos
+  button_easy_money_project_expected_expenses: ! 'Outras despesas:'
+  button_easy_money_project_expected_revenues: ! 'Rendimentos:'
+  button_easy_money_project_other_expenses: ! 'Outras despesas:'
+  button_easy_money_project_other_revenues: ! 'Rendimentos:'
+  button_easy_money_project_time_entry_expenses: ! 'Despesas salariais:'
+  button_easy_money_project_new_revenue: New renda
+  button_easy_money_project_new_expense: Nova despesa
+  button_easy_money_project_time_entry_hours: ! 'Tempo trabalhado:'
+  button_easy_money_project_index_show_details: Mostrar detalhes
+  button_easy_money_project_index_show_empty: Mostrar campos vazios
+  button_easy_money_save_in_all_projects: Use em todos os projetos
+  button_easy_money_save_in_all_subprojects: Use em todos os subprojetos
+  button_easy_money_project_settings: Configurações Dinheiro
+  button_easy_money_save_expected_revenue: Salvar rendimento esperado
+  button_easy_money_save_other_revenue: Salvar renda real
+  button_easy_money_save_expected_hours: Economize horas esperados
+  button_easy_money_save_expected_expense: Salvar despesa esperado
+  button_easy_money_save_other_expense: Salvar despesa verdadeiro
+  button_easy_money_update_project_time_entry_expenses: Despesas salariais em Recalcular
+    projeto
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: Despesas salariais
+    em Recalcular projeto e todos os subprojetos
+  button_easy_money_update_all_projects_time_entry_expenses: Despesas salariais em
+    Recalcular todos os projetos
+  button_easy_money_move: Redesignar selecionado
+  title_easy_money_project_new_revenue: Adicionar nova renda
+  title_easy_money_project_new_expense: Adicionar nova despesa
+  title_easy_money_project_expected_revenues: Mostrar rendimentos planejados de projeto
+  title_easy_money_project_other_revenues: Mostrar os rendimentos reais de projeto
+  title_easy_money_project_expected_expenses: Mostrar despesas com plano de projeto
+  title_easy_money_project_other_expenses: Mostrar as despesas reais do projeto
+  title_easy_money_project_time_entry_expenses: Mostrar despesas salariais reais de
+    projeto
+  title_easy_money_rates_save: Economize as taxas de
+  title_easy_money_rate_use_in_all_projects: Salvar taxas e aplicá-las em todos os
+    projetos
+  title_easy_money_rate_use_in_all_subprojects: Salvar taxas e aplicá-las em todos
+    os subprojetos
+  title_easy_money_priorities_use_in_all_projects: Use ordenação das taxas em todos
+    os projetos
+  title_easy_money_priorities_use_in_all_subprojects: Use ordenação de taxas sobre
+    todos os subprojetos
+  title_easy_money_other_repeating_expense_show: Mostrar custa repetir.
+  title_easy_money_other_repeating_revenue_show: Mostrar renda repetido.
+  title_easy_money_settings: Ir para definição de dinheiro do projeto.
+  title_easy_money_project_index_show_empty: Mostrar campos vazios.
+  title_close: Ao clicar fechar este painel.
+  title_easy_money_update_project_time_entry_expenses: Despesas salariais em Recalcular
+    projeto.
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Clique para
+    iniciar a conversão dos custos salariais do projeto e todos os subprojetos (pode
+    demorar alguns minutos).
+  title_easy_money_update_all_projects_time_entry_expenses: Despesas salariais recalcular
+    em todos os projetos.
+  title_easy_money_sum_expected_revenues: Soma dos rendimentos esperados sobre projeto
+    %{project}é%{value}.
+  title_easy_money_sum_other_revenues: Soma de outros rendimentos sobre projeto %{project}é%{value}.
+  title_easy_money_sum_expected_expenses: Soma das despesas previstas no projeto %{project}é%{value}.
+  title_easy_money_sum_other_expenses: Soma de outras despesas no projeto %{project}é%{value}.
+  title_easy_money_sum_expected_payroll_expenses: Soma dos salários esperados no projeto
+    %{project}é%{value}.
+  title_easy_money_sum_time_entry_expenses: Soma dos salários em projeto %{project}é%{value}.
+  title_easy_money_expected_profit: Lucro esperado em projeto %{project}é%{value}.
+  title_easy_money_other_profit: Lucro em projeto %{project}é%{value}.
+  title_easy_money_link_to_subproject: Ir para o dinheiro de %{subproject}.
+  title_easy_money_link_to_project: Ir para o dinheiro do projeto %{project}.
+  field_spent_hours: Horas gastas
+  field_easy_money_rate_entity_time_entry_activity_name: Nome da atividade
+  field_easy_money_rate_entity_role_name: Nome da função
+  field_easy_money_rate_entity_user_name: Nome de usuário
+  field_easy_money_other_expense_spent_on: ! 'Data:'
+  field_easy_money_other_expense_name: ! 'Nome:'
+  field_easy_money_other_expense_description: ! 'Descrição:'
+  field_easy_money_other_expense_price1: ! 'Valor com IVA:'
+  field_easy_money_other_expense_price2: ! 'Valor sem IVA:'
+  field_easy_money_other_expense_vat: ! 'IVA:'
+  field_easy_money_other_revenue_spent_on: ! 'Data:'
+  field_easy_money_other_revenue_name: ! 'Nome:'
+  field_easy_money_other_revenue_description: ! 'Descrição:'
+  field_easy_money_other_revenue_price1: ! 'Valor total:'
+  field_easy_money_other_revenue_price2: ! 'Valor sem IVA:'
+  field_easy_money_other_revenue_vat: ! 'IVA:'
+  field_easy_money_expected_expense_spent_on: ! 'Data:'
+  field_easy_money_expected_expense_name: ! 'Nome:'
+  field_easy_money_expected_expense_description: ! 'Descrição:'
+  field_easy_money_expected_expense_price1: ! 'Valor total:'
+  field_easy_money_expected_expense_price2: ! 'Valor sem IVA:'
+  field_easy_money_expected_expense_vat: ! 'IVA:'
+  field_easy_money_expected_revenue_spent_on: ! 'Data:'
+  field_easy_money_expected_revenue_name: ! 'Nome:'
+  field_easy_money_expected_revenue_description: ! 'Descrição:'
+  field_easy_money_expected_revenue_price1: ! 'Valor total:'
+  field_easy_money_expected_revenue_price2: ! 'Valor sem IVA:'
+  field_easy_money_expected_revenue_vat: ! 'IVA:'
+  field_easy_money_expected_revenue: Rendimento esperado
+  field_easy_money_expected_expense: Despesa esperado
+  field_easy_money_sum_other_revenues: Rendimentos
+  field_easy_money_sum_time_entry_expenses: Despesas salariais
+  field_easy_money_sum_other_expenses: Despesas
+  field_easy_money_sum_other_profit: Lucro
+  field_easy_money_rate_type_internal: Taxa interna
+  field_easy_money_rate_type_external: External_rate
+  field_price1: Montante total
+  field_price2: Valor sem IVA
+  field_vat: IVA
+  tab_easy_money_rate_priorities: Taxa de hierarquia
+  tab_easy_money_rate_role: Preços por papel
+  tab_easy_money_rate_time_entry_activity: Taxas de atividade
+  tab_easy_money_rate_user: Preços por usuário
+  tab_easy_money_other_settings: Outra configuração
+  easy_money_other_expense_custom_field: Despesas reais
+  easy_money_other_revenue_custom_field: A renda real
+  notice_easy_money_recalculate: Valores serão recalculados na próxima visita da página
+    de resumo.
+  error_easy_money_project_selector_select_values: Não há nenhum valor escolhido
+  project_default_page:
+    easy_money: Dinheiro
+  warning_easy_money_settings:
+    project_question: Você quer salvar as configurações no projeto?
+    global_question: Você quer salvar as configurações globais?
+    revenues_type: Você pode alterar o método de entrada de renda (todos os rendimentos
+      inseridos anteriormente serão apagados).
+    expenses_type: Você pode alterar o método de entrada de despesas (todas as despesas
+      inseridas anteriormente serão apagados).
+  warning_easy_money_all_projects:
+    question: Você tem certeza que quer usar as configurações de todos os projetos?
+    revenues_type: Todos os rendimentos inseridos anteriormente para os seguintes
+      projetos serão excluídos:%{projects}
+    expenses_type: Todas as despesas previamente inscritas para os seguintes projetos
+      serão excluídos:%{projects}
+  easy_money_rate_type:
+    one: Taxa
+    internal: Taxa interna
+    external: Taxa externo
+  easy_money_entity:
+    user: Usuário
+    role: Papel
+    time_entry_activity: Atividade
+  easy_money_rate_entity:
+    user: Taxa pelo usuário
+    role: Taxa de papel
+    time_entry_activity: Taxa de actividade
+  easy_money_period:
+    daily: Diariamente
+    monthly: Mensal
+    weekly: Semanal
+    yearly: Anual
+  easy_money_other_settings_price_visibility:
+    price1: só montante total
+    price2: só quantidade sem IVA
+    all: valor sem IVA e valor total
+  easy_money_other_settings_rate_type:
+    internal: apenas uma taxa de
+    all: taxa interna e externa
+  easy_money_other_settings_expected_count_price:
+    price1: montante total
+    price2: valor sem IVA
+  easy_money_other_settings_expected_rate_type:
+    internal: taxas internas
+    external: taxas externas
+  easy_reports_fields:
+    _time_entry_internalrate: Despesas salariais - Taxa Interna
+    _time_entry_externalrate: Despesas salariais - Taxa Externa
+    easy_money_other_revenue_id: A renda real
+    easy_money_other_revenue_name: A renda real - Nome
+    easy_money_other_revenue_price1: Rendimentos reais - preço total
+    easy_money_other_revenue_price2: Rendimentos reais - Preço sem IVA
+    easy_money_other_expense_id: Despesas reais
+    easy_money_other_expense_name: Despesas reais - Nome
+    easy_money_other_expense_price1: Despesas reais - preço total
+    easy_money_other_expense_price2: Despesas reais - preços sem IVA
+    easy_money_expected_expense_id: Despesas esperadas
+    easy_money_expected_expense_name: Despesas esperadas - Nome
+    easy_money_expected_expense_price1: Despesas esperadas - Preço total
+    easy_money_expected_expense_price2: Despesas esperadas - Preço sem IVA
+    easy_money_expected_revenue_id: Rendimento esperado
+    easy_money_expected_revenue_name: Renda esperada - Nome
+    easy_money_expected_revenue_price1: Renda esperada - Preço total
+    easy_money_expected_revenue_price2: Renda esperada - Preço sem IVA
+    project_expected_hours: Horas de trabalho esperados
+    project_expected_payroll_expense: Despesas salariais previstos
+    _project_recovery: Recuperação
+    _project_timeentry_average_hourly_expense: Despesa média horária
+    _project_other_profit: Lucro
+  easy_reports_categories:
+    easy_money: Dinheiro
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: conversão dos custos salariais
+  tooltip_real_hourly_rate: O projeto é baseado na taxa horária média %{average_hourly_rate}/
+    H.
+  label_easy_money_sidebar:
+    project: O dinheiro para o projeto
+    issue: Dinheiro para a tarefa
+    version: Dinheiro para marco
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Outras receitas
+      easy_money_other_expense_query: Outras despesas
+      easy_money_expected_revenue_query: Receitas esperadas
+      easy_money_expected_expense_query: Despesas esperadas
+      easy_money_project_cache_query: Projetos síntese do orçamento
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: Filtros pessoais sobre outras receitas
+        easy_money_other_expense_query: Filtros pessoais sobre outras despesas
+        easy_money_expected_revenue_query: Filtros pessoais sobre as receitas esperadas
+        easy_money_expected_expense_query: Filtros pessoais sobre gastos esperados
+        easy_money_project_cache_query: Filtros pessoais na síntese do orçamento
+      public:
+        easy_money_other_revenue_query: Filtros públicas sobre outras receitas
+        easy_money_other_expense_query: Filtros públicas em outras despesas
+        easy_money_expected_revenue_query: Filtros públicas sobre receitas esperadas
+        easy_money_expected_expense_query: Filtros públicas sobre as despesas previstas
+        easy_money_project_cache_query: Filtros públicas em geral orçamento
+  permission_easy_budgetsheet_view_internal_rates: Budgetsheet - mostram taxas internas
+  permission_easy_budgetsheet_view_external_rates: Budgetsheet - As taxas externas
+    mostram
+  label_filter_group_easy_money_other_revenue_query: Outras receitas
+  label_filter_group_easy_money_other_expense_query: Outras despesas
+  label_filter_group_easy_money_expected_revenue_query: Receitas esperadas
+  label_filter_group_easy_money_expected_expense_query: Despesas esperadas
+  field_inherit_easy_money_settings: Herdar configurações de dinheiro
+  heading_easy_money_other_settings_project_overview: Configurações visão geral do
+    projeto
+  heading_easy_money_other_settings_prices_and_rates: Preços e taxas
+  label_easy_money_project_index_sum_hours: ! 'Horas esperados:'
+  label_easy_money_other_settings_expected_count_price: Receitas e outras despesas
+    contar com
+  label_easy_money_other_settings_expected_rate_type: Despesas salariais reais contar
+    com
+  label_filter_group_easy_money_project_cache_query: Outros
+  label_filter_group_easy_money_project_cache_expenses: Despesas
+  label_filter_group_easy_money_project_cache_revenues: Receita
+  label_filter_group_easy_money_project_cache_profit: Lucro
+  label_easy_money_project_cache: Projetos síntese do orçamento
+  label_easy_money_other_settings_revenues_type: As receitas serão agem como
+  label_easy_money_other_settings_expenses_type: Outras despesas será atuam como
+  label_easy_money_other_settings_expected_payroll_expense_type: Despesas salariais
+    planejada contado como
+  field_sum_of_expected_hours: Esperados horas
+  field_sum_of_expected_payroll_expenses: Salários esperados
+  field_sum_of_expected_expenses_price_1: Despesas esperados (IVA incl)
+  field_sum_of_expected_revenues_price_1: Receitas esperadas (IVA incl)
+  field_sum_of_other_expenses_price_1: Outras despesas (IVA incl)
+  field_sum_of_other_revenues_price_1: Outras receitas (IVA incl)
+  field_sum_of_expected_expenses_price_2: Despesas previstas (sem IVA)
+  field_sum_of_expected_revenues_price_2: Receitas esperadas (sem IVA)
+  field_sum_of_other_expenses_price_2: Outras despesas (sem IVA)
+  field_sum_of_other_revenues_price_2: Outras receitas (sem IVA)
+  field_sum_of_time_entries_expenses_internal: Salários (taxa interna)
+  field_sum_of_time_entries_expenses_external: Salários (taxa externa)
+  field_sum_of_all_expected_expenses_price_1: As despesas totais esperados (IVA incl)
+  field_sum_of_all_expected_revenues_price_1: Total de receitas esperadas (IVA incl)
+  field_sum_of_all_other_revenues_price_1: Total de receitas (IVA incl)
+  field_sum_of_all_expected_expenses_price_2: Total das despesas previstas (sem IVA)
+  field_sum_of_all_expected_revenues_price_2: Total de receitas esperadas (sem IVA)
+  field_sum_of_all_other_revenues_price_2: A receita total (sem IVA)
+  field_sum_of_all_other_expenses_price_1_internal: Total de despesas (IVA incl, a
+    taxa interna)
+  field_sum_of_all_other_expenses_price_2_internal: Total das despesas (sem IVA, a
+    taxa interna)
+  field_sum_of_all_other_expenses_price_1_external: Total de despesas (IVA incl, a
+    taxa externa)
+  field_sum_of_all_other_expenses_price_2_external: Total das despesas (sem IVA, a
+    taxa externa)
+  field_expected_profit_price_1: Lucro esperado (IVA incl)
+  field_expected_profit_price_2: Lucro esperado (sem IVA)
+  field_other_profit_price_1_internal: Lucro (IVA incl, a taxa interna)
+  field_other_profit_price_2_internal: Lucro (sem IVA, a taxa interna)
+  field_other_profit_price_1_external: Lucro (IVA incl, a taxa externa)
+  field_other_profit_price_2_external: Lucro (sem IVA, a taxa externa)
+  field_average_hourly_rate_price_1: Taxa média horária (IVA incl)
+  field_average_hourly_rate_price_2: Taxa média horária (sem IVA)
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Dinheiro - homepage
+    pages_description:
+      easy_money_projects_overview: Dinheiro - homepage
+  easy_money_revenues_type:
+    list: lista detalhada
+    sum: renda total
+  easy_money_expenses_type:
+    list: lista detalhada
+    sum: despesas totais
+  easy_money_expected_payroll_expense_type:
+    amount: despesas salariais (soma total)
+    hours: despesas salariais (horas esperados * taxa horária planejada)
+    estimated_hours: despesas salariais (tempo estimado * taxa horária planejada)
+    planned_hours_and_rate: tarefa sem cessionário (cerca de horas * taxa horária
+      planejada), a tarefa com cessionário (horas estimadas * taxa pela hierarquia)
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: Projetos orçamento recálculo geral
+  label_easy_money_round_money_on_list: Rodada em lista

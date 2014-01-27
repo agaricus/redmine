@@ -1,0 +1,195 @@
+.menu-more {
+    display: none;
+    text-align: left;
+    z-index: 25;
+    width: 100%;
+}
+
+
+.menu-more li {
+    list-style-type: none;
+    padding: 0 5.5px;
+}
+
+.menu-more-container .menu-more {
+    display: block;
+    position: absolute;
+    z-index: 55;
+    top: 35px;
+}
+
+.menu-more-container {
+    position: relative;
+}
+/*
+div.menu-more-container .menu-expander {
+    !!!!! USE button-2 class !!!!!!!!
+    display: block;
+    background-color: #fafafa;
+    border: 1px solid #cccccc;
+    color: #666666;
+    font-size: 100%;
+    cursor: pointer;
+    text-align: right;
+    border-radius: 3px;
+}*/
+/* </ MENU MORE >*/
+/* <MAIN MENU> */
+
+#main #main-menu {
+    bottom: auto;
+    font-size: 100%;
+    /*margin: 0px;*/
+    left: auto;
+    position: fixed;
+    /*width: 960px;*/
+    z-index: 25;
+    /*    margin-top: -11px;
+        padding-top: 10px;*/
+}
+
+#project-space-holder {
+    background-color: #ffffff;
+    height: 60px;
+}
+
+#main #main-menu .menu-more-container {
+    background-color: #F9F9F9;
+    float: right;
+    text-align: right;
+    width: 150px;
+}
+
+#main #main-menu .menu-more-container:hover {
+    border-color: #cccccc;
+    border-style: none solid solid solid;
+    border-width: 0px 1px 1px 1px;
+}
+
+#main #main-menu .menu-more {
+    display: none;
+    text-align: left;
+}
+
+#main #main-menu .menu-more-container:hover .menu-more {
+    display: block;
+}
+
+#main #main-menu ul {
+    margin: 0;
+    padding: 0;
+}
+#main #main-menu li {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+#main #main-menu li:not(.menu-more-in-menu) {
+    float: left;
+    white-space: nowrap;
+}
+
+#main #main-menu .menu-more li {
+    float: none;
+    border-bottom: 1px solid #cccccc;
+    margin: 5px 0px 5px 0px;
+}
+
+#main #main-menu li a {
+    color:#000;
+    display: block;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    padding: 0 8px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#main #main-menu .menu-more li a {
+    border-right: none;
+}
+
+#main #main-menu .menu-more li:first-child a {
+    padding-left: 8px;
+}
+
+#main #main-menu li:last-child a {
+    border-right: none;
+}
+
+#main #main-menu .menu-more li:last-child {
+    border-bottom: none;
+}
+
+#main #main-menu div a.link_project {
+    font-size: 100%;
+    font-weight: bold;
+    color: #000;
+    margin-left: 10px;
+    line-height: 16px;
+}
+
+#main #main-menu div a.link_issues {
+    font-weight: bold;
+}
+#main div.project-menu.tabs div.tabs-buttons {
+    top: 39px;
+}
+#main #main-menu #project-menu-breadcrumb #project-menu-breadcrumb-items a {
+    font-size: 100%;
+    color: #666666;
+}
+
+#main #main-menu #project-menu-breadcrumb a.self {
+    color: #666666;
+}
+
+#main #main-menu #project-menu-breadcrumb a.ancestor {
+    font-weight: normal;
+    font-size: 90%;
+    text-decoration: underline;
+}
+
+#main #main-menu #project-menu-breadcrumb span.menu-project-template {
+    font-weight: normal;
+    font-size: 85%;
+}
+
+#main #main-menu .project-menu ul {
+    border-bottom: 1px solid #ccc;
+}
+/* <ACCOUNT MENU> */
+
+#header #account-menu {
+    clear: right;
+    float: right;
+    font-weight: bold;
+}
+
+#header #account-menu #account {
+    float: left;
+}
+
+#header #account-menu #account ul {
+    float: left;
+    margin: 0;
+    margin-top: 8px;
+    padding-bottom: 4px;
+}
+
+#header #account-menu #account ul li {
+    float: left;
+    padding-left: 8px;
+    list-style: none;
+}
+
+#header #account-menu .user-login-name {
+    margin: 8px 0 0;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    float: left;
+}
+
+/* </ACCOUNT MENU> */
+
+/* </admin MENU> */

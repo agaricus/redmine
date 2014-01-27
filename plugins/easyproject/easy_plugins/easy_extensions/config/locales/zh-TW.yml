@@ -1,0 +1,2488 @@
+---
+zh-TW:
+  direction: ltr
+  jquery:
+    locale: zh-TW
+  date:
+    formats:
+      default: ! '%Y-%m-%d'
+      short: ! '%b%d日'
+      long: ! '%Y年%b%d日'
+    day_names:
+    - 星期天
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    abbr_day_names:
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
+    month_names:
+    -
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    abbr_month_names:
+    -
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    order:
+    - :year
+    - :month
+    - :day
+  time:
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S'
+      time: ! '%H:%M'
+      short: ! '%b%d日 %H:%M'
+      long: ! '%Y年%b%d日 %H:%M'
+    am: 上午
+    pm: 下午
+  datetime:
+    distance_in_words:
+      half_a_minute: 半分鐘
+      less_than_x_seconds:
+        one: 一秒內
+        other: 少於 %{count} 秒
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+      less_than_x_minutes:
+        one: 一分鐘內
+        other: 少於 %{count} 分鐘
+      x_minutes:
+        one: 一分鐘
+        other: ! '%{count} 分鐘'
+      about_x_hours:
+        one: 約一小時
+        other: 約 %{count} 小時
+      x_hours:
+        one: 1 小時
+        other: ! '%{count} 小時'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      about_x_months:
+        one: 約一個月
+        other: 約 %{count} 個月
+      x_months:
+        one: 一個月
+        other: ! '%{count} 個月'
+      about_x_years:
+        one: 約一年
+        other: 約 %{count} 年
+      over_x_years:
+        one: 超過一年
+        other: 超過 %{count} 年
+      almost_x_years:
+        one: 將近 1 年
+        other: 將近 %{count} 年
+  number:
+    format:
+      separator: .
+      delimiter: ''
+      precision: 3
+    human:
+      format:
+        delimiter: ''
+        precision: 3
+        separator: ，
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+    currency:
+      format:
+        unit: $
+        format: 第％u％N
+        separator: 。
+        delimiter: ，
+  support:
+    array:
+      sentence_connector: 且
+      skip_last_comma: false
+  activerecord:
+    errors:
+      template:
+        header:
+          one: 發生1個錯誤, %{model} 無法儲存
+          other: ! '%{count} 個錯誤, %{model} 無法儲存'
+      messages:
+        inclusion: 不包含於列表中
+        exclusion: 是被保留的
+        invalid: 是無效的
+        confirmation: 與確認值不符
+        accepted: 須是可被接受的
+        empty: 不能留空
+        blank: 不能為空字元
+        too_long: 過長(最長為 %{count} 個字元)
+        too_short: 過短(最短為 %{count} 個字元)
+        wrong_length: 字數錯誤(須為 %{count} 個字元)
+        taken: 已被使用
+        not_a_number: 不是數字
+        not_a_date: 不是合法日期
+        greater_than: 須大於 %{count}
+        greater_than_or_equal_to: 須大於或等於 %{count}
+        equal_to: 須等於 %{count}
+        less_than: 須小於 %{count}
+        less_than_or_equal_to: 須小於或等於 %{count}
+        odd: 須為單數
+        even: 須為雙數
+        greater_than_start_date: 須在起始日期之後
+        not_same_project: 不屬於同一個專案
+        circular_dependency: 此關聯將導致迴圈相依
+        cant_link_an_issue_with_a_descendant: 問題不能關聯到它的子任務
+        cant_link_an_project_with_a_descendant: 一個專案不能被連結到其子任務
+        cant_link_an_version_with_a_descendant: 里程碑無法被連結到子任務
+        not_a_amount: 無效的總額
+        before_milestone: (%{due_date})須於里程碑日期前(%{effective_date})
+        before_project_end: (%{due_date})須於在專案到期日(%{project_due_date})
+        after_project_start: (%{start_date})須大於專案的開始日期(%{project_start_date})
+        less_than_duration: 太早根據估計小時
+        greater_than_soonest_start: (%{start_date})須大於最近開始日期(%{soonest_start}相關的任務)
+        greater_than_start_date2: (%{due_date})須大於開始日期(%{start_date})
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: 超出允許範圍
+    models:
+      easy_user_working_time_calendar: 日曆
+      easy_user_working_time_calendar_holiday: 假期
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: 父日曆
+        name: 名稱
+        default_working_hours: 每日工作起始時間
+        first_day_of_week: 每週的第一天
+        is_default: 預設日曆
+      easy_user_working_time_calendar_holiday:
+        name: 名稱
+        holiday_date: 日
+        is_repeating: 連續假期
+  actionview_instancetag_blank_option: 請選擇
+  general_text_No: 否
+  general_text_Yes: 是
+  general_text_no: 否
+  general_text_yes: 是
+  general_lang_name: Traditional Chinese (繁體中文)
+  general_csv_separator: ! ','
+  general_csv_decimal_separator: .
+  general_csv_encoding: Big5
+  general_pdf_encoding: Big5
+  general_first_day_of_week: '7'
+  notice_account_updated: 帳號更新成功
+  notice_account_invalid_creditentials: 無效的用戶名或密碼
+  notice_account_password_updated: 密碼更新成功
+  notice_account_wrong_password: 密碼錯誤
+  notice_account_register_done: 帳號建立成功，欲啟用您的帳號，請點擊系統確認信函中的啟用連結。
+  notice_account_unknown_email: 未知用戶
+  notice_can_t_change_password: 該帳號使用了外部認證，無法更改密碼。
+  notice_account_lost_email_sent: 包含選擇新密碼指示的電子郵件，已經寄出給您
+  notice_account_activated: 您的帳號已被啟動。您現在可以登錄了。
+  notice_successful_create: 建立成功
+  notice_successful_update: 更新成功
+  notice_successful_delete: 刪除成功
+  notice_successful_connection: 連線成功
+  notice_file_not_found: 您訪問的頁面不存在或已被刪除
+  notice_locking_conflict: 資料已被其他用戶更新
+  notice_not_authorized: 您未被授權存取此頁面
+  notice_not_authorized_archived_project: 您欲存取的專案已經被封存
+  notice_email_sent: 郵件已發送至 %{value}
+  notice_email_error: 發送郵件時發生錯誤 (%{value})
+  notice_feeds_access_key_reseted: 您的RSS存取金鑰已被重置。
+  notice_api_access_key_reseted: 您的API存取金鑰已被重置。
+  notice_failed_to_save_issues: ! '%{count} 個問題儲存失敗(共選擇 %{total} 個問題)：%{ids}.'
+  notice_failed_to_save_members: ! '成員儲存失敗: %{errors}.'
+  notice_no_issue_selected: 未選擇任何問題！請選擇您要編輯的問題。
+  notice_account_pending: 您的帳號已被成功建立，正在等待管理員的審核。
+  notice_default_data_loaded: 成功載入預設設置。
+  notice_unable_delete_version: 無法刪除版本
+  notice_unable_delete_time_entry: 無法刪除工時
+  notice_issue_done_ratios_updated: 問題百分比已更新。
+  notice_gantt_chart_truncated: 由於項目數量超過可顯示數量的最大值 (%{max})，故此甘特圖尾部已被截斷
+  error_can_t_load_default_data: 無法載入預設設置：%{value}
+  error_scm_not_found: 在儲存機制中找不到這個項目或修訂版
+  error_scm_command_failed: 嘗試存取儲存機制時發生錯誤： %{value}
+  error_scm_annotate: 項目不存在或項目無法被加上附註
+  error_issue_not_found_in_project: 問題不存在或不屬於此專案
+  error_no_tracker_in_project: 該專案未設定追蹤標籤，請檢查專案設定。
+  error_no_default_issue_status: 尚未定義問題狀態的預設值。請您前往「網站管理」->「問題狀態清單」頁面，檢查相關組態設定
+  error_can_not_delete_custom_field: 無法刪除自訂欄位
+  error_can_not_delete_tracker: 該追蹤標籤已包含問題,無法刪除
+  error_can_not_remove_role: 該角色正在使用中，無法刪除
+  error_can_not_reopen_issue_on_closed_version: 該問題被關聯到一個已關閉的版本，因此無法重新打開。
+  error_can_not_archive_project: 該專案無法被封存
+  error_issue_done_ratios_not_updated: 問題百分比未更新。
+  error_workflow_copy_source: 請選擇一個來源問題追蹤標籤或者角色
+  error_workflow_copy_target: 請選擇一個(或多個)目的問題追蹤標籤或角色
+  error_unable_delete_issue_status: 無法刪除問題狀態
+  error_unable_to_connect: 無法連線至 (%{value})
+  warning_attachments_not_saved: ! '%{count} 個附加檔案無法被儲存'
+  mail_subject_lost_password: 您的 %{value} 密碼
+  mail_body_lost_password: 請點擊以下連結來修改您的密碼：
+  mail_subject_register: ! '%{value}帳號啟動'
+  mail_body_register: 請點擊以下連結來啟動您的帳號：
+  mail_body_account_information_external: 您可以使用您的 %{value} 帳號來登錄。
+  mail_body_account_information: 您的帳號資訊
+  mail_subject_account_activation_request: ! '%{value}帳號啟動需求通知'
+  mail_body_account_activation_request: 新用戶(%{value})已完成註冊，正在等候您的審核：
+  mail_subject_reminder: ! '%{count} 個問題即將到期 (%{days})'
+  mail_body_reminder: ! '%{count} 個指派給您的問題，將於 %{days} 天內到期：'
+  mail_subject_wiki_content_added: ! '''%{id}'' wiki頁面已新增'
+  mail_body_wiki_content_added: ! '''%{id}'' wiki頁面已由 %{author} 新增。'
+  mail_subject_wiki_content_updated: ! '''%{id}'' wiki頁面已更新。'
+  mail_body_wiki_content_updated: ! '''%{id}'' wiki頁面已由 %{author} 更新。'
+  field_name: 名稱
+  field_description: 概述
+  field_summary: 摘要
+  field_is_required: 必填
+  field_firstname: 名字
+  field_lastname: 姓氏
+  field_mail: 電子郵件
+  field_filename: 檔案名稱
+  field_filesize: 大小
+  field_downloads: 下載次數
+  field_author: 作者
+  field_created_on: 建立於
+  field_updated_on: 更新
+  field_field_format: 格式
+  field_is_for_all: 用於所有專案
+  field_possible_values: 可能值
+  field_regexp: 規則語法表示
+  field_min_length: 最小長度
+  field_max_length: 最大長度
+  field_value: 值
+  field_category: 類別
+  field_title: 標題
+  field_project: 專案
+  field_issue: 問題
+  field_status: 狀態
+  field_notes: 筆記
+  field_is_closed: 問題已結束
+  field_is_default: 預設值
+  field_tracker: 追蹤標籤
+  field_subject: 主題
+  field_due_date: 完成日期
+  field_assigned_to: 指派給
+  field_priority: 優先權
+  field_fixed_version: 版本
+  field_user: 用戶
+  field_principal: 原則
+  field_role: 角色
+  field_homepage: 首頁
+  field_is_public: 公開
+  field_parent: 父專案
+  field_is_in_roadmap: 在版本藍圖中顯示
+  field_login: 帳戶名稱
+  field_mail_notification: 郵件通知
+  field_admin: 管理者
+  field_last_login_on: 最後登錄
+  field_language: 語系
+  field_effective_date: 日期
+  field_password: 目前密碼
+  field_new_password: 新密碼
+  field_password_confirmation: 確認新密碼
+  field_version: 版本
+  field_type: 類型
+  field_host: 主機
+  field_port: 連接埠
+  field_account: 帳號
+  field_base_dn: Base DN
+  field_attr_login: 登錄屬性
+  field_attr_firstname: 名字屬性
+  field_attr_lastname: 姓氏屬性
+  field_attr_mail: 郵件屬性
+  field_onthefly: 即時建立使用者
+  field_start_date: 開始日期
+  field_done_ratio: ! '% 完成百分比'
+  field_auth_source: 認證模式
+  field_hide_mail: 隱藏我的郵寄地址
+  field_comments: 回應
+  field_url: 網址
+  field_start_page: 首頁
+  field_subproject: 子專案
+  field_hours: 小時
+  field_activity: 活動
+  field_spent_on: 日期
+  field_identifier: 代碼
+  field_is_filter: 作為過濾條件
+  field_issue_to: 相關問題
+  field_delay: 逾期
+  field_assignable: 問題可指派給此角色
+  field_redirect_existing_links: 重新導向現有連結
+  field_estimated_hours: 預估工時
+  field_column_names: 欄位
+  field_time_entries: 耗用工時
+  field_time_zone: 時區
+  field_searchable: 可用作搜尋條件
+  field_default_value: 預設值
+  field_comments_sorting: 顯示注釋
+  field_parent_title: 父頁面
+  field_editable: 可編輯
+  field_watcher: 觀察者
+  field_identity_url: OpenID 網址
+  field_content: 內容
+  field_group_by: 群組方式
+  field_sharing: 共用
+  field_parent_issue: 父問題
+  field_member_of_group: 被指派者的群組
+  field_assigned_to_role: 被指派者的角色
+  field_text: 內容文字
+  field_visible: 可見的
+  setting_app_title: 標題
+  setting_app_subtitle: 子標題
+  setting_welcome_text: 歡迎詞
+  setting_default_language: 預設語系
+  setting_login_required: 需要認證
+  setting_self_registration: 允許自註冊
+  setting_attachment_max_size: 附件大小限制
+  setting_issues_export_limit: 問題匯出限制
+  setting_mail_from: 寄件者郵件地址
+  setting_bcc_recipients: 使用密件副本 (bcc)
+  setting_plain_text_mail: 純文字 (無HTML)
+  setting_host_name: 主機名稱
+  setting_text_formatting: 文字格式
+  setting_wiki_compression: 壓縮Wiki歷史文章
+  setting_feeds_limit: RSS 新聞限制
+  setting_default_projects_public: 新建立專案預設為「公開」
+  setting_autofetch_changesets: 自動擷取認可
+  setting_sys_api_enabled: 啟用管理儲存機制的網頁服務 (Web Service)
+  setting_commit_ref_keywords: 用於參照之關鍵字
+  setting_commit_fix_keywords: 用於修正之關鍵字
+  setting_autologin: 自動登錄
+  setting_date_format: 日期格式
+  setting_time_format: 時間格式
+  setting_cross_project_issue_relations: 允許關聯至其它專案的問題
+  setting_issue_list_default_columns: 預設顯示於問題清單的欄位
+  setting_emails_header: 郵件起始說明
+  setting_emails_footer: 郵件簽名
+  setting_protocol: 協定
+  setting_per_page_options: 每頁顯示個數選項
+  setting_user_format: 使用者顯示格式
+  setting_activity_days_default: 專案活動顯示天數
+  setting_display_subprojects_issues: 預設於父專案中顯示子專案的問題
+  setting_enabled_scm: 啟用 SCM
+  setting_mail_handler_body_delimiters: 截去郵件中包含下列值之後的內容
+  setting_mail_handler_api_enabled: 啟用處理傳入電子郵件的服務
+  setting_mail_handler_api_key: API 金鑰
+  setting_sequential_project_identifiers: 順序產生專案代碼
+  setting_gravatar_enabled: 啟用 Gravatar 全球認證大頭貼
+  setting_gravatar_default: 預設全球認證大頭貼圖片
+  setting_diff_max_lines_displayed: 差異顯示行數之最大值
+  setting_file_max_size_displayed: 檔案內容顯示大小之最大值
+  setting_repository_log_display_limit: 修訂版顯示數目之最大值
+  setting_openid: 允許使用OpenID登錄和註冊
+  setting_password_min_length: 最短密碼長度
+  setting_new_project_user_role_id: 非管理者用戶所建立新專案時，將被指派的角色
+  setting_default_projects_modules: 新專案預設啟用的模組
+  setting_issue_done_ratio: 計算問題百分比方式
+  setting_issue_done_ratio_issue_field: 依據問題完成百分比欄位
+  setting_issue_done_ratio_issue_status: 依據問題狀態
+  setting_start_of_week: 每週第一天
+  setting_rest_api_enabled: 啟用REST web service
+  setting_cache_formatted_text: 快取已格式化文字
+  setting_default_notification_option: 預設提醒選項
+  setting_commit_logtime_enabled: 啟動時間日誌
+  setting_commit_logtime_activity_id: 記錄的活動
+  setting_gantt_items_limit: 甘特圖項目顯示數量最大值
+  permission_add_project: 新建專案
+  permission_add_subprojects: 新建子專案
+  permission_edit_project: 編輯專案
+  permission_select_project_modules: 選擇專案模組
+  permission_manage_members: 管理成員
+  permission_manage_project_activities: 管理專案活動
+  permission_manage_versions: 管理版本
+  permission_manage_categories: 管理問題類別
+  permission_view_issues: 檢視問題
+  permission_add_issues: 新建問題
+  permission_edit_issues: 編輯問題
+  permission_manage_issue_relations: 管理問題關聯
+  permission_add_issue_notes: 新增說明
+  permission_edit_issue_notes: 編輯說明
+  permission_edit_own_issue_notes: 編輯自己的說明
+  permission_move_issues: 移動問題
+  permission_delete_issues: 刪除問題
+  permission_manage_public_queries: 管理公開的查詢
+  permission_save_queries: 儲存查詢
+  permission_view_gantt: 檢視甘特圖
+  permission_view_calendar: 檢視日曆
+  permission_view_issue_watchers: 檢視追蹤者列表
+  permission_add_issue_watchers: 新增追蹤者
+  permission_delete_issue_watchers: 刪除追蹤者
+  permission_log_time: 紀錄耗用工時
+  permission_view_time_entries: 檢視耗時
+  permission_edit_time_entries: 編輯耗時
+  permission_edit_own_time_entries: 編輯自己的耗時
+  permission_manage_news: 管理新聞
+  permission_comment_news: 回應新聞
+  permission_view_documents: 檢視文件
+  permission_manage_files: 管理檔案
+  permission_view_files: 檢視檔案
+  permission_manage_wiki: 管理Wiki
+  permission_rename_wiki_pages: 重新命名 wiki 頁面
+  permission_delete_wiki_pages: 刪除Wiki頁面
+  permission_view_wiki_pages: 檢視Wiki
+  permission_view_wiki_edits: 檢視Wiki歷史
+  permission_edit_wiki_pages: 編輯Wiki頁面
+  permission_delete_wiki_pages_attachments: 刪除附件
+  permission_protect_wiki_pages: 保護Wiki頁面
+  permission_manage_repository: 管理儲存機制
+  permission_browse_repository: 流覽儲存機制
+  permission_view_changesets: 檢視變更
+  permission_commit_access: 存取認可
+  permission_manage_boards: 管理討論區
+  permission_view_messages: 檢視帖子
+  permission_add_messages: 發表帖子
+  permission_edit_messages: 編輯帖子
+  permission_edit_own_messages: 編輯自己的帖子
+  permission_delete_messages: 刪除帖子
+  permission_delete_own_messages: 刪除自己的帖子
+  permission_export_wiki_pages: 匯出 wiki 頁面
+  permission_manage_subtasks: 管理子任務
+  project_module_issue_tracking: 問題追蹤
+  project_module_time_tracking: 工時追蹤
+  project_module_news: 新聞
+  project_module_documents: 文件
+  project_module_files: 檔案
+  project_module_wiki: Wiki
+  project_module_repository: 版本控管
+  project_module_boards: 討論區
+  project_module_calendar: 日曆
+  project_module_gantt: 甘特圖
+  label_user: 用戶
+  label_user_plural: 用戶清單
+  label_user_new: 新建用戶
+  label_user_anonymous: 匿名用戶
+  label_project: 專案
+  label_project_new: 新建專案
+  label_project_plural: 專案清單
+  label_x_projects:
+    zero: 無專案
+    one: 1 個專案
+    other: ! '%{count} 個專案'
+  label_project_all: 所有的專案
+  label_project_latest: 最近的專案
+  label_issue: 問題
+  label_issue_new: 新建問題
+  label_issue_plural: 問題清單
+  label_issue_view_all: 檢視所有問題
+  label_issues_by: 問題採 %{value} 分組顯示
+  label_issue_added: 問題已新增
+  label_issue_updated: 問題已更新
+  label_document: 文件
+  label_document_new: 新建文件
+  label_document_plural: 文件
+  label_document_added: 文件已新增
+  label_role: 角色
+  label_role_plural: 角色
+  label_role_new: 新建角色
+  label_role_and_permissions: 角色和權限
+  label_member: 成員
+  label_member_new: 新建成員
+  label_member_plural: 成員
+  label_tracker: 追蹤標籤
+  label_tracker_plural: 追蹤標籤清單
+  label_tracker_new: 新建追蹤標籤
+  label_workflow: 工作流程
+  label_issue_status: 問題狀態
+  label_issue_status_plural: 問題狀態清單
+  label_issue_status_new: 新建狀態
+  label_issue_category: 問題類別
+  label_issue_category_plural: 問題類別清單
+  label_issue_category_new: 新建類別
+  label_custom_field: 自訂欄位
+  label_custom_field_plural: 自訂欄位清單
+  label_custom_field_new: 新建自訂欄位
+  label_enumerations: 列舉值清單
+  label_enumeration_new: 新建列舉值
+  label_information: 資訊
+  label_information_plural: 資訊清單
+  label_please_login: 請登錄
+  label_register: 註冊
+  label_login_with_open_id_option: 或使用OpenID登錄
+  label_password_lost: 忘記密碼
+  label_home: 首頁
+  label_my_page: 帳號首頁
+  label_my_account: 我的帳號
+  label_my_projects: 我的專案
+  label_my_page_block: 帳號首頁區塊
+  label_administration: 網站管理
+  label_login: 登錄
+  label_logout: 退出
+  label_help: 幫助
+  label_reported_issues: 我通報的問題
+  label_assigned_to_me_issues: 指派給我的問題
+  label_last_login: 最後登錄
+  label_registered_on: 註冊於
+  label_activity: 活動
+  label_overall_activity: 活動概覽
+  label_user_activity: ! '%{value} 的活動'
+  label_new: 新建…
+  label_logged_as: 目前登入
+  label_environment: 環境
+  label_authentication: 認證
+  label_auth_source: 認證模式
+  label_auth_source_new: 新建認證模式
+  label_auth_source_plural: 認證模式清單
+  label_subproject_plural: 子專案清單
+  label_subproject_new: 新建子專案
+  label_and_its_subprojects: ! '%{value} 及其子專案'
+  label_min_max_length: 最小 - 最大 長度
+  label_list: 列表
+  label_date: 日期
+  label_integer: 整數
+  label_float: 浮點數
+  label_boolean: 布林
+  label_string: 文字
+  label_text: 長文字
+  label_attribute: 屬性
+  label_attribute_plural: 屬性清單
+  label_no_data: 無任何資料可供顯示
+  label_change_status: 變更狀態
+  label_history: 歷史記錄
+  label_attachment: 檔案
+  label_attachment_new: 新建檔案
+  label_attachment_delete: 刪除檔案
+  label_attachment_plural: 檔案清單
+  label_file_added: 檔案已新增
+  label_report: 報表
+  label_report_plural: 報表清單
+  label_news: 新聞
+  label_news_new: 新增新聞
+  label_news_plural: 新聞
+  label_news_latest: 最近新聞
+  label_news_view_all: 檢視所有新聞
+  label_news_added: 新聞已新增
+  label_settings: 設定
+  label_overview: 概述
+  label_version: 版本
+  label_version_new: 新建版本
+  label_version_plural: 版本
+  label_close_versions: 關閉已完成的版本
+  label_confirmation: 確認
+  label_export_to: 匯出
+  label_read: 讀取...
+  label_public_projects: 公開專案
+  label_open_issues: 打開
+  label_open_issues_plural: 打開
+  label_closed_issues: 已關閉
+  label_closed_issues_plural: 已關閉
+  label_x_open_issues_abbr_on_total:
+    zero: 0 打開 / %{total}
+    one: 1 打開 / %{total}
+    other: ! '%{count} 打開 / %{total}'
+  label_x_open_issues_abbr:
+    zero: 0 打開
+    one: 1 打開
+    other: ! '%{count} 打開'
+  label_x_closed_issues_abbr:
+    zero: 0 已關閉
+    one: 1 已關閉
+    other: ! '%{count} 已關閉'
+  label_total: 合計
+  label_total_total: 合計：
+  label_permissions: 權限
+  label_current_status: 目前狀態
+  label_new_statuses_allowed: 變更至以下狀態
+  label_all: 全部
+  label_none: 無
+  label_nobody: 無人
+  label_next: 下一頁
+  label_previous: 上一頁
+  label_used_by: 使用中
+  label_details: 詳情
+  label_add_note: 新增說明
+  label_per_page: 每頁
+  label_calendar: 日曆
+  label_months_from: 個月, 開始月份
+  label_gantt: 甘特圖
+  label_internal: 內部
+  label_last_changes: 最近 %{count} 次變更
+  label_change_view_all: 檢視所有變更
+  label_personalize_page: 自訂版面
+  label_comment: 回應
+  label_comment_plural: 回應清單
+  label_x_comments:
+    zero: 無回應
+    one: 1 條回應
+    other: ! '%{count} 條回應'
+    two: 2條回應
+    three: 3條回應
+    four: 4條回應
+  label_comment_add: 新增回應
+  label_comment_added: 回應已新增
+  label_comment_delete: 刪除回應
+  label_query: 自訂查詢
+  label_query_plural: 自訂查詢清單
+  label_query_new: 新建查詢
+  label_filter_add: 新增篩選條件
+  label_filter_plural: 篩選條件
+  label_equals: 等於
+  label_not_equals: 不等於
+  label_in_less_than: 剩餘天數小於
+  label_in_more_than: 剩餘天數大於
+  label_greater_or_equal: ! '>='
+  label_less_or_equal: <=
+  label_in: 在
+  label_today: 今天
+  label_all_time: 全部
+  label_yesterday: 昨天
+  label_this_week: 本周
+  label_last_week: 上周
+  label_last_n_days: 過去 %{count} 天
+  label_this_month: 本月
+  label_last_month: 上月
+  label_this_year: 今年
+  label_date_range: 日期區間
+  label_less_than_ago: 小於幾天之前
+  label_more_than_ago: 大於幾天之前
+  label_ago: 天以前
+  label_contains: 包含
+  label_not_contains: 不包含
+  label_day_plural: 天
+  label_repository: 儲存機制
+  label_repository_plural: 儲存機制清單
+  label_browse: 流覽
+  label_branch: 分支
+  label_tag: 標籤
+  label_revision: 修訂
+  label_revision_plural: 修訂清單
+  label_revision_id: 修訂 %{value}
+  label_associated_revisions: 相關修訂版
+  label_added: 已新增
+  label_modified: 已修改
+  label_copied: 已複製
+  label_renamed: 已重命名
+  label_deleted: 已刪除
+  label_latest_revision: 最近的修訂版
+  label_latest_revision_plural: 最近的修訂版清單
+  label_view_revisions: 檢視修訂版
+  label_view_all_revisions: 檢視所有修訂版
+  label_max_size: 最大長度
+  label_sort_highest: 置頂
+  label_sort_higher: 上移
+  label_sort_lower: 下移
+  label_sort_lowest: 置底
+  label_roadmap: 版本藍圖
+  label_roadmap_due_in: 截止於 %{value}
+  label_roadmap_overdue: ! '逾期 %{value} '
+  label_roadmap_no_issues: 該版本未包含任何問題
+  label_search: 搜尋
+  label_result_plural: 結果
+  label_all_words: 全部字詞
+  label_wiki: Wiki
+  label_wiki_edit: Wiki 編輯
+  label_wiki_edit_plural: Wiki 編輯清單
+  label_wiki_page: Wiki 頁面
+  label_wiki_page_plural: Wiki 頁面清單
+  label_index_by_title: 依標題索引
+  label_index_by_date: 依日期索引
+  label_current_version: 目前版本
+  label_preview: 預覽
+  label_feed_plural: Feeds
+  label_changes_details: 所有變更詳情
+  label_issue_tracking: 問題追蹤
+  label_spent_time: 耗時
+  label_overall_spent_time: 總體耗時
+  label_f_hour: ! '%{value} 小時'
+  label_f_hour_plural: ! '%{value} 小時'
+  label_time_tracking: 工時追蹤
+  label_change_plural: 變更
+  label_statistics: 統計
+  label_commits_per_month: 依月份統計
+  label_commits_per_author: 依作者統計
+  label_view_diff: 檢視差別
+  label_diff_inline: 直列
+  label_diff_side_by_side: 並排
+  label_options: 選項
+  label_copy_workflow_from: 從以下追蹤標籤複製工作流程
+  label_permissions_report: 權限報表
+  label_watched_issues: 追蹤的問題
+  label_related_issues: 相關的問題
+  label_applied_status: 已套用狀態
+  label_loading: 載入中...
+  label_relation_new: 新建關聯
+  label_relation_delete: 刪除關聯
+  label_relates_to: 關聯到
+  label_duplicates: 重複
+  label_duplicated_by: 與其重複
+  label_blocks: 阻擋
+  label_blocked_by: 被阻擋
+  label_precedes: 優先於
+  label_follows: 跟隨於
+  label_end_to_start: 結束-開始
+  label_end_to_end: 結束-結束
+  label_start_to_start: 開始-開始
+  label_start_to_end: 開始-結束
+  label_stay_logged_in: 保持登錄狀態
+  label_disabled: 關閉
+  label_show_completed_versions: 顯示已完成的版本
+  label_me: 我自己
+  label_board: 論壇
+  label_board_new: 新建論壇
+  label_board_plural: 論壇清單
+  label_board_locked: 鎖定
+  label_board_sticky: 置頂
+  label_topic_plural: 主題
+  label_message_plural: 帖子
+  label_message_last: 最新的帖子
+  label_message_new: 新貼
+  label_message_posted: 發帖成功
+  label_reply_plural: 回應
+  label_send_information: 給使用者發送帳號資訊
+  label_year: 年
+  label_month: 月
+  label_week: 週
+  label_date_from: 開始
+  label_date_to: 結束
+  label_language_based: 依用戶之語系決定
+  label_sort_by: 根據 %{value} 排序
+  label_send_test_email: 發送測試郵件
+  label_feeds_access_key: RSS 存取金鑰
+  label_missing_feeds_access_key: 找不到 RSS 存取金鑰
+  label_feeds_access_key_created_on: RSS存取鍵是在 %{value} 之前建立的
+  label_module_plural: 模組
+  label_updated_time: ! ' 於 %{value} 之前更新'
+  label_updated_time_by: 由 %{author} 於 %{age} 前更新
+  label_jump_to_a_project: 選擇欲前往的專案…
+  label_file_plural: 檔案
+  label_changeset_plural: 變更
+  label_default_columns: 預設欄位
+  label_no_change_option: (不變)
+  label_bulk_edit_selected_issues: 批量修改選取的問題
+  label_theme: 主題
+  label_default: 預設
+  label_search_titles_only: 僅搜尋標題
+  label_user_mail_option_all: 提醒與我的專案有關的全部事件
+  label_user_mail_option_selected: 只提醒我所選擇專案中的事件…
+  label_user_mail_option_none: 取消提醒
+  label_user_mail_option_only_my_events: 只提醒我觀察中或參與中的專案
+  label_user_mail_option_only_assigned: 只提醒我 被指派 的事件
+  label_user_mail_option_only_owner: 只提醒我為 作者 的事件
+  label_user_mail_no_self_notified: 不提醒我自己所做的變更
+  label_registration_activation_by_email: 通過郵件認證啟動帳號
+  label_registration_manual_activation: 手動啟動帳號
+  label_registration_automatic_activation: 自動啟動帳號
+  label_display_per_page: 每頁顯示：%{value}
+  label_age: 提交時間
+  label_change_properties: 修改屬性
+  label_general: 一般
+  label_more: 進階
+  label_scm: SCM 版本控管
+  label_plugins: 外掛程式
+  label_ldap_authentication: LDAP 認證
+  label_downloads_abbr: 下載
+  label_optional_description: 額外說明
+  label_add_another_file: 新增其它檔案
+  label_preferences: 偏好選項
+  label_chronological_order: 依時間順序(由遠至近)
+  label_reverse_chronological_order: 依時間順序(由近至遠)
+  label_planning: 計畫
+  label_incoming_emails: 接收郵件
+  label_generate_key: 產生金鑰
+  label_issue_watchers: 追蹤者
+  label_example: 範例
+  label_display: 顯示
+  label_sort: 排序
+  label_ascending: 遞增排序
+  label_descending: 遞減排序
+  label_date_from_to: 起 %{start} 迄 %{end}
+  label_wiki_content_added: Wiki 頁面已新增
+  label_wiki_content_updated: Wiki 頁面已更新
+  label_group: 群組
+  label_group_plural: 群組清單
+  label_group_new: 新建群組
+  label_time_entry_plural: 耗用工時
+  label_version_sharing_none: 不共用
+  label_version_sharing_descendants: 與子專案共用
+  label_version_sharing_hierarchy: 與專案階層架構共用
+  label_version_sharing_tree: 與專案樹共用
+  label_version_sharing_system: 與所有專案共用
+  label_update_issue_done_ratios: 更新問題的百分比
+  label_copy_source: 來源
+  label_copy_target: 目的地
+  label_copy_same_as_target: 與目的地相同
+  label_display_used_statuses_only: 僅顯示此追蹤標籤所使用之狀態
+  label_api_access_key: API 存取金鑰
+  label_missing_api_access_key: 找不到 API 存取金鑰
+  label_api_access_key_created_on: API 存取金鑰建立於 %{value} 之前
+  label_profile: 簡介
+  label_subtask_plural: 子任務
+  label_project_copy_notifications: 複製專案時發送郵件通知
+  label_principal_search: 搜尋用戶或群組：
+  label_user_search: 搜尋用戶：
+  button_login: 登錄
+  button_submit: 提交
+  button_save: 儲存
+  button_check_all: 全選
+  button_uncheck_all: 清除
+  button_delete: 刪除
+  button_create: 建立
+  button_create_and_continue: 建立並繼續
+  button_test: 測試
+  button_edit: 編輯
+  button_edit_associated_wikipage: ! '編輯相關wiki頁面: %{page_title}'
+  button_add: 新增
+  button_change: 修改
+  button_apply: 套用
+  button_clear: 清除
+  button_lock: 鎖定
+  button_unlock: 解鎖
+  button_download: 下載
+  button_list: 列表
+  button_view: 檢視
+  button_move: 移動
+  button_move_and_follow: 移動並轉到新問題
+  button_back: 返回
+  button_cancel: 取消
+  button_activate: 啟動
+  button_sort: 排序
+  button_log_time: 紀錄工時
+  button_rollback: 還原到此版本
+  button_watch: 追蹤
+  button_unwatch: 取消追蹤
+  button_reply: 回應
+  button_archive: 封存
+  button_unarchive: 取消封存
+  button_reset: 重置
+  button_rename: 重新命名
+  button_change_password: 修改密碼
+  button_copy: 複製
+  button_copy_and_follow: 複製並轉到新問題
+  button_annotate: 追溯
+  button_update: 更新
+  button_configure: 設定
+  button_quote: 引用
+  button_duplicate: 副本
+  button_show: 顯示
+  status_active: 活動的
+  status_registered: 已註冊
+  status_locked: 已鎖定
+  version_status_open: 打開
+  version_status_locked: 鎖定
+  version_status_closed: 關閉
+  field_active: 活動
+  text_select_mail_notifications: 選擇需要發送郵件通知的動作
+  text_regexp_info: 例如：^[A-Z0-9]+$
+  text_min_max_length_info: 0 表示無限制
+  text_project_destroy_confirmation: 您確定要刪除這個專案以及所有相關的資料嗎？
+  text_subprojects_destroy_warning: 以下子專案也將被同時刪除：%{value}
+  text_workflow_edit: 選擇角色和追蹤標籤來編輯工作流程
+  text_are_you_sure: 確定執行？
+  text_journal_changed: ! '%{label} 從 %{old} 變更為 %{new}'
+  text_journal_set_to: ! '%{label} 被設置為 %{value}'
+  text_journal_deleted: ! '%{label} 已刪除 (%{old})'
+  text_journal_added: ! '%{label} %{value} 已新增'
+  text_tip_issue_begin_day: 今天起始的任務
+  text_tip_issue_end_day: 今天截止的任務
+  text_tip_issue_begin_end_day: 今天開始並結束的任務
+  text_caracters_maximum: 最多 %{count} 個字元
+  text_caracters_minimum: 長度必須大於 %{count} 個字元
+  text_length_between: 長度須在 %{min} 到 %{max} 個字元之間
+  text_tracker_no_workflow: 此追蹤標籤尚未定義工作流程
+  text_unallowed_characters: 不允許的字元
+  text_comma_separated: 可以使用多個值(用逗號,分開)
+  text_line_separated: 可以使用多個值(每行一個值)。
+  text_issues_ref_in_commit_messages: 認可訊息中參照(或修正)問題之關鍵字
+  text_issue_added: 問題 %{id} 已由 %{author} 通報。
+  text_issue_updated: 問題 %{id} 已由 %{author} 更新。
+  text_wiki_destroy_confirmation: 您確定要刪除這個 wiki 及其所有內容嗎？
+  text_issue_category_destroy_question: 有 (%{count}) 個問題被指派到此分類. 請選擇您想要的動作？
+  text_issue_category_destroy_assignments: 刪除問題的所屬類別(問題變為無類別)
+  text_issue_category_reassign_to: 重新指派問題至其它分類
+  text_user_mail_option: 對於沒有選中的專案，您將只會收到您追蹤或參與的專案的通知(如您是問題的作者或被指派給您的問題)。
+  text_no_configuration_data: 角色、追蹤標籤、問題狀態與流程尚未被設定完成。\n強烈建議您先載入預設的組態。將預設組態載入之後，您可再變更其中之值。
+  text_load_default_configuration: 載入預設設置
+  text_status_changed_by_changeset: 已套用到變更列表 %{value}.
+  text_time_logged_by_changeset: 已套用到修訂版本 %{value}.
+  text_issues_destroy_confirmation: 確定刪除已選擇的問題？
+  text_select_project_modules: 請選擇此專案可用的模組：
+  text_default_administrator_account_changed: 已變更預設管理員帳號內容
+  text_file_repository_writable: 可寫入附加檔案目錄
+  text_plugin_assets_writable: 可寫入附加元件目錄
+  text_rmagick_available: 可使用 RMagick (選配)
+  text_destroy_time_entries_question: 您即將刪除的問題已報工 %{hours} 小時. 您的選擇是？
+  text_destroy_time_entries: 刪除已報工時
+  text_assign_time_entries_to_project: 將已上報的工作時數提交到專案中
+  text_reassign_time_entries: 重新指定已報工時至此問題：
+  text_user_wrote: ! '%{value} 提到：'
+  text_enumeration_destroy_question: 目前有 %{count} 個物件使用此列舉值
+  text_enumeration_category_reassign_to: 重新設定其列舉值為：
+  text_email_delivery_not_configured: 您尚未設定電子郵件傳送方式，因此提醒選項已被停用。\n請在 config/configuration.yml
+    中設定 SMTP 之後，重新啟動 Redmine，以啟用電子郵件提醒選項。
+  text_repository_usernames_mapping: 選擇或更新 Redmine 使用者與儲存機制紀錄使用者之對應關係。\n儲存機制中之使用者帳號或電子郵件信箱，與
+    Redmine 設定相同者，將自動產生對應關係。
+  text_diff_truncated: ! '... 差別內容超過了可顯示的最大行數並已被截斷'
+  text_custom_field_possible_values_info: 一列輸入一個值
+  text_wiki_page_destroy_question: 此頁面包含 %{descendants} 個子頁面及次級頁面。 請選擇您想要的動作?
+  text_wiki_page_nullify_children: 將子頁面保留為根頁面
+  text_wiki_page_destroy_children: 刪除所有子頁面及其所有次級頁面
+  text_wiki_page_reassign_children: 重新指定所有的子頁面之父頁面至此頁面
+  text_own_membership_delete_confirmation: 你正在刪除你現有的某些或全部權限，如果這樣做了你可能將會再也無法編輯該專案了。你確定要繼續嗎？
+  text_zoom_in: 放大
+  text_zoom_out: 縮小
+  default_role_manager: 管理人員
+  default_role_developer: 開發人員
+  default_role_reporter: 報告人員
+  default_tracker_bug: 錯誤
+  default_tracker_feature: 功能
+  default_tracker_support: 支援
+  default_issue_status_new: 新建
+  default_issue_status_in_progress: 進行中
+  default_issue_status_resolved: 已解決
+  default_issue_status_feedback: 已回應
+  default_issue_status_closed: 已關閉
+  default_issue_status_rejected: 已拒絕
+  default_doc_category_user: 使用手冊
+  default_doc_category_tech: 技術文件
+  default_priority_low: 低
+  default_priority_normal: 正常
+  default_priority_high: 高
+  default_priority_urgent: 緊急
+  default_priority_immediate: 立刻
+  default_activity_design: 設計
+  default_activity_development: 開發
+  enumeration_issue_priorities: 問題優先權
+  enumeration_doc_categories: 文件類別
+  enumeration_activities: 活動(時間追蹤)
+  enumeration_system_activity: 系統活動
+  field_warn_on_leaving_unsaved: 提醒我將要離開的頁面中尚有未儲存的資料
+  text_warn_on_leaving_unsaved: 若離開目前頁面，則該頁面內未儲存的內容將遺失。
+  label_my_queries: 我的自訂查詢
+  text_journal_changed_no_detail: ! '%{label} 已更新。'
+  label_news_comment_added: 回應新聞評論
+  button_expand_all: 全部展開
+  button_collapse_all: 全部折疊
+  label_additional_workflow_transitions_for_assignee: 用戶為被指定者時額外允許的流程轉換
+  label_additional_workflow_transitions_for_author: 用戶為作者時額外允許的流程轉換
+  label_bulk_edit_selected_time_entries: 批量修改選取的工時項目
+  text_time_entries_destroy_confirmation: 是否確定要刪除所選擇的工時紀錄？
+  label_role_anonymous: 匿名者
+  label_role_non_member: 非會員
+  label_issue_note_added: 備註已新增
+  label_issue_status_updated: 狀態已更新
+  label_issue_priority_updated: 優先權已更新
+  label_issues_visibility_own: 建立或指派給用戶的問題
+  field_issues_visibility: 問題可見
+  label_issues_visibility_all: 全部問題
+  permission_set_own_issues_private: 設置自己的問題為公開或私有
+  field_is_private: 私有
+  permission_set_issues_private: 設置問題為公開或私有
+  label_issues_visibility_public: 全部非私有問題
+  text_issues_destroy_descendants_confirmation: 此操作同時會刪除 %{count} 個子任務。
+  field_commit_logs_encoding: 認可訊息編碼
+  field_scm_path_encoding: 路徑編碼
+  text_scm_path_encoding_note: ! '預設: UTF-8'
+  field_path_to_repository: 儲存機制路徑
+  field_root_directory: 根目錄
+  field_cvs_module: CVS 模組
+  field_cvsroot: CVSROOT
+  text_mercurial_repository_note: 本機儲存機制 (e.g. /hgrepo, c:\hgrepo)
+  text_scm_command: 命令
+  text_scm_command_version: 版本
+  label_git_report_last_commit: 報告最後認可的文件和目錄
+  text_scm_config: 您可以在config/configuration.yml中設定您的SCM命令。 請在編輯後，重啟Redmine應用程式。
+  text_scm_command_not_available: SCM 命令無法使用。請檢查管理面板中的設定
+  text_git_repository_note: 儲存機制是本機的空(bare)目錄(e.g. /gitrepo, c:\gitrepo)
+  notice_issue_successful_create: 問題 %{id} 已建立。
+  label_between: 介於
+  setting_issue_group_assignment: 允許問題被指派給群組
+  label_diff: 差異
+  description_query_sort_criteria_direction: 排序方式
+  description_project_scope: 搜尋範圍
+  description_filter: 篩選條件
+  description_user_mail_notification: 郵件通知設置
+  description_date_from: 輸入開始日期
+  description_message_content: 訊息內容
+  description_available_columns: 可用欄位
+  description_date_range_interval: 選擇起始與結束日期以設定範圍區間
+  description_issue_category_reassign: 選擇問題類別
+  description_search: 搜尋欄位
+  description_notes: 備註
+  description_date_range_list: 從清單中選取範圍
+  description_choose_project: 專案
+  description_date_to: 輸入結束日期
+  description_query_sort_criteria_attribute: 排序方式
+  description_wiki_subpages_reassign: 選擇父頁面
+  description_selected_columns: 已選取的欄位
+  label_parent_revision: 父項目
+  label_child_revision: 子項目
+  error_scm_annotate_big_text_file: 此項目無法被標註，因已經超過最大的文字檔大小
+  setting_default_issue_start_date_to_creation_date: 使用目前日期作為新問題的開始日期
+  button_edit_section: 編輯此區域
+  setting_repositories_encodings: 附件和儲存機制編碼
+  description_all_columns: 所有列
+  button_export: 匯出
+  label_export_options: ! '%{export_format} 匯出選項'
+  error_attachment_too_big: 該檔案無法上傳。超過檔大小限制 (%{max_size})
+  notice_failed_to_save_time_entries: 無法儲存 %{count} 個工時到下列所選取的 %{total} 個項目中： %{ids}
+  label_x_issues:
+    zero: 無問題
+    one: 1 個問題
+    other: ! '%{count} 個問題'
+  label_repository_new: 新建儲存機制
+  field_repository_is_default: 主要儲存機制
+  label_copy_attachments: 複製附件
+  label_item_position: ! '%{position}/%{count}'
+  label_completed_versions: 已完成版本
+  text_project_identifier_info: 僅小寫字母(a-z)、數位、破折號(-)和底線(_)可以使用。<br />一旦儲存，代碼便無法再次修改。
+  field_multiple: 多重值
+  setting_commit_cross_project_ref: 允許關聯並修正其他專案的問題
+  text_issue_conflict_resolution_add_notes: 新增說明並取消我的其他變更。
+  text_issue_conflict_resolution_overwrite: 直接套用我的變更 (先前的說明將被保留，但是某些變更內容可能會被覆蓋)
+  notice_issue_update_conflict: 當您正在編輯這個問題的時候，它已被其他人提前更新過了。
+  text_issue_conflict_resolution_cancel: 取消我所有的變更並重新顯示 %{link} 。
+  permission_manage_related_issues: 管理相關問題
+  field_auth_source_ldap_filter: LDAP 篩選程式
+  label_search_for_watchers: 搜尋可新增的追蹤者
+  notice_account_deleted: 您的帳號已被永久刪除(帳號已無法恢復)。
+  setting_unsubscribe: 允許用戶取消註冊(刪除帳戶)
+  button_delete_my_account: 刪除我的帳號
+  text_account_destroy_confirmation: 確定繼續？\n 您的帳號一旦刪除，將無法再次啟動使用。
+  error_session_expired: 您的工作階段已經過期。請重新登入。
+  text_session_expiration_settings: 警告：變更這些設定將會導致包含您在內的所有工作階段過期。
+  setting_session_lifetime: 工作階段存留時間最大值
+  setting_session_timeout: 工作階段無活動逾時時間
+  label_session_expiration: 工作階段逾期
+  permission_close_project: 關閉/重開專案
+  label_show_closed_projects: 檢視已關閉的專案
+  button_close: 關閉
+  button_reopen: 重開
+  project_status_active: 已啟動
+  project_status_closed: 已關閉
+  project_status_archived: 已封存
+  text_project_closed: 此專案已關閉，僅供唯讀。
+  notice_user_successful_create: 已建立用戶 %{id} 。
+  field_core_fields: 標準欄位
+  field_timeout: 逾時 (秒)
+  setting_thumbnails_enabled: 顯示附件檔案縮圖
+  setting_thumbnails_size: 縮圖尺寸(in pixels)
+  label_status_transitions: 狀態轉換
+  label_fields_permissions: 欄位權限
+  label_readonly: 唯讀
+  label_required: 必填
+  text_repository_identifier_info: 僅小寫字母(a-z)、數位、破折號(-)和底線(_)可以使用。<br />一旦儲存，代碼無法修改。
+  field_board_parent: 父論壇
+  label_attribute_of_project: 專案 %{name}
+  label_attribute_of_author: 作者 %{name}
+  label_attribute_of_assigned_to: 指派給 %{name}
+  label_attribute_of_fixed_version: 目標版本 %{name}
+  label_copy_subtasks: 複製子任務
+  label_copied_to: 複製到
+  label_copied_from: 複製於
+  label_any_issues_in_project: 專案內任何問題
+  label_any_issues_not_in_project: 專案外任何問題
+  field_private_notes: 私有備註
+  permission_view_private_notes: 檢視私有備註
+  permission_set_notes_private: 設置為私有備註
+  label_no_issues_in_project: 專案內無相關問題
+  label_any: 全部
+  label_last_n_weeks: ! '%{count} 週前'
+  setting_cross_project_subtasks: 允許跨專案的子任務
+  label_cross_project_descendants: 與子專案共用
+  label_cross_project_tree: 與專案樹共用
+  label_cross_project_hierarchy: 與專案繼承層次共用
+  label_cross_project_system: 與所有專案共用
+  button_hide: 隱藏
+  setting_non_working_week_days: 非工作日
+  label_in_the_next_days: 在未來幾天之內
+  label_in_the_past_days: 在過去幾天之內
+  error_can_not_delete_auth_source: 此身份驗證來源正在使用中，無法刪除。
+  field_versions: 里程碑
+  field_issue_to_id: 相關任務
+  permission_view_news: 檢視新聞
+  permission_view_easy_attendances: 檢視和使用的留言板
+  permission_edit_easy_attendances: 編輯記錄在板上
+  permission_view_project_overview_users_query: 檢視專案概要於用戶
+  label_no_change: 無變化
+  label_change_to: 更改為：
+  option_only_selected: 唯一的選擇
+  text_milestone_effective_date_from_issue: 生效日期調整表格任務：%{issue}
+  easyproject_name: EASY PROJECT 2013
+  easyproject_author: Easy Software
+  easyproject_author_url: http://www.easyproject.cz/en
+  easyproject_description: Management information system for project management.
+  project_module_easy_other_permissions: 其他
+  permission_create_project_from_template: 從範本建立專案
+  permission_create_project_template: 從專案建立範本
+  permission_edit_project_template: 編輯專案範本
+  permission_delete_project_template: 刪除專案範本
+  permission_view_project_activity: 專案活動視圖
+  permission_view_project_report: 專案統計視圖
+  permission_action_duplicate_issue: 重複任務
+  permission_edit_own_issue: 自己任務編輯
+  permission_view_restrictions_users: 選擇用戶檢視回應
+  permission_view_personal_statement: 檢視個人聲明
+  permission_view_all_statements: 檢視所有用戶的
+  permission_manage_page_project_overview: 管理專案概述
+  permission_supervisor: 管理專案是不是
+  permission_archive_project: 封存專案
+  permission_copy_project: 複製專案
+  permission_manage_my_page: 編輯我的頁面
+  permission_view_bulk_time_entry: Bulk time entry
+  permission_manage_bulk_version: Bulk version management
+  permission_manage_easy_project_relations: 管理專案的關係
+  permission_manage_easy_version_relations: 管理版本關係
+  permission_edit_issue_fixed_activity: Change in activity associated with a fixed
+  permission_view_easy_attendances_extra_info: 顯示額外的資訊(使用者IP，...)
+  permission_edit_own_easy_attendances: 編輯自己的出席
+  permission_view_easy_attendance_other_users: 檢視其他用戶的出席
+  heading_easy_user_working_time_calendar_index: 日曆表-工作時數
+  heading_easy_user_working_time_calendar_show: 日曆%{calendarname}
+  heading_easy_user_working_time_calendar_edit: 編輯日曆屬性
+  heading_easy_user_working_time_calendar_new: 新日曆
+  heading_easy_user_working_time_calendars_holiday_index: 假日索引
+  heading_easy_user_working_time_calendars_holiday_edit: 編輯假日
+  heading_easy_user_working_time_calendars_holiday_new: 新的假日
+  heading_layout_from_template_selecting_projects: 為專案選擇範本
+  heading_layout_from_template_selecting_users: 為用戶選擇範本
+  heading_project_mass_copy_select_source_project: 選擇來源專案
+  heading_project_mass_copy_select_target_projects: 選擇目標專案
+  heading_project_mass_copy_select_actions: 選擇並複製
+  heading_easy_issues_preview_external_email: 發送外部郵件
+  label_simple_add_project_task: 專案
+  label_simple_add_project_task_on_project: 子專案
+  label_done: 完成
+  label_issue_due_date: 到期日期
+  label_show_user_info: 顯示資訊-%{username}。
+  label_show_assigned_issues: 顯示任務指派給用戶%{username}。
+  label_budget_draw: 編列預算
+  label_user_new_issue: 為用戶建立新任務%{username}。
+  label_user_saved_query: 顯示用戶的篩選條件%{queryname}。
+  label_show_project_info: 顯示專案資訊%{projectname}。
+  label_show_issue_info: 顯示任務詳細資訊%{issuename}
+  label_templates_plural: 專案範本
+  label_news_unread: 未讀訊息
+  label_new_project_name: 新專案名稱
+  label_template_new: 新專案從範本
+  label_easy_page_module_settings_missing: 請儲存模組。
+  label_my_page_project_query_select: 儲存篩選條件：
+  label_my_page_issue_query_select: 儲存篩選條件：
+  label_my_page_user_query_select: 儲存篩選條件：
+  label_my_page_project_output_select: 輸出格式：
+  label_my_page_issue_output_select: 輸出格式：
+  label_my_page_user_output_select: 輸出格式：
+  label_my_page_issue_query: 儲存的篩選條件
+  label_my_page_issue_query_new_before: 您可以建立新的任務篩選條件或
+  label_my_page_issue_query_new_link: 這裡
+  label_my_page_issue_query_new_after: 。
+  label_my_page_projects_row_count: 專案數：
+  label_my_page_issue_row_count: 任務數：
+  label_my_page_document_row_count: 文件數：
+  label_my_page_users_row_count: 用戶數：
+  label_my_page_news_row_count: 新聞：
+  label_my_page_users_filter_visible: 顯示篩選專案概況選項：
+  label_my_page_issue_enable_text_editor: 啟用文字編輯器：
+  label_my_page_issue_show_fields_option_part1: 顯示
+  label_my_page_issue_show_fields_option_part2: 表單欄位。
+  label_my_page_projects_query_settings_missing: 請更正模組的設置。
+  label_my_page_projects_query_select: 儲存的篩選條件：
+  label_my_page_document_query_select: 儲存的篩選條件：
+  label_my_page_projects_query: 儲存的篩選條件
+  label_my_page_projects_query_new_before: 您可以建立新的篩選條件在專案列表或
+  label_my_page_projects_query_new_link: 這裡
+  label_my_page_projects_query_new_after: 。
+  label_my_page_issues_rss_reader: 從另一台伺服器的任務
+  label_my_page_issues_rss_reader_url: 來源：
+  label_my_page_issues_rss_reader_row_limit: 傳承：
+  label_my_page_issues_rss_reader_loading: 請稍候，讀取數據中。
+  label_my_page_google_maps_iframe_tag: HTML嵌入標籤
+  label_version_show_closed_issues: 顯示已關閉任務。
+  label_easy_pages_project_administration: 自訂頁面
+  label_easy_pages: 自訂頁面清單
+  label_easy_page_zone: 區域
+  label_easy_page_zones: 區域上頁%{pagename}
+  label_easy_page_new: 新頁面
+  label_easy_page_edit: 編輯頁面
+  label_easy_page_zones_view: 頁面區域概述
+  label_easy_page_zone_new: 區域
+  label_easy_page_zone_edit: 編輯區
+  label_easy_page_zone_show: 顯示區%{zonename}
+  label_easy_page_modules: 模組中區
+  label_easy_page_user_modules: 模組上頁%{pagename}
+  label_personalize_user_page: 編輯或新增模組
+  label_personalize_user_page_from_layout: 覆蓋預設設置。
+  label_easy_page_templates: 清單頁的範本%{pagename}
+  label_easy_page_templates_new: 新範本
+  label_easy_page_template_new: 新頁面範本%{pagename}
+  label_easy_page_template_edit: 編輯頁面範本%{pagename}
+  label_easy_page_user_layout_modules: 模組佈局上頁
+  label_easy_page_template_user_modules: 模組佈局範本%{templatename}
+  label_easy_page_template_show: 模組佈局
+  label_select_page_template: 選擇頁面範本：
+  label_select_my_page_template: 選擇我的頁面範本
+  label_easy_page_zones_new_assignments: 新增區域至頁面
+  label_easy_page_assign_zone: 新增區域至頁面%{pagename}
+  label_select_page_assign_zone: 選擇區域：
+  label_easy_page_no_zones: 無區域的定義。
+  label_easy_page_no_pages: 頁面無定義。
+  label_easy_page_module_select: 從清單中選擇模組：
+  label_user_my_page: 我的頁面
+  label_project_custom_fields: 專案自訂欄位
+  label_project_no_custom_fields: 無專案的自訂欄位。
+  label_easy_page_module_empty: <b>%{modulename}</b> 模組無法顯示在範本
+  label_easy_page_module_missing: <b>%{modulename}</b> 因不存在，無法顯示
+  label_project_templates_update_dates: 依據專案更新所有專案日期
+  label_user_saved_projectquery: 顯示用戶篩選條件%{queryname}。
+  label_new_project_from_template: 新專案從範本
+  label_easy_my_page_template_to_all: 範本應用到所有用戶
+  label_custom_field_computed_string: 計算欄位 - 文字
+  label_custom_field_computed_integer: 計算欄位 - 整數
+  label_custom_field_computed_float: 計算欄位 - 十進位數字
+  label_custom_field_computed_date: 計算欄位 - 日期
+  label_custom_field_computed_boolean: 計算欄位 - 是/否
+  label_my_page_timelog_calendar: 時間表
+  label_my_page_timelog_calendar_period_select: 日曆期間：
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: 小時
+  label_restrictions_users: 僅顯示
+  label_timelog_view_all: 整個陳述工作時間
+  label_personal_statement: 個人陳述
+  label_log_time: Bulk time entry
+  label_issue_assigned_to_users: 用戶：
+  label_issue_assigned_to_groups: 群組：
+  label_last_year: 去年
+  label_template_to_selected_projects: 應用範本的專案
+  label_template_to_selected_users: 應用範本使用者
+  label_my_page_timelog_simple_day_limit: 顯示天
+  label_error_project_query: 處理篩選條件產生錯誤。請告知此錯誤給您的系統管理員。
+  label_project_description: 描述
+  label_easy_lookup: 查找
+  label_custom_field_settings_entity_type: 實體
+  label_custom_field_settings_entity_attribute: 屬性
+  label_link_with: 連結%{attribute}
+  label_issue_new_relation_before: 此任務
+  label_issue_new_relation_after: 任務：
+  label_project_new_relation_before: 該專案
+  label_project_new_relation_after: 專案：
+  label_version_new_relation_before: 此版本
+  label_version_new_relation_after: 版本：
+  label_parenttask_plural: 父任務
+  label_revert_to_version: 恢復到這個版本
+  label_project_overview_project_info: 專案概況：
+  label_easy_user_queries_plural: 用戶
+  label_menu_more: 進階
+  label_project_index: 專案列表
+  label_issue_index: 任務列表
+  label_issue_static_attributes_heading: 基本屬性：
+  label_issue_updatable_attributes_heading: 附加屬性：
+  label_issue_attachments_heading: 附件：
+  label_issue_watchers_heading: 追蹤者：
+  label_document_category_read_role: 在這個類別讀取檔的權限
+  label_document_category_manage_role: 在此類別管理權限的文件
+  label_document_category_custom_roles_n: 使用預設設置
+  label_document_category_custom_roles_y: 使用自訂設置
+  label_datetime_custom_field_tag_hour: 小時
+  label_datetime_custom_field_tag_minute: 分鐘。
+  label_datetime_custom_field: 日期和時間
+  label_menu_project_template: (範本)
+  label_with_non_shared_versions: 非共用里程碑的子專案
+  label_project_copy_tracker_issues:
+    zero: 無任務
+    one: 1個任務
+    two: 2個任務
+    three: 3個任務
+    four: 4個任務
+    other: ! '%{count}任務'
+  label_top_ten_projects: 最近10個專案
+  label_activity_all: 所有
+  label_working_time: 工作時間
+  label_admin_easy_user_working_time_calendars: 工作時間 - 範本
+  label_easy_user_working_time_calendar_explanatory_notes: 注釋：
+  label_easy_user_working_time_calendar_explanatory_notes_default: 一般工作日
+  label_easy_user_working_time_calendar_explanatory_notes_today: 今天
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: 週末
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: 節日
+  label_easy_user_working_time_calendar_explanatory_notes_exception: 工作異常
+  label_easy_user_working_time_calendar_none: 用戶無選擇任何工作時間的日曆。
+  label_easy_user_working_time_calendar_default_time: 預設工作時間%{count}小時，每一天。
+  label_easy_user_working_time_calendar_change_calendar: 更改工作時間日曆：
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: 從日曆選擇異常工作時間
+  label_easy_user_working_time_calendar_settings: 設置
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: 複製從
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: 複製的例外
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: 複製假期
+  label_easy_user_working_time_mass_exceptions: 品質例外
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: 設置工作小時數
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: 為每
+  label_easy_query_settings: 篩選條件設置
+  label_field_format_autoincrement_from_to: ! '-'
+  label_field_format_autoincrement_entity_limitation: 自動計數：
+  label_project_templates_custom_fields: 專案自訂欄位設置
+  label_source_project: 來源專案
+  label_target_projects: 目標專案
+  label_easy_page_modules_on_project_overview: 模組專案概況
+  label_project_templates_change_issues_author: 更改作者的所有任務
+  label_easy_system_flag: (不顯示在專案的成員等)
+  label_timelog_comment_editor_enabled: 使用編輯器回應？
+  label_time_entry_spent_on_at_issue_update_enabled: 設定登記時間來更新任務？
+  label_user_form_other_settings: 其他選擇
+  label_user_copy_roles_from: 應用從用戶的角色和權限
+  label_easy_page_tab_default_name: 標籤%{count}
+  label_mass_copy_select_actions: 複製(選擇的動作將被刪除，非複製)：
+  label_select_none_assignee: “無受讓人>>
+  label_select_no_change_assignee: “無變化受讓人>>
+  label_unread_entity: 未讀
+  label_switch_to_mobile_version: 行動頁面
+  label_switch_to_full_version: 電腦頁面
+  label_default_project_page: 預設的專案頁面
+  label_too_many_mambers: 有太多的用戶，請使用“搜尋”：
+  label_gantt_pdf_date: 開始日期
+  label_gantt_show_all_versions: 所有里程碑
+  label_gantt_versions_above: 此任務之前的里程碑
+  label_custom_field_settings_multiple: 多種
+  label_last_user_assigned_to: “最後受讓人”
+  label_author_assigned_to: “作者>>
+  label_default_color_schema: 預設顏色
+  label_template_easy_start_date: 設置專案的啟動日期
+  label_templates_easy_start_date: 設置專案的啟動日期
+  label_eqdt: ''
+  label_bulk_time_entries: Bulk time entry
+  label_bulk_time_add_another: 新增其他
+  label_bulk_time_flash_project: 專案名稱：
+  label_bulk_time_flash_issue: 任務：
+  label_bulk_time_flash_comment: 註解：
+  label_bulk_time_flash_user: 用戶：
+  label_bulk_time_flash_hours: 時間：
+  label_bulk_time_flash_spent_on: 日期：
+  label_issue_priority: 任務優先順序
+  label_issue_priority_plural: 任務優先順序
+  label_amount: 總計
+  label_version_update_database: 移動的所有任務嗎？
+  label_my_issues_plural: 我的
+  label_other_issues_plural: 其他
+  label_projectquery_plural: 專案篩選條件
+  label_userquery_plural: 用戶篩選條件
+  label_related_projects: 相關專案
+  label_related_versions: 產品版本
+  label_add_related_issues: 新增相關的任務
+  label_add_related_projects: 新增相關的專案
+  label_add_related_versions: 新增相關的版本
+  label_preceding: 之前
+  label_following: 之後
+  label_send_email_to_all_users: 發送郵件至所有人
+  label_updated_on: 更新日期：
+  label_less: 少
+  label_project_info_time_entry: ! '%{value} h'
+  label_group_by: 群組%{value}
+  label_period_past: 過去
+  label_period_present: 目前
+  label_period_future: 未來
+  label_to_today: 今天
+  label_after_due_date: 截止日期後
+  label_next_n_days: 下%{days}天
+  label_next_week: 下周
+  label_next_month: 下個月
+  label_next_year: 明年
+  label_tomorrow: 明天
+  label_user_role_select: 為角色：
+  label_document_global: 文件
+  label_milestone_sharing_info: 注釋：
+  label_milestone_sharing_info_none: 使用建立的專案里程碑。
+  label_milestone_sharing_info_descendants: 使用建立的專案和子專案里程碑。
+  label_milestone_sharing_info_hierarchy: 使用建立的專案和父與子專案里程碑。
+  label_milestone_sharing_info_tree: 使用建立的專案里程碑，所有的專案有共同前置專案。
+  label_milestone_sharing_info_system: 在所有專案中使用里程碑。
+  label_autoincrement: AUTOINCREMENT
+  label_quick_search: 快速搜尋
+  label_search_result_journal_header: 搜尋日誌字串(%{count})：
+  label_journal_as_search_result: 日誌
+  label_not_available: N / A
+  label_search_entities: 搜尋：
+  label_fixed_version: 目標里程碑
+  label_easy_color_schemes: 選擇配色：
+  label_issue_color_scheme_for: 用戶的配色方案：
+  label_easy_setting_new_subproject_user_role_id: 給一個非管理員用戶建立一個子專案的角色
+  label_easy_setting_new_subproject_user_role_id_info: (合適的情況下，當使用者有權限只建立子專案)
+  label_easy_setting_attachment_description: 附件說明
+  label_easy_setting_attachment_description_required: 需要
+  label_easy_setting_attachment_description_enabled: 啟用
+  label_easy_setting_attachment_description_disabled: 禁用
+  label_issue_by_unassigned_to: 未指派
+  label_issue_notice_recipients: E-mail發送到：
+  label_email: 電子郵件
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: 開始工作時間
+  label_easy_user_working_time_calendar_time_to: 工作結束時間
+  label_issue_open_plural: 問題 - 開放
+  label_issue_close_plural: 問題 - 關閉
+  label_easy_version_queries_plural: 里程碑
+  label_issues_assigned_to_me_visible_issues_assigned: 只有我被分配的任務。
+  label_issues_assigned_to_me_visible_issues_conserns: 我是作者或被指派或參與的任務。
+  label_match_starting_dates: 設置的專案開始日期的任務，
+  label_next_issue: 下一個任務
+  label_previous_issue: 上一任務
+  label_issue_automatic_recalculate_attributes: 從子任務自動改變%{issue_id}
+  label_easy_query_export_links: 輸出
+  label_easy_attendance_spent_time: 耗時
+  label_easy_attendance_plural: 出席
+  label_easy_attendance_queries_plural: 出席
+  label_easy_google_maps_address: Address - Google map
+  label_day:
+    zero: '0'
+    one: 1天
+    other: ! '%{count}天'
+    two: ! '%{count}天'
+    three: ! '%{count}天'
+    four: ! '%{count}天'
+    half: ! '%{count}天'
+  button_context_menu: 顯示快速任務功能表。
+  button_attachment_context_menu: 顯示的版本歷史記錄。
+  button_new_project_from_template: 建立新專案
+  button_new_template_from_project: 建立新範本
+  button_create_project_from_template: 建立新專案
+  button_template_restore_project: 恢復專案
+  button_easy_page_templates: 範本概述
+  button_save_easy_page: 儲存頁面並返回
+  button_edit_projectquery: 編輯篩選條件
+  button_delete_projectquery: 刪除篩選條件
+  button_apply_projectquery: 使用
+  button_clear_projectquery: 預設的篩選條件
+  button_save_projectquery: 儲存
+  button_timelog_calendar_new: 新增時間
+  button_uninstall: 卸載
+  button_easy_lookup_modal_selector_assign: 指派選擇
+  button_new_issue_relation: 新增相關的任務
+  button_issue_put_between: 放入之間
+  button_new_subtask: 新增子任務
+  button_easy_lookup_modal_close: 關閉
+  button_go_up: 上
+  button_issue_create: 儲存任務
+  button_issue_create_and_continue: 儲存並繼續
+  button_issue_update: 更新任務：
+  button_issue_submit: 儲存更新
+  button_gantt_issue_update: 更新任務
+  button_gantt_issue_update_plural: 更新
+  button_easy_user_working_time_calendar_show: 詳細日曆
+  button_easy_user_working_time_calendars_new: 新日曆
+  button_easy_user_working_time_calendar_holidays: 假日
+  button_easy_user_working_time_calendar_holidays_new: 新的假日
+  button_easy_user_working_time_back_to_calendar: 返回到日曆
+  button_easy_user_working_time_back_to_calendars: 備份的日曆
+  button_easy_user_working_time_reset_to_parent: 重置日曆初始
+  button_easy_user_working_time_parent: 轉到父日曆
+  button_check_subprojects: 檢查子專案
+  button_uncheck_subprojects: 取消選中子專案
+  button_check_rootprojects: 檢查根專案
+  button_uncheck_rootprojects: 取消選中根專案
+  button_edit_user_profile: 編輯個人資料
+  button_project_mass_copy: 批量變化
+  button_choose_actions: 選擇行動
+  button_down: 下
+  button_check_and_uncheck_subprojects: 選取/取消子專案
+  button_gantt_show_sidebar: 顯示已儲存的篩選條件
+  button_gantt_hide_sidebar: 隱藏儲存的篩選條件
+  button_easy_page_add_tab: 新增標籤
+  button_manage_versions: 管理的里程碑
+  button_mobile_saved_filters: 儲存的篩選條件
+  button_edit_anonymous_user: 編輯匿名使用者
+  button_back_to_calendar: 返回到日曆
+  button_bulk_time_save_and_continue: 儲存並新增
+  button_gantt_zoom_day: 日
+  button_gantt_zoom_week: 週
+  button_gantt_zoom_month: 月
+  button_fullscreen: 全螢幕
+  button_fullscreen_close: X
+  button_add_and_close: 新增並關閉
+  button_generate_rss_key: 產生 RSS 金鑰
+  button_generate_api_key: 產生 API 金鑰
+  button_back_to_top: 返回頁首
+  button_advanced_search: 進階搜尋
+  button_my_page_google_maps_url_helper: 從 Google Map 新增幫助
+  button_timelog_calendar_prev:
+    week: 上星期
+    month: 上月
+  button_timelog_calendar_next:
+    week: 下周
+    month: 下個月
+  button_send_email: 發送郵件
+  button_dont_send_email: 不要發送郵件
+  button_link_easy_google_map_address: 在 Google Map 中顯示
+  title_button_template: 從專案建立範本%{projectname}。
+  title_button_template_create_project: 從範本建立專案。
+  title_button_template_restore_project: 編輯專案範本。
+  title_project_new_issue: 將任務新增到專案%{projectname}
+  title_project_edit: 編輯專案
+  title_project_show: 顯示專案%{projectname}
+  title_other_formats_links_atom: 上傳到RSS閱讀器。
+  title_other_formats_links_csv: CSV檔儲存到磁碟。
+  title_other_formats_links_pdf: PDF檔儲存到磁碟。
+  title_other_formats_links_png: PNG檔儲存到磁碟。
+  title_other_formats_links_ics: 儲存到磁碟作為ICS(Outlook)的檔。
+  title_other_formats_links_ics_outlook: 訂閱這個列表從MS Outlook日曆的任務。
+  title_easy_page_zones_view: 通過點擊顯示頁面區域概述。
+  title_easy_page_zone_edit: 通過點擊編輯區。
+  title_easy_page_zone_show: 通過點擊“顯示區。
+  title_easy_page_zone_modules: 點擊顯示模組。
+  title_personalize_user_page: 你可以通過點擊自訂頁面。
+  title_personalize_user_page_from_layout: 點擊“選擇頁面範本，該範本將取代實際的佈局。
+  title_easy_page_templates: 通過點擊顯示頁面的範本清單。
+  title_easy_page_templates_new: 點擊建立新的範本。
+  title_easy_page_user_layout_modules: 點擊顯示模組佈局。
+  title_easy_page_template_show: 通過點擊“顯示模組佈局範本。
+  title_easy_page_zones_new_assignments: 通過點擊新增到頁面設定的新區域。
+  title_button_save_easy_page: 點擊儲存並返回。
+  title_my_page_issue_query_new_link: 點擊從任務列表中建立新的篩選條件。
+  title_edit_projectquery: 通過點擊使用者篩選條件編輯頁面。
+  title_delete_projectquery: 點擊“刪除”實際用戶篩選條件。
+  title_apply_projectquery: 點擊使用預先設定的專案篩選條件。
+  title_clear_projectquery: 透過點擊重新啟動篩選條件的預設設置。
+  title_save_projectquery: 點擊儲存預先設定的篩選條件進一步使用。
+  title_new_project_from_template: 透過點擊範本清單。
+  title_easy_my_page_template_to_all: 應用此範本給所有用戶。
+  title_timelog_calendar_new: 透過點擊新增時間到選定的日期。
+  title_template_to_selected_projects: 應用範本予專案
+  title_template_to_selected_users: 應用範本予使用者
+  title_easy_lookup_modal_selector_assign: 透過點擊，你可以將選定的專案。
+  title_button_edit: 你可以透過點擊編輯此條目。
+  title_button_delete: 點擊即可刪除該條目。
+  title_new_issue_relation: 新增相關的任務。
+  title_new_subtask: 新增子任務。
+  title_logo: 點擊進入我的網頁。
+  title_delete: 點擊“刪除專案”。
+  title_delete_selected: 點擊“刪除選定的專案。
+  title_go_up: 點擊進入到頁面頂部。
+  title_says: 提到：
+  title_project_copy_tracker_issues: 點擊改變問題的追蹤。
+  title_user_profile: 點擊顯示%{username}的個人資料。
+  title_easy_user_working_time_calendar_show: 透過點擊，編輯日曆天。
+  title_easy_user_working_time_calendars_new: 透過點擊，建立一個新的日曆。
+  title_easy_user_working_time_calendar_holidays: 透過點擊，管理的假日。
+  title_easy_user_working_time_calendar_holidays_new: 透過點擊，建立一個新的節日。
+  title_easy_user_working_time_back_to_calendar: 透過點擊，返回日曆。
+  title_easy_user_working_time_back_to_calendars: 透過點擊，返回的日曆。
+  title_easy_user_working_time_calendars_inline_edit: 透過點擊，新增例外。
+  title_easy_user_working_time_calendars_inline_save: 透過點擊，儲存例外。
+  title_easy_user_working_time_calendars_inline_close: 透過點擊，關閉編輯例外。
+  title_easy_user_working_time_reset_to_parent: 透過點擊，刪除所有目前的異常，並設置日曆從父狀態。
+  title_easy_user_working_time_parent: 透過點擊，返回到父日曆。
+  title_edit_user_profile: 透過點擊，編輯您的個人資料。
+  title_easy_page_add_tab: 透過點擊，新增新的標籤。
+  title_last_journal_link: 顯示上雜誌的問題。
+  title_edit_anonymous_user: 透過點擊，編輯匿名使用者。
+  title_fullscreen: 顯示全螢幕
+  title_download_attachment: 下載檔案
+  title_show_attachment: 顯示檔案內容
+  title_timelog_calendar_prev:
+    week: 前一周。
+    month: 前一個月。
+  title_timelog_calendar_next:
+    week: 下一周。
+    month: 下個月。
+  title_easy_modal_selector_trigger:
+    issue: 點擊從列表中選擇任務。
+    project: 點擊從列表中選擇專案。
+    version: 點擊以選中從列表中的里程碑。
+    user: 點擊“從列表中選擇用戶。
+    group: 點擊從列表中選擇群組。
+    document: 點擊“從列表中選擇文檔。
+  project_template:
+    label_name: 範本名稱
+    label_new_project: 新專案的名稱
+  sidebar_all_users_queries: 成員的任務
+  sidebar_issue_button_update: 新增筆記或編輯任務
+  sidebar_issue_button_log_time: 耗費時間
+  sidebar_issue_button_duplicate: 重複任務
+  sidebar_issue_button_copy: 複製任務
+  sidebar_issue_button_move: 移動任務
+  sidebar_issue_button_delete: 刪除任務
+  sidebar_issue_spent_time: 任務耗時概述
+  sidebar_issue_info: 任務資訊
+  sidebar_issues_buttons: Harmonogram
+  sidebar_project_info: 專案資訊
+  sidebar_project_spent_time: 專案耗費時間概述
+  sidebar_project_members: 專案團隊
+  sidebar_budget_costs_info: 成本
+  sidebar_project_family_info: 專案樹
+  field_easy_due_date: 到期日期。
+  field_easy_start_date: 開始日期
+  field_spinned: 固定在上面
+  field_zone_name: 區域名稱
+  field_page_name: 頁面名稱
+  field_is_primary: 主要
+  field_show_empty: 顯示空欄位
+  field_show_on_list: 在清單中顯示
+  field_predicted_cost: 預算
+  field_computed_token: 公式
+  field_member: 專案成員
+  field_groups: 群組
+  field_roles: 角色
+  field_xproject: 專案
+  field_cached_group_names: 群組
+  field_parent_user: 上級
+  field_template_name: 範本名稱
+  field_parent_project: 父專案
+  field_root: 主要專案
+  field_main_project: 主要專案
+  field_sum_of_timeentries: 耗時
+  field_remaining_timeentries: 剩餘時間
+  field_completed_percent: ％完成
+  field_attachment_created_on: 附件 - 建立
+  field_user_roles: 角色
+  field_show_on_more_form: 顯示“進階”
+  field_spent_estimated_timeentries: ％耗時
+  field_easy_system_flag: 系統群組
+  field_easy_global_rating: 全球評級
+  field_id: ID
+  field_at_work: 在工作​​嗎？
+  field_arrival: 未來
+  field_departure: 出發
+  field_easy_attendance_activity: 活動
+  field_arrival_user_ip: 到達IP
+  field_departure_user_ip: 出發IP
+  field_color_schema: Barevné的架構
+  field_group: 用戶群組
+  field_rss_key: RSS金鑰
+  field_api_key: API金鑰
+  field_global_fixing_activity: 專案的任務是預先活動。
+  field_project_fixed_activity_true: 建立任務時，預先選定的活動。
+  field_project_fixed_activity_false: 寫作時，可以選擇時間的活動。
+  field_user_time_entry_setting: 報名時間：
+  field_easy_range_from: 耗時透過
+  field_easy_range_to: 耗時在
+  field_easy_range_form_to: 在
+  field_enable_activity_roles: 將活動指派給角色
+  field_limit_assignable_users: 問題只能返回作者
+  field_easy_version_category_id: 類別
+  field_easy_version_category: 類別
+  field_relations_from: 關係
+  field_created_at: 建立
+  field_updated_at: 編輯
+  field_easy_send_invitation: 透過電子郵件發送邀請
+  field_easy_do_not_allow_close_if_subtasks_opened: 如果打開子任務，不要讓關閉任務
+  field_easy_do_not_allow_close_if_no_attachments: 不要讓關閉的任務，除非附加檔
+  field_easy_issue_prefix: 任務首碼
+  field_send_to_external_mails: 發送更新的郵件？
+  field_attachments: 附件
+  field_ckeditor_toolbar_config: HTML編輯器工具列
+  status_archived: 已封存
+  filter_active: 啟動
+  notice_successful_create_template: 成功地建立範本。
+  notice_successful_create_project_from_template: 專案已成功建立。
+  notice_failed_create_project_from_template: 專案沒有被建立：%{errors}
+  notice_almost_successful_create_project_from_template: 建立無完整的專案複製的專案。
+  notice_successful_restore_template: 範本已成功恢復。
+  notice_template_successful_applied: 範本已成功應用。
+  notice_plugin_successful_uninstall: 外掛程式%{plugin}成功刪除了，現在需要重新開機您的Web伺服器。
+  notice_project_successful_archive: 專案已成功封存。
+  notice_failed_to_update: 儲存中的錯誤。
+  notice_project_successful_unarchive: 專案取消封存。
+  error_invalid_authenticity_token: 頁面過期。
+  error_rss_reader_timeout: 錯誤設置(頁面無連接，請確保您有正確的任務的來源;的來源目前存在的問題，不能簡單的專案！)的錯誤。
+  error_rss_reader_bad_url: 錯誤設置(頁目前沒有連接，請確保您有正確的任務的來源)。
+  error_rss_reader_old_ep: 錯誤任務設置(來源須是Easy Project 2012 或更高版本)。
+  error_validates_max_size: 檔案過大
+  error_custom_value_autoincrement_greater: 須大於%{count}
+  error_custom_value_autoincrement_equal: 須要%{count}
+  error_can_not_unarchive_project: 專案無法封存。
+  error_can_not_delete_project: 專案不能被刪除。
+  error_can_not_delete_project_template: 專案範本不能被刪除。
+  error_can_not_create_project_template: 從專案建立專案範本的過程中發生錯誤%{projectname}。
+  error_bulk_update_save: ! '%{count}物件不能儲存。'
+  error_no_file_selected_to_upload: 無選擇檔上傳。
+  error_cannot_close_issue_due_to_subtasks: 任務不能被關閉，因為包含已啟動的任務：%{issues}
+  error_cannot_close_issue_due_to_no_attachments: 任務不能被關閉，因為沒有附件
+  confirm_admininstration_display_all_project: 檢視所有專案需要很長的時間。你要繼續嗎？
+  text_commit_example_1: ! 'refs #1523 @5h30m calendar finishing'
+  text_commit_example_2: log time 5 hours and 30 minutes to task no. 1523
+  text_easy_settings_time_entry_heading: 花了時間限制
+  text_easy_settings_time_entry_limit: 允許新增/編輯時間
+  text_easy_settings_time_entry_limit_note: 如果你想禁止時間限制，這些文字方塊為空。
+  text_easy_settings_time_entry_limit_past: 過去幾天
+  text_easy_settings_time_entry_limit_future: 未來幾天
+  setting_issue_recalculate_attributes: 建立子任務的影響母公司的任務(優先順序，估計的時間，％完成，開始日期和截止日期)
+  my_page_timelog_calendar_period:
+    month: 每月一次
+    week: 每週
+  easy_pages:
+    pages:
+      my_page: 我的頁面
+      project_overview: 專案 - 網站首頁
+    pages_description:
+      my_page: 我的頁面
+      project_overview: 專案 - 網站首頁
+    modules:
+      issues_create_new: 新任務
+      issue_query: 篩選任務條件
+      projects_query: 篩選專案條件
+      documents: 文件
+      issues_assigned_to_me: 我的任務
+      issues_reported_by_me: 我提出的任務
+      issues_watched_by_me: 我觀察的任務
+      my_calendar: 我的日曆
+      my_projects_simple: 專案列表
+      news: 新聞
+      saved_queries: 儲存篩選條件
+      timelog_simple: 時間使用
+      timelog_calendar: 時間日誌日曆
+      issues_rss_reader: 從另一台伺服器的任務
+      project_news: 新
+      project_tree: 子專案
+      project_sidebar_all_users_queries: 成員的任務
+      project_sidebar_project_info: 專案資訊
+      project_sidebar_project_members: 專案成員
+      project_sidebar_saved_queries: 儲存篩選條件
+      project_issues: 任務
+      noticeboard: 佈告
+      project_sidebar_family_info: 專案樹
+      project_info: 專案資訊
+      attendance: 出席
+      users_query: 專案組從篩選條件
+      resource_availability: 資源可用性
+      google_maps: Maps Google
+      project_history: 項目歷史
+    module_category:
+      calendars: 日曆
+      issues: 任務
+      lists: 列表
+      others: 其他
+      projects: 專案
+      project_sidebar: 邊欄
+      timelog: 時間使用
+      users: 用戶
+      redmine: Redmine
+    zones:
+      top_left: 左上圖
+      top_middle: 頂部中間
+      top_right: 右上圖
+      middle_left: 左中
+      middle_middle: 中間
+      middle_right: 中間偏右
+      bottom_left: 左下角
+      bottom_middle: 底部中間
+      bottom_right: 右下圖
+      right_sidebar: 側邊欄右側
+    zones_description:
+      top_left: 描述
+      top_middle: 描述
+      top_right: 描述
+      middle_left: 描述
+      middle_middle: 描述
+      middle_right: 描述
+      bottom_left: 描述
+      bottom_middle: 描述
+      bottom_right: 描述
+      right_sidebar: 描述
+  label_my_page_project_output:
+    list: 表
+    calendar: 日曆
+  label_my_page_issue_output:
+    list: 表
+    calendar: 日曆
+  select_easy_page_module_project_info:
+    label: 要檢視的屬性
+    description: 描述
+    customfields: 專案自訂欄位
+  easy_page_module:
+    project_query:
+      adhoc_query: AD-HOC的篩選條件
+      adhoc_query_default_text: 篩選條件名稱
+    issue_query:
+      adhoc_query: AD-HOC的篩選條件
+      adhoc_query_default_text: 篩選條件名稱
+    document_query:
+      adhoc_query: AD-HOC的篩選條件名稱
+      adhoc_query_default_text: 篩選條件名稱
+    user_query:
+      adhoc_query: AD-HOC的篩選條件名稱
+      adhoc_query_default_text: 篩選條件名稱
+    attendance:
+      adhoc_query: AD-HOC的篩選條件
+      adhoc_query_default_text: 我出席
+    resource_availability:
+      label_resource_name: 資源名稱
+      label_day_start_time: 開始時間
+      label_day_end_time: 結束時間
+      label_set_available: 設置為可用
+      label_set_unavailable: 設置為“不可用”
+      label_available: 可用的
+      label_unavailable: 無法使用
+      label_set_day_available: 設置為全日可用
+      label_set_day_unavailable: 設置為不可用全日
+      label_description_prompt: 請鍵入一個原因：
+    new_issue:
+      field: 領域
+      show: 顯示
+      default_value: 預設值(空白表示無變化)
+    project_history:
+      heading_project_edit_custom_fields: 編輯項目的自定義字段
+  menu:
+    admin:
+      easy_pages_administration: 頁面個性化
+  breadcrumb:
+    label:
+      easy_pages_administration: 頁面個性化
+      easy_page_templates: 頁面範本%{pagename}
+      easy_page_new: 新頁面
+      easy_page_show: 模組上頁%{pagename}
+      easy_page_edit: 頁%{pagename}編輯
+      easy_page_templates_edit: 範本%{templatename}編輯
+      easy_page_templates_new: 新的頁面範本
+      easy_page_template_view: 模組佈局
+      easy_page_template_edit: 模組佈局editation
+      easy_page_template_user_modules: 模組佈局
+    title:
+      easy_pages_administration: 個人化頁面
+      easy_page_templates: 範本頁面%{pagename}。
+      easy_page_new: 新頁面。
+      easy_page_show: 模組頁面%{pagename}。
+      easy_page_edit: 頁面編輯%{pagename}。
+      easy_page_templates_edit: 範本編輯%{templatename}。
+      easy_page_templates_new: 建立新範本%{pagename}。
+      easy_page_template_view: 模組佈局。
+      easy_page_template_edit: 模組佈局編輯
+      easy_page_template_user_modules: 模組佈局。
+  easy_user_working_time_calendar_names:
+    standard: 標準
+  easy_lookup:
+    document:
+      label: 文件
+    group:
+      label: 群組
+    issue:
+      label: 問題
+    project:
+      label: 專案
+    user:
+      label: 用戶
+    version:
+      label: 里程碑
+  project_default_page:
+    project_overview: 專案概況：
+    roadmap: 里程碑
+    issue_tracking: 任務
+    time_tracking: 耗時
+    news: 新聞
+    documents: 文件
+    repository: 儲存機制
+    calendar: 日曆
+    gantt: 甘特圖
+    boards: Boards
+    files: 檔案
+    wiki: Wiki
+  select_option_issue_restrictions_users_blank: ! '>>選擇<<'
+  mail:
+    field_author: 作者
+    field_updated_by: 更新
+    field_before: 前
+    field_updated_time: 更新前
+    label_attachment_new: 增加了一個新的文件
+    text_attachment_added: 用戶%{user}添加%{time}對%{added_to}以下文件（S）：
+  attachments:
+    no_more_versions: 沒有進階的版本
+    revert_to:
+      successfully: 附件成功地恢復到%{version}版本。
+      failed: 附件沒有恢復到%{version}版本。目前的版本是：%{current_v}。
+  easy_query:
+    name:
+      easy_issue_query: 問題
+      easy_project_query: 專案
+      easy_user_query: 用戶
+      easy_document_query: 文件
+      easy_version_query: 里程碑
+      easy_attendance_query: 出席
+      easy_time_entry_query: 時間條目
+      easy_group_query: 組
+    label:
+      default_columns: 預設欄目
+      default_fitlers: 預設的篩選條件
+    button_apply:
+      project: 應用設置
+      user: 應用設置
+      issue: 應用設置
+    sidebar_filters:
+      personal:
+        easy_issue_query: 私人篩選條件的任務
+        easy_user_query: 私人篩選條件的用戶
+        easy_project_query: 私人篩選條件專案
+        easy_document_query: 私人篩選條件文件
+        other: 私人篩選條件
+        easy_attendance_query: 出席私人過濾器
+        easy_group_query: 私人過濾器組
+        easy_member_query: 對成員的私人過濾器
+        easy_time_entry_query: 私人過濾器上花費的時間
+        easy_version_query: 私人過濾器版本
+      public:
+        easy_issue_query: 共用篩選條件的任務
+        easy_user_query: 共用篩選條件的用戶
+        easy_project_query: 共用篩選條件的專案
+        easy_document_query: 共用篩選條件文件
+        other: 共用篩選條件
+        easy_attendance_query: 出席公共過濾器
+        easy_group_query: 公共組過濾器
+        easy_member_query: 對成員的公共過濾器
+        easy_time_entry_query: 公共過濾器上花費的時間
+        easy_version_query: 公共過濾器版本
+    easy_lookup:
+      name:
+        issue:
+          default: 選擇問題
+          issue_relation: 選擇相關的任務
+        project:
+          default: 選擇專案
+          project_relation: 選擇相關專案
+        user:
+          default: 選擇用戶
+        group:
+          default: 選擇組
+        version:
+          default: 選擇的里程碑
+          version_relation: 選擇相關的版本
+        document:
+          default: 選擇檔
+  bulk_time_entry_title: Bulk time entry
+  text_bulk_time_entry_permission: This user has no right to time reporting on projects.
+  label_avatar: 頭像
+  message_avatar_uploaded: 頭像上傳成功
+  button_change_avatar: 更改本地頭像
+  are_you_sure_delete_avatar: 你確定要刪除你的頭像嗎？
+  avatar_deleted: 頭像被刪除
+  unable_to_delete_avatar: 抱歉。有一個錯誤刪除的頭像。
+  avatar_invalid_file: 無效的檔案類型
+  text_settings_gravatar_enabled: If the Gravatar item is not selected than classic
+  license_manager:
+    user_limit: 你的最大用戶數已用盡，延長在%{email}，請與我們聯繫。
+    user_limit_unlock_button: 啟動​​用戶數已達到了最大。
+  image_tag:
+    alt:
+      bullet_toggle_plus: 切換到多選
+  collapse_expand: 折疊/展開
+  gantt_day: 日
+  gantt_day_plural: 天
+  gantt_day_plural5: 天
+  gantt_start: 開始日期
+  gantt_end: 截止日期
+  gantt_duration: 截止日期
+  gantt_completed: 已完成
+  issue_predecessor_error: 任務%{issue_name}另一項任務。
+  project_predecessor_error: 專案%{project_name}另一個專案。
+  version_predecessor_error: 版本%{version_name}另一個版本。
+  label_easy_publishing_module: 模
+  label_easy_publishing_modules: 出版模組
+  easy_publishing_setting: 模
+  easy_publishing_setting_new: 新發佈設置
+  label_easy_publishing_setting_url: URL 範例
+  button_easy_publishing_settings_new: 新模組
+  label_easy_publishing_module_info: 訊息
+  label_easy_publishing_module_contact: 聯繫
+  label_easy_publishing_module_help: 選擇您的解決方案
+  label_easy_publishing_module_info_header: 為了你 Easy Readmine
+  label_easy_publishing_invalid_file_type: 這些檔無圖像，並無儲存：%{files}。
+  helper_module:
+    button_show_help: 顯示説明
+    button_close_help: 關閉幫助
+    alt_image_help: 圖片説明
+    title_help: 選擇您的解決方案
+    title_contact: 聯繫
+    button_show_youtube: 播放視頻
+  user_time_entry_setting:
+    all: 小時或範圍
+    hours: 小時
+    range: 範圍(從 - 到)
+  label_rating: 等級
+  label_easy_global_rating: 全球評級
+  easy_attendance:
+    label: 出席
+    label_menu_more: 出席
+    label_back_to_basic: 關閉
+    label_setting: 抵達及離開的使用記錄
+    label_mail: 通知郵件
+    new: 註冊抵達/離開
+    arrival: 抵達
+    departure: 離開
+    advanced_settings: 調度行程
+    label_activities: 活動
+    project_mapping_0: 如果沒有綁定到專案
+    project_mapping_1: 綁定到專案
+    project_mapping_1_1: 和活動
+    link_to_easy_attendance: 出席者名單
+    error_can_not_delete_activity: 活動包含的記錄不能被刪除。
+    change_easy_attendance_activity_to: 更改的活動：
+    description:
+      arrival: 我只是來工作
+      departure: 離開工作
+      advanced_infobox: 例：我假期從%{from}對%{to}。
+    activities:
+      enumerations:
+        label: 活動(電子公告板)
+        new: 在公告版上的新活動
+    title:
+      advanced_settings: 計畫你的工作從家裡或者離開。
+    arrival_date_error: 不可大於抵達日期。
+    arrival_already_taken: 日期已進行另一項活動。
+    invalid_date: 無日期
+    departure_is_same_as_arrival: 須具有相同的時間作為抵達。
+    notice:
+      notice_arrivaled: 錄製的到來。透過點擊，你可以改變你抵達或離開航班。
+      warning_missing_departure: 公開版缺少出發日期，請輸入從%{arrival_date}。
+    calendar:
+      legend:
+        starting: 活動開始
+        ending: 活動結束
+        starting_ending: 此天的活動
+    mail_added:
+      subject: ! '%{user}宣佈離開工作場所'
+      body_top: ! '%{user}宣佈%{activity}在工作​​場所從%{from}至%{to}。'
+      body_link: 在這裡看到的出席名單。
+    mail_updated:
+      subject: ! '%{user}宣佈離開工作場所'
+      body_top: ! '%{user}宣佈%{activity}在工作​​場所從%{from}至%{to}。'
+      body_link: 在這裡看到的出席名單。
+    label_report_sum_time_entry: 總計一年%{year}[時間]
+    label_report_sum_attendance: 的總和%{year}[出席]
+    text_activity_destroy_with_attendances: 活動報告總%{count}出席記錄。您確定您要刪除的活動和所有的記錄嗎？
+    label_statistic_worked: 工作
+    label_statistic_attendance: 勤
+    label_statistic_supplement: 從%{hours}，例如。%{percent}％
+    field_range: 在撰寫出席：
+    range:
+      full_day: 全日
+      forenoon: 午前
+      afternoon: 下午
+  sidebar_easy_attendances_all_users_queries: 出席會議的用戶
+  error_put_between_issue_count: 請選擇兩個問題
+  label_xml_data_export: XML數據匯出
+  label_xml_data_select_exportables: 選擇要匯出的資料
+  label_xml_data_select_projects: 選擇專案
+  button_xml_data_export: 匯出
+  button_xml_data_import: 導入
+  button_xml_data_continue: 繼續
+  label_xml_data_import: XML數據導入
+  label_user_mapping: 用戶映射
+  label_map_to: 映射到
+  option_map_to_new_user: 新用戶
+  label_tracker_mapping: 追蹤映射
+  option_map_to_new_tracker: 新的追蹤
+  label_xml_data_notify: 發送通知
+  label_role_mapping: 角色映射
+  label_issue_status_mapping: 問題狀態映射
+  label_issue_priority_mapping: 發行優先順序映射
+  label_time_entry_activity_mapping: 活動映射
+  label_custom_field_mapping: 自訂欄位映射
+  option_map_to_new_role: 新角色
+  option_map_to_new_project_custom_field: 新欄位
+  option_map_to_new_issue_custom_field: 新欄位
+  option_map_to_new_issue_priority: 新的優先順序
+  option_map_to_new_issue_status: 新的狀態
+  option_map_to_new_time_entry_activity: 新活動
+  label_auto_mapping: 自動映射
+  label_import_success: 資料成功導入
+  label_import_zip_error: 資料格式不正確
+  xml_data_users: 用戶
+  xml_data_trackers: 追蹤
+  xml_data_roles: 角色
+  xml_data_issue_priorities: 任務的優先順序
+  xml_data_project_custom_fields: 自訂欄位
+  xml_data_issue_custom_fields: 自訂欄位
+  xml_data_issue_statuses: 工作狀態
+  xml_data_document_categories: 文件類別
+  xml_data_time_entry_activities: 活動
+  sample_text: Easy Project
+  easy_color_scheme_not_available: 配色方案%{current}，你可以改變它
+  notice_issues_successful_create: 成功建立用戶：
+  notice_failed_to_save_issues2: 無法儲存任務%{issue}由於錯誤：%{error}
+  notice_too_many_projects: 太多的專案(%{count})，使用搜尋功能。
+  general_all: 所有
+  general_only_required: 只需要
+  mail_subject_easy_query_migration_nonsaved_query: Easy Project - 篩選條件遷移 - 失敗
+  mail_body_easy_query_migration_nonsaved_query_begin: 您好，您的已儲存的篩選條件的遷移儲存此篩選條件：
+  mail_body_easy_query_migration_nonsaved_query_end: 請點擊上面的連結，並更換篩選條件(列中包含的某個日期範圍
+    - 建立，更新，到期日，...)。
+  mail_subject_easy_query_migration_unsupported_query: Easy Project - 篩選條件遷移 - 不支持的設置
+  mail_body_easy_query_migration_unsupported_query_begin: 您好，您的已儲存的篩選條件的遷移儲存此篩選條件：
+  mail_body_easy_query_migration_unsupported_query_end: 請點擊上面的連結，並更換篩選條件。它包含此設置：
+  setting_project_list_default_columns: 預設顯示的列上的專案清單
+  setting_default_projects_tree_display: 顯示專案樹
+  setting_projects_tree_display_with_siblings: 與平行
+  setting_projects_tree_display_without_siblings: 無平行
+  setting_issue_created_on_date_format_label: 顯示上建立像
+  setting_issue_created_on_date_format_date: 日期
+  setting_issue_created_on_date_format_datetime: 日期和時間
+  setting_enable_private_issues: 啟用私人問題
+  setting_show_personal_statement: 顯示功能表中的個人陳述
+  setting_show_bulk_time_entry: 在功能表中顯示 bulk time
+  setting_project_calculate_start_date: 計算從任務的開始日期
+  setting_project_calculate_due_date: 計算到期日從任務
+  setting_show_issue_id: 顯示任務ID
+  setting_quick_jump_to_an_issue: 如果ID搜尋跳轉到任務
+  setting_milestone_effective_date_from_issue_due_date: 允許設定一個截止日期的任務結束後的里程碑。
+  workflow_button_edit: 工作流程設置
+  easy_search:
+    legend_entities: 搜尋：
+    legend_column_types: 搜尋：
+    label_column_type:
+      name: 名稱
+      description: 描述
+      comment: 回應
+      other: 其他
+  enumeration_easy_version_cetegory: 版本類別
+  label_tracker_move_issues: 發行重新指派
+  label_tracker_move_issues_explanation: 更改追蹤到：
+  button_tracker_move_issues: 重新指派和刪除
+  option_dont_map: ! '- 不映射 -'
+  move_auth_source_users_explanation: 選擇一個新的用戶驗證來源：
+  button_auth_source_move_users: 重新指派和刪除
+  dashboard:
+    legends:
+      others: 其他
+      projects: 專案
+      issues: 任務
+      users: 用戶
+      security: 安全
+      xml: XML
+      extensions: 擴展
+      settings: 設置
+  label_easy_user_working_time_calendar_no_of_days: 個工作日內
+  label_easy_user_working_time_calendar_no_of_hours: 工作時間
+  label_easy_attendance_report_working_time: 工作%{sum_timeentries}的%{total_working_hours}，即%{timeentries_percent}
+  label_easy_attendance_report_attendence_time: 出席有%{sum_attendance}的%{total_working_hours}，即%{working_percent}
+  button_settings: 調整
+  button_history: 歷史
+  field_started_at: 開始於
+  field_finished_at: 結束在
+  field_note: 注意
+  easy_rake_tasks:
+    views:
+      heading_index: 預定的任務概述
+      button_index: 預定的任務概述
+      heading_settings: 作業設置%{task_name}
+      heading_task_infos: 工作總結 -%{task_name}
+      interval: 間隔
+      next_run_at: 接下來開始
+      last_action: 最後行動
+    periods:
+      daily: 所有的%{interval}
+      hourly: 所有的%{interval}小時
+      minutes: 所有的%{interval}分鐘
+    easy_rake_task_receive_mail:
+      caption: 接收郵件
+    easy_rake_task_repeating_entities:
+      caption: 問題守護Reccuring的
+    easy_rake_task_history_cleaner:
+      caption: 刪除舊的計劃任務歷史
+    easy_rake_task_check_failure_tasks:
+      caption: 故障檢查預定任務
+      email_type:
+        all_admins: 向管理員發送電子郵件
+        email: 發送電子郵件至
+      mail:
+        heading: 這些預定任務失敗%{date}
+        footer: 可以更改設置，在計劃任務
+  easy_rake_task_infos:
+    status:
+      running: 這是
+      ended_ok: 為了完成
+      ended_failed: 錯誤而終止
+  button_delete_avatar: 刪除頭像
+  label_issue_due_date_overdue: 左來完成：
+  label_issue_due_date_not_overdue: 截止期限之後
+  label_project_due_date_overdue: 完成剩餘的
+  label_project_due_date_not_overdue: 之後的最後期限
+  label_easy_setting_use_personal_theme: 允許用戶改變自己的介面？
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: 新的關係
+  title_permission_flag_r: 唯讀
+  title_permission_flag_p: 需要登錄
+  title_permission_flag_m: 需為專案成員
+  title_permission_flag_l: 需要登錄
+  setting_display_issue_relations_on_new_form: 檢視相關任務於新格式
+  gantt_new_following_issue: 新的下一個任務
+  gantt_new_preceding_issue: 新的前任務
+  gantt_new_child_issue: 新的子任務
+  themes:
+    easy: Easy
+    easy_widescreen: Easy-Wide
+  label_easy_user_working_time_day_settings: 設定天
+  editor_config_names:
+    basic: 基本的
+    extended: 進階
+    full: 滿
+  custom_field_names:
+    external_mails:
+      label: 外部郵件
+  label_added_time_by: 作者%{author}
+  easy_scheduler_task_info:
+    planned: 任務%{task_name}已計畫。
+    running: 任務%{task_name}運行中。
+    ended_failed: 任務%{task_name}失敗了。
+    ended_ok: 任務%{task_name}圓滿結束。
+    initialized: 任務%{task_name}已建立。
+  field_is_planned: 計劃
+  label_permissions_global: 全局權限
+  label_permissions_project: 項目權限
+  label_project_gantt: 項目甘特圖
+  label_allow_log_time_to_closed_issue: 允許登錄的時間已解決的問題
+  project_status_planned: 計劃
+  text_project_archive_confirmation: 你確定你要這個項目和相關的數據歸檔嗎？
+  text_project_close_confirmation: 你確定要關閉這個項目嗎？
+  text_project_reopen_confirmation: 你確定要重新討論這個項目嗎？
+  permission_manage_global_versions: 管理全球里程碑
+  label_bulk_time_entries_edit: 編輯花費的時間
+  label_preview_external_email_mail_sender: 郵件發送者
+  label_preview_external_email_mail_recepient: 郵件recepient
+  label_preview_external_email_mail_cc: 郵件的副本
+  label_preview_external_email_mail_subject: 郵件主題
+  label_preview_external_email_mail_body_html: 在HTML郵件內容
+  label_preview_external_email_mail_body_plain: 以純文本格式的郵件內容
+  label_easy_versions: 里程碑
+  label_easy_versions_top_menu: 里程碑
+  label_easy_repository_source_easy_repository_url: 到版本庫的URL
+  title_user_detail: 你可以通過點擊顯示詳細的用戶。
+  title_version_detail: 按一下，就可以顯示詳細的里程碑。
+  error_create_repo_from_url_cannot_create_dir: 無法創建目錄%{dir}
+  error_create_repo_from_url_cannot_determine_repo_name: 不能確定信息庫名稱
+  error_create_repo_from_url_repo_already_exists: 存儲庫已經存在
+  error_create_repo_from_url_repo_cannot_be_created: 庫不能被創建
+  text_git_repository_url_note: URL的形式HTTP（S）:/ /用戶名：密碼@，URL / repo.git。庫將在本地自動創建表單提交後。
+  text_external_email_sent: 一個附加的郵件發送到外部郵件%{email}。
+  text_textile_migration: 對於遷移保存文本從紡織品到HTML使用應用程序的命令行：“捆綁執行的耙easyproject：紡織：migrate_all
+    RAILS_ENV =生產”
+  label_field_format_rating_star_no: 明星
+  label_easy_gantt_theme_plural: PDF甘特圖的主題
+  label_easy_gantt_theme_new: 新主題
+  label_header_style: 頭風格
+  label_logo: 標誌
+  field_header_color: 背景顏色
+  field_header_font_color: 文本顏色
+  label_with_theme: 使用主題
+  label_is_null: 是空的
+  label_is_not_null: 不為空
+  field_closed_on: 關閉
+  field_inherit_members: 繼承成員
+  setting_jsonp_enabled: 啟用JSONP支持
+  setting_default_projects_tracker_ids: 新專案預設使用的追蹤標籤
+  permission_add_documents: 添加文檔
+  permission_edit_documents: 編輯文件
+  permission_delete_documents: 刪除文件
+  label_total_time: 總時間
+  label_attribute_of_issue: 任務的%{name}
+  label_attribute_of_user: 用戶%{name}
+  label_gantt_progress_line: 進度線
+  text_turning_multiple_off: 如果你禁用了多個值，多個值將被刪除，以維護每個項目只能有一個值。
+  permission_manage_easy_issue_timers: 訪問設置的任務定時器
+  permission_edit_project_custom_fields: 編輯項目的自定義字段
+  heading_issues_settings_display: 顯示
+  heading_issues_settings_behaviour: 行為
+  label_template_copy: 將模板複製到現有項目
+  label_easy_issue_timer: 任務定時器
+  label_easy_issue_timer_settings: 任務定時器設置
+  label_easy_issue_timer_start: 開始
+  label_easy_issue_timer_end: 完成
+  label_easy_issue_easy_is_repeating: 重複
+  label_easy_issue_easy_repeating_period: 重複週期
+  label_easy_issue_easy_repeating_period_daily: 日常
+  label_easy_issue_easy_repeating_period_weekly: 每週
+  label_easy_issue_easy_repeating_period_monthly: 每月一次
+  label_easy_issue_easy_repeating_period_custom: 習俗
+  label_easy_issue_easy_reccuring_daily_every: 所有的
+  label_easy_issue_easy_reccuring_daily_each: 天
+  label_easy_issue_easy_reccuring_daily_work: 個工作日內
+  label_easy_issue_easy_repeating_endtype: 結束
+  label_easy_issue_easy_repeating_endtype_date: 在日
+  label_easy_issue_easy_repeating_endtype_count: 經過X重複
+  label_easy_issue_easy_repeating_endtype_endless: 由於項目結束
+  label_easy_issue_easy_repeating_start: 開始
+  label_easy_issue_reccuring_after: 後
+  label_easy_issue_reccuring_day_plural: 天
+  label_easy_issue_reccuring_month: 月
+  label_easy_issue_subject_reccuring_suffix: （Reccuring）
+  label_easy_issue_reccuring_monthly_orders:
+    1: 第一
+    2: 第二
+    3: 第三
+    4: 第四
+    5: 最後
+  button_copy_project_from_template: 複製到項目
+  button_select_file: 選擇“文件”
+  button_easy_issue_timer_play: 我
+  button_easy_issue_timer_stop: 這是做
+  title_button_template_copy_project: 複製到現有的項目模板。
+  title_easy_issue_timer_button_play: 更新任務，並開始測量時間。
+  title_easy_issue_timer_button_stop: 更新任務和預填充時間報名表格
+  title_jump_to_project: 選擇項目
+  field_easy_issue_timer_assign_to_me: 分配給我的
+  field_easy_issue_timer_round: 回合時間
+  field_attachment_reminder_words: 附件話
+  field_easy_is_repeating: 重複
+  error_update_easy_issue_timer_settings: 設置不被保存
+  error_project_not_selected: 沒有被選中的項目
+  text_easy_attachment_reminder_confirm: 你提到附件，但你不重視，你要繼續嗎？
+  text_easy_attachment_reminder_explanatory_html: ？ =任何字符<br />* =任意數量的<br /><dd style="margin-left:15px;">任意字符</dd>
+  setting_project_display_identifiers: 顯示項目標識符
+  search_field_placeholders:
+    issues: 搜索任務
+    projects: 搜索項目
+  label_easy_issue_easy_reccuring_monthly_every: 每
+  permission_delete_project: 刪除項目
+  label_easy_lesser_admin_for: 面積較小的管理員可以訪問：
+  title_issue_remove_parent: 通過點擊這個任務不會是更長的子任務。
+  field_easy_lesser_admin: 次級管理員
+  field_easy_user_type: 用戶類型
+  field_easy_repeat_settings: Reccuring選項
+  error_repeat_period_missing: 重複的期間內，必須選擇
+  error_repeat_endtype_missing: 重複結束，必須選擇
+  error_repeat_endtype_count_blank: ，計數不能reccuring空白
+  error_repeat_endtype_count_numeric: reccuring計數是一個數字
+  error_repeat_endtype_date_blank: 結束日期不能為空
+  error_repeat_daily_option_missing: reccuring類型（工作或每天）必須被選擇
+  error_repeat_daily_x_blank: reccuring天數期間不能為空
+  error_repeat_daily_x_numeric: reccuring天計數週期是一個數字
+  error_repeat_weekly_days_selected: 必須選擇至少一個星期的天
+  error_repeat_monthly_option_missing: 選擇類型reccuring（第x天/定制）
+  error_repeat_monthly_day_numeric: reccuring一天是數字1到31之間
+  error_repeat_monthly_month_numeric: reccuring月之間的數字
+  user:
+    easy_user_type:
+      internal: 用戶
+      external: 客戶
+  setting_issue_set_done_after_close: 設置完成100％的封閉任務
+  setting_allow_repeating_issues: 允許重複任務
+  button_gantt_relation_destroy: 刪除關係
+  label_zoom: 放大
+  field_send_all_planned_emails: 所有計劃的郵件發送
+  text_project_is_planned: 如果一個項目計劃，沒有郵件被發送。
+  label_easy_issue_easy_repeating_further_options: 的reccuring方式
+  label_easy_issue_easy_repeating_time: 創建設置
+  label_easy_issue_easy_repeating_time_hour: 重複在
+  label_easy_issue_easy_repeating_create_time: 創建時間
+  label_easy_issue_easy_repeating_in_advance: 提前
+  label_easy_issue_easy_repeating_on_start_date: 於reccuring一天
+  label_easy_issue_easy_repeating_dont_create_now: 現在不要創建
+  label_easy_issue_easy_repeating_create_now_all: 現在創建的所有
+  label_easy_issue_easy_repeating_create_now_count: 現在創建AMOUT
+  label_added_datetime_by: 張貼者%{author}在%{datetime}
+  label_updated_datetime_by: 更新%{author}在%{datetime}
+  label_user_mail_no_notified_if_issue_closing: 我不想從封閉任務通知
+  label_user_mail_no_notification_ever: 不要通知任何人關於我的更新
+  button_release_cache: 釋放緩存
+  setting_use_easy_cache: 啟用格外緩存
+  label_easy_issue_easy_repeating_create_now: 現在創建
+  label_easy_attendance_user_arrival_add_notify_title: 在該用戶登錄後，請通知我
+  label_easy_setting_required_issue_id_at_time_entry: 問題是需要在時間進入
+  button_journal_unprivate_note: 出版
+  title_journal_unprivate_note: 更新所有用戶
+  notice_journal_published: 更新發布！
+  text_easy_attendance_user_detail_online_at: 用戶到達
+  text_easy_attendance_user_detail_offline_at: 用戶休假
+  text_easy_attendance_user_detail_no_data_today: 用戶還沒有到來
+  text_easy_attendance_user_notify_default_message: ! '%{user}剛登入'
+  text_easy_attendance_user_notify_title: 通知將發送到：%{email}
+  text_easy_attendance_user_notify_already_exists_warning: 警告！通知已經存在。總%{count} x
+  setting_just_one_issue_mail: 發送任務更新後只有一個郵件（郵件將不會分拆為我和其他人）
+  label_easy_issue_easy_repeating_period_yearly: 每年
+  label_easy_issue_easy_repeating_create_time_time: 建立時間
+  label_easy_issue_easy_reccuring_recur_every: 復發間隔
+  label_easy_issue_easy_reccuring_recur_years: 年（次）
+  label_easy_issue_easy_reccuring_recur_months: 月（s）
+  label_easy_issue_easy_reccuring_yearly_month_of: 的
+  label_easy_issue_easy_reccuring_after_recurs: 迭代
+  label_last_n_days_next_m_days: -%{last}天+%{next}天
+  label_email_field:
+    from: 從
+    to: TO
+  button_execute: 執行
+  title_easy_copy_to_project: 創建項目發行
+  field_easy_next_start: 接下來開始
+  text_easy_issue_reccuring_create_now: 在本節中，你可以定義多少的問題，你現在要創建的。接下來的問題將創建天設置reccuring決定。小時定義見下文。
+  label_easy_publishing_module_youtube: YouTube的
+  setting_close_subtask_after_parent: 封閉的任務後，關閉子任務
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: 未知
+        received: 收稿
+        processed_and_deleted: 處理和刪除
+        not_processed_and_deleted: 不處理被刪除
+        not_processed_and_left_on_server: 不處理，並在服務器上留下
+        cannot_be_processed: 不能被處理
+  label_video_url: 視頻網址
+  button_easy_copy_to_project: 創建一個項目
+  permission_edit_own_projects: 編輯自己的項目
+  label_easy_attendance_is_repeating: 重複？
+  label_easy_attendance_repeating_to: 重複此步驟
+  label_easy_custom_field_disable: 關閉
+  label_easy_custom_field_enable: 啟用
+  label_filter_group_project_fields: 項目
+  label_filter_group_relations: 關係
+  label_filter_group_custom_fields_suffix: 自定義字段
+  label_filter_group_unknown: 未知
+  label_filter_group_easy_issue_query: 問題
+  label_filter_group_easy_project_query: 項目
+  label_filter_group_easy_user_query: 用戶
+  label_filter_group_easy_document_query: 文件
+  label_filter_group_easy_version_query: 里程碑
+  label_filter_group_easy_attendance_query: 護理
+  label_filter_group_easy_time_entry_query: 時間條目
+  label_filter_group_easy_group_query: 組
+  label_easy_setting_show_time_entry_range_select: 顯示/範圍選擇
+  lable_should_send_invitation_update: 發送通知
+  button_easy_issue_timer_pause: 暫停
+  button_easy_issue_timer_resume: 繼續
+  button_download_email: 下載郵件
+  title_easy_issue_timer_button_pause: 暫停措施時間
+  title_easy_issue_timer_button_resume: 繼續measuere時間
+  field_easy_is_meeting: 會議
+  field_easy_meeting_day: 會議日
+  field_easy_meeting_time: 會議時間
+  field_easy_start_date_time: 開始時間
+  field_easy_due_date_time: 到期時間
+  field_mail_to_admin: 管理員的郵件
+  notice_easy_custom_field_disabled: 自定義字段被禁用
+  notice_easy_custom_field_enabled: 啟用自定義字段
+  error_easy_custom_field_disable_deletable: 此定制字段不能被禁用
+  text_easy_rake_task_failure_email: 在失敗的情況下將信息傳遞到這個郵件
+  label_customize_gantt_export: 自定義導出設置
+  label_not_updated_on: 沒有現實
+  label_easy_rake_period: 一切
+  label_easy_rake_period_monthly: 月
+  label_easy_rake_period_daily: 天
+  label_easy_rake_period_hourly: 小時
+  label_easy_rake_period_minutes: 分鐘
+  button_create_issue_from_journal: 建立問題
+  button_additional_context_menu: 其他選項
+  title_create_issue_from_journal: 創建新的問題，這本雜誌的文字描述
+  title_additional_context_menu: 與其他選項，點擊打開一個菜單
+  field_time_entry: 耗時
+  label_new_subproject_from_template: 新的子項目模板
+  permission_view_estimated_hours: 估計小時
+  label_easy_repeat_left_reccurs: 還剩Reccurs
+  button_load_additional_records: 加載額外的記錄
+  field_sum_estimated_hours: 估計總小時
+  button_print: 打印
+  button_pdf: PDF

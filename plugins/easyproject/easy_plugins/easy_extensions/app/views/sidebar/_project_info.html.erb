@@ -1,0 +1,68 @@
+<% if (defined?(project) && !project.nil?) %>
+  <%= toggling_container('issues-sidebar-project-info', User.current, {:heading =>  l(:sidebar_project_info), :container_html => {:class => 'box project-info'}}) do %>
+    <ul class="link-list">
+      <% unless project.easy_due_date.blank? -%>
+        <li class="">
+          <%= content_tag :span,l(:field_due_date), :class => 'icon icon-calendar' -%> <%= content_tag :strong, format_date(project.easy_due_date) -%>
+        </li>
+      <% end -%>
+      <% if project.module_enabled?(:time_tracking) && User.current.allowed_to?(:view_time_entries, project) -%>
+        <li class="field-spent-time">
+          <%
+          te_scope = TimeEntry.visible(User.current, :with_subprojects => Setting.display_subprojects_issues?, :project => project, :include_archived => :true)
+          unless User.current.allowed_to?(:view_all_statements, nil, :global => true)
+            te_scope = te_scope.where(:user_id => User.current.id)
+            end
+        %>
+          <% estimated_hours, spent_hours = project.sum_of_issues_estimated_hours, te_scope.sum(:hours) %>
+          <%= link_to(l(:label_spent_time), project_time_entries_path(project), :class => "icon icon-time #{'overdrawn' if spent_hours > estimated_hours}", :title => l(:sidebar_project_spent_time)) %>
+          :
+          <span class="project-info-sidebar-field-spent-time-values">
+            <%= link_to(format_hours(spent_hours), project_time_entries_path(project), :class => "#{'overdrawn' if spent_hours > estimated_hours}", :title => l(:sidebar_project_spent_time)) %>
+            / <%= content_tag(:span, format_hours(estimated_hours),:title => l(:field_estimated_hours)) %>
+          </span>
+        </li>
+      <% end %>
+      <%= call_hook(:view_issue_sidebar_project_info, :project => project) %>
+
+      <% if User.current.allowed_to?(:view_issues, project) && User.current.allowed_to?(:view_project_activity, project) %>
+        <li>
+          <%= link_to l(:label_overall_activity), {:controller => 'activities', :action => 'index', :id =>  project}, {:class => 'icon icon-stack'}  %>
+        </li>
+      <% end %>
+
+      <% if User.current.allowed_to?(:view_project_report, project) %>
+        <li>
+          <%= link_to l(:field_summary), {:controller => 'reports', :action => 'issue_report', :id => project}, {:class => 'icon icon-report'} %>
+        </li>
+      <% end %>
+
+      <% if User.current.allowed_to?(:add_subprojects, @project) %>
+        <li>
+          <%= link_to_project_new_subproject(@project) -%>
+        </li>
+      <% end %>
+
+      <% if User.current.allowed_to?(:add_subprojects, @project) && User.current.allowed_to?(:create_project_from_template, @project) %>
+        <li>
+          <%= link_to_project_new_subproject_from_template(@project) -%>
+        </li>
+      <% end %>
+
+      <% if User.current.allowed_to?(:close_project, project) %>
+        <% if project.active? %>
+          <li>
+            <%= link_to l(:button_close), close_project_path(project), :data => {:confirm => l(:text_are_you_sure)}, :method => :post, :class => 'icon icon-lock' %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to l(:button_reopen), reopen_project_path(project), :data => {:confirm => l(:text_are_you_sure)}, :method => :post, :class => 'icon icon-unlock' %>
+          </li>
+        <% end %>
+      <% end %>
+
+      <%= call_hook(:view_sidebar_project_info_links_bottom, :project => project) %>
+    </ul>
+    <%= call_hook(:view_sidebar_project_info_bottom, :project => project) %>
+  <% end %>
+<% end %>

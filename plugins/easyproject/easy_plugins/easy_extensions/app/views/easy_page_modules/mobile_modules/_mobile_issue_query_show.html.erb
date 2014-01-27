@@ -1,0 +1,71 @@
+<% issues, query = @easy_page_modules_data[block_name][:issues], @easy_page_modules_data[block_name][:query] %>
+<% if query && issues %>
+  <% query_name = "#{h(query.name)} (#{query.entity_count})" %>
+  <%= toggling_container(modul_uniq_id, user, {:heading => (settings['query_type'] == '2' ? query_name : link_to(query_name, { :controller => 'issues', :action => 'index', :project_id => query.project, :query_id => query}, :title => l(:label_user_saved_query, :queryname => query.name))), :container_html => {:class => 'module-content'}}) do %>
+
+      <table class="list issues anchor">
+        <thead>
+          <tr>
+            <% query.inline_columns.each do |column| %>
+              <%= content_tag(:th, column.caption) %>
+            <% end %>
+            <th class="hide-when-print"></th>
+          </tr>
+        </thead>
+        <% previous_group = params[:previous_group] || false %>
+        <tbody>
+          <% issue_list(issues) do |issue, level| -%>
+            <% if query.grouped? && (group = query.group_by_column.value(issue)).to_param.to_s != previous_group.to_s %>
+              <% uniq_id = "#{modul_uniq_id}_#{query.group_by_column.name}_#{query.group_by_column.value(issue).hash}_#{query.group_by_column.value(issue).to_param.to_s}" if query.grouped? %>
+              <% reset_cycle %>
+              <%= filter_plus_button(group.blank?, query.inline_columns.size + 2, uniq_id, format_html_entity_attribute(issue.class, query.group_by_column, query.group_by_column.value(issue), {:entity => issue}), query.entity_count_by_group[group]) %>
+              <% previous_group = group.to_param %>
+            <% end %>
+            <tr id="issue-<%= issue.id %>" class=" <%= cycle('odd', 'even') %> <%= issue.css_classes(User.current, level) -%> " <%= detect_hide_elements(uniq_id) if uniq_id %> onclick="javascript:GoToURL('<%= issue_url(issue) -%>', event)">
+
+              <% query.inline_columns.each do |column| %>
+                <%# next if User.current.in_mobile_view && column.name != :subject %>
+                <td class="<%= column.css_classes %>">
+                  <%= format_html_entity_attribute(issue.class, column, column.value(issue), {:entity => issue}) %>
+                </td>
+              <% end %>
+              <td class="easy-query-additional-ending-buttons fast-icons hide-when-print">
+                <% @easy_page_modules_data[block_name][:available_ending_buttons].each do |b| %>
+                  <% case b %>
+                    <% when :show %>
+                      <%= link_to('', issue_path(issue), :class => 'icon-issue') %>
+                    <% when :edit %>
+                      <% if EasyIssueTimer.active?(issue.project) && user.allowed_to?(:edit_issues, issue.project) || (User.current.allowed_to?(:edit_own_issue, issue.project) && issue.author.id == user.id) %>
+                        <%= link_to('', edit_issue_path(issue), :class => 'icon-edit') if user.allowed_to?(:edit_issues, issue.project) || (User.current.allowed_to?(:edit_own_issue, issue.project) && issue.author.id == user.id) %>
+                      <% end -%>
+                    <% when :iam_on_it %>
+                      <% if EasyIssueTimer.active?(issue.project) && user.allowed_to?(:edit_issues, issue.project) || (User.current.allowed_to?(:edit_own_issue, issue.project) && issue.author.id == user.id) %>
+                        <% t=issue.easy_issue_timers.where(:user_id => user.id).running.last %>
+                        <% if t && !t.paused? %>
+                          <%= link_to('', easy_issue_timer_stop_path(issue, :timer_id => t), :class => 'icon-checked-circle', :method => :post, :title => l(:button_easy_issue_timer_stop)) %>
+                        <% else %>
+                          <%= link_to('', easy_issue_timer_play_path(issue, :timer_id => t), :class => 'icon-play', :method => :post, :title => l((t.nil? ? :button_easy_issue_timer_play : :button_easy_issue_timer_resume))) %>
+                        <% end %>
+                      <% end -%>
+                    <% when :timelog %>
+                      <%= link_to('', new_issue_time_entry_path(issue), :class => 'icon-time-add', :title => l(:button_log_time)) if (user.allowed_to?(:log_time, issue.project)) %>
+                  <% end -%>
+                <% end -%>
+              </td>
+            </tr>
+            <% query.block_columns.each do |column|
+              if (text = format_html_entity_attribute(issue.class, column, column.value(issue), {:entity => issue})) && text.present? -%>
+                <tr class="<%= current_cycle %>">
+                  <td colspan="<%= query.inline_columns.size + 3 %>" class="<%= column.css_classes %>"><%= text %></td>
+                </tr>
+              <% end -%>
+            <% end -%>
+          <% end -%>
+        </tbody>
+      </table>
+
+  <% end %>
+<% else %>
+  <%= l(:label_easy_page_module_settings_missing) %>
+<% end %>
+

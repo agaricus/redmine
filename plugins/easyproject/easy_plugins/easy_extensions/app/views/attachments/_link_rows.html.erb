@@ -1,0 +1,17 @@
+<% unless options[:do_not_show_context_menu] %>
+  <form method="post" action="<%= url_for -%>">
+  <% end %>
+  <div class="attachments">
+    <table style="border-collapse: collapse;" class="list attachments context-menu-container">
+      <tbody>
+        <% attachments.each do |attachment| %>
+  <%# easy_cache ['attachments/_link_rows/row', attachment, I18n.locale] do %>
+          <%= attachment_row(attachment, options) %>
+  <%# end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% unless options[:do_not_show_context_menu] %>
+  </form>
+<% end %>

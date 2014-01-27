@@ -1,0 +1,26 @@
+<% modul_uniq_id ||= 'modal_selector' %>
+<div class="easy-lookup-modal-selector-filters-container">
+  <%= render( :partial => 'modal_selectors/modal_selector_freetext', :locals => {:before_functions => "selectAllOptions('#{modul_uniq_id}selected_columns')",:remote_function_url => url_for({:controller => 'modal_selectors', :action => 'search', :type => query.class.to_s, :translated_query_name => query.name, :modal_action => params[:modal_action] || action_name})})  if query.searchable_columns.present? -%>
+  <%= form_tag('', :id => 'modal_selector_query_form') do %>
+
+    <div id="query_form_content" class="easy-query-filter-container">
+      <%= render :partial => 'easy_queries/easy_query_index_form', :locals => { :query => query, :modul_uniq_id => modul_uniq_id} %>
+      <div class="buttons" id="modal_selectorfilter_buttons" style="display: none;">
+        <%= submit_tag l(query.entity.name.underscore, :scope => [:easy_query,:button_apply], :default => l(:button_apply) ) %>
+        <%= link_to_function(l(:button_clear_projectquery), "$.post('#{j(url_for(:set_filter => 0))}', $('.modal-selected-values form').serialize(), function(data) {$('#modal-dialog-loader').html(data);bindInfiniteScrollModalSelector()})",
+          :class => 'icon icon-reload clear-link', :title => l(:title_clear_projectquery), :id => 'modal-dialog-reload-button') -%>
+      </div>
+    </div>
+  <% end %>
+  <script type="text/javascript">
+  $("#modal_selector_query_form").submit(function() {
+    selectAllOptions('<%= modul_uniq_id %>selected_columns');
+    $.post('<%= j url_for() %>',$('#modal-dialog-loader form').serialize(), function(data) {
+        $('#modal-dialog-loader').html(data);
+        bindInfiniteScrollModalSelector();
+      });
+    return false;
+  })
+  </script>
+</div>
+<div class="clear"></div>

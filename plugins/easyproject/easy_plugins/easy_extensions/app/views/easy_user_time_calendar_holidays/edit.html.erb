@@ -1,0 +1,13 @@
+<div id="easy_user_time_calendar_holidays_edit">
+  <h1><%= l(:heading_easy_user_working_time_calendars_holiday_edit) -%></h1>
+  <%= labelled_form_for @easy_user_time_calendar_holiday, :url => {:action => 'update', :calendar_id => @easy_user_working_time_calendar}, :html => {:method => :put, :class => 'tabular'} do |f| %>
+    <%= hidden_field_tag 'easy_user_time_calendar_holiday[calendar_id]', @easy_user_working_time_calendar.id %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= submit_tag l(:button_update), :class => 'button-1' %>
+  <% end %>
+</div>
+
+<% content_for :easy_page_layout_service_box do -%>
+  <%= link_to(l(:button_easy_user_working_time_calendar_holidays), {:controller => 'easy_user_time_calendar_holidays', :action => 'index', :calendar_id => @easy_user_working_time_calendar}, :class => 'button-2', :title => l(:title_easy_user_working_time_calendar_holidays)) -%>
+  <%= link_to(l(:button_easy_user_working_time_back_to_calendar), {:controller => 'easy_user_working_time_calendars', :action => 'show', :id => @easy_user_working_time_calendar}, :class => 'button-2', :title => l(:title_easy_user_working_time_back_to_calendar)) -%>
+<% end -%>

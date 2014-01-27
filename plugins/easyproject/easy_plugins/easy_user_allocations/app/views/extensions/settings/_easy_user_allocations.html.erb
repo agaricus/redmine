@@ -1,0 +1,23 @@
+<div>
+  <p>
+    <%= label_tag(:settings_keep_issue_start_dates, l(:label_setting_keep_issue_start_dates)) %>
+  	<%= hidden_field_tag('settings[keep_issue_start_dates]', 0, :id => '') %>
+  	<%= check_box_tag('settings[keep_issue_start_dates]', 1, @settings['keep_issue_start_dates'].try(:to_boolean)) %>
+  </p>
+  <p><em><%= l(:text_setting_keep_issue_start_dates) %></em></p>
+</div>
+<div>
+  <p>
+    <%= label_tag(:settings_allocate_evenly, l(:label_setting_allocate_evenly)) %>
+    <%= hidden_field_tag('settings[allocate_evenly]', 0, :id => '') %>
+    <%= check_box_tag('settings[allocate_evenly]', 1, @settings['allocate_evenly'].try(:to_boolean)) %>
+  </p>
+  <p><em><%= l(:text_setting_allocate_evenly) %></em></p>
+</div>
+<div>
+  <p>
+    <%= label_tag(:settings_allocate_from_start, l(:label_setting_allocate_from_start)) %>
+  	<%= hidden_field_tag('settings[allocate_from_start]', 0, :id => '') %>
+  	<%= check_box_tag('settings[allocate_from_start]', 1, @settings['allocate_from_start'].try(:to_boolean)) %>
+  </p>
+</div>

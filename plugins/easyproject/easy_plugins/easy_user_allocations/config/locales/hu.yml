@@ -1,0 +1,70 @@
+---
+hu:
+  easy_user_allocations_name: Erõforrás kezelés
+  easy_user_allocations_description: ! ' - erõforrás kezelés / emberek'
+  easy_user_allocations_author_url: http://www.easyproject.hu
+  permission_view_easy_user_allocations: Erõforrás kezelés megtekintése
+  permission_view_my_easy_user_allocations: Saját erõforrások kezelésének megtekintése
+  permission_edit_easy_user_allocations: Erõforrás kezelés szerkesztése
+  permission_edit_my_easy_user_allocations_plan: Saját munkaterv szerkesztése
+  permission_view_easy_user_allocations_by_project: 'Kiosztás megtekintése projektenként'
+  project_module_user_allocations: Erõforrás kezelés
+  label_user_allocations: Erõforrás kezelés
+  label_user_allocation_gantt: Erõforrás kiosztás GANTT diagram
+  label_user_allocation_gantt_users: Felhasználók
+  label_user_allocation_gantt_user_selection: Kiválasztás
+  label_user_allocation_gantt_range: Dátumok
+  label_allocations_by_project: Erõforrás kiosztás projektenként
+  label_unassigned_issues: Kiosztatlan feladatok
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Válasszon más idõ tartományt a teljes feladat megjelenítéséhez
+  label_allocation_changed_title: Feladat módosítása megtörtént. A frissítés a mentéskor lesz végrehajtva.
+  label_user_allocation_plan: Munkaterv
+  label_filter_group_easy_user_allocation_query: 'Erõforrás kiosztása'
+
+  text_easy_user_allocation_working_plan_bottom_info: ! "Lehetõvé teszi a felhasználói terhelés tervezését a kiválasztott héten.
+   \n A táblázat megjeleníti a tervezett és a tényleges idõt."
+  resalloc:
+    title: Erõforrás kiosztása
+    settings: Beállítások
+    button_apply_settings: Beállítások alkalmazása
+    button_recalculate: Kiosztás újraszámítása
+    button_save: Változások mentése
+    button_undo: Nem mentett módosítások visszavonása
+    button_split_issue: Feladat megosztása
+    split_issue_help: Dátum választásához kattintson egy kiosztatlan feladatra
+    error_date_range_too_long: legyen kevesebb mint 1 év
+    legend_hours_worked: Ráfordított idõ
+    legend_hours_overtime: Plusz órák az elõírt mennyiségen felül
+  easy_pages:
+    modules:
+      user_allocation: Erõforrás kiosztás
+      user_allocation_working_plan: Erõforrás kiosztás / munkaterv
+  user_allocation_plan:
+    label_plan: Terv
+    label_real: Valós
+    label_comment: Megjegyzés
+    on_by_project_query: Erõforrás kiosztás nyilvános szûrõi projektenként
+  easy_query:
+      name:
+        easy_user_allocation_query: Erőforrás-allokáció
+        easy_user_allocation_by_project_query: Erőforrás-allokáció a projekt
+      sidebar_filters:
+        personal:
+          easy_user_allocation_query: Private szűrők forráselosztás
+          easy_user_allocation_by_project_query: Private szűrők forrásallokáció a projekt
+        public:
+          easy_user_allocation_query: Állami szűrők forráselosztás
+          easy_user_allocation_by_project_query: Állami szűrők forrásallokáció a projekt
+  label_setting_keep_issue_start_dates: "Ne módosítsa a feladat kezdõdátumokat."
+  text_setting_keep_issue_start_dates: "Ha engedélyezve van, és a túl kevés a feladatnál a rendelkezésre álló óramennyiség, a feladat nem lesz rövidítve viszont 0 óra kerül kiosztásra."
+  label_setting_allocate_evenly: Kiosztás egyenlõen
+  text_setting_allocate_evenly: "Ha engedélyezve van és a feladat méretezés módosul a GANTT kiosztásban, a rendelkezésre álló órák egyenlõen lesznek elosztva a feladat teljes idõtartamára."
+  label_setting_allocate_from_start: Kiosztás a feladatok kezdõidejétõl
+
+  project_module_easy_user_allocations: "erõforrások / emberek használata"
+  text_overallocation: a kiosztott órák száma nagyobb mint a rendelkezésre álló órák száma.
+
+  easy_user_allocations_sidebar_all_users_queries: 'Kiosztás felhasználónként'
+  easy_user_allocations_label_show_assigned_issues: 'Kiosztás megjelenítése %{username} felhasználóra'
+  label_edit_estimated_hours: Rendelkezésre álló órák szerkesztése

@@ -1,0 +1,32 @@
+<% if issues && issues.any? %>
+  <% block_name ||= '' %>
+  <%= form_tag({}) do %>
+    <table class="list issues">
+      <thead>
+        <tr>
+          <th></th>
+          <th style="display:none"></th>
+          <th><%= l(:field_project) -%></th>
+          <th><%= l(:field_issue) -%></th>
+          <th><%= l(:field_done_ratio) -%></th>
+          <th><%= l(:field_due_date) -%></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- issue_list(issues) do |issue, level| -%>
+          <tr id="issue-<%= issue.id %>" class="hascontextmenu <%= cycle('odd', 'even') %> <%= issue.css_classes(User.current, level) %> done_<%= issue.done_ratio %>" onclick="javascript:GoToURL('<%= url_for({:controller => 'issues', :action => 'show', :id => issue}) -%>', event)">
+            <td class="easy-query-additional-beginning-buttons"><%= easy_issue_query_additional_beginning_buttons(issue, {:block_name => block_name}) if respond_to?(:easy_issue_query_additional_beginning_buttons) -%></td>
+            <td style="display:none"><input name="ids[]" type="checkbox" value="<%= issue.id %>" /></td>
+            <td class="project-name"><%= link_to_project(issue.project) %></td>
+            <td class="subject priority-<%= issue.priority.position %>" title="<%= l(:label_show_issue_info, :issuename => issue.subject)%>"><%= link_to h(truncate(issue.subject, :length => 60)), { :controller => 'issues', :action => 'show', :id => issue }, :title => l(:label_show_issue_info, :issuename => issue.subject) %></td>
+            <td class="done-ratio" title="<%=l(:label_done) + ' ' + issue.done_ratio.to_s + " %"%>"><%=progress_bar(issue.done_ratio, :width => '80px', :title => l(:label_done) + ' ' + issue.done_ratio.to_s + " %" )%></td>
+            <td class="due-date" title="<%=l(:field_due_date) + ' ' + format_date(issue.due_date.to_time).to_s unless issue.due_date.nil? %>"><%= distance_of_time_in_words(Time.now, (issue.due_date.to_time + 1.day)) unless issue.due_date.nil? %></td>
+            <td class="easy-query-additional-ending-buttons"><%= easy_issue_query_additional_ending_buttons(issue, {:block_name => block_name}) -%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+  <%= render :partial => 'easy_queries/easy_query_tooltip_box', :locals => {:block_name => block_name} -%>
+<% end %>

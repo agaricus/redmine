@@ -1,0 +1,34 @@
+hu:
+  budgetsheet_name: "Munkaidõnapló"
+  budgetsheet_author: "Easy Software"
+  budgetsheet_description: " - a kollégák projektekkel töltött munkaóráinak áttekintése."
+  budgetsheet_author_url: "http://www.easyproject.hu"
+
+  budgetsheet_title: Munkaidõnapló
+  budgetsheet_date_from_label: Ettõl
+  budgetsheet_date_to_label: Eddig
+  budgetsheet_project_label: Projekt
+  budgetsheet_activities_label: Tevékenység
+  budgetsheet_users_label: Felhasználók
+  budgetsheet_export_button: Alkalmaz
+  budgetsheet_export_to_csv: exportálás CSV-be
+  budgetsheet_export_to_pdf: exportálás PDF-be
+  budgetsheet_export_to_html: Megtekintés
+  budgetsheet_costs: "Költség"
+  budgetsheet_per_hour: "óránként"
+  budgetsheet_top_menu: Munkaidõnapló
+
+  permission_view_budgetsheet: "Munkaidõnapló megtekintése"
+  label_easy_budget_sheet_queries_plural: Költségvetési napló
+
+  label_show_billable_things: "'Számlázható?' menü megjelenítése"
+  label_billable_things_default_state: 'Alapállapot'
+
+  easy_query:
+    name:
+      easy_budget_sheet_query: Költségvetési napló
+  field_project_root: "Fõ projekt?"
+  field_easy_is_billable: 'Számlázható?'
+  field_easy_billed: 'Számlázva?'
+
+  sidebar_budgetsheet_all_users_queries: "Dolgozók munkaidõnaplói"

@@ -1,0 +1,10 @@
+<%
+query, easy_attendance, easy_user_working_time_calendar = @easy_page_modules_data[block_name][:query], @easy_page_modules_data[block_name][:easy_attendance], @easy_page_modules_data[block_name][:easy_user_working_time_calendar];
+first_non_closed_attendance = @easy_page_modules_data[block_name][:first_non_closed_attendance]
+flash.now[:warning] = l('easy_attendance.notice.warning_missing_departure', :arrival_date => link_to(format_date(first_non_closed_attendance.arrival), {:controller => 'easy_attendances', :action => 'edit', :id => first_non_closed_attendance, :back_url => url_for(params)})).html_safe if first_non_closed_attendance && controller_name != 'users'
+%>
+<%= toggling_container(modul_uniq_id, user,{:heading => l(:label_easy_attendance_plural), :container_html => {:class => 'module-content'}}) do %>
+<div class="easy-attendance-my-page-module-toolbar">
+<%= render :partial => 'easy_attendances/toolbar', :locals => {:modul_uniq_id => (modul_uniq_id + '_easy_attendances_toolbar_container'), :easy_attendance => easy_attendance, :user => user, :back_url => url_for(:controller => 'my', :t => params[:t])} %>
+</div>
+<% end %>

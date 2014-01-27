@@ -1,0 +1,52 @@
+<% modul_uniq_id ||= ''
+uniq_prefix = "#{controller_name}_#{action_name}_#{modul_uniq_id}"
+previous_group = false -%>
+<div class="autoscroll" id="modal-selector-easy-autoscroll">
+  <%= form_tag({}, :id => 'entity-list-form') do -%>
+    <table class="list modal-selector-entities">
+      <thead>
+        <tr>
+          <%= content_tag(:th, '', :class => 'grouped-space') if query.grouped? -%>
+          <% if options[:multiple] == '1' %>
+            <%= content_tag(:th, link_to('', 'javascript:void(0)', :onclick => 'toggleIssuesSelection(this)',
+                  :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked'))-%>
+          <% end %>
+          <% query.columns.each do |column| %>
+            <%= easy_query_column_header(column) %>
+          <% end %>
+          <% unless entity_link_block.nil? -%>
+            <th class="fast-icons"></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% entities.each do |entity| -%>
+          <% uniq_id = "#{uniq_prefix}_#{query.group_by_column.name}_#{query.group_by_column.value(entity).hash}" if query.grouped? %>
+          <% if query.grouped? && (group = query.group_by_column.value(entity)) != previous_group %>
+            <% reset_cycle %>
+            <%= filter_plus_button(group.blank?, query.columns.size + 2, uniq_id, format_html_entity_attribute(entity.class, query.group_by_column, query.group_by_column.value(entity), {:entity => entity}), query.entity_count_by_group[group]) %>
+            <% previous_group = group %>
+          <% end %>
+          <tr id="entity-<%= entity.id %>" class="hascontextmenu easy-query-modal-selector-row-item selectable <%= cycle('odd', 'even') %> <%= entity.css_classes if entity.respond_to?(:css_classes) -%><%= ' context-menu-selection' if selected_values && selected_values.detect{|a,b| a == entity.id.to_s} -%>" <%= detect_hide_elements(uniq_id) %>  >
+            <%= content_tag(:td, '&nbsp;'.html_safe) if query.grouped? %>
+            <td class="checkbox hide-when-print">
+              <%= entity_modal_selector_checker(entity, selected_values, options[:multiple]) %>
+            </td>
+            <% query.columns.each do |column| %>
+              <td class="<%= column.name.to_s.underscore -%>"><%= format_html_entity_attribute(entity.class, column, column.value(entity), :no_link => true, :entity => entity) -%></td>
+            <% end %>
+            <% unless entity_link_block.nil? -%>
+              <td class="fast-icons">
+                <%= capture(entity, &entity_link_block) -%>
+              </td>
+            <% end -%>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  <%end%>
+</div>
+<p class="pagination">
+  <%= pagination_links_full entity_pages, entity_count %>
+</p>
+<%= javascript_tag "modal_selector_ctx_menu = contextMenuInit('', $('#modal-dialog-loader #modal-selector-easy-autoscroll'))" -%>

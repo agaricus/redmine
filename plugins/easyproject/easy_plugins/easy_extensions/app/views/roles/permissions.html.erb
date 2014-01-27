@@ -1,0 +1,63 @@
+<%= title [l(:label_role_plural), roles_path], l(:label_permissions_report) %>
+
+<%= form_tag(permissions_roles_path, :id => 'permissions_form') do %>
+  <%= hidden_field_tag 'permissions[0]', '', :id => nil %>
+  <div class="autoscroll">
+    <table class="list permissions">
+      <thead>
+        <tr>
+          <th><%=l(:label_permissions)%></th>
+          <% @roles.each do |role| %>
+            <th>
+              <%= content_tag(role.builtin? ? 'em' : 'span', h(role.name)) %>
+              <%= link_to_function('', "toggleCheckboxesBySelector('input.role-#{role.id}')",
+                :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked') %>
+            </th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% perms_by_group_and_module = group_by_global_and_module(@permissions) %>
+        <% perms_by_group_and_module.each do |group, perms_by_module|%>
+          <tr><td colspan="<%= @roles.count + 1 %>"><h3><%= l('label_permissions_'+group) %></h3></td></tr>
+          <% sorted_permission_keys(perms_by_module).each do |mod| %>
+            <% next if module_perm_disabled?(mod) %>
+            <tr class="group <%= mod.blank? ? 'open' : '' %>">
+              <td class="nowrap">
+                <span class="expander" onclick="toggleRowGroup(this);">&nbsp;</span>
+                <%= mod.blank? ? l(:label_project) : l_or_humanize(mod, :prefix => 'project_module_') %>
+              </td>
+              <% @roles.each do |role| %>
+                <td class="role"><%= h(role.name) %></td>
+              <% end %>
+            </tr>
+            <% perms_by_module[mod].each do |permission| %>
+              <% next if permission_disabled?(mod, permission) %>
+              <tr class="<%= cycle('odd', 'even') %> permission-<%= permission.name %>" style="<%= 'display:none' unless mod.blank? %>">
+                <td>
+                  <%= link_to_function('', "toggleCheckboxesBySelector('.permission-#{permission.name} input')",
+                    :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked') %>
+                  <%= l_or_humanize(permission.name, :prefix => 'permission_') %>
+                  <% if permission.permission_flags.any? %>
+                    <span class="permission-flags">
+                      (<%= permission.permission_flags.collect{|x| content_tag(:span, l(:"label_permission_flag_#{x}"), :title => l(:"title_permission_flag_#{x}", :class => "permission-flag #{x}"))}.join(', ').html_safe -%>)
+                    </span>
+                  <% end %>
+                </td>
+                <% @roles.each do |role| %>
+                  <td align="center">
+                    <% if role.setable_permissions.include? permission %>
+                      <%= check_box_tag "permissions[#{role.id}][]", permission.name, (role.permissions.include? permission.name), :id => nil, :class => "role-#{role.id}" %>
+                    <% end %>
+                  </td>
+                <% end %>
+              </tr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <p><%= check_all_links 'permissions_form' %></p>
+  <p><%= submit_tag l(:button_save) %></p>
+<% end %>

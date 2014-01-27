@@ -1,0 +1,108 @@
+api.ganttdata do
+  earliest_start = nil
+  latest_end = nil
+
+  api.array :columns do
+    @query.gantt_columns.each do |column|
+      api.column do
+        api.name column.caption
+      end
+    end
+  end
+
+  api.array :issue_groups do
+    @grouped_issues.each do |group_key, group|
+      api.issue_group do
+        call_hook :view_gantts_show_api_group, :api => api, :project => @project, :query => @query, :group_key => group_key
+        if group_key.is_a?(Project)
+          api.project true
+          api.id group_key.id
+          api.name group_key.name
+          api.link url_for(group_key)
+          api.start group_key.start_date
+          api.end group_key.due_date
+          api.percentcompleted group_key.completed_percent
+        else
+          api.hidden_group 1 unless @query.grouped?
+          api.name group_key ? group_key.to_s : l(:label_none)
+          api.link url_for(group_key) if group_key.is_a?(ActiveRecord::Base) && respond_to?("#{group_key.class.name.underscore}_path")
+        end
+        api.array :issues do
+          group[:entities].each do |entity|
+
+            if entity.is_a? Issue
+              issue = entity
+              api.issue do
+                api.id issue.id
+                api.name(issue.subject)
+                api.link url_for(issue)
+                api.editlink url_for(:controller => 'issues', :action => 'edit', :id => issue, :back_url => url_for(:controller => 'gantts', :action => 'show'))
+                api.start issue.start_date
+                api.end issue.due_date
+                api.est issue.estimated_hours
+                api.percentcompleted(issue.done_ratio)
+                api.assignedto(issue.assigned_to ? issue.assigned_to.name : '')
+                api.css_classes issue.css_classes
+                api.level(issue.easy_level || 0)
+                api.parent !issue.leaf?
+                api.array :relations_to do
+                  issue.relations_to.each do |rel|
+                    api.relation_to do
+                      api.id rel.id
+                      api.type rel.relation_type
+                      api.issue_from_id rel.issue_from_id
+                    end
+                  end
+                end
+
+                if issue.start_date || issue.due_date
+                  start_date = issue.start_date.to_date if issue.start_date
+                  end_date   = issue.due_date.to_date if issue.due_date
+
+                  start_date ||= issue.due_date.to_date - 1.day if issue.due_date
+                  end_date   ||= issue.start_date.to_date + 1.day if issue.start_date
+
+                  earliest_start = start_date if earliest_start == nil || earliest_start > start_date
+                  latest_end = end_date if latest_end == nil || latest_end < end_date
+                end
+
+                api.array :columns do
+                  @query.gantt_columns.each do |column|
+                    api.value format_value_for_export(issue, column) || ''
+                  end
+                end
+
+                call_hook :view_gantts_show_api_issue, :api => api, :project => @project, :grouped_issues => @grouped_issues, :query => @query, :issue => issue, :group_key => group_key
+              end
+            elsif entity.is_a? Version
+              version = entity
+              api.version do
+                api.id version.id
+                api.name version.name
+                api.date version.effective_date
+                api.milestone true
+              end
+            end
+
+          end
+        end
+      end
+    end
+  end
+
+  if @project && earliest_start && latest_end && @project.start_date && @project.due_date && (!@query.grouped? || !@query.group_by == 'project')
+    api.project do
+      api.id @project.id
+      api.name @project.name
+      api.link url_for(@project)
+      api.start @project.start_date
+      api.end @project.due_date
+      api.percentcompleted @project.completed_percent
+    end
+    earliest_start = @project.start_date if @project.start_date < earliest_start
+  end
+
+  api.start earliest_start ? earliest_start - 1.day : Date.today
+
+  call_hook :view_gantts_show_api_bottom, :api => api, :project => @project, :grouped_issues => @grouped_issues, :query => @query
+end

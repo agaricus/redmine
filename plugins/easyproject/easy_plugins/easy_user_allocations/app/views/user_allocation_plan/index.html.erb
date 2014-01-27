@@ -1,0 +1,30 @@
+<div class="tabs">
+  <ul>
+    <% easy_user_allocation_tabs.each do |tab| %>
+      <li>
+        <%= link_to(l(tab[:label]), tab[:url], :class => ('selected' if tab[:name] == params[:tab])) %>
+      </li>
+    <% end -%>
+  </ul>
+</div>
+<% if User.current.allowed_to?(:view_easy_user_allocations, nil, :global => true) %>
+  <div class="contextual">
+    <%= form_tag({}, :method => :get) do %>
+      <%= hidden_field_tag('tab', 'report') %>
+      <%= hidden_field_tag('start_date', params[:start_date]) if params[:start_date] %>
+      <p>
+        <%= label_tag(:user_id, l(:field_user)) %>
+        <%= select_tag(:user_id, options_from_collection_for_select(User.active.non_system_flag.easy_type_internal.sorted, :id, :name,  @user.id), :onchange => "this.form.submit()" )%>
+      </p>
+    <% end -%>
+  </div>
+<% end -%>
+
+<%= content_tag(:h2, l(:label_user_allocation_plan)) %>
+<%= render(:partial => 'common/calendar_listing_links', :locals => {:calendar => @calendar, :period => :week, :url_options => {:user_id => @user.id}}) %>
+<%= render(:partial => 'user_allocation_plan/index', :locals => {:user => @user, :current_working_plans => @current_working_plans, :from => @from, :to => @to, :time_entries => @time_entries, :calendar => @calendar, :can_edit => @can_edit}) %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'easy_user_allocations.css',  :plugin => 'easy_user_allocations' %>
+  <%= javascript_include_tag 'easy_user_allocation_working_plan.js', :plugin => 'easy_user_allocations' %>
+<% end %>

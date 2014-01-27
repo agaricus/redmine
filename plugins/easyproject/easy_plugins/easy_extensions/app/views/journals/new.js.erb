@@ -1,0 +1,8 @@
+$.get('<%= j edit_issue_path(@issue, :format => 'js') %>', {}, function() {
+  if (!(typeof CKEDITOR === 'undefined')) {
+    CKEDITOR.instances.issue_notes.setData( '<%= raw j(@content) %>' );
+  }
+  else{
+    $("textarea#issue_notes").val("<%= raw j(@content) %>");
+  }
+});

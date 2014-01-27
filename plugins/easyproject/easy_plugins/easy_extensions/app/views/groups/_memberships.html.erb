@@ -1,0 +1,58 @@
+<% roles = Role.find_all_givable %>
+<% projects = Project.active.non_templates.reorder(:lft).all %>
+<div class="splitcontentleft">
+  <% if @group.memberships.any? %>
+    <table class="list memberships">
+      <thead>
+        <tr>
+          <th><%= l(:label_project) %></th>
+          <th><%= l(:label_role_plural) %></th>
+          <th style="width:15%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @group.memberships.sort_by{|m| m.project.lft}.each do |membership| %>
+          <% next if membership.new_record? %>
+          <tr id="member-<%= membership.id %>" class="<%= cycle 'odd', 'even' %> class">
+            <td class="project"><%= link_to_project membership.project %></td>
+            <td class="roles">
+              <span id="member-<%= membership.id %>-roles"><%=h membership.roles.sort.collect(&:to_s).join(', ') %></span>
+              <%= form_for(:membership, :remote => true, :url => { :action => 'edit_membership', :id => @group, :membership_id => membership },
+                :html => { :id => "member-#{membership.id}-roles-form", :style => 'display:none;'}) do %>
+                <p><% roles.each do |role| %>
+                    <label><%= check_box_tag 'membership[role_ids][]', role.id, membership.roles.include?(role) %> <%=h role %></label><br />
+                  <% end %></p>
+                <p><%= submit_tag l(:button_change) %>
+                  <%= link_to_function l(:button_cancel), "$('#member-#{membership.id}-roles').show(); $('#member-#{membership.id}-roles-form').hide(); return false;" %></p>
+              <% end %>
+            </td>
+            <td class="buttons">
+              <%= link_to_function l(:button_edit), "$('#member-#{membership.id}-roles').hide(); $('#member-#{membership.id}-roles-form').show(); return false;", :class => 'icon icon-edit' %>
+              <%= delete_link({:controller => 'groups', :action => 'destroy_membership', :id => @group, :membership_id => membership },
+                :remote => true,
+                :method => :post,
+                :class => 'icon icon-del') %>
+            </td>
+          </tr>
+        </tbody>
+      <% end; reset_cycle %>
+    </table>
+  <% else %>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% end %>
+</div>
+<div class="splitcontentright">
+  <% if projects.any? %>
+    <fieldset><legend><%=l(:label_project_new)%></legend>
+      <%= form_for(:membership, :remote => true, :url => { :action => 'edit_membership', :id => @group }) do %>
+        <%= select_tag 'membership[project_ids][]', options_for_membership_project_select(@group, projects) %>
+        <%= link_to_function '', 'ToggleMultiSelect(\'membership_project_ids_\')', :title => l('image_tag.alt.bullet_toggle_plus'), :class => 'toggle-bullet textcon-plus' -%>
+        <p><%= l(:label_role_plural) %>:
+          <% roles.each do |role| %>
+            <label><%= check_box_tag 'membership[role_ids][]', role.id %> <%=h role %></label>
+          <% end %></p>
+        <p><%= submit_tag l(:button_add), :class => 'button-1' %></p>
+      <% end %>
+    </fieldset>
+  <% end %>
+</div>

@@ -1,0 +1,5 @@
+api.array :projects do
+  @projects.each do |project|
+    render_api_project(api, project)
+  end
+end

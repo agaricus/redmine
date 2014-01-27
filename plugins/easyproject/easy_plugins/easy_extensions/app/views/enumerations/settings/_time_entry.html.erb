@@ -1,0 +1,9 @@
+<p>
+  <b>Povolit zadávání datumu o </b><%= text_field_tag "settings[time_entry][spent_on_limit_before_today]", @settings['time_entry']['spent_on_limit_before_today'], :size => 3, :maxlength => 3 %> <b>dní do minulosti.</b>
+</p>
+<p>
+  <b>Povolit zadávání datumu o </b><%= text_field_tag "settings[time_entry][spent_on_limit_after_today]", @settings['time_entry']['spent_on_limit_after_today'], :size => 3, :maxlength => 3 %> <b>dní do budoucna.</b>
+</p>
+<p>
+  Pokud chcete omezení vypnout, nechte políčka prázdná.
+</p>

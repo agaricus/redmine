@@ -1,0 +1,1 @@
+$("#<%= params[:container_id] %>").html("<%= j render(:partial => 'timelog/time_entry_activity', :locals => { :tag_name_prefix => params[:tag_name_prefix], :entity => @entity, :activity_collection => @activities, :project => @project, :container_id => params[:container_id], :options => {}}) %>")

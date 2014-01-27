@@ -1,0 +1,3 @@
+$('#modal-dialog-loader').html("<%= j render(:partial => 'easy_attendances/form', :locals => {:easy_attendance => @easy_attendance, :easy_attendance_activities => @easy_attendance_activities}) %>")
+$('#modal-dialog-loader').prepend($("<h3/>").addClass('title').text("<%= l(:arrival, :scope => [:easy_attendance, :description]) %>").css({display: 'none'}))
+createModalSelectorWindow();

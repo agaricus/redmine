@@ -1,0 +1,106 @@
+<style type="text/css">
+  table th {
+    width: 145px;
+    font-weight: normal;
+    text-align: left;
+  }
+  table td {
+    min-width: 115px;
+  }
+  td a {
+    font-weight: bold;
+  }
+  table {
+    max-width: 800px;
+  }
+  .overdue {
+    color: red;
+  }
+</style>
+
+<% issue_estimated_hours = !issue.estimated_hours.nil?
+issue_fixed_version = !issue.fixed_version.nil?
+show_attachments ||= false
+%>
+<div id="issue-detail" style="font-family: Arial,sans-serif;">
+  <h2 class="issue-detail-header" style="font-size: 22px;font-weight: normal;">
+    <% if EasySetting.value('show_issue_id', issue.project) -%>
+      <%= link_to(h("##{issue.id} - #{issue.subject}"), issue_url) -%>
+    <% else -%>
+      <%= link_to(h(issue.subject), issue_url) -%>
+    <% end -%>
+  </h2>
+  <br />
+  <div style="padding: 20px 0 10px 5px;border:1px solid #e1e1e1;background-color:#F9F9F9;max-width: 800px;">
+    <table class="attributes" style="width:100%;max-width: 800px;">
+      <%= issue_fields_rows do |rows|
+        unless issue.disabled_core_fields.include?('assigned_to_id')
+          rows.left l(:field_assigned_to), (issue.assigned_to ? link_to_user(issue.assigned_to, :only_path => false) : "-"), :class => 'assigned-to'
+        end
+        if issue.project.trackers.count > 1
+          rows.left l(:field_tracker), h(issue.tracker.name), :class => 'category'
+        end
+        rows.left l(:field_status), h(issue.status.name), :class => 'status'
+        rows.left l(:field_priority), h(issue.priority.name), :class => "priority-#{issue.priority.position} #{issue.priority.easy_color_scheme}"
+        unless issue.disabled_core_fields.include?('category_id') || EasyExtensions::EasyProjectSettings.disabled_features[:others].include?('issue_categories')
+          rows.left l(:field_category), h(issue.category ? issue.category.name : "-"), :class => 'category'
+        end
+
+
+        unless issue.disabled_core_fields.include?('start_date')
+          rows.right l(:field_start_date), format_date(issue.start_date), :class => 'start-date'
+        end
+        unless issue.disabled_core_fields.include?('due_date')
+          rows.right l(:field_due_date), format_date(issue.due_date), :class => "due-date #{'overdue' if issue.due_date && issue.due_date < Date.today}"
+        end
+        rows.right(l(:label_added_time_by, :author => ''), link_to_user(issue.author, :only_path => false), :class => 'author')
+        unless issue.disabled_core_fields.include?('estimated_hours')
+          unless issue.estimated_hours.nil?
+            rows.right l(:field_estimated_hours), l_hours(issue.estimated_hours), :class => 'estimated-hours'
+          end
+        end
+
+        rows.right( l(:field_fixed_version), h(issue.fixed_version), :class => 'fixed-version') unless issue.disabled_core_fields.include?('fixed_version_id') || issue.fixed_version.nil?
+      end %>
+      <% if issue.custom_field_values.any? %>
+        <tr>
+          <td colspan="4"><hr /></td>
+        </tr>
+        <% issue.visible_custom_field_values.each do |c| %>
+          <tr>
+            <td colspan="2">
+              <%= content_tag :span,  h(c.custom_field.translated_name) +':' , :style => 'display:inline-block;' -%>
+            </td>
+            <td colspan="2">
+              <%= content_tag :span, show_value(c), :style => 'margin-right:10px' -%>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+      <%= call_hook(:view_mailer_issue_show_html_bottom, :issue => issue) %>
+    </table>
+  </div>
+  <div class="description">
+    <%= textilizable(issue, :description, {:headings => false, :only_path => false}) -%>
+  </div>
+  <% if show_attachments && issue.attachments.any? %>
+    <p>
+      <%=l :label_issue_attachments_heading %>
+    </p>
+    <ul>
+      <% issue.attachments.each do |attachment| %>
+        <li>
+          <%= link_to_attachment(attachment, {:download => true, :only_path => false}) %>
+          <i>(<%= number_to_human_size(attachment.filesize) %>)</i>
+          <%= " - v#{attachment.version}" %>
+          <% unless attachment.description.blank? %>
+            <p style="padding-left:10px">
+              <%= " - #{attachment.description}" %>
+            </p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</div>

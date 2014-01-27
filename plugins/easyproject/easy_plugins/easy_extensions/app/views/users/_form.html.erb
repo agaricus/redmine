@@ -1,0 +1,118 @@
+<% user ||= @user
+auth_sources ||= @auth_sources %>
+<%= error_messages_for 'user' %>
+
+<div id="user_form" class="gray-background">
+  <div class="splitcontentleft">
+    <h3><%=l(:label_information_plural)%></h3>
+    <div class="box tabular">
+      <p>
+        <%= f.text_field :login, :required => true, :size => 25  %>
+      </p>
+      <p>
+        <%= f.text_field :firstname, :required => true %>
+      </p>
+      <p>
+        <%= f.text_field :lastname, :required => true %>
+      </p>
+      <p>
+        <%= f.text_field :mail, :required => true %>
+      </p>
+      <p>
+        <%= f.select :language, lang_options_for_select %>
+      </p>
+      <% if Setting.openid? %>
+        <p>
+          <%= f.text_field :identity_url  %>
+        </p>
+      <% end %>
+      <% if user.safe_attribute_names.include?('easy_user_type') %>
+        <p>
+          <%= f.select :easy_user_type, easy_user_type_options %>
+        </p>
+      <% end %>
+      <% if user.safe_attribute_names.include?('easy_system_flag') %>
+        <p>
+          <%= f.check_box :easy_system_flag %><%= l(:label_easy_system_flag) -%>
+        </p>
+      <% end %>
+
+      <% user.custom_field_values.each do |value| %>
+        <% unless (cf_tag = custom_field_tag_with_label :user, value).blank? %>
+          <p>
+            <%= cf_tag %>
+          </p>
+        <% end %>
+      <% end %>
+
+      <% if user.safe_attribute_names.include?('admin') %>
+        <p>
+          <%= f.check_box :admin, :disabled => (user == User.current) %>
+        </p>
+      <% end %>
+      <% if user.safe_attribute_names.include?('easy_lesser_admin') %>
+        <p>
+          <%= f.check_box :easy_lesser_admin, :disabled => (user == User.current), :onchange => '$(\'#easy_lesser_admin_permissions_container\').toggle()' %>
+        </p>
+      <% end %>
+      <% if user.safe_attribute_names.include?('easy_lesser_admin_permissions') %>
+        <p id="easy_lesser_admin_permissions_container" style="<%= 'display:none' unless user.easy_lesser_admin? -%>">
+          <%= l(:label_easy_lesser_admin_for) %><br />
+          <% easy_lesser_admin_permissions.each do |lesser_perm_text, lesser_perm| %>
+            <%= label_tag "user_easy_lesser_admin_permissions_#{lesser_perm}", lesser_perm_text %>
+            <%= check_box_tag 'user[easy_lesser_admin_permissions][]', lesser_perm.to_s, user.easy_lesser_admin_permissions && user.easy_lesser_admin_permissions.detect{|p| p.to_s == lesser_perm.to_s}, :id => "user_easy_lesser_admin_permissions_#{lesser_perm}", :disabled => (user == User.current) %>
+          <% end %>
+        </p>
+      <% end %>
+      <%= call_hook(:view_users_form, :user => user, :form => f) %>
+    </div>
+
+    <h3><%=l(:label_authentication)%></h3>
+    <div class="box tabular">
+      <% unless auth_sources.empty? %>
+        <p><%= f.select :auth_source_id, ([[l(:label_internal), ""]] + auth_sources.collect { |a| [a.name, a.id] }), {}, :onchange => "if (this.value=='') {$('#password_fields');} else {$('#password_fields').hide();}" %></p>
+      <% end %>
+      <div id="password_fields" style="<%= 'display:none;' if user.auth_source %>">
+        <p><%= f.password_field :password, :required => user.new_record?, :size => 25  %><br />
+          <em><%= l(:text_caracters_minimum, :count => Setting.password_min_length) %></em></p>
+        <p><%= f.password_field :password_confirmation, :required => user.new_record?, :size => 25  %></p>
+        <p><%= f.check_box :generate_password %></p>
+        <p><%= f.check_box :must_change_passwd %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="splitcontentright">
+    <h3><%=l(:field_mail_notification)%></h3>
+    <div class="box">
+      <%= render :partial => 'users/mail_notifications', :locals => {:user => user} %>
+    </div>
+
+    <h3><%=l(:label_preferences)%></h3>
+    <div class="box tabular">
+      <%= render :partial => 'users/preferences', :locals => {:user => user} %>
+      <%= call_hook(:view_users_form_preferences, :user => @user, :form => f) %>
+    </div>
+
+    <h3><%= l(:label_user_form_other_settings) -%></h3>
+    <div class="box tabular">
+      <%= render :partial => 'users/other_settings', :locals => {:user => user} %>
+    </div>
+  </div>
+
+  <div style="clear:both;"></div>
+</div>
+<div style="clear:left;"></div>
+
+<%= javascript_tag do %>
+  $(document).ready(function(){
+  $('#user_generate_password').change(function(){
+  var passwd = $('#user_password, #user_password_confirmation');
+  if ($(this).is(':checked')){
+  passwd.val('').attr('disabled', true);
+  }else{
+  passwd.removeAttr('disabled');
+  }
+  }).trigger('change');
+  });
+<% end %>

@@ -1,0 +1,11 @@
+<div id="easy-page-zone-form">
+  <h2><%= l(:label_easy_page_zone_show, :zonename => @zone.zone_name) %></h2>
+
+  <%= form_for(@zone) do |f| %>
+
+    <%= render :partial => 'form', :locals => {:f => f}  %>
+
+  <% end %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>

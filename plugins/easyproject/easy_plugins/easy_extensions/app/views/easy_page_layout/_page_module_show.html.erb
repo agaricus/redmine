@@ -1,0 +1,2 @@
+<% modul_uniq_id = "module_inside_#{page_module.uuid.dasherize}" -%>
+<%= render(:partial => page_module.module_definition.show_path, :formats => [in_mobile_view? ? :mobile : :html], :locals => { :user => (page_params[:user] || User.current), :block_name => page_module.module_name, :settings => page_module.settings, :page_module => page_module, :modul_uniq_id => modul_uniq_id, :page_params => page_params }) %>

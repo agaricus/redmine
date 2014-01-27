@@ -1,0 +1,13 @@
+<div id="easy_user_working_time_calendar_show">
+  <h1><%= l(:heading_easy_user_working_time_calendar_show, :calendarname => @easy_user_working_time_calendar.translated_name) -%></h1>
+
+  <%= render :partial => 'easy_user_working_time_calendars/calendar', :locals => {:easy_user_working_time_calendar => @easy_user_working_time_calendar} %>
+  <%= render :partial => 'easy_user_working_time_calendars/calendar_settings', :locals => {:easy_user_working_time_calendar => @easy_user_working_time_calendar, :user => nil} %>
+</div>
+
+<% content_for :easy_page_layout_service_box do -%>
+  <%= link_to(l(:button_easy_user_working_time_calendars_new), { :controller => 'easy_user_working_time_calendars', :action => 'new', :inherit => @easy_user_working_time_calendar}, :class => 'button-1', :title => l(:title_easy_user_working_time_calendars_new)) -%>
+  <%= link_to(l(:button_easy_user_working_time_calendar_holidays), {:controller => 'easy_user_time_calendar_holidays', :action => 'index', :calendar_id => @easy_user_working_time_calendar}, :class => 'button-2', :title => l(:title_easy_user_working_time_calendar_holidays)) -%>
+  <%= link_to(l(:button_easy_user_working_time_reset_to_parent), {:controller => 'easy_user_working_time_calendars', :action => 'reset', :id => @easy_user_working_time_calendar, :back_url => url_for(params)}, :class => 'button-2', :data => {:confirm => l(:text_are_you_sure)}) %>
+  <%= link_to(l(:button_easy_user_working_time_back_to_calendars), { :controller => 'easy_user_working_time_calendars', :action => 'index'}, :class => 'button-2', :title => l(:title_easy_user_working_time_back_to_calendars)) -%>
+<% end -%>

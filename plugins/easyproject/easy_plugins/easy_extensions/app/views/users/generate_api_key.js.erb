@@ -1,0 +1,1 @@
+$("#<%= params[:div_id] -%>").html("<%= j(render(:partial => 'users/user_api_key', :locals => {:div_id => params[:div_id], :api_key => @new_key})) -%>");

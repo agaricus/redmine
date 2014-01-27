@@ -1,0 +1,11 @@
+api.easy_money_rates do
+  EasyMoneyRateType.active.each do |rate_type|
+    api.easy_money_rate_type(:id => rate_type.id, :name => rate_type.translated_name) do
+      @activities.each do |activity|
+        api.easy_money_rate(:id => activity.id, :name => activity.name) do
+          api.unit_rate(EasyMoneyRate.get_unit_rate(rate_type, 'Enumeration', activity.id, @project.nil? ? nil : @project.id, nil, nil))
+        end
+      end
+    end
+  end
+end

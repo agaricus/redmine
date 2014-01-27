@@ -1,0 +1,17 @@
+<%- if content_for?(:email_header) -%>
+  <%= yield :email_header -%>
+<%- else -%>
+  <% if Setting.emails_header.present? -%>
+    <%= Setting.emails_header %>
+  <% end -%>
+<% end -%>
+<%= yield %>
+<%- if content_for?(:email_footer) -%>
+  --
+  <%= yield :email_footer %>
+<%- else -%>
+  <% if Setting.emails_footer.present? -%>
+    --
+    <%= Setting.emails_footer %>
+  <% end -%>
+<% end -%>

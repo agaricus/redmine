@@ -1,0 +1,11 @@
+<% checkbox_id = "#{object_name}_#{method}_#{watcher.id}"; issue ||= @issue %>
+<div class="form-entity-watcher-container <%= object_name %> easy-dropper-target easy-drop-user" data-user-id="<%= watcher.id %>" data-drop-action="user"><!-- data-new-issue-attributes='{"issue[assigned_to_id]": "<%= watcher.id -%>"}' -->
+  <div onclick="javascript: toggleCheckbox('<%= checkbox_id %>')">
+    <%= avatar(watcher, :size => '40', :no_link => true) %>
+  </div>
+  <div class="form-entity-watcher-checkbox">
+    <%= check_box_tag "#{object_name}[#{method}][]", watcher.id, issue && issue.watched_by?(watcher), :id => checkbox_id -%>
+  </div>
+  <div class="form-entity-watcher-name"><%= label_tag(checkbox_id, h(watcher) ) -%></div>
+  <div class="form-entity-watcher-role" onclick="javascript: toggleCheckbox('<%= checkbox_id %>')"><%= watcher.roles_for_project(project).collect(&:name).join(',') -%></div>
+</div>

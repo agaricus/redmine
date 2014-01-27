@@ -1,0 +1,35 @@
+<%= form_tag({}) do -%>
+  <%= hidden_field_tag 'back_url', url_for(params) %>
+  <table class="list projects">
+    <thead>
+      <tr>
+        <%= '<th class="grouped-space"></th>'.html_safe if query.grouped? -%>
+        <% query.columns.each do |column| -%>
+          <%= content_tag('th', column.caption) -%>
+        <% end -%>
+        <th></th>
+      </tr>
+    </thead>
+    <% previous_group = params[:previous_group] || false %>
+    <tbody>
+      <% projects.each do |project| -%>
+        <% if query.grouped? && (group = query.group_by_column.value(project)).to_param.to_s != previous_group %>
+          <% reset_cycle %>
+          <tr class="group open">
+            <td colspan="<%= query.columns.size + 2 %>" class="inline_expander">
+              <span class="expander" onclick="toggleRowGroup(this); return false;" alt="Expander" title="<%=l :collapse_expand %>">&nbsp;</span>
+              <%= group.blank? ? 'None' : format_html_entity_attribute(project.class, query.group_by_column, query.group_by_column.value(project), {:entity => project}) %> <span class="count">(<%= query.entity_count_by_group[group] %>)</span>
+            </td>
+          </tr>
+          <% previous_group = group.to_param.to_s %>
+        <% end %>
+        <tr id="project-<%= project.id %>" class="<%= cycle('odd', 'even') -%>">
+          <%= '<td class="grouped-space"></td>'.html_safe if query.grouped? -%>
+          <% query.columns.each do |column| %>
+            <td><%= format_html_entity_attribute(project.class, column, column.value(project), {:entity => project}) -%></td>
+          <% end %>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+<% end -%>

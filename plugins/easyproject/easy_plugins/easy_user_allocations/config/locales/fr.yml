@@ -1,0 +1,78 @@
+---
+fr:
+  easy_pages:
+    modules:
+      user_allocation: Allocation de ressource
+      user_allocation_working_plan: Allocation de ressource/ plan de travail
+  easy_query:
+    name:
+      easy_user_allocation_by_project_query: Allocation de ressource par projet
+      easy_user_allocation_query: Allocation de ressource
+    sidebar_filters:
+      personal:
+        easy_user_allocation_by_project_query: Filtre privés sur l'allocation de ressource
+          par projet
+        easy_user_allocation_query: Filtre privés sur l'allocation de ressource
+      public:
+        easy_user_allocation_by_project_query: Filtres publics sur l'allocation de
+          ressource par projet
+        easy_user_allocation_query: Filtres publics sur l'allocation de ressource
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  easy_user_allocations_description: ! '- gestion des ressources / personnes'
+  easy_user_allocations_label_show_assigned_issues: Afficher allocation par utilisateur
+    %{username}
+  easy_user_allocations_name: Gestion des ressources
+  easy_user_allocations_sidebar_all_users_queries: Allocations par les utilisateurs
+  label_allocation_changed_title: Tâche a été modifiée et sera mise à jour après la
+    sauvergarde
+  label_allocation_worm_out_of_range: Sélectionnez une différente plage de date pour
+    afficher toute la tâche
+  label_allocations_by_project: Allocation ressource par projet
+  label_edit_estimated_hours: Modifier nombre d'heures estimées
+  label_filter_group_easy_user_allocation_query: Allocation resource
+  label_issue_id: ID
+  label_setting_allocate_evenly: Répartir équitablement
+  label_setting_allocate_from_start: Attribuer depuis le début des tâches
+  label_setting_keep_issue_start_dates: Ne pas changez la date de début des tâches.
+  label_unassigned_issues: Tâche non assignée
+  label_user_allocation_gantt: Allocation des ressources gantt
+  label_user_allocation_gantt_range: Dates
+  label_user_allocation_gantt_user_selection: Sélection
+  label_user_allocation_gantt_users: Utilisateurs
+  label_user_allocation_plan: Plan de travail
+  label_user_allocations: Gestion des resources
+  permission_edit_easy_user_allocations: Modifier gestion de ressources
+  permission_edit_my_easy_user_allocations_plan: Modifier plan de travail personnel
+  permission_view_easy_user_allocations: Afficher gestion des ressources
+  permission_view_easy_user_allocations_by_project: Afficher allocations par projet
+  permission_view_my_easy_user_allocations: Afficher gestion de resources personnelles
+  project_module_easy_user_allocations: Quick planificateur de projet
+  project_module_user_allocations: Gestion des ressources
+  resalloc:
+    button_apply_settings: Appliquer les paramètres
+    button_recalculate: Recalculer allocation
+    button_save: Enregister les changements
+    button_split_issue: Partager ces tâches
+    button_undo: Annuler les modifications non enregistrées
+    error_date_range_too_long: doit être moins d'un an
+    legend_custom: Heures manuellement allouées
+    legend_hours_overtime: Temps de travail excédant le délai prescrit
+    legend_hours_worked: Temps passé
+    settings: Paramètres
+    split_issue_help: Chosir une date en cliquant sur une tâche non assignée.
+    title: Allocation ressource
+  text_easy_user_allocation_working_plan_bottom_info: ! "Autoriser à programmer la
+    charge de travil de l'utilisateur au cours de la semaine sélectionnée. \n Tableau
+    affiche l'heure programmée et le temps réel indiqué."
+  text_overallocation: toal des heures attribuées est supérieure au nombre d'heures
+    estimées.
+  text_setting_allocate_evenly: S'il est activé et une tâche est modifiée en allocation
+    gantt, le nombre d'heure estimées sont répartis équitablement tout au long de
+    la durée de la tâche.
+  text_setting_keep_issue_start_dates: S'il est activé et le nombre d'heures estimées
+    pour la tâche heures sont trop bas, la tâche ne sera pas écourtée mais on lui
+    attribuera 0 heure plutôt.
+  user_allocation_plan:
+    label_comment: Commenter
+    label_plan: Plan
+    label_real: Réel

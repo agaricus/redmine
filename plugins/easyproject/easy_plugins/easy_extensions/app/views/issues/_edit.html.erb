@@ -1,0 +1,88 @@
+<%= labelled_form_for @issue, :html => {:id => 'issue-form', :multipart => true, :class => 'edit-issue-form'} do |f| %>
+  <%= error_messages_for 'issue', 'time_entry' %>
+  <%= render :partial => 'conflict' if @conflict %>
+  <%= hidden_field_tag('back_url', params[:back_url]) unless params[:back_url].blank? %>
+  <% if !request.xhr? %>
+    <div id="history">
+      <p>
+        <%= link_to(l(:label_history), {:controller => 'easy_issues', :action => 'load_history', :id => @issue}, :remote => true, :class => 'icon icon-toggler') %>
+      </p>
+    </div>
+  <% end -%>
+  <div class="box">
+    <% if @issue.editable? %>
+      <fieldset class="tabular">
+        <h4><%= link_to_function l(:label_change_properties), "$('#issue_descr_fields').fadeToggle('fast')", :class => 'issue-edit-hidden-attributes icon icon-edit' %></h4>
+        <%= render :partial => 'issues/edit_issue_attributes', :locals => {:f => f} %>
+      </fieldset>
+    <% end %>
+    <% if @issue.editable? || !@allowed_statuses.empty? %>
+      <div class="tabular edit-issue-attributes-visible">
+        <%= render_visible_issue_attributes_for_edit(@issue, f) %>
+      </div>
+      <% if @issue.tracker && @issue.tracker.easy_send_invitation? %>
+        <div class="tabular splitcontentleft">
+        <p><%= label_tag 'issue_should_send_invitation_update', l(:lable_should_send_invitation_update) %><%= check_box_tag('issue[should_send_invitation_update]', 1, false) %></p>
+        </div>
+      <% end %>
+      <div style="clear:both"></div>
+    <% end %>
+    <%= call_hook(:view_issues_form_details_bottom, { :issue => @issue, :form => f, :project => @project }) %>
+    <% if User.current.allowed_to?(:log_time, @project) && !(!EasySetting.value('allow_log_time_to_closed_issue') && @issue.closed?) %>
+      <%= render :partial => 'issues/edit_issue_time_entry', :locals => {:f => f} %>
+    <% end %>
+    <% unless params[:for_dialog] %>
+      <div class="edit-form-bottom-split-editor-n-files">
+        <div class="splitcontentleft">
+          <fieldset class="fieldset-edit-textarea">
+            <%= content_tag(:legend, l(:label_comment)) if in_mobile_view? -%>
+            <div id="issue_edit_textarea">
+              <%= f.text_area :notes, :cols => 60, :rows => 10, :class => 'wiki-edit', :no_label => true %>
+              <%= wikitoolbar_for('issue_notes', :attachment_reminder => true, :startupFocus => true) unless in_mobile_view? %>
+
+              <% if @issue.safe_attribute? 'private_notes' %>
+                <p>
+                  <label for="issue_private_notes">
+                    <%= check_box_tag('issue[private_notes]', 1, EasySetting.value('issue_private_note_as_default')) %>
+                    <%= l(:field_private_notes) %>
+                  </label>
+                </p>
+              <% end %>
+
+              <%= call_hook(:view_issues_edit_notes_bottom, { :issue => @issue, :notes => @notes, :form => f }) %>
+            </div>
+          </fieldset>
+        </div>
+        <div class="issue-attachments-container splitcontentright">
+          <% unless in_mobile_view? %>
+            <%= render :partial => 'attachments/form', :locals => {:container => @issue} -%>
+          <% end %>
+          <div class="issue_edit_submit_buttons">
+            <%= f.hidden_field :lock_version -%>
+            <%= submit_tag l(:button_issue_submit), :class => 'button-1', :accesskey => accesskey(:issue_submit) -%>
+            <%= preview_link preview_edit_issue_path(:project_id => @project, :id => @issue), 'issue-form' %>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+      </div>
+    <% end -%>
+  </div>
+<% end %>
+
+<div id="preview" class="wiki"></div>
+
+<script>
+  $(".issue_edit_submit_buttons input[type='submit']").bind('click', function(){
+    <%= "return true;" if !EasySetting.value(:close_subtask_after_parent) || @issue.descendants.size == 0 %>
+
+    var issue_status_closed = <%= IssueStatus.where(:is_closed => true).pluck(:id) %>;
+    var selected_status = $('#issue_status_id').val();
+
+    if(issue_status_closed.indexOf(parseInt(selected_status)) != -1){
+      x = confirm("<%= j(l(:text_issues_close_descendants_confirmation, :count => @issue.descendants.size)) %>");
+      if(!x){
+        return false;
+      }
+    }
+  });
+</script>

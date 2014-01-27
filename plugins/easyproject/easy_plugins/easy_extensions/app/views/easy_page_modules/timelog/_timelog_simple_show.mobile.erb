@@ -1,0 +1,30 @@
+<% entries, entries_by_day = @easy_page_modules_data[block_name][:entries], @easy_page_modules_data[block_name][:entries_by_day] %>
+<%= toggling_container(modul_uniq_id, user, {:heading => (l(:label_spent_time) + ' <span class="daynum">' + period_label(settings['time_period'] || '7_days') + '</span>:' + html_hours("%.2f" % entries.sum(&:hours).to_f)), :container_html => {:class => 'module-content'}}) do %>
+  <% if entries.any? %>
+    <div class="mobile-module-timelog-simple">
+      <% entries_by_day.keys.sort.reverse.each do |day| %>
+        <div class="mobile-module-timelog-simple-day-container">
+          <p class="timelog-simple-header">
+            <strong><%= day == User.current.today ? l(:label_today).titleize : format_date(day) %></strong>
+            <em><%= html_hours("%.2f" % entries_by_day[day].sum(&:hours).to_f) %></em>
+          </p>
+          <% entries_by_day[day].each do |entry| -%>
+            <div class="bubble <%= cycle('odd', 'even') -%>">
+              <p class="project">
+                <span><%=h entry.project %></span>
+              </p>
+              <%= content_tag(:p, link_to_issue(entry.issue, :truncate => 50) , :class => 'issue' ) if entry.issue -%>
+              <%= content_tag(:p, h(entry.comments || '').html_safe, :class => 'comments' ) if entry.comments -%>
+              <p class="entry">
+                <%= content_tag :strong, h(entry.activity) -%>
+                <%= content_tag :em, html_hours("%.2f" % entry.hours) -%>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+  <p class="small"><%= link_to l(:label_timelog_view_all), :controller => 'timelog', :action => 'index', :only_me => true %></p>
+<% end %>

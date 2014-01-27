@@ -1,0 +1,364 @@
+# Easy Money Language File [redimine-path]/plugins/easyproject/easy_plugins/easy_money/config/locales/sv.yml
+# Swedish Translation by Patrick Hvid (patrick (a) plan42.se)
+# Version 1.0 (2013-09-01)
+sv:
+  easy_money_plugin_name: Ekonomi
+  easy_money_plugin_author: Easy Software
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- Övervakning och hantering av förväntade och faktiska resultat i projekt'
+  project_module_easy_money: Ekonomi
+  menu_easy_money: Ekonomi
+
+  permission_view_easy_money: Tillgång till ekonomimodul (generell)
+  permission_easy_money_show_expected_revenue: Visa förväntade intäkter
+  permission_easy_money_show_expected_expense: Visa förväntade kostnader
+  permission_easy_money_show_expected_payroll_expense: Visa förväntade lönekostnader
+  permission_easy_money_show_expected_profit: Visa förväntad vinst
+  permission_easy_money_show_other_revenue: Visa verkliga intäkter
+  permission_easy_money_show_other_expense: Visa verkliga kostnader
+  permission_easy_money_show_time_entry_expenses: Visa verkliga lönekostnader
+  permission_easy_money_show_other_profit: Visa verklig vinst
+  permission_easy_money_manage_expected_revenue: Hantera förväntade intäkter
+  permission_easy_money_manage_expected_expense: Hantera förväntade kostnader
+  permission_easy_money_manage_expected_payroll_expense: Hantera förväntade lönekostnader
+  permission_easy_money_manage_other_revenue: Hantera verkliga intäkter
+  permission_easy_money_manage_other_expense: Hantera verkliga kostnader
+  permission_easy_money_settings: Tillgång till ekonomiinställningar
+  permission_easy_money_move: Flytta poster mellan projekt
+  permission_easy_budgetsheet_view_internal_rates: 'Budget - visa interna priser'
+  permission_easy_budgetsheet_view_external_rates: 'Budget - visa externa priser'
+
+  heading_easy_money_other_settings_prices_and_rates: Inställningar Projektöversikt
+  heading_easy_money_other_settings_project_overview: Priser
+
+  label_easy_money: Ekonomi
+  label_easy_money_settings: Ekonomi inställningar
+  label_easy_money_rate_priorities_settings: Prissättning
+  label_easy_money_project_index: Ekonomi
+  label_easy_money_other_expenses: Kostnader översikt
+  label_easy_money_other_expense_new: Ny kostnad
+  label_easy_money_other_expense_show: Kostnad
+  label_easy_money_other_expense_edit: Redigera kostnad
+  label_easy_money_other_revenues: Intäkter översikt
+  label_easy_money_other_revenue_new: Ny intäkt
+  label_easy_money_other_revenue_show: Intäkt
+  label_easy_money_other_revenue_edit: Rediger intäkt
+  label_easy_money_time_entry_expenses: Lönekostnader översikt
+  label_easy_money_project_index_sum_hours: ! 'Summa timmar:'
+  label_easy_money_project_index_profit: ! 'Vinst:'
+  label_easy_money_expected_expenses: Förväntade kostnader översikt
+  label_easy_money_expected_revenues: Förväntade inkomster översikt
+  label_easy_money_expected_expense_new: Ny förväntad kostnad
+  label_easy_money_expected_expense_show: Förväntad kostnad
+  label_easy_money_expected_expense_edit: Redigera förväntad kostnad
+  label_easy_money_expected_revenue_new: Ny förväntad intäkt
+  label_easy_money_expected_revenue_show: Förväntad intäkt
+  label_easy_money_expected_revenue_edit: Redigera förväntad intäkt
+  label_easy_money_other_settings: Övriga inställningar
+  label_easy_money_other_settings_price_visibility: ! 'Vid belopp använd:'
+  label_easy_money_other_settings_rate_type: ! 'Vid arbetskostnad använd:'
+  label_easy_money_other_settings_include_childs: ! 'Tag med belopp från delprojekt till total projektekonomi:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Aktivera projektplanering och -estimat:'
+  label_easy_money_other_settings_expected_count_price: ! 'Intäkter och kostnader beräknas med:'
+  label_easy_money_other_settings_expected_rate_type: ! 'Lönekostnader beräknas med:'
+  label_easy_money_other_settings_project_use_easy_money_for_versions: Använd ekonomi för milstolpar
+  label_easy_money_other_settings_project_use_easy_money_for_issues: Använd ekonomi för aktiviteter
+  label_easy_money_project_usage_type: ! 'Använd i projekt:'
+  label_easy_money_other_settings_vat: ! 'Om belopp är utan moms så är momsen:'
+  label_easy_money_use_vat: Beräkna moms
+  label_easy_money_expected_budget: Utkast
+  label_easy_money_real_budget: Verklig budget
+  label_easy_money_project_name: ! 'Projektbudget:'
+  label_easy_money_hour: ! '%{hours} timmar'
+  label_easy_money_expected_payroll_expense_per_hours: Planerad timtaxa
+  label_easy_money_expected_payroll_expenses: 'Planerade lönekostnader:'
+  label_easy_money_subproject_sum_revenues: Intäkter *
+  label_easy_money_subproject_sum_expenses: Kostnader *
+  label_easy_money_subproject_sum_payroll_expenses: Lönekostnader *
+  label_easy_money_subproject_profit: Resultat *
+  label_easy_money_subproject_explication: '*) (plan / verklighet)'
+  label_easy_money_attachments: ! 'Bilagor:'
+  label_easy_money_project_time_entry_expenses: Lönekostnad för projektet
+  label_easy_money_project_issues_time_entry_expenses: Lönekostnad för projektaktiviteter
+  label_easy_money_total: ! 'totalt:'
+  label_easy_money_all_project: Ekonomi för alla projekt
+  label_easy_money_currency_visible: ! 'Tillåt ändring av valuta i projekt:'
+  label_easy_money_currency: ! 'Valuta:'
+  label_easy_money_select_project: Välj ett projekt
+  label_easy_money_mass_copy_rates: Beräkna växlingskostnader
+  label_easy_money_project_index_estimated_hours: ! 'Beräknad tid:'
+  label_easy_money_new_revenue_text: Intäkt
+  label_easy_money_new_revenue_description: intäkt
+  label_easy_money_new_expense_text: Kostnad
+  label_easy_money_new_expense_description: kostnad
+  label_filter_group_easy_money_other_revenue_query: Intäkter
+  label_filter_group_easy_money_other_expense_query: Kostnader
+  label_filter_group_easy_money_expected_revenue_query: Förväntade intäkter
+  label_filter_group_easy_money_expected_expense_query: Förväntade kostnader
+  label_filter_group_easy_money_project_cache_query: Övrigt
+  label_filter_group_easy_money_project_cache_expenses: Kostnader
+  label_filter_group_easy_money_project_cache_revenues: Intäkter
+  label_filter_group_easy_money_project_cache_profit: Vinst
+  label_easy_money_project_cache: Projektets budgetöversikt
+  label_easy_money_other_settings_revenues_type: 'Intäkter kommer att utgöra:'
+  label_easy_money_other_settings_expenses_type: 'Utgifter kommer att utgöra:'
+  label_easy_money_other_settings_expected_payroll_expense_type: 'Lönekostnader kommer att utgöra:'
+
+  text_easy_money_rate_priorities_settings: Grundläggande prioritet för prissättning. Om den översta nivån är noll, kommer nästkommande nivå som är högre än noll att användas.
+  button_easy_money_rate_use_in_all_projects: Använd prissättning i alla projekt
+  button_easy_money_rate_use_in_all_subprojects: Använd prissättning i alla delprojekt
+  button_easy_money_priorities_use_in_all_projects: Använd prissättingsprioritet i alla projekt
+  button_easy_money_priorities_use_in_all_subprojects: Använd prissättingsprioritet i samtliga delprojekt
+  button_easy_money_project_expected_expenses: ! 'Förväntade kostnader'
+  button_easy_money_project_expected_revenues: ! 'Förväntade intäkter'
+  button_easy_money_project_other_expenses: ! 'Övriga kostnader'
+  button_easy_money_project_other_revenues: ! 'Övriga intäkter'
+  button_easy_money_project_time_entry_expenses: ! 'Lönekostnader'
+  button_easy_money_project_new_revenue: Ny intäkt
+  button_easy_money_project_new_expense: Ny kostnad
+  button_easy_money_project_time_entry_hours: ! 'Arbetad tid'
+  button_easy_money_project_index_show_details: Visa detaljer
+  button_easy_money_project_index_show_empty: Visa tomma fält
+  button_easy_money_save_in_all_projects: Använd i alla projekt
+  button_easy_money_save_in_all_subprojects: Använd i alla delprojekt
+  button_easy_money_project_settings: Ekonimiinställningar
+  button_easy_money_save_expected_revenue: Spara förväntad intäkt
+  button_easy_money_save_other_revenue: Spara faktiskt intäkt
+  button_easy_money_save_expected_hours: Spara förväntade timmar
+  button_easy_money_save_expected_expense: Spara förväntad kostnad
+  button_easy_money_save_other_expense: Spara verklig kostnad
+  button_easy_money_update_project_time_entry_expenses: Räkna om lönekostnader för projektet
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: Räkna om lönekostnader för projektet och alla delprojekt
+  button_easy_money_update_all_projects_time_entry_expenses: Räkna om lönekostnader för alla projekt
+  button_easy_money_move: Omtilldela valda
+
+  title_easy_money_project_new_revenue: Lägg till ny intäkt
+  title_easy_money_project_new_expense: Lägg till ny kostnad
+  title_easy_money_project_expected_revenues: Visa förväntade intäkter i projekt
+  title_easy_money_project_other_revenues: Visa verkliga intäkter i projektet
+  title_easy_money_project_expected_expenses: Visa planerade kostnader i projektet
+  title_easy_money_project_other_expenses: Visa verkliga kostnader i projektet
+  title_easy_money_project_time_entry_expenses: Visa lönekostnader i projektet
+  title_easy_money_rates_save: Spara priser
+  title_easy_money_rate_use_in_all_projects: Spara priser och tillämpa dem i alla projekt
+  title_easy_money_rate_use_in_all_subprojects: Spara priser och tillämpa dem i alla delprojekt
+  title_easy_money_priorities_use_in_all_projects: Använd prioritet för priser i alla projekt
+  title_easy_money_priorities_use_in_all_subprojects: Användning prioritet för priser i alla delprojekt
+  title_easy_money_other_repeating_expense_show: Visa återkommande kostnader
+  title_easy_money_other_repeating_revenue_show: Visa återkommande intäkter
+  title_easy_money_settings: Gå till projektets ekonomiinställningar
+  title_easy_money_project_index_show_empty: Visa tomma fält.
+  title_close: Genom att klicka på Stäng det här fönstret.
+  title_easy_money_update_project_time_entry_expenses: Räkna om lönekostnader för projektet
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Räkna om lönekostnader för projektet och alla delprojekt (kan ta flera minuter)
+  title_easy_money_update_all_projects_time_entry_expenses: Räkna om lönekostnader för alla projekt (kan ta flera minuter)
+  title_easy_money_sum_expected_revenues: Summan av förväntade intäkter för projekt %{project} är %{value}.
+  title_easy_money_sum_other_revenues: Summan av verkliga intäkter för projekt %{project} är %{value}.
+  title_easy_money_sum_expected_expenses: Summan av förväntade kostnader för projektet %{project} är %{value}.
+  title_easy_money_sum_other_expenses: Summan av verkliga kostnader för projektet %{project} är %{value}.
+  title_easy_money_sum_expected_payroll_expenses: Summan av förväntade lönekostnader för projekt %{project} är %{value}.
+  title_easy_money_sum_time_entry_expenses: Verklig lönekostnad för projekt %{project} är %{value}.
+  title_easy_money_expected_profit: Förväntad vinst i projektet %{project} är %{value}.
+  title_easy_money_other_profit: Verklig vinst i projekt %{project} är %{value}.
+  title_easy_money_link_to_subproject: Gå till ekonomi för %{subproject}.
+  title_easy_money_link_to_project: Gå till ekonomi för projekt %{project}.
+
+  field_spent_hours: Förbrukade timmar
+  field_easy_money_rate_entity_time_entry_activity_name: Aktivitetsnamn
+  field_easy_money_rate_entity_role_name: Rollnamn
+  field_easy_money_rate_entity_user_name: Användarnamn
+  field_easy_money_other_expense_spent_on: ! 'Datum:'
+  field_easy_money_other_expense_name: ! 'Namn:'
+  field_easy_money_other_expense_description: ! 'Beskrivning:'
+  field_easy_money_other_expense_price1: ! 'Belopp med moms:'
+  field_easy_money_other_expense_price2: ! 'Belopp utan moms:'
+  field_easy_money_other_expense_vat: ! 'Moms:'
+  field_easy_money_other_revenue_spent_on: ! 'Datum:'
+  field_easy_money_other_revenue_name: ! 'Namn:'
+  field_easy_money_other_revenue_description: ! 'Beskrivning:'
+  field_easy_money_other_revenue_price1: ! 'Belopp med moms:'
+  field_easy_money_other_revenue_price2: ! 'Belopp utan moms:'
+  field_easy_money_other_revenue_vat: ! 'Moms:'
+  field_easy_money_expected_expense_spent_on: ! 'Datum:'
+  field_easy_money_expected_expense_name: ! 'Namn:'
+  field_easy_money_expected_expense_description: ! 'Beskrivning:'
+  field_easy_money_expected_expense_price1: ! 'Belopp med moms:'
+  field_easy_money_expected_expense_price2: ! 'Belopp utan moms:'
+  field_easy_money_expected_expense_vat: ! 'Moms:'
+  field_easy_money_expected_revenue_spent_on: ! 'Datum:'
+  field_easy_money_expected_revenue_name: ! 'Namn:'
+  field_easy_money_expected_revenue_description: ! 'Beskrivning:'
+  field_easy_money_expected_revenue_price1: ! 'Belopp med moms:'
+  field_easy_money_expected_revenue_price2: ! 'Belopp utan moms:'
+  field_easy_money_expected_revenue_vat: ! 'Moms:'
+  field_easy_money_expected_revenue: Förväntad intäkt
+  field_easy_money_expected_expense: Förväntad kostnad
+  field_easy_money_sum_other_revenues: Verkliga intäkter
+  field_easy_money_sum_time_entry_expenses: Lönekostnader
+  field_easy_money_sum_other_expenses: Verkliga kostnader
+  field_easy_money_sum_other_profit: Vinst
+  field_easy_money_rate_type_internal: Intern timtaxa
+  field_easy_money_rate_type_external: Extern timtaxa
+  field_price1: Belopp med moms
+  field_price2: Belopp utan moms
+  field_vat: Moms
+  field_inherit_easy_money_settings: Ärv ekonomiinställningar
+  field_sum_of_expected_hours: Förväntade timmar
+  field_sum_of_expected_payroll_expenses: Förväntade lönekostnader
+  field_sum_of_expected_expenses_price_1: Förväntade kostnader (inkl moms)
+  field_sum_of_expected_revenues_price_1: Förväntade intäkter (inkl moms)
+  field_sum_of_other_expenses_price_1: Faktiska kostnader (inkl moms)
+  field_sum_of_other_revenues_price_1: Faktiska intäkter (inkl moms)
+  field_sum_of_expected_expenses_price_2: Förväntade kostnader (exkl moms)
+  field_sum_of_expected_revenues_price_2: Förväntade intäkter (exkl moms)
+  field_sum_of_other_expenses_price_2: Faktiska kostnader (exkl moms)
+  field_sum_of_other_revenues_price_2: Faktiska intäkter (exkl moms)
+  field_sum_of_time_entries_expenses_internal: Lönekostnader (intern taxa)
+  field_sum_of_time_entries_expenses_external: Lönekostnader (extern taxa)
+  field_sum_of_all_expected_expenses_price_1: Summa förväntade kostnader (inkl moms)
+  field_sum_of_all_expected_revenues_price_1: Summa förväntade intäkter (inkl moms)
+  field_sum_of_all_other_revenues_price_1: Summa faktiska intäkter (inkl moms)
+  field_sum_of_all_expected_expenses_price_2: Summa förväntade kostnader (exkl moms)
+  field_sum_of_all_expected_revenues_price_2: Summa förväntade intäkter (exkl moms)
+  field_sum_of_all_other_revenues_price_2: Sunna faktiska intäkter (exkl moms)
+  field_sum_of_all_other_expenses_price_1_internal: Summa faktiska kostnader (inkl moms, intern taxa)
+  field_sum_of_all_other_expenses_price_2_internal: Summa faktiska kostnader (exkl moms, intern taxa)
+  field_sum_of_all_other_expenses_price_1_external: Summa faktiska kostnader (inkl moms, extern taxa)
+  field_sum_of_all_other_expenses_price_2_external: Summa faktiska kostnader (exkl moms, extern taxa)
+  field_expected_profit_price_1: Förväntad vinst (inkl moms)
+  field_expected_profit_price_2: Förväntad vinst (exkl moms)
+  field_other_profit_price_1_internal: Faktisk vinst (inkl moms, intern taxa)
+  field_other_profit_price_2_internal: Faktisk vinst (exkl moms, intern taxa)
+  field_other_profit_price_1_external: Faktisk vinst (inkl moms, extern taxa)
+  field_other_profit_price_2_external: Faktisk vinst (exkl moms, extern taxa)
+  field_average_hourly_rate_price_1: Genomsnittlig timtaxa (inkl moms)
+  field_average_hourly_rate_price_2: Genomsnittlig timtaxa (exkl moms)
+
+  tab_easy_money_rate_priorities: Timtaxa - hierarki
+  tab_easy_money_rate_role: Priser per roll
+  tab_easy_money_rate_time_entry_activity: Priser per aktivitet
+  tab_easy_money_rate_user: Priser per användare
+  tab_easy_money_other_settings: Övriga inställningar
+
+  easy_money_other_expense_custom_field: Verkliga kostnader
+  easy_money_other_revenue_custom_field: Verkliga intäkter
+  notice_easy_money_recalculate: Värden räknas om vid nästa besök på översiktssidan.
+  error_easy_money_project_selector_select_values: Det finns inget valt värde
+  project_default_page:
+    easy_money: Ekonomi
+  warning_easy_money_settings:
+    project_question: Vill du spara inställningarna i projektet?
+    global_question: Vill du spara globala inställningar?
+    revenues_type: 'Vill du byta inmatningsmetod för intäkter? (alla tidigare inmatade värden kommer att raderas).'
+    expenses_type: 'Vill du byta inmatningsmetod för kostnader? (alla tidigare inmatade värden kommer att raderas).'
+  warning_easy_money_all_projects:
+    question: Är du säker på att du vill använda inställningarna på alla projekt?
+    revenues_type: 'Alla tidigare inmatade intäkter för följande projekt kommer att tas bort: %{projects}'
+    expenses_type: 'Alla tidigare inmatade kostnader för följande projekt kommer att tas bort: %{projects}'
+
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Ekonomi - hemsida
+    pages_description:
+      easy_money_projects_overview: Ekonomi - hemsida
+  easy_money_rate_type:
+    one: Timpris
+    internal: Internt timpris
+    external: Externt timpris
+  easy_money_entity:
+    user: Användare
+    role: Roll
+    time_entry_activity: Aktivitet
+  easy_money_rate_entity:
+    user: Prissätt per användare
+    role: Prissätt per roll
+    time_entry_activity: Prissätt per aktivitet
+  easy_money_period:
+    daily: Daglig
+    weekly: Veckovis
+    monthly: Månadsvis
+    yearly: Årlig
+  easy_money_other_settings_price_visibility:
+    price1: Endast belopp inkl moms
+    price2: Endast belopp exkl moms
+    all: Belopp med och utan moms
+  easy_money_other_settings_rate_type:
+    internal: endast en taxa
+    all: intern och extern taxa
+  easy_money_other_settings_expected_count_price:
+    price1: belopp inkl moms
+    price2: belopp exkl moms
+  easy_money_other_settings_expected_rate_type:
+    internal: intern taxa
+    external: extern taxa
+  easy_money_revenues_type:
+    list: detaljerad lista
+    sum: summa intäkter
+  easy_money_expenses_type:
+    list: detaljerad lista
+    sum: summa kostnader
+  easy_money_expected_payroll_expense_type:
+    amount: lönekostnader (totalsumma)
+    hours: lönekostnader (förväntade timmar * timtaxa)
+    estimated_hours: lönekostnader (beräknad tid * timtaxa)
+    planned_hours_and_rate: "aktivitet utan tilldekning (beräknad tid * planerad timtaxa), aktivitet med tilldelning (beräknad tid * timtaxa enligt hierarki)"
+
+  easy_reports_fields:
+    _time_entry_internalrate: Lönekostnader - Intern taxa
+    _time_entry_externalrate: Lönekostnader - Extern taxa
+    easy_money_other_revenue_id: Verklig intäkt
+    easy_money_other_revenue_name: Verklig intäkt - Namn
+    easy_money_other_revenue_price1: Verklig intäkt - Pris inkl moms
+    easy_money_other_revenue_price2: Verklig intäkt - Pris exkl moms
+    easy_money_other_expense_id: Verklig kostnad
+    easy_money_other_expense_name: Verklig kostnad - Namn
+    easy_money_other_expense_price1: Verklig kostnad - Pris inkl moms
+    easy_money_other_expense_price2: Verklig kostnad - Pris exkl moms
+    easy_money_expected_expense_id: Förväntad kostnad
+    easy_money_expected_expense_name: Förväntad kostnad - Namn
+    easy_money_expected_expense_price1: Förväntad kostnad - Pris inkl moms
+    easy_money_expected_expense_price2: Förväntad kostnad - Pris exkl moms
+    easy_money_expected_revenue_id: Förväntad intäkt
+    easy_money_expected_revenue_name: Förväntad intäkt - Namn
+    easy_money_expected_revenue_price1: Förväntad intäkt - Pris inkl moms
+    easy_money_expected_revenue_price2: Förväntad intäkt - Pris exkl moms
+    project_expected_hours: Förväntad arbetstid
+    project_expected_payroll_expense: Förväntade lönekostnader
+    _project_recovery: Förtjänst
+    _project_timeentry_average_hourly_expense: Genomsnittlig timkostnad
+    _project_other_profit: Vinst
+
+  easy_reports_categories:
+    easy_money: Ekonomi
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: omräkning av lönekostnader
+  tooltip_real_hourly_rate: 'Projektet baseras på det genomsnittliga timpriset %{average_hourly_rate}/ tim.'
+  label_easy_money_sidebar:
+    project: Ekonomi för projektet
+    issue: Ekonomi för aktiviteten
+    version: Ekonomi för milstolpen
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Faktiska intäkter
+      easy_money_other_expense_query: Faktiska kostnader
+      easy_money_expected_revenue_query: Förväntade intäkter
+      easy_money_expected_expense_query: Förväntade kostnader
+      easy_money_project_cache_query: Projektets budgetöversikt
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: Personliga filter för faktiska intäkter
+        easy_money_other_expense_query: Personliga filter för faktiska kostnader
+        easy_money_expected_revenue_query: Personliga filter för förväntade intäkter
+        easy_money_expected_expense_query: Personliga filter för förväntade kostnader
+        easy_money_project_cache_query: Personliga filter för budgetöversikt
+      public:
+        easy_money_other_revenue_query: Publika filter för faktiska intäkter
+        easy_money_other_expense_query: Publika filter för faktiska kostnader
+        easy_money_expected_revenue_query: Publika filter för förväntade intäkter
+        easy_money_expected_expense_query: Publika filter för förväntade kostnader
+        easy_money_project_cache_query: Publika filter för budgetöversikt
+
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: 'Omräkning av projektets budgetöversikt'
+

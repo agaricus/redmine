@@ -1,0 +1,14 @@
+<% unless @time_entry.project.blank? %>
+  <div class="combo-container no-label-required-by-css">
+    <p>
+      <%= label_for_field(:issue_id, {:required => EasySetting.value('required_issue_id_at_time_entry')})-%><%= easy_select_tag(
+        'issue_id',
+        {:name => @time_entry.issue.blank? ? '' : @time_entry.issue.to_s, :id => @time_entry.issue_id},
+        @issues ? options_for_select(@issues.collect{|i| [i.to_s, i.id]}, {:selected => @time_entry.issue_id}) : nil,
+        url_for(:action => 'load_assigned_issues', :format => 'json', :user_id => @user.id, :project_id => @time_entry.project_id),
+        :onchange => @time_entry.project.fixed_activity? ? "$.ajax({url: '#{j(url_for(:action => 'index', :issue_changed => '1', :format => 'js'))}', data: $('#bulk-time-entry-form').serialize()});" : nil,
+        :include_blank => true
+      ) -%>
+    </p>
+  </div>
+<% end %>

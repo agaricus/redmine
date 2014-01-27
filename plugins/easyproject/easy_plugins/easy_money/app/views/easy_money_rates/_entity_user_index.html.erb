@@ -1,0 +1,44 @@
+<% 
+if project.nil?
+  users = User.active.non_system_flag.sorted
+else
+  easy_money_settings = project.easy_money_settings
+  users = project.users.non_system_flag.sorted
+end
+easy_money_settings ||= EasyMoneySettingsResolver.new(EasyMoneySettings.project_settings_names) -%>
+<%= hidden_field_tag('entity_type', 'User') -%>
+<div class="easy-money-entity-rates-container">
+  <h3><%= l("easy_money_rate_entity.user") -%></h3>
+  <% if users.blank? -%>
+    <p class="nodata"><%= l(:label_no_data) -%></p>
+  <% else -%>
+    <table class="list">
+      <thead>
+        <tr>
+          <th><%= l(:field_easy_money_rate_entity_user_name) -%></th>
+          <% if easy_money_settings.show_rate?('all') %>
+            <% EasyMoneyRateType.active.each do |rate_type| -%>
+              <th><%= rate_type.translated_name -%></th>
+            <% end -%>
+          <% else %>
+            <th><%= l('easy_money_rate_type.one') -%></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.each do |user| -%>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td class="entity-item-name"><%= user.name %></td>
+            <% if easy_money_settings.show_rate?('all') %>
+              <% EasyMoneyRateType.active.each do |rate_type| -%>
+                <td class="entity-item-rate-type"><%= text_field_tag "easy_money_rates[Principal][#{user.id}][#{rate_type.id}]", EasyMoneyRate.get_unit_rate(rate_type, 'Principal', user.id, project_id, valid_from, valid_to), :size => 15 -%></td>
+              <% end -%>
+            <% else %>
+              <td class="entity-item-rate-type"><%= text_field_tag "easy_money_rates[Principal][#{user.id}][#{EasyMoneyRateType.active.find(:first).id}]", EasyMoneyRate.get_unit_rate(EasyMoneyRateType.active.find(:first), 'Principal', user.id, project_id, valid_from, valid_to), :size => 15 -%></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end -%>
+</div>

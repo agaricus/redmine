@@ -1,0 +1,16 @@
+api.role do
+  api.id                @role.id
+  api.name              @role.name
+  api.position          @role.position
+  api.assignable        @role.assignable
+  api.builtin           @role.builtin
+  api.issues_visibility @role.issues_visibility
+
+  api.array :permissions do
+    @role.permissions.each do |permission|
+      api.permission do
+        api.name        permission.to_s
+      end
+    end
+  end if include_in_api_response?('permissions')
+end

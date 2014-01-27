@@ -1,0 +1,42 @@
+<h3 class="title"><%= info_detail.caption -%></h3>
+<div class="box">
+  <table>
+    <tr>
+      <td><%= l(:field_status) -%>:</td>
+      <td><b><%= info_detail.status_caption -%></b></td>
+    </tr>
+    <% if info_detail.email %>
+      <tr>
+        <td><%= l(:'label_email_field.from') %>:</td>
+        <td><%= Array(info_detail.email.from).join(', ') %></td>
+      </tr>
+      <tr>
+        <td><%= l(:'label_email_field.to') %>:</td>
+        <td><%= Array(info_detail.email.to).join(', ') %></td>
+      </tr>
+    <% end %>
+    <% if info_detail.entity %>
+      <tr>
+        <td><%= l(:field_project) -%>:</td>
+        <td><%= link_to_entity(info_detail.entity.project, {}, :target => '_blank') -%></td>
+      </tr>
+      <tr>
+        <td><%= l(:field_issue) -%>:</td>
+        <td><%= link_to_entity(info_detail.entity, {}, :target => '_blank') -%></td>
+      </tr>
+    <% end %>
+  </table>
+  <% if info_detail.detail %>
+    <p>
+      <%= textilizable info_detail.detail %>
+    </p>
+  <% end %>
+</div>
+<% if info_detail.email_attachment %>
+  <%= link_to l(:button_download_email), {:controller => 'attachments', :action => 'download', :id => info_detail.email_attachment}, :title => l(:button_download_email) %>
+  <%= toggling_container("info_detail_att_#{info_detail.email_attachment.id}", User.current, {:heading => 'RAW', :default_button_state => false}) do %>
+    <div class="easy-rake-task-info-detail-raw-mail">
+      <%= render :partial => 'common/file', :locals => {:content => info_detail.email_attachment_content, :filename => info_detail.email_attachment.filename} %>
+    </div>
+  <% end %>
+<% end %>

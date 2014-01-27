@@ -1,0 +1,26 @@
+<%= breadcrumb([
+    link_to(l(:'easy_rake_tasks.views.heading_index'), {:controller => 'easy_rake_tasks', :action => :index}, :title => l(:'easy_rake_tasks.views.heading_index')),
+    link_to(l(:'easy_rake_tasks.views.heading_task_infos', :task_name => @task.caption), {:controller => 'easy_rake_tasks', :action => :task_infos, :id => @task, :back_url => params[:back_url]}, :title => l(:'easy_rake_tasks.views.heading_task_infos', :task_name => @task.caption))]) %>
+
+<h2><%= l(:'easy_rake_tasks.views.heading_task_infos', :task_name => @task.caption) -%></h2>
+
+<div class="box">
+  <%= render :partial => 'easy_rake_tasks/task_infos_index', :locals => {:task_infos => @task_infos_ok, :task => @task} %>
+</div>
+
+<div class="box">
+  <%= render :partial => 'easy_rake_tasks/task_infos_index', :locals => {:task_infos => @task_infos_failed, :task => @task} %>
+</div>
+
+<div class="box">
+  <%= render :partial => @task.additional_task_info_view_path, :locals => {:task => @task} %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to(l(:'easy_rake_tasks.views.button_index'), {:controller => :easy_rake_tasks, :action => :index}, :class => 'button-1', :title => l(:'easy_rake_tasks.views.button_index')) %>
+  <%= link_to(l(:button_edit), {:controller => :easy_rake_tasks, :action => :edit, :id => @task}, :class => 'button-2', :title => l(:button_edit)) %>
+<% end %>
+
+<% html_title(l(:'easy_rake_tasks.views.heading_index'), l(:'easy_rake_tasks.views.heading_task_infos', :task_name => @task.caption)) -%>

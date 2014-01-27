@@ -1,0 +1,11 @@
+<div class="gray-background tabular timelog">
+  <%= labelled_fields_for :time_entry, @time_entry do |f| %>
+    <div id="issues-and-time-entry">
+      <%= render :partial => 'timelog/form_issues', :locals => {:f => f, :time_entry => @time_entry, :issue => @issue, :project => @project} %>
+    </div>
+    <% @time_entry.custom_field_values.each do |value| -%>
+      <p><%= custom_field_tag_with_label :time_entry, value -%></p>
+    <% end -%>
+    <%= call_hook(:view_timelog_edit_form_bottom, { :time_entry => @time_entry, :form => f }) -%>
+  <% end -%>
+</div>

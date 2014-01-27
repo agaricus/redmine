@@ -1,0 +1,185 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+a, abbr, acronym, address, big, cite,
+del, dfn, em, img, ins, q, s, samp,
+small, strike, strong, sub, sup,
+b, u, i, center,
+ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section, summary,
+time, mark, audio, video {
+    color: #595959;
+    font-family: Arial, sans-serif;
+}
+body {
+    font-size: 13px;
+}
+input, select, .easy-lookup {
+    background: #fff;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding: 3px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+input, .easy-lookup {
+    border: 1px solid #cccccc;
+    padding: 4px;
+    background: #ffffff;
+}
+input[type="checkbox"] {
+    border: none;
+    padding: none;
+    background: none;
+}
+input[type="checkbox"] + label {
+    display: inline-block;
+}
+
+input:focus {
+    outline: none;
+}
+textarea.wiki-edit {
+    width:99%; resize:vertical;
+}
+
+form {
+    display: inline;
+}
+
+fieldset {
+    border: 1px solid #E4E4E4;
+    margin: 0;
+}
+
+fieldset.collapsible {
+    /*font-size: 120%;*/
+    border-width: 0px;
+}
+
+fieldset#filters {
+    padding-bottom: 0;
+}
+
+legend {
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+form fieldset legend {
+    margin: 0;
+    padding: 6px;
+}
+
+hr {
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    border: 0;
+}
+blockquote {
+    font-style: italic;
+    border-left: 3px solid #e0e0e0;
+    padding-left: 0.6em;
+    margin-left: 2.4em;
+}
+
+blockquote blockquote {
+    margin-left: 0;
+}
+
+acronym  {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+pre {
+    font-size: 12px;
+}
+
+ul {
+    margin: 10px 0px 10px 0px;
+    padding: 0px 0px 0px 40px;
+}
+ul li {
+    margin-left: 0;
+}
+h4 {
+    margin-top: 10px;
+}
+
+h1, h2 {
+    color: #0DA5DD;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-transform: uppercase;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+}
+.wiki h2, body.cke_editable h2 {
+    border-bottom: none;
+    font-size: 155%;
+    text-transform: none;
+}
+h3 {
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    background-color:#DCDEE0;
+    border:none;
+    color:#666;
+    /*font-size:100%;*/
+    font-weight:700;
+    margin: 5px 0 10px;
+    padding:5px 10px;
+    line-height: 20px; /*same as button-X*/
+}
+a {
+    word-wrap: break-word;
+    display: inline-block;
+    outline: none;
+    color: #444;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+strong, i, em, u, strike {
+    color: inherit;
+}
+code {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FDF5E6;
+    border-color: #FDE9BF #CCBEA2 #CCBEA2 #FDE9BF;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Courier,monospace;
+    overflow: auto;
+    padding: 0 1px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+kbd {
+    -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-right-colors: none; -moz-border-top-colors: none;
+    color: #F9F9F9;
+    background-color: #5A5A5A;
+    border-color: #E1E1E1 #1E1E1E #1E1E1E #E1E1E1; border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    font-family: Courier,Monospace;
+    overflow: auto;
+    padding: 0 4px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

@@ -1,0 +1,30 @@
+---
+it:
+  budgetsheet_name: TimeSheet
+  budgetsheet_author: Easy Software
+  budgetsheet_description: ! ' - sommario del tempo speso dagli utenti sui progetti.'
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: TimeSheet
+  budgetsheet_date_from_label: Da
+  budgetsheet_date_to_label: A
+  budgetsheet_project_label: Progetto
+  budgetsheet_activities_label: Attività
+  budgetsheet_users_label: Utenti
+  budgetsheet_export_button: Usa
+  budgetsheet_export_to_csv: esporta CSV
+  budgetsheet_export_to_pdf: esporta PDF
+  budgetsheet_export_to_html: visualizza
+  budgetsheet_costs: Costo
+  budgetsheet_per_hour: per ora
+  budgetsheet_top_menu: TimeSheet
+  permission_view_budgetsheet: Visualizza TimeSheet
+  label_easy_budget_sheet_queries_plural: TimeSheet
+  label_show_billable_things: Mostra check 'Billable?'
+  easy_query:
+    name:
+      easy_budget_sheet_query: TimeSheet
+  field_project_root: Progetto principale
+  field_easy_is_billable: Fatturabile ?
+  field_easy_billed: Fatturato ?
+  sidebar_budgetsheet_all_users_queries: TimeSheets dei Collaboratori
+  label_billable_things_default_state: Stato di default

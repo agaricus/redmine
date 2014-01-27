@@ -1,0 +1,65 @@
+---
+ja:
+  easy_user_allocations_name: リソース管理
+  easy_user_allocations_description: ! '- 資源管理/人'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: ビューリソース管理
+  permission_view_my_easy_user_allocations: 独自の資源管理を見る
+  permission_edit_easy_user_allocations: 編集リソース管理
+  permission_edit_my_easy_user_allocations_plan: 自身の作業計画を編集
+  project_module_user_allocations: リソース管理
+  label_user_allocations: リソース管理
+  label_user_allocation_gantt: リソース割り当てガント
+  label_user_allocation_gantt_users: ユーザー
+  label_user_allocation_gantt_user_selection: 選択
+  label_user_allocation_gantt_range: 日付
+  label_allocations_by_project: プロジェクトによって資源配分
+  label_unassigned_issues: 割り当てられていないタスク
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: 全体のタスクを表示するには、別の日付範囲を選択してください
+  label_allocation_changed_title: タスクが変更され、保存時に更新されます
+  label_user_allocation_plan: 作業計画
+  text_easy_user_allocation_working_plan_bottom_info: 選択された週にユーザーのワークロードをスケジュールすることができます。表は、スケジュールされた時間と実際の時間が報告を示しています。
+  resalloc:
+    title: 資源の配分
+    settings: 設定
+    button_apply_settings: 設定を適用
+    button_recalculate: 再計算の割り当て
+    button_save: 変更を保存します
+    button_undo: 保存されていない変更を元に戻す
+    button_split_issue: スプリットタスク
+    split_issue_help: 割り当てられていないタスクをクリックして日付を選択してください。
+    error_date_range_too_long: 1年未満でなければなりません
+    legend_hours_worked: 時間を過ごし
+    legend_hours_overtime: 時間が所定時間を超えて働いていた
+  easy_pages:
+    modules:
+      user_allocation: 資源の配分
+      user_allocation_working_plan: 資源配分/作業計画
+  user_allocation_plan:
+    label_plan: 計画
+    label_real: 本当の
+    label_comment: コメント
+  easy_query:
+    name:
+      easy_user_allocation_query: 資源の配分
+      easy_user_allocation_by_project_query: プロジェクトによって資源配分
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: 資源配分上のプライベートフィルタ
+        easy_user_allocation_by_project_query: プロジェクトによって資源配分上のプライベートフィルタ
+      public:
+        easy_user_allocation_query: 資源配分上のパブリックフィルタ
+        easy_user_allocation_by_project_query: プロジェクトによって資源配分上のパブリックフィルタ
+  label_setting_keep_issue_start_dates: タスクの開始日を変更しないでください。
+  text_setting_keep_issue_start_dates: 有効とタスク推定時間が低すぎる場合は、タスクが短縮されることはありませんが、その代わりに0時間に割り当てられます。
+  label_setting_allocate_evenly: 均等に割り当てる
+  text_setting_allocate_evenly: 有効になっており、タスクが割り当てガントでサイズ変更されている場合は、推定時間は、タスクの全期間を通じて均等に分散されます。
+  label_setting_allocate_from_start: タスクの開始日から割り当てる
+  project_module_easy_user_allocations: リソース/人の使用
+  text_overallocation: 割り当てられた時間の合計は、推定時間以上である。
+  permission_view_easy_user_allocations_by_project: プロジェクトによって配分を見る
+  easy_user_allocations_sidebar_all_users_queries: ユーザによる割り当て
+  easy_user_allocations_label_show_assigned_issues: ユーザーの割り当てを表示%{username}
+  label_filter_group_easy_user_allocation_query: 資源の配分
+  label_edit_estimated_hours: 推定時間を編集

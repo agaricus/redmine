@@ -1,0 +1,36 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => (l('easy_pages.modules.noticeboard')), :container_html => {:class => 'module-content'}}) do %>
+  <p>
+    <%= label_tag "#{block_name}_heading", l(:label_heading) %>
+    <%= text_field_tag "#{block_name}[heading]", settings['heading'] || l('easy_pages.modules.noticeboard') %>
+  </p>
+  <p>
+    <span>
+      <%
+      txt = CGI.unescape(settings['text'] || '')
+      txt = Redmine::CodesetUtil.replace_invalid_utf8(txt)
+    %>
+      <%= text_area_tag "#{block_name}[text]", txt, :cols => 60, :rows => 10, :class => 'wiki-edit' -%>
+      <%= wikitoolbar_for("#{block_name}_text", :toolbar => 'Noticeboard') %>
+    </span>
+  </p>
+  <script type="text/javascript">
+    if (!typeof CKEDITOR === 'undefined') {
+      var saved_text_<%= page_module.uuid.underscore -%> = '';
+      draggable_onstart_module_<%= page_module.uuid.underscore -%> = function(draggable, event) {
+        ckeditor_id = '<%= block_name.underscore -%>_text';
+        ckeditor_instance = CKEDITOR.instances[ckeditor_id];
+        saved_text_<%= page_module.uuid.underscore -%> = ckeditor_instance.getData();
+      };
+      draggable_onend_module_<%= page_module.uuid.underscore -%> = function(draggable, event) {
+        ckeditor_id = '<%= block_name.underscore -%>_text';
+        ckeditor_instance = CKEDITOR.instances[ckeditor_id];
+        ckeditor_config = ckeditor_instance.config;
+        CKEDITOR.remove(ckeditor_instance);
+        $('cke_<%= block_name.underscore -%>_text').remove();
+        $('<%= block_name.underscore -%>_text').value = saved_text_<%= page_module.uuid.underscore -%>;
+        CKEDITOR.replace(ckeditor_id, ckeditor_config);
+      };
+    }
+    ;
+  </script>
+<% end -%>

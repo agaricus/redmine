@@ -1,0 +1,350 @@
+---
+hu:
+  easy_money_plugin_name: Pénzügyek
+  easy_money_plugin_author: Easy Software
+  easy_money_plugin_author_url: http://www.easyproject.hu
+  easy_money_plugin_description: ! '- Projektek aktuális és tervezett pénzügyi adatainak monitorozása és kezelése'
+  project_module_easy_money: Pénzügyek
+  menu_easy_money: Pénzügyek
+  permission_view_easy_money: Hozzáférés a Pénzügyek modulhoz (általános)
+  permission_easy_money_show_expected_revenue: Tervezett bevételek megjelenítése
+  permission_easy_money_show_expected_expense: Tervezett költségek megjelenítése
+  permission_easy_money_show_expected_payroll_expense: Tervezett bérköltségek megjelenítése
+  permission_easy_money_show_expected_profit: Tervezett profit megjelenítése
+  permission_easy_money_show_other_revenue: Valós bevételek megjelenítése
+  permission_easy_money_show_other_expense: Valós költségek megjelenítése
+  permission_easy_money_show_time_entry_expenses: Valós bérköltségek megjelenítése
+  permission_easy_money_show_other_profit: Valós profit megjelenítése
+  permission_easy_money_manage_expected_revenue: Tervezett bevételek hozzáadása
+  permission_easy_money_manage_expected_expense: Tervezett költségek hozzáadása
+  permission_easy_money_manage_expected_payroll_expense: Tervezett bérköltségek hozzáadása
+  permission_easy_money_manage_other_revenue: Valós bevételek hozzáadása
+  permission_easy_money_manage_other_expense: Valós költségek hozzáadása
+  permission_easy_money_settings: Hozzáférés a pénzügyi beállításokhoz
+  permission_easy_money_move: Pénz mozgatása projektek között
+  permission_easy_budgetsheet_view_internal_rates: 'Költségvetési terv - belsõ díjak megjelenítése'
+  permission_easy_budgetsheet_view_external_rates: 'Költségvetési terv - kiszámlázott díjak megjelenítése'
+  heading_easy_money_other_settings_project_overview: Projekt áttekintõ beállítások
+  heading_easy_money_other_settings_prices_and_rates: Árak és díjak
+  label_easy_money: Pénzügyek
+  label_easy_money_settings: Pénzügyi beállítások
+  label_easy_money_rate_priorities_settings: Díjprioritás beállítása
+  label_easy_money_project_index: Pénz
+  label_easy_money_other_expenses: Költségek áttekintése
+  label_easy_money_other_expense_new: Új költség
+  label_easy_money_other_expense_show: Költség
+  label_easy_money_other_expense_edit: Költség szerkesztése
+  label_easy_money_other_revenues: Bevételek áttekintése
+  label_easy_money_other_revenue_new: Új bevétel
+  label_easy_money_other_revenue_show: Bevétel
+  label_easy_money_other_revenue_edit: Bevétel módosítása
+  label_easy_money_time_entry_expenses: Bérköltségek áttekintése
+  label_easy_money_project_index_sum_hours: ! 'Tervezett órák: '
+  label_easy_money_project_index_profit: ! 'Profit: '
+  label_easy_money_expected_expenses: Tervezett költségek áttekintése
+  label_easy_money_expected_revenues: Tervezett bevételek áttekintése
+  label_easy_money_expected_expense_new: Új tervezett költség
+  label_easy_money_expected_expense_show: Tervezett költség
+  label_easy_money_expected_expense_edit: Tervezett költség módosítása
+  label_easy_money_expected_revenue_new: Új tervezett bevétel
+  label_easy_money_expected_revenue_show: Tervezett bevétel
+  label_easy_money_expected_revenue_edit: Tervezett bevétel módosítása
+  label_easy_money_other_settings: Egyéb beállítások
+  label_easy_money_other_settings_price_visibility: ! 'Használat összegként:'
+  label_easy_money_other_settings_rate_type: ! 'Bérköltségeknél használja:'
+  label_easy_money_other_settings_include_childs: ! 'Alprojektek tételeinek hozzáadása a teljes projektkerethez:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Projekt tervezés / becslések bekapcsolása:'
+  label_easy_money_other_settings_expected_count_price: 'Használat a bevételek és költségek számításakor'
+  label_easy_money_other_settings_expected_rate_type: 'Valós bérköltségek számítása'
+  label_easy_money_other_settings_project_use_easy_money_for_versions: 'Pénzügyek használata a mérföldköveknél'
+  label_easy_money_other_settings_project_use_easy_money_for_issues: 'Pénzügyek használata a feladatoknál'
+  label_easy_money_project_usage_type: ! 'Használt a projektnél:'
+  label_easy_money_other_settings_vat: ! 'Ha az összeget ÁFA nélkül mutatja, az ÁFA ennyi:'
+  label_easy_money_use_vat: ÁFA számítás használata
+  label_easy_money_expected_budget: Terv
+  label_easy_money_real_budget: Tényleges
+  label_easy_money_project_name: ! 'Projekt költségvetés:'
+  label_easy_money_hour: ! '%{hours} órák.'
+  label_easy_money_expected_payroll_expense_per_hours: Tervezett órabér
+  label_easy_money_expected_payroll_expenses: ! 'Bérköltségek:'
+  label_easy_money_subproject_sum_revenues: Bevételek *
+  label_easy_money_subproject_sum_expenses: Költségek *
+  label_easy_money_subproject_sum_payroll_expenses: Bérköltségek
+  label_easy_money_subproject_profit: Eredmény *
+  label_easy_money_subproject_explication: ! '*) (Terv / Tényleges)'
+  label_easy_money_attachments: ! 'Mellékletek:'
+  label_easy_money_project_time_entry_expenses: Projekt tiszta bérköltsége
+  label_easy_money_project_issues_time_entry_expenses: Bérköltségek a projekt feladatokra
+  label_easy_money_total: ! 'összesen:'
+  label_easy_money_all_project: Pénzügyek az összes projektre
+  label_easy_money_currency_visible: ! 'Pénznem módosításának engedélyezése a projektnél:'
+  label_easy_money_currency: ! 'Pénznem:'
+  label_easy_money_select_project: Projekt választása
+  label_easy_money_mass_copy_rates: Többszörös tételek másolása
+  label_easy_money_project_index_estimated_hours: ! 'Tervezett órák: '
+  label_easy_money_new_revenue_text: Bevétel
+  label_easy_money_new_revenue_description: Bevétel
+  label_easy_money_new_expense_text: Költség
+  label_easy_money_new_expense_description: Költség
+  label_filter_group_easy_money_other_revenue_query: Egyéb bevételek
+  label_filter_group_easy_money_other_expense_query: Egyéb költségek
+  label_filter_group_easy_money_expected_revenue_query: Tervezett bevételek
+  label_filter_group_easy_money_expected_expense_query: Tervezett költségek
+  label_filter_group_easy_money_project_cache_query: Egyebek
+  label_filter_group_easy_money_project_cache_expenses: Költségek
+  label_filter_group_easy_money_project_cache_revenues: Bevételek
+  label_filter_group_easy_money_project_cache_profit: Profit
+  label_easy_money_project_cache: Projekt költségvetések áttekintése
+  label_easy_money_other_settings_revenues_type: Bevételek számítsanak mint,
+  label_easy_money_other_settings_expenses_type: Egyéb költségek számítsanak, mint
+  label_easy_money_other_settings_expected_payroll_expense_type: Tervezett bérköltségek figyelembevétele a következõként
+  label_easy_money_round_money_on_list: Kerekítés a listán
+  text_easy_money_rate_priorities_settings: Díjak alapvetõ hierarchiája. Ha az elsõ tétel nulla, akkor a következõ nemnullás érték lesz használva.
+  button_easy_money_rate_use_in_all_projects: Díj használata az összes projektnél
+  button_easy_money_rate_use_in_all_subprojects: Díj használata az összes alprojektnél
+  button_easy_money_priorities_use_in_all_projects: Díjprioritások használata az összes projektnél
+  button_easy_money_priorities_use_in_all_subprojects: Díjprioritások használata az összes alprojektnél
+  button_easy_money_project_expected_expenses: ! 'Egyéb költségek:'
+  button_easy_money_project_expected_revenues: ! 'Bevételek:'
+  button_easy_money_project_other_expenses: ! 'Egyéb költségek:'
+  button_easy_money_project_other_revenues: ! 'Bevételek:'
+  button_easy_money_project_time_entry_expenses: ! 'Bérköltségek: '
+  button_easy_money_project_new_revenue: Új bevétel
+  button_easy_money_project_new_expense: Új költség
+  button_easy_money_project_time_entry_hours: ! 'Ledolgozott idõ:'
+  button_easy_money_project_index_show_details: Részletek megjelenítése
+  button_easy_money_project_index_show_empty: Üres mezõk mutatása
+  button_easy_money_save_in_all_projects: Használat minden projektnél
+  button_easy_money_save_in_all_subprojects: Használat minden alprojektnél
+  button_easy_money_project_settings: Pénzügyi beállítások
+  button_easy_money_save_expected_revenue: Tervezett bevétel mentése
+  button_easy_money_save_other_revenue: Tényleges bevétel mentése
+  button_easy_money_save_expected_hours: Tervezett órák mentése
+  button_easy_money_save_expected_expense: Tervezett költségek mentése
+  button_easy_money_save_other_expense: Tényleges költségek mentése
+  button_easy_money_update_project_time_entry_expenses: Bérköltségek újraszámítása a projektnél
+  button_easy_money_update_project_and_subprojects_time_entry_expenses:  Bérköltségek újraszámítása a projektnél és az összes alprojektnél
+  button_easy_money_update_all_projects_time_entry_expenses:  Bérköltségek újraszámítása minden projektnél
+  button_easy_money_move: Kijelöltek újratársítása
+  title_easy_money_project_new_revenue: Új bevétel hozzáadása
+  title_easy_money_project_new_expense: Új költség hozzáadása
+  title_easy_money_project_expected_revenues: Projekt tervezett bevételeinek megjelenítése
+  title_easy_money_project_other_revenues: Projekt tényleges bevételeinek megjelenítése
+  title_easy_money_project_expected_expenses: Projekt tervezett költségeinek megjelenítése
+  title_easy_money_project_other_expenses: Projekt tényleges költségeinek megjelenítése
+  title_easy_money_project_time_entry_expenses: Projekt tényleges bérköltségeinek megjelenítése
+  title_easy_money_rates_save: Díjak mentése
+  title_easy_money_rate_use_in_all_projects: Díjak mentése és alkalmazás az összes projektnél
+  title_easy_money_rate_use_in_all_subprojects: Save rates and apply them in all subprojects
+  title_easy_money_priorities_use_in_all_projects: Díj szerinti rendezés használata az összes projektnél
+  title_easy_money_priorities_use_in_all_subprojects: Díj szerinti rendezés használata az összes alprojektnél
+  title_easy_money_other_repeating_expense_show: Ismételt költségek megjelenítése
+  title_easy_money_other_repeating_revenue_show: Ismételet bevételek megjelenítése
+  title_easy_money_settings: Tovább a projekt pénzügyi beállításaihoz
+  title_easy_money_project_index_show_empty: Üres mezõk mutatása.
+  title_close: Kattintásra bezárul ez a panel.
+  title_easy_money_update_project_time_entry_expenses: Bérköltségek újraszámítása a projekten
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Kattintson a projektek és alprojektekre vonatkozó bérköltségek konverziójához (több percet is igénybe vehet).
+  title_easy_money_update_all_projects_time_entry_expenses: Bérköltségek újraszámítása az összes projektnél.
+  title_easy_money_sum_expected_revenues: "A teljes tervezett bevétel a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_sum_other_revenues: "Egyéb bevételek összege a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_sum_expected_expenses: "A teljes tervezett költség a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_sum_other_expenses: "Egyéb tervezett költségek összege a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_sum_expected_payroll_expenses: "Tervezett bérköltségek összege a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_sum_time_entry_expenses: "Bérköltségek összege a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_expected_profit: "Tervezett profit a(z) %{project} nevû projektnél : %{value}."
+  title_easy_money_other_profit: "Profit a(z) %{project} nevû projektnél: %{value}."
+  title_easy_money_link_to_subproject: Továbblépés a(z) %{subproject} pénzügyeihez.
+  title_easy_money_link_to_project: Továbblépés a(z) %{project} pénzügyeihez.
+  field_spent_hours: Ledolgozott órák
+  field_easy_money_rate_entity_time_entry_activity_name: Tevékenység neve
+  field_easy_money_rate_entity_role_name: Szerep név
+  field_easy_money_rate_entity_user_name: Felhasználó név
+  field_easy_money_other_expense_spent_on: ! 'Dátum:'
+  field_easy_money_other_expense_name: ! 'Név:'
+  field_easy_money_other_expense_description: ! 'Leírás:'
+  field_easy_money_other_expense_price1: ! 'Összeg ÁFÁ-val (bruttó):'
+  field_easy_money_other_expense_price2: ! 'Összeg ÁFA nélkül (nettó):'
+  field_easy_money_other_expense_vat: ! 'ÁFA:'
+  field_easy_money_other_revenue_spent_on: ! 'Dátum:'
+  field_easy_money_other_revenue_name: ! 'Név:'
+  field_easy_money_other_revenue_description: ! 'Leírás:'
+  field_easy_money_other_revenue_price1: ! 'Teljes összeg:'
+  field_easy_money_other_revenue_price2: ! 'Összeg ÁFA nélkül:'
+  field_easy_money_other_revenue_vat: ! 'ÁFA:'
+  field_easy_money_expected_expense_spent_on: ! 'Dátum:'
+  field_easy_money_expected_expense_name: ! 'Név:'
+  field_easy_money_expected_expense_description: ! 'Leírés:'
+  field_easy_money_expected_expense_price1: ! 'Teljes összeg:'
+  field_easy_money_expected_expense_price2: ! 'Összeg ÁFA nélkül:'
+  field_easy_money_expected_expense_vat: ! 'ÁFA:'
+  field_easy_money_expected_revenue_spent_on: ! 'Dátum:'
+  field_easy_money_expected_revenue_name: ! 'Név:'
+  field_easy_money_expected_revenue_description: ! 'Leírás:'
+  field_easy_money_expected_revenue_price1: ! 'Teljes összeg:'
+  field_easy_money_expected_revenue_price2: ! 'Összeg ÁFA nélkül:'
+  field_easy_money_expected_revenue_vat: ! 'ÁFA:'
+  field_easy_money_expected_revenue: Tervezett bevétel
+  field_easy_money_expected_expense: Tervezett költségek
+  field_easy_money_sum_other_revenues: Bevételek
+  field_easy_money_sum_time_entry_expenses: Bérköltségek
+  field_easy_money_sum_other_expenses: Költségek
+  field_easy_money_sum_other_profit: Profit
+  field_easy_money_rate_type_internal: Belsõ díjak
+  field_easy_money_rate_type_external: Számlázandó díjak
+  field_price1: Teljes összeg
+  field_price2: Összeg ÁFA nélkül
+  field_vat: ÁFA
+  field_inherit_easy_money_settings: Pénzügyi beállítások öröklése
+  field_sum_of_expected_hours: Tervezett órák
+  field_sum_of_expected_payroll_expenses: Tervezett bérköltségek
+  field_sum_of_expected_expenses_price_1: Tervezett költségek (ÁFÁ-val)
+  field_sum_of_expected_revenues_price_1: Tervezett bevételek (ÁFÁ-val)
+  field_sum_of_other_expenses_price_1: Egyéb költségek (ÁFÁ-val)
+  field_sum_of_other_revenues_price_1: Egyéb bevételek (ÁFÁ-val)
+  field_sum_of_expected_expenses_price_2: Tervezett költségek (ÁFA nélkül)
+  field_sum_of_expected_revenues_price_2: Tervezett bevételek (ÁFA nélkül)
+  field_sum_of_other_expenses_price_2: Egyéb költségek (ÁFA nélkül)
+  field_sum_of_other_revenues_price_2: Egyéb bevételek (ÁFA nélkül)
+  field_sum_of_time_entries_expenses_internal: Bérköltségek (belsõ díjak)
+  field_sum_of_time_entries_expenses_external: Bérköltségek (külsõ díjak)
+  field_sum_of_all_expected_expenses_price_1: Tervezett költségek összesen (ÁFÁ-val)
+  field_sum_of_all_expected_revenues_price_1: Tervezett bevételek összesen (ÁFÁ-val)
+  field_sum_of_all_other_revenues_price_1: Teljes bevétel (ÁFÁ-val)
+  field_sum_of_all_expected_expenses_price_2: Tervezett költségek összesen (ÁFA nélkül)
+  field_sum_of_all_expected_revenues_price_2: Tervezett bevételek összesen (ÁFA nélkül)
+  field_sum_of_all_other_revenues_price_2: Teljes bevétel (ÁFA nélkül)
+  field_sum_of_all_other_expenses_price_1_internal: Teljes költség (ÁFÁ-val, belsõ díj)
+  field_sum_of_all_other_expenses_price_2_internal: Teljes költség (ÁFA nélkül, belsõ díj)
+  field_sum_of_all_other_expenses_price_1_external: Teljes költség (ÁFÁ-val, külsõ, számlázandó díj)
+  field_sum_of_all_other_expenses_price_2_external: Teljes költség (ÁFA nélkül, külsõ, számlázandó díj)
+  field_expected_profit_price_1: Tervezett profit (ÁFÁ-val)
+  field_expected_profit_price_2: Tervezett profit (ÁFA nélkül)
+  field_other_profit_price_1_internal: Profit (ÁFÁ-val, belsõ díj)
+  field_other_profit_price_2_internal: Profit (ÁFA nélkül, belsõ díj)
+  field_other_profit_price_1_external: Profit (ÁFÁ-val, külsõ, számlázandó díj)
+  field_other_profit_price_2_external: Profit (ÁFA nélkül, külsõ, számlázandó díj))
+  field_average_hourly_rate_price_1: Átlagos óradíj (ÁFÁ-val)
+  field_average_hourly_rate_price_2: Átlagos óradíj (ÁFA nélkül)
+  tab_easy_money_rate_priorities: Díjak hierarchiája
+  tab_easy_money_rate_role: Díjak szerepenként
+  tab_easy_money_rate_time_entry_activity: Díjak tevékenységként
+  tab_easy_money_rate_user: Díjak felhasználónként
+  tab_easy_money_other_settings: Egyéb beállítások
+  easy_money_other_expense_custom_field: Valós költségek
+  easy_money_other_revenue_custom_field: Valós kiadások
+  notice_easy_money_recalculate: Az értékek újraszámítra kerülnek az áttekintõ oldal következõ megnyitásakor.
+  error_easy_money_project_selector_select_values: Nincs kiválasztott érték
+  project_default_page:
+    easy_money: Pénzügyek
+  warning_easy_money_settings:
+    project_question: Menteni kívánja a projektbeállításokat?
+    global_question: Menteni kívánja az általános beállításokat?
+    revenues_type: Megváltoztatja a bevételek megadási módját (az összes korábban bevitt bevétel törlésre kerül)
+    expenses_type: Megváltoztatja a költségek megadási módját (az összes korábban bevitt költség törlésre kerül)
+  warning_easy_money_all_projects:
+    question: Biztos benne, hogy az összes projektnél ezeket a beállításokat szeretné használni?
+    revenues_type: ! 'Minden korábban bevitt bevétel törlésre kerül a következõ projekteknél: %{projects}'
+    expenses_type: ! 'Minden korábban bevitt költség törlésre kerül a következõ projekteknél: %{projects}'
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Pénzügyek - Kezdõoldal
+    pages_description:
+      easy_money_projects_overview: Pénzügyek - Kezdõoldal
+  easy_money_rate_type:
+    one: Díj
+    internal: Belsõ díjak
+    external: Külsõ díjak (vevõnek számlázott díjak)
+  easy_money_entity:
+    user: Felhasználó
+    role: Szerep
+    time_entry_activity: Tevékenység
+  easy_money_rate_entity:
+    user: Díjak felhasználónként
+    role: Díjak szerepenként
+    time_entry_activity: Díjak tevékenységenként
+  easy_money_period:
+    daily: Napi
+    monthly: Havi
+    weekly: Heti
+    yearly: Éves
+  easy_money_other_settings_price_visibility:
+    price1: csak teljes összeg
+    price2: csak teljes összeg ÁFA nélkül
+    all: teljes összeg és teljes összeg ÁFÁ-val
+  easy_money_other_settings_rate_type:
+    internal: csak egy díj
+    all: belsõ és külsõ díjak
+  easy_money_other_settings_expected_count_price:
+    price1: teljes összeg
+    price2: összeg ÁFA nélkül
+  easy_money_other_settings_expected_rate_type:
+    internal: belsõ díjak
+    external: külsõ díjak (vevõnek számlázott díjak)
+  easy_money_revenues_type:
+    list: részletes lista
+    sum: teljes bevétel
+  easy_money_expenses_type:
+    list: részletes lista
+    sum: teljes költség
+  easy_money_expected_payroll_expense_type:
+    amount: bérköltségek (teljes összeg)
+    hours: bérköltségek (tervezett órák * tervezett óradíj)
+    estimated_hours: bérköltségek (hátralévõ órák * tervezett óradíj)
+    planned_hours_and_rate: "feladat megbízott nélkül (hátralévõ órák * tervezett óradíj), megbízottal rendelkezõ feladat (hátralévõ órák * hierarchia szerinti díjak)"
+  easy_reports_fields:
+    _time_entry_internalrate: Bérköltségek - belsõ díjak
+    _time_entry_externalrate: Bérköltségek - Külsõ díjak (számlandó tételek)
+    easy_money_other_revenue_id: Valós bevételek
+    easy_money_other_revenue_name: Valós bevételek - Név
+    easy_money_other_revenue_price1: Valós bevételek - Teljes ár
+    easy_money_other_revenue_price2: Valós bevételek - Ár ÁFA nélkül
+    easy_money_other_expense_id: Valós költségek
+    easy_money_other_expense_name: Valós költségek - Név
+    easy_money_other_expense_price1: Valós költségek - Teljes ár
+    easy_money_other_expense_price2: Valós költségek - Ár ÁFA nélkül
+    easy_money_expected_expense_id: Tervezett költségek
+    easy_money_expected_expense_name: Tervezett költségek - Név
+    easy_money_expected_expense_price1: Tervezett költségek - Teljes Ár
+    easy_money_expected_expense_price2: Terverzett költségek - Ár ÁFA nélkül
+    easy_money_expected_revenue_id: Tervezett bevétel
+    easy_money_expected_revenue_name: Tervezett bevétel - Név
+    easy_money_expected_revenue_price1: Tervezett bevétel - Teljes Ár
+    easy_money_expected_revenue_price2: Tervezett bevétel - Ár ÁFA nélkül
+    project_expected_hours: Tervezett munkaórák
+    project_expected_payroll_expense: Tervezett bérköltségek
+    _project_recovery: Visszaállítás
+    _project_timeentry_average_hourly_expense: Átlagos óránkénti költség
+    _project_other_profit: Profit
+  easy_reports_categories:
+    easy_money: Pénzügyek
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: bérköltségek konverziója
+  tooltip_real_hourly_rate: "A projektnél az alábbi óradíj kerül elszámolásra: %{average_hourly_rate} / óra."
+  label_easy_money_sidebar:
+    project: Összeg a projektre
+    issue: Összeg a feladatra
+    version: Összeg a mérföldkõre
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Egyéb bevételek
+      easy_money_other_expense_query: Egyéb költségek
+      easy_money_expected_revenue_query: Tervezett bevételek
+      easy_money_expected_expense_query: Tervezett költségek
+      easy_money_project_cache_query: Projekt költségvetés áttekintése
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: 'Személyes szûrõk egyéb bevételekhez'
+        easy_money_other_expense_query: 'Személyes szûrõk egyéb költségekhez'
+        easy_money_expected_revenue_query: 'Személyes szûrõk egyéb tervezett bevételekhez'
+        easy_money_expected_expense_query: 'Személyes szûrõk egyéb tervezett költségekhez'
+        easy_money_project_cache_query: 'Személyes szûrõk a projekt költségvetés áttekintõjéhez'
+      public:
+        easy_money_other_revenue_query: 'Közös szûrõk egyéb bevételekhez'
+        easy_money_other_expense_query: 'Közös szûrõk egyéb költségekhez'
+        easy_money_expected_revenue_query: 'Közös szûrõk egyéb tervezett bevételekhez'
+        easy_money_expected_expense_query: 'Közös szûrõk egyéb tervezett költségekhez'
+        easy_money_project_cache_query: 'Közös szûrõk a projekt költségvetés áttekintõjéhez'
+  easy_rake_tasks:
+      easy_rake_task_easy_money_project_cache:
+        caption: Projektek költségvetés áttekintése újratervezés

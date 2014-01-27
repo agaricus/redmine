@@ -1,0 +1,41 @@
+<div class="contextual">
+  <p>
+    <%= link_to(l(:button_log_time), {:controller => 'bulk_time_entries', :action => 'index', :project_id => @project, :issue_id => @issue}, :class => 'button-1') if User.current.allowed_to?(:log_time, @project, :global => true) -%>
+    <%= link_to(l(:label_project_all), {:controller => 'timelog', :action => 'index', :project_id => nil, :issue_id => nil}, :class => 'button-2') if @project %>
+  </p>
+</div>
+
+<%= render_timelog_breadcrumb %>
+
+<% if @only_me == true -%>
+  <% html_title l(:label_personal_statement), l(:label_details) %>
+<% else -%>
+  <% html_title l(:label_spent_time), l(:label_details) %>
+<% end -%>
+
+<%= call_hook :view_timelog_index_before_form_after_breadcrump, {:only_me => @only_me, :entries => @entries, :easy_attendance_report => @easy_attendance_report, :issue => @issue, :project => @project} %>
+
+<%= render :partial => 'timelog/filter_and_tabs', :locals => {:additional_hidden_fields => {'only_me' => @only_me}} %>
+
+<%= toggling_container('time-log-only-me', User.current, {:heading => l(:label_easy_attendance_plural)}) do %>
+
+  <%= render(:partial => 'easy_attendances/personal_report', :locals => {:report => @easy_attendance_report, :from => @from, :to => @to}) %>
+  <br />
+<% end  if @easy_attendance_report -%>
+
+<div id="time_entries">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @entities, :options => {:hascontextmenu => true}} -%>
+
+  <p class="pagination">
+    <%= pagination_links_full @entity_pages, @entity_count %>
+  </p>
+</div>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+<%= context_menu time_entries_context_menu_path %>
+
+<% content_for :header_tags do %>
+  <%= auto_discovery_link_tag(:atom, {:issue_id => @issue, :format => 'atom', :key => User.current.rss_key}, :title => l(:label_spent_time)) %>
+  <%= render :partial => 'easy_queries/infinite_scroll' %>
+<% end %>

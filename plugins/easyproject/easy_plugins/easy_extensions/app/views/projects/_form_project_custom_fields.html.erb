@@ -1,0 +1,12 @@
+<% form_name_prefix ||= 'project' -%>
+<% if custom_field_values.blank? -%>
+  <%= hidden_field_tag "#{form_name_prefix}[project_custom_field_ids][]", '' -%>
+<% else -%>
+  <% custom_field_values.each do |value| -%>
+    <p class="<%= value.custom_field.name.gsub(/ /, '_').underscore.dasherize -%>">
+      <%= custom_field_tag_with_label(form_name_prefix, value) -%>
+      <%= hidden_field_tag "#{form_name_prefix}[project_custom_field_ids][]", value.custom_field_id -%>
+    </p>
+  <% end -%>
+<% end -%>
+<%= call_hook(:view_projects_form_custom_fields, :custom_field_values => custom_field_values, :form_name_prefix => form_name_prefix, :project => project ) %>

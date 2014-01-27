@@ -1,0 +1,39 @@
+<%= content_tag :h1, l(:label_issue_status_plural)%>
+
+<table class="list reorder">
+  <thead><tr>
+      <th></th>
+      <th><%=l(:field_status)%></th>
+      <% if Issue.use_status_for_done_ratio? %>
+        <th><%=l(:field_done_ratio)%></th>
+      <% end %>
+      <th><%=l(:field_is_default)%></th>
+      <th><%=l(:field_is_closed)%></th>
+      <th></th>
+    </tr></thead>
+  <tbody>
+    <% @issue_statuses.each do |status| %>
+      <tr class="<%= cycle('odd', 'even') %> <%= status.easy_color_scheme %>">
+        <td class="center reorder-handler"><%= render_reorder_handle(status, 'issue_status') %></td>
+        <td class="name"><%= link_to status.name, edit_issue_status_path(status) %></td>
+        <% if Issue.use_status_for_done_ratio? %>
+          <td><%= h status.default_done_ratio %></td>
+        <% end %>
+        <td><%= checked_image status.is_default? %></td>
+        <td><%= checked_image status.is_closed? %></td>
+        <td class="buttons">
+          <%= delete_link issue_status_path(status) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p class="pagination"><%= pagination_links_full @issue_status_pages %></p>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to l(:label_issue_status_new), new_issue_status_path, :class => 'big button-1' %>
+  <%= link_to(l(:label_update_issue_done_ratios), update_issue_done_ratio_issue_statuses_path, :class => 'button-2', :id => 'issue-statuses-update-issue-done-ratios', :method => 'post', :data => {:confirm => l(:text_are_you_sure)}) if Issue.use_status_for_done_ratio? %>
+<% end %>

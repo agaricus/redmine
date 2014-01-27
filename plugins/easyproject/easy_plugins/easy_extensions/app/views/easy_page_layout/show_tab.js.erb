@@ -1,0 +1,4 @@
+$('#easy_page_tab_container_<%= @tab.id %>').html(
+	'<%= j(render :partial => 'common/easy_page_editable_tabs_inline_show', :locals => {:tab => @tab, :editable => true, :selected_tab => @selected_tab, :is_preloaded => @is_preloaded}) %>'
+	);
+PageLayout.tab_element.tabs('refresh');

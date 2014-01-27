@@ -1,0 +1,15 @@
+<h3><%=l('easy_pages.modules.issues_assigned_to_me')%> (<%= Issue.visible(user).open.count(:conditions => {:assigned_to_id => user.id}) %>)</h3>
+<% settings['visible_issues'] ||= 'assigned' %>
+<p>
+  <%= radio_button_tag "#{block_name}[visible_issues]", 'assigned', settings['visible_issues'] == 'assigned', :id => 'visible_issues_assigned' %>
+  <%= label_tag 'visible_issues_assigned', l(:label_issues_assigned_to_me_visible_issues_assigned) %>
+</p>
+<p>
+  <%= radio_button_tag "#{block_name}[visible_issues]", 'conserns', settings['visible_issues'] == 'conserns', :id => 'visible_issues_conserns' %>
+  <%= label_tag 'visible_issues_conserns', l(:label_issues_assigned_to_me_visible_issues_conserns) %>
+</p>
+<p>
+  <span class="my-page-issue-query-select-label"><%= l(:label_my_page_issue_row_count) -%></span>
+  <% settings["row_limit"] ||= 10 %>
+  <span class="my-page-issue-query-select"><%= text_field_tag("#{block_name}[row_limit]", settings['row_limit'].to_i, :size => 5) -%></span>
+</p>

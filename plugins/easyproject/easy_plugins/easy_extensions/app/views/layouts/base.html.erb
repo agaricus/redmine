@@ -1,0 +1,18 @@
+<% render_sidebar = !in_mobile_view? && sidebar_content? %>
+<% if in_mobile_view? %>
+  <%= mobile_xhtml_doctype %>
+<% else %>
+  <!DOCTYPE html>
+<% end %>
+<html lang="<%= current_language %>">
+  <%= render :file => 'layouts/base_html_header' %>
+  <body class="<%= body_css_classes %><%= ' nosidebar' unless render_sidebar -%>" style="cursor:auto">
+    <% if (in_mobile_view? || (current_theme && current_theme.is_easy_theme?))  %>
+      <%= render(:partial => 'layouts/base_easy_layout_grid', :locals => {:render_sidebar => render_sidebar}) -%>
+    <% else %>
+      <%= render(:partial => 'layouts/base_redmine_layout_float') -%>
+    <% end %>
+
+    <%= call_hook :view_layouts_base_body_bottom %>
+  </body>
+</html>

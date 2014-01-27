@@ -1,0 +1,13 @@
+$("#issue-dependent-fields").html('<%= j render( :partial => "issues/#{params[:render_for_modal] ? 'new_form_dependent_fields_for_modal' : 'new_form_dependent_fields'}", :formats => [:html], :locals => {:priorities => @priorities, :allowed_statuses => @allowed_statuses, :issue => @issue, :project => @project}) %>');
+<% if User.current.allowed_to?(:add_issue_watchers, @issue.project) %>
+ // Show watchers bar if needed
+  $("div.no-watchers").removeClass('grid_8').addClass('grid_5');
+  $("div.no-watchers").next('.grid_4').removeClass('grid_4').addClass('grid_7');
+<% end %>
+
+addFile = $("div.attachments-info");
+if (addFile) {
+  addFile.after('<%= j render(:partial => "clipboard_image_paste/add_form") %>');
+}
+setupFileDrop();
+initFileUploads();

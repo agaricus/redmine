@@ -1,0 +1,22 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => l(:label_easy_money_project_cache)} %>
+
+<div id="easy_money_project_caches">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @entities, :options => {:hascontextmenu => false}} -%>
+  <p class="pagination">
+    <%= pagination_links_full @entity_pages, @entity_count, :query => @query, :entities => @entities %>
+  </p>
+</div>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} -%>
+<% end -%>

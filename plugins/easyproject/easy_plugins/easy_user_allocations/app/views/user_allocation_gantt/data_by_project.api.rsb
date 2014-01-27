@@ -1,0 +1,44 @@
+api.start @period[:from]
+api.end @period[:to]
+
+api.array :projects do
+  @data.each do |project, project_data|
+    api.project do
+      api.id project.id
+      api.name project.name
+      api.level project.easy_level
+      api.href project_path(project)
+      start_date = project.start_date || @period[:from]
+      due_date = project.due_date || @period[:to]
+      api.start(start_date < @period[:from] ? @period[:from] : start_date)
+      api.end(due_date > @period[:to] ? @period[:to] : due_date)
+
+      api.array :users do
+        project_data.each do |user, allocations|
+          api.user do
+            api.id user.id
+            api.name user.name
+            api.href user_path(user)
+            days_working_hours = user.working_hours_between(@period[:from], @period[:to])
+            api.array :allocations do
+              (@period[:from]..@period[:to]).each_with_index do |date, i|
+                api.allocation do
+                  if allocations.any? && allocations.first.date == date
+                    api.hours allocations.first.hours
+                    working_hours = days_working_hours[date]
+                    api.over(allocations.first.hours > working_hours)
+                    allocations.shift
+                  else
+                    api.hours 0
+                  end
+                end
+              end
+            end
+
+          end
+        end
+      end
+
+    end
+  end
+end

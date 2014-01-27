@@ -1,0 +1,4 @@
+var field = $("#<%= dom_id(@easy_translation) %>")
+$("#add_translation").append($("<option/>").attr({value: "<%=j @easy_translation.lang %>"}).text(field.find("label").text()));
+field.remove();
+$("#easy_translation_add_translation_select").show();

@@ -1,0 +1,81 @@
+<%
+free_search_options ||= {}
+modul_uniq_id ||= ''
+free_search_field_placeholder ||= free_search_options[:placeholder] || ''
+free_search_field_name ||= free_search_options[:free_search_field_name] || 'entity_q'
+free_search_before_function ||= free_search_options[:free_search_before_function] || ''
+free_search_after_function ||= free_search_options[:free_search_after_function] || '' #=>  JS function which has been executed after searching is done
+free_search_after_done ||= free_search_options[:free_search_after_done] || ''
+free_search_params ||= free_search_options[:free_search_params] || 'easy_query_q'
+free_search_ajax_type ||= free_search_options[:free_search_ajax_type] || 'GET'
+if defined?(query)
+  free_search_element_to_update ||= free_search_options[:free_search_element_to_update] || query.entity.name.underscore.pluralize
+  free_search_url ||= free_search_options[:free_search_url] || url_for(:controller => query.entity.name.underscore.pluralize, :action => 'index')
+end
+free_search_element_to_update ||= free_search_options[:free_search_element_to_update] # HTML container with list of entities which to be updated
+free_search_url ||= free_search_options[:free_search_url] # AJAX url
+free_search_reset_type ||= free_search_options[:free_search_reset_type] || :location_reload
+free_search_reset_custom_js ||= free_search_options[:free_search_reset_custom_js] # reset JS
+free_search_ajax_parameters ||= free_search_options[:free_search_ajax_parameters] || "{'#{free_search_params}': $('##{free_search_field_name}').val(), 'set_filter': '1'}"
+%>
+<div id="easy-freetext-search-<%= free_search_field_name %>" class="easy-freetext-search">
+  <p style="margin:5px 0">
+    <%= search_field_tag(free_search_field_name, params[free_search_field_name], :id => free_search_field_name, :size => 30, :placeholder => free_search_field_placeholder) %>
+    <a href="#" class="icon-magnifier" id="<%= free_search_field_name %>_button"></a>
+  </p>
+  <script type="text/javascript">
+    function <%= f ="entities_#{free_search_field_name}_freetext_search".camelcase; f %>() {
+      <%= free_search_before_function.html_safe %>
+      if ($('#<%= free_search_field_name %>').val().length >= 1) {
+        var url = '<%= free_search_url %>';
+        <% if defined?(query) %>
+        var queries = getEasyQueryFiltersForURL('<%= modul_uniq_id %>');
+        if (queries != '&&') {
+          if (url.indexOf('?') >= 0) {
+              url += '&'
+          } else {
+              url += '?'
+          }
+          url += queries;
+        }
+        <% end %>
+
+          $.ajax({'url': url, 'data' : <%= free_search_ajax_parameters.html_safe %> , 'type': '<%= free_search_ajax_type %>' }).done(function(data) {
+            $('#<%= free_search_element_to_update %>').html(data);
+            h2 = $('#<%= free_search_element_to_update %>').closest('#content').find("h2:first")
+            h2.text(h2.text().replace(/(\()[0-9]+(\))/,''));
+            <%= free_search_after_done.html_safe %>
+          })
+          <%= free_search_after_function.html_safe %>
+      } else {
+        <% case free_search_reset_type.to_sym %>
+        <% when :location_reload %>
+          $.get(window.location, {}, function(data) {
+            $('#content').html(data);
+          })
+        <% when :clear %>
+          $('#<%= free_search_element_to_update %>').html('');
+        <% when :custom_js %>
+          <%= free_search_reset_custom_js.html_safe %>
+        <% end %>
+      }
+  }
+  $("#<%= free_search_field_name %>_button").click(function(event){
+      <%= f %>();
+  })
+  $("#<%= free_search_field_name %>").keyup(function(event) {
+    if ($('#<%= free_search_field_name %>').val().length > 0){
+      if ($("#<%= free_search_field_name %>_button").hasClass('icon-false'))
+        $("#<%= free_search_field_name %>_button").removeClass('icon-false').addClass('icon-magnifier');
+    } else {
+      $("#<%= free_search_field_name %>_button").removeClass('icon-magnifier').addClass('icon-false');
+    }
+
+
+    if (event.keyCode == 13 ) {
+      <%= f %>();
+      event.preventDefault();
+    }
+  })
+  </script>
+</div>

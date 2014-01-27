@@ -1,0 +1,45 @@
+<% if @statuses.empty? or rows.empty? %>
+  <p><i><%=l(:label_no_data)%></i></p>
+<% else %>
+  <table class="list issue-report">
+    <thead><tr>
+        <th></th>
+        <% for status in @statuses %>
+          <th><%=h status.name %></th>
+        <% end %>
+        <th><strong><%=l(:label_open_issues_plural)%></strong></th>
+        <th><strong><%=l(:label_closed_issues_plural)%></strong></th>
+        <th><strong><%=l(:label_total)%></strong></th>
+      </tr></thead>
+    <tbody>
+      <% for row in rows %>
+        <% row_class = ''
+        if field_name == 'category_id'
+          row_class = 'issue_category'
+          category_tree = row.self_and_ancestors()
+          issue_category_tree(category_tree) { |row_name, level|
+            row.name = row_name
+
+            if level > 0
+              row_class += " idnt idnt-#{level}"
+            end
+          }
+          end %>
+        <tr class="<%= cycle("odd", "even") %> <%= row_class %>">
+          <% if field_name == 'category_id' %>
+            <td class="name"><span><%= link_to h(row.name), aggregate_path(@project, field_name, row) %></span></td>
+          <% else %>
+            <td class="name"><%= link_to h(row.name), aggregate_path(@project, field_name, row) %></td>
+          <% end %>
+          <% for status in @statuses %>
+            <td><%= aggregate_link data, { field_name => row.id.nil? ? '!*' : row.id, "status_id" => status.id }, aggregate_path(@project, field_name, row, :status_id => status.id) %></td>
+          <% end %>
+          <td><%= aggregate_link data, { field_name => row.id.nil? ? '!*' : row.id, "closed" => 0 }, aggregate_path(@project, field_name, row, :status_id => "o") %></td>
+          <td><%= aggregate_link data, { field_name => row.id.nil? ? '!*' : row.id, "closed" => 1 }, aggregate_path(@project, field_name, row, :status_id => "c") %></td>
+          <td><%= aggregate_link data, { field_name => row.id.nil? ? '!*' : row.id }, aggregate_path(@project, field_name, row, :status_id => "*") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end
+reset_cycle %>

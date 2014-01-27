@@ -1,0 +1,94 @@
+<%
+divid = "user-availability-#{page_module.uuid.dasherize}-container"
+calendar = @easy_page_modules_data[block_name][:calendar]
+timeline = @easy_page_modules_data[block_name][:timeline]
+-%>
+<% if calendar.blank? -%>
+  <%= render :partial => 'easy_page_modules/page_module_cannot_be_displayed', :locals => { :page_module => page_module } %>
+<% else -%>
+  <%= toggling_container(modul_uniq_id, user, {:heading => h(settings['name']), :container_html => {:class => 'module-content calendar-container'}}) do %>
+    <div class="links">
+      <%= link_to l("button_timelog_calendar_prev.#{calendar.period.to_s}"), {
+          :controller => 'my',
+          :action => 'update_my_page_module_view',
+          :uuid => page_module.uuid.dasherize,
+          "resource_availability_#{page_module.uuid.underscore}" => {:start_date => calendar.prev_start_date}
+        }, :remote => true, :class => 'prev', :title => l("title_timelog_calendar_prev.#{calendar.period.to_s}") %>
+      <span class="period"><%= month_name(calendar.month) -%> <%= calendar.year -%></span>
+      <%= link_to l("button_timelog_calendar_next.#{calendar.period.to_s}"), {
+          :controller => 'my',
+          :action => 'update_my_page_module_view',
+          :uuid => page_module.uuid.dasherize,
+          "resource_availability_#{page_module.uuid.underscore}" => {:start_date => calendar.next_start_date}
+        }, :remote => true, :class => 'next', :title => l("title_timelog_calendar_next.#{calendar.period.to_s}") %>
+    </div>
+
+    <%= form_tag({}, :id => "resource-availability-form-#{page_module.uuid.dasherize}") do -%>
+      <%= hidden_field_tag "uuid", page_module.uuid.dasherize -%>
+      <%= hidden_field_tag "#{block_name}[start_date]", calendar.startdt, :id => "start-date-#{page_module.uuid.dasherize}" -%>
+    <% end -%>
+
+    <%= form_tag({:controller => 'easy_resource_availabilities', :action => 'update'}, :id => "resource-availibility-update-form-#{page_module.uuid.dasherize}") do -%>
+      <%= hidden_field_tag 'uuid', page_module.uuid %>
+      <%= hidden_field_tag 'day_start_time', settings['day_start_time'] || '8' %>
+      <%= hidden_field_tag 'day_end_time', settings['day_end_time'] || '18' %>
+      <%= hidden_field_tag 'date', '', :id =>  "date-#{page_module.uuid.dasherize}" %>
+      <%= hidden_field_tag 'hour', '', :id => "hour-#{page_module.uuid.dasherize}" %>
+      <%= hidden_field_tag 'available', '', :id => "available-#{page_module.uuid.dasherize}" %>
+      <%= hidden_field_tag 'description', '', :id => "description-#{page_module.uuid.dasherize}" %>
+    <% end -%>
+
+    <table class="resource-availability cal">
+      <thead>
+        <tr>
+          <th class='time-range'></th>
+          <% i = 0; calendar.startdt.upto(calendar.enddt) do |day| -%>
+            <th><%= day_name( (calendar.first_wday+i)%7 ) + ', ' + day.day.to_s + '.' + day.month.to_s + '.' -%></th>
+            <% i += 1; end -%>
+        </tr>
+      </thead>
+      <tbody>
+        <% (settings['day_start_time'] || '8').to_i.upto((settings['day_end_time'] || '18').to_i) do |i| %>
+          <tr>
+            <td class="time-range"><%= "#{i}:00 - #{i+1}:00"%></td>
+            <% calendar.startdt.upto(calendar.enddt) do |day| %>
+              <% if avail = timeline[day][i] %>
+                <td class="unavailable">
+                  <span class="label">
+                    <%= link_to_function(l(:'easy_page_module.resource_availability.label_set_available'), "updateResourceAvailability('#{day}', '#{i}', '#{page_module.uuid.dasherize}', true, '#{j l(:'easy_page_module.resource_availability.label_description_prompt')}')") %>
+                  </span>
+                  <span class="description">
+                    <%= avail.author.name %>
+                    <% unless avail.description.blank? %>
+                      <br />
+                      <%= textilizable(avail.description, {:headings => false}) %>
+                    <% end %>
+                  </span>
+                </td>
+              <% else %>
+                <td class="available" onclick="<%= "updateResourceAvailability('#{day}', '#{i}', '#{page_module.uuid.dasherize}', false, '#{j l(:'easy_page_module.resource_availability.label_description_prompt')}')" %>">
+                  <span class="label"><%= l(:'easy_page_module.resource_availability.label_set_unavailable') %></span>
+                </td>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          <% calendar.startdt.upto(calendar.enddt) do |day| -%>
+            <td>
+              <%= link_to_function('', "updateResourceAvailability('#{day}', null, '#{page_module.uuid.dasherize}', true, '#{j l(:'easy_page_module.resource_availability.label_description_prompt')}')", :title => l(:'easy_page_module.resource_availability.label_set_day_available'), :class => 'icon icon-true') %>
+              <%= link_to_function('', "updateResourceAvailability('#{day}', null, '#{page_module.uuid.dasherize}', false, '#{j l(:'easy_page_module.resource_availability.label_description_prompt')}')", :title => l(:'easy_page_module.resource_availability.label_set_day_unavailable'), :class => 'icon icon-false') %>
+            </td>
+          <% end %>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="resource-availability-legend contextual">
+      <span class="available">&nbsp;</span> <%= l(:'easy_page_module.resource_availability.label_available') %> <span class="unavailable">&nbsp;</span> <%= l(:'easy_page_module.resource_availability.label_unavailable') %>
+    </div>
+    <div class="clear"></div>
+  <% end %>
+<% end %>

@@ -1,0 +1,41 @@
+<%= form_tag({}) do %>
+  <table class="list admin">
+    <thead>
+      <%= content_tag(:th, link_to_function('', "toggleIssuesSelection($(this))",
+          :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}", :class => 'icon icon-checked')) -%>
+    <th colspan="5"></th>
+  </thead>
+  <tbody>
+    <% uniq_prefix = "administration_projects_" %>
+    <% projects.each_with_index do |project, i| %>
+      <% uniq_id = uniq_prefix + "project-#{project.id}" -%>
+      <tr id="<%= uniq_id-%>" class="<%= project.css_project_classes(uniq_prefix, :level => project.easy_level) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%> hascontextmenu" style="<%= 'display:none;' if !@only_favorited && !@question && project.easy_level > 1 %>">
+        <%= content_tag :td, check_box_tag('ids[]', project.id, false, :id => nil), :class => 'checkbox hide-when-print' -%>
+        <td class="name <%= 'has-expander' if !project.leaf? %>">
+          <% if !project.leaf? %>
+            <% if !@question && !@only_favorited && project.root? && @children_count && @children_count[project.id].to_i > 0 %>
+              <%= project_root_plus_button(project.id) %>
+            <% elsif projects[i + 1] && projects[i + 1].is_descendant_of?(project) %>
+              <%= project_descendant_plus_button(project.id, uniq_prefix, !!@question || !!@only_favorited) %>
+            <% else %>
+              <span class="expander-placeholder"></span>
+            <% end -%>
+          <% else %>
+            <span class="expander-placeholder"></span>
+          <% end -%>
+          <%= project.active? ? link_to(h(project.name), :controller => 'projects', :action => 'settings', :id => project) : h(project.name) %>
+
+        </td>
+        <td class="descr"><div class="long_descr"><%= truncate_html(textilizable(project.description, {:headings => false, :project => project}), 255) %></div></td>
+        <td ><%= format_date(project.created_on) %></td>
+        <td class="fast-icons">
+          <% unless project.easy_is_easy_template? %>
+            <span class="btn_contextmenu_trigger icon icon-settings button-2" title="<%= l(:title_additional_context_menu) %>"><%= l(:button_additional_context_menu) -%></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+<% end %>
+<%= context_menu admin_projects_context_menu_path(:status => params[:status]) %>

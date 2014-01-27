@@ -1,0 +1,73 @@
+<% divid = "timelog-calendar-#{page_module.uuid.dasherize}-container"
+calendar, perm_log_time, perm_view_time_entries = @easy_page_modules_data[block_name][:calendar], @easy_page_modules_data[block_name][:perm_log_time], @easy_page_modules_data[block_name][:perm_view_time_entries]
+is_week_displayed = settings && settings['period'] == 'week' -%>
+<div id="<%= divid -%>" class="timelog-calendar-container">
+  <%= toggling_container(modul_uniq_id, user, {:heading => l('easy_pages.modules.timelog_calendar'), :container_html => {:class => 'module-content calendar-container'}}) do %>
+    <div class="links">
+      <%= link_to_function l("button_timelog_calendar_prev.#{calendar.period.to_s}"), "$('#start-date-#{page_module.uuid.dasherize}').val('#{calendar.prev_start_date}'); $.ajax({url:'#{ j(url_for(:controller => 'my', :action => 'update_my_page_module_view'))}', data: $('#timelog-calendar-form-#{page_module.uuid.dasherize}').serialize(), success: function(data){ $('##{divid}').html(data) }})", :title => l("title_timelog_calendar_prev.#{calendar.period.to_s}"), :class => 'prev' -%>
+      <span class="period"><%= month_name(calendar.month) -%> <%= calendar.year -%></span>
+      <%= link_to_function l("button_timelog_calendar_next.#{calendar.period.to_s}"), "$('#start-date-#{page_module.uuid.dasherize}').val('#{calendar.next_start_date}'); $.ajax({url:'#{ j(url_for(:controller => 'my', :action => 'update_my_page_module_view'))}', data: $('#timelog-calendar-form-#{page_module.uuid.dasherize}').serialize(), success: function(data){ $('##{divid}').html(data) }})", :title => l("title_timelog_calendar_next.#{calendar.period.to_s}"), :class => 'next' -%>
+    </div>
+
+    <%= form_tag({}, :id => "timelog-calendar-form-#{page_module.uuid.dasherize}") do -%>
+      <%= hidden_field_tag "uuid", page_module.uuid.dasherize -%>
+      <%= hidden_field_tag "#{block_name}[start_date]", calendar.startdt, :id => "start-date-#{page_module.uuid.dasherize}" -%>
+      <%= hidden_field_tag "#{block_name}[user_id]", user.id -%>
+    <% end -%>
+    <table class="timelog cal">
+      <thead>
+        <tr>
+          <th class='week-number'></th>
+          <% 7.times do |i| -%>
+            <th><%= day_name( (calendar.first_wday+i)%7 ) -%></th>
+          <% end -%>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% day = calendar.startdt
+          while day <= calendar.enddt -%>
+            <%= ("<td class='week-number'>#{day.cweek}</td>").html_safe if day.cwday == calendar.first_wday -%>
+            <% sum_of_day = calendar.events_on(day).inject(0.0){|sum,i| sum + i.hours}
+            uwh = user.working_hours(day)
+            if sum_of_day < uwh
+              css_sum = "too-few"
+            elsif sum_of_day > uwh
+              css_sum = "too-much"
+            else
+              css_sum = 'ok'
+            end
+            -%>
+            <td class="<%= is_week_displayed || (day.month == calendar.month) ? 'even' : 'odd' -%><%= ' today' if User.current.today == day -%> <%= css_sum -%>">
+              <div class="easy-dropper-target easy-drop-calendar timelog-calendar" data-calendar-day="<%= day %>">
+               <!-- data-new-issue-attributes='{"issue[start_date]": "<%= day -%>", "issue[due_date]": "<%= day -%>"}' -->
+                <p class="day-num floatleft">
+                  <%= day.day.to_s+'.'+day.month.to_s+'.' -%>
+                </p>
+                <div style="clear:both"></div>
+                <div class="day-content">
+                  <p class="day-time-entry">
+                    <% if perm_view_time_entries %>
+                      <a href="<%= url_for({:controller => 'timelog', :action => 'index', :from => day, :to => day, :only_me => true})-%>" title="<%= l(:button_edit) -%>" class="timelog-link">
+                        <span class="text"><%= l(:label_timelog_calendar_link_before) -%></span><span class="<%= css_sum -%>"><%= html_hours("%.2f" % sum_of_day) -%></span><span class="text"><%= l(:label_timelog_calendar_link_after) -%></span>
+                      </a>
+                    <% else %>
+                      <span class="text"><%= l(:label_timelog_calendar_link_before) -%></span><span class="<%= css_sum -%>"><%= html_hours("%.2f" % sum_of_day) -%></span><span class="text"><%= l(:label_timelog_calendar_link_after) -%></span>
+                    </a>
+                  <% end %>
+                </p>
+                                <p class="day-add-time">
+                  <% if perm_log_time %>
+                    <%=  link_to(l(:button_log_time), bulk_time_entries_path(:spent_on => day, :page_module_uuid => page_module.uuid, :period => calendar.period, :back_url => url_for(:controller => 'my', :t => params[:t])), {:class => 'icon icon-time-add', :title => l(:title_timelog_calendar_new)}) -%>
+                  <% end %>
+                </p>
+              </div>
+            </td>
+            <%= '</tr><tr>'.html_safe if day.cwday==calendar.last_wday and day!=calendar.enddt -%>
+            <% day = day + 1
+          end -%>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+</div>

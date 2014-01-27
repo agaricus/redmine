@@ -1,0 +1,40 @@
+<% modul_uniq_id ||= ''; fields = []; block_name ||= '' %>
+<div class="add-filter">
+  <%= l(:label_filter_add) %>:
+  <%= select_tag (block_name.blank? ? 'add_filter_select' : "#{block_name}[add_filter_select]"), resalloc_filter_options(query),
+    :onchange => "add_filter('#{modul_uniq_id}');", :class => 'select-small', :name => nil, :id => modul_uniq_id + 'add_filter_select' %>
+</div>
+<%= render :partial => 'easy_user_allocation_queries/filter_group', :locals => {
+  :query => query,
+  :filters => query.basic_filters,
+  :fields => [],
+  :modul_uniq_id => modul_uniq_id,
+  :block_name => block_name
+} %>
+<% if query.is_a?(EasyUserAllocationByProjectQuery) %>
+  <h3><%= l(:label_project_plural) %></h3>
+  <%= render :partial => 'easy_user_allocation_queries/filter_group', :locals => {
+    :query => query,
+    :filters => query.project_filters,
+    :fields => [],
+    :modul_uniq_id => modul_uniq_id,
+    :block_name => block_name
+  } %>
+<% else %>
+  <h3><%= l(:label_issue_plural) %></h3>
+  <%= render :partial => 'easy_user_allocation_queries/filter_group', :locals => {
+    :query => query,
+    :filters => query.issue_filters,
+    :fields => [],
+    :modul_uniq_id => modul_uniq_id,
+    :block_name => block_name
+  } %>
+<% end -%>
+  <h3><%= l(:label_user_plural) %></h3>
+  <%= render :partial => 'easy_user_allocation_queries/filter_group', :locals => {
+    :query => query,
+    :filters => query.user_filters,
+    :fields => [],
+    :modul_uniq_id => modul_uniq_id,
+    :block_name => block_name
+  } %>

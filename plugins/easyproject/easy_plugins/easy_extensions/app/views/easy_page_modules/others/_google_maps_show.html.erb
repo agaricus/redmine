@@ -1,0 +1,3 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => l('easy_pages.modules.google_maps'), :container_html => {:class => 'module-content'}}) do %>
+  <%= (settings['iframe_tag'] || '').html_safe %>
+<% end %>

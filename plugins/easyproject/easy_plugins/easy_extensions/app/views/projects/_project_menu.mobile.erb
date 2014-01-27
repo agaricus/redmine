@@ -1,0 +1,5 @@
+<ul>
+  <% menu_items_for(:project_menu, project).select{|i| i.name == :overview || i.name == :issues }.each do |node| %>
+    <%= render_menu_node(node, project) %>
+  <% end %>
+</ul>

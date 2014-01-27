@@ -1,0 +1,53 @@
+<h2><%= @time_entry.new_record? ? l(:label_bulk_time_entries) : l(:label_bulk_time_entries_edit) %></h2>
+
+<%= form_for @time_entry, :url => {:action => 'save', :time_entry_id => params[:time_entry_id]}, :html => {:class => 'tabular form-disabled-on-ajax', :id => 'bulk-time-entry-form'} do |f| %>
+  <%= hidden_field_tag(:page_module_uuid, params[:page_module_uuid]) if params[:page_module_uuid] -%>
+  <%= hidden_field_tag(:back_url, params[:back_url]) if params[:back_url] -%>
+  <%= error_messages_for 'time_entry' %>
+
+  <div class="box gray-background tabular">
+    <div class="grid_7 alpha omega">
+      <div class="combo-container no-label-required-by-css" id="container_users">
+        <%= render :partial => 'container_users' %>
+      </div>
+
+      <div class="timeentry-projects combo-container no-label-required-by-css" id="container_projects">
+        <%= render :partial => 'container_projects' %>
+      </div>
+
+      <div class="timeentry-issues combo-container no-label-required-by-css" id="container_issues">
+        <%= render :partial => 'container_issues' %>
+      </div>
+
+      <div id="container_time_entry">
+        <%= render :partial => 'container_time_entry' %>
+      </div>
+      <%= call_hook(:view_timelog_edit_form_bottom, { :time_entry => @time_entry, :form => f }) %>
+    </div>
+    <div class="bulk-time-entry-topprojects grid_4 alpha omega" id="top_last_entries">
+      <%= render :partial => 'top_last_entries', :locals => {:top_last_entries => @top_last_entries} -%>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <span id="save_buttons">
+    <%= submit_tag l(:button_bulk_time_save_and_continue), :class => 'button-1', :name => 'continue' -%>
+    <%= submit_tag l(:button_save), :class => 'button-2' -%>
+  </span>
+  <span id="redirect_buttons">
+    <% if !params[:spent_on].blank? && !params[:page_module_uuid].blank? %>
+      <%= button_to_function( l(:button_back_to_calendar), "window.location = '#{url_for(:controller => 'my', :action => 'page')}'", :class => 'button-2') -%>
+    <% elsif !params[:back_url].blank? %>
+      <%= button_to_function( l(:button_back), "window.location = '#{params[:back_url]}'", :class => 'button-2') -%>
+    <% end %>
+  </span>
+<% end %>
+
+<div id="user-spent-time">
+  <%= render :partial => 'timelog/user_spent_time', :locals => {:spent_on => @time_entry.spent_on, :user => @time_entry.user, :back_url => bulk_time_entries_path(:spent_on => @time_entry.spent_on)} %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% include_calendar_headers_tags %>
+
+<% html_title l(:label_bulk_time_entries) %>

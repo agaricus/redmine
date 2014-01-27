@@ -1,0 +1,16 @@
+<%  modul_uniq_id ||= controller_name + '_' + action_name %>
+<%= toggling_container(modul_uniq_id, User.current, {:heading => l(:label_add_related_issues), :default_button_state => false}) do %>
+  <p class="gray-background">
+    <span class="label-before"><%= l(:label_issue_new_relation_before) -%></span>
+    <span class="relation-type">
+      <%= select_tag 'issue[relation][relation_type]', options_for_select(collection_for_relation_type_select, issue.relation && issue.relation[:relation_type]), :style => 'width:auto;' -%>
+    </span>
+    <span class="label-after"><%= l(:label_issue_new_relation_after) -%></span>
+    <span class="issue-selector"><%= issues_relations_field_tag 'issue[relation][issue_to_id]', 'relation_issue_to_id', issue.relation && issue.relation[:issue_to_id], :url => {:project_id => issue.project.id, :query_name => 'issue_relation'} %></span>
+  <div>
+    <%= l(:field_delay) %>: <%= text_field_tag 'project[relation][delay]', nil, :size => 3 -%>
+    <%= l(:label_day_plural) -%>
+  </div>
+  </p>
+
+<% end unless in_mobile_view? %>

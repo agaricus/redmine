@@ -1,0 +1,65 @@
+---
+zh:
+  easy_user_allocations_name: 资源管理
+  easy_user_allocations_description: ! '- 资源管理/人'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: 查看资源管理
+  permission_view_my_easy_user_allocations: 查看自己的资源管理
+  permission_edit_easy_user_allocations: 编辑资源管理
+  project_module_user_allocations: 资源管理
+  label_user_allocations: 资源管理
+  label_user_allocation_gantt: 资源分配甘特图
+  label_user_allocation_gantt_users: 用户
+  label_user_allocation_gantt_user_selection: 选择
+  label_user_allocation_gantt_range: 日期
+  label_unassigned_issues: 未分配的任务
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: 选择不同的日期范围，显示整个任务
+  label_allocation_changed_title: 任务是改变，将更新保存
+  resalloc:
+    title: 资源分配
+    settings: 设置
+    button_apply_settings: 应用设置
+    button_recalculate: 重新计算分配
+    button_save: 保存更改
+    button_undo: 撤消未保存的更改
+    button_split_issue: 拆分任务
+    split_issue_help: 选择日期通过点击一个未分配的任务。
+    error_date_range_too_long: 必须是小于1年
+    legend_hours_worked: 所花费的时间
+    legend_hours_overtime: 工作时间超出规定的时间
+  easy_pages:
+    modules:
+      user_allocation: 资源分配
+      user_allocation_working_plan: 资源分配/工作计划
+  permission_edit_my_easy_user_allocations_plan: 编辑自己的工作计划
+  label_user_allocation_plan: 工作计划
+  user_allocation_plan:
+    label_plan: 计划
+    label_real: 实
+    label_comment: 评论
+  easy_query:
+    name:
+      easy_user_allocation_query: 资源分配
+      easy_user_allocation_by_project_query: 按项目的资源分配
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: 资源分配上的私人过滤器
+        easy_user_allocation_by_project_query: 按项目分配资源的私人过滤器
+      public:
+        easy_user_allocation_query: 公共资源分配的过滤器
+        easy_user_allocation_by_project_query: 公共资源配置过滤器项目
+  label_allocations_by_project: 按项目的资源分配
+  text_easy_user_allocation_working_plan_bottom_info: 允许安排用户在选定的一周的工作量。表中显示在预定的时间和实际时间报道。
+  label_setting_keep_issue_start_dates: 不要更改任务的开始日期。
+  text_setting_keep_issue_start_dates: 如果启用和任务的时间估计太低，任务将不会缩短，但它会被分配到0个小时，而不是。
+  project_module_easy_user_allocations: 使用资源/人
+  label_setting_allocate_evenly: 分配均匀
+  text_setting_allocate_evenly: 如果启用和调整任务分配甘特，估计时间是均匀分布在整个任务持续时间。
+  label_setting_allocate_from_start: 分配任务的开始日期
+  text_overallocation: 分配时间的总和是大于估计小时。
+  permission_view_easy_user_allocations_by_project: 查看项目的分配
+  easy_user_allocations_sidebar_all_users_queries: 用户分配
+  easy_user_allocations_label_show_assigned_issues: 显示分配给用户%{username}
+  label_filter_group_easy_user_allocation_query: 资源分配
+  label_edit_estimated_hours: 编辑估计小时

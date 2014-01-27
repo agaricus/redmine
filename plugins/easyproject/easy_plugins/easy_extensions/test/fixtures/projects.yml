@@ -1,0 +1,13 @@
+projects_easytemplate001: 
+  created_on: 2006-07-19 19:13:59 +02:00
+  name: EasyProject
+  updated_on: 2006-07-19 22:53:01 +02:00
+  id: 1
+  description: Cool sowtware to manage your Projects
+  homepage: http://www.easyproject.cz/
+  is_public: true
+  easy_is_easy_template: true
+  identifier: lwc
+  parent_id: 
+  lft: 1
+  rgt: 2

@@ -1,0 +1,19 @@
+<p>
+  <%= label_tag 'custom_field_settings_entity_type', l(:label_custom_field_settings_entity_type) %><%= select_tag 'custom_field[settings][entity_type]', options_for_select(easy_lookup_entity_options(custom_field.class), custom_field.settings['entity_type']), :disabled => !custom_field.new_record? %>
+  <% unless custom_field.new_record? %>
+    <%= hidden_field_tag 'custom_field[settings][entity_type]', custom_field.settings['entity_type'] %>
+  <% end %>
+</p>
+<p>
+  <%= label_tag 'custom_field_settings_entity_attribute', l(:label_custom_field_settings_entity_attribute) %><%= select_tag 'custom_field[settings][entity_attribute]', options_for_select(easy_lookup_entity_attributes_options(custom_field.settings['entity_type'] || easy_lookup_entity_options(custom_field.class).first[1]), custom_field.settings['entity_attribute']) %>
+</p>
+
+<%= javascript_tag do %>
+$('#custom_field_settings_entity_type').change(function(){
+  $.ajax({
+    url: '<%= new_custom_field_path(:format => 'js') %>',
+    type: 'get',
+    data: $('#custom_field_form').serialize()
+  });
+});
+<% end -%>

@@ -1,0 +1,1377 @@
+@import url(basic.css);
+@import url(main_ep_layout.css);
+@import url(easy_design.css);
+@import url(easy_gradients.css);
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #666666;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1000px !important;
+    margin: auto !important;
+    margin-bottom: 1px !important;
+    height: 100%;
+}
+
+#wrapper {
+    background: #ffffff;
+    width: 1000px;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px #a0a0a0;
+    -moz-box-shadow: 0px 0px 10px #a0a0a0;
+    -webkit-box-shadow: 0px 0px 10px #a0a0a0;
+    border-radius: 20px;
+}
+
+/* HEADER */
+div#indent-box {
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 71%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(71%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 71%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 71%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 71%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 71%,rgba(255,255,255,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    height: 70px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 46;
+}
+#header {
+    background-color: #F0F0F0;
+    border-radius: 20px 20px 0px 0px;
+    color: #666666;
+    margin: 0 0 0 -20px;
+    width: 1000px;
+    box-shadow: 0px 0px 10px #a0a0a0;
+    top: 10px;
+}
+
+#header a {
+    text-decoration: none;
+    color:#666;
+}
+#logo {
+    float: left;
+    width: 220px;
+}
+
+div#logo a {
+    width: 200px;
+    margin: auto;
+    height: 40px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div#logo a img {
+    height: 40px;
+    width: 185px;
+}
+
+/* -- JUMP TO PROJECT HACK*/
+div#main-menu-section span#header-quick-search-project-jump-box-container div.dhx_combo_box {
+    width: 150px !important;
+}
+div#main-menu-section span#header-quick-search-project-jump-box-container div.dhx_combo_box .dhx_combo_input {
+    height: 20px;
+}
+div#main-menu-section span#header-quick-search-project-jump-box-container div.dhx_combo_box .dhx_combo_img {
+    padding: 2px;
+}
+div#main-menu-section {
+    box-shadow: 1px -1px 5px #A0A0A0;
+    border-radius: 0 20px 0 0;
+    height: inherit;
+    margin: 0px 0 0 220px;
+    width: auto;
+}
+#header-space-holder {
+    width: 960px;
+    margin: 0px;
+    background: #ffffff;
+    height: 80px;
+    background: #ffffff;
+    z-index: 10;
+}
+
+/* END HEADER*/
+/** html #content{ width: 75%; padding-left: 0; margin-top: 0px; padding: 6px 10px 10px 10px;}*/
+
+.autoscroll {
+    padding:1px;
+    margin-bottom: 1.2em;
+}
+
+#footer div.bgr {
+    width: 100%;
+    text-align: right;
+}
+
+#footer a {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+a {
+    color: #0DA5DD;
+}
+p {
+    word-wrap: break-word;
+}
+#main p.small a {
+    color: #666666;
+    text-align: right;
+}
+#main .easy-page-zone p.small a {
+    display: block;
+}
+#main h1 a, #main h2 a, #main h3 a {
+    color: #0DA5DD;
+}
+#main-menu h1{
+    color: #0DA5DD;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+#main-menu h1 {
+    margin: 0;
+    padding: 2px;
+    border-bottom: none;
+    display: inline-block;
+}
+
+#main h4, #main .wiki h1, #main .wiki h2, #main .wiki h3 {
+    border-bottom: 0 none;
+    color: #606060;
+}
+#main h3 {
+    background-color: #F9F9F9;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px 5px 0 0;
+    padding: 8px 10px;
+}
+div.easy-page-module-box div.module-toggle-button h3 {
+    cursor: pointer;
+}
+#main #sidebar h3 {
+    color: #555555;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 20px;
+    margin: 0 0 10px 0;
+}
+body.controller-users.action-show #main h3,#main h4.sidebar-style-h3, #main h3.sidebar-style-h3, #content h3.sidebar-style-h3 {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 14px;
+    color: #0DA5DD;
+}
+
+#main #sidebar div.project-family-info h3 {
+    margin-bottom: 0;
+}
+td.inline_expander a {
+    color: #0DA5DD;
+    line-height: 18px;
+}
+
+#main .tabular label.inline {
+    display: inline;
+    float: none;
+}
+
+#main .tabular .description label {
+    float: none;
+}
+
+#main th a {
+    color: #0DA5DD;
+    font-size: 14px;
+}
+
+/* ------------------------------------------------------------*/
+#main table.list th a {
+    color: #666;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#main table.list th {
+    color: #666;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+
+table.list tr {
+    cursor: default;
+    border-bottom: 1px dashed #CCCCCC;
+}
+table.list th {
+    background: none;
+    text-align: left;
+}
+table.list tr.subproject td {
+    font-size: 13px;
+    padding: 10px 5px 10px 0px;
+    text-align: left;
+    vertical-align: middle;
+    height: 0px;
+}
+#sidebar table.list tr.subproject td a {
+    padding-left: 10px;
+    background: none;
+}
+table.list td.todo, table.list tr.subproject td.todo,
+table.list td.closed, table.list tr.subproject td.closed {
+    padding: 5px 5px 5px 5px;
+}
+
+#main table.list td.checkbox {
+    padding: 0px;
+    width: 20px;
+}
+
+#main .issue-parents table.list td.checkbox, #main .issue-childs table.list td.checkbox {
+    display: none;
+    width: 0px;
+}
+table.list tr td.expander {
+    padding: 0px 8px 8px 10px;
+    width: 16px;
+}
+
+#main #sidebar table.list tr.selected td {
+    background-color: #FFFFDD;
+}
+
+#main table.list tr td.assigned_to a {
+    color: #000000;
+}
+
+#main table.list tr.child td.name {
+    padding-left: 20px;
+}
+
+#main div#list-middle-right table.list.time-entries td {
+    padding: 3px;
+}
+#main div#list-middle-right table.list.time-entries td.comments, #main div#list-middle-right table.list.time-entries td.filler2 {
+    display: none;
+}
+
+#main table.roles-report td.permission-name {
+    white-space: nowrap;
+}
+
+#main table.list tr.nofilter td.name a, #main table.list tr.nofilter td.description {
+    font-style: italic;
+}
+
+#main table.list tr.root td.name a {
+    font-size: 14px;
+}
+
+#main table.list tr.child td.name a {
+    margin-left: 13px;
+    padding-left: 17px;
+    font-size: 12px;
+    background: url("../images/arrow_collapsed.png") no-repeat 0px -1px;
+}
+
+
+#sidebar {
+    float: none;
+    margin: 5px 0 0 5px;
+    padding: 6px 0 0 10px;
+    /*    width: 210px;*/
+}
+
+#sidebar a, #sidebar div.watchers-list span.user-name {
+    color: #666;
+}
+#main #sidebar .links a {
+    display: inline;
+    border: none;
+}
+
+#main #sidebar div.box.issue-info div.issue_actions a {
+    display: block;
+}
+#main #sidebar div.member div {
+    margin: 0;
+    padding: 0;
+}
+
+#main #sidebar div.member div.avatar-container {
+    margin-right: 10px;
+}
+
+
+#main #sidebar div.member-name {
+    line-height: 20px;
+    width: 200px;
+}
+
+#main #sidebar div.member-issues {
+    float: right;
+    height: 20px;
+    width: 20px;
+}
+
+#main #sidebar div.member-new-task {
+    line-height: 20px;
+}
+
+#main #sidebar div.member div.member-roles {
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+
+#main #sidebar div.member-issues a {
+    background: url("../images/document.png") no-repeat scroll 0 7px transparent;
+    height: 25px;
+    padding: 0 0 0 10px;
+    width: 20px;
+}
+
+#main #sidebar div.member-new-task a {
+    float: right;
+    height: 20px;
+}
+
+div.links a {
+    border-right: 1px solid #cccccc;
+    padding-right: 5px;
+}
+
+div.links a.last, div.links a:last-child {
+    border-right: none;
+}
+
+/*#main #sidebar table.list td {
+    padding: 0;
+}*/
+
+#main div#tab-content-modules div.box {
+    border: none;
+}
+
+/*#main div#user-projectquery a, #main #sidebar div.version a {
+    border-bottom: 1px dashed #CCCCCC;
+    padding-bottom: 3px;
+}
+*/
+
+
+#main .tabular .issue_others_static_fields label.floating {
+    width: 200px;
+}
+
+.issue_updatable_fields .attribute, .issue_updatable_fields .new-issue-custom-field {
+    clear: both;
+}
+
+div.my-page-new-issue-right .attribute, div.my-page-new-issue-right-attachments{
+    clear: both;
+}
+
+div.box.issue_fields {
+    margin-top: 10px;
+}
+
+form#issue-form.edit-issue-form .attributes select {
+    width: 170px;
+}
+
+div#attachments_fields input {
+    width: 200px !important;
+}
+
+#attachments_fields input[type="text"] {
+    margin-left: 0px;
+    width: 250px;
+}
+
+#attachments_fields .inline {
+    display: block;
+    float: right;
+}
+
+#attachments_fields br {
+    clear: both;
+}
+
+#main #move_form .box {
+    border: 0px;
+    padding: 0px;
+}
+
+
+#cke_project_description {
+    width: 500px;
+}
+p.subtitle {
+    margin: 0px;
+}
+
+body.controller-activities.action-index #main #sidebar form p a {
+    display: inline;
+}
+
+div#activity dt{
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 0;
+}
+#activity dt, .journal {
+    clear: left;
+}
+
+div#activity dt.me .time {
+    border-bottom: 1px solid #999999;
+}
+
+div#activity dt .time {
+    color: #777777;
+    margin-right: 5px;
+}
+
+div#activity dd, #search-results dd {
+    display: block;
+    font-size: 12px;
+}
+
+div#activity dd p {
+    margin: 0;
+}
+
+
+
+/*.floatleft {
+    float: left;
+}
+
+.floatright {
+    float: right;
+    width: 300px;
+}*/
+
+/*div#history h3 {
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+}*/
+
+div#issue-detail fieldset {
+    border: 0 none;
+    padding: 0;
+}
+
+#main small.edit-properties {
+    font-size: 12px;
+}
+
+#main small.edit-properties a {
+    color: #E3222E;
+}
+
+body.controller-projects.action-show #main div.project-info-news .project-news {
+    line-height: 20px;
+}
+#main div.easy-page-module-box div.project-info-news-container span.created_on {
+    display: block;
+    font-style: italic;
+    text-align: right;
+}
+#main div.easy-page-module-box div.project-info-news-container h3 {
+    border: none;
+    display: inline;
+}
+
+#main div.easy-page-module-box div.project-info-news-container div.news-unread {
+    display: inline;
+}
+
+
+body.controller-projects.action-show #main .project-info-news-container .project-news h3 a {
+    font-size: 12px;
+}
+
+#main table.user-allocation-table .user-timeline-value span.overdue a, table.user-allocation-table .user-timeline-value span.overdue span a {
+    color: #E3222E;
+}
+
+#main table.user-allocation-table td {
+    padding: 0px;
+}
+
+#main table.user-allocation-table .allocation {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+#main table.user-allocation-table span.user-timeline-value span.user-allocated-hours, .user-allocation-table span.user-timeline-value span.user-working-hours {
+    margin: 0 3px 0 3px;
+}
+
+#main table.user-allocation-table div.allocation {
+    border-bottom: 1px dashed #ccc;
+}
+
+#main .cke_skin_kama {
+    /*max-width: 500px;*/
+}
+
+.filters-table {
+    clear: both;
+    width: 100%;
+}
+
+.issue-sidebar-container {
+    position: fixed;
+    width: 220px;
+    z-index: 10;}
+
+#sidebar div.query-action-buttons {
+    padding-left: 5%
+}
+
+.journal-details-container {
+    float: left;
+    width: auto;
+}
+
+#main .journal-details-container h4 {
+    margin: 5px 0px 0px 80px;
+}
+body div.calendar {
+    z-index: 99;
+}
+
+div#projects-index h2 {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #666;
+    max-width: 250px;
+}
+
+div#projects-index form {
+    width: 400px;
+}
+#main #content div.avatar-container {
+    margin: 0px 5px;
+}
+/*#main #content div#history div.journal-details-container div.avatar-container {
+    margin-top: -25px;
+}*/
+div#quick-search div.dhx_combo_box {
+    float: right;
+}
+
+#main form.new-issue-form h3,
+#main form.new-issue-form h4 {
+    font-size: 14px;
+    color: #0DA5DD;
+}
+div.member div.avatar-container {
+    float: left;
+    margin: 5px 5px 5px 0px;
+}
+.easy-page-module-box div.members div.member {
+    clear: both;
+    display: inline-block;
+    width: 210px;
+}
+div.easy-page-module-box div.member div.member-name {
+    padding-top: 5px;
+}
+#main #sidebar div.member div.member-name a {
+    padding-top: 0px;
+    clear: none;
+}
+
+div#easy-page-layout-service-box {
+    z-index: 9;
+    position: relative;
+    /*    margin-bottom: 10px;*/
+}
+#sidebar .contextual {
+    width: 100%;
+    margin-top: 0px;
+}
+#main .has-breadcrumb .contextual {
+    margin-top: -20px;
+}
+
+
+a.new-link.button-2 {
+    background-color: #FAFAFA;
+    border: 1px solid #CCCCCC;
+    color: #666666;
+    display: block;
+    padding: 4px 10px;
+    text-decoration: none;
+    margin-top: 0px;
+    width: 199px;
+}
+
+
+
+#sidebar .module-content a {
+    border-bottom: 1px dashed #ccc;
+}
+
+/*#main .gray-background, form#workflow_copy_form > div.box, #main form > div.box, form#bulk-time-entry-form > div#entries,
+#main fieldset#date-range div.search-form-container, div#modal-dialog-loader .gray-background {
+    background-color: #F0F0F0;
+    border-radius: 3px;
+    padding: 10px;
+}*/
+
+.toggle-button {
+    background-image: url("../images/arrow_collapsed.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: bold;
+    padding-left: 16px;
+}
+
+.toggle-button.open {
+    background-image: url("../images/arrow_expanded.png");
+}
+
+.layout-from-template-selecting-projects-form ul li {
+    list-style-type: none;
+}
+
+/* GRAY BACKGROUND FOR NON-PATCHED VIEWS
+        -- SETTINGS
+*/
+body.controller-settings #main form > div:first-child {
+    background-color: #F0F0F0;
+}
+
+/* END*/
+div.dhx_combo_list {
+    z-index: 55;
+    height: 300px;
+}
+
+div.dhx_combo_box {
+    margin-top: 1px;
+    height: 25px;
+    font-size: 12px;
+    padding-left: 5px;
+}
+#main tr.subproject td a {
+    font-weight: normal;
+}
+tr.subproject.level-2 td.name a {
+    padding-left: 40px;
+    background: url("../images/arrow_collapsed.png") no-repeat 20px -1px;
+}
+tr.subproject.level-3 td.name a {
+    padding-left: 60px;
+    background: url("../images/arrow_collapsed.png") no-repeat 40px -1px;
+}
+
+table.list tr td.description {
+    line-height: 22px;
+    padding-left: 10px;
+}
+
+#main table.list tr td.description a {
+    padding-left: 0;
+    background: none;
+}
+
+div#filters {
+    padding: 10px;
+    padding-top: 5px;
+}
+
+div#filters_settings {
+    padding: 10px;
+}
+p#button-add-comment {
+    text-align: right;
+}
+div.menu-more-sidebar > ul {
+    width: 218px;
+}
+
+div.menu-more-sidebar > ul > li {
+    width: 218px;
+}
+
+div.assigned-to div.avatar-container {
+    width: 80px;
+}
+/*
+#main div.assigned-to a {
+    display: block;
+}*/
+
+
+div.easy-page-module-box td.project-name {
+    padding-left: 30px;
+}
+div.bubble-container div.bubble:after {
+    border-width: 3px 10px 10px 0;
+    bottom: 180px;
+    left: -10px;
+    top: 25px;
+}
+/* USERS*/
+
+div#sidebar div#easy-page-layout-service-box a#users-send-mail-all {
+    font-size: 0.85em;
+}
+body.controller-users.action-show h1 > div.avatar-container {
+    margin-right: 10px;
+}
+body.controller-users.action-edit div.avatar-container {
+    margin-right: 25px;
+}
+/* -- SHOW*/
+#main div#user-character {
+    margin-bottom: 10px;
+}
+#main div#user-character > ul {
+    margin-left: 60px;
+}
+#main div#user-character > ul li{
+    float: left;
+    width: 400px;
+}
+/*    -- FORM*/
+#main div#user_form div.box {
+    border:none;
+    padding: 0px;
+}
+#main div#user_form div.splitcontentright select, #main div#user_form div.splitcontentright div#user_rss_key input, #main div#user_form div.splitcontentright div#user_api_key input {
+    width: 300px;
+}
+div#users table.list.users td.fast-icons {
+    width: 230px;
+}
+div#users table.list.users td.fast-icons a {
+    display: inline-block;
+    width: 65px;
+}
+
+/* END USERS*/
+
+
+#main label.required, span.required, .required {
+    color: red ;
+}
+
+/*TIMELOG*/
+body.controller-timelog fieldset#date-range div {
+    margin: 10px 0px;
+}
+body.controller-timelog fieldset#date-range div p.buttons {
+    margin: 10px 0px 0px;
+}
+form#time_log input {
+    margin-right: 10px;
+}
+form#time_log #issues-and-time-entry .combo-container {
+    margin:0;
+}
+/* NEW PROJECT FROM TEMPLATE */
+form#project-from-template {
+    display: block;
+    padding: 10px
+}
+form#project-from-template label {
+    font-weight: bold;
+    display: inline-block;
+    width: 300px;
+    background-color: inherit;
+}
+form#project-from-template label:after {
+    content: ":"
+}
+form#project-from-template input {
+    width: 300px;
+    margin-left: -3px;
+}
+form#project-from-template select {
+    width: 310px;
+}
+form#project-from-template p.subproject label{
+    padding-left: 15px;
+    font-style: italic;
+}
+form#project-from-template p.subproject input{
+    margin-left: -18px;
+}
+p#form-checkbox {
+    clear: both;
+    white-space: nowrap;
+}
+p#form-checkbox label {
+    width: 100%;
+    font-weight: normal;
+}
+p#form-checkbox label:after {
+    content:"";
+}
+p#form-checkbox input {
+    width: 30px;
+}
+form#project-from-template input.button-1 {
+    width: inherit;
+}
+#main table.list.templates td.fast-icons {
+    white-space: nowrap;
+    width: 160px;
+}
+#main table.list.templates td.fast-icons a {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#wrapper #main table.list.templates tr td.fast-icons > a.button-1 {
+    display: block;
+    padding-left: 40px;
+    text-align: left;
+}
+/* END TEMPTATE*/
+
+/* ADMIN*/
+table.list.admin tr td.name {
+    font-size: 12px;
+}
+table.list.admin tr td{
+    padding: 10px 0px;
+}
+
+div#projects.administration td.fast-icons {
+    width: 220px;
+}
+
+table.list tbody tr td.descr div.long_descr{
+    overflow-x: auto;
+    width: auto;
+    padding: 0px 3px;
+}
+div#projects.administration table.list td.description *, div#projects.administration table.list td.descr > * {
+    width: 200px;
+}
+fieldset#admin-projects {
+    margin-bottom: 10px;
+}
+#main table.list.admin tr td.fast-icons a{
+    font-weight: bold;
+}
+div#projects.administration td.name, div#projects.administration table.projects td.name, div#projects.administration td.name a, div#projects.administration table.projects td.name a  {
+    width: 200px;
+}
+div#projects.administration table.entities.projects th:first-child, div#projects.administration table.entities.projects td:first-child {
+    display: none;
+}
+
+/* END ADMIN*/
+
+#quick_navigation_autocomplete {
+    margin-right: -5px !important;
+}
+/* END MY PAGE*/
+
+/*# LUKAS hack*/
+
+#main div.project-heading h2 div.additional-heading {
+    float: right;
+}
+#main div#easy-page-layout-service-box div.contextual .customize-button.button-2 {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: inherit;
+}
+div#easy-page-layout-service-box-bottom .customize-button-container {
+    clear: both;
+    margin: 0px 10px;
+}
+fieldset.easy-filters {
+    border: none;
+    position: relative;
+}
+fieldset.easy-filters legend {
+    position: absolute;
+    left: 715px;
+    margin-top: -45px;
+    font-size: 12px;
+}
+fieldset.easy-filters div {
+    padding: 5px;
+}
+fieldset.easy-filters.lonely-filters legend {
+    left: 875px;
+}
+/* EASY FILTERS IN NON-PATCHED FILES*/
+
+/*      -- CALENDAR*/
+body.controller-calendars.action-show fieldset#filters {
+    border: none;
+    position: relative;
+}
+body.controller-calendars.action-show fieldset#filters legend {
+    position: absolute;
+    left: 715px;
+    margin-top: -45px;
+    font-size: 12px;
+}
+
+body.controller-calendars.action-show fieldset#filters legend {
+    left: 875px;
+}
+
+
+/*  END EASY FILTERS IN NON-PATCHED FILES*/
+/* FORM NEWS*/
+form#news-form label{
+    display: block;
+}
+form#news-form p#news-spinned *{
+    display: inline;
+}
+/*    END NEWS*/
+
+/*    FORM DOCUMENT*/
+form#documents-form div#add-document-general {
+    width: 400px;
+}
+form#documents-form div#add-document-general input[type="text"]{
+    width: 250px;
+}
+form#documents-form div#add-document-general select {
+    width: 260px;
+}
+form#documents-form p.description > textarea {
+    width: 390px;
+}
+form#documents-form div.document-attachment-container {
+    margin-right: 10px;
+}
+/*    EDN DOCUMENT*/
+
+/* END DOCUMENTS*/
+
+/* ISSUE STATUSES*/
+div#easy-page-layout-servia#issue-statuses-update-issue-done-ratios.button-2 {
+    font-size: 10px;
+    line-height: inherit;
+    max-height: inherit;
+}
+/* END STATUSES*/
+div.search-form-container {
+    padding: 5px;
+}
+body.controller-my.action-account div#main form div.gray-background div {
+    border: none;
+}
+/* SETTINGS*/
+#main div#tab-content-issues fieldset.settings label {
+    display: inline-block;
+    width: 170px;
+}
+
+.file_version {
+    font-size: 10px;
+    font-style: italic;
+}
+/* END SETTINGS*/
+
+/* VERSION */
+div#roadmap {
+    float:left;
+    width: 43em;
+}
+div#roadmap div.version-item div.version-item-header h3 {
+    margin-top: 0px;
+}
+div#roadmap div.version-item div.version-item-header h3 > a {
+    display: inline-block;
+    font-size: 16px;
+    float: left;
+    width: 350px;
+}
+div#roadmap div.version-item div.version-item-header h3 > table {
+    display: inline-table;
+    float: none;
+}
+div#roadmap div.version-item div.version-item-header h3 > p {
+    display: inline;
+}
+div#roadmap div.version-item div.version-item-header {
+    padding: 5px;
+    margin: 5px 0px;
+}
+div#roadmap div.version-item div.version-item-header p {
+    margin: 2px 0px;
+}
+div#roadmap div.version-item p em {
+    display: block;
+    padding-top: 5px;
+}
+
+
+div#roadmap .related-issues { margin-bottom: 1em; }
+div#roadmap .related-issues th.checkbox, div#roadmap .related-issues td.checkbox { display: none; }
+div#roadmap .wiki h1:first-child { display: none; }
+div#roadmap .wiki h1 { font-size: 120%; }
+div#roadmap .wiki h2 { font-size: 110%; }
+
+div#version-summary { float:right;
+                      width:380px;
+                      margin-left: 16px;
+                      background-color: #fff;
+}
+div#version-summary fieldset { margin-bottom: 1em; }
+div#version-summary .total-hours { text-align: right; }
+/* END VERSION*/
+
+
+#main div.calendar-container div.links {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#main div.calendar-container div.links a {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#main div.calendar-container div.links a.prev {
+    float: left;
+}
+
+#main div.calendar-container div.links a.next {
+    float: right;
+}
+#main div.timelog-calendar-container table.cal tbody tr {
+    height: 50px;
+}
+
+#main table.cal td p.day-num {
+    margin: 0px 0px 10px 0px;
+    text-align: left;
+}
+#main table.cal td.even.today p.day-num {
+    font-style: italic;
+    font-weight: bolder;
+}
+#main div.timelog-calendar-container p.day-time-entry {
+    font-size: 18px;
+    padding: 15px 0;
+}
+#main div.timelog-calendar-container p.day-add-time  a{
+    font-size: 11px;
+}
+
+#main div.timelog-calendar-container table.cal td div.day-content {
+    margin-top: 5px;
+    text-align: right;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+
+#main div.timelog-calendar-container table.cal td div.day-content a.timelog-new-link {
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+#main div.timelog-calendar-container table.cal div.day-content a.timelog-link {
+    color: #666666;
+}
+#main table.cal td.even {
+    padding: 2px 5px;
+    vertical-align: top;
+}
+#main div.timelog-calendar-container table.cal td.even.too-few {
+    background-color: #FFB469;
+}
+#main div.timelog-calendar-container table.cal td.even.too-few p.day-add-time a, .easy-page-module-box td.even.too-few .attendance-button a {
+    color: #ffffff;
+    text-shadow: 0 0 10px red;
+}
+#main div.timelog-calendar-container table.cal td.even.too-much {
+    background-color: #BFDA43;
+}
+#main div.timelog-calendar-container table.cal td.even.too-much p.day-add-time a, .easy-page-module-box td.even.too-much .attendance-button a {
+    color: #ffffff;
+    text-shadow: 0 0 10px green;
+}
+#main .border-radius-3, .border-radius-3, span#header-quick-search-project-jump-box-container div.dhx_combo_box {
+    border-radius: 3px;
+}
+
+/* TRACKERS*/
+#main div#trackers-right-form {
+    overflow-y: auto;
+}
+div#trackers {
+    padding: 5px;
+}
+div#trackers fieldset#general label{
+    display: inline-block;
+    min-width: 55px;
+}
+div#trackers fieldset#custom-fields label.block {
+    display: inline-block;
+    width: 155px;
+}
+/* END TRACKERS*/
+/* END FLASH*/
+body.controller-versions .checkbox {
+    display: none;
+}
+#wrraper a#easy-demo-delete-data.icon {
+    left: -130px;
+    position: relative;
+}
+
+/*AD-HOC Filter - My Page*/
+
+div#main div.module-content div.buttons > * {
+    cursor: pointer;
+}
+/* END  AD-HOC Filter My Page */
+
+/* MY NEWS MODULE*/
+
+
+
+.milestone-sharing-info {
+    font-style: italic;
+}
+
+/* NEWS SHOW PAGE DETAIL*/
+div#news-show-bubble.bubble {
+    padding: 5px;
+}
+div#news-show-bubble.bubble > div {
+    background-color: #FFFFFF;
+    padding: 2px;
+}
+div#news-show-bubble.bubble > p {
+    margin: 0px;
+    padding: 2px;
+}
+div#news-show-bubble.bubble:after  {
+    border-color: #EFEFEF #FFFFFF;
+    border-width: 0 36px 18px 0;
+    /*    bottom: 100px;*/
+    left: 18px;
+    top: -18px;
+}
+/* KLIKATELN0 RADKY TABULKY*/
+#main table.issues tbody tr, #main table.anchor tbody tr, table.anchor tbody tr {
+    cursor: pointer;
+}
+
+#main div#documents > h2 {
+    border-bottom: none;
+    text-transform: none;
+    font-size: 19px;
+}
+#main div.module-content div.document-detail {
+    padding: 0px;
+}
+#main div.module-content div.document-detail div.doc-description {
+    background-color: #F0F0F0;
+    margin: -11px 0px 0px 0px;
+    padding-bottom: 15px;
+    border-radius: 0px;
+}
+#main div.module-content div.document-detail div.doc-description > p {
+    display: inline;
+}
+#main  div.easy-page-module-box div.module-content div.doc-index-attachments h3 {
+    background-color: #F0F0F0;
+    border-bottom: 1px dotted #CCCCCC;
+    color: #606060;
+    font-size: 14px;
+    font-weight: bold;
+    margin: -11px 0px 0px 0px;
+    padding: 3px 5px 3px 10px
+}
+#search-results dt a p{
+    color: inherit;
+    display: inline;
+}
+#search-results dd span.description p,#search-results dd span.description pre {
+    display: inline;
+}
+#main div.module-content div.document-detail div.doc-index-attachments {
+    padding-left: 0px;
+}
+#main div.module-content div.document-detail div.doc-title {
+    padding: 0 0 15px 10px;
+}
+#main div.module-content div.document-detail div.doc-title h4 {
+    display: inline-block;
+}
+#main div.module-content div.document-detail div.doc-title div.floatleft {
+    width: inherit;
+}
+/* PROJECT TREE ON PROEJCT CONTEXT HACK */
+
+body.controller-projects.action-show #main table.list tr.level-1.subproject td {
+    font-size: 14px;
+    padding: 10px 5px 10px 2px;
+}
+body.controller-projects.action-show #main table.list tr.level-1.subproject td a {
+    font-weight: bold;
+    background: none;
+    padding-left: 0;
+}
+/* PROJECT INFO MODUL*/
+div.project-info-module {
+    padding: 0px 10px;
+}
+div.project-info-module ul  {
+    padding: 0px;
+}
+div.project-info-module ul li {
+    font-size: 14px;
+    list-style-type: none;
+    padding: 5px 15px;
+}
+div.project-info-module ul li label {
+    font-weight: bold;
+}
+div.project-info-module ul li span {
+    margin-left: 20px;
+}
+/* PROJECT INFO MODULe IN SIDEBAR*/
+
+/* EASY PAGE MODULE --CLOSE*/
+div.close-icon-container {
+    right: 15px;
+    top: 12px;
+}
+
+/*GANTT*/
+/* DHTMLX combobox style on timelog */
+
+.combo-container p.select-easy-combobox {
+    margin: 0 0 -10px 4px;
+    padding: 0 0 10px;
+}
+.combo-container em {
+    display: inline-block;
+    margin-top: 10px;
+}
+div.timelog-combobox div {
+    margin-bottom: -6px;
+}
+
+div.timelog-combobox {
+    display: inline;
+    height: 20px;
+}
+div.timelog-combobox input.dhx_combo_input {
+    padding: 5px 2px 2px 2px;
+}
+div.timelog-combobox div.dhx_combo_box  {
+    display: inline-block;
+    margin: auto;
+}
+div.timelog-combobox img {
+    height: inherit;
+}
+/* END DHTMLX combobox*/
+
+.project-template-custom-fields-container {
+    clear: both;
+}
+
+.project-template-custom-fields-container-buttons {
+    float: right;
+    clear: both;
+}
+
+.project-template-custom-fields {
+    clear: both;
+}
+
+#project-from-template p.subproject {
+    clear: both;
+}
+div#tab-content-members .splitcontentright, div#tab-content-memberships .splitcontentright, div#tab-content-users .splitcontentright {
+    width: 35%;
+}
+.easy-page-module-box .easy-page-module-form span {
+    cursor: default;
+}
+
+select#quick_navigation {
+    width:180px;
+}
+
+/* custom field - ratings */
+
+div.rating-infos {
+    padding-top: 10px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.warning-message {
+    font-style: italic;
+    color: red;
+}
+div#main a.link_new.link_new_issue:after {
+    top: 13px;
+}
+div#wrapper div#main #sidebar a.link_new.update-issue-icon.button-1, #main #sidebar a.link_new.update-issue-icon.button-2,
+#sidebar .menu-more-container .menu-expander, div#main a.link_new.link_new_issue{
+    padding: 5px 35px 5px 5px;
+}
+#principals label.group span, #tab-content-members table.list.members td.group {
+    background-image: url(../images/group.png);
+}
+.select-easy-combobox, .select-easy-combobox > span, .combo-container > span {
+    display: inline-block;
+}
+.select-easy-combobox > span > div, .combo-container > span > div {
+    max-width: 450px !important;
+}
+.select-easy-combobox .dhx_combo_img {
+    width: auto;
+    height: 25px;
+}
+span.cf-datetime-time > select {
+    width: auto;
+}
+#main #main-menu .project-menu {
+    margin-top: 5px;
+}
+#main div.project-menu.tabs div.tabs-buttons {
+    top: 44.5px;
+}
+#footer #google_translate_element {
+    margin-top: -10px
+}

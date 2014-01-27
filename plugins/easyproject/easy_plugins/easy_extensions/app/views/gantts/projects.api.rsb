@@ -1,0 +1,39 @@
+api.ganttdata do
+  start = @projects.any? ? @projects.detect(&:start_date).start_date : Date.today
+  api.array :projects do
+    if @projects.count > 0
+      @projects.each do |project|
+        api.project do
+          api.id project.id
+          api.name project.name
+          api.link url_for(project)
+          if project.nofilter.blank?
+            api.start project.start_date
+            api.end project.due_date
+            start = project.start_date if project.start_date < start
+          else
+            api.noworm 1
+          end
+          api.level project.easy_level
+          api.percentcompleted project.completed_percent
+
+          api.array :versions do
+            project.versions.each do |version|
+              next unless version.effective_date
+              api.version do
+                api.id version.id
+                api.name version.name
+                api.href version_path(version)
+                api.date version.effective_date
+                api.category version.easy_version_category.try(:name)
+                api.status l("version_status_#{version.status}")
+              end
+            end
+          end
+
+        end
+      end
+    end
+  end
+  api.start start - 1.day
+end

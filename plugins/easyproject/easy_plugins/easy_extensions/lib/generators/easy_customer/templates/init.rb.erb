@@ -1,0 +1,12 @@
+Redmine::Plugin.register :<%= plugin_name_underscored %> do
+  name :<%= plugin_name_underscored %>_plugin_name
+  author :<%= plugin_name_underscored %>_plugin_author
+  author_url :<%= plugin_name_underscored %>_plugin_author_url
+  description :<%= plugin_name_underscored %>_plugin_description
+  version '2013'
+  migration_order 400
+
+  plugin_in_relative_subdirectory File.join('easyproject', 'easy_plugins')
+end
+
+# No more lines here!

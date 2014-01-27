@@ -1,0 +1,18 @@
+<% if params[:user_changed] %>
+  $('#container_projects').html('<%= j(render :partial => 'container_projects') %>');
+  $('#container_projects').show();
+  $('#top_last_entries').html('<%= j(render :partial => 'top_last_entries', :locals => {:top_last_entries => @top_last_entries}) %>');
+  $('#top_last_entries').show();
+<% end %>
+<% if params[:user_changed] || params[:project_changed] %>
+  $('#container_issues').html('<%= j(render :partial => 'container_issues') %>');
+  $('#container_issues').show();
+<% end %>
+<% if params[:user_changed] || params[:project_changed] || params[:issue_changed] %>
+  $('#container_time_entry').html('<%= j(render :partial => 'container_time_entry') %>');
+  $('#container_time_entry').show();
+<% end %>
+<% if params[:user_changed] || params[:spent_on_changed] %>
+  $('#user-spent-time').html('<%= j(render :partial => 'timelog/user_spent_time', :locals => {:spent_on => @time_entry.spent_on, :user => @time_entry.user, :back_url => bulk_time_entries_path(:spent_on => @time_entry.spent_on )}) %>');
+<% end %>
+$('#save_buttons').show();

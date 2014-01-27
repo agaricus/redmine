@@ -1,0 +1,15 @@
+api.easy_attendance do
+  api.id @easy_attendance.id
+  api.user(:id => @easy_attendance.user_id, :name => @easy_attendance.user.name) unless @easy_attendance.user.nil?
+  api.arrival @easy_attendance.arrival
+  api.departure @easy_attendance.departure
+  unless @easy_attendance.easy_attendance_activity.nil?
+    api.easy_attendance_activity(:id => @easy_attendance.easy_attendance_activity_id, :name => @easy_attendance.easy_attendance_activity.name)
+  end
+  api.locked @easy_attendance.locked
+  api.arrival_user_ip @easy_attendance.arrival_user_ip
+  api.departure_user_ip @easy_attendance.departure_user_ip
+  api.range @easy_attendance.range
+  api.created_at @easy_attendance.created_at
+  api.updated_at @easy_attendance.updated_at
+end

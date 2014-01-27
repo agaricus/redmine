@@ -1,0 +1,427 @@
+ /* EASY_REDMINE.css */
+#header {
+    z-index:46;
+}
+#sidebar .box a:not(.icon) {
+    display: block;
+}
+div.form-entity-watcher-container {
+    border-bottom:1px dashed #ccc;
+    clear:both;
+    min-height:60px;
+    padding-top:10px;
+    display: inline-block;
+    width: 250px;
+}
+
+div.form-entity-watcher-role {
+    font-size:80%;
+    margin-left:75px;
+    padding: 0;
+}
+
+#main div.project-news div.bubble div.description > p,#main div.my-news div.bubble div.description > p,.search-form-container fieldset p, fieldset.timeentry-activities div.user-role-select,fieldset.timeentry-activities div.user-role-select label,div.bulk-time-entry-topprojects ol li a,div.form-entity-watcher-checkbox,div.form-entity-watcher-name,div#login-form label,table.resource-availability td:hover > span,.timeentry-range > p {
+    display:inline;
+}
+div.form-entity-watcher-name > label {
+    display:inline;
+    font-size:90%;
+    font-weight:700;
+    margin: 0;
+    float: none;
+}
+
+#modal-dialog-add-watchers .form-entity-watcher-container.watcher {
+    border:none;
+    display:inline-block;
+    margin:5px 0;
+    padding:5px;
+}
+#modal-dialog-loader div.form-entity-watcher-container {
+    width: 30%
+}
+span.expander {
+    background:url(../images/bullet_toggle_plus.png) no-repeat scroll 0 3px transparent;
+    cursor:pointer;
+    padding:0 0 6px 16px;
+}
+body.non-easy-redmine-theme span.expander {
+    height: 16px;
+    width: 16px;
+}
+div > span.expander {
+    float: right;
+}
+div > span.expander.pull-left {
+    float: left;
+}
+
+.close-icon-container {
+    text-align: right;
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    z-index: 5;
+}
+.close-icon-container a.icon-close {
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    width: 20px;
+    height: 30px;
+}
+body.non-easy-redmine-theme .close-icon-container a.icon-close {
+    height: 12px;
+}
+.close-icon-container a.icon-close:hover {
+    color: #e50026;
+}
+body.non-easy-redmine-theme  #issue_descr_text, body.non-easy-redmine-theme  #issue-dependent-fields {
+    width: 49%;
+}
+body.non-easy-redmine-theme #main #issue_descr_text {
+    float: left;
+}
+body.non-easy-redmine-theme #main #issue-dependent-fields {
+    float: right;
+}
+body.non-easy-redmine-theme .issue_submit_buttons {
+    padding: 5px 0;
+}
+.open span.expander,span.expander.open {
+    background:url(../images/bullet_toggle_minus.png) no-repeat scroll 0 3px transparent;
+}
+.easy-lookup .modal-selector-trigger {
+    background-image:url(../images/add.png);
+}
+.icon-issue-update {
+    /*background-image:url(../images/issue-update.png);*/
+}
+.easy-query-tooltip-box {
+    -moz-border-radius:10px;
+    -moz-box-shadow:0 5px 20px #666;
+    -webkit-box-shadow:0 5px 20px #666;
+    background-color:#FFF;
+    border-radius:10px;
+    box-shadow:0 5px 20px #666;
+    cursor:move;
+    position:absolute;
+    z-index:25;
+}
+
+.easy-query-tooltip-box-close-button {
+    color:#FFF;
+    font-size:32px;
+    position:absolute;
+    right:-10px;
+    text-align:center;
+    top:-15px;
+    z-index: 1;
+    text-shadow: 0px 0px 2px #666;
+}
+.easy-query-tooltip-box-close-button:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background-color: #511200;
+    border-radius: 100%;
+    margin-top: -10px;
+    z-index: -1;
+}
+.easy-query-tooltip-box-close-button:before {
+
+}
+
+div.avatar-container {
+    float:left;
+    margin:0 5px 0 0;
+}
+
+img.gravatar {
+    background:#FFF;
+    border:solid 1px #D5D5D5;
+    border-image:initial;
+    padding:2px;
+    float: left;
+}
+.easy-query-filter-container .buttons .filters.open, .easy-query-filter-container .buttons .settings.open {
+
+}
+
+.easy-query-filter-container .buttons .filters, .easy-query-filter-container .buttons .settings {
+    background-repeat:no-repeat;
+    cursor:pointer;
+    display:inline-block;
+    font-weight:700;
+}
+.non-easy-redmine-theme  .easy-query-filter-container .buttons .filters.open, .non-easy-redmine-theme  .easy-query-filter-container .buttons .settings.open {
+    background-image:url(../images/arrow_expanded.png);
+}
+.non-easy-redmine-theme  .easy-query-filter-container .buttons .filters, .non-easy-redmine-theme .easy-query-filter-container .buttons .settings {
+    background-image:url(../images/arrow_collapsed.png);
+}
+.toggler.left-toggle,.easy-query-filter-container .buttons .filters,.easy-query-filter-container .buttons .settings {
+    background-position:left center;
+    padding-left:16px;
+}
+
+.toggler.right-toggle {
+    background-position:right center;
+    padding-right:16px;
+}
+
+.active-filters {
+    color:#E3222E;
+}
+div.menu-more-container > .menu-expander:hover{
+    cursor: pointer;
+}
+#issue-detail #issue-detail-avatar {
+    float:left;
+    padding:5px 0;
+    width:75px;
+}
+
+#issue-detail #issue-detail-avatar + table.attributes, #issue-detail-header div.custom-fields {
+    border-collapse:collapse;
+    margin-left: 75px;
+    width: 89%;
+}
+
+div.journal {
+    position: relative;
+}
+.journal .movable-list-item.ui-draggable-dragging {
+    position: fixed !important;
+}
+body.non-easy-redmine-theme div.journal {
+    min-height: 90px;
+}
+.journal .menu-more-container.easy-journal-tools, .journal span.expander.issue-journal-details-toggler {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+}
+.journal .journal-details-container {
+    margin-bottom:4px;
+    margin-left:75px;
+    margin-top:4px;
+    padding:0;
+}
+.journal img.gravatar, .member img.gravatar {
+    float: left;
+}
+.member img.gravatar {
+    margin-right: 3px;
+}
+#main .timeentry-range label, #main .timeentry-range p {
+    margin-left: 0;
+    padding-left: 0;
+    float: none;
+}
+.tabular .timeentry-activities label {
+    margin-left: 0;
+}
+#watchers li {
+    min-height: 50px;
+}
+#documents h5 {
+    margin:0;
+}
+
+/* COLOUR THEMES*/
+
+/* -- RED*/
+.scheme-0, .list  tr.scheme-0 td > a, li.scheme-0 > a, #main span.scheme-0 {
+    color: #e50026;
+}
+.scheme-0:hover, .list  tr.scheme-0:hover, tr.scheme-0:hover td > a, li.scheme-0:hover > a, #main span.scheme-0:hover {
+    color: #7B0013;
+}
+/* -- highRED*/
+.scheme-1, tr.scheme-1 td > a, li.scheme-1 > a, #main span.scheme-1 {
+    color: #e50026;
+    background-color: #FAE0E0;
+}
+.scheme-1:hover, .list tr.scheme-1:hover, tr.scheme-1:hover td > a, li.scheme-1:hover > a, #main span.scheme-1:hover {
+    color: #7B0013;
+    background-color: #F6516B;
+}
+/* -- Green*/
+.scheme-2, .list  tr.scheme-2 td > a, li.scheme-2 > a, #main span.scheme-2 {
+    color: #64a608;
+}
+.scheme-2:hover, .list  tr.scheme-2:hover, tr.scheme-2:hover td > a, li.scheme-2:hover > a, #main span.scheme-2:hover {
+    color: #345901;
+}
+/* -- highGreen*/
+.scheme-3, .list  tr.scheme-3 td > a, li.scheme-3 > a, #main span.scheme-3 {
+    color: #345901;
+    background-color: #B5E177;
+}
+.scheme-3:hover, .list  tr.scheme-3:hover, tr.scheme-3:hover td > a, li.scheme-3:hover > a, #main span.scheme-3:hover {
+    color: #BCE18A;
+    background-color: #516F28;
+}
+/* -- BLUE*/
+.scheme-4, .list  tr.scheme-4 td > a, li.scheme-4 > a, #main span.scheme-4 {
+    color:  #0b9de5;
+}
+.scheme-4:hover, .list  tr.scheme-4:hover, tr.scheme-4:hover td > a, li.scheme-4:hover > a, #main span.scheme-4:hover {
+    color: #02547B;
+}
+/* -- highBLUE*/
+.scheme-5, .list  tr.scheme-5 td > a, li.scheme-5 > a, #main span.scheme-5 {
+    color: #02547B;
+    background-color: #82D2F6;
+}
+.scheme-5:hover, .list  tr.scheme-5:hover, tr.scheme-5:hover td > a, li.scheme-5:hover > a, #main span.scheme-5:hover {
+    color: #97D7F6;
+    background-color: #387A99;
+}
+/* -- ORAGNE*/
+.scheme-6, .list  tr.scheme-6 td > a, li.scheme-6 > a, #main span.scheme-6 {
+    color:  #e57300;
+}
+.scheme-6:hover, .list  tr.scheme-6:hover, tr.scheme-6:hover td > a, li.scheme-6:hover > a, #main span.scheme-6:hover {
+    color: #F6A451;
+}
+/* -- highORAGNE*/
+.scheme-7, .list  tr.scheme-7 td > a, li.scheme-7 > a, #main span.scheme-7 {
+    color: #F6C592;
+    background-color: #9F7A54;
+}
+.scheme-7:hover, .list  tr.scheme-7:hover, tr.scheme-7:hover td > a, li.scheme-7:hover > a, #main span.scheme-7:hover {
+    color: #F6C592;
+    background-color: #7B3E00;
+}
+/* ICONS */
+.update-issue-icon {
+    background: url(/images/edit.png) no-repeat;
+}
+/*#sidebar .issue_actions .menu-expander, .update-issue-icon, #watchers-button-add a {
+    padding: 2px 0 2px 20px;
+}*/
+.easy-redmine-menu-more ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+div#login-form {
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow:0 2px 25px rgba(0,0,0,0.2);
+    margin:10% auto;
+    padding:20px 0;
+    position:relative;
+    text-align:center;
+    width:40%;
+}
+
+div#login-form p {
+    margin:auto;
+    text-align:right;
+    width:305px;
+}
+div#login-form form > p input {
+    width: 60%;
+}
+
+div#login-form #submit-button {
+    margin:auto;
+    width:90%;
+}
+
+div#login-form #submit-button * {
+    line-height:20px;
+}
+
+div#login-form input#openid_url {
+    background:url(/images/openid-bg.gif) no-repeat;
+    background-color:#fff;
+    background-position:right;
+}
+
+div#login-form #login-form-autologin {
+    padding:5px 5px 0 0;
+}
+
+.permission-flags {
+    font-size: 80%;
+    font-style: italic;
+}
+#bulk-time-entry-form #timelog-user-time-entry-container .splitcontentleft, #bulk-time-entry-form #timelog-user-time-entry-container .splitcontentright {
+    float: none;
+    width: auto;
+    margin: 4px 0;
+}
+table.list td.issue {
+    overflow: hidden;
+}
+#issue-form .timeentry-hours.splitcontentleft {
+    margin-right: -180px
+}
+#main .cke_toolgroup {
+    margin: 0 3px 5px 0;
+}
+#update .edit-form-bottom-split-editor-n-files .splitcontentleft {
+    width: 59%;
+}
+#update .edit-form-bottom-split-editor-n-files .splitcontentright {
+    width: 39%;
+}
+#sidebar .issue-info.redmine-classic a.menu-expander {
+    display: none;
+}
+#sidebar .issue-info.redmine-classic a.menu-expander + div.menu-more {
+    display: block !important;
+}
+#sidebar .issue-info.redmine-classic a.menu-expander + div.menu-more ul {
+    padding: 0;
+    list-style-type: none;
+}
+div.progress {
+    width: 180px;
+    line-height: 0px;
+}
+/***** Diff *****/
+.diff_out { background: #fcc; }
+.diff_out span { background: #faa; }
+.diff_in { background: #cfc; }
+.diff_in span { background: #afa; }
+
+.text-diff {
+  padding: 1em;
+  background-color:#f6f6f6;
+  color:#505050;
+  border: 1px solid #e4e4e4;
+}
+ul.projects {margin:0; padding-left:1em;}
+ul.projects ul {padding-left:1.6em;}
+ul.projects.root {margin:0; padding:0;}
+ul.projects li {list-style-type:none;}
+
+#projects-index ul.projects ul.projects { border-left: 3px solid #e0e0e0; padding-left:1em;}
+#projects-index ul.projects li.root {margin-bottom: 1em;}
+#projects-index ul.projects li.child {margin-top: 1em;}
+#projects-index ul.projects div.root a.project { font-family: "Trebuchet MS", Verdana, sans-serif; font-weight: bold; font-size: 16px; margin: 0 0 10px 0; }
+
+ul.properties {padding:0; font-size: 0.9em; color: #777;}
+ul.properties li {list-style-type:none;}
+ul.properties li span {font-style:italic;}
+.non-easy-redmine-theme .ui-datepicker-trigger {
+    background-image: url('/images/calendar.png');
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.movable-list-item.ui-draggable-dragging {
+    cursor: move;
+}

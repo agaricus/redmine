@@ -1,0 +1,14 @@
+<div class="box issues-buttons">
+  <h3><%= l(:sidebar_issues_buttons) %></h3>
+  <div class="box">
+    <% if User.current.allowed_to?(:view_calendar, project, :global => true) %>
+      <%= link_to(l(:label_calendar), _project_calendar_path(project), :class => 'issues-calendar') -%>
+    <% end %>
+    <% if User.current.allowed_to?(:view_gantt, project, :global => true) %>
+      <%= link_to(l(:label_gantt), _project_gantt_path(@project), :class => 'issues-gantt') -%>
+    <% end %>
+    <% if User.current.allowed_to?(:view_project_activity, project, :global => true) %>
+      <%= link_to(l(:label_overall_activity), {:controller => 'activities', :action => 'index', :project_id => project}, :class => 'issues-activity') -%>
+    <% end %>
+  </div>
+</div>

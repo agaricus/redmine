@@ -1,0 +1,350 @@
+---
+zh:
+  easy_money_plugin_name: 钱
+  easy_money_plugin_author: 易软件
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- 监测和管理项目的预期和实际的财务业绩'
+  project_module_easy_money: 钱
+  menu_easy_money: 钱
+  permission_view_easy_money: 获得金钱模块（一般）
+  permission_easy_money_show_expected_revenue: 预期收入
+  permission_easy_money_show_expected_expense: 预期的支出，
+  permission_easy_money_show_expected_payroll_expense: 预期的工资费用
+  permission_easy_money_show_expected_profit: 显示预期利润
+  permission_easy_money_show_other_revenue: 实际收入
+  permission_easy_money_show_other_expense: 显示实际支出
+  permission_easy_money_show_time_entry_expenses: 实际工资费用
+  permission_easy_money_show_other_profit: 显示真正的利润
+  permission_easy_money_manage_expected_revenue: Addig预期收入
+  permission_easy_money_manage_expected_expense: 添加预期的支出，
+  permission_easy_money_manage_expected_payroll_expense: 添加预期的工资费用
+  permission_easy_money_manage_other_revenue: 增加实际收入
+  permission_easy_money_manage_other_expense: 添加实际支出
+  permission_easy_money_settings: ACCES钱设置
+  permission_easy_money_move: 将项目资金分配
+  label_easy_money: 钱
+  label_easy_money_settings: 货币设置
+  label_easy_money_rate_priorities_settings: 费用率设定
+  label_easy_money_project_index: 钱
+  label_easy_money_other_expenses: 费用概览
+  label_easy_money_other_expense_new: 新的费用
+  label_easy_money_other_expense_show: 费用
+  label_easy_money_other_expense_edit: 费用编辑
+  label_easy_money_other_revenues: 收入概述
+  label_easy_money_other_revenue_new: 新的收入
+  label_easy_money_other_revenue_show: 收入
+  label_easy_money_other_revenue_edit: 所得税编辑
+  label_easy_money_time_entry_expenses: 工资费用概览
+  label_easy_money_project_index_profit: 利润：
+  label_easy_money_expected_expenses: 预计费用概述
+  label_easy_money_expected_revenues: 预期收入概述
+  label_easy_money_expected_expense_new: 新的预期支出
+  label_easy_money_expected_expense_show: 预计费用
+  label_easy_money_expected_expense_edit: 预期支出编辑
+  label_easy_money_expected_revenue_new: 新的预期收入
+  label_easy_money_expected_revenue_show: 预期收入
+  label_easy_money_expected_revenue_edit: 编辑预计收入
+  label_easy_money_other_settings: 其他设置
+  label_easy_money_other_settings_price_visibility: 按量使用：
+  label_easy_money_other_settings_rate_type: 通过工资支出使用：
+  label_easy_money_other_settings_include_childs: 从分项目，项目总资金的计算量：
+  label_easy_money_other_settings_project_expected_visibility: 打开项目规划/期望：
+  label_easy_money_project_usage_type: 使用项目：
+  label_easy_money_other_settings_vat: 如果显示的金额不包括增值税，增值税是：
+  label_easy_money_use_vat: 使用增值税计数
+  label_easy_money_expected_budget: 计划
+  label_easy_money_real_budget: 现实
+  label_easy_money_project_name: 项目预算：
+  label_easy_money_hour: ! '%{hours}小时。'
+  label_easy_money_expected_payroll_expense_per_hours: 计划每小时收费
+  label_easy_money_expected_payroll_expenses: 工资费用：
+  label_easy_money_subproject_sum_revenues: 收入*
+  label_easy_money_subproject_sum_expenses: 费用*
+  label_easy_money_subproject_sum_payroll_expenses: 工资费用
+  label_easy_money_subproject_profit: 结果*
+  label_easy_money_subproject_explication: ! '*）（计划/现实）'
+  label_easy_money_attachments: 附件：
+  label_easy_money_project_time_entry_expenses: 工资成本纯粹的项目
+  label_easy_money_project_issues_time_entry_expenses: 项目任务的薪金成本
+  label_easy_money_total: 总计：
+  label_easy_money_all_project: 所有项目的钱
+  label_easy_money_currency_visible: 允许更改的交换项目：
+  label_easy_money_currency: 货币：
+  label_easy_money_select_project: 选择项目
+  label_easy_money_mass_copy_rates: 速率值费用
+  label_easy_money_project_index_estimated_hours: 估计时间：
+  label_easy_money_new_revenue_text: 收入
+  label_easy_money_new_revenue_description: 收入
+  label_easy_money_new_expense_text: 费用
+  label_easy_money_new_expense_description: 费用
+  text_easy_money_rate_priorities_settings: 费用率的基本层次结构。如果所述第一速率是零，将被用于下一个非零率。
+  button_easy_money_rate_use_in_all_projects: 在所有项目中的使用率
+  button_easy_money_rate_use_in_all_subprojects: 用率在所有子项目
+  button_easy_money_priorities_use_in_all_projects: 率在所有项目中的优先事项
+  button_easy_money_priorities_use_in_all_subprojects: 使用速度优先次序所有子项目
+  button_easy_money_project_expected_expenses: 其他费用：
+  button_easy_money_project_expected_revenues: 收入：
+  button_easy_money_project_other_expenses: 其他费用：
+  button_easy_money_project_other_revenues: 收入：
+  button_easy_money_project_time_entry_expenses: 工资费用：
+  button_easy_money_project_new_revenue: 新的收入
+  button_easy_money_project_new_expense: 新的费用
+  button_easy_money_project_time_entry_hours: 工作时间：
+  button_easy_money_project_index_show_details: 显示详细信息
+  button_easy_money_project_index_show_empty: 显示空字段
+  button_easy_money_save_in_all_projects: 在所有的项目中使用
+  button_easy_money_save_in_all_subprojects: 在所有子项目
+  button_easy_money_project_settings: 货币设置
+  button_easy_money_save_expected_revenue: 保存的预期收入
+  button_easy_money_save_other_revenue: 保存的实际收入
+  button_easy_money_save_expected_hours: 除预期时间
+  button_easy_money_save_expected_expense: 保存预计费用
+  button_easy_money_save_other_expense: 节省的开支
+  button_easy_money_update_project_time_entry_expenses: 重新计算工资开支项目
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: 重新计算工资开支项目和所有子项目
+  button_easy_money_update_all_projects_time_entry_expenses: 在所有项目中的重新计算工资费用
+  button_easy_money_move: 重新分配选择
+  title_easy_money_project_new_revenue: 添加新的收入来源
+  title_easy_money_project_new_expense: 添加新的费用
+  title_easy_money_project_expected_revenues: 计划项目的收入
+  title_easy_money_project_other_revenues: 显示项目的实际收入
+  title_easy_money_project_expected_expenses: 计划费用的项目
+  title_easy_money_project_other_expenses: 显示项目的实际支出
+  title_easy_money_project_time_entry_expenses: 显示项目的实际工资费用
+  title_easy_money_rates_save: 保存率
+  title_easy_money_rate_use_in_all_projects: 保存率，并将其应用在所有项目中
+  title_easy_money_rate_use_in_all_subprojects: 保存率，并将其应用在所有子项目
+  title_easy_money_priorities_use_in_all_projects: 在所有项目中使用的价格订购
+  title_easy_money_priorities_use_in_all_subprojects: 使用排序所有子项目率
+  title_easy_money_other_repeating_expense_show: 显示反复开支。
+  title_easy_money_other_repeating_revenue_show: 显示反复的收入。
+  title_easy_money_settings: 项目资金的设置。
+  title_easy_money_project_index_show_empty: 显示空字段。
+  title_close: 按一下关闭此窗格中。
+  title_easy_money_update_project_time_entry_expenses: 重新计算工资开支项目。
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: 单击“开始转换的工资成本项目和所有子项目（可能需要几分钟）。
+  title_easy_money_update_all_projects_time_entry_expenses: 重新计算工资开支的所有项目。
+  title_easy_money_link_to_subproject: 转到钱%{subproject}。
+  title_easy_money_link_to_project: 转到钱的项目%{project}。
+  field_spent_hours: 花了几个小时
+  field_easy_money_rate_entity_time_entry_activity_name: 活动名称
+  field_easy_money_rate_entity_role_name: 角色名称
+  field_easy_money_rate_entity_user_name: 用户名
+  field_easy_money_other_expense_spent_on: 日期：
+  field_easy_money_other_expense_name: 产品名称：
+  field_easy_money_other_expense_description: 说明：
+  field_easy_money_other_expense_price1: （含增值税）金额：
+  field_easy_money_other_expense_price2: 不含增值税金额：
+  field_easy_money_other_expense_vat: 增值税：
+  field_easy_money_other_revenue_spent_on: 日期：
+  field_easy_money_other_revenue_name: 产品名称：
+  field_easy_money_other_revenue_description: 说明：
+  field_easy_money_other_revenue_price1: 合计金额：
+  field_easy_money_other_revenue_price2: 不含增值税金额：
+  field_easy_money_other_revenue_vat: 增值税：
+  field_easy_money_expected_expense_spent_on: 日期：
+  field_easy_money_expected_expense_name: 产品名称：
+  field_easy_money_expected_expense_description: 说明：
+  field_easy_money_expected_expense_price1: 合计金额：
+  field_easy_money_expected_expense_price2: 不含增值税金额：
+  field_easy_money_expected_expense_vat: 增值税：
+  field_easy_money_expected_revenue_spent_on: 日期：
+  field_easy_money_expected_revenue_name: 产品名称：
+  field_easy_money_expected_revenue_description: 说明：
+  field_easy_money_expected_revenue_price1: 合计金额：
+  field_easy_money_expected_revenue_price2: 不含增值税金额：
+  field_easy_money_expected_revenue_vat: 增值税：
+  field_easy_money_expected_revenue: 预期收入
+  field_easy_money_expected_expense: 预计费用
+  field_easy_money_sum_other_revenues: 收入
+  field_easy_money_sum_time_entry_expenses: 工资费用
+  field_easy_money_sum_other_expenses: 支出
+  field_easy_money_sum_other_profit: 利润
+  field_easy_money_rate_type_internal: 内部收益率
+  field_easy_money_rate_type_external: External_rate
+  field_price1: 总金额
+  field_price2: 不含增值税金额
+  field_vat: 增值税
+  tab_easy_money_rate_priorities: 汇率的层次结构
+  tab_easy_money_rate_role: 价格的作用
+  tab_easy_money_rate_time_entry_activity: 价格由活动
+  tab_easy_money_rate_user: 价格由用户
+  tab_easy_money_other_settings: 其他设置
+  easy_money_other_expense_custom_field: 实际支出
+  easy_money_other_revenue_custom_field: 实际收入
+  notice_easy_money_recalculate: 金额于未来的概述页面访问将重新计算。
+  error_easy_money_project_selector_select_values: 没有选中的值
+  project_default_page:
+    easy_money: 钱
+  warning_easy_money_settings:
+    project_question: 你要保存在项目的设置吗？
+    global_question: 你要保存全局设置？
+    revenues_type: 您可以更改输入法的收入（先前输入的所有收入将被删除）。
+    expenses_type: 您可以更改输入法的费用（先前输入的所有费用都将被删除）。
+  warning_easy_money_all_projects:
+    question: 您确定您要使用的所有项目的设置吗？
+    revenues_type: 以下项目以前输入的所有收入将被删除：%{projects}
+    expenses_type: 以下项目以前输入的所有费用都将被删除：%{projects}
+  easy_money_rate_type:
+    one: 率
+    internal: 内部收益率
+    external: 外部率
+  easy_money_entity:
+    user: 用户
+    role: 角色
+    time_entry_activity: 活动
+  easy_money_rate_entity:
+    user: 用户的评分
+    role: 评分角色
+    time_entry_activity: 评分活动
+  easy_money_period:
+    daily: 日常
+    monthly: 每月一次
+    weekly: 每周
+    yearly: 每年
+  easy_money_other_settings_price_visibility:
+    price1: 只有总量
+    price2: 不含增值税的金额只有
+    all: 不含增值税的金额和总金额
+  easy_money_other_settings_rate_type:
+    internal: 只有一个速度
+    all: 内部和外部率
+  easy_money_other_settings_expected_count_price:
+    price1: 总金额
+    price2: 不含增值税金额
+  easy_money_other_settings_expected_rate_type:
+    internal: 内部价格
+    external: 外部价格
+  easy_reports_fields:
+    _time_entry_internalrate: 工资费用 - 内部收益率
+    _time_entry_externalrate: 工资费用 - 外部率
+    easy_money_other_revenue_id: 实际收入
+    easy_money_other_revenue_name: 实际收入 - 产品名称
+    easy_money_other_revenue_price1: 实际收入 - 总价格
+    easy_money_other_revenue_price2: 实际收入 - 不含增值税的价格
+    easy_money_other_expense_id: 实际支出
+    easy_money_other_expense_name: 实际支出 - 产品名称
+    easy_money_other_expense_price1: 实际支出 - 总价格
+    easy_money_other_expense_price2: 真正的开支 - 价格不包括增值税
+    easy_money_expected_expense_id: 预期开支
+    easy_money_expected_expense_name: 预期的开支 - 产品名称
+    easy_money_expected_expense_price1: 预计费用 - 总价格
+    easy_money_expected_expense_price2: 预计费用 - 价格不包括增值税
+    easy_money_expected_revenue_id: 预期收入
+    easy_money_expected_revenue_name: 预期收入 - 产品名称
+    easy_money_expected_revenue_price1: 预期收入 - 总价格
+    easy_money_expected_revenue_price2: 预期收益 - 价格不包括增值税
+    project_expected_hours: 预计工作时间
+    project_expected_payroll_expense: 预计工资开支
+    _project_recovery: 复苏
+    _project_timeentry_average_hourly_expense: 平均每小时费用
+    _project_other_profit: 利润
+  easy_reports_categories:
+    easy_money: 钱
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: 工资成本转换
+  tooltip_real_hourly_rate: 该项目的基础上平均时薪%{average_hourly_rate}/小时。
+  label_easy_money_sidebar:
+    project: 钱的项目
+    issue: 钱的任务
+    version: 为里程碑的钱
+  easy_query:
+    name:
+      easy_money_other_revenue_query: 其他收入
+      easy_money_other_expense_query: 其他开支
+      easy_money_expected_revenue_query: 预期收益
+      easy_money_expected_expense_query: 预期开支
+      easy_money_project_cache_query: 项目预算概述
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: 其他收入的个人过滤器
+        easy_money_other_expense_query: 其他费用的个人过滤器
+        easy_money_expected_revenue_query: 个人预期收入的过滤器
+        easy_money_expected_expense_query: 个人预期的支出，过滤器
+        easy_money_project_cache_query: 个人过滤预算概述
+      public:
+        easy_money_other_revenue_query: 公共过滤器其他收入
+        easy_money_other_expense_query: 公共过滤器其他费用
+        easy_money_expected_revenue_query: 预期收入的公共过滤器
+        easy_money_expected_expense_query: 预期的支出，公共过滤器
+        easy_money_project_cache_query: 公共过滤预算概述
+  label_easy_money_other_settings_project_use_easy_money_for_versions: 用钱的里程碑
+  label_easy_money_other_settings_project_use_easy_money_for_issues: 用钱的任务
+  title_easy_money_sum_expected_revenues: 对项目的预期收入的总和%{project}是%{value}。
+  title_easy_money_sum_other_revenues: 其他收入项目的总和%{project}是%{value}。
+  title_easy_money_sum_expected_expenses: 的预期开支项目总和%{project}是%{value}。
+  title_easy_money_sum_other_expenses: 其他开支项目的总和%{project}是%{value}。
+  title_easy_money_sum_expected_payroll_expenses: 对项目的预期工资的总和%{project}是%{value}。
+  title_easy_money_sum_time_entry_expenses: 工资项目的总和%{project}是%{value}。
+  title_easy_money_expected_profit: 对项目的预期利润%{project}是%{value}。
+  title_easy_money_other_profit: 项目溢利%{project}是%{value}。
+  permission_easy_budgetsheet_view_internal_rates: Budgetsheet  - 显示内部利率
+  permission_easy_budgetsheet_view_external_rates: Budgetsheet  - 显示外部率
+  label_filter_group_easy_money_other_revenue_query: 其他收入
+  label_filter_group_easy_money_other_expense_query: 其他开支
+  label_filter_group_easy_money_expected_revenue_query: 预期收入
+  label_filter_group_easy_money_expected_expense_query: 预计费用
+  field_inherit_easy_money_settings: 继承钱设置
+  heading_easy_money_other_settings_project_overview: 项目概况设定
+  heading_easy_money_other_settings_prices_and_rates: 价格及利率
+  label_easy_money_project_index_sum_hours: 预计时间：
+  label_easy_money_other_settings_expected_count_price: 收入及其他费用算使用
+  label_easy_money_other_settings_expected_rate_type: 实际工资费用算使用
+  label_filter_group_easy_money_project_cache_query: 他人
+  label_filter_group_easy_money_project_cache_expenses: 支出
+  label_filter_group_easy_money_project_cache_revenues: 收入
+  label_filter_group_easy_money_project_cache_profit: 利润
+  label_easy_money_project_cache: 项目预算概述
+  label_easy_money_other_settings_revenues_type: 收入将作为
+  label_easy_money_other_settings_expenses_type: 其他开支将作为
+  label_easy_money_other_settings_expected_payroll_expense_type: 计划的工资支出将算作
+  field_sum_of_expected_hours: 预期小时
+  field_sum_of_expected_payroll_expenses: 预期工资
+  field_sum_of_expected_expenses_price_1: 预计费用（含增值税）
+  field_sum_of_expected_revenues_price_1: 预期收入（含增值税）
+  field_sum_of_other_expenses_price_1: 其他费用（含增值税）
+  field_sum_of_other_revenues_price_1: 其他收入（含增值税）
+  field_sum_of_expected_expenses_price_2: 预计费用（不含增值税）
+  field_sum_of_expected_revenues_price_2: 预期收入（不含增值税）
+  field_sum_of_other_expenses_price_2: 其他费用（不含增值税）
+  field_sum_of_other_revenues_price_2: 其他收入（不含增值税）
+  field_sum_of_time_entries_expenses_internal: 工资（内部收益率）
+  field_sum_of_time_entries_expenses_external: 工资率（外部）
+  field_sum_of_all_expected_expenses_price_1: 预计总费用（含增值税）
+  field_sum_of_all_expected_revenues_price_1: 预计总收入（含增值税）
+  field_sum_of_all_other_revenues_price_1: 总收入（含增值税）
+  field_sum_of_all_expected_expenses_price_2: 预计总费用（不含增值税）
+  field_sum_of_all_expected_revenues_price_2: 预计总收入（不含增值税）
+  field_sum_of_all_other_revenues_price_2: 总收入（不含增值税）
+  field_sum_of_all_other_expenses_price_1_internal: 总费用（含增值税，内部收益率）
+  field_sum_of_all_other_expenses_price_2_internal: 总费用（不含增值税，内部收益率）
+  field_sum_of_all_other_expenses_price_1_external: 总费用（含增值税，外部速率）
+  field_sum_of_all_other_expenses_price_2_external: 总支出（不含增值税，外部速率）
+  field_expected_profit_price_1: 预期利润（含增值税）
+  field_expected_profit_price_2: 预期利润（不含增值税）
+  field_other_profit_price_1_internal: 利润（含增值税，内部收益率）
+  field_other_profit_price_2_internal: 溢利（不含增值税，内部收益率）
+  field_other_profit_price_1_external: 利润（含增值税，外部速率）
+  field_other_profit_price_2_external: 溢利（不含增值税，外部速率）
+  field_average_hourly_rate_price_1: 平均时薪（含增值税）
+  field_average_hourly_rate_price_2: 平均每小时收费（不含增值税）
+  easy_pages:
+    pages:
+      easy_money_projects_overview: 钱 - 首页
+    pages_description:
+      easy_money_projects_overview: 钱 - 首页
+  easy_money_revenues_type:
+    list: 清册
+    sum: 总收入
+  easy_money_expenses_type:
+    list: 清册
+    sum: 总开支
+  easy_money_expected_payroll_expense_type:
+    amount: 工资费用（总额）
+    hours: 工资支出（预期小时*每小时收费计划）
+    estimated_hours: 工资费用（估计时间*计划的每小时收费）
+    planned_hours_and_rate: 无受让人（估计24小时每小时收费计划）的任务，任务与受让人（估计小时*层次率）
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: 项目预算概述重新计算
+  label_easy_money_round_money_on_list: 回合对列表

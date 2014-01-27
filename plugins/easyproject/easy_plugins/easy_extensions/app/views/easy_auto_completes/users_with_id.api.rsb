@@ -1,0 +1,9 @@
+api.array :users do
+  @users.each do |user|
+    api.user do
+      api.id user.id
+      api.value user.name
+    end
+  end
+end
+

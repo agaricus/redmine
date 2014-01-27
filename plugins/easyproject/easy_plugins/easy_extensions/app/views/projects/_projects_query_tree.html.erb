@@ -1,0 +1,46 @@
+<% modul_uniq_id ||= '' -%>
+<div class="autoscroll">
+  <table class="list projects">
+
+    <thead>
+      <tr>
+        <% query.columns.each do |column| -%>
+          <%= content_tag('th', column.caption) if !in_mobile_view? || column.name == :name %>
+        <% end -%>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% uniq_prefix = "#{controller_name}_#{action_name}_#{modul_uniq_id}" %>
+      <% projects.each_with_index do |project, i| %>
+        <% uniq_id = uniq_prefix + "project-#{project.id}" %>
+        <tr id="<%= uniq_id-%>" class="<%= project.css_project_classes(uniq_prefix, :level => project.easy_level) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%>" style="<%= 'display:none;' if !@only_favorited && !@question && project.easy_level > 1 %>">
+          <% query.columns.each_with_index do |column, index| %>
+            <% next if in_mobile_view? && column.name != :name %>
+            <td class="<%= column.name.to_s -%> <%= 'has-expander' if !project.leaf? && column.name == :name %>">
+              <% if column.name == :name %>
+                <% if !project.leaf? %>
+                  <% if !@question && !@only_favorited && project.root? && @children_count && @children_count[project.id].to_i > 0 %>
+                    <%= project_root_plus_button(project.id) %>
+                  <% elsif projects[i + 1] && projects[i + 1].is_descendant_of?(project) %>
+                    <%= project_descendant_plus_button(project.id, uniq_prefix, !!@question || !!@only_favorited) %>
+                  <% else %>
+                    <span class="expander-placeholder"></span>
+                  <% end -%>
+                <% else %>
+                  <span class="expander-placeholder"></span>
+                <% end -%>
+              <% end -%>
+              <%= format_html_entity_attribute(project.class, column, column.value(project), :entity => project) -%>
+            </td>
+          <% end -%>
+          <td class="fav-column">
+            <% favorited = project.favorited_by.where(:id => User.current.id).exists? %>
+            <%= link_to '', favorite_project_path(project), :remote => true, :class => "xl-icon #{favorited ? 'icon-star favorited' : 'icon-fav'} favorite-project-#{project.id}", :title => favorited ? l(:label_unfavorite) : l(:label_favorite) %>
+          </td>
+        </tr>
+      <% end -%>
+    </tbody>
+  </table>
+</div>

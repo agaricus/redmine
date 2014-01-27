@@ -1,0 +1,38 @@
+<%= breadcrumb([
+    link_to(l(:'easy_rake_tasks.views.heading_index'), {:controller => 'easy_rake_tasks', :action => :index}, :title => l(:'easy_rake_tasks.views.heading_index')),
+    link_to(l(:'easy_rake_tasks.views.heading_settings', :task_name => @task.caption), {:controller => 'easy_rake_tasks', :action => :edit, :id => @task, :back_url => params[:back_url]}, :title => l(:'easy_rake_tasks.views.heading_settings', :task_name => @task.caption))]) %>
+
+<h2><%= l(:'easy_rake_tasks.views.heading_settings', :task_name => @task.caption) -%></h2>
+
+<%= labelled_form_for @task, :as => :easy_rake_task, :url => {:controller => :easy_rake_tasks, :action => :update, :id => @task}, :html => {:method => :put, :class => 'tabular', :id => 'easy_rake_task_form'} do |f| %>
+  <%= error_messages_for @task %>
+  <%= hidden_field_tag('back_url', params[:back_url]) unless params[:back_url].blank? %>
+  <%= hidden_field_tag('type', params[:type]) unless params[:type].blank? %>
+
+  <div class="box gray-background">
+    <p>
+      <%= f.check_box :active %>
+    </p>
+
+    <div>
+      <%= render 'easy_rake_tasks/settings/period_setting', :task => @task, :f => f %>
+    </div>
+
+    <div id="easy_rake_tasks_inner_settings_container">
+      <%= render :partial => @task.settings_view_path, :locals => {:task => @task, :f => f} %>
+    </div>
+  </div>
+
+  <p>
+    <%= f.submit l(:button_update) %>
+    <%= call_hook(:view_easy_rake_tasks_after_submit, {:f => f, :task => @task}) %>
+  </p>
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to(l(:'easy_rake_tasks.views.button_index'), {:controller => :easy_rake_tasks, :action => :index}, :class => 'button-1') %>
+<% end %>
+
+<% html_title(l(:'easy_rake_tasks.views.heading_index'), l(:'easy_rake_tasks.views.heading_settings', :task_name => @task.caption)) -%>

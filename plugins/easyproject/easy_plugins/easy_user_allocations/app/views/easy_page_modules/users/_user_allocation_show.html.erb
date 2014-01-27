@@ -1,0 +1,71 @@
+<% unless in_mobile_view? %>
+  <% period = @easy_page_modules_data[block_name][:period] %>
+  <% query = @easy_page_modules_data[block_name][:query] %>
+
+  <% if query %>
+    <%= toggling_container(modul_uniq_id, user, {:heading => h(query.name), :container_html => {:class => 'module-content'}}) do %>
+
+      <div id="resalloc-container-<%= block_name %>">
+      </div>
+
+      <div class="floatleft">
+        <%= link_to(l(:label_user_allocations), {:controller => 'user_allocation_gantt', :action => 'index'}.merge(query.to_params), :title => l(:label_user_allocations), :class => 'icon icon-integrate') %>
+      </div>
+			<% content_for :header_tags do %>
+			  <%= call_hook :view_user_allocation_gantt_html_head %>
+			  <%= javascript_include_tag 'json2.js', :plugin => 'easy_user_allocations' %>
+			  <%= javascript_include_tag 'resalloc.jquery.js', :plugin => 'easy_user_allocations' %>
+			  <%= stylesheet_link_tag 'easy_user_allocations.css',	:plugin => 'easy_user_allocations' %>
+			<% end %>
+
+      <%= render :partial => 'user_allocation_gantt/legend' %>
+
+      <% content_for :header_tags do %>
+        <%= call_hook :view_user_allocation_gantt_html_head %>
+        <%= javascript_include_tag 'json2.js', :plugin => 'easy_user_allocations' %>
+        <%= javascript_include_tag 'resalloc.jquery.js', :plugin => 'easy_user_allocations' %>
+        <%= stylesheet_link_tag 'easy_user_allocations.css',  :plugin => 'easy_user_allocations' %>
+      <% end %>
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#resalloc-container-<%= block_name %>').resalloc({
+            loadParams: {
+      <% if query.new_record? %>
+        <% if page_module.is_a?(EasyPageTemplateModule) %>
+                  page_template_module_uuid: '<%= page_module.uuid %>',
+        <% else %>
+                  page_zone_module_uuid: '<%= page_module.uuid %>',
+        <% end %>
+      <% else %>
+                query_id: <%= query.id %>,
+      <% end %>
+              from: '<%= period[:from] %>',
+              to: '<%= period[:to] %>',
+              period_type: '<%= period[:period_type] %>',
+              period: '<%= period[:period] %>',
+              hide_unassigned_issues: 1
+            },
+            humanDateFormat: '<%= j momentjs_date_format %>',
+            lang: {
+              est: '<%= j l(:field_estimated_hours) %>',
+              activity: '<%= j l(:label_activity) %>',
+              spenttime: '<%= j l(:label_spent_time) %>',
+              hoursleft: '<%= j l(:field_remaining_timeentries) %>',
+              issueid: '<%= j l(:label_issue_id) %>',
+              startdate: '<%= j l(:field_start_date) %>',
+              duedate: '<%= j l(:field_due_date) %>',
+              percentcompleted: '<%= j l(:field_done_ratio) %>',
+              assignedto: '<%= j l(:field_assigned_to) %>',
+              author: '<%= j l(:field_author) %>',
+              successfulUpdate: '<%= j l(:notice_successful_update) %>',
+              overallocation: '<%= j l(:text_overallocation) %>',
+              editEst: '<%= j l(:label_edit_estimated_hours) %>'
+            },
+            readonly: true
+          });
+        });
+      </script>
+    <% end %>
+  <% end %>
+<% end %>

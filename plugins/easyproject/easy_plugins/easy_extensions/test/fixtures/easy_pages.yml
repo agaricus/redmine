@@ -1,0 +1,20 @@
+easy_page_001:
+  id: 1
+  page_name: my-page
+  layout_path: easy_page_layouts/two_column_header_first_wider
+easy_page_002:
+  id: 2
+  page_name: project-overview
+  layout_path: easy_page_layouts/two_column_header_three_rows_right_sidebar
+easy_page_003:
+  id: 3
+  page_name: easy-reports-overview
+  layout_path: easy_page_layouts/easy_reports_dashboard
+easy_page_004:
+  id: 4
+  page_name: project-easy-reports-overview
+  layout_path: easy_page_layouts/easy_reports_dashboard
+easy_page_005:
+  id: 5
+  page_name: easy-money-projects-overview
+  layout_path: easy_page_layouts/two_column_header_three_rows_right_sidebar

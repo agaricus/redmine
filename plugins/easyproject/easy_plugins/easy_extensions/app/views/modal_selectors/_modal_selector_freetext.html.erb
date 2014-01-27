@@ -1,0 +1,35 @@
+<%
+before_functions ||= ''; after_functions ||= ''
+remote_function_url ||= url_for({:controller => 'modal_selectors', :action => 'search', :t => 0, :modal_action => params[:modal_action] || action_name})
+remote_function_method ||= 'POST';
+freetext_reset ||= params[:freetext_reset]
+freetext_reset = url_for(params) if freetext_reset.blank?
+%>
+<div class="contextual">
+  <%= hidden_field_tag :freetext_reset, freetext_reset %>
+  <%= render(:partial => 'common/freetext_quick_search', :locals => {:free_search_options => {
+    :free_search_field_name => :easy_query_q,
+    :free_search_ajax_type => remote_function_method,
+    :free_search_url => remote_function_url,
+    :free_search_element_to_update => "modal-dialog-loader",
+    :free_search_after_function => after_functions,
+    :free_search_after_function => before_functions,
+    :free_search_reset_type => :custom_js,
+    :free_search_ajax_parameters => "$('.modal-selected-values form, input#easy_query_q, #freetext_reset').serialize()",
+    :free_search_after_done => "
+
+    bindInfiniteScrollModalSelector(function() {
+        return ['#{remote_function_url}' + '&' + $('#modal_selector_query_form, .modal-selected-values form').serialize() + '&page=', ''];
+    });
+    $('.easy-query-heading .buttons').hide();
+    $('#easy_query_q').focus();
+
+    ",
+    :free_search_reset_custom_js => "$.ajax({'url': '#{freetext_reset}', 'type':'#{remote_function_method}', data: $('.modal-selected-values form, #freetext_reset').serialize()}).done(function(data) {
+        bindInfiniteScrollModalSelector(function() {
+          return ['#{remote_function_url}' + '&' + $('#modal_selector_query_form, .modal-selected-values form, input#easy_query_q, #freetext_reset').serialize() + '&page=', '']
+        });
+        $('#modal-dialog-loader').html(data);
+      })"
+  }}) %>
+</div>

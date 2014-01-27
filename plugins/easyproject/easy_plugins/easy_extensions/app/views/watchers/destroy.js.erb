@@ -1,0 +1,3 @@
+<%= render(:file => "#{Rails.root}/app/views/watchers/destroy", :formats => [:js]) -%>
+size = window.innerHeight - 280 ;
+$('#sidebar-box-watchers_wrapper-container .watchers-list').first().css({"height" : size.toString() + "px"});

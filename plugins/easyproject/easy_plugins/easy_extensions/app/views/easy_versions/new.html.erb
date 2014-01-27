@@ -1,0 +1,10 @@
+<%= content_tag(:h1, l(:label_version_new)) %>
+<%= labelled_form_for @version, {:url => easy_versions_path, :html => {:class => 'tabular'}} do |f| %>
+  <%= hidden_field_tag(:back_url, easy_versions_path) %>
+  <div class="gray-background">
+    <%= render(:partial => 'versions/form', :locals => {:f => f}) %>
+  </div>
+  <p class="buttons">
+    <%= f.submit l(:button_create) %>
+  </p>
+<% end %>

@@ -1,0 +1,25 @@
+<% object_name ||= 'issue'; modul_uniq_id ||= ''; enable_editor ||= !in_mobile_view?; hidden_fields ||= [] %>
+<%= labelled_fields_for object_name, issue do |f| %>
+  <h3 class="issue-static-attributes-heading"><%= l(:label_issue_static_attributes_heading) -%></h3>
+  <% if issue.safe_attribute? 'subject' %>
+    <p class="issue-subject-field" style="<%='display:none;' if hidden_fields.include?(:subject) %>">
+      <%= f.text_field :subject, :required => true, :class => 'issue_subject', :tabindex => 10, :autofocus => !request.xhr? && controller_name == 'issues', :maxlength => 255 -%>
+    </p>
+  <% end %>
+  <% if issue.safe_attribute? 'description' %>
+    <p class="description" style="<%='display:none;' if hidden_fields.include?(:description) %>">
+      <%= f.text_area( :description,
+        :cols => 60,
+        :rows => (issue.description.blank? ? 10 : [[10, issue.description.length / 50].max, 100].min),
+        :accesskey => accesskey(:edit),
+        :id => "#{modul_uniq_id}#{object_name}_description",
+        :class => 'wiki-edit', :no_label => !in_mobile_view?, :tabindex => 20).html_safe %>
+      <%= wikitoolbar_for("#{modul_uniq_id}#{object_name}_description", :attachment_reminder => true) if enable_editor %>
+    </p>
+  <% end %>
+  <% if EasySetting.value('allow_repeating_issues') && !hidden_fields.include?(:easy_is_repeating) %>
+    <div id="edit_issue_repeat_options">
+      <%= render :partial => 'issues/edit_issue_repeat_options', :locals => { :issue => issue, :object_name => object_name } %>
+    </div>
+  <% end %>
+<% end %>

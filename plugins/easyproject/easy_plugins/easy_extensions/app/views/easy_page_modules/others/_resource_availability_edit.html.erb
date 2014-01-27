@@ -1,0 +1,13 @@
+<h3><%= l('easy_pages.modules.resource_availability')%></h3>
+<p>
+  <%= label_tag "#{block_name}_name", l(:'easy_page_module.resource_availability.label_resource_name') -%>
+  <%= text_field_tag "#{block_name}[name]", settings['name'], :size => 50 -%>
+</p>
+<p>
+  <%= label_tag "#{block_name}_day_start_time", l(:'easy_page_module.resource_availability.label_day_start_time') -%>
+  <%= select_tag "#{block_name}[day_start_time]", options_for_select(0.upto(24).collect{|x| ["#{x} h", x.to_s]}, settings['day_start_time'] || '8') -%>
+</p>
+<p>
+  <%= label_tag "#{block_name}_day_end_time", l(:'easy_page_module.resource_availability.label_day_end_time') -%>
+  <%= select_tag "#{block_name}[day_end_time]", options_for_select(0.upto(24).collect{|x| ["#{x} h", x.to_s]}, settings['day_end_time'] || '18') -%>
+</p>

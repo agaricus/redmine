@@ -1,0 +1,5 @@
+<% if project.module_enabled?(:easy_user_allocations) %>
+  <p>
+    <%= link_to l(:button_plan_project_in_resalloc), project_allocations_path(project), :class => 'button-1' %>
+  </p>
+<% end -%>

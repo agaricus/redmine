@@ -1,0 +1,33 @@
+<div id="easy-publishing-settings-container">
+  <h2><%= l(:label_easy_publishing_modules) %></h2>
+
+  <% if (@publishing_settings.empty?) -%>
+    <p class="nodata"><%= l(:label_no_data) %></p>
+  <% else %>
+    <table class="list">
+      <thead>
+        <tr>
+          <th><%= l(:label_easy_publishing_setting_url) %></th>
+          <th><%= l(:label_easy_publishing_module) %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @publishing_settings.each do |publishing_setting| %>
+          <tr class="<%= cycle('odd', 'even') %>">
+            <td><%= link_to publishing_setting.url, easy_publishing_setting_path(publishing_setting) %></td>
+            <td><%= l("label_easy_publishing_module_#{publishing_setting.easy_publishing_module.name}") %></td>
+            <td>
+              <%= link_to(l(:button_edit), { :controller => 'easy_publishing_settings', :action => 'edit', :id => publishing_setting.id}, :class => 'icon icon-edit') -%>
+              <%= link_to(l(:button_delete), { :controller => 'easy_publishing_settings', :action => 'destroy', :id => publishing_setting.id}, :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :class => 'icon icon-del') -%>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to(l(:button_easy_publishing_settings_new), { :controller => 'easy_publishing_settings', :action => 'new' }, :class => 'button-1') %>
+<% end %>

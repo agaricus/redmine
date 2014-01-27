@@ -1,0 +1,95 @@
+<% if @easy_publishing_contact || @easy_publishing_info || @easy_publishing_help %>
+  <div id="helpbubble-container-contact" class="helpbubble-container <%= @easy_publishing_contact && @easy_publishing_contact.hide_helpbubble? ? 'hide' : 'display' %>">
+    <% if @easy_publishing_contact %>
+      <div id="<%= "helpbubble-#{@easy_publishing_contact.easy_publishing_module.name}-#{@easy_publishing_contact.id}" -%>">
+        <%= hidden_field_tag 'helpbubble_id', @easy_publishing_contact.id %>
+        <div class="clicker">
+          <div class="clicker-icon"></div>
+          <div class="clicker-arrows <%= @easy_publishing_contact.hide_helpbubble? ? 'active' : '' %>"></div>
+          <div class="clicker-desc"><%=l 'helper_module.title_contact' -%></div>
+        </div>
+        <div class="helpbubble-content">
+          <%= @easy_publishing_contact.body.html_safe -%>
+          <% if EasyPublishingSetting.editable? %>
+            <div class="helpbubble-buttons">
+              <%= link_to l(:button_edit), {:controller => 'easy_publishing_settings', :action => 'edit', :id => @easy_publishing_contact, :back_url => (request.url unless request.xhr?)}, :class => 'helpbubble-edit-button' -%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div id="helpbubble-container-info" class="helpbubble-container <%= @easy_publishing_info && @easy_publishing_info.hide_helpbubble? ? 'hide' : 'display' %>">
+    <% if @easy_publishing_info %>
+      <%= hidden_field_tag 'helpbubble_id', @easy_publishing_info.id %>
+      <div id="<%= "helpbubble-#{@easy_publishing_info.easy_publishing_module.name}-#{@easy_publishing_info.id}" -%>" class="helpbubble-info">
+        <div class="helpbubble-content">
+          <div class="helpbubble-info-header"><%= l(:label_easy_publishing_module_info_header) -%></div>
+          <div class="helpbubble-info-body"><%= @easy_publishing_info.body.html_safe -%></div>
+          <% if EasyPublishingSetting.editable? %>
+            <div class="helpbubble-buttons">
+              <%= link_to l(:button_edit), {:controller => 'easy_publishing_settings', :action => 'edit', :id => @easy_publishing_info, :back_url => (request.url unless request.xhr?)}, :class => 'helpbubble-edit-button' -%>
+            </div>
+          <% end %>
+        </div>
+        <div class="clicker">
+          <div class="clicker-icon"></div>
+          <div class="clicker-arrows <%= @easy_publishing_info.hide_helpbubble? ? '' : 'active' %>"></div>
+          <div class="clicker-desc"><%=l 'helper_module.title_help' -%></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% if @easy_publishing_help %>
+    <div id="popuphelp" style="display:none;">
+      <img src="<%= url_for :controller => 'easy_publishing_settings', :id => @easy_publishing_help, :action=> 'help_image' -%>" alt="<%= l 'helper_module.alt_image_help' -%>"/>
+    </div>
+  <% end %>
+
+  <script type="text/javascript">
+    //<![CDATA[
+    $(function() {
+      $('div.helpbubble-container .clicker').click(function() {
+        var hbc = $(this).closest('div.helpbubble-container');
+        $.post('<%= url_for(:controller => 'users', :action => 'save_publishing_state') %>',
+          {
+            hide: hbc.hasClass('display'),
+            uniq_id: hbc.find("input[name=helpbubble_id]").val()
+          }, function() {
+            hbc.toggleClass('hide').toggleClass('display');
+            $('.clicker-arrows', hbc).toggleClass('active');
+          });
+      });
+
+      $('#show-help-button-identifier').qtip({
+        content: '<big><%= l(:label_show_help_button_tooltip) %></big>',
+        position: {
+          adjust: {x: -5, y: -12}
+        },
+        show: {
+          ready: true,
+          event: 'nope'
+        },
+        hide: {
+          event: 'click',
+          target: $(document),
+          effect: function(offset) {
+            $(this).fadeOut('slow');
+          }
+        }
+      });
+
+      setTimeout(function() {
+        $('#show-help-button-identifier').qtip('toggle', false);
+      }, 10000);
+
+    });
+
+    function showPopupHelpModule() {
+      $("#popuphelp").dialog({title: '<%= l(:label_help) %>', width: 'auto', modal: true});
+      window.scrollTo(0);
+      $(window).resize();
+    }
+  //]]>
+  </script>
+<% end %>

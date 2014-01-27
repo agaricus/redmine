@@ -1,0 +1,8 @@
+<% if EasySetting.value(:easy_attendance_use_time_select) %>
+  <span class="easy-attendance-time-select nowrap">
+    <%= select_time easy_attendance.user.user_time_in_zone(easy_attendance.send(attribute)), :minute_step => 15, :ignore_date => true, :ampm => Setting.time_format != '%H:%M', :prefix => "#{attribute}[time]", :id => "easy_attendance_#{attribute}_time" -%>
+  </span>
+<% else %>
+  <% from_value = easy_attendance.user.user_time_in_zone(easy_attendance.send(attribute)).strftime('%H:%M') %>
+  <%= tag(:input, :type => 'time', :value => from_value, :placeholder => from_value, :name => "#{attribute}[time]", :size => 3) %>
+<% end -%>

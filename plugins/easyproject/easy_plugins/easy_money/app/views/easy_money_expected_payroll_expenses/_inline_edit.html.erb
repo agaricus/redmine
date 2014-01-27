@@ -1,0 +1,7 @@
+<%= fields_for 'expected_payroll_expenses' do |f| %>
+  <%= f.label :price, l(:label_easy_money_expected_payroll_expenses) -%>
+  <%= f.text_field(:price, :value => sum_expected_payroll_expenses, :size => 15) -%>
+  <% if User.current.allowed_to?(:easy_money_manage_expected_payroll_expense, project) %>
+    <%= submit_tag(l(:button_save)) -%>
+  <% end -%>
+<% end %>

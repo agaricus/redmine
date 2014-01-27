@@ -1,0 +1,11 @@
+<% selected_values.each do |selected_id, selected_value| %>
+  <span class="easy-lookup-selected-value-wrapper easy-lookup-<%= field_id %>-<%= selected_id %>-wrapper">
+    <input type="hidden" name="<%= field_name %>" value="<%= selected_id %>" class="serializable-<%= field_id %>" />
+    <span class="display-name"><%= selected_value.html_safe %></span>
+    <span class="dont-copy">
+      <% if show_delete_link %>
+        <a href="javascript:removeSelectedModalEntity('.modal-selected-values .easy-lookup-<%= field_id %>-<%= selected_id %>-wrapper', 'entity-<%= selected_id %>')" class="icon icon-del"></a>
+      <% end %>
+    </span>
+  </span>
+<% end unless selected_values.blank? %>

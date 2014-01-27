@@ -1,0 +1,238 @@
+<div id="issue-detail">
+  <% unless @issue.disabled_core_fields.include?('done_ratio') %>
+    <div class="progress contextual">
+      <%= call_hook(:view_issues_show_top_contextual_before_progress, :issue => @issue) %>
+      <%= progress_bar(@issue.done_ratio, :legend => "#{@issue.done_ratio}%", :width => '150px') %>
+    </div>
+  <% end %>
+  <%= heading_issue(@issue) %>
+
+  <div class="<%= @issue.css_classes %> details multieditable-container" data-url="<%= issue_path(@issue, :format => 'json').html_safe %>">
+    <div id="issue-detail-header" class="easy-dropper-target easy-drop-issue" data-drop-action="issue" data-issue-id="<%= @issue.id %>" data-issue-show="1">
+      <div id="issue-detail-avatar">
+        <%= avatar(@issue.assigned_to, {:size => '65'}).to_s.html_safe %>
+      </div>
+      <table class="attributes">
+        <%= issue_fields_rows do |rows|
+          unless @issue.disabled_core_fields.include?('assigned_to_id')
+            rows.left l(:field_assigned_to), (@issue.assigned_to ? link_to_user(@issue.assigned_to) : "-"), :class => 'assigned-to', :text_options => {
+            :class => 'multieditable',
+            'data-name' => 'issue[assigned_to_id]',
+            'data-value' => @issue.assigned_to_id,
+            'data-type' => 'select',
+            'data-source' => url_for(:controller => 'easy_auto_completes', :action => 'assignable_users', :issue_id => @issue)
+          }
+          end
+          rows.left l(:field_tracker), h(@issue.tracker.name), :class => 'category'
+          rows.left l(:field_status), h(@issue.status.name), :class => 'status', :text_options => {
+            :class => 'multieditable',
+            'data-name' => 'issue[status_id]',
+            'data-value' => @issue.status_id,
+            'data-type' => 'select',
+            'data-source' => url_for(:controller => 'easy_auto_completes', :action => 'allowed_issue_statuses', :issue_id => @issue)
+          }
+          rows.left l(:field_priority), h(@issue.priority.name), :class => "priority-#{@issue.priority.position} #{@issue.priority.easy_color_scheme}", :text_options => {
+            :class => 'multieditable',
+            'data-name' => 'issue[priority_id]',
+            'data-value' => @issue.priority_id,
+            'data-type' => 'select',
+            'data-source' => url_for(:controller => 'easy_auto_completes', :action => 'issue_priorities')
+          }
+          unless @issue.disabled_core_fields.include?('category_id')
+            rows.left l(:field_category), render_issue_category_with_tree(@issue.category), :class => 'category'
+          end
+          if !@issue.tracker.easy_is_meeting?
+            unless @issue.disabled_core_fields.include?('start_date')
+              rows.right l(:field_start_date), format_date(@issue.start_date), :class => 'start-date', :text_options => {
+                  :class => 'multieditable',
+                  'data-name' => 'issue[start_date]',
+                  'data-type' => 'dateui',
+                  'data-value' => @issue.start_date
+                }
+            end
+            unless @issue.disabled_core_fields.include?('due_date')
+              rows.right l(:field_due_date), format_date_or_time(@issue.due_date), :class => "due-date #{'overdue' if @issue.overdue?}", :text_options => {
+                  :class => 'multieditable',
+                  'data-name' => 'issue[due_date]',
+                  'data-type' => 'dateui',
+                  'data-value' => @issue.due_date
+                }
+            end
+          else
+            if !@issue.disabled_core_fields.include?('due_date') && @issue.start_date == @issue.due_date
+              rows.right l(:field_easy_meeting_day), format_date_or_time(@issue.due_date), :class => "due-date #{'overdue' if @issue.overdue?}"
+              rows.right l(:field_easy_meeting_time), format_time_range(@issue.easy_start_date_time, @issue.easy_due_date_time), :class => "due-date #{'overdue' if @issue.overdue?}"
+            else
+              unless @issue.disabled_core_fields.include?('start_date')
+                rows.right l(:field_easy_start_date_time), format_date_or_time(@issue.easy_start_date_time), :class => 'start-date'
+              end
+              unless @issue.disabled_core_fields.include?('due_date')
+                rows.right l(:field_easy_due_date_time), format_date_or_time(@issue.easy_due_date_time), :class => "due-date #{'overdue' if @issue.overdue?}"
+              end
+            end
+          end
+          rows.right(l(:label_added_time_by, :author => ''), link_to_user(@issue.author), :class => 'author')
+          if !@issue.disabled_core_fields.include?('estimated_hours') && User.current.allowed_to?(:view_estimated_hours, @project)
+            unless @issue.estimated_hours.nil?
+              rows.right l(:field_estimated_hours), format_hours(@issue.estimated_hours), :class => 'estimated-hours', :text_options => {
+                  :class => 'multieditable',
+                  'data-type' => 'hours',
+                  'data-name' => 'issue[estimated_hours]',
+                  'data-value' => @issue.estimated_hours
+                }
+            end
+          end
+
+          if @issue.project.module_enabled?(:time_tracking) && User.current.allowed_to?(:view_time_entries, @project)
+            rows.right l(:label_spent_time), link_to(format_hours(@issue.total_spent_hours), project_issue_time_entries_path(@project, @issue, :period => 'all', :set_filter => '1'), :title => l(:sidebar_issue_spent_time)), :class => 'spent-time'
+          end
+
+          rows.right( l(:field_fixed_version), link_to_version(@issue.fixed_version), :class => 'fixed-version', :title => l(:title_version_detail)) unless @issue.disabled_core_fields.include?('fixed_version_id') || @issue.fixed_version.nil?
+        end %>
+
+      </table>
+
+      <%= raw '<hr />' if @issue.visible_custom_field_values.any? -%>
+      <div class="custom-fields splitcontent">
+        <%= render_show_issue_custom_fields(@issue.visible_custom_field_values, EasySetting.value('show_issue_custom_field_values_layout')) -%>
+      </div>
+      <%= call_hook(:view_issues_show_details_bottom, :issue => @issue) %>
+    </div>
+
+    <% if @issue.description? || @issue.attachments.any? ||
+      (@issue.respond_to?(:easy_external_attachments) && @issue.easy_external_attachments.any?) %>
+      <% if @issue.description? %>
+        <div class="wiki" id="show_issue_description">
+          <p style="text-align: right; margin: 0; padding: 10px 0 0 0" class="floatright">
+            <%= link_to('', quoted_issue_path(@issue), :remote => true, :method => 'post', :title => l(:button_quote), :class => 'icon icon-comment') if @issue.editable? %>
+            <%= link_to_in_place_notes_editor('', '', { :controller => 'easy_issues', :action => 'description_edit', :id => @issue, :format => 'js' },
+              :title => l(:button_edit), :accesskey => accesskey(:edit), :class => 'icon icon-edit') if User.current.allowed_to?(:edit_issues, @project) || (User.current.allowed_to?(:edit_own_issue, @project) && @issue.author.id == User.current.id) %>
+          </p>
+          <%= textilizable(@issue, :description, {:headings => false, :attachments => @issue.attachments}) %>
+        </div>
+
+      <% end %>
+      <%= link_to_attachments @issue, :thumbnails => true %>
+    <% end -%>
+
+    <%= call_hook(:view_issues_show_description_bottom, :issue => @issue) %>
+  </div>
+  <% if @issue.child? %>
+    <div class="issue-parents">
+      <%= content_tag :h3, l(:label_parenttask_plural), :class => 'sidebar-style-h3' %>
+      <%= render_ancestors_tree(@issue) %>
+    </div>
+  <% end %>
+  <% if !@issue.leaf? %>
+    <div class="issue-childs">
+      <%= content_tag :h3, l(:label_subtask_plural), :class => 'sidebar-style-h3' %>
+      <%= render_descendants_tree(@issue) unless @issue.leaf? %>
+    </div>
+  <% end %>
+
+  <% if @relations.present? || User.current.allowed_to?(:manage_issue_relations, @project) %>
+    <div id="relations">
+      <%= render :partial => 'relations' %>
+    </div>
+  <% end %>
+
+  <%= call_hook(:view_issues_show_journals_top, :issue => @issue, :project => @project) %>
+</div>
+
+<% if @changesets.present? %>
+  <%= toggling_container('issue-changesets', User.current, {:heading => l(:label_associated_revisions)}) do %>
+    <div id="issue-changesets">
+      <%= render :partial => 'changesets', :locals => { :changesets => @changesets} %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if @journals.present? %>
+  <%= toggling_container('issue-history', User.current, {:heading => l(:label_history)}) do %>
+    <div id="history">
+      <%= render :partial => 'history', :locals => { :issue => @issue, :journals => @journals } %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= call_hook(:view_issues_show_journals_bottom, :issue => @issue) %>
+
+<% if @prev_issue_id || @next_issue_id %>
+  <div class="next-prev-links">
+    <p>
+      <%= link_to_if @prev_issue_id,
+        "\xc2\xab #{l(:label_previous_issue)}",
+        (@prev_issue_id ? issue_path(@prev_issue_id) : nil),
+        :title =>  h(@prev_issue.to_s) %>
+    </p>
+    <p>
+      <% if @issue_position && @issue_count %>
+        <span class="position"><%= l(:label_item_position, :position => @issue_position, :count => @issue_count) %></span>
+      <% end %>
+    </p>
+    <p>
+      <%= link_to_if @next_issue_id,
+        "#{l(:label_next_issue)} \xc2\xbb",
+        (@next_issue_id ? issue_path(@next_issue_id) : nil),
+        :title => h(@next_issue.to_s) %>
+    </p>
+  </div>
+<% end %>
+
+<div style="clear: both;"></div>
+
+<div class="other-formats links">
+  <% other_formats_links do |f| %>
+    <%= f.link_to 'Atom', :url => {:key => User.current.rss_key}, :title => l(:title_other_formats_links_atom) %>
+    <%= f.link_to 'PDF', :title => l(:title_other_formats_links_pdf) %>
+    <%= f.link_to 'ICS', :title => l(:title_other_formats_links_ics), :caption => 'iCal' %>
+  <% end %>
+</div>
+
+<% if @issue.editable? %>
+  <% if false %>
+    <div id="update" style="display:none;">
+      <h3><%= l(:button_issue_update) %></h3>
+      <%= render :partial => 'edit' %>
+    </div>
+  <% end %>
+  <div id="update" style="display:none;">
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var scroll_to = window.location.hash;
+    if (scroll_to && scroll_to == '#update') {
+      ShowAndScrollTo('update', -110);
+      $('#issue-sidebar-link_to-update').removeClass('button-1');$('#issue-sidebar-link_to-update').addClass('button-2');
+      focusWiki('issue_notes');
+    }
+    collapseUnnecessaryJournals();
+  });
+
+</script>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+
+<% html_title @issue.to_s %>
+
+<% content_for :sidebar do %>
+  <div class="issue-sidebar-container fixed-sidebar-box">
+    <%= call_hook(:view_issue_sidebar_top, :issue => @issue) %>
+    <%= render :partial => 'sidebar/issue_info', :locals => {:issue => @issue} %>
+    <%= call_hook(:view_issue_sidebar_under_issue_info, :issue => @issue) %>
+    <% if User.current.allowed_to?(:add_issue_watchers, @issue.project) || User.current.allowed_to?(:view_issue_watchers, @issue.project) %>
+      <%= render :partial => 'sidebar/issue_watchers', :locals => {:watched => @issue} %>
+    <% end %>
+    <%= call_hook(:view_issue_sidebar_bottom, :issue => @issue) %>
+  </div>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= auto_discovery_link_tag(:atom, {:format => 'atom', :key => User.current.rss_key}, :title => "#{@issue.project} - #{@issue.tracker} ##{@issue.id}: #{@issue.subject}") %>
+<% end %>
+
+<% include_calendar_headers_tags %>
+<% include_attachment_headers_tags %>

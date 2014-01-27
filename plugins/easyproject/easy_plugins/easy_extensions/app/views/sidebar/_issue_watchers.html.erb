@@ -1,0 +1,8 @@
+<div class="box" id="sidebar-box-watchers_wrapper-container">
+  <%= render :partial => 'watchers/watchers_wrapper', :locals => {:watched => watched, :watcher => @watcher} -%>
+</div>
+<%= javascript_tag do %>
+  size = $(window).height() - $("#sidebar .issue_actions").height() - $("#header").height() - $("#footer").height();
+  size = size - 200 // menu, header, paddings
+  $('#sidebar-box-watchers_wrapper-container .watchers-list').first().css({"height" : size.toString() + "px"});
+<% end if current_theme && current_theme.is_easy_theme? %>

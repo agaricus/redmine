@@ -1,0 +1,25 @@
+<h3><%=l('easy_pages.modules.documents')%> (<%= Document.visible(user).count %>)</h3>
+<p>
+  <span class="my-page-document-query-select-label"><%= l(:label_my_page_document_row_count) -%></span>
+  <% settings["row_limit"] ||= 10 %>
+  <span class="my-page-document-query-select"><%= text_field_tag("#{block_name}[row_limit]", settings["row_limit"].to_i, :size => 5) -%></span>
+</p>
+<p>
+  <span class="my-page-document-query-select-label"><%= l(:label_group_by, '') -%></span>
+  <span class="my-page-document-query-select"><%= select_tag("#{block_name}[sort_by]", options_for_select([[l(:field_category),'category'],[l(:label_date), 'date'],[l(:field_title) ,'title'],[l(:field_author),'author'],[l(:field_project), 'project']]), :size => 5) -%></span>
+</p>
+
+<% query = @easy_page_modules_data[block_name][:query] %>
+<%= hidden_field_tag 'edit', 'true' %>
+<%= render(:partial => 'easy_page_modules/easy_query_module_form', :locals => {
+    :page_module => page_module, :block_name => block_name, :settings => settings, :modul_uniq_id => modul_uniq_id,
+    :query => query, :preview_options => {:update => "#{modul_uniq_id}documents_preview", :url => url_for({:controller => 'easy_queries', :action => 'easy_document_preview'})}
+  }) %>
+
+<div id="<%= modul_uniq_id %>documents_preview"></div>
+
+<script type="text/javascript">
+  before_submit_<%= modul_uniq_id.underscore -%> = function() {
+    if ($('#<%= modul_uniq_id -%>query_type_2').is(":checked")) { selectAllOptions('<%= modul_uniq_id -%>selected_columns'); }
+  }
+</script>

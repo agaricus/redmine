@@ -1,0 +1,40 @@
+<div class="box">
+  <p>
+    <%= hidden_field_tag(:active, false, :id => '') %><%= label_tag(:active, l(:field_active)) %><%= check_box_tag(:active, true, setting[:active], :onchange => "
+      $('#easy_issue_timers_settings_form .attributes *').attr('disabled', !$(this).is(':checked'));      ") %>
+  </p>
+</div>
+<div class="splitcontent">
+    <div class="splitcontentleft attributes">
+      <fieldset>
+        <%= content_tag(:legend, l(:label_easy_issue_timer_start)) %>
+        <p>
+          <%= hidden_field_tag(:assigned_to_me, false, :id => '', :disabled => !setting[:active]) %><%= label_tag(:assigned_to_me, l(:field_easy_issue_timer_assign_to_me)) %><%= check_box_tag(:assigned_to_me, true, setting[:start] && setting[:start][:assigned_to_me], :disabled => !setting[:active]) %>
+        </p>
+        <p>
+          <%= label_tag(:start_status_id, l(:field_status)) %><%= select_tag(:start_status_id, options_from_collection_for_select(statuses, :id, :name, setting[:start] && setting[:start][:status_id]), :include_blank => true, :disabled => !setting[:active]) %>
+        </p>
+      </fieldset>
+    </div>
+    <div class="splitcontentright attributes">
+      <fieldset>
+        <%= content_tag(:legend, l(:label_easy_issue_timer_end)) %>
+        <p>
+          <%= label_tag(:assigned_to, l(:field_assigned_to)) %><%= select_tag(:assigned_to, options_for_select([[l(:label_author_assigned_to), :author], [l(:label_last_user_assigned_to), :last_user]] + User.active.sorted.map{|u| [u.name, u.id]}, setting[:end] && setting[:end][:assigned_to]), :include_blank => true, :disabled => !setting[:active]) %>
+        </p>
+        <p>
+          <%= label_tag(:end_status_id, l(:field_status)) %><%= select_tag(:end_status_id, options_from_collection_for_select(statuses, :id, :name, setting[:end] && setting[:end][:status_id] ), :include_blank => true, :disabled => !setting[:active]) %>
+        </p>
+        <p>
+          <%= label_tag(:done_ratio, l(:field_done_ratio)) %><%= select_tag(:done_ratio, options_for_select((0..10).to_a.collect{|r| ["#{r*10} %", r*10]}, setting[:end] && setting[:end][:done_ratio]), :include_blank => true, :class => 'done-ratio', :disabled => !setting[:active]) %>
+        </p>
+        <p>
+          <%= label_tag(:round, l(:field_easy_issue_timer_round)) %><%= select_tag(:round, options_for_select([0.25,0.50,0.75]), :include_blank => true) %>
+        </p>
+      </fieldset>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <p>
+    <%= submit_tag(l(:button_save), :class => 'button-1') %>
+  </p>

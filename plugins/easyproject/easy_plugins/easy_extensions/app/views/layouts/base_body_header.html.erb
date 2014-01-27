@@ -1,0 +1,48 @@
+<div class="container_12">
+  <div id="header" class="grid_12 easy-dropper-target easy-drop-global">
+    <div class="<%= User.current.logged? || !Setting.login_required? ? 'grid_8 alpha' : 'grid_12 alpha omega' %>">
+      <%= call_hook :view_layout_before_logo %>
+      <div id="logo"><%= link_to('', home_path, :title => l(:title_logo))-%></div>
+      <% if User.current.logged? || !Setting.login_required? %>
+  <%# easy_cache ['top_menus', User.current, I18n.locale] do %>
+        <div id="main-menu-section">
+          <div id="top-menu">
+            <%= render_menu :easy_quick_top_menu -%>
+            <%= render_menu_more :top_menu -%>
+          </div>
+        </div>
+  <%# end %>
+      <% end %>
+      <%= call_hook :view_layout_after_top_menu %>
+    </div>
+    <% if User.current.logged? || !Setting.login_required? %>
+      <!-- <div class="grid_4 omega"> -->
+      <div id="quick-search" class="grid_4 omega nowrap">
+        <div id="before-quick-search" class="grid_1 alpha ">
+          <%= render(:partial => 'easy_issue_timers/top_menu_trigger', :locals => {:easy_issue_timers => @easy_issue_timers}) if @easy_issue_timers && !@easy_issue_timers.blank? %>
+          <%= call_hook :view_layout_before_quick_search %>
+        </div>
+        <div class="grid_3 omega">
+          <div class="splitcontentleft top-menu-quick">
+            <%= form_tag({:controller => 'search', :action => 'index', :id => @project}, :method => :get ) do %>
+              <%= hidden_field_tag(controller.default_search_scope, 1, :id => nil) if controller.default_search_scope %>
+              <%= search_field_tag('q', @question, {:class => 'small border-radius-3', :accesskey => accesskey(:quick_search), :placeholder => (l(controller_name, :scope => [:search_field_placeholders], :default => l(:label_search))) }) -%>
+              <% submit_tag l(:label_search), :class => 'button-2' %>
+            <% end %>
+          </div>
+  <%# easy_cache ['project_jump_box', controller_name, I18n.locale] do %>
+          <div class="splitcontentright top-menu-quick">
+            <span id="header-quick-search-project-jump-box-container">
+              <%= render_project_jump_box %>
+            </span>
+          </div>
+  <%# end %>
+        </div>
+
+      </div>
+
+      <!-- </div> -->
+    <% end %>
+  </div>
+  <div id="header-space-holder"></div>
+</div>

@@ -1,0 +1,38 @@
+<%= link_to_function('', "", :class => 'icon-timer', :id => 'easy_issue_timers_list_trigger') %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#easy_issue_timers_list_trigger').qtip({
+        content: '<%= j render(:partial => 'easy_issue_timers/notify', :locals => {:easy_issue_timers => easy_issue_timers}) %>',
+        position: {
+          adjust: {x: -5, y: -15}
+
+          //container: $("#before-quick-search")
+        },
+        show: {
+          ready: true,
+          event: 'mouseover'
+        },
+        hide: {
+          fixed: true,
+          delay: 1000
+        },
+        style: {
+          width: '30%',
+          height: 'auto',
+          classes: 'easy-issue-timers-list-qtip'
+        }
+      });
+
+      setTimeout(function() {
+        $('#easy_issue_timers_list_trigger').qtip('toggle', false);
+      }, 5000);
+
+      setInterval(function() {
+        <% easy_issue_timers.each do |time| %>
+          $('#<%= dom_id(time) %>').closest('p').find('span.timer-time').text(((new Date - new Date('<%= time.start %>')) / 3600000 ).toFixed(2) + " <%= l(:label_f_hour_plural) %>");
+        <% end -%>
+      }, 60000);
+
+    });
+</script>

@@ -1,0 +1,15 @@
+<%= form_tag({:action => 'save'}, :onsubmit => "selectAllOptions('#{@easy_query.class.name.underscore}_selected_columns');") do %>
+  <%= hidden_field_tag :tab, @easy_query.class.name.underscore -%>
+  <div class="gray-background">
+    <%= content_tag :h4, l(:default_fitlers, :scope => [:easy_query, :label]) -%>
+    <%= render :partial => 'easy_user_allocation_queries/filters', :locals => {:query => @easy_query, :modul_uniq_id => "#{@easy_query.class.name.underscore}_"} -%>
+    <br />
+
+    <%= content_tag :h4,  l(:field_group_by) -%>
+    <p>
+      <%= label_tag :grouped_by, l(:field_column_names) -%>
+      <%= select_tag( 'easy_query[group_by]', options_for_select([[]] + @easy_query.groupable_columns.collect {|c| [c.caption, c.name.to_s]}, @easy_query.group_by), :id => :grouped_by) -%>
+    </p>
+  </div>
+  <%= content_tag :p, submit_tag(l(:button_save), :class => 'button-1') -%>
+<% end %>

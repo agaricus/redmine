@@ -1,0 +1,39 @@
+<% # encoding: utf-8 %>
+<div id="budgetsheet">
+
+  <%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => @easy_query_name} %>
+
+  <h3>
+    <%=l(:label_spent_time) -%>
+    <%= html_hours('%.2f' % @total_hours).html_safe %>
+    <%= h(l(:field_hours)) %>
+  </h3>
+  <div id="time_entries">
+    <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @time_entries, :options => {:hide_sums_in_group_by => true, :hascontextmenu => true, :sumarize_total => true}} -%>
+  </div>
+  <p class="pagination" style="display:none;">
+    <%= pagination_links_full(@time_entry_pages, @time_entry_count, :entities => @time_entries, :query => @query) -%>
+  </p>
+
+  <%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+  <% content_for :header_tags do -%>
+    <%= stylesheet_link_tag 'easy_budgetsheet', :plugin => 'easy_budgetsheet' -%>
+  <% end -%>
+
+  <% content_for :sidebar do  -%>
+    <%= render(:partial => 'budgetsheet/all_users_queries') %>
+    <%= render(:partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project}) -%>
+  <% end -%>
+</div>
+
+<%= javascript_tag do %>
+  var src = $('table.list.entities.timeentries tbody tr:not(.group):first td');
+  var sums = $('#budgetsheet-sum-summary td');
+
+  src.each(function(i) {
+  $(sums[i]).css('width', $(this).width());
+  });
+<% end %>
+
+<%= context_menu time_entries_context_menu_path %>

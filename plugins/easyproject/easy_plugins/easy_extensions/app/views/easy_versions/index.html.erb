@@ -1,0 +1,21 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => l(:label_easy_versions), :back_url => easy_versions_path} -%>
+
+<div id="versions">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @entities, :options => {:hascontextmenu => true}} -%>
+</div>
+
+<p class="pagination">
+  <%= pagination_links_full @entity_pages, @entity_count, :query => @query, :entities => @entities %>
+</p>
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+
+<% content_for(:sidebar) do %>
+  <div class="box fixed-sidebar-box grid_3 alpha omega">
+    <%= link_to(l(:label_version_new), new_easy_version_path, :class => 'button-1 icon icon-add') if User.current.allowed_to?(:manage_global_versions, @project, :global => true) %>
+
+    <%= render(:partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project, :query_link => {:controller => 'easy_versions', :action => 'index'}}) %>
+  </div>
+<% end %>
+
+<%= context_menu({:controller =>'context_menus', :action => 'versions', :back_url => easy_versions_path }) -%>

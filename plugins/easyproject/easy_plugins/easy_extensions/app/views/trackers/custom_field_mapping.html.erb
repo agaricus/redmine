@@ -1,0 +1,12 @@
+<% if @custom_field_data.blank? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+  <% @custom_field_data.each do |custom_field_from, custom_fields| %>
+    <p>
+      <label class="block floating"><%= custom_field_from.name %></label>
+      <%= select_tag("custom_field_map[#{custom_field_from.id}]",
+        options_for_select([[l(:option_dont_map), '']] + custom_fields.collect{|cf| [cf.name, cf.id]})
+      ) -%>
+    </p>
+  <% end -%>
+<% end -%>

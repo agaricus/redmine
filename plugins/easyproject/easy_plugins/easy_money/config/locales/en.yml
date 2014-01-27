@@ -1,0 +1,397 @@
+---
+en:
+  easy_money_plugin_name: Money
+  easy_money_plugin_author: Easy Software
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- monitoring and management of expected and actual
+    financial results of the projects'
+  project_module_easy_money: Money
+  menu_easy_money: Money
+  permission_view_easy_money: Access to Money module (general)
+  permission_easy_money_show_expected_revenue: Show planned incomes
+  permission_easy_money_show_expected_expense: Show planned expenses
+  permission_easy_money_show_expected_payroll_expense: Show planned wage expenses
+  permission_easy_money_show_expected_profit: Show planned profit
+  permission_easy_money_show_other_revenue: Show real incomes
+  permission_easy_money_show_other_expense: Show real expenses
+  permission_easy_money_show_time_entry_expenses: Show real wage expenses
+  permission_easy_money_show_other_profit: Show real profit
+  permission_easy_money_manage_expected_revenue: Adding planned incomes
+  permission_easy_money_manage_expected_expense: Adding planned expenses
+  permission_easy_money_manage_expected_payroll_expense: Adding planned wage expenses
+  permission_easy_money_manage_other_revenue: Adding real incomes
+  permission_easy_money_manage_other_expense: Adding real expenses
+  permission_easy_money_settings: Access to money settings
+  permission_easy_money_move: Move money among projects
+  permission_easy_budgetsheet_view_internal_rates: 'Budgetsheet - show internal rates'
+  permission_easy_budgetsheet_view_external_rates: 'Budgetsheet - show external rates'
+  permission_easy_money_cash_flow_prediction: 'Cash flow prediction'
+  permission_easy_money_cash_flow_history: 'Cash flow history'
+  heading_easy_money_other_settings_project_overview: Project overview settings
+  heading_easy_money_other_settings_prices_and_rates: Prices and rates
+  label_easy_money: Money
+  label_easy_money_settings: Money settings
+  label_easy_money_rate_priorities_settings: Expenses rates setting
+  label_easy_money_project_index: Money
+  label_easy_money_other_expenses: Real expenses overview
+  label_easy_money_other_expense_new: New real expense
+  label_easy_money_other_expense_show: Expense
+  label_easy_money_other_expense_edit: Expense edit
+  label_easy_money_other_revenues: Real incomes overview
+  label_easy_money_other_revenue_new: New real income
+  label_easy_money_other_revenue_show: Income
+  label_easy_money_other_revenue_edit: Income edit
+  label_easy_money_time_entry_expenses: Wage expenses overview
+  label_easy_money_project_index_sum_hours: ! 'Planned hours: '
+  label_easy_money_project_index_profit: ! 'Profit: '
+  label_easy_money_expected_expenses: Planned expenses overview
+  label_easy_money_expected_revenues: Planned incomes overview
+  label_easy_money_expected_expense_new: New planned expense
+  label_easy_money_expected_expense_show: Planned expense
+  label_easy_money_expected_expense_edit: Planned expense edit
+  label_easy_money_expected_revenue_new: New planned income
+  label_easy_money_expected_revenue_show: Planned income
+  label_easy_money_expected_revenue_edit: Edit planned income
+  label_easy_money_other_settings: Other settings
+  label_easy_money_other_settings_price_visibility: ! 'By amount use:'
+  label_easy_money_other_settings_rate_type: ! 'By wage expenditures use:'
+  label_easy_money_other_settings_include_childs: ! 'Count amounts from sub projects
+    to total project money:'
+  label_easy_money_other_settings_project_expected_visibility: ! 'Turn on the project
+    planning / expectations:'
+  label_easy_money_other_settings_expected_count_price: 'Revenues and real expenses count using'
+  label_easy_money_other_settings_expected_rate_type: 'Real wage expenses count using'
+  label_easy_money_other_settings_project_use_easy_money_for_versions: 'Use money on milestones'
+  label_easy_money_other_settings_project_use_easy_money_for_issues: 'Use money on tasks'
+  label_easy_money_project_usage_type: ! 'Use on project:'
+  label_easy_money_other_settings_vat: ! 'If showing amount without VAT, VAT is:'
+  label_easy_money_use_vat: use VAT count
+  label_easy_money_expected_budget: Plan
+  label_easy_money_real_budget: Reality
+  label_easy_money_project_name: ! 'Project budget:'
+  label_easy_money_hour: ! '%{hours} hrs.'
+  label_easy_money_expected_payroll_expense_per_hours: Planned hourly rate
+  label_easy_money_expected_payroll_expenses: ! 'Wage expenses:'
+  label_easy_money_subproject_sum_revenues: Incomes *
+  label_easy_money_subproject_sum_expenses: Expenses *
+  label_easy_money_subproject_sum_payroll_expenses: Wage expenses
+  label_easy_money_subproject_profit: Result *
+  label_easy_money_subproject_explication: ! '*) (plan / reality)'
+  label_easy_money_attachments: ! 'Attachments:'
+  label_easy_money_project_time_entry_expenses: Wage cost purely on the project
+  label_easy_money_project_issues_time_entry_expenses: Wage cost for project tasks
+  label_easy_money_total: ! 'total:'
+  label_easy_money_all_project: Money for all projects
+  label_easy_money_currency_visible: ! 'Allow change of currency on project:'
+  label_easy_money_currency: ! 'Currency:'
+  label_easy_money_select_project: Choose a project
+  label_easy_money_mass_copy_rates: Rate values expenses
+  label_easy_money_project_index_estimated_hours: ! 'Estimated time: '
+  label_easy_money_new_revenue_text: Revenue
+  label_easy_money_new_revenue_description: revenue
+  label_easy_money_new_expense_text: Expense
+  label_easy_money_new_expense_description: expense
+  label_filter_group_easy_money_other_revenue_query: Real revenues
+  label_filter_group_easy_money_other_expense_query: Real expenses
+  label_filter_group_easy_money_expected_revenue_query: Planned revenues
+  label_filter_group_easy_money_expected_expense_query: Planned expenses
+  label_filter_group_easy_money_project_cache_query: Others
+  label_filter_group_easy_money_project_cache_expenses: Expenses
+  label_filter_group_easy_money_project_cache_revenues: Revenues
+  label_filter_group_easy_money_project_cache_profit: Profit
+  label_easy_money_project_cache: Portfolio overview
+  label_easy_money_other_settings_revenues_type: Revenues will be act as
+  label_easy_money_other_settings_expenses_type: Real expenses will be act as
+  label_easy_money_other_settings_expected_payroll_expense_type: Planned wage expenses will counted as
+  label_easy_money_round_money_on_list: Round on list
+  label_easy_money_currency_format: Currency format
+  label_easy_money_cash_flow_prediction: Cash flow prediction
+  label_easy_money_cash_flow_history: Cash flow history
+  label_easy_money_cash_flow_change_price_type: Which price to display?
+  label_easy_money_entity_overview: Project/task/version overview
+  label_easy_money_subprojects: Suprojects overview
+  label_easy_money_expected_expense_added: Planned expense added
+  label_easy_money_expected_expense_updated: Planned expense updated
+  label_easy_money_expected_revenue_added: Planned revenue added
+  label_easy_money_expected_revenue_updated: Planned revenue updated
+  label_easy_money_other_expense_added: Real expense added
+  label_easy_money_other_expense_updated: Real expense updated
+  label_easy_money_other_revenue_added: Real revenue added
+  label_easy_money_other_revenue_updated: Real revenue updated
+
+  text_easy_money_rate_priorities_settings: Basic hierarchy of expenses rates. If
+    the first rate is zero, next nonzero rate will be used.
+  button_easy_money_rate_use_in_all_projects: Use rate in all projects
+  button_easy_money_rate_use_in_all_subprojects: Use rate in all subprojects
+  button_easy_money_priorities_use_in_all_projects: Use rate priorities in all projects
+  button_easy_money_priorities_use_in_all_subprojects: Use rate priorities in all
+    subprojects
+  button_easy_money_project_expected_expenses: ! 'Expenses:'
+  button_easy_money_project_expected_revenues: ! 'Incomes:'
+  button_easy_money_project_other_expenses: ! 'Expenses:'
+  button_easy_money_project_other_revenues: ! 'Incomes:'
+  button_easy_money_project_time_entry_expenses: ! 'Wage expenses: '
+  button_easy_money_project_new_revenue: New income
+  button_easy_money_project_new_expense: New expense
+  button_easy_money_project_time_entry_hours: ! 'Time worked:'
+  button_easy_money_project_index_show_details: Show details
+  button_easy_money_project_index_show_empty: Show empty fields
+  button_easy_money_save_in_all_projects: Use in all projects
+  button_easy_money_save_in_all_subprojects: Use in all subprojects
+  button_easy_money_project_settings: Money settings
+  button_easy_money_save_expected_revenue: Save expected income
+  button_easy_money_save_other_revenue: Save real income
+  button_easy_money_save_expected_hours: Save planned hours
+  button_easy_money_save_expected_expense: Save planned expense
+  button_easy_money_save_other_expense: Save real expense
+  button_easy_money_update_project_time_entry_expenses: Recalculate wage expenses
+    on project
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: Recalculate
+    wage expenses on project and all subprojects
+  button_easy_money_update_all_projects_time_entry_expenses: Recalculate wage expenses
+    on all projects
+  button_easy_money_move: Change project for selected
+  title_easy_money_project_new_revenue: Add new income
+  title_easy_money_project_new_expense: Add new expense
+  title_easy_money_project_expected_revenues: Show planned incomes of project
+  title_easy_money_project_other_revenues: Show real incomes of project
+  title_easy_money_project_expected_expenses: Show planned expenses of project
+  title_easy_money_project_other_expenses: Show real expenses of project
+  title_easy_money_project_time_entry_expenses: Show real wage expenses of project
+  title_easy_money_rates_save: Save rates
+  title_easy_money_rate_use_in_all_projects: Save rates and apply them in all projects
+  title_easy_money_rate_use_in_all_subprojects: Save rates and apply them in all subprojects
+  title_easy_money_priorities_use_in_all_projects: Use ordering of rates on all projects
+  title_easy_money_priorities_use_in_all_subprojects: Use ordering of rates on all
+    subprojects
+  title_easy_money_other_repeating_expense_show: Show repeated expense.
+  title_easy_money_other_repeating_revenue_show: Show repeated income.
+  title_easy_money_settings: Go to project money setting.
+  title_easy_money_project_index_show_empty: Show empty fields.
+  title_close: By clicking close this pane.
+  title_easy_money_update_project_time_entry_expenses: Recalculate wage expenses on
+    project.
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: Click to start
+    conversion of the wage cost of the project and all subprojects (may take several
+    minutes).
+  title_easy_money_update_all_projects_time_entry_expenses: Recalculate wage expenses
+    on all projects.
+  title_easy_money_sum_expected_revenues: "Sum of planned incomes on project %{project} is %{value}."
+  title_easy_money_sum_other_revenues: "Sum of real incomes on project %{project} is %{value}."
+  title_easy_money_sum_expected_expenses: "Sum of planned expenses on project %{project} is %{value}."
+  title_easy_money_sum_other_expenses: "Sum of real expenses on project %{project} is %{value}."
+  title_easy_money_sum_expected_payroll_expenses: "Sum of planned wages on project %{project} is %{value}."
+  title_easy_money_sum_time_entry_expenses: "Sum of wages on project %{project} is %{value}."
+  title_easy_money_expected_profit: "Planned profit on project %{project} is %{value}."
+  title_easy_money_other_profit: "Profit on project %{project} is %{value}."
+  title_easy_money_link_to_subproject: Go to money of %{subproject}.
+  title_easy_money_link_to_project: Go to money of %{project}.
+  title_easy_money_project_revenues_per_month: 'By clicking you can show revenues on project per month.'
+  title_easy_money_project_expenses_per_month: 'By clicking you can show expenses on project per month.'
+  field_spent_hours: Spent hours
+  field_easy_money_rate_entity_time_entry_activity_name: Activity name
+  field_easy_money_rate_entity_role_name: Role name
+  field_easy_money_rate_entity_user_name: User name
+  field_easy_money_other_expense_spent_on: ! 'Date:'
+  field_easy_money_other_expense_name: ! 'Name:'
+  field_easy_money_other_expense_description: ! 'Description:'
+  field_easy_money_other_expense_price1: ! 'Total amount:'
+  field_easy_money_other_expense_price2: ! 'Amount without VAT:'
+  field_easy_money_other_expense_vat: ! 'VAT:'
+  field_easy_money_other_revenue_spent_on: ! 'Date:'
+  field_easy_money_other_revenue_name: ! 'Name:'
+  field_easy_money_other_revenue_description: ! 'Description:'
+  field_easy_money_other_revenue_price1: ! 'Total amount:'
+  field_easy_money_other_revenue_price2: ! 'Amount without VAT:'
+  field_easy_money_other_revenue_vat: ! 'VAT:'
+  field_easy_money_expected_expense_spent_on: ! 'Date:'
+  field_easy_money_expected_expense_name: ! 'Name:'
+  field_easy_money_expected_expense_description: ! 'Description:'
+  field_easy_money_expected_expense_price1: ! 'Total amount:'
+  field_easy_money_expected_expense_price2: ! 'Amount without VAT:'
+  field_easy_money_expected_expense_vat: ! 'VAT:'
+  field_easy_money_expected_revenue_spent_on: ! 'Date:'
+  field_easy_money_expected_revenue_name: ! 'Name:'
+  field_easy_money_expected_revenue_description: ! 'Description:'
+  field_easy_money_expected_revenue_price1: ! 'Total amount:'
+  field_easy_money_expected_revenue_price2: ! 'Amount without VAT:'
+  field_easy_money_expected_revenue_vat: ! 'VAT:'
+  field_easy_money_expected_revenue: Planned income
+  field_easy_money_expected_expense: Planned expense
+  field_easy_money_sum_other_revenues: Incomes
+  field_easy_money_sum_time_entry_expenses: Wage expenses
+  field_easy_money_sum_other_expenses: Expenses
+  field_easy_money_sum_other_profit: Profit
+  field_easy_money_rate_type_internal: Internal rate
+  field_easy_money_rate_type_external: External rate
+  field_price1: Total amount
+  field_price2: Amount without VAT
+  field_vat: VAT
+  field_inherit_easy_money_settings: Inherit money settings
+  field_sum_of_expected_hours: Planned hours
+  field_sum_of_expected_payroll_expenses: Planned wages
+  field_sum_of_expected_expenses_price_1: Planned expenses (VAT incl)
+  field_sum_of_expected_revenues_price_1: Planned revenues (VAT incl)
+  field_sum_of_other_expenses_price_1: Real expenses (VAT incl)
+  field_sum_of_other_revenues_price_1: Real revenues (VAT incl)
+  field_sum_of_expected_expenses_price_2: Planned expenses (without VAT)
+  field_sum_of_expected_revenues_price_2: Planned revenues (without VAT)
+  field_sum_of_other_expenses_price_2: Real expenses (without VAT)
+  field_sum_of_other_revenues_price_2: Real revenues (without VAT)
+  field_sum_of_time_entries_expenses_internal: Wages (internal rate)
+  field_sum_of_time_entries_expenses_external: Wages (external rate)
+  field_sum_of_all_expected_expenses_price_1: Total planned expenses (VAT incl)
+  field_sum_of_all_expected_revenues_price_1: Total planned revenues (VAT incl)
+  field_sum_of_all_other_revenues_price_1: Total revenues (VAT incl)
+  field_sum_of_all_expected_expenses_price_2: Total planned expenses (without VAT)
+  field_sum_of_all_expected_revenues_price_2: Total planned revenues (without VAT)
+  field_sum_of_all_other_revenues_price_2: Total revenues (without VAT)
+  field_sum_of_all_other_expenses_price_1_internal: Total expenses (VAT incl, internal rate)
+  field_sum_of_all_other_expenses_price_2_internal: Total expenses (without VAT, internal rate)
+  field_sum_of_all_other_expenses_price_1_external: Total expenses (VAT incl, external rate)
+  field_sum_of_all_other_expenses_price_2_external: Total expenses (without VAT, external rate)
+  field_expected_profit_price_1: Planned profit (VAT incl)
+  field_expected_profit_price_2: Planned profit (without VAT)
+  field_other_profit_price_1_internal: Profit (VAT incl, internal rate)
+  field_other_profit_price_2_internal: Profit (without VAT, internal rate)
+  field_other_profit_price_1_external: Profit (VAT incl, external rate)
+  field_other_profit_price_2_external: Profit (without VAT, external rate)
+  field_average_hourly_rate_price_1: Average hourly rate (VAT incl)
+  field_average_hourly_rate_price_2: Average hourly rate (without VAT)
+
+  tab_easy_money_other_expense_custom_field: User fields - Real expenses
+  tab_easy_money_other_revenue_custom_field: User fields - Real incomes
+  tab_easy_money_expected_expense_custom_field: User fields - Planned expenses
+  tab_easy_money_expected_revenue_custom_field: User fields - Planned incomes
+  tab_easy_money_rate_priorities: Rate hierarchy
+  tab_easy_money_rate_role: Rates by role
+  tab_easy_money_rate_time_entry_activity: Rates by activity
+  tab_easy_money_rate_user: Rates by user
+  tab_easy_money_other_settings: Other setting
+  easy_money_other_expense_custom_field: Real expenses
+  easy_money_other_revenue_custom_field: Real incomes
+  easy_money_expected_expense_custom_field: Planned expenses
+  easy_money_expected_revenue_custom_field: Planned incomes
+  easy_money_other_settings_default_currency_format: Default - according to the lang
+  notice_easy_money_recalculate: Amounts will be recalculated within next visit of
+    overview page.
+  error_easy_money_project_selector_select_values: There are no selected value
+  project_default_page:
+    easy_money: Money
+  warning_easy_money_settings:
+    project_question: Do you want to save the settings in the project?
+    global_question: Do you want to save global settings?
+    revenues_type: You change the input method of incomes (all incomes previously
+      entered will be deleted).
+    expenses_type: You change the input method of expenses (all expenses previously
+      entered will be deleted).
+  warning_easy_money_all_projects:
+    question: Are you sure to use these settings on all projects?
+    revenues_type: ! 'All previously entered incomes for the following projects will
+      be deleted: %{projects}'
+    expenses_type: ! 'All previously entered expenses for the following projects will
+      be deleted: %{projects}'
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Money - homepage
+    pages_description:
+      easy_money_projects_overview: Money - homepage
+  easy_money_rate_type:
+    one: Rate
+    internal: Internal rate
+    external: External rate
+  easy_money_entity:
+    user: User
+    role: Role
+    time_entry_activity: Activity
+  easy_money_rate_entity:
+    user: Rate by user
+    role: Rate by role
+    time_entry_activity: Rate by activity
+  easy_money_period:
+    daily: Daily
+    monthly: Monthly
+    weekly: Weekly
+    yearly: Yearly
+  easy_money_other_settings_price_visibility:
+    price1: only total amount
+    price2: only amount without VAT
+    all: amount without VAT and total amount
+  easy_money_other_settings_rate_type:
+    internal: only one rate
+    all: internal and external rate
+  easy_money_other_settings_expected_count_price:
+    price1: total amount
+    price2: amount without VAT
+  easy_money_other_settings_expected_rate_type:
+    internal: internal rates
+    external: external rates
+  easy_money_revenues_type:
+    list: detailed list
+    sum: total income
+  easy_money_expenses_type:
+    list: detailed list
+    sum: total expenses
+  easy_money_expected_payroll_expense_type:
+    amount: wage expenses (total sum)
+    hours: wage expenses (expected hours * planned hourly rate)
+    estimated_hours: wage expenses (estimated time * planned hourly rate)
+    planned_hours_and_rate: "task without assignee (estimated hours * planned hourly rate), task with assignee (estimated hours * rate by hierarchy)"
+  easy_reports_fields:
+    _time_entry_internalrate: Wage expenses - Internal rate
+    _time_entry_externalrate: Wage expenses - External rate
+    easy_money_other_revenue_id: Real incomes
+    easy_money_other_revenue_name: Real incomes - Name
+    easy_money_other_revenue_price1: Real incomes - Total price
+    easy_money_other_revenue_price2: Real incomes - Price without VAT
+    easy_money_other_expense_id: Real expenses
+    easy_money_other_expense_name: Real expenses - Name
+    easy_money_other_expense_price1: Real expenses - Total price
+    easy_money_other_expense_price2: Real expenses - Price without VAT
+    easy_money_expected_expense_id: Planned expenses
+    easy_money_expected_expense_name: Planned expenses - Name
+    easy_money_expected_expense_price1: Planned expenses - Total price
+    easy_money_expected_expense_price2: Planned expenses - Price without VAT
+    easy_money_expected_revenue_id: Planned income
+    easy_money_expected_revenue_name: Planned income - Name
+    easy_money_expected_revenue_price1: Planned income - Total price
+    easy_money_expected_revenue_price2: Planned income - Price without VAT
+    project_expected_hours: Planned work hours
+    project_expected_payroll_expense: Planned wage expenses
+    _project_recovery: Recovery
+    _project_timeentry_average_hourly_expense: Average Hourly Expense
+    _project_other_profit: Profit
+  easy_reports_categories:
+    easy_money: Money
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: conversion of wage costs
+  tooltip_real_hourly_rate: The project is based on the average hourly rate %{average_hourly_rate}
+    / hrs.
+  label_easy_money_sidebar:
+    project: Money for the project
+    issue: Money for the task
+    version: Money for milestone
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Real revenues
+      easy_money_other_expense_query: Real expenses
+      easy_money_expected_revenue_query: Planned revenues
+      easy_money_expected_expense_query: Planned expenses
+      easy_money_project_cache_query: Projects budget overview
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: 'Personal filters on real revenues'
+        easy_money_other_expense_query: 'Personal filters on real expenses'
+        easy_money_expected_revenue_query: 'Personal filters on planned revenues'
+        easy_money_expected_expense_query: 'Personal filters on planned expenses'
+        easy_money_project_cache_query: 'Personal filters on budget overview'
+      public:
+        easy_money_other_revenue_query: 'Public filters on real revenues'
+        easy_money_other_expense_query: 'Public filters on real expenses'
+        easy_money_expected_revenue_query: 'Public filters on planned revenues'
+        easy_money_expected_expense_query: 'Public filters on planned expenses'
+        easy_money_project_cache_query: 'Public filters on budget overview'
+
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: 'Projects budget overview recalculation'

@@ -1,0 +1,29 @@
+<div class="issue_updatable_fields grid_4 omega">
+  <div id="attributes" class="attributes ">
+    <%= render :partial => 'issues/new_form_updatable_attributes', :locals => {:priorities => @priorities, :allowed_statuses => @allowed_statuses, :issue => @issue, :project => @project || @issue.project, :select_project => !params[:project_id]} %>
+  </div>
+  <div id="attachments-form">
+    <% if @project || @issue.project %>
+      <h4 class="issue-attachments-heading"><%= l(:label_issue_attachments_heading) -%></h4>
+      <%= render :partial => 'attachments/form', :locals => {:container => @issue} %>
+    <% else %>
+      <%= include_attachment_headers_tags %>
+    <% end %>
+  </div>
+  <%= call_hook(:view_issue_new_form_atachments_after, {:issue => @issue, :project => @project || @issue.project}) %>
+</div>
+<% if User.current.allowed_to?(:add_issue_watchers, @project || @issue.project) %>
+  <div id="issue-form_issue_others_static_fields" class="issue_others_static_fields grid_3 omega">
+
+    <%= labelled_fields_for @issue do |f| %>
+
+      <%= toggling_container("issue-watcher-toggle-container-#{params[:format]}", User.current, {:heading => l(:label_issue_watchers_heading), :default_button_state => !in_mobile_view?}) do  %>
+        <div class="issue_watchers">
+          <%= render :partial => 'watchers/watchers_avatar_and_checkbox', :collection => @issue.addable_watcher_users.sort_by(&:name), :as => :watcher, :locals => {:issue => @issue, :project => @project || @issue.project, :object_name => 'issue', :method => 'watcher_user_ids'} -%>
+        </div>
+      <% end %>
+
+    <% end %>
+
+  </div>
+<% end %>

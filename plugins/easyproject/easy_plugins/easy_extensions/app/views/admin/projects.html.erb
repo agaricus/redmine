@@ -1,0 +1,36 @@
+<%= title l(:label_project_plural) %>
+
+<%= form_tag({:controller => 'admin', :action => 'projects'}, :id => 'admin-projects-filter', :method => :post) do %>
+  <fieldset id="admin-projects">
+    <legend><%= l(:label_filter_plural) %></legend>
+    <%= label_tag :status, l(:field_status) -%>
+    <%= select_tag 'status', project_status_options_for_select(@status), :class => "small", :onchange => "this.form.submit(); return false;"  %>
+    <label for='name'><%= l(:label_project) %>:</label>
+    <%= search_field_tag 'name', params[:name], :size => 30, :placeholder => l(:field_title) %>
+    <%= link_to_function(l(:label_search), "$(this).closest('form').submit()", :class => 'icon icon-magnifier') %>
+    <%= link_to l(:button_clear), {:controller => 'admin', :action => 'projects'}, :class => 'icon icon-reload' %>
+  </fieldset>
+<% end %>
+
+<div id="projects" class="autoscroll administration">
+  <% if @projects.empty? %>
+      <%= content_tag(:p, l(:label_no_data), :class => 'nodata') -%>
+  <% else %>
+    <%= render :partial => 'projects', :locals => {:projects => @projects} -%>
+     <% if @project_pages %>
+      <p class="pagination">
+        <%= pagination_links_full @project_pages, @entity_count, :next_link_params => {:level_limits => @level_limits, :plus_button_limits => @plus_button_limits, :offset => @offset && @limit ? @offset + @limit : nil} %>
+      </p>
+    <% end -%>
+  <% end %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= render_menu :admin_projects_easy_page_layout_service_box -%>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'admin_projectindex', :plugin => 'easy_extensions' %>
+<% end -%>

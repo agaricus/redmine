@@ -1,0 +1,10 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => (l('easy_pages.modules.documents') + ' (' + @easy_page_modules_data[block_name][:documents_count].to_s + ')'), :container_html => {:class => 'module-content'}}) do %>
+  <%# easy_cache("my_page_others_documents_user_#{user.id}") do %>
+    <div class="documents-on-my-page">
+      <% @easy_page_modules_data[block_name][:documents].keys.sort.each do |group| %>
+        <%= content_tag :h2, group %>
+        <%= render( :partial => 'documents/document', :collection => @easy_page_modules_data[block_name][:documents][group] )-%>
+      <% end %>
+    </div>
+  <%# end %>
+<% end %>

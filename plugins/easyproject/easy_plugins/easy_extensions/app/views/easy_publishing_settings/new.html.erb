@@ -1,0 +1,16 @@
+<div id="easy-publishing-settings-container">
+  <h2><%= l(:easy_publishing_setting_new) %></h2>
+  <%= form_for(@publishing_setting, :html => {:multipart => true}) do |f| %>
+    <%= error_messages_for @publishing_setting %>
+    <div class="gray-background tabular">
+      <%= render :partial => 'form', :locals => {:f => f}  %>
+    </div>
+    <p>
+      <%= f.submit l(:button_save), :class => 'button-1' %>
+    </p>
+  <% end %>
+</div>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= link_to(l(:button_back), { :controller => 'easy_publishing_settings', :action => 'index' }, :class => 'button-2') %>
+<% end %>

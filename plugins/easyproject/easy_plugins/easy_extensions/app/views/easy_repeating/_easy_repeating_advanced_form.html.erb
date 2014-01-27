@@ -1,0 +1,162 @@
+<%= fields_for(@object_name || @entity, @entity) do |e| %>
+
+  <%= e.fields_for(:easy_repeat_settings) do |f| %>
+    <div id="easy_section_repeating_options">
+      <%= e.hidden_field(:easy_is_repeating) %>
+      <div class="splitcontent">
+        <div class="splitcontentleft">
+          <%= content_tag(:h3, l(:label_easy_is_easy_repeating_period)) %>
+          <div class="gray-background">
+            <p>
+              <% %w(daily weekly monthly yearly).each do |period| %>
+                <% selected = @settings['period'] == period %>
+                <span class="floating">
+                  <%= f.radio_button(:period, period, {:checked => selected}) %>
+                  <%= f.label(:"period_#{period}", l("label_easy_issue_easy_repeating_period_#{period}"), :class => 'inline') %>
+                </span>
+
+              <% end %>
+            </p>
+            <div id="easy_section_repeating_options_daily" class="easy-section-repeating-period" style="display:none;">
+              <% %w(each work).each do |key| %>
+                <% selected = @settings['daily_option'] == key %>
+                <p>
+                  <%= f.radio_button(:daily_option, key, {:checked => selected} ) %>
+                  <span class ='checks_other_element' data-checks='issue_easy_repeat_settings_daily_option_<%= key %>'>
+                    <%= l(:label_easy_issue_easy_reccuring_daily_every) %>
+                    <%= f.number_field("daily_#{key}_x", {:value => @settings["daily_#{key}_x"] || 1, :size => 3, :placeholder => 'x', :maxlength => 2, :min => 1, :max => 31}) %>
+                    <%= l('label_easy_issue_easy_reccuring_daily_'+key ) %>
+                  </span>
+                </p>
+              <% end %>
+            </div>
+
+            <div id="easy_section_repeating_options_weekly" class="easy-section-repeating-period" style="display:none;">
+              <p>
+                <% 7.times do |i| %>
+                  <% wday = (@first_dow+i)%7 %>
+                  <span>
+                    <%= check_box_tag("#{f.object_name}[week_days][]", wday, Array(@settings['week_days']).include?(wday.to_s),{:id => "week_days_#{i}"}) %>
+                    <%= label_tag("week_days_#{i}", day_name(wday), :class => 'inline') %>
+                  </span>
+                <% end %>
+              </p>
+            </div>
+
+
+            <div id="easy_section_repeating_options_monthly" class="easy-section-repeating-period" style="display:none;">
+              <p>
+                <%= f.label(:monthly_period, l(:label_easy_issue_easy_reccuring_recur_every), :class => 'inline') %>
+                <%= f.number_field(:monthly_period, :value => @settings["monthly_period"] || 1, :size => 3, :maxlength => 2, :min => 1, :max => 12, :placeholder => 'x') %>
+                <%= content_tag(:span, l(:label_easy_issue_easy_reccuring_recur_months)) %>
+              </p>
+              <p>
+                <% selected = @settings['monthly_option'] == 'custom' ? 'custom' : 'xth' %>
+                <%= f.radio_button(:monthly_option, 'xth', {:checked => selected == 'xth'}) %>
+                <span class='checks_other_element' data-checks='issue_easy_repeat_settings_monthly_option_xth'>
+                  <%= l(:label_easy_is_easy_repeating_endtype_date ) %>
+                  <%= f.number_field(:monthly_day, :value => @settings["monthly_day"] || 1, :size => 3, :maxlength => 2, :min => 1, :max => 31) %>
+                </span>
+              </p>
+              <p>
+                <%= f.radio_button(:monthly_option, 'custom', {:checked => selected == 'custom'}) %>
+                <span class ='checks_other_element' data-checks='issue_easy_repeat_settings_monthly_option_custom'>
+                  <%= f.select(:monthly_custom_order, l(:label_easy_issue_reccuring_monthly_orders).map{|k,v| [v,k]}, :selected => @settings['monthly_custom_order']) %>
+                  <%= f.select(:monthly_custom_day, 7.times.map{|i| wday = (@first_dow+i)%7; [day_name(wday), wday.to_s] }, :selected => @settings['monthly_custom_day'] ) %>
+                </span>
+              </p>
+            </div>
+
+            <div id="easy_section_repeating_options_yearly" class="easy-section-repeating-period" style="display:none;">
+              <p>
+                <%= f.label(:yearly_period, l(:label_easy_issue_easy_reccuring_recur_every )) %>
+                <%= f.number_field(:yearly_period, :value => @settings['yearly_period'] || 1, :size => 1, :maxlength => 2, :min => 1, :max => 12) %>
+                <%= content_tag(:span, l(:label_easy_issue_easy_reccuring_recur_years)) %>
+              </p>
+              <p>
+                <%= f.radio_button(:yearly_option, 'date', {:checked => @settings['yearly_option'] == 'date'}) %>
+                <span class ='checks_other_element' data-checks='issue_easy_repeat_settings_yearly_option_date'>
+                  <%= f.label(:yearly_month, l(:label_easy_is_easy_repeating_endtype_date )) %>
+                  <%= select_month(@settings['yearly_month'].to_i, {}, :name => "#{f.object_name}[yearly_month]" ) %>
+                  <%= f.number_field(:yearly_day, :value => @settings['yearly_day'] || 1, :size => 1, :min => 1, :max => 31, :maxlength => 2) %>
+                </span>
+              </p>
+              <p>
+                <%= f.radio_button(:yearly_option, 'custom', {:checked => @settings['yearly_option'] == 'custom'}) %>
+                <span class ='checks_other_element' data-checks='issue_easy_repeat_settings_yearly_option_custom'>
+                  <%= f.select(:yearly_custom_order, l(:label_easy_issue_reccuring_monthly_orders).map{|k,v| [v,k]}, :selected => @settings['yearly_custom_order']) %>
+                  <%= f.select(:yearly_custom_day, 7.times.map{|i| wday = (@first_dow+i)%7; [day_name(wday), wday.to_s] }, :selected => @settings['yearly_custom_day'] ) %>
+                  <%= content_tag(:span, l(:label_easy_issue_easy_reccuring_yearly_month_of)) %>
+
+                  <%= select_month(@settings['yearly_custom_month'].to_i, {}, :name => "#{f.object_name}[yearly_custom_month]") %>
+                </span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="splitcontentright">
+
+          <%= toggling_container("#{dom_id(@entity)}_repeating_options_time_settings", User.current, {:heading => l(:label_easy_repeating_time_section_heading), :ajax_call => false, :default_button_state => false}) do %>
+
+            <h4><%= l :label_easy_issue_easy_repeating_start %></h4>
+            <p>
+              <%= e.label(:easy_next_start, l(:label_easy_is_easy_repeating_endtype_date)) %>
+              <%= e.text_field(:easy_next_start, :size => 10 ) %><%= calendar_for("#{e.object_name}_easy_next_start") %>
+            </p>
+            <h4><%= l :label_easy_issue_easy_repeating_endtype %></h4>
+            <p>
+              <%= f.radio_button(:endtype, 'date', {:checked => @settings['endtype'] == 'date'}) %>
+              <%= f.label(:end_date, l(:label_easy_is_easy_repeating_endtype_date)) %>
+              <%= f.text_field(:end_date, :value => @settings['end_date'], :size => 10, :onchange => "$('#issue_easy_repeat_settings_endtype_date').attr('checked',true)") %>
+              <%= calendar_for("#{e.object_name}_easy_repeat_settings_end_date") %>
+            </p>
+            <p>
+              <%= f.radio_button(:endtype, 'count', {:checked => @settings['endtype'] == 'count'}) %>
+              <span class ='checks_other_element' data-checks='issue_easy_repeat_settings_endtype_count'>
+                <%= f.label(:endtype_count_x, l(:label_easy_issue_reccuring_after)) %>
+                <%= f.number_field(:endtype_count_x, :value => @settings['endtype_count_x'], :placeholder => 'x', :size => 2, :maxlength => 2) %>
+                <%= content_tag(:span, l(:label_easy_issue_easy_reccuring_after_recurs), :class => 'hint') %>
+              </span>
+            </p>
+            <p>
+              <%= f.radio_button(:endtype, 'endless', {:checked => @settings['endtype'] == 'endless'}) %>
+              <%= f.label(:endtype_endless, l((e.object.respond_to?(:project) && e.object.project ? :label_easy_issue_easy_repeating_endtype_endless : :prompt_easy_repeat_simple_repeat))) %>
+            </p>
+
+            <h4><%= l :label_easy_is_easy_repeating_create_time %></h4>
+            <p>
+              <%= f.label(:repeat_hour, l(:label_easy_is_easy_repeating_time_hour)) %>
+              <%#= f.number_field(:repeat_hour, :value => @settings['repeat_hour'] || 4, :size => 2, :min => 0, :max => 11) %>
+              <%= tag(:input, {:type => 'time', :name => "#{f.object_name}[repeat_hour]", :value => @settings['repeat_hour'] || 4, :step => 3600}) %>
+              <%= content_tag(:span, l(:hint_easy_repeating_repeat_hour_field), :class => 'hint') %>
+            </p>
+          <% end -%>
+
+          <%= toggling_container("#{dom_id(@entity)}_repeating_options_advanced",User.current, {:heading => l(:label_easy_is_easy_repeating_create_now), :ajax_call => false, :default_button_state => false}) do %>
+            <em><%= l(:text_easy_repeating_reccuring_create_now) %></em>
+            <p>
+              <%= f.radio_button(:create_now, 'none', {:checked => true, :class => 'inline'}) %>
+              <%= f.label(:create_now_none, l(:label_easy_issue_easy_repeating_dont_create_now)) %>
+            </p>
+            <p>
+              <%= f.radio_button(:create_now, 'all') %>
+              <%= f.label(:create_now_all, l(:label_easy_issue_easy_repeating_create_now_all), :class => 'inline') %>
+            </p>
+            <p>
+              <%= f.radio_button(:create_now, 'count', {:class => 'inline'}) %>
+              <span class ='checks_other_element' data-checks='issue_easy_repeat_settings_create_now_count'>
+                <%= f.label(:create_now_count, l(:label_easy_issue_easy_repeating_create_now_count)) %>
+                <%= f.number_field(:create_now_count, :value => @settings['create_now_count'] || 10, :size => 2, :placeholder => 'x', :max => 99) %>
+                <%= content_tag(:span, l(:label_easy_is_easy_repeating_create_now_count_hint), :class => 'hint') %>
+              </span>
+            </p>
+          <% end -%>
+
+        </div>
+        <div class="clear"></div>
+      </div>
+      <%= link_to(l(:button_easy_is_not_easy_repeating), disable_easy_repeating_path(:entity_type => @entity.class.name, :entity_id => @entity.id), :class => 'button-2 icon icon-del floatright', :method => 'delete') if !@entity.new_record? && @entity.read_attribute(:easy_is_repeating) == true %>
+    </div>
+  <% end -%>
+<% end -%>

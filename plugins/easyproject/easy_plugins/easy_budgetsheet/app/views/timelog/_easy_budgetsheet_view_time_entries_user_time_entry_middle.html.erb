@@ -1,0 +1,7 @@
+<% if EasySetting.value('show_billable_things') %>
+  <p class="splitcontentright">
+    <%= hidden_field_tag "#{tag_name_prefix}[easy_billed]", '0', :id => nil %>
+    <%= hidden_field_tag "#{tag_name_prefix}[easy_is_billable]", '0', :id => nil %>
+    <%= label_tag "#{tag_name_prefix}[easy_is_billable]", l(:field_easy_is_billable) -%><%= check_box_tag "#{tag_name_prefix}[easy_is_billable]", '1', time_entry.easy_is_billable?  -%>
+  </p>
+<% end %>

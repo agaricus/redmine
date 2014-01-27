@@ -1,0 +1,63 @@
+<% hidden_fields ||= []; allowed_trackers ||= []; block_name ||= '' %>
+<div class="issue_updatable_fields" style="padding: 0 0 0 10px">
+  <div id="<%= "#{block_name}attributes" %>" class="attributes ">
+    <%= labelled_fields_for block_name+'issue', issue do |f| %>
+      <h3 class="issue-updatable-attributes-heading"><%= l(:label_issue_updatable_attributes_heading) -%></h3>
+      <%= hidden_field_tag 'show_fields_option', show_fields_option %>
+      <div class="attribute" style="<%= 'display:none;' if hidden_fields.include?(:project_id) %>">
+
+        <% selected_project_value = (issue.project.nil? ? {:name => '', :id => ''} : {:name => issue.project.name, :id => issue.project.id}) %>
+        <%= label_tag "#{block_name}issue[project_id]", l(:field_project) %>
+        <%= easy_select_tag(
+          "#{block_name}issue[project_id]", selected_project_value, projects.nil? ? nil : project_tree_options_for_select(projects, {:selected => issue.project}),
+          url_for(:controller => 'easy_auto_completes', :action => 'add_issue_projects', :format => 'json'),
+          :onchange => "$.ajax({url: '#{j(url_for({ :controller => :my, :action => :update_my_page_new_issue_dependent_fields})).html_safe}', type: 'post', data: $('##{block_name}issue_project_id').closest('form').serialize()})",
+          :html_options => {:id => "#{block_name}issue_project_id"}, :root_element => 'projects') -%>
+      </div>
+      <div class="attribute" style="<%= 'display:none;' if hidden_fields.include?(:tracker_id) %>">
+        <%= f.select :tracker_id, allowed_trackers.collect {|t| [t.name, t.id]}, {:required => true},
+          {:onchange => "$.post('#{j(url_for( { :controller => :my, :action => :update_my_page_new_issue_dependent_fields})).html_safe}', $(this).closest('form').serialize(), function(data) {$('#{block_name}issue-dependent-fields').html(data)})"} -%>
+      </div>
+      <div class="attribute" style="<%= 'display:none;' if hidden_fields.include?(:assigned_to_id) %>">
+        <% assignable_users_for_options = options_for_select(assignable_users.collect{|i| [i.name, i.id]}, issue.assigned_to_id)
+        if assignable_users.include?(user)
+          assignable_users_for_options = content_tag(:option, "<< #{l(:label_me)} >>".html_safe, :value => User.current.id) + assignable_users_for_options
+        end %>
+        <%= f.select :assigned_to_id, assignable_users_for_options, :include_blank => true, :required => required_attributes.include?('assigned_to_id') %>
+      </div>
+      <div class="attribute" style="<%= 'display:none;' if hidden_fields.include?(:issue_priority_id) %>">
+        <%= f.select :priority_id, options_for_select(issue_priorities.collect{|i| [i.name, i.id]}, issue.priority_id), {:required => true} %>
+      </div>
+      <% if only_selected %>
+        <div class="attribute" style="<%= 'display:none;' if hidden_fields.include?(:issue_status_id) %>">
+          <%= f.select :status_id, options_for_select(allowed_statuses.collect{|s| [s.name, s.id]}, issue.status_id), :required => true %>
+        </div>
+        <div  class="attribute nowrap" style="<%= 'display:none;' if hidden_fields.include?(:start_date) %>">
+          <%= f.text_field :start_date, :value => issue.start_date, :size => 10, :required => false %><%= calendar_for(block_name+'issue_start_date') %>
+        </div><br />
+      <% end %>
+      <div  class="attribute nowrap" style="<%= 'display:none;' if hidden_fields.include?(:due_date) %>">
+        <%= f.text_field :due_date, :value => issue.due_date, :size => 10, :required => required_attributes.include?('due_date') %><%= calendar_for(block_name+'issue_due_date') %>
+      </div><br />
+      <% if required_attributes.include?('estimated_hours') #can not be selected and isn't required %>
+        <div class="attribute">
+          <%= f.text_field :estimated_hours, :size => 3, :placeholder => l(:field_hours), :required => required_attributes.include?('estimated_hours') %>
+        </div>
+      <% end %>
+      <% if issue.project && issue.project.module_enabled?(:time_tracking) && issue.safe_attribute_names.include?('activity_id') %>
+        <div class="attribute" id="<%= "#{block_name}issue-time-entry-activity-container" %> ">
+          <%= render :partial => 'timelog/time_entry_activity', :locals => { :tag_name_prefix => "#{block_name}issue", :entity => issue, :activity_collection => issue.project.activities, :container_id => "#{block_name}issue-time-entry-activity-container", :project => issue.project, :options => {:hide_role_select => true}} %>
+        </div>
+      <% end %>
+      <% issue.custom_field_values.select{|scfv| required_attributes.include?(scfv.custom_field_id.to_s) || scfv.custom_field.is_required? }.each do |value| %>
+        <div>
+          <%= custom_field_tag_with_label block_name+'issue', value, :required => required_attributes.include?(value.custom_field_id.to_s) %>
+        </div>
+      <% end %>
+      <div style="<%= 'display:none;' if hidden_fields.include?(:attachments) %>">
+        <h4 class="issue-attachments-heading"><%= l(:label_issue_attachments_heading) -%></h4>
+        <%= render :partial => 'attachments/form', :locals => {:container => issue} %>
+      </div>
+    <% end %>
+  </div>
+</div>

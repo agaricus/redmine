@@ -1,0 +1,78 @@
+<% include_calendar_headers_tags -%>
+<% heads_for_wiki_formatter -%>
+<head>
+  <meta charset="utf-8" />
+  <title><%=h html_title %></title>
+  <meta name="description" content="<%= Setting.app_title %>" />
+  <meta name="keywords" content="issue,bug,tracker" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="application-name" content="<%= Setting.app_title %>"/>
+  <meta name="msapplication-config" content="browserconfig.xml"/>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag 'rtl', :media => 'all' if l(:direction) == 'rtl' %>
+  <%= favicon %>
+
+  <%= stylesheet_link_tag(
+    'easy_redmine',
+    'jquery.rating.css',
+    'jquery.Jcrop.css',
+    'jqueryui-editable.css',
+    'easy_jquery_ui/jquery-ui-1.9.2.custom.css',
+    :media => 'all', :plugin => 'easy_extensions') -%>
+
+  <%= easy_theme_tag 'application' -%>
+  <%= easy_theme_tag 'easy_print', :media => 'print' -%>
+
+  <%= javascript_heads %>
+
+  <%= javascript_include_tag 'select_list_move', 'context_menu' %>
+
+  <%= javascript_include_tag(
+    'jquery.MetaData.js',
+    'moment.min.js',
+    'moment.langs.min.js',
+    'jquery.rating.js',
+    'jquery.infinitescroll.js',
+    'easygantt/jquery.qtip.min.js',
+    'jquery.Jcrop.js',
+    'modal_selector',
+    'easy_extensions',
+    'jquery.youtubepopup.min.js',
+    'shortcuts',
+    'jqueryui-editable.js',
+    'easy_inline_edit.js',
+    'jquery.entityarray.js',
+    :plugin => 'easy_extensions') %>
+
+  <%= heads_for_theme %>
+
+  <script type="text/javascript">
+    shortcut.add('Alt+Shift+N', function() {
+      window.location.href = '<%= j url_for(:controller => 'issues', :action => 'new') %>';
+    });
+
+    moment.lang('<%= j momentjs_locale %>');
+    window.momentjsFormat = '<%= j momentjs_date_format %>';
+
+    window.I18n = {
+      titleInlineEditable: '<%= j l(:title_inline_editable) %>',
+      buttonSave: '<%= j l(:button_save) %>',
+      buttonCancel: '<%= j l(:button_cancel) %>',
+      meetingDestroyConfirmation: '<%= j l(:text_meeting_destroy_confirmation) %>',
+      meetingAccept: '<%= j l(:button_meeting_accept) %>',
+      meetingDecline: '<%= j l(:button_meeting_decline) %>',
+      textWarnLeavingUnsaved: '<%= l(:text_warn_on_leaving_unsaved) %>'
+    };
+    window.saveButtonSettingsUrl = '<%= url_for({:controller => 'users', :action => 'save_button_settings'}) %>';
+  </script>
+
+  <!--[if IE 7]>
+  <%= stylesheet_link_tag 'ie7_application', :media => 'all', :plugin => 'easy_extensions' %>
+  <![endif]-->
+  <!--[if gte IE 8]>
+  <%= stylesheet_link_tag 'ie9_application', :media => 'all', :plugin => 'easy_extensions' %>
+  <![endif]-->
+  <%= call_hook :view_layouts_base_html_head %>
+
+  <%= yield :header_tags -%>
+</head>

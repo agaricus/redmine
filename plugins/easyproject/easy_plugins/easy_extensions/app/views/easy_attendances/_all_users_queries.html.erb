@@ -1,0 +1,10 @@
+<% modul_uniq_id ||= controller_name + '_' + action_name -%>
+<div class="box">
+  <%= toggling_container(modul_uniq_id, User.current, {:heading => l(:sidebar_easy_attendances_all_users_queries)}) do %>
+    <div id="user-query-automatic-filter">
+      <% User.active.non_system_flag.easy_type_internal.sorted.each do |user| %>
+        <%= link_to(user.name, {:controller => 'easy_attendances', :set_filter => 1, :user_id => user.id, :arrival => '30_days', :sort => 'arrival:desc', :tab => params[:tab]}, :title => l(:label_show_assigned_issues, :username => user.name)) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

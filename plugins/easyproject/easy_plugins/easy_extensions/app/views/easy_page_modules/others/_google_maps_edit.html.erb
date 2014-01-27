@@ -1,0 +1,8 @@
+<h3><%= l(:'easy_pages.modules.google_maps')%></h3>
+<p>
+  <span class="my-page-news-query-select-label"><%= l(:label_my_page_google_maps_iframe_tag) -%></span>
+  <span class="my-page-news-query-select"><%= text_area_tag("#{block_name}[iframe_tag]", settings['iframe_tag'], :cols => 60, :rows => 10) -%></span>
+</p>
+<p>
+  <%= link_to(l(:button_my_page_google_maps_url_helper), "#{Setting.protocol}://maps.google.com/help/maps/getmaps/plot-one.html", :class => 'external', :target => '_blank') %>
+</p>

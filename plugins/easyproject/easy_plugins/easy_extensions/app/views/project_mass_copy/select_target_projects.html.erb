@@ -1,0 +1,69 @@
+<h2><%= l(:heading_project_mass_copy_select_target_projects) -%></h2>
+<h3><%= l(:label_project) %>: <%= @source_project.family_name %></h3>
+
+<%= form_tag({:controller => 'project_mass_copy', :action => 'select_actions', :source_project_id => @source_project}, :class => 'tabular nolabelwidth') do %>
+  <%= hidden_field_tag('back_url', params[:back_url]) if params[:back_url] %>
+  <% if params[:only] %>
+    <% params[:only].each do |only| %>
+      <%= hidden_field_tag('only[]', only) %>
+    <% end %>
+  <% end %>
+
+  <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_all)}/#{l(:button_uncheck_all)}", "toggleCheckboxesBySelector('input.cbx-project')", :title => "#{l(:button_check_all)}/#{l(:button_uncheck_all)}") -%>
+
+  <h3><%= l(:label_project_plural) -%></h3>
+  <div class="autoscroll">
+    <table class="list projects">
+      <tbody>
+        <% Project.each_with_level(@projects, true) do |project, level, ancestors| %>
+          <tr class="<%= project.css_project_classes('', :level => level) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%>">
+            <td class="checkbox">
+              <%= check_box_tag('target_projects[]', project.id, false, :id => "cbx_project_#{project.id}", :class => 'cbx-project ' + ancestors.collect{|a| "cbx-parent-project-#{a}"}.join(' ')) unless @source_project == project -%>
+            </td>
+            <td class="name"><%= label_tag "cbx_project_#{project.id}", h(project.name) -%></td>
+            <td>
+              <% if !project.leaf? %>
+                <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_and_uncheck_subprojects)}", "toggleCheckboxesBySelector('input.cbx-parent-project-#{project.id}')", :title => "#{l(:button_check_subprojects)}/#{l(:button_uncheck_subprojects)}") -%>
+                <%= link_to_function content_tag(:i, nil, :class => 'icon-arrow down')+l(:button_down), '$("html, body").animate({scrollTop: $("#btn-submit").offset().top}, 100);' -%>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <h3><%= l(:label_templates_plural) -%></h3>
+  <div class="autoscroll">
+    <table class="list projects">
+      <tbody>
+        <% Project.each_with_level(@project_templates, true) do |project, level, ancestors| %>
+          <tr class="<%= project.css_project_classes('', :level => level) + ' ' + (cycle('odd', 'even') if project.root?).to_s -%>">
+            <td class="checkbox">
+              <%= check_box_tag('target_projects[]', project.id, false, :id => "cbx_project_#{project.id}", :class => 'cbx-project ' + ancestors.collect{|a| "cbx-parent-project-#{a}"}.join(' ')) unless @source_project == project -%>
+            </td>
+            <td class="name"><%= label_tag "cbx_project_#{project.id}", h(project.name) -%></td>
+            <td>
+              <% if !project.leaf? %>
+                <%= link_to_function(image_tag('toggle_check.png') + " #{l(:button_check_and_uncheck_subprojects)}", "toggleCheckboxesBySelector('input.cbx-parent-project-#{project.id}')", :title => "#{l(:button_check_subprojects)}/#{l(:button_uncheck_subprojects)}") -%>
+                <%= link_to_function content_tag(:i, nil, :class => 'icon-arrow down')+l(:button_down), '$(\'btn-submit\').scrollTo()' -%>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <%= submit_tag l(:button_choose_actions), :class => 'button-1', :id => 'btn-submit' %>
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <% if params[:back_url] %>
+    <%= link_to(l(:button_back), params[:back_url], :class => 'button-2') -%>
+  <% else %>
+    <%= link_to(l(:button_back), {:controller => 'project_mass_copy', :action => 'select_source_project'}, :class => 'button-2') -%>
+  <% end %>
+<% end %>

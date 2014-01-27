@@ -1,0 +1,36 @@
+<table class="list">
+  <thead>
+  <th>Modul</th>
+  <th>Stránka</th>
+  <th>Užití</th>
+</thead>
+<tbody>
+  <% @modules.each do |module_definition| %>
+    <tr class="<%= cycle('odd', 'even') -%>">
+      <td><%= module_definition.translated_name -%> (<%= module_definition.class.name -%>)</td>
+      <td>
+        <table>
+          <tbody>
+            <% module_definition.available_in_pages.each do |page_module| %>
+              <tr>
+                <td><%= page_module.page_definition.translated_name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </td>
+      <td style="vertical-align: top">
+        <table>
+          <tbody>
+            <% module_definition.available_in_pages.each_with_index do |page_module, idx| %>
+              <tr>
+                <td><%= page_module.all_modules.size -%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

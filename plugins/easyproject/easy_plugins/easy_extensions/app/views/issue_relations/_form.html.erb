@@ -1,0 +1,23 @@
+<% if @relations.blank? %>
+  <p><strong><%=l(:label_related_issues)%></strong></p>
+<% end %>
+<%= error_messages_for 'relation' %>
+<div class="gray-background" >
+  <p>
+    <span class="label-before"><%= l(:label_issue_new_relation_before) -%></span>
+    <span class="relation-type">
+  		<%= f.select :relation_type, collection_for_relation_type_select, {}, :onchange => "setPredecessorFieldsVisibility();" %>
+    </span>
+    <span class="label-after"><%= l(:label_issue_new_relation_after) -%></span>
+    <span class="issues-selector"><%= issues_relations_field_tag 'relation[issue_to_id]', 'relation_issue_to_id', [], :url => {:project_id => @issue.project.id, :query_name => 'issue_relation'} %></span>
+    <span class="predecessor-fields" id="predecessor_fields" style="display:none;">
+      <%= l(:field_delay) %>: <%= f.text_field :delay, :size => 3 %> <%= l(:label_day_plural) %>
+    </span>
+    <span class="buttons">
+      <%= link_to_function l(:button_add), 'if ($(this).closest("form").attr("data-submitted")) {event.preventDefault();} else {$("#new-relation-form").submit()}', :class => 'button-1' %>
+      <%= toggle_link l(:button_cancel), 'new-relation-form', :class => 'button-2' %>
+    </span>
+  </p>
+</div>
+
+<%= javascript_tag "setPredecessorFieldsVisibility();" %>

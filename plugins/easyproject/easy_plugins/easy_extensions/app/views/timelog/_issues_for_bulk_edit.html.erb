@@ -1,0 +1,5 @@
+<label><%= l(:field_issue) %></label>
+<% selected_issue = @selected_visible_issue.nil? ? {:name => '', :id => ''} : {:name => @selected_visible_issue.to_s, :id => @selected_visible_issue.id} %>
+<%= scoped_easy_select_tag('time_entry[issue_id]', @visible_issues, selected_issue,
+  url_for(params.merge({:action => 'change_issues_for_bulk_edit', :format => 'json'})),
+  {:root_element => 'issues', :include_blank => true, :html_options => {:id => 'time_entry_issue_id'}}) %>

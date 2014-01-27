@@ -1,0 +1,7 @@
+<% if User.current.allowed_to?(:view_easy_money, project) && issue.easy_money_visible? %>
+  
+  <div id="easy_money_issue">
+    <h3><%= l(:label_easy_money) %></h3>
+    <%= render :partial => 'easy_money/entity_overview', :locals => {:project => project, :entity => issue} %>
+  </div>
+<% end -%>

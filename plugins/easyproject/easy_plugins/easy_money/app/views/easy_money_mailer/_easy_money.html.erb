@@ -1,0 +1,82 @@
+<style type="text/css">
+  table th {
+    width: 145px;
+    font-weight: normal;
+    text-align: left;
+  }
+  table td {
+    min-width: 115px;
+  }
+  td a {
+    font-weight: bold;
+  }
+  table {
+    max-width: 800px;
+  }
+  .overdue {
+    color: red;
+  }
+</style>
+
+<div style="font-family: Arial,sans-serif;">
+  <h2 style="font-size: 22px;font-weight: normal;"><%= link_to(h(easy_money.name), easy_money_url) -%></h2>
+  <br />
+  <div style="padding: 20px 0 10px 5px;border:1px solid #e1e1e1;background-color:#F9F9F9;max-width: 800px;">
+    <table class="attributes" style="width:100%;max-width: 800px;">
+      <% if easy_money.project.easy_money_settings.show_price2? -%>
+        <tr>
+          <td><%= l(:field_easy_money_other_revenue_price2) -%></td>
+          <td><%= format_easy_money_price(easy_money.price2, easy_money.project) -%></td>
+        </tr>
+        <tr>
+          <td><%= l(:field_easy_money_other_revenue_vat) -%></td>
+          <td><%= easy_money.vat -%></td>
+        </tr>
+      <% end -%>
+      <% if easy_money.project.easy_money_settings.show_price1? -%>
+        <tr>
+          <td><%= l(:field_easy_money_other_revenue_price1) -%></td>
+          <td><%= format_easy_money_price(easy_money.price1, easy_money.project) -%></td>
+        </tr>
+      <% end -%>
+      <% if easy_money.custom_field_values.any? %>
+        <tr>
+          <td colspan="2"><hr /></td>
+        </tr>
+        <% easy_money.custom_field_values.each do |c| %>
+          <tr>
+            <td>
+              <%= content_tag :span,  h(c.custom_field.translated_name) +':' , :style => 'display:inline-block;' -%>
+            </td>
+            <td>
+              <%= content_tag :span, show_value(c), :style => 'margin-right:10px' -%>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+  <div class="description">
+    <%= textilizable(easy_money, :description, {:headings => false, :only_path => false}) -%>
+  </div>
+
+  <% if easy_money.attachments.any? %>
+    <p>
+      <%=l :label_issue_attachments_heading %>
+    </p>
+    <ul>
+      <% easy_money.attachments.each do |attachment| %>
+        <li>
+          <%= link_to_attachment(attachment, {:download => true, :only_path => false}) %>
+          <i>(<%= number_to_human_size(attachment.filesize) %>)</i>
+          <%= " - v#{attachment.version}" %>
+          <% unless attachment.description.blank? %>
+            <p style="padding-left:10px">
+              <%= " - #{attachment.description}" %>
+            </p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

@@ -1,0 +1,66 @@
+<ul>
+  <%= @versions.collect {|i|
+    content_tag(:li,
+      link_to(h(i),
+        {:controller => 'versions', :action => 'show', :id => i }
+      ))
+  }.join("\n").html_safe %>
+</ul>
+
+<%= labelled_form_for(:version, nil, :url =>{:controller => 'versions', :action => 'bulk_update', :project_id => @project}, :html => {:id => 'bulk_edit_form', :method => :put}) do |f| %>
+  <%= hidden_field_tag(:project_id, @project) %>
+  <%= back_url_hidden_field_tag %>
+  <%= @versions.collect {|i| hidden_field_tag('ids[]', i.id)}.join("\n").html_safe %>
+  <div class="box tabular">
+    <p>
+      <label for="version_project_id"><%= l(:field_project) %></label>
+      <%= easy_select_tag(
+        'version[project_id]',
+        {:name => l(:label_no_change_option), :id => ''},
+        nil,
+        url_for(
+          :controller => 'easy_auto_completes',
+          :action => 'visible_projects',
+          :format => 'json'
+        ),
+        :include_blank => true, :root_element => 'projects', :html_options => {:id => 'version_project_id'}
+      ) -%>
+    </p>
+
+    <p><%= f.text_area :description, :size => 60, :rows => 10, :accesskey => accesskey(:edit), :class => 'wiki-edit' %></p>
+    <%= wikitoolbar_for 'version_description' %>
+
+    <p>
+      <%= f.select :status, Version::VERSION_STATUSES.collect {|s| [l("version_status_#{s}"), s]} -%>
+    </p>
+
+    <p>
+      <%= f.text_field :effective_date, :size => 10, :onchange => 'var i = $("#update_database"); if (i[0]) {i.attr("checked", true)}' -%><%= calendar_for('version_effective_date') -%>
+    </p>
+
+    <p id="form-checkbox" class="long-label">
+      <%= check_box_tag :update_database, true, false -%> <%= label_tag :update_database, l(:label_version_update_database) -%>
+    </p>
+
+    <p>
+      <%= f.select :easy_version_category_id, content_tag(:option, l(:label_no_change_option), :value => '') + content_tag(:option, l(:label_none), :value => 'none') + options_for_select(EasyVersionCategory.active.collect{|c| [c.name, c.id]}) %>
+    </p>
+
+    <% VersionCustomField.all.each do |custom_field| %>
+      <p><label><%= h(custom_field.translated_name) %></label> <%= custom_field_tag_for_bulk_edit('version', custom_field, @project) %></p>
+    <% end %>
+
+    <div class="milestone-sharing-info">
+      <%= l(:label_milestone_sharing_info) -%>
+      <ul>
+        <li><%= format_version_sharing('none') -%> - <%= l(:label_milestone_sharing_info_none) -%></li>
+        <li><%= format_version_sharing('descendants') -%> - <%= l(:label_milestone_sharing_info_descendants) -%></li>
+        <li><%= format_version_sharing('hierarchy') -%> - <%= l(:label_milestone_sharing_info_hierarchy) -%></li>
+        <li><%= format_version_sharing('tree') -%> - <%= l(:label_milestone_sharing_info_tree) -%></li>
+        <li><%= format_version_sharing('system') -%> - <%= l(:label_milestone_sharing_info_system) -%></li>
+      </ul>
+    </div>
+
+  </div>
+  <%= f.submit l(:button_save) -%>
+<% end %>

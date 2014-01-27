@@ -1,0 +1,31 @@
+---
+de:
+  budgetsheet_name: Datenblatt
+  budgetsheet_author: Easy Software
+  budgetsheet_description: Übersicht der verbrachten Zeit der Benutzer an Projekten.
+  budgetsheet_author_url: http://www.easyproject.cz/en
+  budgetsheet_title: Datenblatt
+  budgetsheet_date_from_label: Von
+  budgetsheet_date_to_label: Bis
+  budgetsheet_project_label: Projekt
+  budgetsheet_activities_label: Aktivität
+  budgetsheet_users_label: Nutzer
+  budgetsheet_export_button: Anwenden
+  budgetsheet_export_to_csv: Exportieren als CSV
+  budgetsheet_export_to_pdf: Exportieren als PDF
+  budgetsheet_export_to_html: anzeigen
+  budgetsheet_costs: Kosten
+  budgetsheet_per_hour: pro Stunde
+  budgetsheet_top_menu: Datenblatt
+  permission_view_budgetsheet: Datenblatt ansehen
+  label_easy_budget_sheet_queries_plural: Datenblatt
+
+  easy_query:
+    name:
+      easy_budget_sheet_query: Datenblatt
+  field_project_root: Hauptprojekt
+  sidebar_budgetsheet_all_users_queries: Datenblätter nach Leuten
+  label_show_billable_things: Abrechenbare Elemente - Auswahl anzeigen?
+  field_easy_is_billable: Abrechenbar?
+  field_easy_billed: Abgerechnet?
+  label_billable_things_default_state: Grundzustand

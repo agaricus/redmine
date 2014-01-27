@@ -1,0 +1,74 @@
+---
+da:
+  easy_user_allocations_name: Ressourcestyring
+  easy_user_allocations_description: ! '- Ressourceforvaltning / folk'
+  easy_user_allocations_author_url: http://www.easyproject.cz/en
+  permission_view_easy_user_allocations: View forvaltning
+  permission_view_my_easy_user_allocations: Se egne indtægter ledelse
+  permission_edit_easy_user_allocations: Edit forvaltning
+  project_module_user_allocations: Ressourcestyring
+  label_user_allocations: Ressourcestyring
+  label_user_allocation_gantt: Ressourceallokering Gantt
+  label_user_allocation_gantt_users: Brugere
+  label_user_allocation_gantt_user_selection: Selection
+  label_user_allocation_gantt_range: Datoer
+  label_unassigned_issues: Tildelte opgaver
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Vælg et andet datointerval for at vise hele
+    opgaven
+  label_allocation_changed_title: Opgave blev ændret, og vil blive opdateret på gem
+  resalloc:
+    title: Ressourceallokering
+    settings: Indstillinger
+    button_apply_settings: Anvend indstillinger
+    button_recalculate: Genberegn tildeling
+    button_save: Gem ændringer
+    button_undo: Fortryd ikke-gemte ændringer
+    button_split_issue: Split opgave
+    split_issue_help: Vælg en dato ved at klikke på en ledig opgave.
+    error_date_range_too_long: skal være mindre end 1 år
+    legend_hours_worked: Tid brugt
+    legend_hours_overtime: Tid arbejdede ud over den foreskrevne tid
+  easy_pages:
+    modules:
+      user_allocation: Ressourceallokering
+      user_allocation_working_plan: Ressourceallokering / arbejdsplan
+  permission_edit_my_easy_user_allocations_plan: Rediger egen arbejdsplan
+  label_user_allocation_plan: Arbejdsplan
+  user_allocation_plan:
+    label_plan: Plan
+    label_real: Real
+    label_comment: Kommentar
+  easy_query:
+    name:
+      easy_user_allocation_query: Ressourceallokering
+      easy_user_allocation_by_project_query: Ressourcetildeling efter projekt
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Private filtre på ressourcetildeling
+        easy_user_allocation_by_project_query: Private filtre på ressourcetildelingen
+          ved projektet
+      public:
+        easy_user_allocation_query: Offentlige filtre på ressourcetildeling
+        easy_user_allocation_by_project_query: Offentlige filtre på ressourcetildelingen
+          ved projektet
+  label_allocations_by_project: Ressourcetildeling efter projekt
+  text_easy_user_allocation_working_plan_bottom_info: Gør det muligt at planlægge
+    brugerens arbejdsbyrde i den valgte uge. Tabellen viser den planlagte tid og den
+    faktiske tid rapporteret.
+  label_setting_keep_issue_start_dates: Du må ikke ændre opgave startdatoer.
+  text_setting_keep_issue_start_dates: Hvis aktiveret og opgavestyring estimerede
+    timer er for lavt, vil opgaven ikke blive forkortet, men det vil blive tildelt
+    til 0 timer i stedet.
+  project_module_easy_user_allocations: Anvendelse af ressourcer / personer
+  label_setting_allocate_evenly: Afsætte jævnt
+  text_setting_allocate_evenly: Hvis aktiveret, og en opgave er skaleret i tildelingen
+    Gantt er der skønsmæssigt timer jævnt gennem hele varigheden af ​​opgaven.
+  label_setting_allocate_from_start: Afsætte fra startdatoer for opgaver
+  text_overallocation: sum af tildelte timer er større end anslået timer.
+  permission_view_easy_user_allocations_by_project: Se tildelingerne pr projekt
+  easy_user_allocations_sidebar_all_users_queries: Tildelinger fra brugere
+  easy_user_allocations_label_show_assigned_issues: Display tildeling til brugeren
+    %{username}
+  label_filter_group_easy_user_allocation_query: Ressourceallokering
+  label_edit_estimated_hours: Rediger estimerede timer

@@ -1,0 +1,2698 @@
+---
+es:
+  number:
+    format:
+      separator: ! ','
+      delimiter: .
+      precision: 3
+    currency:
+      format:
+        format: ! '%n %u'
+        unit: €
+        separator: ! ','
+        delimiter: .
+        precision: 2
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+    human:
+      format:
+        delimiter: ''
+        precision: 3
+        separator: ! ','
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+  datetime:
+    distance_in_words:
+      half_a_minute: medio minuto
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      x_seconds:
+        one: 1 segundo
+        other: ! '%{count} segundos'
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      x_minutes:
+        one: 1 minuto
+        other: ! '%{count} minutos'
+      about_x_hours:
+        one: alrededor de 1 hora
+        other: alrededor de %{count} horas
+      x_hours:
+        one: 1 hour
+        other: ! '%{count} hours'
+      x_days:
+        one: 1 día
+        other: ! '%{count} días'
+      about_x_months:
+        one: alrededor de 1 mes
+        other: alrededor de %{count} meses
+      x_months:
+        one: 1 mes
+        other: ! '%{count} meses'
+      about_x_years:
+        one: alrededor de 1 año
+        other: alrededor de %{count} años
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+  activerecord:
+    errors:
+      template:
+        header:
+          one: no se pudo guardar este %{model} porque se encontró 1 error
+          other: no se pudo guardar este %{model} porque se encontraron %{count} errores
+        body: ! 'Se encontraron problemas con los siguientes campos:'
+      messages:
+        inclusion: no está incluido en la lista
+        exclusion: está reservado
+        invalid: no es válido
+        confirmation: no coincide con la confirmación
+        accepted: debe ser aceptado
+        empty: no puede estar vacío
+        blank: no puede estar en blanco
+        too_long: es demasiado largo (%{count} caracteres máximo)
+        too_short: es demasiado corto (%{count} caracteres mínimo)
+        wrong_length: no tiene la longitud correcta (%{count} caracteres exactos)
+        taken: ya está en uso
+        not_a_number: no es un número
+        greater_than: debe ser mayor que %{count}
+        greater_than_or_equal_to: debe ser mayor que o igual a %{count}
+        equal_to: debe ser igual a %{count}
+        less_than: debe ser menor que %{count}
+        less_than_or_equal_to: debe ser menor que o igual a %{count}
+        odd: debe ser impar
+        even: debe ser par
+        greater_than_start_date: debe ser posterior a la fecha de comienzo
+        not_same_project: no pertenece al mismo proyecto
+        circular_dependency: Esta relación podría crear una dependencia circular
+        cant_link_an_issue_with_a_descendant: Esta petición no puede ser ligada a
+          una de estas tareas
+        cant_link_an_project_with_a_descendant: El proyecto no se puede asociar con
+          una de sus sub-proyectos
+        cant_link_an_version_with_a_descendant: Milestone puede estar asociado con
+          uno de sus sub-hitos
+        not_a_amount: cantidad no válido
+        before_milestone: (%{due_date}) Debe ser anterior a la fecha hito (%{effective_date})
+        before_project_end: (%{due_date}) Debe ser menor que el final del proyecto
+          (%{project_due_date})
+        after_project_start: (%{start_date}) Debe ser mayor que el inicio del proyecto
+          (%{project_start_date})
+        less_than_duration: no de acuerdo con el tiempo prescrito suficiente para
+          completar la tarea
+        greater_than_soonest_start: (%{start_date}) Debe ser mayor que el inicio más
+          temprano (%{soonest_start} Las tareas comunes)
+        greater_than_start_date2: (%{due_date}) Deberá ser superior al empezar (%{start_date})
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: está fuera del rango
+      attributes:
+    models:
+      easy_user_working_time_calendar: Calendario
+      easy_user_working_time_calendar_holiday: Vacaciones
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: Nadřazeý calendario
+        name: Nombre
+        default_working_hours: Número de horas de trabajo en un día
+        first_day_of_week: El primer día de la semana
+        is_default: Calendario
+      easy_user_working_time_calendar_holiday:
+        name: Nombre
+        holiday_date: Día
+        is_repeating: Fiesta recurrente
+  direction: ltr
+  date:
+    formats:
+      default: ! '%Y-%m-%d'
+      short: ! '%d de %b'
+      long: ! '%d de %B de %Y'
+    day_names:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sábado
+    abbr_day_names:
+    - Dom
+    - Lun
+    - Mar
+    - Mie
+    - Jue
+    - Vie
+    - Sab
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    abbr_month_names:
+    -
+    - Ene
+    - Feb
+    - Mar
+    - Abr
+    - May
+    - Jun
+    - Jul
+    - Ago
+    - Set
+    - Oct
+    - Nov
+    - Dic
+    order:
+    - :year
+    - :month
+    - :day
+  time:
+    formats:
+      default: ! '%A, %d de %B de %Y %H:%M:%S %z'
+      time: ! '%H:%M'
+      short: ! '%d de %b %H:%M'
+      long: ! '%d de %B de %Y %H:%M'
+    am: am
+    pm: pm
+  support:
+    array:
+      sentence_connector: y
+  actionview_instancetag_blank_option: Por favor seleccione
+  button_activate: Activar
+  button_add: Añadir
+  button_annotate: Anotar
+  button_apply: Aceptar
+  button_archive: Archivar
+  button_back: Atrás
+  button_cancel: Cancelar
+  button_change: Cambiar
+  button_change_password: Cambiar contraseña
+  button_check_all: Seleccionar todo
+  button_clear: Anular
+  button_configure: Configurar
+  button_copy: Copiar
+  button_create: Crear
+  button_delete: Borrar
+  button_download: Descargar
+  button_edit: Modificar
+  button_list: Listar
+  button_lock: Bloquear
+  button_log_time: Tiempo dedicado
+  button_login: Conexión
+  button_move: Mover
+  button_quote: Citar
+  button_rename: Renombrar
+  button_reply: Responder
+  button_reset: Reestablecer
+  button_rollback: Volver a esta versión
+  button_save: Guardar
+  button_sort: Ordenar
+  button_submit: Aceptar
+  button_test: Probar
+  button_unarchive: Desarchivar
+  button_uncheck_all: No seleccionar nada
+  button_unlock: Desbloquear
+  button_unwatch: No monitorizar
+  button_update: Actualizar
+  button_view: Ver
+  button_watch: Monitorizar
+  default_activity_design: Diseño
+  default_activity_development: Desarrollo
+  default_doc_category_tech: Documentación técnica
+  default_doc_category_user: Documentación de usuario
+  default_issue_status_in_progress: En curso
+  default_issue_status_closed: Cerrada
+  default_issue_status_feedback: Comentarios
+  default_issue_status_new: Nueva
+  default_issue_status_rejected: Rechazada
+  default_issue_status_resolved: Resuelta
+  default_priority_high: Alta
+  default_priority_immediate: Inmediata
+  default_priority_low: Baja
+  default_priority_normal: Normal
+  default_priority_urgent: Urgente
+  default_role_developer: Desarrollador
+  default_role_manager: Jefe de proyecto
+  default_role_reporter: Informador
+  default_tracker_bug: Errores
+  default_tracker_feature: Tareas
+  default_tracker_support: Soporte
+  enumeration_activities: Actividades (tiempo dedicado)
+  enumeration_doc_categories: Categorías del documento
+  enumeration_issue_priorities: Prioridad de las tareas
+  error_can_t_load_default_data: ! 'No se ha podido cargar la configuración por defecto:
+    %{value}'
+  error_issue_not_found_in_project: La petición no se encuentra o no está asociada
+    a este proyecto
+  error_scm_annotate: No existe la entrada o no ha podido ser anotada
+  error_scm_annotate_big_text_file: La entrada no puede anotarse, al superar el tamaño
+    máximo para ficheros de texto.
+  error_scm_command_failed: ! 'Se produjo un error al acceder al repositorio: %{value}'
+  error_scm_not_found: La entrada y/o la revisión no existe en el repositorio.
+  field_account: Cuenta
+  field_activity: Actividad
+  field_admin: Administrador
+  field_assignable: Se pueden asignar tareas a este perfil
+  field_assigned_to: Asignado a
+  field_attr_firstname: Cualidad del nombre
+  field_attr_lastname: Cualidad del apellido
+  field_attr_login: Cualidad del identificador
+  field_attr_mail: Cualidad del Email
+  field_auth_source: Modo de identificación
+  field_author: Autor
+  field_base_dn: DN base
+  field_category: Categoría
+  field_column_names: Columnas
+  field_comments: Comentario
+  field_comments_sorting: Mostrar comentarios
+  field_created_on: Creado
+  field_default_value: Estado por defecto
+  field_delay: Retraso
+  field_description: Descripción
+  field_done_ratio: ! '% Realizado'
+  field_downloads: Descargas
+  field_due_date: Fecha fin
+  field_effective_date: Fecha
+  field_estimated_hours: Tiempo estimado
+  field_field_format: Formato
+  field_filename: Fichero
+  field_filesize: Tamaño
+  field_firstname: Nombre
+  field_fixed_version: Versión prevista
+  field_hide_mail: Ocultar mi dirección de correo
+  field_homepage: Sitio web
+  field_host: Anfitrión
+  field_hours: Horas
+  field_identifier: Identificador
+  field_is_closed: Petición resuelta
+  field_is_default: Estado por defecto
+  field_is_filter: Usado como filtro
+  field_is_for_all: Para todos los proyectos
+  field_is_in_roadmap: Consultar las tareas en la planificación
+  field_is_public: Público
+  field_is_required: Obligatorio
+  field_issue: Petición
+  field_issue_to: Petición relacionada
+  field_language: Idioma
+  field_last_login_on: Última conexión
+  field_lastname: Apellido
+  field_login: Identificador
+  field_mail: Correo electrónico
+  field_mail_notification: Notificaciones por correo
+  field_max_length: Longitud máxima
+  field_min_length: Longitud mínima
+  field_name: Nombre
+  field_new_password: Nueva contraseña
+  field_notes: Notas
+  field_onthefly: Creación del usuario "al vuelo"
+  field_parent: Proyecto padre
+  field_parent_title: Página padre
+  field_password: Contraseña
+  field_password_confirmation: Confirmación
+  field_port: Puerto
+  field_possible_values: Valores posibles
+  field_priority: Prioridad
+  field_project: Proyecto
+  field_redirect_existing_links: Redireccionar enlaces existentes
+  field_regexp: Expresión regular
+  field_role: Perfil
+  field_searchable: Incluir en las búsquedas
+  field_spent_on: Fecha
+  field_start_date: Fecha de inicio
+  field_start_page: Página principal
+  field_status: Estado
+  field_subject: Asunto
+  field_subproject: Proyecto secundario
+  field_summary: Resumen
+  field_time_zone: Zona horaria
+  field_title: Título
+  field_tracker: Tipo
+  field_type: Tipo
+  field_updated_on: Actualizado
+  field_url: URL
+  field_user: Usuario
+  field_value: Valor
+  field_version: Versión
+  general_csv_decimal_separator: ! ','
+  general_csv_encoding: ISO-8859-15
+  general_csv_separator: ! ','
+  general_first_day_of_week: '1'
+  general_lang_name: Español
+  general_pdf_encoding: UTF-8
+  general_text_No: 'No'
+  general_text_Yes: Sí
+  general_text_no: 'no'
+  general_text_yes: sí
+  label_activity: Actividad
+  label_add_another_file: Añadir otro fichero
+  label_add_note: Añadir una nota
+  label_added: añadido
+  label_added_time_by: Añadido por %{author}
+  label_administration: Administración
+  label_age: Edad
+  label_ago: hace
+  label_all: todos
+  label_all_time: todo el tiempo
+  label_all_words: Todas las palabras
+  label_and_its_subprojects: ! '%{value} y proyectos secundarios'
+  label_applied_status: Aplicar estado
+  label_assigned_to_me_issues: Tareas que me están asignadas
+  label_associated_revisions: Revisiones asociadas
+  label_attachment: Fichero
+  label_attachment_delete: Borrar el fichero
+  label_attachment_new: Nuevo fichero
+  label_attachment_plural: Ficheros
+  label_attribute: Cualidad
+  label_attribute_plural: Cualidades
+  label_auth_source: Modo de autenticación
+  label_auth_source_new: Nuevo modo de autenticación
+  label_auth_source_plural: Modos de autenticación
+  label_authentication: Autenticación
+  label_blocked_by: bloqueado por
+  label_blocks: bloquea a
+  label_board: Foro
+  label_board_new: Nuevo foro
+  label_board_plural: Foros
+  label_boolean: Booleano
+  label_browse: Hojear
+  label_bulk_edit_selected_issues: Editar las tareas seleccionadas
+  label_calendar: Calendario
+  label_change_plural: Cambios
+  label_change_properties: Cambiar propiedades
+  label_change_status: Cambiar el estado
+  label_change_view_all: Ver todos los cambios
+  label_changes_details: Detalles de todos los cambios
+  label_changeset_plural: Cambios
+  label_chronological_order: En orden cronológico
+  label_closed_issues: cerrada
+  label_closed_issues_plural: cerradas
+  label_x_open_issues_abbr_on_total:
+    zero: 0 abiertas / %{total}
+    one: 1 abierta / %{total}
+    other: ! '%{count} abiertas / %{total}'
+  label_x_open_issues_abbr:
+    zero: 0 abiertas
+    one: 1 abierta
+    other: ! '%{count} abiertas'
+  label_x_closed_issues_abbr:
+    zero: 0 cerradas
+    one: 1 cerrada
+    other: ! '%{count} cerradas'
+  label_comment: Comentario
+  label_comment_add: Añadir un comentario
+  label_comment_added: Comentario añadido
+  label_comment_delete: Borrar comentarios
+  label_comment_plural: Comentarios
+  label_x_comments:
+    zero: sin comentarios
+    one: 1 comentario
+    other: ! '%{count} comentarios'
+    two: 2 comentarios
+    three: 3 comentarios
+    four: 4 comentarios
+  label_commits_per_author: Commits por autor
+  label_commits_per_month: Commits por mes
+  label_confirmation: Confirmación
+  label_contains: contiene
+  label_copied: copiado
+  label_copy_workflow_from: Copiar flujo de trabajo desde
+  label_current_status: Estado actual
+  label_current_version: Versión actual
+  label_custom_field: Campo personalizado
+  label_custom_field_new: Nuevo campo personalizado
+  label_custom_field_plural: Campos personalizados
+  label_date: Fecha
+  label_date_from: Desde
+  label_date_range: Rango de fechas
+  label_date_to: Hasta
+  label_day_plural: días
+  label_default: Por defecto
+  label_default_columns: Columnas por defecto
+  label_deleted: suprimido
+  label_details: Detalles
+  label_diff_inline: en línea
+  label_diff_side_by_side: cara a cara
+  label_disabled: deshabilitado
+  label_display_per_page: ! 'Por página: %{value}'
+  label_document: Documento
+  label_document_added: Documento añadido
+  label_document_new: Nuevo documento
+  label_document_plural: Documentos
+  label_downloads_abbr: D/L
+  label_duplicated_by: duplicada por
+  label_duplicates: duplicada de
+  label_end_to_end: fin a fin
+  label_end_to_start: fin a principio
+  label_enumeration_new: Nuevo valor
+  label_enumerations: Listas de valores
+  label_environment: Entorno
+  label_equals: igual
+  label_example: Ejemplo
+  label_export_to: ! 'Exportar a:'
+  label_f_hour: ! '%{value} hora'
+  label_f_hour_plural: ! '%{value} horas'
+  label_feed_plural: Feeds
+  label_feeds_access_key_created_on: Clave de acceso por RSS creada hace %{value}
+  label_file_added: Fichero añadido
+  label_file_plural: Archivos
+  label_filter_add: Añadir el filtro
+  label_filter_plural: Filtros
+  label_float: Flotante
+  label_follows: posterior a
+  label_gantt: Gantt
+  label_general: General
+  label_generate_key: Generar clave
+  label_help: Ayuda
+  label_history: Histórico
+  label_home: Inicio
+  label_in: en
+  label_in_less_than: en menos que
+  label_in_more_than: en más que
+  label_incoming_emails: Correos entrantes
+  label_index_by_date: Índice por fecha
+  label_index_by_title: Índice por título
+  label_information: Información
+  label_information_plural: Información
+  label_integer: Número
+  label_internal: Interno
+  label_issue: Petición
+  label_issue_added: Petición añadida
+  label_issue_category: Categoría de las tareas
+  label_issue_category_new: Nueva categoría
+  label_issue_category_plural: Categorías de las tareas
+  label_issue_new: Nueva petición
+  label_issue_plural: Tareas
+  label_issue_status: Estado de la petición
+  label_issue_status_new: Nuevo estado
+  label_issue_status_plural: Estados de las tareas
+  label_issue_tracking: Tareas
+  label_issue_updated: Petición actualizada
+  label_issue_view_all: Ver todas las tareas
+  label_issue_watchers: Seguidores
+  label_issues_by: Tareas por %{value}
+  label_jump_to_a_project: Ir al proyecto...
+  label_language_based: Basado en el idioma
+  label_last_changes: últimos %{count} cambios
+  label_last_login: Última conexión
+  label_last_month: último mes
+  label_last_n_days: últimos %{count} días
+  label_last_week: última semana
+  label_latest_revision: Última revisión
+  label_latest_revision_plural: Últimas revisiones
+  label_ldap_authentication: Autenticación LDAP
+  label_less_than_ago: hace menos de
+  label_list: Lista
+  label_loading: Cargando...
+  label_logged_as: Conectado como
+  label_login: Conexión
+  label_logout: Desconexión
+  label_max_size: Tamaño máximo
+  label_me: yo mismo
+  label_member: Miembro
+  label_member_new: Nuevo miembro
+  label_member_plural: Miembros
+  label_message_last: Último mensaje
+  label_message_new: Nuevo mensaje
+  label_message_plural: Mensajes
+  label_message_posted: Mensaje añadido
+  label_min_max_length: Longitud mín - máx
+  label_modified: modificado
+  label_module_plural: Módulos
+  label_month: Mes
+  label_months_from: meses de
+  label_more: Más
+  label_more_than_ago: hace más de
+  label_my_account: Mi cuenta
+  label_my_page: Mi página
+  label_my_projects: Mis proyectos
+  label_new: Nuevo
+  label_new_statuses_allowed: Nuevos estados autorizados
+  label_news: Noticia
+  label_news_added: Noticia añadida
+  label_news_latest: Últimas noticias
+  label_news_new: Nueva noticia
+  label_news_plural: Noticias
+  label_news_view_all: Ver todas las noticias
+  label_next: Siguiente
+  label_no_change_option: (Sin cambios)
+  label_no_data: Ningún dato disponible
+  label_nobody: nadie
+  label_none: ninguno
+  label_not_contains: no contiene
+  label_not_equals: no igual
+  label_open_issues: abierta
+  label_open_issues_plural: abiertas
+  label_optional_description: Descripción opcional
+  label_options: Opciones
+  label_overall_activity: Actividad global
+  label_overview: Vistazo
+  label_password_lost: ¿Olvidaste la contraseña?
+  label_per_page: Por página
+  label_permissions: Permisos
+  label_permissions_report: Informe de permisos
+  label_personalize_page: Personalizar esta página
+  label_planning: Planificación
+  label_please_login: Conexión
+  label_plugins: Extensiones
+  label_precedes: anterior a
+  label_preferences: Preferencias
+  label_preview: Previsualizar
+  label_previous: Anterior
+  label_project: Proyecto
+  label_project_all: Todos los proyectos
+  label_project_latest: Últimos proyectos
+  label_project_new: Nuevo proyecto
+  label_project_plural: Proyectos
+  label_x_projects:
+    zero: sin proyectos
+    one: 1 proyecto
+    other: ! '%{count} proyectos'
+  label_public_projects: Proyectos públicos
+  label_query: Consulta personalizada
+  label_query_new: Nueva consulta
+  label_query_plural: Consultas personalizadas
+  label_read: Leer...
+  label_register: Registrar
+  label_registered_on: Inscrito el
+  label_registration_activation_by_email: activación de cuenta por correo
+  label_registration_automatic_activation: activación automática de cuenta
+  label_registration_manual_activation: activación manual de cuenta
+  label_related_issues: Tareas relacionadas
+  label_relates_to: relacionada con
+  label_relation_delete: Eliminar relación
+  label_relation_new: Nueva relación
+  label_renamed: renombrado
+  label_reply_plural: Respuestas
+  label_report: Informe
+  label_report_plural: Informes
+  label_reported_issues: Tareas registradas por mí
+  label_repository: Repositorio
+  label_repository_plural: Repositorios
+  label_result_plural: Resultados
+  label_reverse_chronological_order: En orden cronológico inverso
+  label_revision: Revisión
+  label_revision_plural: Revisiones
+  label_roadmap: Planificación
+  label_roadmap_due_in: Finaliza en %{value}
+  label_roadmap_no_issues: No hay tareas para esta versión
+  label_roadmap_overdue: ! '%{value} tarde'
+  label_role: Perfil
+  label_role_and_permissions: Perfiles y permisos
+  label_role_new: Nuevo perfil
+  label_role_plural: Perfiles
+  label_scm: SCM
+  label_search: Búsqueda
+  label_search_titles_only: Buscar sólo en títulos
+  label_send_information: Enviar información de la cuenta al usuario
+  label_send_test_email: Enviar un correo de prueba
+  label_settings: Configuración
+  label_show_completed_versions: Muestra las versiones terminadas
+  label_sort_by: Ordenar por %{value}
+  label_sort_higher: Subir
+  label_sort_highest: Primero
+  label_sort_lower: Bajar
+  label_sort_lowest: Último
+  label_spent_time: Tiempo dedicado
+  label_start_to_end: principio a fin
+  label_start_to_start: principio a principio
+  label_statistics: Estadísticas
+  label_stay_logged_in: Recordar conexión
+  label_string: Texto
+  label_subproject_plural: Proyectos secundarios
+  label_text: Texto largo
+  label_theme: Tema
+  label_this_month: este mes
+  label_this_week: esta semana
+  label_this_year: este año
+  label_time_tracking: Control de tiempo
+  label_today: hoy
+  label_topic_plural: Temas
+  label_total: Total
+  label_total_total: ! 'Total: '
+  label_tracker: Tipo
+  label_tracker_new: Nuevo tipo
+  label_tracker_plural: Tipos de tareas
+  label_updated_time: Actualizado hace %{value}
+  label_updated_time_by: Actualizado por %{author} hace %{age}
+  label_used_by: Utilizado por
+  label_user: Usuario
+  label_user_activity: Actividad de %{value}
+  label_user_mail_no_self_notified: No quiero ser avisado de cambios hechos por mí
+  label_user_mail_option_all: Para cualquier evento en todos mis proyectos
+  label_user_mail_option_selected: Para cualquier evento de los proyectos seleccionados...
+  label_user_new: Nuevo usuario
+  label_user_plural: Usuarios
+  label_version: Versión
+  label_version_new: Nueva tarea
+  label_version_plural: Versiones
+  label_view_diff: Ver diferencias
+  label_view_revisions: Ver las revisiones
+  label_watched_issues: Tareas monitorizadas
+  label_week: Semana
+  label_wiki: Wiki
+  label_wiki_edit: Modificación Wiki
+  label_wiki_edit_plural: Modificaciones Wiki
+  label_wiki_page: Página Wiki
+  label_wiki_page_plural: Páginas Wiki
+  label_workflow: Flujo de trabajo
+  label_year: Año
+  label_yesterday: ayer
+  mail_body_account_activation_request: ! 'Se ha inscrito un nuevo usuario (%{value}).
+    La cuenta está pendiende de aprobación:'
+  mail_body_account_information: Información sobre su cuenta
+  mail_body_account_information_external: Puede usar su cuenta %{value} para conectarse.
+  mail_body_lost_password: ! 'Para cambiar su contraseña, haga clic en el siguiente
+    enlace:'
+  mail_body_register: ! 'Para activar su cuenta, haga clic en el siguiente enlace:'
+  mail_body_reminder: ! '%{count} tarea(s) asignadas a tí finalizan en los próximos
+    %{days} días:'
+  mail_subject_account_activation_request: Petición de activación de cuenta %{value}
+  mail_subject_lost_password: Tu contraseña del %{value}
+  mail_subject_register: Activación de la cuenta del %{value}
+  mail_subject_reminder: ! '%{count} tarea(s) finalizan en los próximos %{days}
+    días'
+  notice_account_activated: Su cuenta ha sido activada. Ya puede conectarse.
+  notice_account_invalid_creditentials: Usuario o contraseña inválido.
+  notice_account_lost_email_sent: Se le ha enviado un correo con instrucciones para
+    elegir una nueva contraseña.
+  notice_account_password_updated: Contraseña modificada correctamente.
+  notice_account_pending: Su cuenta ha sido creada y está pendiende de la aprobación
+    por parte del administrador.
+  notice_account_register_done: Cuenta creada correctamente. Para activarla, haga
+    clic sobre el enlace que le ha sido enviado por correo.
+  notice_account_unknown_email: Usuario desconocido.
+  notice_account_updated: Cuenta actualizada correctamente.
+  notice_account_wrong_password: Contraseña incorrecta.
+  notice_can_t_change_password: Esta cuenta utiliza una fuente de autenticación externa.
+    No es posible cambiar la contraseña.
+  notice_default_data_loaded: Configuración por defecto cargada correctamente.
+  notice_email_error: Ha ocurrido un error mientras enviando el correo (%{value})
+  notice_email_sent: Se ha enviado un correo a %{value}
+  notice_failed_to_save_issues: ! 'Imposible grabar %{count} tarea(s) de %{total}
+    seleccionada(s): %{ids}.'
+  notice_feeds_access_key_reseted: Su clave de acceso para RSS ha sido reiniciada.
+  notice_file_not_found: La página a la que intenta acceder no existe.
+  notice_locking_conflict: Los datos han sido modificados por otro usuario.
+  notice_no_issue_selected: Ninguna petición seleccionada. Por favor, compruebe la
+    petición que quiere modificar
+  notice_not_authorized: No tiene autorización para acceder a esta página.
+  notice_successful_connection: Conexión correcta.
+  notice_successful_create: Creación correcta.
+  notice_successful_delete: Borrado correcto.
+  notice_successful_update: Modificación correcta.
+  notice_unable_delete_version: No se puede borrar la versión
+  permission_add_issue_notes: Añadir notas
+  permission_add_issue_watchers: Añadir seguidores
+  permission_add_issues: Añadir tareas
+  permission_add_messages: Enviar mensajes
+  permission_browse_repository: Hojear repositiorio
+  permission_comment_news: Comentar noticias
+  permission_commit_access: Acceso de escritura
+  permission_delete_issues: Borrar tareas
+  permission_delete_messages: Borrar mensajes
+  permission_delete_own_messages: Borrar mensajes propios
+  permission_delete_wiki_pages: Borrar páginas wiki
+  permission_delete_wiki_pages_attachments: Borrar ficheros
+  permission_edit_issue_notes: Modificar notas
+  permission_edit_issues: Modificar tareas
+  permission_edit_messages: Modificar mensajes
+  permission_edit_own_issue_notes: Modificar notas propias
+  permission_edit_own_messages: Editar mensajes propios
+  permission_edit_own_time_entries: Modificar tiempos dedicados propios
+  permission_edit_project: Modificar proyecto
+  permission_edit_time_entries: Modificar tiempos dedicados
+  permission_edit_wiki_pages: Modificar páginas wiki
+  permission_log_time: Anotar tiempo dedicado
+  permission_manage_boards: Administrar foros
+  permission_manage_categories: Administrar categorías de tareas
+  permission_manage_files: Administrar ficheros
+  permission_manage_issue_relations: Administrar relación con otras tareas
+  permission_manage_members: Administrar miembros
+  permission_manage_news: Administrar noticias
+  permission_manage_public_queries: Administrar consultas públicas
+  permission_manage_repository: Administrar repositorio
+  permission_manage_versions: Administrar versiones
+  permission_manage_wiki: Administrar wiki
+  permission_move_issues: Mover tareas
+  permission_protect_wiki_pages: Proteger páginas wiki
+  permission_rename_wiki_pages: Renombrar páginas wiki
+  permission_save_queries: Grabar consultas
+  permission_select_project_modules: Seleccionar módulos del proyecto
+  permission_view_calendar: Ver calendario
+  permission_view_changesets: Ver cambios
+  permission_view_documents: Ver documentos
+  permission_view_files: Ver ficheros
+  permission_view_gantt: Ver diagrama de Gantt
+  permission_view_issue_watchers: Ver lista de seguidores
+  permission_view_messages: Ver mensajes
+  permission_view_time_entries: Ver tiempo dedicado
+  permission_view_wiki_edits: Ver histórico del wiki
+  permission_view_wiki_pages: Ver wiki
+  project_module_boards: Foros
+  project_module_documents: Documentos
+  project_module_files: Ficheros
+  project_module_issue_tracking: Tareas
+  project_module_news: Noticias
+  project_module_repository: Repositorio
+  project_module_time_tracking: Control de tiempo
+  project_module_wiki: Wiki
+  setting_activity_days_default: Días a mostrar en la actividad de proyecto
+  setting_app_subtitle: Subtítulo de la aplicación
+  setting_app_title: Título de la aplicación
+  setting_attachment_max_size: Tamaño máximo del fichero
+  setting_autofetch_changesets: Autorellenar los commits del repositorio
+  setting_autologin: Conexión automática
+  setting_bcc_recipients: Ocultar las copias de carbón (bcc)
+  setting_commit_fix_keywords: Palabras clave para la corrección
+  setting_commit_ref_keywords: Palabras clave para la referencia
+  setting_cross_project_issue_relations: Permitir relacionar tareas de distintos
+    proyectos
+  setting_date_format: Formato de fecha
+  setting_default_language: Idioma por defecto
+  setting_default_projects_public: Los proyectos nuevos son públicos por defecto
+  setting_diff_max_lines_displayed: Número máximo de diferencias mostradas
+  setting_display_subprojects_issues: Mostrar por defecto tareas de proy. secundarios
+    en el principal
+  setting_emails_footer: Pie de mensajes
+  setting_enabled_scm: Activar SCM
+  setting_feeds_limit: Límite de contenido para sindicación
+  setting_gravatar_enabled: Usar iconos de usuario (Gravatar)
+  setting_host_name: Nombre y ruta del servidor
+  setting_issue_list_default_columns: Columnas por defecto para la lista de tareas
+  setting_issues_export_limit: Límite de exportación de tareas
+  setting_login_required: Se requiere identificación
+  setting_mail_from: Correo desde el que enviar mensajes
+  setting_mail_handler_api_enabled: Activar SW para mensajes entrantes
+  setting_mail_handler_api_key: Clave de la API
+  setting_per_page_options: Objetos por página
+  setting_plain_text_mail: sólo texto plano (no HTML)
+  setting_protocol: Protocolo
+  setting_self_registration: Registro permitido
+  setting_sequential_project_identifiers: Generar identificadores de proyecto
+  setting_sys_api_enabled: Habilitar SW para la gestión del repositorio
+  setting_text_formatting: Formato de texto
+  setting_time_format: Formato de hora
+  setting_user_format: Formato de nombre de usuario
+  setting_welcome_text: Texto de bienvenida
+  setting_wiki_compression: Compresión del historial del Wiki
+  status_active: activo
+  status_locked: bloqueado
+  status_registered: registrado
+  text_are_you_sure: ¿Está seguro?
+  text_assign_time_entries_to_project: Asignar las horas al proyecto
+  text_caracters_maximum: ! '%{count} caracteres como máximo.'
+  text_caracters_minimum: ! '%{count} caracteres como mínimo.'
+  text_comma_separated: Múltiples valores permitidos (separados por coma).
+  text_default_administrator_account_changed: Cuenta de administrador por defecto
+    modificada
+  text_destroy_time_entries: Borrar las horas
+  text_destroy_time_entries_question: Existen %{hours} horas asignadas a la petición
+    que quiere borrar. ¿Qué quiere hacer?
+  text_diff_truncated: ! '... Diferencia truncada por exceder el máximo tamaño visualizable.'
+  text_email_delivery_not_configured: ! 'Las notificaciones están desactivadas porque
+    el servidor de correo no está configurado.
+
+    Configure el servidor de SMTP en config/configuration.yml y reinicie la aplicación
+    para activar los cambios.'
+  text_enumeration_category_reassign_to: ! 'Reasignar al siguiente valor:'
+  text_enumeration_destroy_question: ! '%{count} objetos con este valor asignado.'
+  text_file_repository_writable: Se puede escribir en el repositorio
+  text_issue_added: Petición %{id} añadida por %{author}.
+  text_issue_category_destroy_assignments: Dejar las tareas sin categoría
+  text_issue_category_destroy_question: Algunas tareas (%{count}) están asignadas
+    a esta categoría. ¿Qué desea hacer?
+  text_issue_category_reassign_to: Reasignar las tareas a la categoría
+  text_issue_updated: La petición %{id} ha sido actualizada por %{author}.
+  text_issues_destroy_confirmation: ¿Seguro que quiere borrar las tareas seleccionadas?
+  text_issues_ref_in_commit_messages: Referencia y petición de corrección en los mensajes
+  text_length_between: Longitud entre %{min} y %{max} caracteres.
+  text_load_default_configuration: Cargar la configuración por defecto
+  text_min_max_length_info: 0 para ninguna restricción
+  text_no_configuration_data: Todavía no se han configurado perfiles, ni tipos, estados
+    y flujo de trabajo asociado a tareas. Se recomiendo encarecidamente cargar
+    la configuración por defecto. Una vez cargada, podrá modificarla.
+  text_project_destroy_confirmation: ¿Estás seguro de querer eliminar el proyecto?
+  text_reassign_time_entries: ! 'Reasignar las horas a esta petición:'
+  text_regexp_info: ej. ^[A-Z0-9]+$
+  text_repository_usernames_mapping: ! 'Establezca la correspondencia entre los usuarios
+    de Redmine y los presentes en el log del repositorio.
+
+    Los usuarios con el mismo nombre o correo en Redmine y en el repositorio serán
+    asociados automáticamente.'
+  text_rmagick_available: RMagick disponible (opcional)
+  text_select_mail_notifications: Seleccionar los eventos a notificar
+  text_select_project_modules: ! 'Seleccione los módulos a activar para este proyecto:'
+  text_status_changed_by_changeset: Aplicado en los cambios %{value}
+  text_subprojects_destroy_warning: ! 'Los proyectos secundarios: %{value} también
+    se eliminarán'
+  text_tip_issue_begin_day: tarea que comienza este día
+  text_tip_issue_begin_end_day: tarea que comienza y termina este día
+  text_tip_issue_end_day: tarea que termina este día
+  text_tracker_no_workflow: No hay ningún flujo de trabajo definido para este tipo
+    de petición
+  text_unallowed_characters: Caracteres no permitidos
+  text_user_mail_option: De los proyectos no seleccionados, sólo recibirá notificaciones
+    sobre elementos monitorizados o elementos en los que esté involucrado (por ejemplo,
+    tareas de las que usted sea autor o asignadas a usted).
+  text_user_wrote: ! '%{value} escribió:'
+  text_wiki_destroy_confirmation: ¿Seguro que quiere borrar el wiki y todo su contenido?
+  text_workflow_edit: Seleccionar un flujo de trabajo para actualizar
+  text_plugin_assets_writable: Se puede escribir en el directorio público de las extensiones
+  warning_attachments_not_saved: No se han podido grabar %{count} ficheros.
+  button_create_and_continue: Crear y continuar
+  text_custom_field_possible_values_info: Un valor en cada línea
+  label_display: Mostrar
+  field_editable: Modificable
+  setting_repository_log_display_limit: Número máximo de revisiones mostradas en el
+    fichero de trazas
+  setting_file_max_size_displayed: Tamaño máximo de los ficheros de texto mostrados
+  field_watcher: Seguidor
+  setting_openid: Permitir identificación y registro por OpenID
+  field_identity_url: URL de OpenID
+  label_login_with_open_id_option: o identifíquese con OpenID
+  field_content: Contenido
+  label_descending: Descendente
+  label_sort: Ordenar
+  label_ascending: Ascendente
+  label_date_from_to: Desde %{start} hasta %{end}
+  label_greater_or_equal: ! '>='
+  label_less_or_equal: <=
+  text_wiki_page_destroy_question: Esta página tiene %{descendants} página(s) hija(s)
+    y descendiente(s). ¿Qué desea hacer?
+  text_wiki_page_reassign_children: Reasignar páginas hijas a esta página
+  text_wiki_page_nullify_children: Dejar páginas hijas como páginas raíz
+  text_wiki_page_destroy_children: Eliminar páginas hijas y todos sus descendientes
+  setting_password_min_length: Longitud mínima de la contraseña
+  field_group_by: Agrupar resultados por
+  mail_subject_wiki_content_updated: La página wiki '%{id}' ha sido actualizada
+  label_wiki_content_added: Página wiki añadida
+  mail_subject_wiki_content_added: Se ha añadido la página wiki '%{id}'.
+  mail_body_wiki_content_added: ! '%{author} ha añadido la página wiki ''%{id}''.'
+  label_wiki_content_updated: Página wiki actualizada
+  mail_body_wiki_content_updated: La página wiki '%{id}' ha sido actualizada por %{author}.
+  permission_add_project: Crear proyecto
+  setting_new_project_user_role_id: Permiso asignado a un usuario no-administrador
+    para crear proyectos
+  label_view_all_revisions: Ver todas las revisiones
+  label_tag: Etiqueta
+  label_branch: Rama
+  error_no_tracker_in_project: Este proyecto no tiene asociados tipos de tareas.
+    Por favor, revise la configuración.
+  error_no_default_issue_status: No se ha definido un estado de petición por defecto.
+    Por favor, revise la configuración (en "Administración" -> "Estados de las tareas").
+  text_journal_changed: ! '%{label} cambiado %{old} por %{new}'
+  text_journal_set_to: ! '%{label} establecido a %{value}'
+  text_journal_deleted: ! '%{label} eliminado (%{old})'
+  label_group_plural: Grupos
+  label_group: Grupo
+  label_group_new: Nuevo grupo
+  label_time_entry_plural: Tiempo dedicado
+  text_journal_added: Añadido %{label} %{value}
+  field_active: Activo
+  enumeration_system_activity: Actividad del sistema
+  permission_delete_issue_watchers: Borrar seguidores
+  version_status_closed: cerrado
+  version_status_locked: bloqueado
+  version_status_open: abierto
+  error_can_not_reopen_issue_on_closed_version: No se puede reabrir una petición asignada
+    a una versión cerrada
+  label_user_anonymous: Anónimo
+  button_move_and_follow: Mover y seguir
+  setting_default_projects_modules: Módulos activados por defecto en proyectos nuevos
+  setting_gravatar_default: Imagen Gravatar por defecto
+  field_sharing: Compartir
+  button_copy_and_follow: Copiar y seguir
+  label_version_sharing_hierarchy: Con la jerarquía del proyecto
+  label_version_sharing_tree: Con el árbol del proyecto
+  label_version_sharing_descendants: Con proyectos hijo
+  label_version_sharing_system: Con todos los proyectos
+  label_version_sharing_none: No compartir
+  button_duplicate: Duplicar
+  error_can_not_archive_project: Este proyecto no puede ser archivado
+  label_copy_source: Fuente
+  setting_issue_done_ratio: Calcular el ratio de tareas realizadas con
+  setting_issue_done_ratio_issue_status: Usar el estado de tareas
+  error_issue_done_ratios_not_updated: Ratios de tareas realizadas no actualizado.
+  error_workflow_copy_target: Por favor, elija categoría(s) y perfil(es) destino
+  setting_issue_done_ratio_issue_field: Utilizar el campo de petición
+  label_copy_same_as_target: El mismo que el destino
+  label_copy_target: Destino
+  notice_issue_done_ratios_updated: Ratios de tareas realizadas actualizados.
+  error_workflow_copy_source: Por favor, elija una categoría o rol de origen
+  label_update_issue_done_ratios: Actualizar ratios de tareas realizadas
+  setting_start_of_week: Comenzar las semanas en
+  permission_view_issues: Ver tareas
+  label_display_used_statuses_only: Sólo mostrar los estados usados por este tipo
+    de petición
+  label_revision_id: Revisión %{value}
+  label_api_access_key: Clave de acceso de la API
+  label_api_access_key_created_on: Clave de acceso de la API creada hace %{value}
+  label_feeds_access_key: Clave de acceso RSS
+  notice_api_access_key_reseted: Clave de acceso a la API regenerada.
+  setting_rest_api_enabled: Activar servicio web REST
+  label_missing_api_access_key: Clave de acceso a la API ausente
+  label_missing_feeds_access_key: Clave de accesso RSS ausente
+  button_show: Mostrar
+  text_line_separated: Múltiples valores permitidos (un valor en cada línea).
+  setting_mail_handler_body_delimiters: Truncar correos tras una de estas líneas
+  permission_add_subprojects: Crear subproyectos
+  label_subproject_new: Nuevo subproyecto
+  text_own_membership_delete_confirmation: ! 'Está a punto de eliminar algún o todos
+    sus permisos y podría perder la posibilidad de modificar este proyecto tras hacerlo.
+
+    ¿Está seguro de querer continuar?'
+  label_close_versions: Cerrar versiones completadas
+  label_board_sticky: Pegajoso
+  label_board_locked: Bloqueado
+  permission_export_wiki_pages: Exportar páginas wiki
+  setting_cache_formatted_text: Cachear texto formateado
+  permission_manage_project_activities: Gestionar actividades del proyecto
+  error_unable_delete_issue_status: Fue imposible eliminar el estado de la petición
+  label_profile: Perfil
+  permission_manage_subtasks: Gestionar subtareas
+  field_parent_issue: Tarea padre
+  label_subtask_plural: Subtareas
+  label_project_copy_notifications: Enviar notificaciones por correo electrónico durante
+    la copia del proyecto
+  error_can_not_delete_custom_field: Fue imposible eliminar el campo personalizado
+  error_unable_to_connect: Fue imposible conectar con (%{value})
+  error_can_not_remove_role: Este rol está en uso y no puede ser eliminado.
+  error_can_not_delete_tracker: Este tipo contiene tareas y no puede ser eliminado.
+  field_principal: Principal
+  label_my_page_block: Bloque Mi página
+  notice_failed_to_save_members: ! 'Fallo al guardar miembro(s): %{errors}.'
+  text_zoom_out: Alejar
+  text_zoom_in: Acercar
+  notice_unable_delete_time_entry: Fue imposible eliminar la entrada de tiempo dedicado.
+  label_overall_spent_time: Tiempo total dedicado
+  field_time_entries: Log time
+  project_module_gantt: Gantt
+  project_module_calendar: Calendario
+  button_edit_associated_wikipage: ! 'Editar paginas Wiki asociadas: %{page_title}'
+  field_text: Campo de texto
+  label_user_mail_option_only_owner: Solo para objetos que soy propietario
+  setting_default_notification_option: Opcion de notificacion por defecto
+  label_user_mail_option_only_my_events: Solo para objetos que soy seguidor o estoy
+    involucrado
+  label_user_mail_option_only_assigned: Solo para objetos que estoy asignado
+  label_user_mail_option_none: Sin eventos
+  field_member_of_group: Asignado al grupo
+  field_assigned_to_role: Asignado al perfil
+  notice_not_authorized_archived_project: El proyecto al que intenta acceder ha sido
+    archivado.
+  label_principal_search: ! 'Buscar por usuario o grupo:'
+  label_user_search: ! 'Buscar por usuario:'
+  field_visible: Visible
+  setting_emails_header: Encabezado de Correos
+  setting_commit_logtime_activity_id: Actividad de los tiempos registrados
+  text_time_logged_by_changeset: Aplicado en los cambios %{value}.
+  setting_commit_logtime_enabled: Habilitar registro de horas
+  notice_gantt_chart_truncated: Se recortó el diagrama porque excede el número máximo
+    de elementos que pueden ser mostrados (%{max})
+  setting_gantt_items_limit: Número máximo de elementos mostrados en el diagrama de
+    Gantt
+  field_warn_on_leaving_unsaved: Avisarme cuando vaya a abandonar una página con texto
+    no guardado
+  text_warn_on_leaving_unsaved: Esta página contiene texto no guardado y si la abandona
+    sus cambios se perderán
+  label_my_queries: Mis consultas personalizadas
+  text_journal_changed_no_detail: Se actualizó %{label}
+  label_news_comment_added: Comentario añadido a noticia
+  button_expand_all: Expandir todo
+  button_collapse_all: Contraer todo
+  label_additional_workflow_transitions_for_assignee: Transiciones adicionales permitidas
+    cuando la petición está asignada al usuario
+  label_additional_workflow_transitions_for_author: Transiciones adicionales permitidas
+    cuando el usuario es autor de la petición
+  label_bulk_edit_selected_time_entries: Editar en bloque las horas seleccionadas
+  text_time_entries_destroy_confirmation: ¿Está seguro de querer eliminar (la hora
+    seleccionada/las horas seleccionadas)?
+  label_role_anonymous: Anónimo
+  label_role_non_member: No miembro
+  label_issue_note_added: Nota añadida
+  label_issue_status_updated: Estado actualizado
+  label_issue_priority_updated: Prioridad actualizada
+  label_issues_visibility_own: Tareas creadas por el usuario o asignadas a él
+  field_issues_visibility: Visibilidad de las tareas
+  label_issues_visibility_all: Todas las tareas
+  permission_set_own_issues_private: Poner las tareas propias como públicas o
+    privadas
+  field_is_private: Privada
+  permission_set_issues_private: Poner tareas como públicas o privadas
+  label_issues_visibility_public: Todas las tareas no privadas
+  text_issues_destroy_descendants_confirmation: Se procederá a borrar también %{count}
+    subtarea(s).
+  field_commit_logs_encoding: Codificación de los mensajes de commit
+  field_scm_path_encoding: Codificación de las rutas
+  text_scm_path_encoding_note: ! 'Por defecto: UTF-8'
+  field_path_to_repository: Ruta al repositorio
+  field_root_directory: Directorio raíz
+  field_cvs_module: Módulo
+  field_cvsroot: CVSROOT
+  text_mercurial_repository_note: Repositorio local (e.g. /hgrepo, c:\hgrepo)
+  text_scm_command: Orden
+  text_scm_command_version: Versión
+  label_git_report_last_commit: Informar del último commit para ficheros y directorios
+  text_scm_config: Puede configurar las órdenes de cada scm en configuration/configuration.yml.
+    Por favor, reinicie la aplicación después de editarlo
+  text_scm_command_not_available: La orden para el Scm no está disponible. Por favor,
+    compruebe la configuración en el panel de administración.
+  notice_issue_successful_create: Petición %{id} creada.
+  label_between: entre
+  setting_issue_group_assignment: Permitir asignar tareas a grupos
+  label_diff: diferencias
+  text_git_repository_note: El repositorio es básico y local (p.e. /gitrepo, c:\gitrepo)
+  description_query_sort_criteria_direction: Dirección de ordenación
+  description_project_scope: Ámbito de búsqueda
+  description_filter: Filtro
+  description_user_mail_notification: Configuración de notificaciones por correo
+  description_date_from: Introduzca la fecha de inicio
+  description_message_content: Contenido del mensaje
+  description_available_columns: Columnas disponibles
+  description_date_range_interval: Elija el rango seleccionando la fecha de inicio
+    y fin
+  description_issue_category_reassign: Elija la categoría de la petición
+  description_search: Campo de búsqueda
+  description_notes: Notas
+  description_date_range_list: Elija el rango en la lista
+  description_choose_project: Proyectos
+  description_date_to: Introduzca la fecha fin
+  description_query_sort_criteria_attribute: Atributo de ordenación
+  description_wiki_subpages_reassign: Elija la nueva página padre
+  description_selected_columns: Columnas seleccionadas
+  label_parent_revision: Padre
+  label_child_revision: Hijo
+  setting_default_issue_start_date_to_creation_date: Use current date as start date
+    for new issues
+  button_edit_section: Edit this section
+  setting_repositories_encodings: Attachments and repositories encodings
+  description_all_columns: Todas las columnas
+  button_export: Exportar
+  label_export_options: ! '%{export_format} opciones de exportación'
+  error_attachment_too_big: Este fichero no se puede adjuntar porque excede el tamaño
+    máximo de fichero (%{max_size})
+  notice_failed_to_save_time_entries: ! 'Error al guarda %{count} entradas de tiempo
+    de las %{total} seleccionadas: %{ids}.'
+  label_x_issues:
+    zero: 0 petición
+    one: 1 petición
+    other: ! '%{count} tareas'
+  label_repository_new: New repository
+  field_repository_is_default: Main repository
+  label_copy_attachments: Copy attachments
+  label_item_position: ! '%{position}/%{count}'
+  label_completed_versions: Completed versions
+  text_project_identifier_info: Only lower case letters (a-z), numbers, dashes and
+    underscores are allowed.<br />Once saved, the identifier cannot be changed.
+  field_multiple: Multiple values
+  setting_commit_cross_project_ref: Allow issues of all the other projects to be referenced
+    and fixed
+  text_issue_conflict_resolution_add_notes: Add my notes and discard my other changes
+  text_issue_conflict_resolution_overwrite: Apply my changes anyway (previous notes
+    will be kept but some changes may be overwritten)
+  notice_issue_update_conflict: The issue has been updated by an other user while
+    you were editing it.
+  text_issue_conflict_resolution_cancel: Discard all my changes and redisplay %{link}
+  permission_manage_related_issues: Manage related issues
+  field_auth_source_ldap_filter: LDAP filter
+  label_search_for_watchers: Search for watchers to add
+  notice_account_deleted: Your account has been permanently deleted.
+  setting_unsubscribe: Allow users to delete their own account
+  button_delete_my_account: Delete my account
+  text_account_destroy_confirmation: ! 'Are you sure you want to proceed?
+
+    Your account will be permanently deleted, with no way to reactivate it.'
+  error_session_expired: Your session has expired. Please login again.
+  text_session_expiration_settings: ! 'Warning: changing these settings may expire
+    the current sessions including yours.'
+  setting_session_lifetime: Session maximum lifetime
+  setting_session_timeout: Session inactivity timeout
+  label_session_expiration: Session expiration
+  permission_close_project: Close / reopen the project
+  label_show_closed_projects: View closed projects
+  button_close: Close
+  button_reopen: Reopen
+  project_status_active: active
+  project_status_closed: closed
+  project_status_archived: archived
+  text_project_closed: This project is closed and read-only.
+  notice_user_successful_create: User %{id} created.
+  field_core_fields: Standard fields
+  field_timeout: Timeout (in seconds)
+  setting_thumbnails_enabled: Display attachment thumbnails
+  setting_thumbnails_size: Thumbnails size (in pixels)
+  label_status_transitions: Status transitions
+  label_fields_permissions: Fields permissions
+  label_readonly: Read-only
+  label_required: Required
+  text_repository_identifier_info: Only lower case letters (a-z), numbers, dashes
+    and underscores are allowed.<br />Once saved, the identifier cannot be changed.
+  field_board_parent: Parent forum
+  label_attribute_of_project: Project's %{name}
+  label_attribute_of_author: Author's %{name}
+  label_attribute_of_assigned_to: Assignee's %{name}
+  label_attribute_of_fixed_version: Target version's %{name}
+  label_copy_subtasks: Copy subtasks
+  general_all: todos
+  general_only_required: sólo será obligatoria
+  notice_issues_successful_create: ! 'Usuarios ha creado correctamente:'
+  notice_too_many_projects: Demasiados proyectos (%{count}) Utilice la búsqueda.
+  error_can_not_delete_auth_source: Este modo de autenticación se utiliza y no se
+    puede quitar.
+  mail_subject_easy_query_migration_nonsaved_query: Proyecto Easy - Filtro de Migración
+    - ha tenido lugar
+  mail_body_easy_query_migration_nonsaved_query_begin: ! 'Hola, la migración de los
+    filtros guardados no pudo salvar este filtro:'
+  mail_body_easy_query_migration_nonsaved_query_end: Por favor, haz clic en el enlace
+    de arriba y organizar el filtro (contenía algunas columnas de marca de fecha y
+    - crear, actualizar, fecha de finalización, ...).
+  mail_subject_easy_query_migration_unsupported_query: Easy Project - Migración filtro
+    - Ajuste sin apoyo
+  mail_body_easy_query_migration_unsupported_query_begin: ! 'Hola, la migración de
+    los filtros guardados no pudo salvar este filtro:'
+  mail_body_easy_query_migration_unsupported_query_end: ! 'Por favor, haz clic en
+    el enlace de arriba y organizar el filtro. Contenía este ajuste:'
+  field_versions: Hitos
+  field_issue_to_id: Tarea relacionada
+  field_group: Grupo de usuarios
+  field_rss_key: Clave RSS
+  field_api_key: Programas clave
+  field_user_time_entry_setting: ! 'Escribe en el tiempo:'
+  field_easy_range_from: Desde el tiempo trabajado
+  field_easy_range_to: El tiempo pasado
+  field_easy_range_form_to: A
+  field_global_fixing_activity: Tareas de proyectos tienen una actividad previamente
+    programada - el valor predeterminado.
+  field_project_fixed_activity_true: Actividad está predefinido en el establecimiento
+    de la tarea.
+  field_project_fixed_activity_false: La actividad puede seleccionar tiempo de la
+    escritura.
+  field_enable_activity_roles: Iniciar actividades a las funciones
+  field_limit_assignable_users: Volviendo tareas únicas autoridades
+  setting_project_list_default_columns: Columnas predeterminadas que se muestran en
+    la lista de proyectos
+  setting_default_projects_tree_display: Viendo el árbol del proyecto
+  setting_projects_tree_display_with_siblings: hermanos
+  setting_projects_tree_display_without_siblings: sin hermanos
+  setting_issue_created_on_date_format_label: Muestra la fecha de creación como tarea
+  setting_issue_created_on_date_format_date: fecha
+  setting_issue_created_on_date_format_datetime: fecha y la hora
+  setting_enable_private_issues: Permita que las tareas privadas
+  setting_show_personal_statement: Ver Declaración de menú Personal
+  setting_show_bulk_time_entry: Ver época menú de entrada
+  setting_project_calculate_start_date: Fecha de inicio del proyecto en función de
+    las tareas
+  setting_project_calculate_due_date: Fecha de finalización del proyecto de acuerdo
+    con las tareas
+  permission_manage_easy_project_relations: Gestión de las relaciones entre los proyectos
+  permission_manage_easy_version_relations: Gestión de las relaciones entre los hitos
+  permission_edit_issue_fixed_activity: Cambiar la actividad asignada fija en la tarea
+  label_issue_priority: Prioridad de la tarea
+  label_issue_priority_plural: Dar prioridad a las tareas
+  label_amount: Cantidad
+  label_version_update_database: Vaya a todas las tareas?
+  label_my_issues_plural: mina
+  label_other_issues_plural: otro
+  label_projectquery_plural: Filtros - Proyectos
+  label_userquery_plural: Filtros - usuarios
+  label_related_projects: Proyectos relacionados
+  label_related_versions: Hitos relacionados
+  label_add_related_issues: Añadir tareas relacionadas
+  label_add_related_projects: Agregar proyectos relacionados
+  label_add_related_versions: Añadir hitos relacionados
+  label_preceding: precedente
+  label_following: siguiente
+  label_send_email_to_all_users: Enviar correo electrónico a todos los usuarios
+  label_updated_on: Actualizado
+  label_no_change: sin cambios
+  label_change_to: ! 'cambiar a:'
+  option_only_selected: sólo se seleccionan
+  label_less: Menos
+  label_group_by: Grupo de %{value}
+  label_period_past: Pasado
+  label_period_present: Presente
+  label_period_future: Futuro
+  label_to_today: hasta hoy
+  label_after_due_date: después de la fecha límite
+  label_next_n_days: estos %{days} Días
+  label_next_week: semana próxima
+  label_next_month: mes próximo
+  label_next_year: el año que viene
+  label_tomorrow: mañana
+  label_user_role_select: ! 'para el papel:'
+  label_document_global: Papeles
+  label_milestone_sharing_info: ! 'Explicación:'
+  label_milestone_sharing_info_none: hito sólo se utiliza en un proyecto en el que
+    se creó.
+  label_milestone_sharing_info_descendants: hito se utiliza en el proyecto, en el
+    que fue creado y todos sus subproyectos.
+  label_milestone_sharing_info_hierarchy: hito se utiliza en el proyecto, que fue
+    creado en su proyecto principal y sus subproyectos.
+  label_milestone_sharing_info_tree: hito se utiliza en el proyecto, en el que fue
+    creado, y en todos los proyectos que tienen un padre común de cualquier proyecto.
+  label_milestone_sharing_info_system: hito se utiliza en todos los proyectos.
+  label_autoincrement: Autonumérico
+  label_easy_query_settings: El filtro de
+  label_quick_search: Búsqueda rápida
+  label_switch_to_mobile_version: Versión móvil
+  label_switch_to_full_version: Versión de escritorio
+  label_not_available: N / A
+  label_search_entities: ! 'Buscar:'
+  label_fixed_version: Hito
+  button_add_and_close: Agregar y Cerrar
+  button_generate_rss_key: Generar clave RSS
+  button_generate_api_key: Generar clave de API
+  workflow_button_edit: Configuración de flujo de trabajo
+  button_back_to_top: Hasta
+  easyproject_name: EASY PROJECT 2013
+  easyproject_author: Software Easy
+  easyproject_author_url: http://www.easyproject.cz/en
+  easyproject_description: ! '- Gestión del sistema de información para la gestión
+    de proyectos'
+  project_module_easy_other_permissions: Otro
+  permission_create_project_from_template: Crear un proyecto a partir de una plantilla
+  permission_create_project_template: Crear una plantilla de proyecto
+  permission_edit_project_template: Editar plantilla de proyecto
+  permission_delete_project_template: Eliminar una plantilla de proyecto
+  permission_view_project_activity: Ver la actividad de proyecto
+  permission_view_project_report: Ver las estadísticas proyecto
+  permission_action_duplicate_issue: Duplicar tarea
+  permission_edit_own_issue: Edición de tareas
+  permission_view_restrictions_users: Ver los comentarios sólo alguien
+  permission_view_personal_statement: Ver comunicado personal
+  permission_view_all_statements: Mostrar la hora pasó por todos los empleados
+  permission_manage_page_project_overview: Gestione la página del proyecto
+  permission_supervisor: Ver y actualizar los proyectos en los que no son miembros
+  permission_archive_project: Archive Project
+  permission_copy_project: Copia del Proyecto
+  permission_manage_my_page: Edición de mi sitio
+  permission_view_easy_attendances_extra_info: Mostrar datos adicionales (los usuarios
+    de IP, ...)
+  heading_easy_user_working_time_calendar_index: Calendarios Resumen - Tiempo de trabajo
+  heading_easy_user_working_time_calendar_show: Calendario %{calendarname}
+  heading_easy_user_working_time_calendar_edit: Editar Calendario parámetros básicos
+  heading_easy_user_working_time_calendar_new: Nuevo Calendario
+  heading_easy_user_working_time_calendars_holiday_index: Resumen vacaciones
+  heading_easy_user_working_time_calendars_holiday_edit: Edición de fiesta
+  heading_easy_user_working_time_calendars_holiday_new: Nuevo Día
+  heading_layout_from_template_selecting_projects: Selección de proyectos para la
+    aplicación de plantillas
+  heading_layout_from_template_selecting_users: Seleccione los usuarios a aplicar
+    la plantilla
+  heading_project_mass_copy_select_source_project: Haga clic en el proyecto desde
+    el que copiar
+  heading_project_mass_copy_select_target_projects: Seleccione el proyecto en el que
+    desea copiar
+  heading_project_mass_copy_select_actions: Seleccione las acciones que desee copiar
+    del proyecto
+  label_simple_add_project_task: Lista de proyectos
+  label_simple_add_project_task_on_project: Subproyectos
+  label_done: hecho
+  label_issue_due_date: En espera de la finalización de permanecer
+  label_show_user_info: Ver perfil del usuario %{username}.
+  label_show_assigned_issues: Ver las tareas asignadas al usuario %{username}.
+  label_budget_draw: Presupuesto de gasto
+  label_user_new_issue: Crear una nueva tarea para %{username}.
+  label_user_saved_query: Ver usuarios filtro %{queryname}.
+  label_show_project_info: Ver detalles de proyecto %{projectname}.
+  label_show_issue_info: Ver detalles de la tarea %{issuename}.
+  label_templates_plural: Las plantillas de proyecto
+  label_news_unread: Mensaje no leído
+  label_new_project_name: El nuevo nombre
+  label_template_new: Nuevo proyecto de plantilla
+  label_easy_page_module_settings_missing: Por favor, configure el módulo correcto.
+  label_my_page_project_query_select: ! 'El filtro guardado:'
+  label_my_page_issue_query_select: ! 'El filtro guardado:'
+  label_my_page_user_query_select: ! 'El filtro guardado:'
+  label_my_page_document_query_select: ! 'El filtro guardado:'
+  label_my_page_project_output_select: ! 'Salida de la forma:'
+  label_my_page_issue_output_select: ! 'Salida de la forma:'
+  label_my_page_user_output_select: ! 'Salida de la forma:'
+  label_my_page_issue_query: Guardado filtro
+  label_my_page_issue_query_new_before: Nuevo filtro, puede crear una lista de tareas
+    o
+  label_my_page_issue_query_new_link: aquí
+  label_my_page_issue_query_new_after: .
+  label_my_page_issue_row_count: ! 'El número máximo de tareas mostradas (0 es ilimitado):'
+  label_my_page_projects_row_count: ! 'Número de proyectos:'
+  label_my_page_document_row_count: ! 'Número de documentos:'
+  label_my_page_users_row_count: ! 'Número de usuarios:'
+  label_my_page_news_row_count: ! 'Número de informes:'
+  label_my_page_users_filter_visible: ! 'Ver opción de filtrado en la página de información
+    general del proyecto:'
+  label_my_page_issue_enable_text_editor: ! 'Utilice un editor de texto:'
+  label_my_page_issue_show_fields_option_part1: Mostrar
+  label_my_page_issue_show_fields_option_part2: campo de formulario.
+  label_my_page_projects_query_settings_missing: Por favor, configure el módulo correcto.
+  label_my_page_projects_query_select: ! 'El filtro guardado:'
+  label_my_page_projects_query: Guardado filtro
+  label_my_page_projects_query_new_before: Nuevo filtro, puede crear una lista de
+    proyectos o
+  label_my_page_projects_query_new_link: aquí
+  label_my_page_projects_query_new_after: .
+  label_my_page_issues_rss_reader: Tareas de otro servidor
+  label_my_page_issues_rss_reader_url: ! 'Fuente:'
+  label_my_page_issues_rss_reader_row_limit: ! 'Número de líneas:'
+  label_my_page_issues_rss_reader_loading: Por favor espere, cargando los datos.
+  label_version_show_closed_issues: Ver las tareas completadas
+  label_easy_pages_project_administration: Personalizar páginas
+  label_easy_pages: Lista de sitios para adaptarse
+  label_easy_page_zone: zona
+  label_easy_page_zones: Las zonas de la %{pagename}
+  label_easy_page_new: nueva página
+  label_easy_page_edit: editar esta página
+  label_easy_page_zones_view: Lista de zonas en una página
+  label_easy_page_zone_new: zona
+  label_easy_page_zone_edit: edit zona
+  label_easy_page_zone_show: mostrar zona %{zonename}
+  label_easy_page_modules: módulos en la zona
+  label_easy_page_user_modules: Módulos en la página %{pagename}
+  label_personalize_user_page: Modificar o añadir módulos
+  label_personalize_user_page_from_layout: Anular la página de configuración por defecto
+  label_easy_page_templates: La lista de plantillas en la página %{pagename}
+  label_easy_page_templates_new: Nueva plantilla
+  label_easy_page_template_new: Nueva plantilla de página %{pagename}
+  label_easy_page_template_edit: Edición de una plantilla de página %{pagename}
+  label_easy_page_user_layout_modules: Disposición de los módulos en la página
+  label_easy_page_template_user_modules: La disposición de los módulos en la plantilla
+    %{templatename}
+  label_easy_page_template_show: Módulos de diseño
+  label_select_page_template: ! 'Seleccionar Plantilla de Página:'
+  label_select_my_page_template: Seleccione una plantilla para mi sitio web
+  label_easy_page_zones_new_assignments: Agregar páginas a la zona
+  label_easy_page_assign_zone: Asignación de Zonas de diseño de página %{pagename}
+  label_select_page_assign_zone: ! 'Seleccione una zona:'
+  label_easy_page_no_zones: No hay zonas definidas.
+  label_easy_page_no_pages: No está definido para la edición de páginas.
+  label_easy_page_module_select: ! 'Seleccione el módulo de la lista:'
+  label_user_my_page: Mi página
+  label_project_custom_fields: Proyecto de campos personalizados
+  label_project_no_custom_fields: Proyecto de campos personalizados no están asignados.
+  label_easy_page_module_empty: Módulo %{modulename} no aparecen en la plantilla.
+    Cuando se añade a un sitio en particular se muestre correctamente.
+  label_easy_page_module_missing: Módulo %{modulename} No se puede mostrar, porque
+    no existe.
+  label_project_templates_update_dates: Mover todas las fechas relevantes para el
+    inicio del proyecto.
+  label_user_saved_projectquery: Ver usuarios filtro %{queryname}.
+  label_new_project_from_template: Nuevo proyecto de plantilla
+  label_easy_my_page_template_to_all: Aplicar plantilla a todos los usuarios
+  label_custom_field_computed_string: Campo calculado - Texto
+  label_custom_field_computed_integer: Campo calculado - Entero
+  label_custom_field_computed_float: Campo calculado - Decimal
+  label_custom_field_computed_date: Campo calculado - fecha
+  label_custom_field_computed_boolean: Campo calculado - Sí / No
+  label_my_page_timelog_calendar: Parte de horas
+  label_my_page_timelog_calendar_period_select: ! 'Período calendario:'
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: pm
+  label_restrictions_users: Mostrar sólo
+  label_timelog_view_all: La declaración completa
+  label_personal_statement: Declaración Personal
+  label_log_time: Escribiendo tiempo
+  label_issue_assigned_to_users: ! 'Usuarios:'
+  label_issue_assigned_to_groups: ! 'Grupos:'
+  label_template_to_selected_projects: Aplicar una plantilla a proyectos específicos
+  label_template_to_selected_users: Aplicar una plantilla a un usuario específico
+  label_error_project_query: Se produjo un filtro de tratamiento de errores. Informe
+    de este error a su administrador.
+  label_project_description: Descripción
+  label_easy_lookup: Lookup
+  label_custom_field_settings_entity_type: Entidad
+  label_custom_field_settings_entity_attribute: Atributo
+  label_link_with: Enlace con %{attribute}
+  label_issue_new_relation_before: Esta tarea
+  label_issue_new_relation_after: ! 'tareas:'
+  label_project_new_relation_before: El proyecto
+  label_project_new_relation_after: ! 'proyectos:'
+  label_version_new_relation_before: Este hito
+  label_version_new_relation_after: ! 'hitos:'
+  label_parenttask_plural: Tareas de Padres
+  label_my_page_timelog_simple_day_limit: Límite días
+  label_last_year: el año pasado
+  label_revert_to_version: Recuperar esta versión
+  label_project_overview_project_info: Información sobre el proyecto
+  label_easy_user_queries_plural: Usuarios
+  label_menu_more: Otro
+  label_project_index: Lista de proyectos
+  label_issue_index: Listado de tareas
+  label_issue_static_attributes_heading: ! 'Datos básicos:'
+  label_issue_updatable_attributes_heading: ! 'Otras características:'
+  label_issue_attachments_heading: ! 'Archivos:'
+  label_issue_watchers_heading: ! 'Cooperar:'
+  label_document_category_read_role: Permiso para leer los documentos de esta categoría
+  label_document_category_manage_role: El permiso para administrar documentos en esta
+    categoría
+  label_document_category_custom_roles_n: Utilice la configuración predeterminada
+  label_document_category_custom_roles_y: Usar una configuración personalizada
+  label_datetime_custom_field_tag_hour: pm
+  label_datetime_custom_field_tag_minute: minutos.
+  label_datetime_custom_field: Fecha y Hora
+  label_menu_project_template: (Plantilla)
+  label_with_non_shared_versions: Mostrar hitos no compartidas de los subproyectos
+  label_project_copy_tracker_issues:
+    zero: no es tarea
+    one: Una tarea
+    two: Dos tareas
+    three: 3 tareas
+    four: 4 Tareas
+    other: ! '%{count} tareas'
+  label_top_ten_projects: Últimos 10 proyectos
+  label_activity_all: Todos
+  label_working_time: El tiempo de trabajo
+  label_admin_easy_user_working_time_calendars: El tiempo de trabajo - Plantillas
+  label_easy_user_working_time_calendar_explanatory_notes: ! 'Explicación:'
+  label_easy_user_working_time_calendar_explanatory_notes_default: Pacovní día normal
+  label_easy_user_working_time_calendar_explanatory_notes_today: Hoy
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: Fin de semana
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: Fiesta
+  label_easy_user_working_time_calendar_explanatory_notes_exception: Trabajo Excepción
+  label_easy_user_working_time_calendar_none: El usuario no ha seleccionado calendario
+    de trabajo.
+  label_easy_user_working_time_calendar_default_time: Por defecto las horas de trabajo
+    %{count} horas.
+  label_easy_user_working_time_calendar_change_calendar: ! 'Cambiar un calendario:'
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: Para cambiar
+    el calendario de trabajo para mantener las excepciones del calendario seleccionado
+  label_easy_user_working_time_calendar_settings: Ajuste
+  label_easy_user_working_time_calendar_no_of_days: Días de trabajo
+  label_easy_user_working_time_calendar_no_of_hours: Las horas de trabajo
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: Copia de
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: Excepciones
+    de copia
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: Copiar
+    vacaciones
+  label_easy_user_working_time_mass_exceptions: Excepciones de comunicación
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: Ajuste el número
+    de horas de trabajo
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: en cada uno
+  label_field_format_autoincrement_from_to: Desde - a
+  label_project_templates_custom_fields: Configuración de los campos de proyecto
+  label_source_project: Origen del proyecto
+  label_target_projects: Proyectos Target
+  label_easy_page_modules_on_project_overview: Módulos en la página de resumen del
+    proyecto
+  label_project_templates_change_issues_author: Cambie el autor de todas las tareas
+  label_easy_system_flag: (No se muestra en los miembros del proyecto, etc)
+  label_timelog_comment_editor_enabled: Utilice el editor para escribir un comentario
+    sobre el tiempo?
+  label_time_entry_spent_on_at_issue_update_enabled: Ajuste de fecha y hora inscrita
+    en la actualización de tarea?
+  label_user_form_other_settings: Otras opciones
+  label_user_copy_roles_from: Utilice los roles y permisos por usuario
+  label_easy_page_tab_default_name: Marcador %{count}
+  label_mass_copy_select_actions: ! 'Copy (el evento se copia primero y luego eliminado):'
+  label_select_none_assignee: << Ningún líder >>
+  label_select_no_change_assignee: << Solucionadores no cambian >>
+  label_search_result_journal_header: Cadena de búsqueda encontrada en las actualizaciones
+    (%{count})
+  label_journal_as_search_result: Actualizar
+  label_unread_entity: No leído
+  label_default_project_page: Página del proyecto implícito
+  label_too_many_mambers: ! 'Demasiados usuarios, utilice la búsqueda:'
+  label_gantt_pdf_date: A partir de la fecha de
+  label_custom_field_settings_multiple: Multivalor
+  label_last_user_assigned_to: << Última solucionador >>
+  label_author_assigned_to: << Autor >>
+  label_default_color_schema: El color por defecto
+  label_template_easy_start_date: Establecerse al principio del proyecto
+  label_templates_easy_start_date: Establecer proyectos de inicio
+  label_easy_color_schemes: ! 'La elección de un esquema de colores:'
+  label_issue_color_scheme_for: ! 'Utilice un esquema de color de:'
+  label_easy_setting_new_subproject_user_role_id: El papel asignado a un usuario sin
+    derechos de administrador, que creó el sub-
+  label_easy_setting_new_subproject_user_role_id_info: (Apto para supuestos en los
+    que el usuario pueda crear subproyectos solamente)
+  label_easy_setting_attachment_description: Descripción Adjuntos
+  label_easy_setting_attachment_description_required: obligatorio
+  label_easy_setting_attachment_description_enabled: activado
+  label_easy_setting_attachment_description_disabled: abajo
+  label_issue_by_unassigned_to: sin asignar
+  label_issue_notice_recipients: ! 'E-mail enviado a:'
+  label_email: E-mail
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: El tiempo de trabajo se inicia
+    en
+  label_easy_user_working_time_calendar_time_to: El tiempo de trabajo termina
+  label_issue_open_plural: Tareas abrir
+  label_issue_close_plural: Tareas cerrado
+  label_easy_version_queries_plural: Hitos
+  label_issues_assigned_to_me_visible_issues_assigned: Solo las tareas que me han
+    asignado.
+  label_issues_assigned_to_me_visible_issues_conserns: Las tareas de las que soy el
+    autor, me resolver o colaborar en cuál.
+  label_match_starting_dates: Establecer iniciar las tareas de acuerdo a la fecha
+    de inicio del proyecto
+  label_easy_attendance_plural: Asistencia
+  label_next_issue: Otra de las tareas
+  label_previous_issue: Tarea anterior
+  label_issue_automatic_recalculate_attributes: Cambio automático de subtarea %{issue_id}
+  label_easy_query_export_links: Exportaciones
+  label_easy_attendance_spent_time: Tiempo dedicado
+  label_easy_attendance_report_working_time: trabajado %{sum_timeentries} de %{total_working_hours}
+    Es decir,%{timeentries_percent}%
+  label_easy_attendance_report_attendence_time: asistencia tiene %{sum_attendance}
+    de %{total_working_hours} Es decir,%{working_percent}%
+  label_day:
+    zero: 0 día
+    one: Hace 1 día
+    two: ! '%{count} Días'
+    three: ! '%{count} Días'
+    four: ! '%{count} Días'
+    half: ! '%{count} En'
+    other: ! '%{count} Días'
+  button_context_menu: Mostrar menú rápido para la tarea.
+  button_attachment_context_menu: Ver historial de revisión.
+  button_new_project_from_template: Crear un proyecto nuevo
+  button_new_template_from_project: Crear una nueva plantilla
+  button_create_project_from_template: Crear un proyecto
+  button_template_restore_project: Volver
+  button_easy_page_templates: Pizarra
+  button_save_easy_page: Guardar y hacer copias de
+  button_edit_projectquery: Refina tu consulta
+  button_delete_projectquery: Retire consulta
+  button_apply_projectquery: Utilizar
+  button_clear_projectquery: Borrar
+  button_save_projectquery: Ahorrar
+  button_timelog_calendar_new: Escriba la hora
+  button_uninstall: Desinstalar
+  button_easy_lookup_modal_selector_assign: Asignar seleccionado
+  button_new_issue_relation: Añadir relacionados
+  button_issue_put_between: Integrar
+  button_new_subtask: Añadir Subtarea
+  button_easy_lookup_modal_close: Sólo cerrar
+  button_go_up: Hasta
+  button_issue_create: Guardar tarea
+  button_issue_create_and_continue: Guardar y continuar
+  button_issue_update: ! 'Actualización de tarea:'
+  button_issue_submit: Guardar actualizar
+  button_gantt_issue_update: Actualización de tarea
+  button_gantt_issue_update_plural: Actualizar
+  button_easy_user_working_time_calendar_show: Detalle Calendario
+  button_easy_user_working_time_calendars_new: Nuevo Calendario
+  button_easy_user_working_time_calendar_holidays: Vacaciones
+  button_easy_user_working_time_calendar_holidays_new: Nuevo Día
+  button_easy_user_working_time_back_to_calendar: Volver al calendario
+  button_easy_user_working_time_back_to_calendars: Volver al calendario
+  button_easy_user_working_time_reset_to_parent: Calendario de volver a su forma original
+  button_easy_user_working_time_parent: Ir al calendario de los padres
+  button_check_subprojects: Marque los subproyectos
+  button_uncheck_subprojects: Marque los subproyectos
+  button_check_rootprojects: Marque los grandes proyectos
+  button_uncheck_rootprojects: Marque los grandes proyectos
+  button_edit_user_profile: Editar perfil
+  button_project_mass_copy: Copia masiva
+  button_choose_actions: Ir a las acciones de selección
+  button_down: Abajo
+  button_check_and_uncheck_subprojects: Compruebe / subproyectos desmarque
+  button_gantt_show_sidebar: Ver filtros guardados
+  button_gantt_hide_sidebar: Ocultar filtros guardados
+  button_easy_page_add_tab: Adición de un favorito
+  button_manage_versions: Gestione hitos
+  button_mobile_saved_filters: Filtros guardadas
+  button_edit_anonymous_user: Editar un usuario anónimo
+  button_advanced_search: Búsqueda avanzada
+  button_settings: Ajuste
+  button_history: Historia
+  button_timelog_calendar_prev:
+    week: Semana anterior
+    month: Mes Anterior
+  button_timelog_calendar_next:
+    week: Próxima Semana
+    month: Mes próximo
+  title_button_template: Crear una plantilla de proyecto %{projectname}.
+  title_button_template_create_project: Crea un proyecto a partir de una plantilla.
+  title_button_template_restore_project: Hace que la plantilla de nuevo al proyecto
+    original.
+  title_project_new_issue: Agregar una tarea a un proyecto %{projectname}
+  title_project_edit: Editar Proyecto
+  title_project_show: Haga clic aquí para ir al proyecto %{projectname}
+  title_other_formats_links_atom: Carga en lector RSS.
+  title_other_formats_links_csv: Guardar en el disco como un archivo CSV.
+  title_other_formats_links_pdf: Guardar en el disco como un archivo PDF.
+  title_other_formats_links_png: Guardar en el disco como una imagen PNG.
+  title_other_formats_links_ics: Guardar en el disco como ICS (Outlook) de archivos.
+  title_other_formats_links_ics_outlook: Suscribirse a esta lista de tareas de MS
+    calendario de Outlook.
+  title_easy_page_zones_view: Pulsa aquí para ver la lista de zonas en la página.
+  title_easy_page_zone_edit: Haga clic para editar la zona.
+  title_easy_page_zone_show: Haga clic en Zona zobrzíte.
+  title_easy_page_zone_modules: Haga clic módulos zobrzíte.
+  title_personalize_user_page: Haga clic para personalizar la página.
+  title_personalize_user_page_from_layout: Haga clic para seleccionar la plantilla
+    de página que se utilizará en lugar de esta disposición.
+  title_easy_page_templates: Pulsa aquí para ver la lista de plantillas de una página.
+  title_easy_page_templates_new: Clica para crear una nueva plantilla.
+  title_easy_page_user_layout_modules: Pulsa aquí para ver la disposición de los módulos
+    en la página.
+  title_easy_page_template_show: Pulsa aquí para ver la disposición de los módulos
+    en la plantilla de página.
+  title_easy_page_zones_new_assignments: Haga clic para añadir una nueva zona para
+    el diseño.
+  title_button_save_easy_page: Haga clic para guardar esta página y volver atrás.
+  title_my_page_issue_query_new_link: Haga clic para añadir un nuevo filtro sobre
+    la lista de tareas.
+  title_edit_projectquery: Clic para la edición de la consulta del usuario.
+  title_delete_projectquery: Haga clic para eliminar la consulta del usuario.
+  title_apply_projectquery: Haga clic para utilizar filtros predefinidos para mostrar
+    los proyectos.
+  title_clear_projectquery: Haga clic para volver a los valores de filtro formulario
+    preestablecido.
+  title_save_projectquery: Haga clic para guardar filtros predefinidos para su uso
+    posterior.
+  title_new_project_from_template: Haga clic aquí para ir a la lista de plantillas.
+  title_easy_my_page_template_to_all: Aplicar esta plantilla para todos los usuarios.
+  title_timelog_calendar_new: Haga clic aquí para escribir el tiempo en ese día.
+  title_template_to_selected_projects: Aplicar esta plantilla para proyectos específicos
+  title_template_to_selected_users: Aplicar esta plantilla para usuarios específicos
+  title_easy_lookup_modal_selector_assign: Haga clic para asignar el elemento seleccionado.
+  title_button_edit: Click, puede editar esta entrada.
+  title_button_delete: Haga clic usted puede borrar esta entrada.
+  title_new_issue_relation: Añadir tareas relacionadas
+  title_new_subtask: Añadir Subtarea
+  title_logo: Haga clic aquí para ir a mi página.
+  title_delete: Haga clic para eliminar un elemento.
+  title_delete_selected: Haga clic para eliminar el elemento seleccionado.
+  title_go_up: Haga clic aquí para ir a la parte superior de la página.
+  title_says: ! 'dice:'
+  title_project_copy_tracker_issues: Haga clic, usted puede cambiar el tipo de tareas.
+  title_user_profile: Haga clic aquí para ver perfil %{username}.
+  title_easy_user_working_time_calendar_show: Haga clic en, puede editar los días
+    individuales en el calendario.
+  title_easy_user_working_time_calendars_new: Haz clic aquí para crear un nuevo calendario.
+  title_easy_user_working_time_calendar_holidays: Haga clic para editar las vacaciones.
+  title_easy_user_working_time_calendar_holidays_new: Clica para crear una nueva fiesta.
+  title_easy_user_working_time_back_to_calendar: Haga clic aquí para volver al calendario.
+  title_easy_user_working_time_back_to_calendars: Haga clic aquí para volver al calendario.
+  title_easy_user_working_time_calendars_inline_edit: Haga clic para añadir una excepción.
+  title_easy_user_working_time_calendars_inline_save: Haga clic para guardar excepción.
+  title_easy_user_working_time_calendars_inline_close: Haga clic para cerrar la edición
+    excepciones.
+  title_easy_user_working_time_reset_to_parent: Haga clic usted puede eliminar todas
+    las excepciones actuales y establecer el estado del calendario de los padres.
+  title_easy_user_working_time_parent: Haga clic aquí para ir a la agenda principal.
+  title_edit_user_profile: Click, puede editar su perfil.
+  title_easy_page_add_tab: Haga clic para añadir un marcador.
+  title_last_journal_link: Ver el último tarea de actualización.
+  title_edit_anonymous_user: Haga clic para editar el usuario anónimo.
+  title_download_attachment: Descargar
+  title_show_attachment: Ver el contenido del archivo
+  title_timelog_calendar_prev:
+    week: Clic para la semana anterior.
+    month: Haga clic aquí para ir al mes anterior.
+  title_timelog_calendar_next:
+    week: Clic para la próxima semana.
+    month: Haga clic aquí para ir al mes siguiente.
+  title_easy_modal_selector_trigger:
+    issue: Haga clic para seleccionar las tareas de la lista.
+    project: Haga clic para seleccionar los proyectos de la lista.
+    version: Haga clic para seleccionar de una lista de hitos.
+    user: Haga clic para seleccionar un usuario de la lista.
+    group: Haga clic para seleccionar un grupo de la lista.
+    document: Haga clic para seleccionar los documentos de la lista.
+  project_template:
+    label_name: Plantilla de nombre
+    label_new_project: Nombre el nuevo proyecto
+  sidebar_all_users_queries: Las tareas a las personas
+  sidebar_issue_button_update: Agregar una nota o cambiar la tarea
+  sidebar_issue_button_log_time: Añadir el tiempo dedicado a la tarea
+  sidebar_issue_button_duplicate: Duplicar tarea
+  sidebar_issue_button_copy: Copia tarea
+  sidebar_issue_button_move: Mueva tarea
+  sidebar_issue_button_delete: Eliminar una tarea
+  sidebar_issue_spent_time: Visualización de las horas trabajadas en una tarea
+  sidebar_issue_info: Información de la tarea
+  sidebar_issues_buttons: Programar
+  sidebar_project_info: Información sobre el proyecto
+  sidebar_project_spent_time: Visualización de las horas trabajadas en el proyecto.
+  sidebar_project_members: Equipo del proyecto
+  sidebar_budget_costs_info: Costos
+  sidebar_project_family_info: Árbol del proyecto
+  field_easy_due_date: Fecha de finalización
+  field_easy_start_date: Iniciar
+  field_spinned: Neodsouvat otros informes
+  field_zone_name: Nombre de zona
+  field_page_name: Título de la página
+  field_is_primary: Primario
+  field_show_empty: Ver y valores vacíos
+  field_show_on_list: Vea la lista
+  field_predicted_cost: Presupuesto
+  field_computed_token: Fórmula
+  field_member: Miembros del Proyecto
+  field_groups: Grupo
+  filter_active: activo
+  field_xproject: Proyectos
+  field_cached_group_names: Grupos
+  field_parent_user: Mayor
+  field_template_name: Plantilla de nombre
+  field_parent_project: Proyecto Superior
+  field_root: El proyecto principal
+  field_main_project: El proyecto principal
+  field_sum_of_timeentries: Time informó
+  field_remaining_timeentries: Tiempo restante
+  field_completed_percent: ! '% Realizado'
+  field_attachment_created_on: Archivo - creado
+  field_user_roles: Papel
+  field_show_on_more_form: Ver "más"
+  field_spent_estimated_timeentries: Tiempo informado%
+  field_easy_system_flag: Sistema de bandera
+  field_easy_global_rating: Evaluación Global
+  field_id: Identificación
+  field_easy_version_category_id: Hitos Categoría
+  field_easy_version_category: Hitos Categoría
+  field_relations_from: relacionados
+  field_created_at: Creado
+  field_updated_at: Editado
+  field_started_at: A partir de
+  field_finished_at: Fin en
+  field_note: Nota
+  status_archived: archivado
+  notice_successful_create_template: Plantilla creado bien.
+  notice_successful_create_project_from_template: El proyecto ha sido creado con éxito.
+  notice_failed_create_project_from_template: El proyecto no ha podido crear:%{errors}
+  notice_almost_successful_create_project_from_template: El proyecto fue creado, no
+    todo lo copiado.
+  notice_successful_restore_template: La plantilla se devolvió correctamente.
+  notice_template_successful_applied: Plantilla se aplicó.
+  notice_plugin_successful_uninstall: Plugin %{plugin} se ha eliminado correctamente,
+    ahora es necesario reiniciar el servidor web.
+  notice_project_successful_archive: El proyecto ha sido archivado.
+  notice_failed_to_update: Cuando guarde el error.
+  notice_project_successful_unarchive: El proyecto fue odarchivován.
+  notice_failed_to_save_issues2: No se ha podido guardar la tarea %{issue} debido
+    a un error:%{error}
+  error_invalid_authenticity_token: La página ha caducado.
+  error_rss_reader_timeout: Error en el ajuste (una página es en la actualidad no
+    puede conectarse, compruebe que ha especificado correctamente tarea fuente, la
+    fuente de los problemas actuales no pueden ser proyecto fácil!).
+  error_rss_reader_bad_url: Error en el ajuste (una página es en la actualidad no
+    puede conectarse, compruebe que ha especificado correctamente las tareas de recursos).
+  error_rss_reader_old_ep: Error en la configuración (tarea de origen debe ser RC9
+    Proyecto Easy 2010 y superior).
+  error_validates_max_size: archivo es demasiado grande
+  error_custom_value_autoincrement_greater: debe ser mayor que %{count}
+  error_custom_value_autoincrement_equal: debe estar %{count}
+  error_can_not_unarchive_project: El proyecto no pudo ser odarchivován.
+  error_can_not_delete_project: El proyecto no se puede eliminar.
+  error_can_not_delete_project_template: Plantilla no se puede eliminar.
+  error_can_not_create_project_template: No se ha podido crear una plantilla a partir
+    de un proyecto %{projectname}.
+  error_bulk_update_save: ! '%{count} Error al guardar el objeto'
+  error_no_file_selected_to_upload: No existe el archivo fue seleccionado para la
+    carga.
+  confirm_admininstration_display_all_project: Ver todos los proyectos se tendrá un
+    tiempo muy largo. ¿Desea continuar?
+  text_commit_example_1: ! 'refs # 1523 @ 5h30m Calendario Completo'
+  text_commit_example_2: la tarea č.1523 zaloguje 5h 30m y
+  my_page_timelog_calendar_period:
+    month: Mensual
+    week: Semanal
+  easy_pages:
+    pages:
+      my_page: Mi página
+      project_overview: Proyecto - casa
+    pages_description:
+      my_page: Mi página
+      project_overview: Proyecto - casa
+    modules:
+      issues_create_new: Nueva tarea
+      issue_query: Tareas de filtro
+      projects_query: Proyectos por filtro
+      documents: Papeles
+      issues_assigned_to_me: Mis tareas
+      issues_reported_by_me: Mis tareas reportado
+      issues_watched_by_me: Colaborar en las tareas
+      my_calendar: Mi Calendario
+      my_projects_simple: Lista de proyectos
+      news: Noticias
+      saved_queries: Lista de filtros guardados
+      timelog_simple: El tiempo dedicado
+      timelog_calendar: Calendario de informes
+      issues_rss_reader: Tareas de otro servidor
+      project_news: Noticias
+      project_tree: Subproyectos
+      project_sidebar_all_users_queries: Las tareas a las personas
+      project_sidebar_project_info: Información sobre el proyecto
+      project_sidebar_project_members: Equipo del proyecto
+      project_sidebar_saved_queries: Filtros guardadas
+      project_issues: Tareas
+      noticeboard: Alimentar
+      project_sidebar_family_info: Árbol del proyecto
+      project_info: Información sobre el proyecto
+      attendance: Asistencia
+      users_query: El equipo del proyecto por el filtro
+      resource_availability: Disponibilidad de recursos / habitación
+      google_maps: Google Maps
+      project_history: Historia del proyecto
+    module_category:
+      calendars: Calendarios
+      issues: Tareas
+      lists: Listas
+      others: Otro
+      projects: Proyectos
+      project_sidebar: Sidebar
+      timelog: El tiempo dedicado
+      users: Usuarios
+      redmine: Redmine
+    zones:
+      top_left: arriba a la izquierda
+      top_middle: parte superior central
+      top_right: arriba a la derecha
+      middle_left: medio a la izquierda
+      middle_middle: en el medio
+      middle_right: medio derecho
+      bottom_left: abajo a la izquierda
+      bottom_middle: parte inferior central
+      bottom_right: abajo a la derecha
+      right_sidebar: barra lateral derecha
+    zones_description:
+      top_left: descripción
+      top_middle: descripción
+      top_right: descripción
+      middle_left: descripción
+      middle_middle: descripción
+      middle_right: descripción
+      bottom_left: descripción
+      bottom_middle: descripción
+      bottom_right: descripción
+      right_sidebar: descripción
+  label_my_page_project_output:
+    list: lista
+    calendar: Calendario
+  label_my_page_issue_output:
+    list: lista
+    calendar: Calendario
+  select_easy_page_module_project_info:
+    label: propiedad para ver
+    description: descripción
+    customfields: proyectos de campos personalizados
+  easy_page_module:
+    project_query:
+      adhoc_query: ! 'Ad-hoc nombre del filtro:'
+      adhoc_query_default_text: Nombre del filtro
+    issue_query:
+      adhoc_query: ! 'Ad-hoc nombre del filtro:'
+      adhoc_query_default_text: Nombre del filtro
+    document_query:
+      adhoc_query: ! 'Ad-hoc nombre del filtro:'
+      adhoc_query_default_text: Nombre del filtro
+    user_query:
+      adhoc_query: ! 'Ad-hoc nombre del filtro:'
+      adhoc_query_default_text: Nombre del filtro
+    attendance:
+      adhoc_query: ! 'Ad-hoc nombre del filtro:'
+      adhoc_query_default_text: Mi asistencia
+    resource_availability:
+      label_resource_name: Nombre de la fuente
+      label_day_start_time: Comience el día
+      label_day_end_time: Fin del día
+      label_set_available: Encienda off
+      label_set_unavailable: Cambiar a ocupado
+      label_available: De
+      label_unavailable: Ocupado
+      label_set_day_available: Apague todo el día en
+      label_set_day_unavailable: Cambie todo el día ocupado
+      label_description_prompt: ! 'Por favor, introduzca alguna razón:'
+    new_issue:
+      field: Campo
+      show: Se muestra
+      default_value: El valor por defecto (en blanco significa que no hay cambio)
+    project_history:
+      heading_project_edit_custom_fields: Editar campos personalizados del proyecto
+  menu:
+    admin:
+      easy_pages_administration: Personalizar páginas
+  breadcrumb:
+    label:
+      easy_pages_administration: Personalizar páginas
+      easy_page_templates: Página Plantilla %{pagename}
+      easy_page_new: Nueva página
+      easy_page_show: Módulos en la página %{pagename}
+      easy_page_edit: Edición %{pagename}
+      easy_page_templates_edit: Edición de plantillas %{templatename}
+      easy_page_templates_new: Nueva plantilla de página
+      easy_page_template_view: Módulos de distribución
+      easy_page_template_edit: Edición del diseño de módulos
+      easy_page_template_user_modules: Módulos de diseño
+    title:
+      easy_pages_administration: Clic para la administración de cada página.
+      easy_page_templates: Haga clic aquí para ir a la lista de plantillas de sitio
+        %{pagename}.
+      easy_page_new: Haga clic para iniciar una nueva página.
+      easy_page_show: Puede hacer clic en los módulos de página zobrzit %{pagename}.
+      easy_page_edit: Haga clic para editar una página %{pagename}.
+      easy_page_templates_edit: Haga clic para editar la plantilla %{templatename}.
+      easy_page_templates_new: Clica para crear una nueva plantilla en el sitio %{pagename}.
+      easy_page_template_view: Pulsa aquí para ver la disposición de los módulos.
+      easy_page_template_edit: Click, puede modificar el diseño de los módulos en
+        la plantilla.
+      easy_page_template_user_modules: Pulsa aquí para ver la disposición de los módulos.
+  easy_user_working_time_calendar_names:
+    standard: Estándar
+  easy_lookup:
+    document:
+      label: Papeles
+    group:
+      label: Grupos
+    issue:
+      label: Tareas
+    project:
+      label: Proyectos
+    user:
+      label: Usuarios
+    version:
+      label: Hitos
+  project_default_page:
+    project_overview: Descripción del proyecto
+    roadmap: Hitos
+    issue_tracking: Tareas
+    time_tracking: El tiempo dedicado
+    news: Noticias
+    documents: Papeles
+    repository: Repositorio
+    calendar: Calendario
+    gantt: Gantt
+    boards: Foro
+    files: Archivos
+    wiki: Wiki
+  select_option_issue_restrictions_users_blank: << Seleccione >>
+  label_eqdt: ''
+  bulk_time_entry_title: Escribiendo tiempo
+  label_bulk_time_entries: Escribiendo tiempo
+  label_bulk_time_add_another: Añadir más
+  label_bulk_time_flash_project: ! 'Proyecto:'
+  label_bulk_time_flash_issue: ! 'Tarea:'
+  label_bulk_time_flash_comment: ! 'Comentario:'
+  label_bulk_time_flash_user: ! 'Usuario:'
+  label_bulk_time_flash_hours: ! 'Número de horas:'
+  label_bulk_time_flash_spent_on: ! 'Fecha:'
+  button_back_to_calendar: Volver al calendario
+  button_bulk_time_save_and_continue: Guardar y añadir otro
+  text_bulk_time_entry_permission: Este usuario no tiene derecho a la información
+    en tiempo en proyectos.
+  permission_view_bulk_time_entry: Misa afiliado tiempo
+  mail:
+    field_author: Entrado
+    field_updated_by: Actualizado
+    field_before: antes
+    field_updated_time: Actualizado
+    label_attachment_new: Ha añadido un nuevo archivo
+    text_attachment_added: ! 'El usuario %{user} añadido a %{time} al archivo siguiente
+      %{added_to} al archivo siguiente (s)::'
+  attachments:
+    no_more_versions: No hay otras versiones
+    revert_to:
+      successfully: Apéndice logrado volver a la versión %{version}.
+      failed: Attachment failed para volver a la versión %{version}. La versión actual
+        es:%{current_v}.
+  easy_query:
+    name:
+      easy_issue_query: Tareas
+      easy_project_query: Proyectos
+      easy_user_query: Usuarios
+      easy_document_query: Papeles
+      easy_version_query: Hitos
+      easy_attendance_query: Asistencia
+      easy_time_entry_query: Entradas Tiempo
+      easy_group_query: Grupos
+    label:
+      default_columns: Columnas predeterminadas
+      default_fitlers: Filtros predeterminados
+    button_apply:
+      project: Aplicar la configuración
+      user: Aplicar la configuración
+      issue: Aplicar la configuración
+    sidebar_filters:
+      personal:
+        easy_issue_query: Filtros personales por encima de las tareas
+        easy_user_query: Filtros personales sobre los usuarios
+        easy_project_query: Filtros personales a través de proyectos
+        easy_document_query: Filtros personales por encima de los documentos
+        other: Filtros personales
+        easy_attendance_query: Filtros privado en la asistencia
+        easy_group_query: Filtros privados en grupos
+        easy_member_query: Filtros privados a los miembros
+        easy_time_entry_query: Filtros privados en tiempo pasado
+        easy_version_query: Filtros privados en versiones
+      public:
+        easy_issue_query: Filtros público por encima de las tareas
+        easy_user_query: Filtros de los usuarios del público
+        easy_project_query: Filtros públicas sobre proyectos
+        easy_document_query: Los documentos públicos de filtros
+        other: Filtros Públicas
+        easy_attendance_query: Filtros públicas sobre la asistencia
+        easy_group_query: Filtros públicas en los grupos
+        easy_member_query: Filtros públicas sobre los miembros
+        easy_time_entry_query: Filtros Públicas sobre el tiempo pasado
+        easy_version_query: Filtros públicas sobre versiones
+    easy_lookup:
+      name:
+        issue:
+          default: Seleccione las tareas
+          issue_relation: Seleccione las tareas relacionadas con el
+        project:
+          default: Seleccionar proyectos
+          project_relation: Seleccione los proyectos relacionados
+        user:
+          default: Seleccione un usuario
+        group:
+          default: Seleccione el grupo
+        version:
+          default: Seleccione hitos
+          version_relation: Seleccione los hitos relacionados
+        document:
+          default: Seleccione los documentos
+  easy_scheduler_task_info:
+    planned: Papel %{task_name} fue planeado.
+    running: Papel %{task_name} está en curso.
+    ended_failed: Papel %{task_name} terminó sin éxito.
+    ended_ok: Papel %{task_name} terminó con éxito.
+    initialized: Papel %{task_name} fue creado.
+  label_avatar: Avatar
+  message_avatar_uploaded: Avatar se ha guardado correctamente.
+  button_change_avatar: Edición de Avatar
+  button_delete_avatar: Retire avatar
+  are_you_sure_delete_avatar: ¿Estás seguro que quieres eliminar el avatar?
+  avatar_deleted: Avatar ha sido eliminada.
+  unable_to_delete_avatar: Lo sentimos. Al borrar un error avatar.
+  avatar_invalid_file: Tipo de archivo ilegal
+  license_manager:
+    user_limit: El número máximo de usuarios que se ha agotado, para ampliar contacto
+      con nosotros en %{email}
+    user_limit_unlock_button: Ha alcanzado el número máximo de usuarios activos.
+  image_tag:
+    alt:
+      bullet_toggle_plus: Cambiar a modo de selección múltiple
+  collapse_expand: expandir / contraer
+  gantt_day: día
+  gantt_day_plural: días
+  gantt_day_plural5: días
+  gantt_start: Iniciar
+  gantt_duration: Tiempo
+  gantt_completed: Hecho
+  button_gantt_zoom_day: Día
+  button_gantt_zoom_week: Semana
+  button_gantt_zoom_month: Luna
+  issue_predecessor_error: Tarea %{issue_name} sigue una tarea diferente.
+  project_predecessor_error: Proyecto %{project_name} sigue a un proyecto diferente.
+  version_predecessor_error: Hito %{version_name} sigue un hito diferente.
+  button_fullscreen: Pantalla completa
+  title_fullscreen: Ver en pantalla completa
+  button_fullscreen_close: X
+  label_easy_publishing_module: Módulo
+  label_easy_publishing_modules: Publicación de módulos
+  easy_publishing_setting: Módulo
+  easy_publishing_setting_new: La nueva configuración del módulo
+  label_easy_publishing_setting_url: Ejemplo de URL
+  button_easy_publishing_settings_new: Nuevo módulo
+  label_easy_publishing_module_info: Info
+  label_easy_publishing_module_contact: Contacto
+  label_easy_publishing_module_help: Ayudar
+  label_easy_publishing_module_info_header: ¿Sabe usted?
+  label_easy_publishing_invalid_file_type: Los siguientes archivos son imágenes, y
+    por lo tanto no se han salvado:%{files}.
+  helper_module:
+    button_show_help: Mostrar ayuda
+    button_close_help: Cerrar ayudar
+    alt_image_help: Ayudar
+    title_help: Ayudar
+    title_contact: Contacto
+    button_show_youtube: Reproducción de vídeo
+  user_time_entry_setting:
+    all: tiempo o rango
+    hours: tiempo
+    range: rango (de - a)
+  easy_attendance:
+    label: Asistencia
+    label_menu_more: Asistencia
+    label_back_to_basic: Cerrar
+    label_setting: El uso de registros de entradas y salidas
+    label_mail: Notificación por correo
+    label_report_sum_time_entry: La suma de %{year}[Reportado Hora]
+    label_report_sum_attendance: La suma de %{year}[Asistencia]
+    new: Escribir llegada / salida
+    arrival: Que viene
+    departure: Salida
+    advanced_settings: Planificar la asistencia
+    label_activities: Actividad
+    project_mapping_0: Sin vínculos con el proyecto
+    project_mapping_1: Enlace al proyecto
+    project_mapping_1_1: y la actividad
+    link_to_easy_attendance: Lista de asistencia
+    description:
+      arrival: Escribir llegada
+      departure: Escribir partida
+      advanced_infobox: ! 'Ejemplo: Estoy tomando unas vacaciones de %{from} a %{to}.'
+    activities:
+      enumerations:
+        label: Actividades (asistencia)
+        new: Nueva actividad a bordo
+    title:
+      advanced_settings: Planifique su trabajo desde casa o de vacaciones.
+    arrival_date_error: no puede ser mayor que el dejar.
+    arrival_already_taken: En este intervalo, sin ninguna otra actividad.
+    invalid_date: sin fecha
+    departure_is_same_as_arrival: no tienen el mismo tiempo que la llegada.
+    notice:
+      notice_arrivaled: Visto que viene. Haga clic para cambiar asistencia.
+      warning_missing_departure: Entre los asistentes están perdiendo salida del día
+        anterior %{arrival_date}. Por favor, haga una entrada.
+    calendar:
+      legend:
+        starting: Escrita en el inicio de este día
+        ending: Fin de las actividades en este día
+        starting_ending: Actividad comienza y termina el día
+    mail_added:
+      subject: ! '%{user} anuncia ausencia en el lugar de trabajo'
+      body_top: ! '%{user} anuncia %{activity} desde el lugar de trabajo %{from} a
+        %{to}.'
+      body_link: Resumen Asistencia mostrar aquí.
+    mail_updated:
+      subject: ! '%{user} anuncia ausencia en el lugar de trabajo'
+      body_top: ! '%{user} anuncia %{activity} desde el lugar de trabajo %{from} a
+        %{to}.'
+      body_link: Resumen Asistencia mostrar aquí.
+    error_can_not_delete_activity: Actividad contiene registros y no puede suprimirse.
+    change_easy_attendance_activity_to: ! 'Cambiar actividad para:'
+    text_activity_destroy_with_attendances: La actividad se informaron total %{count}
+      registros de asistencia. ¿Está seguro que desea eliminar la actividad y todos
+      los registros?
+    label_statistic_worked: trabajado
+    label_statistic_attendance: asistencia
+    label_statistic_supplement: de %{hours}, Por ejemplo.%{percent}%
+    field_range: ! 'Escribir asistencia en:'
+    range:
+      full_day: Todo el día
+      forenoon: La mañana
+      afternoon: Tarde
+  field_at_work: En el trabajo?
+  field_arrival: Que viene
+  field_departure: Salida
+  field_easy_attendance_activity: Actividad
+  field_arrival_user_ip: IP que viene
+  field_departure_user_ip: Salida IP
+  field_color_schema: Esquema de color
+  sidebar_easy_attendances_all_users_queries: La asistencia de personas
+  permission_view_easy_attendances: Ver y utilizar la asistencia
+  permission_edit_easy_attendances: Modificar los registros de asistencia extranjera
+  permission_view_project_overview_users_query: Ver el uživetele página del proyecto
+    por el filtro
+  label_rating: Puntuación
+  label_easy_global_rating: Evaluación Global
+  error_put_between_issue_count: Por favor, seleccione sólo dos tareas
+  label_xml_data_export: Exportación de datos XML
+  label_xml_data_select_exportables: Seleccione los datos a exportar
+  label_xml_data_select_projects: Seleccionar proyectos
+  button_xml_data_import: Importar
+  button_xml_data_continue: Continuar
+  button_xml_data_export: Exportar
+  label_xml_data_import: Importar datos XML
+  label_user_mapping: Correlación de usuarios
+  label_map_to: Asignado a
+  option_map_to_new_user: nuevo usuario
+  label_xml_data_notify: Notificar al usuario
+  option_map_to_new_tracker: tipo de tarea nuevo
+  label_tracker_mapping: Tipos de asignación de tareas
+  label_role_mapping: Asignación de funciones
+  label_issue_status_mapping: Cartografía del estado de las tareas
+  label_issue_priority_mapping: Cartografía del estado de las tareas
+  label_time_entry_activity_mapping: Actividades de mapeo
+  label_custom_field_mapping: Asignación de campos personalizados
+  option_map_to_new_role: nuevo papel
+  option_map_to_new_project_custom_field: nuevo campo
+  option_map_to_new_issue_custom_field: nuevo campo
+  option_map_to_new_issue_priority: nueva prioridad
+  option_map_to_new_issue_status: nuevo estado
+  option_map_to_new_time_entry_activity: nueva actividad
+  label_auto_mapping: Automáticamente mapa
+  label_import_success: Todos los datos se han importado correctamente
+  label_import_zip_error: Formato de datos inadecuada
+  xml_data_users: Usuarios
+  xml_data_trackers: Tipos de tareas
+  xml_data_roles: Papel
+  xml_data_issue_priorities: Dar prioridad a las tareas
+  xml_data_project_custom_fields: Los campos personalizados
+  xml_data_issue_custom_fields: Los campos personalizados para las tareas
+  xml_data_issue_statuses: Estado de la tarea
+  xml_data_document_categories: Las categorías de documentos
+  xml_data_time_entry_activities: Actividades
+  sample_text: Proyecto Easy
+  easy_color_scheme_not_available: El esquema de color está configurado por %{current},
+    Puede cambiar
+  easy_search:
+    legend_entities: ! 'Buscar:'
+    legend_column_types: ! 'Buscar en:'
+    label_column_type:
+      name: Nombre
+      description: Descripción
+      comment: Comentario
+      other: Otro
+  enumeration_easy_version_cetegory: Hitos Categoría
+  label_tracker_move_issues: Mueva desafíos
+  label_tracker_move_issues_explanation: ! 'Cambiar el tipo de tarea:'
+  button_tracker_move_issues: Mover y borrar
+  option_dont_map: ! '- Quite la asignación -'
+  move_auth_source_users_explanation: ! 'Seleccione un modo de autenticación de usuario
+    diferente:'
+  button_auth_source_move_users: Mover y borrar
+  dashboard:
+    legends:
+      others: Otro
+      projects: Proyectos
+      issues: Tareas
+      users: Usuarios
+      security: Seguridad
+      xml: XML
+      extensions: Extensión
+      settings: Ajuste
+  easy_rake_tasks:
+    views:
+      heading_index: Visión general de las tareas programadas
+      button_index: Visión general de las tareas programadas
+      heading_settings: Configuraciones de trabajo %{task_name}
+      heading_task_infos: Resumen proběhnutých empleo -%{task_name}
+      interval: Intervalo
+      next_run_at: Inicio Siguiente
+      last_action: Última acción
+    periods:
+      daily: cada %{interval} día
+      hourly: cada %{interval} horas
+      minutes: cada %{interval} acta
+    easy_rake_task_receive_mail:
+      caption: Recepción de correos
+    easy_rake_task_repeating_entities:
+      caption: Reccuring cuestiones demonio
+    easy_rake_task_history_cleaner:
+      caption: Eliminación de la historia antigua programado tareas
+    easy_rake_task_check_failure_tasks:
+      caption: Checker para tareas programadas fracaso
+      email_type:
+        all_admins: Enviar correo electrónico a los administradores
+        email: Enviar email a
+      mail:
+        heading: Estas tareas fallos programados en %{date}
+        footer: Puedes activar o desactivar en las tareas programadas
+  easy_rake_task_infos:
+    status:
+      running: Es
+      ended_ok: Terminado en orden
+      ended_failed: Finalizado con un error
+  permission_manage_bulk_version: Hitos de gestión colectiva
+  text_easy_settings_time_entry_heading: Pasamos plazos
+  text_easy_settings_time_entry_limit: Permitir añadir / editar vez
+  text_easy_settings_time_entry_limit_note: Si desea desactivar los límites de tiempo,
+    tome las siguientes casillas de texto en blanco.
+  text_easy_settings_time_entry_limit_past: días a pasado
+  text_easy_settings_time_entry_limit_future: días a futuro
+  text_settings_gravatar_enabled: Si el elemento no está seleccionado Gravatar de
+    avatar clásico se utiliza desde el perfil de usuario.
+  setting_show_issue_id: Mostrar ID de tarea
+  setting_quick_jump_to_an_issue: Pasar a la tarea si la ID es buscado
+  label_issue_due_date_overdue: ! 'De izquierda a completar:'
+  label_issue_due_date_not_overdue: Transcurrido el plazo para
+  label_project_due_date_overdue: para completar el restante
+  label_project_due_date_not_overdue: después de la fecha límite para
+  label_easy_setting_use_personal_theme: Permitir a los usuarios cambiar su apariencia?
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: Nueva fuente
+  title_permission_flag_r: No se puede escribir - sólo lectura
+  title_permission_flag_p: Requiere inicio de sesión
+  title_permission_flag_m: Se requiere ser miembro del proyecto
+  title_permission_flag_l: Requiere inicio de sesión
+  setting_display_issue_relations_on_new_form: Ver las tareas relacionadas en el nuevo
+    formulario
+  gantt_new_following_issue: Siguiente tarea nueva
+  gantt_new_preceding_issue: Nueva tarea anterior
+  gantt_new_child_issue: Nueva subtarea
+  themes:
+    easy: Fácil
+    easy_widescreen: Ancho
+  field_easy_send_invitation: Enviar invitación por correo electrónico
+  field_send_to_external_mails: Enviar actualizar?
+  label_easy_user_working_time_day_settings: Establecer los días
+  field_easy_do_not_allow_close_if_subtasks_opened: No permita que se cierre la tarea
+    si subtarea se abre
+  field_easy_do_not_allow_close_if_no_attachments: No permita cerrar las tareas a
+    menos que el archivo adjunto
+  error_cannot_close_issue_due_to_subtasks: Tarea no se puede cerrar porque contiene
+    tareas abiertas:%{issues}
+  error_cannot_close_issue_due_to_no_attachments: Tarea no se puede cerrar porque
+    no tiene apego
+  setting_issue_recalculate_attributes: Crear subtarea afectar tarea padre (prioridad,
+    tiempo estimado,% hecho, fecha de inicio y fecha de vencimiento)
+  field_attachments: Archivos adjuntos
+  label_field_format_autoincrement_entity_limitation: ! 'Automática de números contando
+    en:'
+  field_easy_issue_prefix: Tarea prefijo
+  label_copied_to: copied to
+  label_copied_from: copied from
+  label_any_issues_in_project: any issues in project
+  label_any_issues_not_in_project: any issues not in project
+  field_private_notes: Private notes
+  permission_view_private_notes: View private notes
+  permission_set_notes_private: Set notes as private
+  label_no_issues_in_project: no issues in project
+  label_any: todos
+  label_last_n_weeks: last %{count} weeks
+  setting_cross_project_subtasks: Allow cross-project subtasks
+  label_cross_project_descendants: Con proyectos hijo
+  label_cross_project_tree: Con el árbol del proyecto
+  label_cross_project_hierarchy: Con la jerarquía del proyecto
+  label_cross_project_system: Con todos los proyectos
+  button_hide: Hide
+  setting_non_working_week_days: Non-working days
+  label_in_the_next_days: in the next
+  label_in_the_past_days: in the past
+  permission_view_news: Ver noticia
+  permission_edit_own_easy_attendances: Editar asistencias propias
+  permission_view_easy_attendance_other_users: Ver otros usuarios de la asistencia
+  heading_easy_issues_preview_external_email: Enviar correo externo
+  label_gantt_show_all_versions: Mostrar todos los hitos
+  label_gantt_versions_above: Mostrar hitos anteriormente tareas
+  label_easy_attendance_queries_plural: Asistencia
+  button_send_email: Enviar correo
+  button_dont_send_email: No enviar correo
+  field_ckeditor_toolbar_config: Editor HTML barra de herramientas
+  editor_config_names:
+    basic: Básico
+    extended: Avanzado
+    full: Completo
+  text_milestone_effective_date_from_issue: ! 'Fecha de vigencia ajustar tarea forma:
+    #%{issue}'
+  label_my_page_google_maps_iframe_tag: HTML embebido etiqueta
+  label_easy_google_maps_address: Dirección - Google map
+  button_my_page_google_maps_url_helper: Ayuda para la adición de mapa de Google
+  button_link_easy_google_map_address: Mostrar en el mapa de Google
+  field_roles: Papel
+  gantt_end: Fecha de vencimiento
+  setting_milestone_effective_date_from_issue_due_date: Permitir establecer una fecha
+    de vencimiento de la tarea después del final del hito.
+  custom_field_names:
+    external_mails:
+      label: Correo externo
+  text_project_archive_confirmation: ¿Está seguro que desea archivar estos datos del
+    proyecto y relacionados?
+  text_project_close_confirmation: ¿Está seguro que desea cerrar este proyecto?
+  text_project_reopen_confirmation: ¿Seguro de que deseas reabrir este proyecto?
+  permission_manage_global_versions: Gestione hitos mundiales
+  label_bulk_time_entries_edit: Editar pasado tiempo
+  label_easy_versions: Hitos
+  label_easy_versions_top_menu: Hitos
+  label_easy_repository_source_easy_repository_url: URL de repositorio
+  error_create_repo_from_url_cannot_create_dir: No se puede crear directorio %{dir}
+  error_create_repo_from_url_cannot_determine_repo_name: No se puede determinar el
+    nombre de repositorio
+  error_create_repo_from_url_repo_already_exists: Repositorio ya existe
+  error_create_repo_from_url_repo_cannot_be_created: Depósito no puede ser creado
+  text_git_repository_url_note: ! 'URL en el formulario http (s) :/ / usuario: contraseña
+    @ url / repo.git. El repositorio se crea automáticamente localmente después de
+    la presentación de formulario.'
+  label_field_format_rating_star_no: Estrella
+  label_preview_external_email_mail_sender: Correo del remitente
+  label_preview_external_email_mail_recepient: Correo recepient
+  label_preview_external_email_mail_subject: Correo tema
+  label_preview_external_email_mail_body_html: Correo cuerpo en HTML
+  label_preview_external_email_mail_body_plain: Correo cuerpo como texto sin formato
+  text_external_email_sent: Un mensaje fue enviado adjunto al correo externo %{email}.
+  field_is_planned: Planificado
+  label_permissions_global: Permisos globales
+  label_permissions_project: Permisos de Project
+  label_project_gantt: Proyecto gantt
+  label_allow_log_time_to_closed_issue: Permitir inicio de sesión a tiempo los problemas
+    cerrados
+  project_status_planned: planificado
+  label_preview_external_email_mail_cc: Enviar copia
+  title_user_detail: Al hacer clic se puede mostrar detalles de usuario.
+  title_version_detail: Al hacer clic se puede mostrar detalles de hito.
+  text_textile_migration: ! 'Para migrar los textos guardados desde textil a utilizar
+    en esta aplicación HTML desde la línea de comandos: "agrupar ejecutivo rastrillo
+    easyproject: textil: migrate_all RAILS_ENV = producción"'
+  label_easy_gantt_theme_plural: PDF gantt temas
+  label_easy_gantt_theme_new: Nuevo tema
+  label_header_style: Estilo de cabecera
+  label_logo: Logo
+  field_header_color: Color del fondo
+  field_header_font_color: Color del texto
+  label_with_theme: usando el tema
+  label_is_null: está vacío
+  label_is_not_null: no está vacío
+  field_closed_on: Cerrada
+  field_inherit_members: Heredar miembros
+  setting_jsonp_enabled: Habilitar soporte de JSONP
+  setting_default_projects_tracker_ids: Tipos de petición habilitados por defecto
+  permission_add_documents: Agregar documentos
+  permission_edit_documents: Editar documentos
+  permission_delete_documents: Eliminar los documentos
+  label_total_time: Tiempo total
+  label_attribute_of_issue: Grupo de %{name}
+  label_attribute_of_user: Usuario de %{name}
+  label_gantt_progress_line: Línea de progreso
+  text_turning_multiple_off: Si deshabilita varios valores, se eliminan varios valores
+    con el fin de preservar un único valor por artículo.
+  permission_manage_easy_issue_timers: Acceda a la configuración del temporizador
+    de tareas
+  permission_edit_project_custom_fields: Editar campos personalizados de proyecto
+  heading_issues_settings_display: Mostrar
+  heading_issues_settings_behaviour: Comportamiento
+  label_template_copy: Copia de plantilla en el proyecto existente
+  label_easy_issue_timer: Task Timer
+  label_easy_issue_timer_settings: Ajustes del temporizador de tareas
+  label_easy_issue_timer_start: Comenzar
+  label_easy_issue_timer_end: Terminación
+  label_easy_issue_easy_is_repeating: Repitiendo
+  label_easy_issue_easy_repeating_period: Repitiendo período
+  label_easy_issue_easy_repeating_period_daily: Diario
+  label_easy_issue_easy_repeating_period_weekly: Semanal
+  label_easy_issue_easy_repeating_period_monthly: Mensual
+  label_easy_issue_easy_repeating_period_custom: Costumbre
+  label_easy_issue_easy_reccuring_daily_every: Cada
+  label_easy_issue_easy_reccuring_daily_each: días
+  label_easy_issue_easy_reccuring_daily_work: días de trabajo
+  label_easy_issue_easy_repeating_endtype: Final
+  label_easy_issue_easy_repeating_endtype_date: En la fecha
+  label_easy_issue_easy_repeating_endtype_count: Después repite x
+  label_easy_issue_easy_repeating_endtype_endless: Final del proyecto debido
+  label_easy_issue_easy_repeating_start: Iniciar
+  label_easy_issue_reccuring_after: Después
+  label_easy_issue_reccuring_day_plural: días
+  label_easy_issue_reccuring_month: mes
+  label_easy_issue_subject_reccuring_suffix: (Reccuring)
+  label_easy_issue_reccuring_monthly_orders:
+    1: Primero
+    2: Segundo
+    3: Tercero
+    4: Cuarto
+    5: Último
+  button_copy_project_from_template: Copia para proyectar
+  button_select_file: Elegir archivo
+  button_easy_issue_timer_play: Estoy en ello
+  button_easy_issue_timer_stop: Ya está hecho
+  title_button_template_copy_project: Copie la plantilla en el proyecto existente.
+  title_easy_issue_timer_button_play: Actualización de la tarea y comenzar a medir
+    el tiempo.
+  title_easy_issue_timer_button_stop: Actualización de la tarea y de prellenado forma
+    el tiempo de entrada
+  title_jump_to_project: Seleccione el proyecto
+  field_easy_issue_timer_assign_to_me: Asignado a mí
+  field_easy_issue_timer_round: Tiempo de ida
+  field_attachment_reminder_words: Palabras adjuntos
+  field_easy_is_repeating: Repitiendo
+  error_update_easy_issue_timer_settings: No establecer sido salvados
+  error_project_not_selected: Proyecto no seleccionado
+  text_easy_attachment_reminder_confirm: Usted ha mencionado archivo adjunto, pero
+    que no conecta una, ¿quieres continuar de todos modos?
+  text_easy_attachment_reminder_explanatory_html: ! '? = Cualquier carácter <br />*
+    = Cualquier número de <br /><dd style="margin-left:15px;"> caracteres arbitrarios
+    </dd>'
+  setting_project_display_identifiers: Mostrar los identificadores de proyecto
+  search_field_placeholders:
+    issues: Buscar en las tareas
+    projects: Buscar en los proyectos
+  label_easy_issue_easy_reccuring_monthly_every: cada
+  permission_delete_project: Eliminar proyecto
+  label_easy_lesser_admin_for: ! 'El área donde el administrador menor puede acceder
+    a:'
+  title_issue_remove_parent: Al hacer clic en esta tareas no ser más largo subtarea.
+  field_easy_lesser_admin: Administrador de Menores
+  field_easy_user_type: Tipo de usuario
+  field_easy_repeat_settings: Opciones Reccuring
+  error_repeat_period_missing: Período de repetición se debe elegir
+  error_repeat_endtype_missing: Fin de la repetición tiene que ser elegido
+  error_repeat_endtype_count_blank: reccuring cuenta no puede estar en blanco
+  error_repeat_endtype_count_numeric: reccuring recuento tiene que ser un número
+  error_repeat_endtype_date_blank: fecha de fin no puede estar en blanco
+  error_repeat_daily_option_missing: Tipo reccuring (trabajo o cada día) se
+    debe elegir
+  error_repeat_daily_x_blank: reccuring período de cómputo de días no puede
+    estar en blanco
+  error_repeat_daily_x_numeric: reccuring período de recuento de días tiene
+    que ser un número
+  error_repeat_weekly_days_selected: por lo menos un día de la semana tiene
+    que ser seleccionada
+  error_repeat_monthly_option_missing: Tipo reccuring (el enésimo día / personalizado)
+    tiene que ser elegido
+  error_repeat_monthly_day_numeric: reccuring día tiene que ser el número entre
+    1 y 31
+  error_repeat_monthly_month_numeric: reccuring meses tiene que ser el número
+    entre
+  text_project_is_planned: Si se planifica un proyecto, ninguno de los correos se
+    envían.
+  user:
+    easy_user_type:
+      internal: Usuario
+      external: Cliente
+  setting_issue_set_done_after_close: Situado a 100% hecho en tareas cerradas
+  setting_allow_repeating_issues: Permitir repetir tareas
+  button_gantt_relation_destroy: Retire relación
+  label_zoom: Enfocar
+  field_send_all_planned_emails: Enviar todos los mensajes planificados
+  label_easy_issue_easy_repeating_further_options: Camino de reccuring
+  label_easy_issue_easy_repeating_time: Creación de la configuración
+  label_easy_issue_easy_repeating_time_hour: Repetir a
+  label_easy_issue_easy_repeating_create_time: Crear tiempo
+  label_easy_issue_easy_repeating_in_advance: Por adelantado
+  label_easy_issue_easy_repeating_on_start_date: En reccuring días
+  label_easy_issue_easy_repeating_dont_create_now: No cree ahora
+  label_easy_issue_easy_repeating_create_now_all: Cree ahora todos
+  label_easy_issue_easy_repeating_create_now_count: Cree ahora amout
+  label_added_datetime_by: Añadido por %{author} en %{datetime}
+  label_updated_datetime_by: Actualizado por %{author} en %{datetime}
+  label_user_mail_no_notified_if_issue_closing: Yo no quiero ser notificado de las
+    tareas cerradas
+  label_user_mail_no_notification_ever: No notificar a nadie de mis actualizaciones
+  button_release_cache: Caché de lanzamiento
+  setting_use_easy_cache: Habilitar caché particularmente
+  label_easy_issue_easy_repeating_create_now: Crear ahora
+  label_easy_attendance_user_arrival_add_notify_title: Notificarme después conectado
+    a este usuario
+  label_easy_setting_required_issue_id_at_time_entry: Issue se requiere entrada de
+    tiempo
+  button_journal_unprivate_note: Publicación
+  title_journal_unprivate_note: Ver todos los usuarios actualizar
+  notice_journal_published: Actualización publicada!
+  text_easy_attendance_user_detail_online_at: Usuario llegó a
+  text_easy_attendance_user_detail_offline_at: Licencia de usuario de
+  text_easy_attendance_user_detail_no_data_today: Usuario aún no ha llegado
+  text_easy_attendance_user_notify_default_message: ! '%{user} acaba de conectarse'
+  text_easy_attendance_user_notify_title: Notifique será le envía:%{email}
+  text_easy_attendance_user_notify_already_exists_warning: ¡Advertencia! Notifique
+    ya existe. Total %{count} x
+  setting_just_one_issue_mail: Enviar un solo correo electrónico después de la actualización
+    de tareas (correo no splitted a mi y otros)
+  label_easy_issue_easy_repeating_period_yearly: Anual
+  label_easy_issue_easy_repeating_create_time_time: Tiempo de crear
+  label_easy_issue_easy_reccuring_recur_every: Se repiten diariamente
+  label_easy_issue_easy_reccuring_recur_years: año (s)
+  label_easy_issue_easy_reccuring_recur_months: mes (s)
+  label_easy_issue_easy_reccuring_yearly_month_of: de
+  label_easy_issue_easy_reccuring_after_recurs: iteraciones
+  label_last_n_days_next_m_days: -%{last} día +%{next} días
+  label_email_field:
+    from: DE
+    to: A
+  button_execute: Ejecutar
+  title_easy_copy_to_project: Crear un proyecto de la edición
+  field_easy_next_start: Próxima salida
+  text_easy_issue_reccuring_create_now: En esta sección se puede definir el número
+    de temas que desea crear ahora. Los próximos números se creen en el día determinado
+    a partir de la creación de reccuring. En hora se define a continuación.
+  label_easy_publishing_module_youtube: YouTube
+  setting_close_subtask_after_parent: Después tarea cerrada, cierre subtareas
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: Desconocido
+        received: Recibido
+        processed_and_deleted: Procesados ​​y eliminados
+        not_processed_and_deleted: NO procesado y se ha suprimido
+        not_processed_and_left_on_server: NO procesado y dejado en el servidor
+        cannot_be_processed: No puede ser procesado
+  label_video_url: URL de video
+  button_easy_copy_to_project: Crear un proyecto
+  permission_edit_own_projects: Editar proyectos propios
+  label_easy_attendance_is_repeating: Repita?
+  label_easy_attendance_repeating_to: Repita el procedimiento para
+  label_easy_custom_field_disable: Inhabilitar
+  label_easy_custom_field_enable: Permitir
+  label_filter_group_project_fields: Proyecto
+  label_filter_group_relations: Relaciones
+  label_filter_group_custom_fields_suffix: campos personalizados
+  label_filter_group_unknown: Desconocido
+  label_filter_group_easy_issue_query: Cuestiones
+  label_filter_group_easy_project_query: Proyectos
+  label_filter_group_easy_user_query: Usuarios
+  label_filter_group_easy_document_query: Documentos
+  label_filter_group_easy_version_query: Hitos
+  label_filter_group_easy_attendance_query: Asistencia
+  label_filter_group_easy_time_entry_query: Entradas Tiempo
+  label_filter_group_easy_group_query: Grupos
+  label_easy_setting_show_time_entry_range_select: Mostrar desde / hasta el rango
+    que seleccione
+  lable_should_send_invitation_update: Enviar una notificación
+  button_easy_issue_timer_pause: Pausa
+  button_easy_issue_timer_resume: Continuar
+  button_download_email: Descarga electrónico
+  title_easy_issue_timer_button_pause: Miden el tiempo de pausa
+  title_easy_issue_timer_button_resume: Continuar con el tiempo measuere
+  field_easy_is_meeting: Reunión
+  field_easy_meeting_day: Día de la reunión
+  field_easy_meeting_time: Hora de la reunión
+  field_easy_start_date_time: Hora de inicio
+  field_easy_due_date_time: Hora de vencimiento
+  field_mail_to_admin: Electrónico del administrador
+  notice_easy_custom_field_disabled: Campo personalizado se ha desactivado
+  notice_easy_custom_field_enabled: Campo personalizado se habilitó
+  error_easy_custom_field_disable_deletable: Este campo personalizado no se puede
+    desactivar
+  text_easy_rake_task_failure_email: En caso de avería serán mensaje entregado a este
+    correo
+  label_customize_gantt_export: Ajustes de exportación personalizados
+  label_not_updated_on: No fue actualizado
+  label_easy_rake_period: Cada
+  label_easy_rake_period_monthly: mes
+  label_easy_rake_period_daily: día
+  label_easy_rake_period_hourly: hora
+  label_easy_rake_period_minutes: minuto
+  button_create_issue_from_journal: Crear tema
+  button_additional_context_menu: Otras opciones
+  title_create_issue_from_journal: Crear nueva edición, con el texto de esta revista
+    como una descripción
+  title_additional_context_menu: Haga clic para abrir un menú con opciones adicionales
+  field_time_entry: Pasé un tiempo
+  label_new_subproject_from_template: Nuevo subproyecto de plantilla
+  permission_view_estimated_hours: Ver horas estimadas
+  label_easy_repeat_left_reccurs: Reccurs dejaron
+  button_load_additional_records: Cargar registros adicionales
+  field_sum_estimated_hours: Total de horas estimadas
+  button_print: Imprimir
+  button_pdf: PDF

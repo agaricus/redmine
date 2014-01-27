@@ -1,0 +1,2700 @@
+cs:
+  # Text direction: Left-to-Right (ltr) or Right-to-Left (rtl)
+  direction: ltr
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d.%m.%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Neděle, Pondělí, Úterý, Středa, Čtvrtek, Pátek, Sobota]
+    abbr_day_names: [Ne, Po, Út, St, Čt, Pá, So]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Leden, Únor, Březen, Duben, Květen, Červen, Červenec, Srpen, Září, Říjen, Listopad, Prosinec]
+    abbr_month_names: [~, Led, Úno, Bře, Dub, Kvě, Čer, Čec, Srp, Zář, Říj, Lis, Pro]
+    # Used in date_select and datime_select.
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      time: "%H:%M"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "dop."
+    pm: "odp."
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "půl minuty"
+      less_than_x_seconds:
+        one:   "méně než sekunda"
+        other: "méně než %{count} sekund"
+      x_seconds:
+        one:   "1 sekunda"
+        other: "%{count} sekund"
+      less_than_x_minutes:
+        one:   "méně než minuta"
+        other: "méně než %{count} minut"
+      x_minutes:
+        one:   "1 minuta"
+        other: "%{count} minut"
+      about_x_hours:
+        one:   "asi 1 hodina"
+        other: "asi %{count} hodin"
+      x_hours:
+        one:   "1 hodina"
+        other: "%{count} hodin"
+      x_days:
+        one:   "1 den"
+        other: "%{count} dnů"
+      about_x_months:
+        one:   "asi 1 měsíc"
+        other: "asi %{count} měsíců"
+      x_months:
+        one:   "1 měsíc"
+        other: "%{count} měsíců"
+      about_x_years:
+        one:   "asi 1 rok"
+        other: "asi %{count} let"
+      over_x_years:
+        one:   "více než 1 rok"
+        other: "více než %{count} roky"
+      almost_x_years:
+        one:   "téměř 1 rok"
+        other: "téměř %{count} roky"
+
+  number:
+    format:
+      separator: ','
+      delimiter: ''
+      precision: 2
+    currency:
+      format:
+        unit: 'Kč'
+        format: '%n %u'
+        separator: ','
+        delimiter: ' '
+        precision: 0
+    human:
+      format:
+        delimiter: " "
+        precision: 1
+        separator: ","
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Bajt"
+            other: "Bajtů"
+          kb: "kB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
+# Used in array.to_sentence.
+  support:
+    array:
+      sentence_connector: "a"
+      skip_last_comma: false
+
+  activerecord:
+    models:
+      issue: úkolu
+      easy_user_working_time_calendar: 'Kalendář'
+      easy_user_working_time_calendar_holiday: 'Svátky'
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: 'Nadřazeý kalendář'
+        name: 'Název'
+        default_working_hours: 'Počet pracovních hodin ve dni'
+        first_day_of_week: 'První den v týdnu'
+        is_default: 'Výchozí kalendář'
+      easy_user_working_time_calendar_holiday:
+        name: 'Název'
+        holiday_date: 'Den'
+        is_repeating: 'Opakující se svátek'
+    errors:
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: "je mimo povolený rozsah"
+      template:
+        header:
+          one:    "1 chyba zabránila uložení %{model}"
+          other:  "%{count} chyb zabránilo uložení %{model}"
+        body: "Nastal tento problém:"
+      messages:
+        inclusion: "není zahrnuto v seznamu"
+        exclusion: "je rezervováno"
+        invalid: "je neplatné"
+        invalid_plural: jsou neplatné
+        confirmation: "se neshoduje s potvrzením"
+        accepted: "musí být akceptováno"
+        empty: "nemůže být prázdný"
+        blank: "nemůže být prázdný"
+        blank_group: "nemůže být prázdná"
+        too_long: "je příliš dlouhý"
+        too_short: "je příliš krátký"
+        wrong_length: "má chybnou délku"
+        taken: "je již použito"
+        not_a_number: "není číslo"
+        not_a_date: "není platné datum"
+        greater_than: "musí být větší než %{count}"
+        greater_than_or_equal_to: "musí být větší nebo rovno %{count}"
+        equal_to: "musí být přesně %{count}"
+        less_than: "musí být méně než %{count}"
+        less_than_or_equal_to: "musí být méně nebo rovno %{count}"
+        odd: "musí být liché"
+        even: "musí být sudé"
+        greater_than_start_date: "(%{due_date}) musí být větší než počáteční datum (%{start_date})"
+        not_same_project: "nepatří stejnému projektu"
+        circular_dependency: "Tento vztah by vytvořil cyklickou závislost"
+        cant_link_an_issue_with_a_descendant: "Úkol nemůže být spojen s jedním z jeho dílčích úkolů"
+        cant_link_an_project_with_a_descendant: "Projekt nemůže být spojen s jedním z jeho dílčích projektů"
+        cant_link_an_version_with_a_descendant: "Milník nemůže být spojen s jedním z jeho dílčích milníků"
+        not_a_amount: "není platná částka"
+        before_milestone: "(%{due_date}) musí být menší než datum milníku (%{effective_date})"
+        before_project_end: "(%{due_date}) musí být menší než konec projektu (%{project_due_date})"
+        after_project_start: "(%{start_date}) musí být větší než začátek projektu (%{project_start_date})"
+        less_than_duration: "není dle předepsané doby postačující pro dokončení úkolu"
+        greater_than_soonest_start: "(%{start_date}) musí být větší než nejdřívější začátek (%{soonest_start}) společných úkolů"
+        greater_than_start_date2: "(%{due_date}) musí být větší než začátek (%{start_date})"
+
+  actionview_instancetag_blank_option: Prosím vyberte
+
+  general_text_No: 'Ne'
+  general_text_Yes: 'Ano'
+  general_text_no: 'ne'
+  general_text_yes: 'ano'
+  general_lang_name: 'Czech (Čeština)'
+  general_csv_separator: ','
+  general_csv_decimal_separator: ','
+  general_csv_encoding: ISO-8859-2
+  general_pdf_encoding: UTF-8
+  general_first_day_of_week: '1'
+  general_all: všechny
+  general_only_required: pouze povinné
+
+  notice_account_updated: Účet byl úspěšně změněn.
+  notice_account_invalid_creditentials: Chybné jméno nebo heslo
+  notice_account_password_updated: Heslo bylo úspěšně změněno.
+  notice_account_wrong_password: Chybné heslo
+  notice_account_register_done: Účet byl úspěšně vytvořen. Pro aktivaci účtu klikněte na odkaz v emailu, který vám byl zaslán.
+  notice_account_unknown_email: Neznámý uživatel.
+  notice_can_t_change_password: Tento účet používá externí autentifikaci. Zde heslo změnit nemůžete.
+  notice_account_lost_email_sent: Byl vám zaslán email s postupem pro změnu hesla.
+  notice_account_activated: Váš účet byl aktivován. Nyní se můžete přihlásit.
+  notice_successful_create: Úspěšně vytvořeno.
+  notice_issues_successful_create: "Úspěšně vytvořeno uživatelům: "
+  notice_successful_update: Úspěšně aktualizováno.
+  notice_successful_delete: Úspěšně odstraněno.
+  notice_successful_connection: Úspěšné připojení.
+  notice_file_not_found: Stránka, kterou se snažíte zobrazit, neexistuje nebo byla smazána.
+  notice_locking_conflict: Údaje byly změněny jiným uživatelem, zkontrolujte prosím jejich správnost.
+  notice_not_authorized: Nemáte dostatečná práva pro zobrazení této stránky.
+  notice_not_authorized_archived_project: Projekt ke kterému se snažíte přistupovat byl archivován.
+  notice_email_sent: "Na adresu %{value} byl odeslán email"
+  notice_email_error: "Při odesílání emailu nastala chyba %{value}"
+  notice_feeds_access_key_reseted: Váš klíč pro přístup k RSS byl resetován.
+  notice_api_access_key_reseted: Váš API přístupový klíč byl resetován.
+  notice_failed_to_save_issues: "Chyba při uložení %{count} úkolu(ů) z %{total} vybraných: %{ids}."
+  notice_failed_to_save_members: "Nepodařilo se uložit člena(y): %{errors}."
+  notice_no_issue_selected: "Nebyl zvolen žádný úkol. Prosím, zvolte úkoly, které chcete editovat"
+  notice_account_pending: "Váš účet byl vytvořen, nyní čeká na schválení administrátorem."
+  notice_default_data_loaded: Výchozí konfigurace úspěšně nahrána.
+  notice_unable_delete_version: Nemohu odstanit verzi
+  notice_unable_delete_time_entry: Nelze smazat čas ze záznamu.
+  notice_issue_done_ratios_updated: Koeficienty dokončení úkolu byly aktualizovány.
+  notice_gantt_chart_truncated: Graf byl oříznut, počet položek přesáhl limit pro zobrazení (%{max})
+  notice_issue_successful_create: "Úkol %{id} vytvořen."
+  notice_too_many_projects: Příliš mnoho projektů (%{count}), použijte vyhledávání.
+
+  error_can_t_load_default_data: "Výchozí konfigurace nebyla nahrána: %{value}"
+  error_scm_not_found: "Položka a/nebo revize neexistují v repozitáři."
+  error_scm_command_failed: "Při pokusu o přístup k repozitáři došlo k chybě: %{value}"
+  error_scm_annotate: "Položka neexistuje nebo nemůže být komentována."
+  error_scm_annotate_big_text_file: "Pložka nemůže být komentována, protože komentář je příliš dlouhý."
+  error_issue_not_found_in_project: 'Úkol nebyl nalezen nebo nepatří k tomuto projektu'
+  error_no_tracker_in_project: Žádný typ úkolů nebyl přiřazen k tomuto projektu. Prosím zkontroluje nastavení projektu.
+  error_no_default_issue_status: Není nastaven výchozí stav úkolu. Prosím zkontrolujte nastavení ("Administrace -> Stavy úkolů").
+  error_can_not_delete_custom_field: Nelze smazat volitelné pole
+  error_can_not_delete_tracker: Tento typ úkolů je používán a nemůže být odstraněn.
+  error_can_not_delete_auth_source: Tento mód autentifikace je používán a nemůže být odstraněn.
+  error_can_not_remove_role: Tato role je právě používaná a nelze ji smazat.
+  error_can_not_reopen_issue_on_closed_version: Úkol přiřazený k uzavřené verzi nemůže být znovu otevřen
+  error_can_not_archive_project: Tento projekt nemůže být archivován
+  error_issue_done_ratios_not_updated: Koeficient dokončení úkolu nebyl aktualizován.
+  error_workflow_copy_source: Prosím vyberte zdrojovou frontu nebo roly
+  error_workflow_copy_target: Prosím vyberte cílovou frontu(y) a roly(e)
+  error_unable_delete_issue_status: Nelze smazat stavy úkolů
+  error_unable_to_connect: Nelze se připojit (%{value})
+  error_attachment_too_big: "Soubor namůže být uložen, protože jeho velikost je větší než povolených (%{max_size})"
+  error_session_expired: "Vaše relace vypršela. Prosím, přihlaste se znovu."
+  warning_attachments_not_saved: "%{count} soubor(ů) nebylo možné uložit."
+
+  mail_subject_lost_password: "Vaše heslo (%{value})"
+  mail_body_lost_password: 'Pro změnu vašeho hesla klikněte na následující odkaz:'
+  mail_subject_register: "Aktivace účtu (%{value})"
+  mail_body_register: 'Pro aktivaci vašeho účtu klikněte na následující odkaz:'
+  mail_body_account_information_external: "Pomocí vašeho účtu %{value} se můžete přihlásit."
+  mail_body_account_information: Informace o vašem účtu
+  mail_subject_account_activation_request: "Aktivace %{value} účtu"
+  mail_body_account_activation_request: "Byl zaregistrován nový uživatel %{value}. Aktivace jeho účtu závisí na vašem potvrzení."
+  mail_subject_reminder: "%{count} úkolů končí v příštích %{days} dnech"
+  mail_body_reminder: "%{count} úkol(ů), které máte přiřazeny má termín během několik dní (%{days}):"
+  mail_subject_wiki_content_added: "'%{id}' Wiki stránka byla přidána"
+  mail_body_wiki_content_added: "'%{id}' Wiki stránka byla přidána od %{author}."
+  mail_subject_wiki_content_updated: "'%{id}' Wiki stránka byla aktualizována"
+  mail_body_wiki_content_updated: "'%{id}' Wiki stránka byla aktualizována od %{author}."
+  mail_subject_easy_query_migration_nonsaved_query: "Easy Project - migrace filtru - neproběhla"
+  mail_body_easy_query_migration_nonsaved_query_begin: "Dobrý den, v rámci migrace vašich uložených filtrů se nepovedlo uložit tento filtr:"
+  mail_body_easy_query_migration_nonsaved_query_end: "Prosím klikněte na odkaz výše a přenastavte si filtr (obsahoval některé datumové sloupce - vytvořeno, aktualizováno, datum dokončení, ...)."
+  mail_subject_easy_query_migration_unsupported_query: "Easy Project - migrace filtru - nepodporované nastavení"
+  mail_body_easy_query_migration_unsupported_query_begin: "Dobrý den, v rámci migrace vašich uložených filtrů se nepovedlo uložit tento filtr:"
+  mail_body_easy_query_migration_unsupported_query_end: "Prosím klikněte na odkaz výše a přenastavte si filtr. Obsahoval toto nastavení:"
+
+  field_name: Jméno
+  field_description: Popis
+  field_summary: Přehled
+  field_is_required: Povinné pole
+  field_firstname: Jméno
+  field_lastname: Příjmení
+  field_mail: E-mail
+  field_filename: Soubor
+  field_filesize: Velikost
+  field_downloads: Staženo
+  field_author: Autor
+  field_created_on: Vytvořeno
+  field_updated_on: Aktualizováno
+  field_closed_on: Uzavřeno
+  field_field_format: Formát
+  field_is_for_all: Pro všechny projekty
+  field_possible_values: Možné hodnoty
+  field_regexp: Regulární výraz
+  field_min_length: Minimální délka
+  field_max_length: Maximální délka
+  field_value: Hodnota
+  field_category: Kategorie
+  field_title: Název
+  field_project: Projekt
+  field_issue: Úkol
+  field_issue_id: ID úkolu
+  field_status: Stav
+  field_notes: Zpráva k realizaci
+  field_is_closed: Úkol uzavřen
+  field_is_default: Výchozí stav
+  field_tracker: Typ úkolu
+  field_subject: Předmět úkolu
+  field_due_date: Uzavřít do
+  field_assigned_to: Přiřazeno
+  field_priority: Priorita
+  field_fixed_version: Milník
+  field_user: Uživatel
+  field_principal: Hlavní
+  field_role: Role
+  field_homepage: Domovská stránka
+  field_is_public: Veřejný
+  field_is_planned: Plánovaný
+  field_parent: Nadřazený projekt
+  field_is_in_roadmap: Úkoly zobrazené v plánu projektu
+  field_login: Přihlášení
+  field_mail_notification: E-mailová oznámení
+  field_admin: Administrátor
+  field_last_login_on: Poslední přihlášení
+  field_language: Jazyk
+  field_effective_date: Datum
+  field_password: Heslo
+  field_new_password: Nové heslo
+  field_password_confirmation: Potvrzení
+  field_version: Milník
+  field_versions: Milníky
+  field_type: Typ
+  field_host: Host
+  field_port: Port
+  field_account: Účet
+  field_base_dn: Base DN
+  field_attr_login: Přihlášení (atribut)
+  field_attr_firstname: Jméno (atribut)
+  field_attr_lastname: Příjemní (atribut)
+  field_attr_mail: E-mail (atribut)
+  field_onthefly: Automatické vytváření uživatelů
+  field_start_date: Začátek
+  field_done_ratio: "% Hotovo"
+  field_auth_source: Autentifikační mód
+  field_hide_mail: Nezobrazovat můj e-mail
+  field_comments: Komentář k času
+  field_url: URL
+  field_start_page: Výchozí stránka
+  field_subproject: Podprojekt
+  field_hours: Hodiny
+  field_activity: Aktivita
+  field_spent_on: Datum
+  field_identifier: Identifikátor
+  field_is_filter: Použít jako filtr
+  field_issue_to_id: Související úkol
+  field_delay: Zpoždění
+  field_assignable: Úkoly mohou být přiřazeny této roli
+  field_redirect_existing_links: Přesměrovat stávající odkazy
+  field_estimated_hours: Předepsaná doba
+  field_column_names: Sloupce
+  field_time_entries: Zaznamenaný čas
+  field_time_zone: Časové pásmo
+  field_searchable: Umožnit vyhledávání
+  field_default_value: Výchozí hodnota
+  field_comments_sorting: Zobrazit komentáře
+  field_parent_title: Rodičovská stránka
+  field_editable: Editovatelný
+  field_watcher: Spolupracují
+  field_identity_url: OpenID URL
+  field_content: Obsah
+  field_group_by: Seskupovat výsledky podle
+  field_sharing: Sdílení
+  field_parent_issue: Rodičovský úkol
+  field_member_of_group: Skupina přiřaditele
+  field_assigned_to_role: Role přiřaditele
+  field_text: Textové pole
+  field_visible: Viditelný
+  field_group: "Skupina uživatelů"
+  field_rss_key: 'RSS klíč'
+  field_api_key: 'API klíč'
+  field_user_time_entry_setting: "Zapis času pomocí:"
+  field_easy_range_from: "Od"
+  field_easy_range_to: "Do"
+  field_easy_range_form_to: 'Do'
+  field_global_fixing_activity: 'Úkoly projektů mají přednastavenou aktivitu - výchozí nastavení.'
+  field_project_fixed_activity_true: 'Aktivita se přednastaví při zakládání úkolu.'
+  field_project_fixed_activity_false: 'Aktivitu lze zvolit při zápisu času.'
+  field_enable_activity_roles: Navázat aktivity na role
+  field_limit_assignable_users: Vracet úkoly jen zadavateli
+  field_inherit_members: Dědit členy projektu
+
+  setting_app_title: Název aplikace
+  setting_app_subtitle: Podtitulek aplikace
+  setting_welcome_text: Uvítací text
+  setting_default_language: Výchozí jazyk
+  setting_login_required: Auten. vyžadována
+  setting_self_registration: Povolena automatická registrace
+  setting_attachment_max_size: Maximální velikost přílohy
+  setting_issues_export_limit: Limit pro export úkolů
+  setting_mail_from: Odesílat e-maily z adresy
+  setting_bcc_recipients: Příjemci skryté kopie (bcc)
+  setting_plain_text_mail: pouze prostý text (ne HTML)
+  setting_host_name: Jméno serveru
+  setting_text_formatting: Formátování textu
+  setting_wiki_compression: Komprese historie Wiki
+  setting_feeds_limit: Limit pro poskytování obsahu (RSS)
+  setting_default_projects_public: Nové projekty nastavovat jako veřejné
+  setting_autofetch_changesets: Automaticky stahovat commity
+  setting_sys_api_enabled: Povolit WS pro správu repozitory
+  setting_commit_ref_keywords: Klíčová slova pro odkazy
+  setting_commit_fix_keywords: Klíčová slova pro uzavření nebo předání
+  setting_autologin: Automatické přihlašování
+  setting_date_format: Formát data
+  setting_time_format: Formát času
+  setting_cross_project_issue_relations: Povolit vazby úkolů napříč projekty
+  setting_issue_list_default_columns: Výchozí sloupce zobrazené v seznamu úkolů
+  setting_project_list_default_columns: Výchozí sloupce zobrazené v seznamu projektů
+  setting_repositories_encodings: Kódování
+  setting_emails_header: Hlavička emailů
+  setting_emails_footer: Patička emailů
+  setting_protocol: Protokol
+  setting_per_page_options: Povolené počty řádků na stránce
+  setting_user_format: Formát zobrazení uživatele
+  setting_activity_days_default: Počet dnů zobrazovaných v Aktivitě projektu
+  setting_display_subprojects_issues: Zobrazování úkolů podprojektů v hlavním projektu jako výchozí nastavení
+  setting_default_projects_tree_display: Zobrazování projektového stromu
+  setting_projects_tree_display_with_siblings: se sourozenci
+  setting_projects_tree_display_without_siblings: bez sourozenců
+  setting_issue_created_on_date_format_label: Zobrazit datum vytvoření úkolu jako
+  setting_issue_created_on_date_format_date: datum
+  setting_issue_created_on_date_format_datetime: datum a čas
+  setting_enable_private_issues: Povolit soukromé úkoly
+  setting_enabled_scm: Povolené SCM
+  setting_mail_handler_body_delimiters: Zkrátit e-maily po jednom z těchto řádků
+  setting_mail_handler_api_enabled: Povolit WS pro příchozí e-maily
+  setting_mail_handler_api_key: API klíč
+  setting_sequential_project_identifiers: Generovat sekvenční identifikátory projektů
+  setting_gravatar_enabled: Použít uživatelské ikony Gravatar
+  setting_gravatar_default: Výchozí Gravatar
+  setting_diff_max_lines_displayed: Maximální počet zobrazených řádků rozdílů
+  setting_file_max_size_displayed: Maximální velikost textových souborů zobrazených přímo na stránce
+  setting_repository_log_display_limit: Maximální počet revizí zobrazených v logu souboru
+  setting_openid: Umožnit přihlašování a registrace s OpenID
+  setting_password_min_length: Minimální délka hesla
+  setting_new_project_user_role_id: Role přiřazená uživateli bez práv administrátora, který projekt vytvořil
+  setting_default_projects_modules: Výchozí zapnuté moduly pro nový projekt
+  setting_issue_done_ratio: Spočítat koeficient dokončení úkolu s
+  setting_issue_done_ratio_issue_field: Použít pole úkolu
+  setting_issue_done_ratio_issue_status: Použít stav úkolu
+  setting_start_of_week: Začínat kalendáře
+  setting_rest_api_enabled: Zapnout službu REST
+  setting_cache_formatted_text: Ukládat formátovaný text do vyrovnávací paměti
+  setting_default_notification_option: Výchozí nastavení oznámení
+  setting_commit_logtime_enabled: Povolit zapisování času
+  setting_commit_logtime_activity_id: Aktivita pro zapsaný čas
+  setting_gantt_items_limit: Maximální počet položek zobrazený na ganttově grafu
+  setting_issue_group_assignment: Povolit přiřazování úkolů na skupiny
+  setting_default_issue_start_date_to_creation_date: Použít aktuální datum jako počáteční datum pro nové úkoly
+  setting_show_personal_statement: Zobrazit v menu Osobní výkaz
+  setting_show_bulk_time_entry: Zobrazit v menu Zápis času
+  setting_project_calculate_start_date: Datum zahájení projektu dle úkolů
+  setting_project_calculate_due_date: Datum ukončení projektu dle úkolů
+  setting_milestone_effective_date_from_issue_due_date: 'Povolit nastavení uzavření úkolu za konec milníku.'
+  setting_close_subtask_after_parent: 'Po uzavření úkolu uzavřít i podúkoly'
+  setting_default_activity_in_overall_activity: Výchozí události pro globální aktivity
+
+  permission_add_project: Vytvořit projekt
+  permission_add_subprojects: Vytvořit podprojekty
+  permission_edit_project: Úprava projektů
+  permission_edit_own_projects: Úprava svých projektů
+  permission_close_project: Zavřít / znovuotevřít projekt
+  permission_select_project_modules: Výběr modulů projektu
+  permission_manage_members: Spravování členství
+  permission_manage_project_activities: Spravovat aktivity projektu
+  permission_manage_versions: Spravování verzí
+  permission_manage_categories: Spravování kategorií úkolů
+  permission_view_issues: Zobrazit úkoly
+  permission_add_issues: Přidávání úkolů
+  permission_edit_issues: Upravování úkolů
+  permission_manage_issue_relations: Spravování vztahů mezi úkoly
+  permission_manage_easy_project_relations: Spravování vztahů mezi projekty
+  permission_manage_easy_version_relations: Spravování vztahů mezi milníky
+  permission_add_issue_notes: Přidávání poznámek
+  permission_edit_issue_notes: Upravování poznámek
+  permission_edit_own_issue_notes: Upravování vlastních poznámek
+  permission_move_issues: Přesouvání úkolů
+  permission_delete_issues: Mazání úkolů
+  permission_manage_public_queries: Správa veřejných dotazů
+  permission_save_queries: Ukládání dotazů
+  permission_view_gantt: Zobrazení Ganttova diagramu
+  permission_view_calendar: Prohlížení kalendáře
+  permission_view_issue_watchers: Zobrazení seznamu spolupracovníků
+  permission_add_issue_watchers: Přidání spolupracovníků
+  permission_delete_issue_watchers: Smazání spolupracovníků
+  permission_log_time: Zaznamenávání odpracovaného času
+  permission_view_time_entries: Zobrazit odpracovaný čas
+  permission_edit_time_entries: Upravování záznamů odpracovaného času
+  permission_edit_own_time_entries: Upravování vlastních záznamů odpracovaného času
+  permission_view_news: 'Sledování novinek'
+  permission_manage_news: Spravování novinek
+  permission_comment_news: Komentování novinek
+  permission_view_documents: Prohlížení dokumentů
+  permission_add_documents: Přidávání dokumentů
+  permission_edit_documents: Úprava dokumentů
+  permission_delete_documents: Mazání dokumentů
+  permission_manage_files: Spravování souborů
+  permission_view_files: Prohlížení souborů
+  permission_manage_wiki: Spravování Wiki
+  permission_rename_wiki_pages: Přejmenovávání Wiki stránek
+  permission_delete_wiki_pages: Mazání stránek na Wiki
+  permission_view_wiki_pages: Prohlížení Wiki
+  permission_view_wiki_edits: Prohlížení historie Wiki
+  permission_edit_wiki_pages: Upravování stránek Wiki
+  permission_delete_wiki_pages_attachments: Mazání příloh
+  permission_protect_wiki_pages: Zabezpečení Wiki stránek
+  permission_manage_repository: Spravování repozitáře
+  permission_browse_repository: Procházení repozitáře
+  permission_view_changesets: Zobrazování sady změn
+  permission_commit_access: Commit přístup
+  permission_manage_boards: Správa diskusních fór
+  permission_view_messages: Prohlížení zpráv
+  permission_add_messages: Posílání zpráv
+  permission_edit_messages: Upravování zpráv
+  permission_edit_own_messages: Upravit vlastní zprávy
+  permission_delete_messages: Mazání zpráv
+  permission_delete_own_messages: Smazat vlastní zprávy
+  permission_export_wiki_pages: Exportovat Wiki stránky
+  permission_manage_subtasks: Spravovat podúkoly
+  permission_edit_issue_fixed_activity: Změnit přiřazenou fixní aktivitu na úkolu
+  permission_manage_bulk_version: Hromadná správa milníků
+
+  project_module_issue_tracking: Sledování úkolů
+  project_module_time_tracking: Sledování času
+  project_module_easy_budgetsheet: Výkazy
+  project_module_news: Projektové zprávy
+  project_module_documents: Dokumenty
+  project_module_files: Soubory
+  project_module_wiki: Wiki
+  project_module_repository: Repozitář
+  project_module_boards: Diskuse
+  project_module_calendar: Kalendář
+  project_module_gantt: Gantt
+
+  label_user: Uživatel
+  label_user_plural: Uživatelé
+  label_user_new: Nový uživatel
+  label_user_anonymous: Anonymní
+  label_project: Projekt
+  label_project_new: Nový projekt
+  label_project_plural: Projekty
+  label_x_projects:
+    zero:  žádný projekt
+    one:   1 projekt
+    other: "%{count} projektů"
+  label_project_all: Všechny projekty
+  label_project_latest: Poslední projekty
+  label_issue: Úkol
+  label_issue_new: Nový úkol
+  label_issue_plural: Úkoly
+  label_issue_view_all: Všechny úkoly
+  label_issues_by: "Úkoly od uživatele %{value}"
+  label_issue_added: Úkol přidán
+  label_issue_updated: Úkol aktualizován
+  label_document: Dokument
+  label_document_new: Nový dokument
+  label_document_plural: Dokumenty
+  label_document_added: Dokument přidán
+  label_role: Role
+  label_role_plural: Role
+  label_role_new: Nová role
+  label_role_and_permissions: Role a práva
+  label_member: Člen
+  label_member_new: Nový člen
+  label_member_plural: Členové
+  label_tracker: Typ úkolu
+  label_tracker_plural: Typy úkolů
+  label_tracker_new: Nový typ úkolu
+  label_workflow: Workflow
+  label_issue_status: Stav úkolu
+  label_issue_status_plural: Stavy úkolů
+  label_issue_priority: Priorita úkolu
+  label_issue_priority_plural: Priority úkolů
+  label_issue_status_new: Nový stav
+  label_issue_category: Kategorie úkolů
+  label_issue_category_plural: Kategorie úkolů
+  label_issue_category_new: Nová kategorie
+  label_custom_field: Uživatelské pole
+  label_custom_field_plural: Uživatelská pole
+  label_custom_field_new: Nové uživatelské pole
+  label_enumerations: Kategorie
+  label_enumeration_new: Nová hodnota
+  label_information: Informace a doplňky
+  label_information_plural: Informace
+  label_please_login: Prosím přihlašte se
+  label_register: Registrovat
+  label_login_with_open_id_option: nebo se přihlašte s OpenID
+  label_password_lost: Zapomenuté heslo
+  label_home: Úvodní
+  label_my_page: Domů
+  label_my_account: Můj účet
+  label_my_projects: Moje projekty
+  label_my_page_block: Bloky na mé stránce
+  label_administration: Administrace
+  label_login: Přihlášení
+  label_logout: Odhlášení
+  label_help: Nápověda
+  label_reported_issues: Nahlášené úkoly
+  label_assigned_to_me_issues: Mé úkoly
+  label_last_login: Poslední přihlášení
+  label_registered_on: Registrován
+  label_activity: Aktivita
+  label_overall_activity: Aktivita na projektu
+  label_user_activity: "Aktivita uživatele: %{value}"
+  label_new: Nový
+  label_logged_as: Přihlášen jako
+  label_environment: Prostředí
+  label_authentication: Autentifikace
+  label_auth_source: Mód autentifikace
+  label_auth_source_new: Nový mód autentifikace
+  label_auth_source_plural: Módy autentifikace
+  label_subproject_plural: Podprojekty
+  label_subproject_new: Nový podprojekt
+  label_and_its_subprojects: "%{value} a jeho  podprojekty"
+  label_min_max_length: Min - Max délka
+  label_amount: Částka
+  label_list: Seznam
+  label_date: Datum
+  label_integer: Celé číslo
+  label_float: Desetinné číslo
+  label_boolean: Ano/Ne
+  label_string: Text
+  label_text: Dlouhý text
+  label_attribute: Atribut
+  label_attribute_plural: Atributy
+  label_no_data: Žádná data k zobrazení
+  label_change_status: Změnit stav
+  label_history: Historie
+  label_attachment: Soubor
+  label_attachment_new: Nový soubor
+  label_attachment_delete: Odstranit soubor
+  label_attachment_plural: Soubory
+  label_file_added: Soubor přidán
+  label_report: Přehled
+  label_report_plural: Přehledy
+  label_news: Zprávy
+  label_news_new: Přidat zprávu
+  label_news_plural: Zprávy
+  label_news_latest: Nejnovější zprávy
+  label_news_view_all: Zobrazit všechny zprávy
+  label_news_added: Zpráva přidána
+  label_settings: Nastavení
+  label_overview: Přehled projektu
+  label_version: Milník
+  label_version_new: Nový milník
+  label_version_plural: Milníky
+  label_version_update_database: Posunout na všech úkolech ?
+  label_close_versions: Zavřít dokončené verze
+  label_confirmation: Potvrzení
+  label_export_to: 'Také k dispozici:'
+  label_read: Načítá se...
+  label_public_projects: Veřejné projekty
+  label_open_issues: otevřený
+  label_open_issues_plural: otevřené
+  label_closed_issues: uzavřený
+  label_closed_issues_plural: uzavřené
+  label_my_issues_plural: moje
+  label_other_issues_plural: ostatní
+  label_x_open_issues_abbr_on_total:
+    zero:  0 otevřený / %{total}
+    one:   1 otevřený / %{total}
+    other: "%{count} otevřený / %{total}"
+  label_x_open_issues_abbr:
+    zero:  0 otevřený
+    one:   1 otevřený
+    other: "%{count} otevřený"
+  label_x_closed_issues_abbr:
+    zero:  0 uzavřený
+    one:   1 uzavřený
+    other: "%{count} uzavřený"
+  label_total: Celkem
+  label_total_total: "Celkem: "
+  label_total_time: Celkový čas
+  label_permissions: Práva
+  label_permissions_global: Globální práva
+  label_permissions_project: Projektová práva
+  label_current_status: Aktuální stav
+  label_new_statuses_allowed: Nové povolené stavy
+  label_all: vše
+  label_none: nic
+  label_nobody: nikdo
+  label_next: Další
+  label_previous: Předchozí
+  label_used_by: Použito
+  label_details: Detaily
+  label_add_note: Přidat poznámku
+  label_per_page: Na stránku
+  label_calendar: Kalendář
+  label_months_from: měsíců od
+  label_gantt: Gantt
+  label_project_gantt: Projektový gantt
+  label_internal: Interní
+  label_last_changes: "posledních %{count} změn"
+  label_change_view_all: Zobrazit všechny změny
+  label_personalize_page: Přizpůsobit stránku
+  label_comment: Komentář
+  label_comment_plural: Komentáře
+  label_x_comments:
+    zero: žádný komentář
+    one: 1 komentář
+    two: 2 komentáře
+    three: 3 komentáře
+    four: 4 komentáře
+    other: "%{count} komentářů"
+  label_comment_add: Přidat komentáře
+  label_comment_added: Komentář přidán
+  label_comment_delete: Odstranit komentář
+  label_query: Filtr
+  label_projectquery_plural: "Filtry - projekty"
+  label_query_plural: "Filtry - úkoly"
+  label_userquery_plural: "Filtry - uživatelé"
+  label_query_new: Uložit nový filtr
+  label_filter_add: Přidat filtr
+  label_filter_plural: Filtry
+  label_equals: je
+  label_not_equals: není
+  label_in_less_than: je menší než
+  label_in_more_than: je větší než
+  label_greater_or_equal: '>='
+  label_less_or_equal: '<='
+  label_in: v
+  label_today: dnes
+  label_all_time: vše
+  label_yesterday: včera
+  label_this_week: tento týden
+  label_last_week: minulý týden
+  label_last_n_days: "posledních %{count} dnů"
+  label_this_month: tento měsíc
+  label_last_month: minulý měsíc
+  label_this_year: tento rok
+  label_date_range: Časový rozsah
+  label_less_than_ago: před méně jak (dny)
+  label_more_than_ago: před více jak (dny)
+  label_ago: před (dny)
+  label_contains: obsahuje
+  label_not_contains: neobsahuje
+  label_day_plural: dny
+  label_repository: Repozitář
+  label_repository_plural: Repozitáře
+  label_browse: Procházet
+  label_branch: Větev
+  label_tag: Tag
+  label_revision: Revize
+  label_revision_plural: Revizí
+  label_revision_id: "Revize %{value}"
+  label_associated_revisions: Související verze
+  label_added: přidáno
+  label_modified: změněno
+  label_copied: zkopírováno
+  label_renamed: přejmenováno
+  label_deleted: odstraněno
+  label_latest_revision: Poslední revize
+  label_latest_revision_plural: Poslední revize
+  label_view_revisions: Zobrazit revize
+  label_view_all_revisions: Zobrazit všechny revize
+  label_max_size: Maximální velikost
+  label_sort_highest: Přesunout na začátek
+  label_sort_higher: Přesunout nahoru
+  label_sort_lower: Přesunout dolů
+  label_sort_lowest: Přesunout na konec
+  label_roadmap: Milníky
+  label_roadmap_due_in: "Zbývá %{value}"
+  label_roadmap_overdue: "%{value} pozdě"
+  label_roadmap_no_issues: Pro tento milník nejsou žádné úkoly
+  label_search: Hledat
+  label_result_plural: Výsledky
+  label_all_words: Všechna slova
+  label_wiki: Wiki
+  label_wiki_edit: Wiki úprava
+  label_wiki_edit_plural: Wiki úpravy
+  label_wiki_page: Wiki stránka
+  label_wiki_page_plural: Wiki stránky
+  label_index_by_title: Index dle názvu
+  label_index_by_date: Index dle data
+  label_current_version: Aktuální milník
+  label_preview: Náhled
+  label_feed_plural: Příspěvky
+  label_changes_details: Detail všech změn
+  label_issue_tracking: Sledování úkolů
+  label_spent_time: Odpracovaný čas
+  label_overall_spent_time: Celkem odpracovaný čas
+  label_f_hour: "%{value} hodina"
+  label_f_hour_plural: "%{value} hodin"
+  label_time_tracking: Sledování času
+  label_change_plural: Změny
+  label_statistics: Statistiky
+  label_commits_per_month: Příspěvků za měsíc
+  label_commits_per_author: Příspěvků za autora
+  label_view_diff: Zobrazit rozdíly
+  label_diff: rozdíl
+  label_diff_inline: uvnitř
+  label_diff_side_by_side: vedle sebe
+  label_options: Nastavení
+  label_copy_workflow_from: Kopie workflow dle
+  label_permissions_report: Přehled práv
+  label_watched_issues: Sledované úkoly
+  label_related_issues: Související úkoly
+  label_related_projects: Související projekty
+  label_related_versions: Související milníky
+  label_add_related_issues: Přidat související úkoly
+  label_add_related_projects: Přidat související projekty
+  label_add_related_versions: Přidat související milníky
+  label_applied_status: Použitý stav
+  label_loading: Nahrávám...
+  label_relation_new: Nová souvislost
+  label_relation_delete: Odstranit souvislost
+  label_relates_to: souvisí s
+  label_duplicates: duplikuje
+  label_duplicated_by: zduplikován
+  label_blocks: blokuje
+  label_blocked_by: blokován
+  label_precedes: předchází
+  label_preceding: předcházející
+  label_follows: následuje
+  label_following: následující
+  label_end_to_start: od konce do začátku
+  label_end_to_end: od konce do konce
+  label_start_to_start: od začátku do začátku
+  label_start_to_end: od začátku do konce
+  label_stay_logged_in: Zůstat přihlášený
+  label_disabled: zakázán
+  label_show_completed_versions: Ukázat dokončené milníky
+  label_me: já
+  label_board: Diskuze
+  label_board_new: Nová diskuze
+  label_board_plural: Diskuze
+  label_board_locked: Uzamčeno
+  label_board_sticky: Nálepka
+  label_topic_plural: Témata
+  label_message_plural: Zprávy
+  label_message_last: Poslední zpráva
+  label_message_new: Nová zpráva
+  label_message_posted: Zpráva přidána
+  label_reply_plural: Odpovědi
+  label_send_information: Zaslat informace o účtu uživateli
+  label_year: Rok
+  label_month: Měsíc
+  label_week: Týden
+  label_date_from: Od
+  label_date_to: Do
+  label_language_based: Podle výchozího jazyku
+  label_sort_by: "Seřadit podle %{value}"
+  label_send_test_email: Poslat testovací email
+  label_feeds_access_key: Přístupový klíč pro RSS
+  label_missing_feeds_access_key: Postrádá přístupový klíč pro RSS
+  label_send_email_to_all_users: Poslat email všem uživatelům
+  label_feeds_access_key_created_on: Přístupový klíč pro RSS byl vytvořen před %s
+  label_module_plural: Moduly
+  label_updated_time_by: "Aktualizoval %{author} před %{age}"
+  label_updated_datetime_by: "Aktualizoval %{author} v %{datetime}"
+  label_updated_time: "Aktualizováno před %{value}"
+  label_updated_on: "Aktualizováno"
+  label_jump_to_a_project: 'Přeskoč na projekt'
+  label_file_plural: Soubory
+  label_changeset_plural: Revize
+  label_default_columns: Výchozí sloupce
+  label_no_change_option: (beze změny)
+  label_no_change: beze změny
+  label_change_to: "změnit na:"
+  label_bulk_edit_selected_issues: Editace vybraných úkolů
+  label_theme: Téma
+  label_default: Výchozí
+  option_only_selected: pouze vybrané
+  label_search_titles_only: Vyhledávat pouze v názvech
+  label_user_mail_option_all: "Pro všechny úkoly všech mých projektů"
+  label_user_mail_option_selected: "Pro všechny úkoly vybraných projektů..."
+  label_user_mail_option_none: "Žádné události"
+  label_user_mail_option_only_my_events: Pouze pro úkoly které sleduji nebo které se mne týkají
+  label_user_mail_option_only_assigned: Pouze pro úkoly na kterých jsem přiřazený
+  label_user_mail_option_only_owner: Pouze pro úkoly, které jsem zadal(a).
+  label_user_mail_option_none: Žádná oznámení
+  label_user_mail_no_self_notified: "Nezasílat mi informace o změnách, které jsem vytvořil"
+  label_registration_activation_by_email: aktivace účtu emailem
+  label_registration_manual_activation: manuální aktivace účtu
+  label_registration_automatic_activation: automatická aktivace účtu
+  label_display_per_page: "%{value} na stránku"
+  label_age: Věk
+  label_change_properties: Klikni zde pro změnu základních parametrů
+  label_general: Obecné
+  label_more: Více
+  label_less: Méně
+  label_scm: SCM
+  label_plugins: Moduly
+  label_ldap_authentication: Autentifikace LDAP
+  label_downloads_abbr: D/L
+  label_optional_description: Volitelný popis
+  label_add_another_file: Přidat další soubor
+  label_preferences: Nastavení
+  label_chronological_order: V chronologickém pořadí
+  label_reverse_chronological_order: V obráceném chronologickém pořadí
+  label_planning: Plánování
+  label_incoming_emails: Příchozí e-maily
+  label_generate_key: Generovat klíč
+  label_issue_watchers: Spolupracovníci
+  label_example: Příklad
+  label_display: Zobrazit
+  label_sort: Řazení
+  label_ascending: Vzestupně
+  label_descending: Sestupně
+  label_date_from_to: Od %{start} do %{end}
+  label_wiki_content_added: Wiki stránka přidána
+  label_wiki_content_updated: Wiki stránka aktualizována
+  label_group: Skupina
+  label_group_plural: Skupiny
+  label_group_new: Nová skupina
+  label_time_entry_plural: Odpracovaný čas
+  label_version_sharing_none: Nesdíleno
+  label_version_sharing_descendants: S podprojekty
+  label_version_sharing_hierarchy: S hierarchií projektu
+  label_version_sharing_tree: Se stromem projektu
+  label_version_sharing_system: Se všemi projekty
+  label_update_issue_done_ratios: Aktualizovat koeficienty dokončení úkolů
+  label_copy_source: Zdroj
+  label_copy_target: Cíl
+  label_copy_same_as_target: Stejný jako cíl
+  label_display_used_statuses_only: Zobrazit pouze stavy, které jsou použité
+  label_api_access_key: API přístupový klíč
+  label_missing_api_access_key: Chybějící přístupový klíč API
+  label_api_access_key_created_on: API přístupový klíč vytvořen %{value}
+  label_profile: Profil
+  label_subtask_plural: Podúkol
+  label_project_copy_notifications: Odeslat email oznámení v průběhu kopie projektu
+  label_principal_search: "Hledat uživatele nebo skupinu:"
+  label_user_search: "Hledat uživatele:"
+  label_group_by: Seskupit podle %{value}
+  label_period_past: Minulost
+  label_period_present: Současnost
+  label_period_future: Budoucnost
+  label_to_today: do dnes
+  label_after_due_date: po termínu
+  label_next_n_days: následujících %{days} dní
+  label_next_week: následující týden
+  label_next_month: následující měsíc
+  label_next_year: následující rok
+  label_tomorrow: zítra
+  label_user_role_select: ' pro roli:'
+  label_document_global: 'Dokumenty'
+  label_milestone_sharing_info: "Vysvětlivky:"
+  label_milestone_sharing_info_none: "milník se používá pouze na projektu, kde byl vytvořen."
+  label_milestone_sharing_info_descendants: "milník se používá na projektu, kde byl vytvořen a na všech jeho podprojektech."
+  label_milestone_sharing_info_hierarchy: "milník se používá na projektu, kde byl vytvořen, na jeho nadřazených projektech a na jeho podprojektech."
+  label_milestone_sharing_info_tree: "milník se používá na projektu, kde byl vytvořen a na všech projektech, které mají společný jakýkoliv nadřazený projekt."
+  label_milestone_sharing_info_system: "milník se používá ve všech projektech."
+  label_autoincrement: Automatické číslo
+  label_quick_search: Rychlé vyhledávání
+  label_switch_to_mobile_version: Mobilní verze
+  label_switch_to_full_version: Desktop verze
+  label_not_available: "N/A"
+  label_search_entities: "Prohledávat :"
+  label_fixed_version: "Milník"
+  label_allow_log_time_to_closed_issue: 'Povolit zápis času na uzavřené úkoly'
+
+  button_login: Přihlásit
+  button_submit: Potvrdit
+  button_save: Uložit
+  button_check_all: Zaškrtnout vše
+  button_uncheck_all: Odškrtnout vše
+  button_delete: Odstranit
+  button_create: Vytvořit
+  button_create_and_continue: Vytvořit a pokračovat
+  button_test: Test
+  button_edit: Upravit
+  button_edit_associated_wikipage: "Upravit přiřazenou Wiki stránku: %{page_title}"
+  button_add: Přidat
+  button_add_and_close: Přidat a zavřít
+  button_change: Změnit
+  button_apply: Použít
+  button_clear: Smazat
+  button_lock: Zamknout
+  button_unlock: Odemknout
+  button_download: Stáhnout
+  button_list: Vypsat
+  button_view: Zobrazit
+  button_move: Přesunout
+  button_move_and_follow: Přesunout a následovat
+  button_back: Zpět
+  button_cancel: Storno
+  button_activate: Aktivovat
+  button_sort: Seřadit
+  button_log_time: Zapsat čas
+  button_rollback: Zpět
+  button_watch: Spolupracovat
+  button_unwatch: Nespolupracovat
+  button_reply: Odpovědět
+  button_archive: Archivovat
+  button_unarchive: Odarchivovat
+  button_reset: Reset
+  button_rename: Přejmenovat
+  button_change_password: Změnit heslo
+  button_copy: Kopírovat
+  button_copy_and_follow: Kopírovat a následovat
+  button_annotate: Komentovat
+  button_update: Aktualizovat
+  button_configure: Konfigurovat
+  button_quote: Citovat
+  button_duplicate: Duplikovat
+  button_show: Zobrazit
+  button_edit_section: Upravit sekci
+  button_export: Export
+  button_generate_rss_key: Generuj RSS klíč
+  button_generate_api_key: Generuj API klíč
+  workflow_button_edit: Nastavení workflow
+  button_back_to_top: Nahoru
+
+  status_active: aktivní
+  status_registered: registrovaný
+  status_locked: uzamčený
+
+  version_status_open: otevřený
+  version_status_locked: uzamčený
+  version_status_closed: zavřený
+
+  field_active: Aktivní
+
+  text_select_mail_notifications: Vyberte akci, při které bude zasláno upozornění emailem.
+  text_regexp_info: např. ^[A-Z0-9]+$
+  text_min_max_length_info: 0 znamená bez limitu
+  text_project_destroy_confirmation: 'Jste si jisti, že chcete odstranit tento projekt a všechna související data ?'
+  text_project_archive_confirmation: 'Jste si jisti, že chcete archivovat tento projekt a všechna související data ?'
+  text_project_close_confirmation: 'Jste si jisti, že chcete zavřít tento projekt ?'
+  text_project_reopen_confirmation: 'Jste si jisti, že chcete znovu otevřít tento projekt ?'
+  text_subprojects_destroy_warning: "Jeho podprojek(y): %{value} budou také smazány."
+  text_workflow_edit: Vyberte roli a typ úkolu k editaci workflow
+  text_are_you_sure: Jste si jisti?
+  text_journal_changed: "%{label} změněn z %{old} na %{new}"
+  text_journal_set_to: "%{label} nastaven na %{value}"
+  text_journal_deleted: "%{label} smazán (%{old})"
+  text_journal_added: "%{label} %{value} přidán"
+  text_tip_issue_begin_day: úkol začíná v tento den
+  text_tip_issue_end_day: úkol končí v tento den
+  text_tip_issue_begin_end_day: úkol začíná a končí v tento den
+  text_caracters_maximum: "%{count} znaků maximálně."
+  text_caracters_minimum: "Musí být alespoň %{count} znaků dlouhé."
+  text_length_between: "Délka mezi %{min} a %{max} znaky."
+  text_tracker_no_workflow: Pro tuto frontu není definován žádný workflow
+  text_unallowed_characters: Nepovolené znaky
+  text_comma_separated: Povoleno více hodnot (oddělěné čárkou).
+  text_line_separated: Více hodnot povoleno (jeden řádek pro každou hodnotu).
+  text_issues_ref_in_commit_messages: Odkazování a opravování úkolů ve zprávách commitů
+  text_issue_added: "Úkol %{id} byl vytvořen uživatelem %{author}."
+  text_issue_updated: "Úkol %{id} byl aktualizován uživatelem %{author}."
+  text_wiki_destroy_confirmation: Opravdu si přejete odstranit tuto Wiki a celý její obsah?
+  text_issue_category_destroy_question: "Některé úkoly (%{count}) jsou přiřazeny k této kategorii. Co s nimi chtete udělat?"
+  text_issue_category_destroy_assignments: Zrušit přiřazení ke kategorii
+  text_issue_category_reassign_to: Přiřadit úkoly do této kategorie
+  text_user_mail_option: "U projektů, které nebyly vybrány, budete dostávat oznámení pouze o položkách, jejichž jste autor, ke kterým jste přiřazen(a) nebo na kterých spolupracujete."
+  text_no_configuration_data: "Role, typy úkolů, stavy úkolů ani workflow nebyly zatím nakonfigurovány.\nVelice doporučujeme nahrát výchozí konfiguraci. Poté si můžete vše upravit"
+  text_load_default_configuration: Nahrát výchozí konfiguraci
+  text_status_changed_by_changeset: "Aktualizováno z revize %{value} ."
+  text_time_logged_by_changeset: "Použito v revizi %{value}."
+  text_issues_destroy_confirmation: 'Opravdu si přejete odstranit všechny zvolené úkoly?'
+  text_select_project_modules: 'Zvolte moduly aktivní v tomto projektu:'
+  text_default_administrator_account_changed: Výchozí nastavení administrátorského účtu změněno
+  text_file_repository_writable: Povolen zápis do adresáře ukládání souborů
+  text_plugin_assets_writable: Možnost zápisu do adresáře plugin assets
+  text_rmagick_available: RMagick k dispozici (volitelné)
+  text_destroy_time_entries_question: "U úkolů, které chcete odstranit je evidováno %{hours} práce. Co chcete udělat?"
+  text_destroy_time_entries: Odstranit evidované hodiny.
+  text_assign_time_entries_to_project: Přiřadit evidované hodiny projektu
+  text_reassign_time_entries: 'Přeřadit evidované hodiny k tomuto úkolu:'
+  text_user_wrote: "%{value} napsal:"
+  text_enumeration_destroy_question: "Několik (%{count}) objektů je přiřazeno k této hodnotě."
+  text_enumeration_category_reassign_to: 'Přeřadit je do této:'
+  text_email_delivery_not_configured: "Doručování e-mailů není nastaveno a odesílání notifikací je zakázáno.\nNastavte Váš SMTP server v souboru config/configuration.yml a restartujte aplikaci."
+  text_repository_usernames_mapping: "Vybrat nebo upravit mapování mezi Redmine uživateli a uživatelskými jmény nalezenými v logu repozitáře.\nUživatelé se shodným Redmine uživatelským jménem a uživatelským jménem v repozitáři jsou mapovaní automaticky."
+  text_diff_truncated: '... Rozdílový soubor je zkrácen, protože jeho délka přesahuje max. limit.'
+  text_custom_field_possible_values_info: 'Každá hodnota na novém řádku'
+  text_wiki_page_destroy_question: Tato stránka má %{descendants} podstránek a potomků. Co chcete udělat?
+  text_wiki_page_nullify_children: Ponechat podstránky jako kořenové stránky
+  text_wiki_page_destroy_children: Smazat podstránky a všechny jejich potomky
+  text_wiki_page_reassign_children: Přiřadit podstránky k tomuto rodiči
+  text_own_membership_delete_confirmation: "Chystáte se odebrat si některá nebo všechny svá oprávnění a potom již nemusíte být schopni upravit tento projekt.\nOpravdu chcete pokračovat?"
+  text_zoom_in: Přiblížit
+  text_zoom_out: Oddálit
+  text_milestone_effective_date_from_issue: "Posun z úkolu #%{issue}"
+  text_git_repository_url_note: URL ve tvaru http(s)://uzivatel:heslo@url/repo.git. Repozitář bude lokálně automaticky vytvořen po uložení formuláře.
+  text_external_email_sent: 'Na externí email %{email} byla zaslána zpráva viz příloha.'
+  text_validation_error_only_open_issue: ' je neplatné. Čas lze zapsat pouze na otevřené úkoly'
+
+  default_role_manager: Manažer
+  default_role_developer: Vývojář
+  default_role_reporter: Reportér
+  default_tracker_bug: Chyba
+  default_tracker_feature: Požadavek
+  default_tracker_support: Podpora
+  default_issue_status_new: Nový
+  default_issue_status_in_progress: Ve vývoji
+  default_issue_status_resolved: Vyřešený
+  default_issue_status_feedback: Ke konzultaci
+  default_issue_status_closed: Uzavřený
+  default_issue_status_rejected: Zrušený
+  default_doc_category_user: Dokumentace
+  default_doc_category_tech: Podklady
+  default_priority_low: Nízká
+  default_priority_normal: Normální
+  default_priority_high: Vysoká
+  default_priority_urgent: Urgentní
+  default_priority_immediate: Okamžitá
+  default_activity_design: Design
+  default_activity_development: Vývoj
+
+  enumeration_issue_priorities: Priority úkolů
+  enumeration_doc_categories: Kategorie dokumentů
+  enumeration_activities: Aktivity (sledování času)
+  enumeration_system_activity: Systémová aktivita
+
+  description_filter: Filtr
+  description_search: Hledat
+  description_choose_project: Projekty
+  description_project_scope: Oblast
+  description_notes: Poznámky
+  description_message_content: Obsah zprávy
+  description_query_sort_criteria_attribute: Řadit podle
+  description_query_sort_criteria_direction: Řadit jak
+  description_user_mail_notification: Nastavení emailových upozornění
+  description_available_columns: Dostupné sloupce
+  description_selected_columns: Vybrané seloupce
+  description_all_columns: Všechny sloupce
+  description_issue_category_reassign: Vyber kategorii úkolu
+  description_wiki_subpages_reassign: Vyber nadřazenou stránku
+  description_date_range_list: Vyber rozpětí ze seznamu
+  description_date_range_interval: Vyber rozpětí mezi začátkem a koncem
+  description_date_from: Vlož počáteční datum
+  description_date_to: Vlož koncové datum
+  text_repository_identifier_info: 'Poze malá písmena (a-z), čísla, pomlčky a podtržítka jsou povoleny.<br />Po uložení nelze identifikátor změnit.'
+
+  field_warn_on_leaving_unsaved: Upozorňovat při neuložení textu aktualizace
+  text_warn_on_leaving_unsaved: Stránka obsahuje neuložený text, který bude ztracen pokud opustíte tuto stánku.
+  label_my_queries: Moje filtry
+  text_journal_changed_no_detail: "%{label} aktualizováno"
+  label_news_comment_added: Přidán komentář ke zprávě
+  button_expand_all: Rozbal vše
+  button_collapse_all: Zabal vše
+  label_additional_workflow_transitions_for_assignee: Další povolené změny stavů, pokud je uživatel řešitelem úkolu
+  label_additional_workflow_transitions_for_author: Další povolené změny stavů, pokud je uživatel autorem úkolu
+  label_bulk_edit_selected_time_entries: Hromadná editace vybraných časových záznamů
+  text_time_entries_destroy_confirmation: Opravdu chcete smazat časový záznam(y)?
+  label_role_anonymous: Anonymní navštěvník
+  label_role_non_member: Nečlen projektu
+  label_issue_note_added: Přidána poznámka
+  label_issue_status_updated: Změněn status
+  label_issue_priority_updated: Změněna priorita
+  field_issues_visibility: Viditelnost úkolů
+  label_issues_visibility_all: Všechny úkoly
+  label_issues_visibility_public: Všechny veřejné úkoly
+  label_issues_visibility_own: "Úkoly týkající se pracovníka (zadal, řeší, spolupracuje)"
+  permission_set_own_issues_private: Nastavení soukromí u vlastních úkolů
+  field_is_private: Soukromý
+  permission_set_issues_private: Nastavení soukromí u úkolů
+  text_issues_destroy_descendants_confirmation: Dojde také ke smazání %{count} podúkolů.
+  text_issues_close_descendants_confirmation: Zavřením tohoto úkolu dojte k uzavření %{count} podúkolů. Chcete pokračovat?
+  field_commit_logs_encoding: Kódování zpráv při commitu
+  field_scm_path_encoding: Path encoding
+  text_scm_path_encoding_note: "Výchozí: UTF-8"
+  field_path_to_repository: Cesta k repozitáři
+  field_root_directory: Hlavní adresář
+  field_cvs_module: Modul
+  field_cvsroot: CVSROOT
+  text_git_repository_note: "'Bare' a místní repozitář (např. /gitrepo, c:\\gitrepo)"
+  text_mercurial_repository_note: 'Místní repozitář (např. /hgrepo, c:\\hgrepo)'
+  text_scm_command: Příkaz
+  text_scm_command_version: Verze
+  label_git_report_last_commit: Reportovat poslední commit pro soubory a adresáře
+  label_export_options: "%{export_format} exportní volby"
+  text_scm_config: Svoje scm příkazy můžete nastavit v config/configuration.yml. Po editaci prosím restartujte aplikaci.
+  text_scm_command_not_available: Scm příkaz není dostupný. Prosím zkontrolujte nastavení v administraci.
+  setting_issue_group_assignment: Povolit přiřazování úkolů na skupinu
+  label_diff: diff
+  text_git_repository_note: "Repozitář je 'bare' a místní (např. /gitrepo, c:\\gitrepo)"
+  description_query_sort_criteria_direction: Směr třídění
+  description_project_scope: Oblast hledání
+  description_filter: Filtr
+  description_user_mail_notification: Nastavení upozornění na email
+  description_date_from: Vlož datum začátku
+  description_message_content: Obsah zprávy
+  description_available_columns: Dostupné sloupce
+  description_date_range_interval: Vyber rozsah vybráním začátečního a koncového datumu
+  description_issue_category_reassign: Vyber kategorii úkolů
+  description_search: Hledat
+  description_notes: Poznámky
+  description_date_range_list: Vyber rozsah ze seznamu
+  description_choose_project: Projekty
+  description_date_to: Vlož konečné datum
+  description_query_sort_criteria_attribute: Třídit podle
+  description_wiki_subpages_reassign: Vyber nadřazenou stránku
+  description_selected_columns: Vybrané sloupce
+  label_parent_revision: Nadřazená
+  label_child_revision: Podřazená
+  error_scm_annotate_big_text_file: Záznam nemůže být okomentován, protože je příliš velký.
+  setting_default_issue_start_date_to_creation_date: Použij aktuální datum jako výchozí hodnotu pro začátek úkolu
+  button_edit_section: Upravit tuto část
+  setting_repositories_encodings: Kódování příloh a repozitáře
+  description_all_columns: Všechny sloupce
+  button_export: Export
+  label_export_options: "Volby nastavení pro %{export_format}"
+  error_attachment_too_big: Příloha nemůže být nahraná, protože je příliš velká (%{max_size})
+  notice_failed_to_save_time_entries: "Nepodařilo se uložit %{count} časů z %{total} vybraných: %{ids}."
+  label_x_issues:
+    zero:  0 Úkol
+    one:   1 Úkol
+    other: "%{count} Úkoly"
+  label_repository_new: Nový repozitář
+  field_repository_is_default: Hlavní repozitář
+  label_copy_attachments: Kopíruj přílohy
+  label_copy_subtasks: Kopíruj podúkoly
+  label_item_position: "%{position}/%{count}"
+  label_completed_versions: Dokončené milníky
+  text_project_identifier_info: Pouze malá písmena (a-z), čísla, mínusy a podrtžítka jsou povoleny, musí začínat malým písmenem.<br />Identifikátor po uložení nelze změnit.
+  field_multiple: Více hodnot
+  setting_commit_cross_project_ref: Povol referencování a uzavírání úkolů napříč projekty
+  text_issue_conflict_resolution_add_notes: Přidej pouze poznámku a ostatní změny vynech
+  text_issue_conflict_resolution_overwrite: Použij moje změny (předchozí poznámka bude zachována, ale ostatní změny můžu přepsat)
+  notice_issue_update_conflict: Úkol by aktualizován jiným uživatelem během psaní aktualizace.
+  text_issue_conflict_resolution_cancel: Zruš všechy moje změny a znovu zobraz úkol %{link}
+  permission_manage_related_issues: Spravovat související úkoly
+  field_auth_source_ldap_filter: LDAP filtr
+  field_core_fields: Standardní sloupce
+  field_timeout: "Čas expirace (v sekundách)"
+  field_board_parent: Nadřazené fórum
+  label_search_for_watchers: Vyhledej spolupracovníky
+  label_session_expiration: Vypršení relace
+  label_show_closed_projects: Zobrazit zavřené projekty
+  label_status_transitions: Přechody stavů
+  label_fields_permissions: Práva sloupců
+  label_readonly: Pouze pro čtení
+  label_required: Povinné
+  label_attribute_of_project: "Od projektu - %{name}"
+  label_attribute_of_issue: "Od úkolu - %{name}"
+  label_attribute_of_author: "Od autora - %{name}"
+  label_attribute_of_assigned_to: "Od přiřazeno - %{name}"
+  label_attribute_of_user: "Od uživatele - %{name}"
+  label_attribute_of_fixed_version: "Od milníku - %{name}"
+  label_gantt_progress_line: Průběh
+  notice_account_deleted: Tvůj účet byl smazán.
+  notice_user_successful_create: "Uživatel %{id} byl vytvořen."
+  setting_unsubscribe: Povolit uživatelům si mazat svůj učet
+  setting_session_lifetime: Maximální životnost relace
+  setting_session_timeout: Čas vypršení relace
+  setting_thumbnails_enabled: Zobrazit náhledy příloh
+  setting_thumbnails_size: Velikost náhledu (v pixelech)
+  button_delete_my_account: Smazat si svůj učet
+  project_status_planned: plánovaný
+  project_status_active: aktivní
+  project_status_closed: zavřený
+  project_status_archived: archivovaný
+  button_close: Zavřít
+  button_reopen: Otevřít
+  text_account_destroy_confirmation: |-
+    Jseš si jistý, že chceš pokračovat?
+    Tvůj účet bude smazán a nelze ho později vrátit zpět.
+  text_session_expiration_settings: "Upozornění: změnou tohoto nastavení může vypršet aktuální relace, včetně vaší."
+  text_project_closed: Tento projekt je zavřený a pouze pro čtení.
+  text_turning_multiple_off: "Pokud vypnete více hodnot, vybrané hodnoty budou odebrány."
+  label_copied_to: zkopírováno do
+  label_copied_from: zkopírováno z
+  label_any_issues_in_project: jakékoliv úkoly v projektu
+  label_any_issues_not_in_project: jakékoliv úkoly mimo projekt
+  field_private_notes: Soukromé aktualizace
+  permission_view_private_notes: Zobrazit soukromé aktualizace
+  permission_set_notes_private: Nastavit aktualizaci jako soukromou
+  label_no_issues_in_project: žádný úkol v projektu
+  label_any: vše
+  label_last_n_weeks: posledních %{count} týdnů
+  setting_cross_project_subtasks: Povolit podúkoly napříč projekty
+  label_cross_project_descendants: S podprojekty
+  label_cross_project_tree: Se stromem projektu
+  label_cross_project_hierarchy: S hierarchií projektu
+  label_cross_project_system: Se všemi projekty
+  button_hide: Schovat
+  setting_non_working_week_days: Nepracovní dny
+  setting_jsonp_enabled: JSONP podpora
+  setting_default_projects_tracker_ids: Výchozí typy úkolů pro nový projekt
+  label_in_the_next_days: v budoucnu
+  label_in_the_past_days: v minulosti
+
+# ***********************************************************************************
+# EASYPROJECT
+
+
+  easyproject_name: "EASY PROJECT 2013"
+  easyproject_author: "Easy Software"
+  easyproject_author_url: "http://www.easyproject.cz/cz"
+  easyproject_description: "- manažerský informační systém na řízení projektů"
+  easyproject_version_description: 2013
+
+  project_module_easy_other_permissions: Ostatní
+
+  permission_create_project_from_template: "Vytvořit projekt ze šablony"
+  permission_create_project_template: "Vytvořit šablonu z projektu"
+  permission_edit_project_template: "Upravit šablonu projektu"
+  permission_delete_project_template: "Smazat šablonu projektu"
+  permission_view_project_activity: Zobrazit aktivitu projektu
+  permission_view_project_report: Zobrazit statistiku projektu
+  permission_action_duplicate_issue: Duplikovat zadání úkolu
+  permission_edit_own_issue: Úprava vlastních úkolů
+  permission_view_restrictions_users: Zobrazit komentáře pouze někomu
+  permission_view_personal_statement: "Zobrazit osobní výkaz"
+  permission_view_all_statements: "Zobrazit odpracovaný čas všech pracovníků"
+  permission_manage_page_project_overview: "Spravovat stránku projektu"
+  permission_supervisor: "Vidí a aktualizuje projekty, kde není členem"
+  permission_archive_project: "Archivovat projekt"
+  permission_copy_project: "Kopírovat projekt"
+  permission_manage_my_page: 'Úprava mojí stránky'
+  permission_view_easy_attendances_extra_info: 'Zobrazit dodatečné údaje (IP uživatele, ...)'
+  permission_manage_global_versions: 'Správa globálních milníků'
+  permission_manage_easy_issue_timers: 'Přístup k nastavení úkolových stopek'
+  permission_edit_project_custom_fields: 'Úprava projektových polí'
+  permission_delete_project: 'Smazat projekt'
+  permission_manage_easy_resource_booking_module: 'Upravovat stránku rezervace zdrojů'
+
+  heading_easy_user_working_time_calendar_index: Přehled kalendářů - fond pracovní doby
+  heading_easy_user_working_time_calendar_show: Kalendář %{calendarname}
+  heading_easy_user_working_time_calendar_edit: Úprava základních parametrů kalendáře
+  heading_easy_user_working_time_calendar_new: Nový kalendář
+  heading_easy_user_working_time_calendars_holiday_index: Přehled svátků
+  heading_easy_user_working_time_calendars_holiday_edit: Úprava svátku
+  heading_easy_user_working_time_calendars_holiday_new: Nový svátek
+  heading_layout_from_template_selecting_projects: Výběr projektů pro aplikování šablony
+  heading_layout_from_template_selecting_users: Výběr uživatelů pro aplikování šablony
+  heading_project_mass_copy_select_source_project: Klikni na projekt, ze kterého se bude kopírovat
+  heading_project_mass_copy_select_target_projects: Vyber projekty, do kterých se bude kopírovat
+  heading_project_mass_copy_select_actions: Vyberte akce, které chcete z projektu kopírovat
+  heading_easy_issues_preview_external_email: Odeslání externího emailu
+  heading_issues_settings_display: Zobrazení
+  heading_issues_settings_behaviour: Chování
+
+  label_simple_add_project_task: "Seznam projektů"
+  label_simple_add_project_task_on_project: "Podprojekty"
+  label_done: "hotovo"
+  label_added_time_by: "Zadal %{author}"
+  label_added_datetime_by: "Zadal %{author} v %{datetime}"
+  label_issue_due_date: "Do dokončení zbývá"
+  label_show_user_info: "Zobrazit informace o uživateli %{username}."
+  label_show_assigned_issues: "Zobrazit úkoly přiřazené uživateli %{username}."
+  label_budget_draw: "Čerpání rozpočtu"
+  label_user_new_issue: "Vytvořit nový úkol pro %{username}."
+  label_user_saved_query: "Zobrazit uživatelský filtr %{queryname}."
+  label_show_project_info: "Zobrazit detail projektu %{projectname}."
+  label_show_issue_info: "Zobrazit detail úkolu %{issuename}."
+  label_news_view_all: "Všechny zprávy"
+  label_issue_due_date_overdue: "Do dokončení zbývá: "
+  label_issue_due_date_not_overdue: "Po termínu o "
+  label_project_due_date_overdue: "do dokončení zbývá "
+  label_project_due_date_not_overdue: "po termínu o "
+  label_templates_plural: "Šablony projektů"
+  label_news_unread: "Nepřečtená zpráva"
+  label_new_project_name: "Nový název"
+  label_template_new: "Nový projekt ze šablony"
+  label_template_copy: "Překopírovat šablonu do existujícího projektu"
+  label_easy_page_module_settings_missing: "Prosím, nastavte správně modul."
+  label_my_page_project_query_select: "Uložený filtr:"
+  label_my_page_issue_query_select: "Uložený filtr:"
+  label_my_page_user_query_select: "Uložený filtr:"
+  label_my_page_document_query_select: "Uložený filtr:"
+  label_my_page_project_output_select: "Výstup formou:"
+  label_my_page_issue_output_select: "Výstup formou:"
+  label_my_page_user_output_select: "Výstup formou:"
+  label_my_page_issue_query: "Uložený filtr"
+  label_my_page_issue_query_new_before: "Nový filtr si můžete vytvořit na seznamu úkolů nebo "
+  label_my_page_issue_query_new_link: zde
+  label_my_page_issue_query_new_after: .
+  label_my_page_issue_row_count: "Maximální počet zobrazených úkolů (0 je bez omezení):"
+  label_my_page_projects_row_count: "Počet projektů:"
+  label_my_page_document_row_count: "Počet dokumentů:"
+  label_my_page_users_row_count: "Počet uživatelů:"
+  label_my_page_news_row_count: "Počet zpráv:"
+  label_my_page_users_filter_visible: "Zobrazit možnost filtrování na přehledové stránce projektu:"
+  label_my_page_issue_enable_text_editor: "Použít textový editor:"
+  label_my_page_issue_show_fields_option_part1: "Zobrazit"
+  label_my_page_issue_show_fields_option_part2: "pole formuláře."
+  label_my_page_projects_query_settings_missing: "Prosím, nastavte správně modul."
+  label_my_page_projects_query_select: "Uložený filtr:"
+  label_my_page_projects_query: "Uložený filtr"
+  label_my_page_projects_query_new_before: "Nový filtr si můžete vytvořit na seznamu projektů nebo "
+  label_my_page_projects_query_new_link: zde
+  label_my_page_projects_query_new_after: .
+  label_my_page_google_maps_iframe_tag: 'HTML embeded tag'
+  label_version_show_closed_issues: "Zobrazit hotové úkoly"
+  label_easy_pages_project_administration: "Přizpůsobení stránek"
+  label_easy_pages: Seznam stránek k přizpůsobení
+  label_easy_page_zone: zóna
+  label_easy_page_zones: zóny na stránce %{pagename}
+  label_easy_page_new: nová stránka
+  label_easy_page_edit: upravit stránku
+  label_easy_page_zones_view: Přehled zón ve stránce
+  label_easy_page_zone_new: zóna
+  label_easy_page_zone_edit: upravit zónu
+  label_easy_page_zone_show: zobrazit zónu %{zonename}
+  label_easy_page_modules: moduly v zóně
+  label_easy_page_user_modules: Moduly na stránce %{pagename}
+  label_personalize_user_page: Upravit nebo přidat moduly
+  label_personalize_user_page_from_layout: Přepsat stránku defaultním nastavením
+  label_easy_page_templates: Seznam šablon na stránce %{pagename}
+  label_easy_page_templates_new: Nová šablona
+  label_easy_page_template_new: Nová šablona stránky %{pagename}
+  label_easy_page_template_edit: Editace šablony stránky %{pagename}
+  label_easy_page_user_layout_modules: Rozvržení modulů na stránce
+  label_easy_page_template_user_modules: Rozvržení modulů v šabloně %{templatename}
+  label_easy_page_template_show: Rozvržení modulů
+  label_back_to_easy_page_templates:
+  label_select_page_template: "Vyberte šablonu stránky:"
+  label_select_my_page_template: "Vyberte šablonu pro mojí stránku"
+  label_easy_page_zones_new_assignments: Přidat zónu do stránky
+  label_easy_page_assign_zone: Přiřazení zóny do rozvržení stránky %{pagename}
+  label_select_page_assign_zone: "Vyberte zónu:"
+  label_easy_page_no_zones: "Nejsou definovány žádné zóny."
+  label_easy_page_no_pages: "Nejsou definovány stránky k upravení."
+  label_easy_page_module_select: "Vyber modul ze seznamu:"
+  label_user_my_page: Moje stránka
+  label_project_custom_fields: Projektové vlastní pole
+  label_project_no_custom_fields: Projektové vlastní pole nejsou přiřazeny.
+  label_easy_page_module_empty: "Modul <b>%{modulename}</b> nelze v šabloně zobrazit. Po přidání do konkrétní stránky se správně zobrazí."
+  label_easy_page_module_missing: "Modul <b>%{modulename}</b> nelze zobrazit, protože neexistuje."
+  label_project_templates_update_dates: "Posunout všechny relevantní datumy k začátku projektu."
+  label_user_saved_projectquery: "Zobrazit uživatelský filtr %{queryname}."
+  label_new_project_from_template: Nový projekt ze šablony
+  label_new_subproject_from_template: Nový podprojekt ze šablony
+  label_easy_my_page_template_to_all: Aplikovat šablonu na všechny uživatele
+  label_custom_field_computed_string: Vypočtené pole - Text
+  label_custom_field_computed_integer: Vypočtené pole - Celé číslo
+  label_custom_field_computed_float: Vypočtené pole - Desetinné číslo
+  label_custom_field_computed_date: Vypočtené pole - Datum
+  label_custom_field_computed_boolean: Vypočtené pole - Ano/Ne
+  label_my_page_timelog_calendar: Pracovní výkaz
+  label_my_page_timelog_calendar_period_select: "Perioda kalendáře:"
+  label_timelog_calendar_link_before: ""
+  label_timelog_calendar_link_after: " hod."
+  label_close_versions: Uzavřít všechny dokončené milníky
+  label_restrictions_users: Zobrazit jen
+  label_timelog_view_all: Celý výkaz
+  label_personal_statement: "Osobní výkaz"
+  label_log_time: "Zápis času"
+  label_issue_assigned_to_users: "Uživatelé:"
+  label_issue_assigned_to_groups: "Skupiny:"
+  label_template_to_selected_projects: "Aplikovat šablonu na konkrétní projekty"
+  label_template_to_selected_users: "Aplikovat šablonu na konkrétní uživatele"
+  label_error_project_query: "Nastala chyba při zpracovávání filtru. Prosím, tuto chybu nahlašte Vašemu administrátorovi."
+  label_project_description: "Popis"
+  label_easy_lookup: "Lookup"
+  label_custom_field_settings_entity_type: "Entita"
+  label_custom_field_settings_entity_attribute: "Atribut"
+  label_link_with: "Odkaz s %{attribute}"
+  label_issue_new_relation_before: "Tento úkol"
+  label_issue_new_relation_after: "úkoly:"
+  label_project_new_relation_before: "Tento projekt"
+  label_project_new_relation_after: "projekty:"
+  label_version_new_relation_before: "Tento milník"
+  label_version_new_relation_after: "milníky:"
+  label_subtask_plural: "Podúkoly"
+  label_parenttask_plural: "Nadřazené úkoly"
+  label_my_page_timelog_simple_day_limit: "Počet zobrazených dní"
+  label_last_year: minulý rok
+  label_revert_to_version: Vrátit se k této verzi
+  label_project_overview_project_info: "Informace o projektu"
+  label_easy_user_queries_plural: Uživatelé
+  label_easy_time_entry_queries_plural: Odpracovaný čas
+  label_menu_more: "Další"
+  label_project_index: "Výpis projektů"
+  label_issue_index: "Výpis úkolů"
+  label_issue_static_attributes_heading: "Základní údaje:"
+  label_issue_updatable_attributes_heading: "Další vlastnosti:"
+  label_issue_attachments_heading: "Soubory:"
+  label_issue_watchers_heading: "Spolupracují:"
+  label_document_category_read_role: Oprávnění číst dokumenty v této kategorii
+  label_document_category_manage_role: Oprávnění spravovat dokumenty v této kategorii
+  label_document_category_custom_roles_n: Použít výchozí nastavení
+  label_document_category_custom_roles_y: Použít vlastní nastavení
+  label_datetime_custom_field_tag_hour: "hod."
+  label_datetime_custom_field_tag_minute: "min."
+  label_datetime_custom_field: "Datum a čas"
+  label_menu_project_template: "(ŠABLONA)"
+  label_with_non_shared_versions: "Ukázat nesdílené milníky z podprojektů"
+  label_project_copy_tracker_issues:
+    zero: "žádný úkol"
+    one: "1 úkol"
+    two: "2 úkoly"
+    three: "3 úkoly"
+    four: "4 úkoly"
+    other: "%{count} úkolů"
+  label_top_ten_projects: Posledních 10 projektů
+  label_activity_all: "Všechny"
+  label_working_time: "Fond pracovní doby"
+  label_admin_easy_user_working_time_calendars: 'Fond pracovní doby - šablony'
+  label_easy_user_working_time_day_settings: 'Nastavení dnů'
+  label_easy_user_working_time_calendar_explanatory_notes: "Vysvětlivky:"
+  label_easy_user_working_time_calendar_explanatory_notes_default: Běžný pacovní den
+  label_easy_user_working_time_calendar_explanatory_notes_today: Dnešek
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: Víkend
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: Svátek
+  label_easy_user_working_time_calendar_explanatory_notes_exception: Pracovní výjimka
+  label_easy_user_working_time_calendar_none: 'Uživatel nemá vybraný žádný pracovní kalendář.'
+  label_easy_user_working_time_calendar_default_time: 'Defaultní pracovní doba je %{count} hodin.'
+  label_easy_user_working_time_calendar_change_calendar: 'Změnit pracovní kalendář na:'
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: 'Při změně kalendáře zachovat pracovní výjimky ze zvoleného kalendáře'
+  label_easy_user_working_time_calendar_settings: 'Nastavení'
+  label_easy_user_working_time_calendar_no_of_days: 'Pracovních dnů'
+  label_easy_user_working_time_calendar_no_of_hours: 'Pracovních hodin'
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: Zkopírovat z
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: Kopírovat výjimky
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: Kopírovat svátky
+  label_easy_user_working_time_mass_exceptions: Hromadné výjimky
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: Nastav počet pracovních hodin
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: ' na každé '
+  label_easy_query_settings: 'Nastavení filtrů'
+  label_field_format_autoincrement_from_to: 'Od - do'
+  label_field_format_autoincrement_entity_limitation: 'Automatické číslo počítat v rámci:'
+  label_field_format_rating_star_no: 'Počet hvězdiček'
+  label_project_templates_custom_fields: 'Nastavení projektových polí'
+  label_source_project: Zdrojový projekt
+  label_target_projects: Cílové projekty
+  label_easy_page_modules_on_project_overview: Moduly na přehledové stránce projektu
+  label_project_templates_change_issues_author: Změnit autora všech úkolů
+  label_easy_system_flag: '(nezobrazuje se v členech projektů apod.)'
+  label_timelog_comment_editor_enabled: "Používat editor pro komentář na zápisu času?"
+  label_time_entry_spent_on_at_issue_update_enabled: "Nastavovat datum zapisovaného času při aktualizaci úkolu?"
+  label_user_form_other_settings: "Další volby"
+  label_user_copy_roles_from: Použij role a práva podle uživatele
+  label_easy_page_tab_default_name: "Záložka %{count}"
+  label_mass_copy_select_actions: "Kopírovat (dané akce budou napřed smazány a pak překopírovány):"
+  label_select_none_assignee: "<< žádný řešitel >>"
+  label_select_no_change_assignee: "<< neměnit řešitele >>"
+  label_search_result_journal_header: "Hledaný řetězec nalezen v aktualizacích (%{count}):"
+  label_journal_as_search_result: "Aktualizace"
+  label_unread_entity: "Nepřečteno"
+  label_default_project_page: "Implicitní stránka projektu"
+  label_between: 'mezi'
+  label_too_many_mambers: 'Příliš mnoho uživatelů, použijte hledání:'
+  label_gantt_pdf_date: 'Od datumu '
+  label_gantt_show_all_versions: 'Zobrazit všechny milníky'
+  label_gantt_versions_above: 'Zobrazit milníky nad úkoly'
+  label_custom_field_settings_multiple: 'Vícehodnotový'
+  label_last_user_assigned_to: "<< Poslední řešitel >>"
+  label_author_assigned_to: "<< Autor >>"
+  label_default_color_schema: 'Výchozí barva'
+  label_template_easy_start_date: "Nastavit začátek projektu na"
+  label_templates_easy_start_date: "Nastavit začátek projektů na"
+  label_easy_color_schemes: 'Výběr barevného schéma:'
+  label_issue_color_scheme_for: 'Použít barevné schéma z:'
+  label_easy_setting_new_subproject_user_role_id: 'Role přiřazená uživateli bez práv administrátora, který podprojekt vytvořil'
+  label_easy_setting_new_subproject_user_role_id_info: '(vhodné pro případy, kdy uživatel má právo vytvářet pouze podprojekty)'
+  label_easy_setting_attachment_description: Popis příloh
+  label_easy_setting_attachment_description_required: povinný
+  label_easy_setting_attachment_description_enabled: zapnutý
+  label_easy_setting_attachment_description_disabled: vypnutý
+  label_easy_setting_use_personal_theme: 'Povolit uživatelům si měnit vlastní vzhled?'
+  label_issue_by_unassigned_to: "nepřiřazeno"
+  label_issue_notice_recipients: 'E-mail odeslán na: '
+  label_email: E-mail
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: 'Pracovní doba začíná v '
+  label_easy_user_working_time_calendar_time_to: 'Pracovní doba končí v '
+  label_issue_open_plural: Úkoly otevřené
+  label_issue_close_plural: Úkoly uzavřené
+  label_easy_version_queries_plural: 'Milníky'
+  label_issues_assigned_to_me_visible_issues_assigned: 'Pouze úkoly na kterých jsem přiřazen.'
+  label_issues_assigned_to_me_visible_issues_conserns: 'Úkoly na kterých jsem autorem, které řeším či na kterých spolupracuji.'
+  label_match_starting_dates: 'Nastavit začátek úkolů dle data začátku projektu'
+  label_easy_attendance_plural: Docházka
+  label_easy_attendance_queries_plural: 'Docházka'
+  label_next_issue: Další úkol
+  label_previous_issue: Předchozí úkol
+  label_issue_automatic_recalculate_attributes: "Automatická změna z podúkolu %{issue_id}"
+  label_easy_query_export_links: Exporty
+  label_easy_attendance_spent_time: 'Odpracovaný čas'
+  label_easy_attendance_report_working_time: 'odpracováno %{sum_timeentries} z %{total_working_hours}, tj. %{timeentries_percent}%'
+  label_easy_attendance_report_attendence_time: 'docházka %{sum_attendance} z %{total_working_hours}, tj. %{working_percent}%'
+  label_easy_attendance_user_arrival_add_notify_title: 'Upozornit mě na příchod'
+  label_easy_attendance_is_repeating: 'Opakovat ?'
+  label_easy_attendance_repeating_to: 'Opakovat do'
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  label_easy_google_maps_address: 'Adresa - Google mapa'
+  label_easy_versions: 'Milníky'
+  label_easy_versions_top_menu: 'Milníky'
+  label_easy_repository_source_easy_repository_url: 'URL k repozitáři'
+  label_preview_external_email_mail_sender: 'Odesílatel'
+  label_preview_external_email_mail_recepient: 'Příjemce'
+  label_preview_external_email_mail_cc: 'Kopie na'
+  label_preview_external_email_mail_subject: 'Předmět'
+  label_preview_external_email_mail_body_html: 'Tělo zprávy v HTML'
+  label_preview_external_email_mail_body_plain: 'Tělo zprávy v čistém textu'
+  label_is_null: 'je prázdné'
+  label_is_not_null: 'není prázdné'
+  label_easy_issue_timer: 'Úkolové stopky'
+  label_easy_issue_timer_settings: 'Úkolové stopky'
+  label_easy_issue_timer_start: 'Začátek'
+  label_easy_issue_timer_end: 'Dokončení'
+  label_easy_issue_queries_plural: 'Úkoly'
+  label_filter_group_project_fields: Projekt
+  label_filter_group_relations: Vazby
+  label_filter_group_custom_fields_suffix: uživatelská pole
+  label_filter_group_unknown: Nezařazené
+  label_filter_group_easy_issue_query: Úkol
+  label_filter_group_easy_project_query: Projekt
+  label_filter_group_easy_user_query: Uživatel
+  label_filter_group_easy_document_query: Dokument
+  label_filter_group_easy_version_query: Milník
+  label_filter_group_easy_attendance_query: Docházka
+  label_filter_group_easy_time_entry_query: Odpracovaný čas
+  label_filter_group_easy_group_query: Skupina
+  label_easy_custom_field_disable: Zakázat
+  label_easy_custom_field_enable: Povolit
+  label_easy_resource_booking_module: 'Rezervace zdrojů'
+  label_easy_resource_booking_module_top_menu: 'Rezervace zdrojů'
+# EASY REPEATING
+  hint_easy_repeating_repeat_hour_field: 'hodin'
+  label_easy_repeating_time_section_heading: 'Chci nastavit začátek a konec opakování'
+  label_easy_issue_easy_is_repeating: Opakující se
+  label_easy_is_easy_repeating_period: Záznam chci opakovat
+  label_easy_issue_easy_repeating_period_daily: Denně
+  label_easy_issue_easy_repeating_period_weekly: Týdně
+  label_easy_issue_easy_repeating_period_monthly: Měsíčně
+  label_easy_issue_easy_repeating_period_yearly: Ročně
+  label_easy_issue_easy_repeating_time: Nastavení vytvoření
+  label_easy_is_easy_repeating_time_hour: Vytvořit v
+  label_easy_issue_easy_repeating_create_time: Vytváření
+  label_easy_is_easy_repeating_create_time: Vytvářet záznam v danou hodinu
+  label_easy_issue_easy_repeating_in_advance: S předstihem
+  label_easy_issue_easy_repeating_on_start_date: V den opakování
+  label_easy_is_easy_repeating_create_now: Vytvořit záznamy nyní ?
+  label_easy_issue_easy_repeating_dont_create_now: Nyní nevytvářet
+  label_easy_issue_easy_repeating_create_now_all: Vytvořit nyní vše
+  label_easy_issue_easy_repeating_create_now_count: Vytvořit nyní
+  label_easy_is_easy_repeating_create_now_count_hint: 'záznamů'
+  label_easy_issue_easy_reccuring_daily_every: Každý
+  label_easy_issue_easy_reccuring_daily_each: den
+  label_easy_issue_easy_reccuring_daily_work: pracovní den
+  label_easy_issue_easy_reccuring_monthly_every: každý
+  label_easy_issue_easy_reccuring_recur_every: Opakovat každý
+  label_easy_issue_easy_reccuring_recur_years: rok(y)
+  label_easy_issue_easy_reccuring_recur_months: měsíc(e)
+  label_easy_issue_easy_reccuring_yearly_month_of: v
+  label_easy_issue_easy_reccuring_after_recurs: opakování
+  label_easy_issue_easy_repeating_endtype: Konec opakování
+  label_easy_is_easy_repeating_endtype_date: Dne
+  label_easy_is_easy_repeating_endtype_count: Po x opakování
+  label_easy_is_easy_repeating_endtype_count_hint: 'záznamech'
+  label_easy_issue_easy_repeating_endtype_endless: S koncem projektu
+  label_easy_issue_easy_repeating_start: Začátek opakování
+  label_easy_issue_reccuring_after: Po
+  label_easy_issue_reccuring_day_plural: dnech
+  label_easy_issue_reccuring_month: měsíc
+  label_easy_repeat_left_reccurs: Zbývá opakování
+  label_easy_issue_subject_reccuring_suffix: (Opakující)
+  label_not_updated_on: Nebylo aktualizováno
+  label_others: Ostatní
+  label_easy_rake_period: Každý
+  label_easy_rake_period_monthly: měsíc
+  label_easy_rake_period_daily: den
+  label_easy_rake_period_hourly: hodin
+  label_easy_rake_period_minutes: minut
+  label_easy_issue_reccuring_monthly_orders:
+    1: První
+    2: Druhý
+    3: Třetí
+    4: Čtvrtý
+    5: Poslední
+
+  easy_repeating_simple_options:
+    daily: Denně
+    weekly: Týdně
+    monthly: Měsíčně
+    quart_year: Čtvrtletně
+    half_year: Půlročně
+    yearly: Ročně
+    #-----
+    custom: 'Pokročilé...'
+
+  prompt_easy_repeat_simple_repeat: 'Nikdy'
+  title_easy_repeating_advanced_header: 'Rozšířené nastavení opakování'
+  button_easy_is_not_easy_repeating: 'Zrušit opakování'
+
+  label_easy_lesser_admin_for: 'Oblast kde může přistupovat malý administrátor:'
+  label_user_mail_no_notified_if_issue_closing: 'Nezasílat mi notifikace o uzavření úkolu'
+  label_user_mail_no_notification_ever: 'Neinformovat nikoho o mých změnách'
+  label_easy_setting_required_issue_id_at_time_entry: 'Při zápisu času je úkol povinné pole'
+  label_easy_setting_show_time_entry_range_select: 'Zobrazovat od/do rozbalovacím menu'
+  label_last_n_days_next_m_days: '- %{last} dnů + %{next} dnů'
+  lable_should_send_invitation_update: Odeslat pozvánku
+  label_hours_diff: Rozdíl
+  label_heading: Nadpis
+  label_email_field:
+    from: OD
+    to: KOMU
+  label_time: 'Čas'
+
+  label_day:
+    zero: "0 dní"
+    one: 1 Den
+    two: "%{count} Dny"
+    three: "%{count} Dny"
+    four: "%{count} Dny"
+    half: "%{count} Dne"
+    other: "%{count} Dnů"
+  label_easy_translation_original_value: 'Výchozí hodnota'
+  label_easy_external_authentication_attach: "Připojit %{provider} účet"
+
+  button_context_menu: "Zobrazit rychlou nabídku k úkolu."
+  button_attachment_context_menu: "Zobrazit historii verzí."
+  button_new_project_from_template: "Vytvořit nový projekt"
+  button_new_template_from_project: "Vytvořit novou šablonu"
+  button_create_project_from_template: "Vytvořit projekt"
+  button_copy_project_from_template: "Zkopírovat do projektu"
+  button_template_restore_project: "Vrátit"
+  button_easy_page_templates: Přehled šablon
+  button_save_easy_page: Uložit a zpět
+  button_edit_projectquery: Upravit dotaz
+  button_delete_projectquery: Odstranit dotaz
+  button_apply_projectquery: Použít
+  button_clear_projectquery: Smazat
+  button_save_projectquery: Uložit
+  button_timelog_calendar_new: Zapiš čas
+  button_uninstall: Odinstalovat
+  button_easy_lookup_modal_selector_assign: "Přiřadit vybrané"
+  button_new_issue_relation: "Přidat související"
+  button_issue_put_between: "Včlenit"
+  button_new_subtask: "Přidat podúkol"
+  button_easy_lookup_modal_close: "Pouze zavřít"
+  button_go_up: "Nahoru"
+  button_issue_create: "Ulož úkol"
+  button_issue_create_and_continue: "Ulož a pokračuj"
+  button_issue_update: "Aktualizovat úkol:"
+  button_issue_submit: "Uložit aktualizaci"
+  button_gantt_issue_update: "Aktualizovat úkol"
+  button_gantt_issue_update_plural: "Aktualizovat"
+  button_gantt_relation_new: "Nová vazba"
+  button_gantt_relation_destroy: "Odstranit vazbu"
+  button_easy_user_working_time_calendar_show: Detail kalendáře
+  button_easy_user_working_time_calendars_new: Nový kalendář
+  button_easy_user_working_time_calendar_holidays: Svátky
+  button_easy_user_working_time_calendar_holidays_new: Nový svátek
+  button_easy_user_working_time_back_to_calendar: Zpátky na kalendář
+  button_easy_user_working_time_back_to_calendars: Zpátky na kalendáře
+  button_easy_user_working_time_reset_to_parent: Vrátit kalendář do původní podoby
+  button_easy_user_working_time_parent: Přejít na nadřazený kalendář
+  button_check_subprojects: Zaškrtnout podprojekty
+  button_uncheck_subprojects: Odškrtnout podprojekty
+  button_check_rootprojects: Zaškrtnout hlavní projekty
+  button_uncheck_rootprojects: Odškrtnout hlavní projekty
+  button_edit_user_profile: Upravit profil
+  button_project_mass_copy: Hromadně kopírovat
+  button_choose_actions: Přejít na výběr akce
+  button_down: Dolů
+  button_check_and_uncheck_subprojects: "Zaškrtnout / odškrtnout podprojekty"
+  button_gantt_show_sidebar: Zobrazit uložené filtry
+  button_gantt_hide_sidebar: Skrýt uložené filtry
+  button_easy_page_add_tab: Přidat záložku
+  button_manage_versions: Spravovat milníky
+  button_mobile_saved_filters: Uložené filtry
+  button_edit_anonymous_user: Editovat anonymního uživatele
+  button_advanced_search: 'Rozšířené hledání'
+  button_settings: 'Nastavení'
+  button_history: 'Historie'
+  button_send_email: 'Odeslat email'
+  button_dont_send_email: 'Neodeslat email'
+  button_my_page_google_maps_url_helper: 'Nápověda jak přidat mapu z Googlu'
+  button_link_easy_google_map_address: 'Zobrazit na Google mapě'
+  button_select_file: 'Vybrat soubor'
+  button_easy_issue_timer_play: 'Jdu na to'
+  button_easy_issue_timer_pause: 'Pozastavit'
+  button_easy_issue_timer_stop: 'Je to hotovo'
+  button_easy_issue_timer_resume: 'Pokračovat'
+  button_easy_copy_to_project: Vytvořit projekt
+  button_release_cache: 'Vyprázdnit cache'
+  button_journal_unprivate_note: 'Zveřejnit'
+  button_create_issue_from_journal: Vytvořit úkol
+  button_execute: 'Spustit'
+  button_download_email: Stáhnout email
+  button_additional_context_menu: Další možnosti
+  button_load_additional_records: Načíst další záznamy
+  button_print: 'Vytisknout'
+  button_pdf: PDF
+  button_edit_mobile_page: 'Upravit mobilní verzi'
+
+  button_timelog_calendar_prev:
+    week: Předchozí týden
+    month: Předchozí měsíc
+    year: Předchozí rok
+  button_timelog_calendar_next:
+    week: Další týden
+    month: Další měsíc
+    year: Další rok
+
+  title_my_mobile_page_layout: 'Mobilní verze osobní stránky'
+  title_button_template: "Vytvořit šablonu z projektu %{projectname}."
+  title_button_template_create_project: "Vytvoří projekt ze šablony."
+  title_button_template_copy_project: "Zkopíruje obsah šablony do projektu."
+  title_button_template_restore_project: "Udělá ze šablony zpět původní projekt."
+  title_project_new_issue: "Přidat úkol do projektu %{projectname}"
+  title_project_edit: "Upravit projekt"
+  title_project_show: "Kliknutím přejdete na projekt %{projectname}"
+  title_other_formats_links_atom: "Načíst do RSS čtečky."
+  title_other_formats_links_csv: "Uložit na disk jako CSV soubor."
+  title_other_formats_links_pdf: "Uložit na disk jako PDF soubor."
+  title_other_formats_links_png: "Uložit na disk jako PNG obrázek."
+  title_other_formats_links_ics: "Uložit na disk jako ICS (Outlook) soubor."
+  title_other_formats_links_ics_outlook: "Odebírat tento seznam úkolů z MS Outlook kalendáře."
+  title_easy_page_zones_view: Kliknutím zobrazíte přehled zón ve stránce.
+  title_easy_page_zone_edit: Kliknutím upravíte zónu.
+  title_easy_page_zone_show: Kliknutím zobrzíte zónu.
+  title_easy_page_zone_modules: Kliknutím zobrzíte moduly.
+  title_personalize_user_page: Kliknutím můžete přizpůsobit tuto stránku.
+  title_personalize_user_page_from_layout: Kliknutím můžete vybrat šablonu stránky, která se použije místo tohoto rozložení.
+  title_easy_page_templates: Kliknutím zobrazíte přehled šablon ke stránce.
+  title_easy_page_templates_new: Kliknutím vytvoříte novou šablonu.
+  title_easy_page_user_layout_modules: Kliknutím zobrazíte rozvržení modulů na stránce.
+  title_easy_page_template_show: Kliknutím zobrazíte rozvržení modulů v šabloně stránky.
+  title_back_to_easy_page_templates:
+  title_easy_page_zones_new_assignments: Kliknutím přidáte novou zónu do rozvržení stránky.
+  title_button_save_easy_page: Kliknutím uložíte stránku a vrátite se zpět.
+  title_my_page_issue_query_new_link: Kliknutím můžete vytvořit nový filtr nad seznamem úkolů.
+  title_edit_projectquery: Kliknutím přejdete na stránku s editací tohoto uživatelského dotazu.
+  title_delete_projectquery: Kliknutím smažete tento uživatelský dotaz.
+  title_apply_projectquery: Kliknutím použijete přednastavený filtr k zobrazení projektů.
+  title_clear_projectquery: Kliknutím vrátíte přednastavený filtr do výchozí podoby.
+  title_save_projectquery: Kliknutím uložíte přednastavený filtr pro pozdější využití.
+  title_new_project_from_template: Kliknutím přejdete na seznam šablon.
+  title_easy_my_page_template_to_all: Aplikuje tuto šablonu pro všechny uživatele.
+  title_timelog_calendar_new: Kliknutím zapíšete čas k danému dni.
+  title_template_to_selected_projects: "Aplikuje tuto šablonu na konkrétní projekty"
+  title_template_to_selected_users: "Aplikuje tuto šablonu na konkrétní uživatele"
+  title_easy_lookup_modal_selector_assign: "Kliknutím můžete přiřadit vybrané položky."
+  title_button_edit: "Kliknutím můžete upravit tuto položku."
+  title_button_delete: "Kliknutím můžete smazat tuto položku."
+  title_new_issue_relation: "Přidat související úkoly"
+  title_new_subtask: "Přidat podúkol"
+  title_logo: "Kliknutím přejdete na mojí stránku."
+  title_delete: "Kliknutím odstraníte položku."
+  title_delete_selected: "Kliknutím odstraníte vybrané položky."
+  title_go_up: "Kliknutím přejdete na začátek stránky."
+  title_says: " říká:"
+  title_project_copy_tracker_issues: "Kliknutím můžete změnit typ úkolů."
+  title_user_profile: "Kliknutím zobrazíte profil uživatele %{username}."
+  title_easy_user_working_time_calendar_show: Kliknutím můžete upravit jednotlivé dny v kalendáři.
+  title_easy_user_working_time_calendars_new: Klíknutím můžete založit nový kalendář.
+  title_easy_user_working_time_calendar_holidays: Klíknutím můžete upravovat svátky.
+  title_easy_user_working_time_calendar_holidays_new: Kliknutím můžete založit nový svátek.
+  title_easy_user_working_time_back_to_calendar: Kliknutím se vrátíte zpátky na kalendář.
+  title_easy_user_working_time_back_to_calendars: Kliknutím se vrátíte zpátky na kalendáře.
+  title_easy_user_working_time_calendars_inline_edit: Kliknutím můžete přidat výjimku.
+  title_easy_user_working_time_calendars_inline_save: Kliknutím uložíte výjimku.
+  title_easy_user_working_time_calendars_inline_close: Kliknutím zavřete editaci výjimky.
+  title_easy_user_working_time_reset_to_parent: Kliknutím můžete smazat všechny aktuální výjimky a nastavit tak stav z nadřazeného kalendáře.
+  title_easy_user_working_time_parent: Kliknutím můžete přejít na nadřazený kalendář.
+  title_edit_user_profile: Kliknutím můžete upravit svůj profil.
+  title_easy_page_add_tab: Kliknutím můžete přidat záložku.
+  title_last_journal_link: Zobrazit poslední aktualizaci úkolu.
+  title_edit_anonymous_user: Kliknutím můžete editovat anonymního uživatele.
+  title_download_attachment: 'Stáhnout soubor'
+  title_show_attachment: 'Zobrazit obsah souboru'
+  title_permission_flag_r: Neumožňuje zápis - pouze pro čtení
+  title_permission_flag_p: Nevyžaduje přihlášení
+  title_permission_flag_m: Vyžaduje být členem projektu
+  title_permission_flag_l: Vyžaduje přihlášení
+  title_user_detail: 'Kliknutím zobrazíte datail uživatele.'
+  title_version_detail: 'Kliknutím zobrazíte datail milníku.'
+  title_jump_to_project: 'Vyber projekt'
+  title_easy_copy_to_project: Vytvoř projekt z úkolu
+  title_issue_remove_parent: 'Kliknutím již nebude tento úkol podúkolem.'
+  title_journal_unprivate_note: 'Zobrazit aktualizaci všem uživatelům'
+  title_create_issue_from_journal: "Vytvoří podúkol, s popisem z tohoto journalu"
+  title_additional_context_menu: Kliknutím otevřete nabídku s dalšími možnostmi
+  title_easy_issue_timer_button_play: 'Provede akutalizaci úkolu a začne měřit čas.'
+  title_easy_issue_timer_button_pause: 'Pozastavit měření času'
+  title_easy_issue_timer_button_stop: 'Provede aktualizaci úkolu a předvyplní zápis času'
+  title_easy_issue_timer_button_resume: 'Pokračovat v měření času'
+  title_add_module_to_empty_page: 'Kliknutím můžete přidat modul na tuto stránku.'
+  title_easy_panel_handler: 'Chytni a přetáhni položku do panelu'
+  title_modal_easy_translation_edit_for_column: "Úprava překladů pro: %{column}"
+  title_easy_translation_destroy: 'Odstranit tento překlad'
+  title_manage_easy_translations: 'Spravovat další překlady'
+  title_reorder_button: 'Řadit'
+  title_model_has_easy_external_id: Záznam pochází z externího zdroje.
+
+  title_timelog_calendar_prev:
+    week: Kliknutím přejdete na předchozí týden.
+    month: Kliknutím přejdete na předchozí měsíc.
+  title_timelog_calendar_next:
+    week: Kliknutím přejdete na další týden.
+    month: Kliknutím přejdete na další měsíc.
+  title_easy_modal_selector_trigger:
+    issue: "Kliknutím můžete vybrat úkoly ze seznamu."
+    project: "Kliknutím můžete vybrat projekty ze seznamu."
+    version: "Kliknutím můžete vybrat milníky ze seznamu."
+    user: "Kliknutím můžete vybrat uživatele ze seznamu."
+    group: "Kliknutím můžete vybrat skupiny ze seznamu."
+    document: "Kliknutím můžete vybrat dokumenty ze seznamu."
+  project_template:
+    label_name: Název šablony
+    label_new_project: Název nového projektu
+
+  sidebar_all_users_queries: "Úkoly dle lidí"
+  sidebar_issue_button_update: "Přidat poznámku nebo změnit parametry úkolu"
+  sidebar_issue_button_log_time: "Přidat odpracovaný čas k úkolu"
+  sidebar_issue_button_duplicate: "Duplikovat zadání úkolu"
+  sidebar_issue_button_copy: "Kopírovat úkol"
+  sidebar_issue_button_move: "Přesunout úkol"
+  sidebar_issue_button_delete: "Odstranit úkol"
+  sidebar_issue_spent_time: "Přehled odpracovaného času na úkolu"
+  sidebar_issue_info: "Informace o úkolu"
+  sidebar_issues_buttons: "Harmonogram"
+  sidebar_project_info: "Informace o projektu"
+  sidebar_project_spent_time: "Přehled odpracovaného času na projektu."
+  sidebar_project_members: "Projektový tým"
+  sidebar_budget_costs_info: "Náklady"
+  sidebar_project_family_info: "Projektový strom"
+
+  field_easy_due_date: "Datum dokončení"
+  field_easy_start_date: "Začátek"
+  field_summary: "Statistika úkolů"
+  field_spinned: "Neodsouvat dalšími zprávami"
+  field_zone_name: název zóny
+  field_page_name: Název stránky
+  field_is_primary: Primární
+  field_show_empty: Zobrazit i prázdné hodnoty
+  field_show_on_list: Zobrazit v seznamu
+  field_predicted_cost: Rozpočet
+  field_computed_token: Vzorec
+  field_member: Člen projektu
+  field_groups: Skupina
+  field_roles: Role
+  filter_active : aktivní
+  field_xproject: Projekty
+  field_cached_group_names: Skupiny
+  field_parent_user: Nadřízený
+  field_template_name: Název šablony
+  field_parent_project: Nadřazený projekt
+  field_root: Hlavní projekt
+  field_main_project: Hlavní projekt
+  field_sum_of_timeentries: Odpracovaný čas
+  field_remaining_timeentries: Zbývající čas
+  field_completed_percent: "% Hotovo"
+  field_attachment_created_on: "Soubor - vytvořeno"
+  field_user_roles: "Role"
+  field_show_on_more_form: "Zobrazit v 'více'"
+  field_spent_estimated_timeentries: "% Čerpání času"
+  field_easy_system_flag: 'Systémový příznak'
+  field_easy_global_rating: "Globální hodnocení"
+  field_id: ID
+  field_easy_version_category_id: Kategorie milníků
+  field_easy_version_category: Kategorie milníků
+  field_relations_from: 'související'
+  field_created_at: 'Vytvořeno'
+  field_updated_at: 'Editováno'
+  field_started_at: 'Začátek v'
+  field_finished_at: 'Konec v'
+  field_note: 'Poznámka'
+  field_easy_send_invitation: 'Zasílat pozvánku emailem'
+  field_send_to_external_mails: 'Odeslat aktualizaci na email?'
+  field_easy_do_not_allow_close_if_subtasks_opened: 'Nepovolit zavření úkolu, pokud je otevřený podúkol'
+  field_easy_do_not_allow_close_if_no_attachments: 'Nepovolit zavření úkolu, pokud nemá přílohy'
+  field_easy_issue_prefix: 'Úkolový prefix'
+  field_attachments: 'Přílohy'
+  field_ckeditor_toolbar_config: 'Panel nástrojů HTML editoru'
+  field_easy_issue_timer_assign_to_me: 'Přiřadit úkol mě'
+  field_easy_issue_timer_round: 'Zaokrouhlit čas'
+  field_attachment_reminder_words: "Slova pro přílohu"
+  field_easy_is_repeating: Opakující se
+  field_easy_lesser_admin: Malý administrátor
+  field_easy_user_type: Typ uživatele
+  field_easy_repeat_settings: Nastavení opakování
+  field_send_all_planned_emails: Poslat všechny naplánovaný emaily
+  field_easy_next_start: Příští spuštění
+  field_easy_is_meeting: Schůzka
+  field_easy_meeting_day: Den schůzky
+  field_easy_meeting_time: Čas schůzky
+  field_easy_start_date_time: Začátek
+  field_easy_due_date_time: Konec
+  field_mail_to_admin: Administrátorův e-mail
+  field_time_entry: Odpracovaný čas
+  field_sum_estimated_hours: Celková předepsaná doba
+  field_participant: Účastní se
+  field_updated_by_who: Aktualizoval
+
+  status_archived: archivováno
+
+  notice_successful_create_template: "Šablona v pořádku vytvořena."
+  notice_successful_create_project_from_template: "Projekt byl úspěšně vytvořen."
+  notice_failed_create_project_from_template: "Projekt se nepodařilo vytvořit: %{errors}"
+  notice_almost_successful_create_project_from_template: "Projekt byl vytvořen, ne vše se zkopírovalo."
+  notice_successful_restore_template: "Šablona byla úspěšně vrácena."
+  notice_template_successful_applied: Šablona byla aplikována.
+  notice_plugin_successful_uninstall: "Plugin %{plugin} byl úspěšně odinstalován, nyní je potřeba restartovat webový server."
+  notice_project_successful_archive: "Projekt byl archivován."
+  notice_failed_to_update: "Při ukládání nastala chyba."
+  notice_project_successful_unarchive: Projekt byl odarchivován.
+  notice_failed_to_save_time_entries: "Vykázané časy (%{count} z %{total}) se nepodařilo uložit."
+  notice_failed_to_save_issues2: "Selhalo uložení úkolu %{issue} z důvodu chyby: %{error}"
+  notice_journal_published: 'Aktualizace byla zveřejněna'
+  notice_easy_custom_field_disabled: Pole bylo zakázáno
+  notice_easy_custom_field_enabled: Pole bylo povoleno
+  notice_easy_attendance_departured: "Zapsán odchod v %{at}"
+  notice_easy_external_authorization_destroyed: "%{provider} účet byl úspěšně odpojen."
+
+  error_invalid_authenticity_token: Platnost stránky vypršela.
+  error_rss_reader_timeout: "Chyba v nastavení(ke stránce se nepodařilo momentálně připojit, zkontrolujte, zda mate správně uvedený zdroj úloh; zdrojem úloh nemůže být aktuální Easy Project!)."
+  error_rss_reader_bad_url: "Chyba v nastavení(ke stránce se nepodařilo momentálně připojit, zkontrolujte, zda mate správně uvedený zdroj úloh)."
+  error_rss_reader_old_ep: "Chyba v nastavení (zdrojem úkolú musí být Easy Project 2010 RC9 a vyšší)."
+  error_validates_max_size: "soubor je příliš velký"
+  error_custom_value_autoincrement_greater: "musí být větší než %{count}"
+  error_custom_value_autoincrement_equal: "musí být %{count}"
+  error_can_not_unarchive_project: Projekt nemohl být odarchivován.
+  error_can_not_delete_project: Projekt nemůže být smazán.
+  error_can_not_delete_project_template: Šablona nemůže být smazána.
+  error_can_not_create_project_template: 'Chyba při vytváření šablony z projektu %{projectname}.'
+  error_bulk_update_save: '%{count} objekt se nezdařilo uložit'
+  error_no_file_selected_to_upload: 'Nebyl zvolen žádný soubor k nahrání.'
+  error_cannot_close_issue_due_to_subtasks: 'Úkol nemůže být uzavřen, protože obsahuje neuzavřené podúkoly: %{issues}'
+  error_cannot_close_issue_due_to_no_attachments: 'Úkol nemůže být uzavřen, protože neobsahuje přílohu'
+  error_create_repo_from_url_cannot_create_dir: 'Nelze vytvořit cestu %{dir}'
+  error_create_repo_from_url_cannot_determine_repo_name: 'Nelze odhadnout název repozitáře'
+  error_create_repo_from_url_repo_already_exists: 'Repozitář již existuje'
+  error_create_repo_from_url_repo_cannot_be_created: 'Repozitář nemůže být vytvořen'
+  error_update_easy_issue_timer_settings: 'Nastavení nelze uložit'
+  error_project_not_selected: 'Projekt nebyl vybrán'
+  error_repeat_period_missing: Perioda musí být vybrána
+  error_repeat_endtype_missing: Není zadán způsob ukončení
+  error_repeat_endtype_count_blank: počet opakování není vyplněn
+  error_repeat_endtype_count_numeric: počet opakování musí být celé číslo
+  error_repeat_endtype_date_blank: datum ukončení není vyplněn
+  error_repeat_daily_option_missing: není vybrán typ opakování (pracovní/všechny dny)
+  error_repeat_daily_x_blank: není zadán počet dní pro opakování
+  error_repeat_daily_x_numeric: počet dní musí být celé číslo
+  error_repeat_weekly_days_selected: musí být vybrán alespoň jeden den v týdnu
+  error_repeat_monthly_option_missing: není vybrán typ opakování (po x dnech/vlastní)
+  error_repeat_monthly_day_numeric: den opakování musí být celé číslo od 1 do 31
+  error_repeat_monthly_month_numeric: měsíc opakování musí být celé číslo
+  error_easy_custom_field_disable_deletable: Toto pole nelze zakázat
+  error_request_token_obtain: "Chyba při kontaktování třetí strany, prosím prověřte nastavení!"
+  error_oauth_authorization: "Autorizace od třetí strany nebyla udělena, nebo nastala v udělování chyba"
+  error_oauth_destroy_failed: "%{provider} účet nemohl být odstraněn."
+
+  warning_model_has_easy_external_id: Záznam pochází z externího zdroje. Případná změna může být automaticky přepsána.
+
+  confirm_admininstration_display_all_project: Zobrazení všech projektů bude trvat velmi dlouho. Přejete si přesto pokračovat ?
+
+  text_commit_example_1: "refs #1523 @5h30m Dokončení kalendáře"
+  text_commit_example_2: "k úkolu č.1523 zaloguje 5h a 30m"
+  text_settings_gravatar_enabled: 'Pokud není položka Gravatar zvolena, tak se používá klasický avatar z profilu uživatele.'
+  text_textile_migration: 'Pro převod již uložených textů v textile formátu použijte nástroj z příkazové řádky: "bundle exec rake easyproject:textile:migrate_all RAILS_ENV=production"'
+  text_easy_attachment_reminder_confirm: "V textu zmiňujete přílohu, avšak žádná není přiložena, přesto pokračovat?"
+  text_easy_attachment_reminder_explanatory_html: '? = Jeden libovolný znak<br />* = Libovolný počet <br /><dd style="margin-left:15px;">libovolných znaků</dd>'
+  text_project_is_planned: 'Pokud je projekt plánovaný, tak se neodesílají emaily.'
+  text_easy_attendance_user_detail_online_at: 'Uživatel přišel v'
+  text_easy_attendance_user_detail_offline_at: 'Uživatel odešel v'
+  text_easy_attendance_user_detail_no_data_today: 'Uživatel dnes ještě nepřišel'
+  text_easy_attendance_user_notify_default_message: "%{user} se právě přihlásil"
+  text_easy_attendance_user_notify_title: "Upozornění se zašle na email: %{email}"
+  text_easy_attendance_user_notify_already_exists_warning: 'Pozor! Upozornění již existuje. Celkem %{count}x'
+  text_easy_repeating_reccuring_create_now: V této sekci určujete, kolik záznamů chcete vytvořit nyní.
+  text_easy_rake_task_failure_email: Pokud nastane ve zpracování chyba, bude zaslána zpráva na tuto adresu
+  text_easy_translation_add_translation: 'Přidat jazyk'
+  text_mobile_issue_query_notice: 'Doporučujeme použít jeden maximálně dva sloupce pro mobilní zobrazení.'
+  text_my_mobile_page_mobile_view_redirect_to_page_layout_warning: 'Pro přizpůsobení mobilní osobní stránky použijte prosím odkaz v přizpůsobení osobní stránky na desktopu.'
+  text_timelog_user_time_entry_no_activity_for_role: 'Pro vybranou roli nejsou dostupné žádné aktivity'
+
+  setting_issue_recalculate_attributes: 'Při vytváření podúkolů přepočítávat nadúkol (priorita, odhadovaná doba pracnosti, % odpracovaného času, začátek a konec úkolu.)'
+  setting_show_issue_id: 'Zobrazovat ID úkolů'
+  setting_quick_jump_to_an_issue: 'Přeskočit na úkol při hledání podle ID'
+  setting_display_issue_relations_on_new_form: 'Zobrazit související úkoly na novém formuláři'
+  setting_project_display_identifiers: Zobrazit sekvenční identifikátor
+  setting_issue_set_done_after_close: 'Nastavit 100% hotovo na uzavřených úkolech'
+  setting_issue_private_note_as_default: 'Nové poznámky nastavovat jako soukromé'
+  setting_allow_repeating_issues: 'Povolit opakující se úkoly'
+  setting_use_easy_cache: 'Zapnout částečnou cache'
+  setting_just_one_issue_mail: 'Posílat jen jeden mail při aktualizaci úkolu (mail nebude rozdělen na můj a ostatní)'
+  setting_show_easy_resource_booking: 'Zobrazit v menu rezervaci zdrojů'
+
+  my_page_timelog_calendar_period:
+    month: Měsíčně
+    week: Týdně
+
+  easy_pages:
+    pages:
+      my_page: Moje stránka
+      my_mobile_page: 'Moje mobilní stránka'
+      project_overview: Projekt - úvodní stránka
+      easy_resource_booking_module: Rezervace zdrojů
+    pages_description:
+      my_page: Moje stránka
+      my_mobile_page: 'Moje mobilní stránka'
+      project_overview: Projekt - úvodní stránka
+      easy_resource_booking_module: 'Přehled rezervace zdrojů nebo místnosti'
+    modules:
+      issues_create_new: "Nový úkol"
+      issue_query: "Úkoly podle filtru"
+      mobile_issue_query: "Úkoly podle filtru"
+      projects_query: "Projekty podle filtru"
+      documents: "Dokumenty"
+      issues_assigned_to_me: "Moje úkoly"
+      mobile_issues_assigned_to_me: "Moje úkoly"
+      issues_reported_by_me: "Moje nahlášené úkoly"
+      issues_watched_by_me: "Spolupracuji na úkolech"
+      my_calendar: "Můj kalendář"
+      my_projects_simple: "Seznam projektů"
+      news: "Zprávy"
+      saved_queries: "Seznam uložených filtrů"
+      timelog_simple: "Odpracovaný čas"
+      timelog_calendar: "Vykazovací kalendář"
+      project_history: "Historie projektu"
+      project_news: "Zprávy"
+      project_tree: "Podprojekty"
+      project_sidebar_all_users_queries: "Úkoly dle lidí"
+      project_sidebar_project_info: "Informace o projektu"
+      project_sidebar_project_members: "Projektový tým"
+      project_sidebar_saved_queries: "Uložené filtry"
+      project_issues: "Úkoly"
+      noticeboard: "Nástěnka"
+      project_sidebar_family_info: "Projektový strom"
+      project_info: "Informace o projektu"
+      attendance: "Docházka"
+      users_query: "Projektový tým podle filtru"
+      resource_availability: "Dostupnost zdroje/místnosti"
+      google_maps: "Mapa Google"
+    module_category:
+      calendars: Kalendáře
+      issues: Úkoly
+      lists: Seznamy
+      others: Ostatní
+      projects: Projekty
+      project_sidebar: Sidebar
+      timelog: Odpracovaný čas
+      users: "Uživatelé"
+      redmine: "Redmine"
+    zones:
+      top_left: nahoře vlevo
+      top_middle: nahoře uprostřed
+      top_right: nahoře vpravo
+      middle_left: uprostřed vlevo
+      middle_middle: uprostřed
+      middle_right: uprostřed vpravo
+      bottom_left: dole vlevo
+      bottom_middle: dole uprostřed
+      bottom_right: dole vpravo
+      right_sidebar: sidebar vpravo
+    zones_description:
+      top_left: popis
+      top_middle: popis
+      top_right: popis
+      middle_left: popis
+      middle_middle: popis
+      middle_right: popis
+      bottom_left: popis
+      bottom_middle: popis
+      bottom_right: popis
+      right_sidebar: popis
+
+  label_my_page_project_output:
+    list: "seznamu"
+    calendar: "kalendáře"
+
+  label_my_page_issue_output:
+    list: "seznamu"
+    calendar: "kalendáře"
+
+  select_easy_page_module_project_info:
+    label: "vlastnost k zobrazení"
+    description: "popis"
+    customfields: "projektové vlastní pole"
+
+  easy_page_module:
+    project_history:
+      heading_project_edit_custom_fields: 'Úprava projektových polí'
+    project_query:
+      adhoc_query: "Ad-hoc filtr název:"
+      adhoc_query_default_text: "název filtru"
+    issue_query:
+      adhoc_query: "Ad-hoc filtr název:"
+      adhoc_query_default_text: "název filtru"
+    document_query:
+      adhoc_query: "Ad-hoc filtr název:"
+      adhoc_query_default_text: "název filtru"
+    user_query:
+      adhoc_query: "Ad-hoc filtr název:"
+      adhoc_query_default_text: "název filtru"
+    attendance:
+      adhoc_query: "Ad-hoc filtr název:"
+      adhoc_query_default_text: "Moje docházka"
+    resource_availability:
+      label_resource_name: 'Název zdroje'
+      label_day_start_time: 'Začátek dne v '
+      label_day_end_time: 'Konec dne v '
+      label_set_available: 'Přepnout na volno'
+      label_set_unavailable: 'Přepnout na obsazeno'
+      label_available: 'Volno'
+      label_unavailable: 'Obsazeno'
+      label_set_day_available: Přepnout celý den na volno
+      label_set_day_unavailable: Přepnout celý den na obsazeno
+      label_description_prompt: 'Prosím zadejte případný důvod:'
+    new_issue:
+      field: Pole
+      show: Zobrazovat
+      default_value: Výchozí hodnota (prázdná znamená beze změny)
+    saved_queries:
+      label_select_queries: Vybrané filtry
+
+  menu:
+    admin:
+      easy_pages_administration: "Přizpůsobení stránek"
+
+  breadcrumb:
+    label:
+      easy_pages_administration: "Přizpůsobení stránek"
+      easy_page_templates: "Šablony stránky %{pagename}"
+      easy_page_new: "Nová stránka"
+      easy_page_show: "Moduly na stránce %{pagename}"
+      easy_page_edit: "Editace stránky %{pagename}"
+      easy_page_templates_edit: "Editace šablony %{templatename}"
+      easy_page_templates_new: "Nová šablona stránky"
+      easy_page_template_view: "Rozložení modulů"
+      easy_page_template_edit: "Editace rozložení modulů"
+      easy_page_template_user_modules: "Rozvržení modulů"
+    title:
+      easy_pages_administration: "Kliknutím přejdete na administraci jednotlivých stránek."
+      easy_page_templates: "Kliknutím přejdete na seznam šablon stránky %{pagename}."
+      easy_page_new: "Kliknutím můžete založit novou stránku."
+      easy_page_show: "Kliknutím můžete zobrzit moduly na stránce %{pagename}."
+      easy_page_edit: "Kliknutím můžete upravit stránku %{pagename}."
+      easy_page_templates_edit: "Kliknutím můžete upravit šablonu %{templatename}."
+      easy_page_templates_new: "Kliknutím můžete založit novou šablonu ve stránce %{pagename}."
+      easy_page_template_view: "Kliknutím zobrazíte rozložení modulů."
+      easy_page_template_edit: "Kliknutím můžete upravit rozložení modulů v šabloně."
+      easy_page_template_user_modules: "Kliknutím zobrazíte rozvržení modulů."
+
+  easy_user_working_time_calendar_names:
+    standard: 'Standard'
+
+  easy_lookup:
+    document:
+      label: Dokumenty
+    group:
+      label: Skupiny
+    issue:
+      label: Úkoly
+    project:
+      label: Projekty
+    user:
+      label: Uživatelé
+    version:
+      label: Milníky
+
+  project_default_page:
+    project_overview: Přehled projektu
+    roadmap: Milníky
+    issue_tracking: Úkoly
+    time_tracking: Odpracovaný čas
+    news: Zprávy
+    documents: Dokumenty
+    repository: Repozitář
+    calendar: Kalendář
+    gantt: Gantt
+    boards: Fórum
+    files: Soubory
+    wiki: Wiki
+
+  user:
+    easy_user_type:
+      internal: Uživatel
+      external: Klient
+
+  select_option_issue_restrictions_users_blank:  '>> vyberte <<'
+  label_eqdt: ''
+
+ #bulktime
+  bulk_time_entry_title: Zápis času
+
+  label_bulk_time_entries: Zápis času
+  label_bulk_time_entries_edit: Editace času
+  label_bulk_time_add_another: Přidat další
+  label_bulk_time_flash_project: "Projekt:"
+  label_bulk_time_flash_issue: "Úkol:"
+  label_bulk_time_flash_comment: "Komentář:"
+  label_bulk_time_flash_user: "Uživatel:"
+  label_bulk_time_flash_hours: "Počet hodin:"
+  label_bulk_time_flash_spent_on: "Datum:"
+
+  button_back_to_calendar: Zpět na kalendář
+  button_bulk_time_save_and_continue: Uložit a přidat další
+
+  text_bulk_time_entry_permission: Tento uživatel nemá právo na vykazování času na projektech.
+  text_easy_settings_time_entry_heading: Omezení zápisu času
+  text_easy_settings_time_entry_limit: Povolit zadávání datumu o
+  text_easy_settings_time_entry_limit_note: Pokud chcete omezení vypnout, nechte políčka prázdná.
+  text_easy_settings_time_entry_limit_past: dní do minulosti
+  text_easy_settings_time_entry_limit_future: dní do budoucna
+
+  permission_view_bulk_time_entry: "Hromadné zápisovaní času"
+  permission_view_estimated_hours: 'Zobrazit předepsanou dobu'
+
+  mail:
+    subject:
+      issue_add: "[%{projectname}] nový úkol - %{issuesubject}"
+      my_issue_add: ">>> Můj úkol - [%{projectname}] nový úkol - %{issuesubject}"
+      issue_edit: "[%{projectname}] aktualizace - %{issuesubject} (%{issuestatus})"
+      my_issue_edit: ">>> Můj úkol - [%{projectname}] aktualizace - %{issuesubject} (%{issuestatus})"
+      news_added: "[%{projectname}] nová zpráva - %{newstitle}"
+      document_added: "[%{projectname}] nový dokument - %{documenttitle}"
+    field_author: "Zadal"
+    field_updated_by: "Aktualizoval"
+    field_before: "před"
+    field_updated_time: "Aktualizováno před"
+    label_attachment_new: 'Přidán nový soubor'
+    text_attachment_added: "Uživatel %{user} přidal %{time} k %{added_to} následující soubor(y):"
+
+  attachments:
+    no_more_versions: Žádné další verze
+    revert_to:
+      successfully: "Příloha úspěšně vrácena do verze %{version}."
+      failed: "Přílohu se nepodařilo vrátit do verze %{version}. Stávající verze je: %{current_v}."
+
+  easy_query:
+    name:
+      easy_issue_query: Úkoly
+      easy_project_query: Projekty
+      easy_user_query: Uživatelé
+      easy_document_query: Dokumenty
+      easy_version_query: Milníky
+      easy_attendance_query: Docházka
+      easy_time_entry_query: Odpracovaný čas
+      easy_group_query: Skupiny
+    label:
+      default_columns: Výchozí sloupce
+      default_fitlers: Výchozí filtry
+    button_apply:
+      project: 'Použít nastavení'
+      user: 'Použít nastavení'
+      issue: 'Použít nastavení'
+    sidebar_filters:
+      personal:
+        easy_issue_query: 'Osobní filtry nad úkoly'
+        easy_user_query: 'Osobní filtry nad uživateli'
+        easy_project_query: 'Osobní filtry nad projekty'
+        easy_document_query: 'Osobní filtry nad dokumenty'
+        easy_attendance_query: 'Osobní filtry nad docházkou'
+        easy_group_query: 'Osobní filtry nad skupinami'
+        easy_member_query: 'Osobní filtry nad členy projektu'
+        easy_time_entry_query: 'Osobní filtry nad vykázaným časem'
+        easy_version_query: 'Osobní filtry nad milníkama'
+        other: 'Osobní filtry'
+      public:
+        easy_issue_query: 'Veřejné filtry nad úkoly'
+        easy_user_query: 'Veřejné filtry nad uživateli'
+        easy_project_query: 'Veřejné filtry nad projekty'
+        easy_document_query: 'Veřejné filtry nad dokumenty'
+        easy_attendance_query: 'Veřejné filtry nad docházkou'
+        easy_group_query: 'Veřejné filtry nad skupinami'
+        easy_member_query: 'Veřejné filtry nad členy projektu'
+        easy_time_entry_query: 'Veřejné filtry nad vykázaným časem'
+        easy_version_query: 'Veřejné filtry nad milníkama'
+        other: 'Veřejné filtry'
+    easy_lookup:
+      name:
+        issue:
+          default: Vyberte úkoly
+          issue_relation: Vyberte související úkoly
+        project:
+          default: Vyberte projekty
+          project_relation: Vyberte související projekty
+        user:
+          default: Vyberte uživatele
+        group:
+          default: Vyberte skupiny
+        version:
+          default: Vyberte milníky
+          version_relation: Vyberte související milníky
+        document:
+          default: Vyberte dokumenty
+
+  easy_scheduler_task_info:
+    planned: "Úloha %{task_name} byla naplánována."
+    running: "Úloha %{task_name} právě probíhá."
+    ended_failed: "Úloha %{task_name} skončila neúspěšně."
+    ended_ok: "Úloha %{task_name} skončila úspěšně."
+    initialized: "Úloha %{task_name} byla vytvořena."
+
+  label_avatar: "Avatar"
+
+  message_avatar_uploaded: "Avatar byl úspěšně uložen."
+  button_change_avatar: "Úprava avatara"
+  button_delete_avatar: Odstranit avatara
+  are_you_sure_delete_avatar: "Opravdu chcete smazat avatara?"
+  avatar_deleted:  "Avatar byl smazán."
+  unable_to_delete_avatar:  "Omlouváme se. Při mazání avatara došlo k chybě."
+  avatar_invalid_file: "Nepovolený typ souboru"
+  text_avatar_not_available_because_gravatar: 'Nahrávání avatara není dostupné, protože je v systému zapnutá funkce gravatar. Bude použit Váš gravatar na základě e-mailové adresy'
+
+  license_manager:
+    user_limit: 'Váš maximální počet uživatelů byl vyčerpán, pro rozšíření nás kontaktujte na %{email}'
+    user_limit_unlock_button: 'Dosáhli jste maximálního počtu aktivních uživatelů.'
+
+  image_tag:
+    alt:
+      bullet_toggle_plus: 'Přepnout do multi-select režimu'
+
+  collapse_expand: "rozbalit/sbalit"
+
+  gantt_day: 'den'
+  gantt_day_plural: 'dny'
+  gantt_day_plural5: 'dnů'
+  gantt_start: 'Začátek'
+  gantt_end: 'Konec'
+  gantt_duration: 'Čas'
+  gantt_completed: 'Hotovo'
+  gantt_new_following_issue: Nový následující úkol
+  gantt_new_preceding_issue: Nový předcházející úkol
+  gantt_new_child_issue: Nový podúkol
+  button_gantt_zoom_day: 'Den'
+  button_gantt_zoom_week: 'Týden'
+  button_gantt_zoom_month: 'Měsíc'
+
+  issue_predecessor_error: "Úkol %{issue_name} již následuje jiný úkol."
+  project_predecessor_error: "Projekt %{project_name} již následuje jiný projekt."
+  version_predecessor_error: "Milník %{version_name} již následuje jiný milník."
+
+  #fullscreen
+  button_fullscreen: "Celá obrazovka"
+  title_fullscreen: "Zobrazit na celou obrazovku"
+  button_fullscreen_close: "X"
+
+  label_easy_publishing_module: 'Modul'
+  label_easy_publishing_modules: 'Publikační moduly'
+  easy_publishing_setting: 'Modul'
+  easy_publishing_setting_new: 'Nové nastavení modulu'
+  label_easy_publishing_setting_url: 'Příklad URL'
+  button_easy_publishing_settings_new: 'Nový modul'
+  label_easy_publishing_module_info: 'Info'
+  label_easy_publishing_module_contact: 'Kontakt'
+  label_easy_publishing_module_help: 'Nápověda'
+  label_easy_publishing_module_youtube: 'YouTube'
+  label_easy_publishing_module_info_header: 'Víte že?'
+  label_easy_publishing_invalid_file_type: 'Následující soubory nejsou obrázky a proto nebyly uloženy: %{files}.'
+
+  helper_module:
+    button_show_help: 'Zobraz nápovědu'
+    button_close_help: 'Zavřít nápovědu'
+    button_show_youtube: 'Přehrát video'
+    alt_image_help: 'Nápověda'
+    title_help: 'Nápověda'
+    title_contact: 'Kontakt'
+
+  user_time_entry_setting:
+    all: 'času nebo rozsahu'
+    hours: 'času'
+    range: 'rozsahu (od - do)'
+
+  easy_attendance:
+    range: 'Rozsah'
+    label: Docházka
+    label_menu_more: Docházka
+    label_back_to_basic: Zavřít
+    label_setting: Používat evidenci příchodů a odchodů
+    label_mail: 'Mail pro upozornění'
+    label_report_sum_time_entry: "Součet za rok %{year} [Odpracovaný čas]"
+    label_report_sum_attendance: "Součet za rok %{year} [Docházka]"
+    label_statistic_worked: 'odpracoval'
+    label_statistic_attendance: 'docházka'
+    label_statistic_supplement: "z %{hours}, tj. %{percent} %"
+    new: Zapsat příchod / odchod
+    arrival: Příchod
+    departure: Odchod
+    advanced_settings: Naplánovat docházku
+    label_activities: Aktivita
+    project_mapping_0: Bez vazby na projekt
+    project_mapping_1: Propojit s projektem
+    project_mapping_1_1: a aktivitou
+    link_to_easy_attendance: Výpis docházky
+    error_can_not_delete_activity: 'Aktivita je používána a nemůže být odstraněna.'
+    change_easy_attendance_activity_to: 'Změnit záznamům aktivitu na: '
+    text_activity_destroy_with_attendances: "Na aktivitu je vykázáno celkem %{count} záznamů docházky. Opravdu si přejete smazat aktivitu i se všemi záznamy?"
+    description:
+      arrival: Zapiš příchod
+      departure: Zapiš odchod
+      advanced_infobox: "Příklad: Beru si dovolenou od %{from} do %{to}."
+    activities:
+      enumerations:
+        label: Aktivity (docházka)
+        new: Nová aktivita na nástěnku
+    title:
+      advanced_settings: "Naplánujte si práci z domova nebo dovolenou."
+    arrival_date_error: nemůže být větší než odchod.
+    arrival_already_taken: V tomto rozmezí je již jiná aktivita.
+    invalid_date: není datum
+    departure_is_same_as_arrival: "nesmí mít stejný čas jako příchod."
+    notice:
+      notice_arrivaled: Zaznamenán příchod. Kliknutím můžete docházku změnit.
+      warning_missing_departure: 'V docházce chybí odchod ze dne %{arrival_date}. Prosím proveď zápis.'
+    calendar:
+      legend:
+        starting: Zapsaný začátek tento den
+        ending: Konec aktivity tento den
+        starting_ending: Aktivita začíná a končí tento den
+    mail_added:
+      subject: "%{user} ohlašuje nepřítomnost na pracovišti"
+      body_top: "%{user} ohlašuje %{activity} na pracovišti od %{from} do %{to}."
+      body_link: Přehled docházky zobrazíte zde.
+    mail_updated:
+      subject: "%{user} ohlašuje nepřítomnost na pracovišti"
+      body_top: "%{user} ohlašuje %{activity} na pracovišti od %{from} do %{to}."
+      body_link: Přehled docházky zobrazíte zde.
+    field_range: 'Zapsat aktivitu na:'
+    range:
+      full_day: 'Celý den'
+      forenoon: 'Dopoledne'
+      afternoon: 'Odpoledne'
+
+  field_at_work: V práci ?
+  field_arrival: Příchod
+  field_departure: Odchod
+  field_easy_attendance_activity: Aktivita
+  field_arrival_user_ip: IP příchodu
+  field_departure_user_ip: IP odchodu
+  field_color_schema: 'Barevné schéma'
+
+  sidebar_easy_attendances_all_users_queries: Docházka dle lidí
+
+  permission_view_easy_attendances: Zobrazit a používat docházku
+  permission_edit_easy_attendances: Upravovat cizí záznamy v docházce
+  permission_view_project_overview_users_query: "Zobrazit na projektové stránce uživetele podle filtru"
+  permission_edit_own_easy_attendances: 'Upravovat vlastní docházku'
+  permission_view_easy_attendance_other_users: 'Prohlížet cizí záznamy v docházce'
+
+  label_rating: Hodnocení
+  label_easy_global_rating: Globální hodnocení
+
+  error_put_between_issue_count: Vyberte prosím právě 2 úkoly
+
+  label_xml_data_export: Export XML dat
+  label_xml_data_select_exportables: Vyberte data pro export
+  label_xml_data_select_projects: Vyberte projekty
+  button_xml_data_import: Import
+  button_xml_data_continue: Pokračovat
+  button_xml_data_export: Export
+  label_xml_data_import: Import XML dat
+  label_user_mapping: Mapování uživatelů
+  label_map_to: Namapovat na
+  option_map_to_new_user: nový uživatel
+  label_xml_data_notify: Notifikovat uživatele
+  option_map_to_new_tracker: nový typ úkolu
+  label_tracker_mapping: Mapování typů úkolů
+  label_role_mapping: Mapování rolí
+  label_issue_status_mapping: Mapování stavů úkolů
+  label_issue_priority_mapping: Mapování stavů úkolů
+  label_time_entry_activity_mapping: Mapování aktivit
+  label_custom_field_mapping: Mapování uživatelských polí
+  option_map_to_new_role: nová role
+  option_map_to_new_project_custom_field: nové pole
+  option_map_to_new_issue_custom_field: nové pole
+  option_map_to_new_issue_priority: nová priorita
+  option_map_to_new_issue_status: nový stav
+  option_map_to_new_time_entry_activity: nová aktivita
+
+  label_auto_mapping: Automaticky mapovat
+  label_import_success: Všechna data byla úspěšně importována
+  label_import_zip_error: Nevyhovující formát dat
+
+  xml_data_users: Uživatelé
+  xml_data_trackers: Typy úkolů
+  xml_data_roles: Role
+  xml_data_issue_priorities: Priority úkolů
+  xml_data_project_custom_fields: Uživatelská pole
+  xml_data_issue_custom_fields: Uživatelská pole pro úkoly
+  xml_data_issue_statuses: Stavy úkolů
+  xml_data_document_categories: Kategorie dokumentů
+  xml_data_time_entry_activities: Aktivity
+
+  sample_text: 'Easy Project'
+  easy_color_scheme_not_available: "Barevné schéma je nyní nastaveno podle %{current}, změnu můžete provést "
+
+  easy_search:
+    legend_entities: 'Prohledávat:'
+    legend_column_types: 'Hledat v:'
+    label_column_type:
+      name: Názvu
+      description: Popisu
+      comment: Komentáři
+      other: Ostatním
+
+  enumeration_easy_version_cetegory: Kategorie milníků
+
+  label_tracker_move_issues: Přesun úkolů
+  label_tracker_move_issues_explanation: "Změnit úkolům typ na:"
+  button_tracker_move_issues: Přesunout a odstranit
+  option_dont_map: "-- nemapovat --"
+  move_auth_source_users_explanation: "Vyberte pro uživatele jiný autentifikační möd:"
+  button_auth_source_move_users: Přesunout a odstranit
+
+  dashboard:
+    legends:
+      others: "Ostatní"
+      projects: Projekty
+      issues: "Úkoly"
+      users: "Uživatelé"
+      security: "Zabezpečení"
+      xml: XML
+      extensions: "Rozšíření"
+      settings: "Nastavení"
+
+  easy_rake_tasks:
+    views:
+      heading_index: Přehled naplánovaných úloh
+      button_index: Přehled naplánovaných úloh
+      heading_settings: 'Nastavení úlohy %{task_name}'
+      heading_task_infos: 'Přehled proběhnutých úloh - %{task_name}'
+      interval: 'Interval'
+      next_run_at: 'Příští spuštění'
+      last_action: Poslední akce
+    periods:
+      daily: 'každý %{interval} den'
+      hourly: 'každých %{interval} hodin'
+      minutes: 'každých %{interval} minut'
+    easy_rake_task_receive_mail:
+      caption: 'Příjem mailů'
+    easy_rake_task_repeating_entities:
+      caption: Spouštění opakujících se úkolů
+    easy_rake_task_history_cleaner:
+      caption: Mazání staré historie naplánovaných úloh
+    easy_rake_task_check_failure_tasks:
+      caption: Kontrola selhaných naplánovaných úloh
+      email_type:
+        all_admins: Zaslat na email adminů
+        email: Zaslat na konkrétní email
+      mail:
+        heading: 'Dne %{date} selhaly tyto naplánované úlohy'
+        footer: 'Nastaveni můžete změnit v administraci naplánovaných úloh'
+
+  easy_rake_task_infos:
+    status:
+      running: Právě probíhá
+      ended_ok: Ukončeno v pořádku
+      ended_failed: Ukončeno s chybou
+
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: Neznámý
+        received: Přijat
+        processed_and_deleted: Zpracován a smazán
+        not_processed_and_deleted: NEBYL zpracován a byl smazán
+        not_processed_and_left_on_server: NEBYL zpracován a zůstal na serveru
+        cannot_be_processed: Nemůže být zpracován
+
+  themes:
+    easy: 'Easy'
+    easy_widescreen: 'Širokoúhlý'
+
+  editor_config_names:
+    basic: 'Základní'
+    extended: 'Rozšířený'
+    full: 'Plný'
+
+  custom_field_names:
+    external_mails:
+      label: Externí e-mail
+
+  label_easy_gantt_theme_plural: Vzhledy pro PDF gantt
+  label_easy_gantt_theme_new: Nový vzhled
+  label_header_style: Vzhled hlavičky
+  label_logo: Logo
+  field_header_color: Barva pozadí
+  field_header_font_color: Barva textu
+  label_with_theme: ve vzhledu
+
+  search_field_placeholders:
+    issues: 'Hledej v úkolech'
+    projects: 'Hledej v projektech'
+
+  label_zoom: Zobrazení
+  label_video_url: URL videa
+  label_setting_attendance_office_ip_range: IP rozsah kanceláře
+  text_setting_attendance_office_ip_range: "Začátek / Maska podsítē (nepovinné). Příklady: 10.0.0.0/255.255.255.0, 28.11.87.19, 3ffe:505:2::1"
+  label_setting_attendance_ip_range_activity_id: Aktivita v rozsahu
+  label_setting_attendance_outside_ip_range_activity_id: Aktivita mimo rozsah
+  label_customize_gantt_export: Nastavit vzhledy pro export
+  text_gantt_unsaved_changes: "Na stránce máte neuložené změny. Chcete pokračovat?"
+  title_inline_editable: Klikněte na ikonu tužky pro editaci
+  field_all_day: Celodenní
+  field_start_time: Začátek
+  field_end_time: Konec
+  title_new_meeting: Nová schůzka
+  label_meetings: Schůzky
+  label_display: Zobrazovat
+  text_meeting_destroy_confirmation: Opravdu si přejete odstranit tuto schůzku?
+  label_invitations: Pozvánky
+  field_mails: E-mailové adresy
+  text_meeting_created: "%{author} Vás zve na schůzku: %{name}"
+  button_meeting_accept: Potvrdit účast
+  button_meeting_decline: Zamítnout účast
+  workflow_tooltip_text_external_mails: Toto nastavení ovlivní i pole Odeslat na e-mail
+
+  text_tab_layout_remove_tab_confirmation: Opravdu si přejete smazat záložku se všemi moduly?
+
+  legend_mobile_issue_query_end_buttons_chooser: 'Tlačítka v seznamu úkolů'
+  field_favorited: Oblíbené
+  label_favorite: Přidat mezi oblíbené
+  label_unfavorite: Odebrat z oblíbených
+  button_show_all_projects: Zobrazit vše
+  button_show_favorite_projects: Zobrazit oblíbené
+  field_inherit_time_entry_activities: Dědit nastavení aktivit
+  label_branches: Větve
+  label_easy_plugin_setting_admin_whitelist: 'Povolit přístup jen těmto administrátorům'
+  text_easy_plugin_setting_admin_whitelist: 'Pokud nejsou vybráni žádní administrátoři jsou práva řízena podle nastavení v %{role_link}. V opačném případě může toto nastavení změnit pouze administrátor který je zde povolený'

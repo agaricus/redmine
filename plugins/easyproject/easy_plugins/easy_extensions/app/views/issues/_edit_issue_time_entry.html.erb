@@ -1,0 +1,10 @@
+<%= labelled_fields_for :time_entry, @time_entry do |time_entry| %>
+  <div id="issue_timeentry_fields" class="tabular">
+    <h4 class="icon icon-time-add"><%= l(:label_time_entry_plural) %></h4>
+    <%= render :partial => 'issues/edit_issue_time_entry_hidden', :locals => {:f => f, :time_entry => time_entry} %>
+    <%= content_tag :p, :class => 'issue-edit-time-entry-spent_on' do %>
+      <%= time_entry.text_field :spent_on, :value => (@time_entry && @time_entry.spent_on) || User.current.today , :size => 10, :required => true -%><%= calendar_for(:time_entry_spent_on) -%>
+    <% end if EasySetting.value('time_entry_spent_on_at_issue_update_enabled') %>
+    <%= render :partial => 'issues/edit_issue_time_entry_visible', :locals => {:f => f, :time_entry => time_entry} %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<div id="easy_user_time_calendar_holidays_index">
+  <h1><%= l(:heading_easy_user_working_time_calendars_holiday_index) -%></h1>
+  <% if (@holidays.empty?) -%>
+    <p class="nodata"><%= l(:label_no_data) -%></p>
+  <% else -%>
+    <table class="list">
+      <thead>
+        <tr>
+          <th><%= l('activerecord.attributes.easy_user_working_time_calendar_holiday.holiday_date'.to_sym) -%></th>
+          <th><%= l('activerecord.attributes.easy_user_working_time_calendar_holiday.is_repeating'.to_sym) -%></th>
+          <th><%= l('activerecord.attributes.easy_user_working_time_calendar_holiday.name'.to_sym) -%></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @holidays.each do |holiday| -%>
+          <tr class="<%= cycle('odd', 'even') -%>">
+            <td><%= holiday.is_repeating? ? format_short_date(holiday.holiday_date) : format_date(holiday.holiday_date) -%></td>
+            <td><%= image_tag('true.png', :alt => l(:general_text_Yes)) if holiday.is_repeating? -%></td>
+            <td><%= holiday.name -%></td>
+            <td class="buttons">
+              <%= link_to l(:button_edit), {:controller => 'easy_user_time_calendar_holidays', :action => 'edit', :id => holiday, :calendar_id => @easy_user_working_time_calendar}, { :class => 'icon icon-edit', :title => l(:title_button_edit) } -%>
+              <%= link_to(l(:button_delete), {:controller => 'easy_user_time_calendar_holidays', :action => 'destroy', :id => holiday, :calendar_id => @easy_user_working_time_calendar}, { :method => :delete, :class => 'icon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :title => l(:title_button_delete)}) -%>
+            </td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  <% end -%>
+</div>
+
+<% content_for :easy_page_layout_service_box do -%>
+  <%= link_to(l(:button_easy_user_working_time_calendar_holidays_new), { :controller => 'easy_user_time_calendar_holidays', :action => 'new', :calendar_id => @easy_user_working_time_calendar}, :class => 'button-1', :title => l(:title_easy_user_working_time_calendar_holidays_new)) -%>
+  <%= link_to(l(:button_easy_user_working_time_back_to_calendar), { :controller => 'easy_user_working_time_calendars', :action => 'show', :id => @easy_user_working_time_calendar}, :class => 'button-2', :title => l(:title_easy_user_working_time_back_to_calendar)) -%>
+<% end -%>

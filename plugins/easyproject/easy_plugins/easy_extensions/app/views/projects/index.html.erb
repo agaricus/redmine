@@ -1,0 +1,47 @@
+<div class="contextual">
+  <%= render(:partial => 'common/freetext_quick_search', :locals => {:free_search_element_to_update => 'projects', :free_search_url => url_for({:controller => 'projects', :action => 'search'}), :free_search_after_function => "$('#projects table.list tr:last span.expander').hide();", :free_search_ajax_type => 'POST'}) %>
+</div>
+<div id="projects-index">
+  <%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name =>  l(:label_project_index), :show_free_search => false} -%>
+  <% if @query.valid? %>
+    <div id="projects">
+      <% if @projects.empty? %>
+        <%= content_tag(:p, l(:label_no_data), :class => 'nodata') -%>
+      <% else %>
+        <%= render :partial => 'projects', :locals => {:query => @query, :projects => @projects} -%>
+      <% end %>
+
+    	<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+    </div>
+
+    <% if @project_pages %>
+      <p class="pagination" style="display:none;">
+        <% if @query.grouped? && @projects.any? %>
+          <% group_params = {:previous_group => @query.group_by_column.value(@projects.last).to_param.to_s} %>
+        <% end -%>
+        <%= pagination_links_full @project_pages, @entity_count, :next_link_params => group_params || {} %>
+      </p>
+    <% end -%>
+
+  <% end %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%= render_menu :projects_easy_page_layout_service_box -%>
+  <% if params[:favorited] %>
+    <%= link_to(l(:button_show_all_projects), projects_path(:set_filter => 0), :class => 'icon icon-fav button-2') %>
+  <% else %>
+    <%= link_to(l(:button_show_favorite_projects), projects_path(:set_filter => 1, :favorited => 1), :class => 'icon icon-star button-2') %>
+  <% end -%>
+  <%= call_hook(:view_projects_index_service_box_bottom, :locals => {:query => @query}) %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project} %>
+<% end %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'projectindex', :plugin => 'easy_extensions' %>
+<% end -%>

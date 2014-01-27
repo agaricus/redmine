@@ -1,0 +1,33 @@
+<% ep_read, ep_manage = enumeration.easy_permissions.find(:first, :conditions => {:name => 'read'}), enumeration.easy_permissions.find(:first, :conditions => {:name => 'manage'}) %>
+<fieldset class="box"><legend><%=l(:label_document_category_read_role)%></legend>
+  <p onclick="$('enum_read_custom_roles_n').checked=true;$('enum_read_custom_roles').hide();">
+    <%= radio_button_tag 'easy_permission[read][custom_roles]', '0', (ep_read.nil? || ep_read.role_list.blank?), :id => 'enum_read_custom_roles_n' %><%= l(:label_document_category_custom_roles_n) -%>
+  </p>
+  <p onclick="$('enum_read_custom_roles_y').checked=true;$('enum_read_custom_roles').show();">
+    <%= radio_button_tag 'easy_permission[read][custom_roles]', '1', (!ep_read.nil? && !ep_read.role_list.blank?), :id => 'enum_read_custom_roles_y' %><%= l(:label_document_category_custom_roles_y) -%>
+  </p>
+  <p id="enum_read_custom_roles" <%= 'style="display:none"' if (ep_read.nil? || ep_read.role_list.blank?) -%>>
+    <% Role.builtin.each do |role| %>
+      <label class="floating">
+        <%= check_box_tag 'easy_permission[read][role_list][]', role.id, (!ep_read.nil? && ep_read.role_list && ep_read.role_list.include?(role.id)) %>
+        <%= role.name %>
+      </label>
+    <% end %>
+  </p>
+</fieldset>
+<fieldset class="box"><legend><%=l(:label_document_category_manage_role)%></legend>
+  <p onclick="$('enum_manage_custom_roles_n').checked=true;$('enum_manage_custom_roles').hide();">
+    <%= radio_button_tag 'easy_permission[manage][custom_roles]', '0', (ep_manage.nil? || ep_manage.role_list.blank?), :id => 'enum_manage_custom_roles_n' %><%= l(:label_document_category_custom_roles_n) -%>
+  </p>
+  <p onclick="$('enum_manage_custom_roles_y').checked=true;$('enum_manage_custom_roles').show();">
+    <%= radio_button_tag 'easy_permission[manage][custom_roles]', '1', (!ep_manage.nil? && !ep_manage.role_list.blank?), :id => 'enum_manage_custom_roles_y' %><%= l(:label_document_category_custom_roles_y) -%>
+  </p>
+  <p id="enum_manage_custom_roles" <%= 'style="display:none"' if (ep_manage.nil? || ep_manage.role_list.blank?) -%>>
+    <% Role.builtin.each do |role| %>
+      <label class="floating">
+        <%= check_box_tag 'easy_permission[manage][role_list][]', role.id, (!ep_manage.nil? && ep_manage.role_list && ep_manage.role_list.include?(role.id)) %>
+        <%= role.name %>
+      </label>
+    <% end %>
+  </p>
+</fieldset>

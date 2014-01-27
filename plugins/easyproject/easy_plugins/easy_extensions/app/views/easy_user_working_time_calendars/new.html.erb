@@ -1,0 +1,11 @@
+<div id="easy_user_working_time_calendar_new">
+  <h1><%= l(:heading_easy_user_working_time_calendar_new) -%></h1>
+  <%= labelled_form_for @easy_user_working_time_calendar, :url => {:action => 'create'}, :html => {:class => 'tabular'} do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f, :easy_user_working_time_calendar => @easy_user_working_time_calendar } %>
+    <%= submit_tag l(:button_add), :class => 'button-1' %>
+  <% end %>
+</div>
+
+<% content_for :easy_page_layout_service_box do -%>
+  <%= link_to(l(:button_easy_user_working_time_back_to_calendars), { :controller => 'easy_user_working_time_calendars', :action => 'index'}, :class => 'button-2', :title => l(:title_easy_user_working_time_back_to_calendars)) -%>
+<% end -%>

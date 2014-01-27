@@ -1,0 +1,41 @@
+<%= render_project_heading(@project, l(:label_issue_new)) -%>
+<%= labelled_form_for @issue, :url => {:controller => 'issues', :action => 'create', :project_id => @project},
+  :html => {:multipart => true, :id => 'issue-form', :class => 'tabular new-issue-form'} do |f| %>
+  <%= hidden_field_tag('issue[parent_issue_id]', params[:issue][:parent_issue_id]) if params[:issue] && params[:issue][:parent_issue_id] -%>
+  <%= hidden_field_tag 'issue_first_controller', controller_name %>
+  <%= hidden_field_tag 'copy_from', params[:copy_from] if params[:copy_from] %>
+  <%= error_messages_for 'issue' %>
+  <%= error_messages_for 'new_issues' %>
+  <div class="box issue_fields">
+    <div id="issue_descr_text" class="issue_common_static_fields">
+      <%= render :partial => 'issues/new_form_static_attributes', :locals => {:issue => @issue} -%>
+    </div>
+    <% if @copy_from && @copy_from.attachments.any? %>
+      <p>
+        <label for="copy_attachments"><%= l(:label_copy_attachments) %></label>
+        <%= check_box_tag 'copy_attachments', '1', @copy_attachments %>
+      </p>
+    <% end %>
+    <% if @copy_from && !@copy_from.leaf? %>
+      <p>
+        <label for="copy_subtasks"><%= l(:label_copy_subtasks) %></label>
+        <%= check_box_tag 'copy_subtasks', '1', @copy_subtasks %>
+      </p>
+    <% end %>
+    <div id="issue-dependent-fields" class="issue-dependent-fields">
+      <%= render :partial => 'issues/new_form_dependent_fields' %>
+    </div>
+    <div style="clear: both"></div>
+    <div class="issue_submit_buttons">
+      <%= submit_tag l(:button_issue_create), :class => 'button-1', :tabindex => 900 %>
+      <%= submit_tag l(:button_issue_create_and_continue), :name => 'continue', :class => 'link_new icon-save-issue button-2', :tabindex => 910 %>
+    </div>
+  </div>
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'scm' %>
+  <%= robot_exclusion_tag %>
+<% end %>

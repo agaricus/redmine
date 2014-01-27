@@ -1,0 +1,15 @@
+<%= render('easy_repeating_advanced_form') %>
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $("#easy_section_repeating_options_<%= @settings['period'] || 'daily' %>" ).show();
+    $('input[name="<%= params[:object_name] || @entity.class.name.underscore %>[easy_repeat_settings][period]"]').change(function( e ){
+      if($(this).is(':checked')) {
+        $('.easy-section-repeating-period').hide();
+        $('#easy_section_repeating_options_' + $(this).val() ).show();
+      }
+    });
+
+  })
+
+</script>

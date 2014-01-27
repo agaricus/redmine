@@ -1,0 +1,13 @@
+<% if params[:tab] == 'my_page' %>
+  <% if (params[:tab_mode] == 'edit') -%>
+  <% elsif (params[:tab_mode] == 'template') -%>
+    <div class="easy-page-layout-from-template">
+      <%= render :partial => "easy_page_layout/page_layout_from_template", :locals => {:page => tab[:page], :user_id => tab[:user].id, :entity_id => nil, :back_url => url_for(:action => 'edit', :id => tab[:user].id, :tab => 'my_page')} -%>
+    </div>
+  <% else -%>
+    <div class="contextual">
+      <span><%= link_to l(:label_personalize_user_page), { :action => 'edit', :id => tab[:user].id, :tab => 'my_page', :page_id => tab[:page].id, :tab_mode => 'edit', :t => params[:t]}, { :class => 'customize-button button-2', :title => l(:title_personalize_user_page) } -%></span>
+      <span><%= link_to l(:label_personalize_user_page_from_layout), { :action => "edit", :id => tab[:user].id, :tab => 'my_page', :page_id => tab[:page].id, :tab_mode => 'template'}, { :class => 'button-2', :title => l(:title_personalize_user_page_from_layout) } -%></span>
+    </div>
+  <% end -%>
+<% end -%>

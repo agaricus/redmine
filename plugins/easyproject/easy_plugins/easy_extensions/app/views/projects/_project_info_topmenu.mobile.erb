@@ -1,0 +1,20 @@
+<% unless @project.nil? || @project.new_record? -%>
+  <div id="main-menu" class="grid_12">
+    <div class="grid_12 container_12 alpha omega">
+  <%# easy_cache ['project_header_breadcrump', User.current, @project, @issue] do %>
+      <div class="grid_9 alpha easy-dropper-target easy-drop-project" data-project-id="<%= @project.id %>" data-drop-action="project">
+        <div id="project-menu-breadcrumb" >
+          <div id="project-menu-breadcrumb-items">
+            <%= project_header_breadcrump -%>
+          </div>
+        </div>
+      </div>
+  <%# end %>
+
+    </div>
+  <%# easy_cache ['projects/_project_info_top_menu/project_menu', User.current, @project] do %>
+
+  <%# end %>
+  </div>
+  <div id="project-space-holder"></div>
+<% end -%>

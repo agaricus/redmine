@@ -1,0 +1,15 @@
+<div id="<%= "el-#{g_uuid}" -%>" class="easy-attendance-calendar-item " onclick="<%= "window.location='#{url_for({:controller => 'easy_attendances', :action => 'edit', :id => i})}'" if i.can_edit? %>">
+  <%= format_time(i.arrival, false) if i.arrival && i.start_date(User.current) == day -%> - <%= format_time(i.departure, false) if i.departure && i.due_date(User.current) == day -%>
+  <%= content_tag(:em, i.easy_attendance_activity.name) -%>
+  <% if i.can_edit? %>
+    <%= link_to i.user.name, {:controller => 'easy_attendances', :action => 'edit', :id => i} -%>
+  <% else %>
+    <%= content_tag(:a, i.user.name, :href => '#') %>
+  <% end %>
+</div>
+<% content_for :after_footer_tags do %>
+  <div id="tooltip-<%= g_uuid -%>" style="display:none;" class="tooltip">
+    <%= render :partial => 'easy_attendances/info', :locals => {:easy_attendance => i, :day => day} -%>
+  </div>
+  <%= javascript_tag "$('#el-#{g_uuid}').qtip({content: $('#tooltip-#{g_uuid}').html(), position: {adjust: {screen: true}}})" %>
+<% end %>

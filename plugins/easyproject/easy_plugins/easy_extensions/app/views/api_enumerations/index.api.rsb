@@ -1,0 +1,5 @@
+api.array :enumerations, api_meta(:total_count => @enumerations_count, :offset => @offset, :limit => @limit) do
+  @enumerations.each do |enumeration|
+    render_api_enumeration(api, enumeration)
+  end
+end

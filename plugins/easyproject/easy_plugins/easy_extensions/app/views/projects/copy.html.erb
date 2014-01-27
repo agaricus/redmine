@@ -1,0 +1,58 @@
+<% disabled_modules = EasyExtensions::EasyProjectSettings.disabled_features[:modules]
+source_project_and_descendants =  @source_project.self_and_descendants.non_templates %>
+
+<h2><%=l(:label_project_new)%></h2>
+
+<%= labelled_form_for @project, :url => { :action => "copy" }, :html => {:id => 'project-form'} do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+
+  <fieldset class="box"><legend><%= l(:button_copy) %></legend>
+    <label class="block"><%= check_box_tag 'only[]', 'easy_page_modules', true %> <%= l(:label_easy_page_user_modules, :pagename => '') %></label>
+
+    <% if @source_project.descendants.non_templates.any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'subprojects', true %> <%= l(:label_subproject_plural) %> (<%= @source_project.descendants.non_templates.count %>)</label>
+    <% end %>
+
+    <label class="block"><%= check_box_tag 'only[]', 'members', true %> <%= l(:label_member_plural) %> (<%= source_project_and_descendants.sum{|p| p.members.count} %>)</label>
+
+    <label class="block"><%= check_box_tag 'only[]', 'versions', true %> <%= l(:label_version_plural) %> (<%= source_project_and_descendants.sum{|p| p.versions.count} %>)</label>
+
+    <% if !disabled_modules.include?('issue_tracking') && source_project_and_descendants.has_module(:issue_tracking).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'issues', true %> <%= l(:label_issue_plural) %> (<%= source_project_and_descendants.sum{|p| p.issues.count} %>)</label>
+    <% end %>
+
+    <label class="block"><%= check_box_tag 'only[]', 'issue_categories', true %> <%= l(:label_issue_category_plural) %> (<%= source_project_and_descendants.sum{|p| p.issue_categories.count} %>)</label>
+
+    <% if !disabled_modules.include?('issue_tracking') && source_project_and_descendants.has_module(:issue_tracking).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'easy_queries', true %> <%= l(:label_query_plural) %> (<%= source_project_and_descendants.sum{|p| p.easy_queries.count} %>)</label>
+    <% end %>
+
+    <% if !disabled_modules.include?('boards') && source_project_and_descendants.has_module(:boards).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'boards', true %> <%= l(:label_board_plural) %> (<%= source_project_and_descendants.sum{|p| p.boards}.count %>)</label>
+    <% end %>
+
+    <% if !disabled_modules.include?('wiki') && source_project_and_descendants.has_module(:wiki).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'wiki', true %> <%= l(:label_wiki_page_plural) %> (<%= @source_project.wiki.nil? ? 0 : @source_project.wiki.pages.count %>)</label>
+    <% end %>
+
+    <% if !disabled_modules.include?('documents') && source_project_and_descendants.has_module(:documents).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'documents', true %> <%= l(:project_module_documents) %>  (<%= source_project_and_descendants.sum{|p| p.documents.count} %>)</label>
+    <% end %>
+
+    <% if !disabled_modules.include?('time_tracking') && source_project_and_descendants.has_module(:time_tracking).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'activity', true %> <%= l(:enumeration_activities) %></label>
+    <% end %>
+
+    <% if !disabled_modules.include?('news') && source_project_and_descendants.has_module(:news).any? %>
+      <label class="block"><%= check_box_tag 'only[]', 'news', true %> <%= l(:label_news) %> (<%= source_project_and_descendants.sum{|p| p.news.count} %>)</label>
+    <% end %>
+
+    <%= call_hook(:view_projects_copy, :source_project_and_descendants => source_project_and_descendants, :disabled_modules => disabled_modules) %>
+    <%= hidden_field_tag 'only[]', '' %>
+    <p>
+      <label class="block"><%= check_box_tag 'notifications', 1, params[:notifications] %> <%= l(:label_project_copy_notifications) %></label>
+    </p>
+  </fieldset>
+
+  <%= submit_tag l(:button_copy), :class => 'button-1' %>
+<% end %>

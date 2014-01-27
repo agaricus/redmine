@@ -1,0 +1,13 @@
+<h2><%= l(:label_xml_data_import) %></h2>
+
+<%= form_tag({:action => "import"}, :multipart => true) do %>
+  <p><%= file_field_tag 'archivefile' %></p>
+  <p><label> <%= check_box_tag 'notifications', 1 %> <%= l(:label_xml_data_notify) %></label></p>
+  <h3><%= l(:label_auto_mapping) %></h3>
+  <div>
+    <% @mappables.each do |importable_id| %>
+      <label><%= check_box_tag 'auto_mappings[]', importable_id, true %> <%= l("xml_data_#{importable_id.pluralize}")%></label>
+    <% end %>
+  </div>
+  <p><%= submit_tag l(:button_xml_data_import), :class => "button-2 big" %></p>
+<% end -%>

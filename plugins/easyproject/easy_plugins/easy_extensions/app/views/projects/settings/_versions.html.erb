@@ -1,0 +1,39 @@
+<div class="contextual">
+  <p>
+    <%= link_to_if_authorized l(:label_version_new), {:controller => 'versions', :action => 'new', :project_id => @project }, :class => 'button-1 icon icon-add' %>
+    <% if @project.versions.any? %>
+      <%= link_to l(:label_close_versions), close_completed_project_versions_path(@project), :method => :put, :class => 'button-2' %>
+    <% end %>
+  </p>
+</div>
+<br /><br />
+
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => l(:label_version), :back_url => url_for({:controller => 'projects', :action => 'settings', :id => @project, :tab => 'versions'}), :easy_query_clear_url => {:controller => 'projects', :action => 'settings', :id => @project, :tab => 'versions', :set_filter => 0}, :easy_query_apply_url => url_for({:controller => 'projects', :action => 'settings', :id => @project, :tab => 'versions', :set_filter => '1'}) } -%>
+
+<div id="versions">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @versions, :options => {:hascontextmenu => true} } -%>
+</div>
+
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+
+<% sidebar = render(:partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class, :project => @project, :query_link => {:controller => 'projects', :action => 'settings', :id => @project, :tab => 'versions'}}) -%>
+<% content_for :sidebar do %>
+  <%= sidebar -%>
+<% end unless sidebar.blank? %>
+
+<%= javascript_tag do %>
+  var form = $('#query_form');
+  $(document).ready(function() {
+  form.append('<input type="hidden" name="tab" value="versions" />');
+  });
+
+  function submit_form(form_id,url) {
+  var frm = $('#' + form_id);
+  frm.attr("method","get");
+  frm.action = url;
+  frm.submit();
+  }
+
+<% end %>
+
+<%= context_menu({:controller =>'context_menus', :action => 'versions', :project_id => @project }, '#versions') -%>

@@ -1,0 +1,34 @@
+<%= render :partial => 'common/calendar_listing_links', :locals => {:period => :month, :calendar => easy_user_working_time_calendar} -%>
+<table class="easy-user-working-time-calendar cal">
+  <thead>
+    <tr>
+      <th scope="col" title="<%= l(:label_week) %>" class="week-number"></th>
+      <% 7.times do |i| %>
+        <th scope="col"><%= day_name( (easy_user_working_time_calendar.first_wday+i)%7 ) %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% day = easy_user_working_time_calendar.startdt
+      while day <= easy_user_working_time_calendar.enddt -%>
+        <%= "<td class='week-number' title='#{ l(:label_week) }'>#{(day+(11-day.cwday)%7).cweek}</td>".html_safe if day.cwday == easy_user_working_time_calendar.first_wday %>
+        <td id="<%= day.to_s.underscore -%>">
+          <%= render :partial => 'easy_user_working_time_calendars/inline_show', :locals => {:day => day, :easy_user_working_time_calendar => easy_user_working_time_calendar} -%>
+        </td>
+        <%= '</tr><tr>'.html_safe if day.cwday == easy_user_working_time_calendar.last_wday && day != easy_user_working_time_calendar.enddt %>
+        <% day = day + 1
+      end -%>
+    </tr>
+  </tbody>
+</table>
+<div class="easy-user-working-time-calendar-explanatory-notes-container">
+  <p><%= l(:label_easy_user_working_time_calendar_explanatory_notes) %></p>
+  <table class="explanatory-notes">
+    <tr><td class="even"><%= l(:label_easy_user_working_time_calendar_explanatory_notes_default) -%></td></tr>
+    <tr><td class="even today"><%= l(:label_easy_user_working_time_calendar_explanatory_notes_today) -%></td></tr>
+    <tr><td class="even weekend"><%= l(:label_easy_user_working_time_calendar_explanatory_notes_weekend) -%></td></tr>
+    <tr><td class="even holiday"><%= l(:label_easy_user_working_time_calendar_explanatory_notes_holiday) -%></td></tr>
+    <tr><td class="even exception"><%= l(:label_easy_user_working_time_calendar_explanatory_notes_exception) -%></td></tr>
+  </table>
+</div>

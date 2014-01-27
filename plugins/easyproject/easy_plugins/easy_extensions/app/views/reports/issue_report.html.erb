@@ -1,0 +1,68 @@
+<h2><%=l(:label_report_plural)%></h2>
+
+<div class="splitcontentleft">
+  <%= toggling_container("issues_report_tracker_id", User.current, {:heading => (l(:field_tracker) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'tracker'))).html_safe}) do %>
+    <%= render :partial => 'simple', :locals => { :data => @issues_by_tracker, :field_name => "tracker_id", :rows => @trackers } %>
+  <% end %>
+
+  <%= toggling_container("issues_report_priority_id", User.current, {:heading => (l(:field_priority) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'priority'))).html_safe}) do %>
+    <%= render :partial => 'simple', :locals => { :data => @issues_by_priority, :field_name => "priority_id", :rows => @priorities } %>
+  <% end %>
+
+
+  <%= toggling_container("issues_report_assigned_to_id", User.current, {:heading => (l(:field_assigned_to) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'assigned_to'))).html_safe}) do %>
+    <%= render :partial => 'simple', :locals => { :data => @issues_by_assigned_to, :field_name => "assigned_to_id", :rows => @assignees } %>
+  <% end %>
+
+  <%= toggling_container("issues_report_author_id", User.current, {:heading => (l(:field_author) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'author'))).html_safe}) do %>
+    <%= render :partial => 'simple', :locals => { :data => @issues_by_author, :field_name => "author_id", :rows => @authors } %>
+  <% end %>
+
+  <% if @left_issues_cf && @project_issues_cf %>
+    <% @project_issues_cf.each do |cf| %>
+      <% next if @left_issues_cf["cf_#{cf.id}"].nil? %>
+
+      <%= toggling_container("issues_report_cf_#{cf.id}", User.current, {:heading => (@left_issues_cf["cf_#{cf.id}"][:name] + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => "cf_#{cf.id}"))).html_safe}) do %>
+
+        <% rows = cf.possible_values.collect{|v| EasyReportsCfPossibleValue.new(v)} %>
+
+        <%= render :partial => 'simple', :locals => { :data => @left_issues_cf["cf_#{cf.id}"][:reports], :field_name => "cf_#{cf.id}", :rows => rows } %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= call_hook(:view_reports_issue_report_split_content_left, :project => @project) %>
+</div>
+
+<div class="splitcontentright">
+
+  <%= toggling_container("issues_report_fixed_version_id", User.current, {:heading => (l(:field_version) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'version'))).html_safe}) do %>
+    <%= render :partial => 'simple', :locals => { :data => @issues_by_version, :field_name => "fixed_version_id", :rows => @versions } %>
+  <% end %>
+
+  <% if @project.children.any? %>
+    <%= toggling_container("issues_report_project_id", User.current, {:heading => (l(:field_subproject) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'subproject'))).html_safe}) do %>
+      <%= render :partial => 'simple', :locals => { :data => @issues_by_subproject, :field_name => "project_id", :rows => @subprojects } %>
+    <% end %>
+  <% end %>
+
+  <%= toggling_container("issues_report_category_id", User.current, {:heading => (l(:field_category) + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => 'category'))).html_safe}) do %>
+    <%= render :partial => 'simple', :locals => { :data => @issues_by_category, :field_name => "category_id", :rows => @categories } %>
+  <% end %>
+
+  <% if @right_issues_cf && @project_issues_cf %>
+    <% @project_issues_cf.each do |cf| %>
+      <% next if @right_issues_cf["cf_#{cf.id}"].nil? %>
+
+      <%= toggling_container("issues_report_cf_#{cf.id}", User.current, {:heading => (@right_issues_cf["cf_#{cf.id}"][:name] + "&nbsp;&nbsp;" + link_to(image_tag('zoom_in.png'), project_issues_report_details_path(@project, :detail => "cf_#{cf.id}"))).html_safe}) do %>
+
+        <% rows = cf.possible_values.collect{|v| EasyReportsCfPossibleValue.new(v)} %>
+
+        <%= render :partial => 'simple', :locals => { :data => @right_issues_cf["cf_#{cf.id}"][:reports], :field_name => "cf_#{cf.id}", :rows => rows } %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= call_hook(:view_reports_issue_report_split_content_right, :project => @project) %>
+</div>
+

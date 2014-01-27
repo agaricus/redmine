@@ -1,0 +1,16 @@
+<%= render_tabs easy_attandance_tabs -%>
+
+<% content_for :easy_page_layout_service_box do %>
+  <%#= link_to(l(:new, :scope => [:easy_attendance]), {:controller => 'easy_attendances', :action => 'new', :back_url => url_for(:controller => 'easy_attendances', :tab => params[:tab])}, :class => 'button-1') -%>
+
+  <%= link_to(l(:advanced_settings, :scope => :easy_attendance),
+    new_easy_attendance_path(:back_url => url_for(easy_attendances_path(:tab => params[:tab]))),
+    :title => l(:advanced_settings, :scope => [:easy_attendance, :title]),
+    :class => 'button-1',
+    :remote => true) -%>
+<% end %>
+
+<% content_for :sidebar do  -%>
+  <%= render(:partial => 'easy_attendances/all_users_queries') if User.current.allowed_to?(:view_easy_attendance_other_users, nil, :global => true) %>
+  <%= render(:partial => 'sidebar/saved_easyqueries_by_type', :locals => {:query_class => @query.class}) -%>
+<% end -%>

@@ -1,0 +1,17 @@
+<% settings['mobile_issue_query_end_buttons'] ||= [] %>
+<fieldset>
+  <%= content_tag(:legend, l(:legend_mobile_issue_query_end_buttons_chooser)) %>
+  <p class="checkbox">
+    <%= check_box_tag("#{block_name}[mobile_issue_query_end_buttons][]", :show, settings['mobile_issue_query_end_buttons'].include?('show'), :id => "#{block_name}_mobile_issue_query_end_buttons_show") %>
+    <%= label_tag("#{block_name}_mobile_issue_query_end_buttons_show", l(:label_display)) %>
+
+    <%= check_box_tag("#{block_name}[mobile_issue_query_end_buttons][]", :edit, settings['mobile_issue_query_end_buttons'].include?('edit'), :id => "#{block_name}_mobile_issue_query_end_buttons_edit") %>
+    <%= label_tag("#{block_name}_mobile_issue_query_end_buttons_edit", l(:button_edit)) %>
+
+    <%= check_box_tag("#{block_name}[mobile_issue_query_end_buttons][]", :iam_on_it, settings['mobile_issue_query_end_buttons'].include?('iam_on_it'), :id => "#{block_name}_mobile_issue_query_end_buttons_iam_on_it") %>
+    <%= label_tag("#{block_name}_mobile_issue_query_end_buttons_iam_on_it", l(:button_easy_issue_timer_play)) %>
+
+    <%= check_box_tag("#{block_name}[mobile_issue_query_end_buttons][]", :timelog, settings['mobile_issue_query_end_buttons'].include?('timelog'), :id => "#{block_name}_mobile_issue_query_end_buttons_timelog") %>
+    <%= label_tag("#{block_name}_mobile_issue_query_end_buttons_timelog", l(:button_log_time)) %>
+  </p>
+</fieldset>

@@ -1,0 +1,19 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => l(:label_simple_add_project_task), :container_html => {:class => 'module-content'}}) do %>
+  <table class="list my_projects">
+    <tbody>
+      <%# easy_cache("my_page_my_projects_simple_user_#{user.id}") do %>
+        <%= render :partial => 'projects/projects_tree', :locals => {:projects => @easy_page_modules_data[block_name][:projects], :user => user, :modul_uniq_id => modul_uniq_id} %>
+      <%# end %>
+      <% uniq_prefix = "#{controller_name}_#{action_name}_#{modul_uniq_id}" -%>
+    <script type="text/javascript">
+      $(document).ready(function() {
+  <% @easy_page_modules_data[block_name][:projects].each do |p| -%>
+    <% uniq_id = uniq_prefix + 'project-' + p.id.to_s -%>
+    <% next if toggle_button_expanded?(uniq_id, user) -%>
+      HideTableRow('<%= uniq_prefix -%>', 'project', <%= p.id -%>, true);
+  <% end -%>
+  });
+    </script>
+  </tbody>
+  </table>
+<% end %>

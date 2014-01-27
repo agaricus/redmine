@@ -1,0 +1,5 @@
+api.array :members do
+  @members.each do |member|
+    render_api_member(api, member)
+  end
+end

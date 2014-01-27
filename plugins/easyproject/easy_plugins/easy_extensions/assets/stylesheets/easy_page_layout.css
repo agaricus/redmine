@@ -1,0 +1,119 @@
+#main .easy-page-zone {
+    margin: 0 0 0 0;
+}
+div#easy-page-layout-service-box-bottom {
+    padding: 10px 0;
+}
+#main #sidebar .easy-page-zone {
+    margin: 0;
+    padding: 0;
+}
+#main .easy-page-module-box {
+    overflow-x: auto;
+}
+#main div.easy-page-module-box h3 a {
+    font-weight: normal;
+    text-decoration: none;
+}
+#main div.easy-page-module-box table.list thead {
+    display: none;
+}
+#main div.easy-page-module-box table.list.issues thead, #main div.easy-page-module-box table.list.entities thead {
+    display: table-header-group;
+}
+#main div.easy-page-module-box div.adhoc-entities-preview table.list.entities thead th:first-child a {
+    display: none;
+}
+#main div.easy-page-module-box table.list.entities thead tr {
+    cursor: default;
+}
+#main #list-middle-right div.my-page-updatable-attributes div.my-page-new-issue-left input {
+    width: 265px;
+}
+#main #list-middle-right .tabular label {
+    width: 120px;
+}
+#main .tabular .my-page-new-issue-left-description label {
+    float: none;
+}
+#main #list-middle-right #mypage-time table.time-entries td.activity {
+    display: none;
+}
+#main #list-middle-right #mypage-time table.time-entries td.subject span {
+    padding-right: 3px;
+}
+#main.easy-page-content.edit .easy-page-zone {
+    border: 1px dashed #0DA5DD;
+    min-height: 200px;
+    padding: 0 10px;
+}
+#main.easy-page-content.edit div#list-right-sidebar.easy-page-zone {
+    min-height: 758px;
+}
+#main div#list-right-sidebar.easy-page-zone {
+    clear: both;
+}
+#main div.easy-page-zone .box {
+    border: medium none;
+}
+div.easy-page-zone p.small {
+    margin-top: 10px;
+}
+div#list-middle-right.easy-page-zone {
+    padding-right: 0;
+}
+.easy-page-tabs-container {
+    float: right;
+    position: relative;
+    top: 1px;
+    right: 10px;
+}
+.easy-page-content.edit .easy-page-editable-tabs ul li {
+    /*float:left;
+    list-style-type:none;
+    white-space:nowrap;
+    margin-right:8px;
+    background:#fff;
+    border-top:none;
+    position:relative;*/
+}
+
+.ui-tabs .tabs .ui-tabs-nav li a {
+    float: none;
+}
+.easy-page-content.edit .easy-page-editable-tabs ul li a.icon{
+    display: inline;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+.easy-page-content.edit .easy-page-editable-tabs ul li a.tab-link{
+    font-size: 0.9em;
+    text-decoration:none;
+    /*line-height:1.3em;
+    padding:4px 6px 4px 6px;
+    border: 1px solid #ccc;
+    background-color: #eeeeee;
+    color:#777;
+    border-radius: 5px 5px 0 0;
+    font-weight:bold;
+    border-bottom: none;*/
+}
+.easy-page-content.edit .easy-page-editable-tabs ul li a.tab-link:hover {
+    /*background-color: #ffffdd;*/
+}
+.easy-page-content.edit .easy-page-editable-tabs ul li a.tab-link.selected {
+    /*background-color: white;
+    border: 1px solid #BBB;
+    bottom: -1px;
+    position: relative;*/
+}
+.easy-page-content.edit .easy-page-editable-tabs ul li a.tab-link.selected:hover {
+    /*background-color: #fff;*/
+}
+body div#easy-page-layout-service-box-bottom {
+    background-color: #fff;
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 30px;
+}

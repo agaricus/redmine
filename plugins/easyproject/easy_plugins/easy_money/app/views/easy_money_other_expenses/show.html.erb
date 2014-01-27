@@ -1,0 +1,51 @@
+<div class="easy-money-other-expense-container entity-show">
+  <h2><%= l(:label_easy_money_other_expense_show) -%></h2>
+  <ul class="entity-attributes">
+    <li>
+      <span class="label"><%= l(:field_easy_money_other_expense_name) -%></span>
+      <span class="value"><%= @easy_money_object.name -%></span>
+    </li>
+    <li>
+      <span class="label"><%= l(:field_easy_money_other_expense_description) -%></span>
+      <span class="value"><%= @easy_money_object.description -%></span>
+    </li>
+    <li>
+      <span class="label"><%= l(:field_easy_money_other_expense_spent_on) -%></span>
+      <span class="value"><%= format_date(@easy_money_object.spent_on) -%></span>
+    </li>
+    <% if @project.easy_money_settings.show_price2? -%>
+      <li>
+        <span class="label"><%= l(:field_easy_money_other_expense_price2) -%></span>
+        <span class="value"><%= format_easy_money_price(@easy_money_object.price2, @project) -%></span>
+      </li>
+      <li>
+        <span class="label"><%= l(:field_easy_money_other_expense_vat) -%></span>
+        <span class="value"><%= format_easy_money_price(@easy_money_object.price1 - @easy_money_object.price2, @project) -%></span>
+      </li>
+    <% end -%>
+    <% if @project.easy_money_settings.show_price1? -%>
+      <li>
+        <span class="label"><%= l(:field_easy_money_other_expense_price1) -%></span>
+        <span class="value"><%= format_easy_money_price(@easy_money_object.price1, @project) -%></span>
+      </li>
+    <% end -%>
+    <% @easy_money_object.visible_custom_field_values.each do |custom_value| -%>
+      <li>
+        <span class="label"><%= custom_value.custom_field.translated_name -%></span>
+        <span class="value"><%= show_value(custom_value)-%></span>
+      </li>
+    <% end -%>
+  </ul>
+  <%= link_to_attachments @easy_money_object %>
+</div>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do -%>
+  <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+  <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+  <%= render :partial => 'easy_money/index_sidebar' -%>
+<% end -%>

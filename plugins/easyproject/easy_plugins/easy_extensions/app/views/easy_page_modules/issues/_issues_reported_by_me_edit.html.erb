@@ -1,0 +1,6 @@
+<h3><%=l('easy_pages.modules.issues_reported_by_me')%> (<%= Issue.visible(user).open.count(:conditions => { :author_id => user.id }) %>)</h3>
+<p>
+  <span class="my-page-issue-query-select-label"><%= l(:label_my_page_issue_row_count) -%></span>
+  <% settings["row_limit"] ||= 10 %>
+  <span class="my-page-issue-query-select"><%= text_field_tag("#{block_name}[row_limit]", settings["row_limit"].to_i, :size => 5) -%></span>
+</p>

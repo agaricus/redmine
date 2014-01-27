@@ -1,0 +1,4 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => l('easy_pages.modules.my_calendar'), :container_html => {:class => 'module-content calendar-container'}}) do %>
+  <%= render :partial => 'easy_page_modules/calendar_listing_links', :locals => {:calendar => @easy_page_modules_data[block_name][:calendar], :period => :week, :page_module => page_module, :user => user} %>
+  <%= render :partial => 'common/calendar', :locals => {:calendar => @easy_page_modules_data[block_name][:calendar] } %>
+<% end %>

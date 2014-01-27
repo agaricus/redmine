@@ -1,0 +1,60 @@
+<%= javascript_include_tag 'page_layout', :plugin => 'easy_extensions' %>
+<script type="text/javascript">
+  $(function() {
+    <% page_params[:page].zones.each do |page_zone| %>
+      <% zone = page_zone.zone_definition -%>
+      PageLayout.initSortable({
+        tab_id: <%= page_params[:current_tab] ? page_params[:current_tab].id : 0 %>,
+        tabPos: <%= (params[:t] || 1).to_i %>,
+        zoneName: "<%= zone.zone_name.dasherize %>",
+        updateUrl: "<%= url_for(page_params[:url_order_module].merge(:zone_id => page_zone.id, :t => params[:t])) %>"
+      });
+    <% end -%>
+
+    $(".add-module-button").click(PageLayout.addModule);
+
+  });
+</script>
+<% content_for :easy_page_layout_content do -%>
+  <% top_zone = page_params[:page].zones.first
+  modules_options = grouped_options_for_select(page_params[:page].modules.collect{|p| [p.module_definition.translated_name, l("easy_pages.module_category.#{p.module_definition.category_name.underscore}", :default => [p.module_definition.category_name, p.module_definition.category_name.humanize]), p.id] if p.module_definition.module_allowed?}.compact.sort{|a,b| a[0].downcase <=> b[0].downcase}.group_by{|p| p[1]}) -%>
+  <div class="layout-buttons">
+    <%= form_tag({}, :id => "block-form") do -%>
+      <span class="label-module-select"><%= l(:label_easy_page_module_select) -%></span>
+      <%= select_tag 'module_id', modules_options, :id => 'block-select' %>
+      <%= link_to l(:button_add), url_for(page_params[:url_add_module].merge(:zone_id => top_zone.id, :t => params[:t])),
+          :class => 'small button-1 add-module-button' -%>
+    <% end -%>
+    <%= form_tag(page_params[:url_save_modules], :id => 'easy-page_modules-settings-form') do -%>
+      <%= hidden_field_tag 'back_url', page_params[:back_url] -%>
+      <%= hidden_field_tag 't', params[:t] || 1 -%>
+    <% end -%>
+    <%= link_to l(:button_save_easy_page), 'javascript:PageLayout.submitModules()', :title => l(:title_button_save_easy_page), :class => 'button-2 save-modules-back' %>
+    <div class="easy-page-tabs-container">
+      <% if page_params[:page_template] %>
+        <%= link_to l(:button_easy_page_add_tab), 
+          url_for({
+            :controller => 'easy_page_template_layout',
+            :action => 'add_tab',
+            :page_template_id => page_params[:page_template],
+            :entity_id => page_params[:entity_id],
+            :t => params[:t],
+            :original_url => url_for(params)
+          }), :remote => true,
+          :class => 'button-2 add-tab-button', :title => l(:title_easy_page_add_tab) %>
+      <% else %>
+        <%= link_to l(:button_easy_page_add_tab), 
+          url_for({
+            :controller => 'easy_page_layout',
+            :action => 'add_tab',
+            :page_id => page_params[:page],
+            :user_id => page_params[:user_id],
+            :entity_id => page_params[:entity_id],
+            :t => params[:t],
+            :original_url => url_for(params)
+          }), :remote => true,
+          :class => 'button-2 add-tab-button', :title => l(:title_easy_page_add_tab) %>
+      <% end %>
+    </div>
+  </div>
+<% end -%>

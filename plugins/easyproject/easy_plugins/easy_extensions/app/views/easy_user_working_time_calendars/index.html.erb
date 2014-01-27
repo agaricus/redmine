@@ -1,0 +1,37 @@
+<div id="easy_user_working_time_calendar_index">
+  <h1><%= l(:heading_easy_user_working_time_calendar_index) -%></h1>
+  <% if (@easy_user_working_time_calendars.empty?) -%>
+    <p class="nodata"><%= l(:label_no_data) -%></p>
+  <% else -%>
+    <table class="list reorder">
+      <thead>
+        <tr>
+          <th></th>
+          <th><%= l('activerecord.attributes.easy_user_working_time_calendar.name'.to_sym) -%></th>
+          <th><%= l('activerecord.attributes.easy_user_working_time_calendar.default_working_hours'.to_sym) -%></th>
+          <th><%= l(:field_is_default) -%></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @easy_user_working_time_calendars.each do |calendar| -%>
+          <tr class="<%= cycle('odd', 'even') -%>">
+            <td class="center reorder-handler"><%= render_reorder_handle(calendar, 'easy_user_working_time_calendar') %></td>
+            <td class="name"><%= calendar.translated_name -%></td>
+            <td><%= calendar.default_working_hours -%></td>
+            <td><%= checked_image calendar.is_default? -%></td>
+            <td class="buttons">
+              <%= link_to(l(:button_easy_user_working_time_calendar_show), {:controller => 'easy_user_working_time_calendars', :action => 'show', :id => calendar}, {:class => 'icon icon-calendar', :title => l(:title_easy_user_working_time_calendar_show)}) -%>
+              <%= link_to(l(:button_edit), {:controller => 'easy_user_working_time_calendars', :action => 'edit', :id => calendar}, { :class => 'icon icon-edit', :title => l(:title_button_edit)}) -%>
+              <%= link_to(l(:button_delete), {:controller => 'easy_user_working_time_calendars', :action => 'destroy', :id => calendar}, { :method => :delete, :class => 'icon icon-del', :data => {:confirm => l(:text_are_you_sure)}, :title => l(:title_button_delete)}) unless calendar.builtin? -%>
+            </td>
+          </tr>
+        <% end -%>
+      </tbody>
+    </table>
+  <% end -%>
+</div>
+
+<% content_for :easy_page_layout_service_box do -%>
+  <%= link_to(l(:button_easy_user_working_time_calendars_new), { :controller => 'easy_user_working_time_calendars', :action => 'new'}, :class => 'button-1', :title => l(:title_easy_user_working_time_calendars_new)) -%>
+<% end -%>

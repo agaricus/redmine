@@ -1,0 +1,74 @@
+cs:
+  easy_user_allocations_name: "Využití zdrojů"
+  easy_user_allocations_description: " - využití zdrojů / lidí"
+  easy_user_allocations_author_url: "http://www.easyproject.cz/cz"
+
+  permission_view_easy_user_allocations: "Zobrazit využití zdrojů / lidí"
+  permission_view_my_easy_user_allocations: "Zobrazit vlastní využití"
+  permission_edit_easy_user_allocations: "Editovat využití zdrojů / lidí"
+  permission_edit_my_easy_user_allocations_plan: 'Editovat vlastní pracovní plán'
+  permission_view_easy_user_allocations_by_project: 'Zobrazit využití zdrojů dle projektu'
+
+  project_module_easy_user_allocations: "Využití zdrojů / lidí"
+
+  label_user_allocations: "Využití zdrojů / lidí"
+  label_user_allocation_gantt: 'Využití zdrojů - gantt'
+  label_allocations_by_project: 'Využití zdrojů - dle projektu'
+  label_user_allocation_gantt_users: Uživatelé
+  label_user_allocation_gantt_user_selection: Výběr
+  label_user_allocation_gantt_range: Datum
+  label_unassigned_issues: Nepřiřazené úkoly
+  label_issue_id: ID
+  label_allocation_worm_out_of_range: Pro zobrazení celého úkolu zvolte větší časové rozmezí
+  label_allocation_changed_title: Úkol byl změněn a bude při uložení aktualizován
+  label_user_allocation_plan: 'Pracovní plán'
+  label_filter_group_easy_user_allocation_query: 'Vytížení zdrojů'
+
+  text_easy_user_allocation_working_plan_bottom_info: "Umožňuje plánovat vytížení uživatele ve vybraném týdnu. \n Tabulka zobrazuje naplánovaný čas a skutečný vykázaný čas."
+
+  resalloc:
+    title: Využití zdrojů
+    settings: Nastavení
+    button_apply_settings: Použít nastavení
+    button_recalculate: Přepočítat alokace
+    button_save: Uložit změny
+    button_undo: Vrátit neuložené změny
+    button_split_issue: Rozdělit úkol
+    split_issue_help: Kliknutím na nepřiřazený úkol označte datum pro rozdělení.
+    error_date_range_too_long: musí být menší než 1 rok
+    legend_hours_overtime: Odpracovaný čas přesahuje předepsaný čas
+    legend_custom: Ručně alokované hodiny
+
+  easy_pages:
+    modules:
+      user_allocation: Využití zdrojů
+      user_allocation_working_plan: 'Využití zdrojů / pracovní plán'
+
+  user_allocation_plan:
+    label_plan: 'Plán'
+    label_real: 'Skut.'
+    label_comment: 'Komentář'
+
+  easy_query:
+    name:
+      easy_user_allocation_query: 'Vytížení zdrojů'
+      easy_user_allocation_by_project_query: 'Vytížení zdrojů nad projekty'
+    sidebar_filters:
+      personal:
+        easy_user_allocation_query: Osobní filtry nad vytížení zdrojů
+        easy_user_allocation_by_project_query: Osobní filtry nad vytížení zdrojů nad projekty
+      public:
+        easy_user_allocation_query: Veřejné filtry nad vytížení zdrojů
+        easy_user_allocation_by_project_query: Veřejné filtry nad vytížení zdrojů nad projekty
+
+  label_setting_keep_issue_start_dates: Neměnit začátky úkolů
+  text_setting_keep_issue_start_dates: "Pokud je zapnuto a odhadovaný čas úkolu je příliš krátký, úkol bude místo zkrácení doplněn alokacemi na 0 hodin."
+  label_setting_allocate_evenly: Rovnoměrné alokace
+  text_setting_allocate_evenly: "Pokud je zapnuto a úkol je v alokacích změněn, hodiny jsou rovnoměrně rozděleny dle počtu dnů."
+  label_setting_allocate_from_start: Alokovat od začátků úkolů
+
+  text_overallocation: alokované hodiny přesahují odhadovaný čas.
+
+  easy_user_allocations_sidebar_all_users_queries: 'Vytížení dle lidí'
+  easy_user_allocations_label_show_assigned_issues: 'Zobrazit vytížení uživatele %{username}'
+  label_edit_estimated_hours: Upravit předepsanou dobu

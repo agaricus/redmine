@@ -1,0 +1,4 @@
+$("#modal-dialog-loader").html("<%=j render(:partial => 'easy_translations/form') %>");
+$("#modal-dialog-loader form").append($("<input/>").attr({"type":'hidden', "name":"back_url","value": window.location.href}))
+createModalSelectorWindow();
+$("#modal-dialog-loader-wrapper").dialog("option",{title:"<%=j l(:title_modal_easy_translation_edit_for_column, :column => @entity.class.human_attribute_name(@entity_column)) %>"})

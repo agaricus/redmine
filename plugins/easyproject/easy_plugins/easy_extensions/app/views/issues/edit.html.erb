@@ -1,0 +1,11 @@
+<%= heading_issue(@issue) unless params[:for_dialog] %>
+
+<%= render :partial => 'edit' %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do %>
+  <%= robot_exclusion_tag %>
+<% end %>
+
+<% include_calendar_headers_tags %>

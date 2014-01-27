@@ -1,0 +1,12 @@
+<% query = @easy_page_modules_data[block_name][:query] %>
+<%= toggling_container(modul_uniq_id, user, {:heading => l('easy_pages.modules.user_allocation'), :container_html => {:class => 'module-content'}}) do %>
+  <%= hidden_field_tag 'edit', 'true' %>
+  <%= render(:partial => 'easy_page_modules/easy_query_module_form', :locals => {
+      :page_module => page_module, :block_name => block_name, :settings => settings, :modul_uniq_id => modul_uniq_id,
+      :query => query, :preview_options => {:update => "#{modul_uniq_id}users_preview"}, :path_for_easy_query_form => 'easy_user_allocation_queries/easy_query_index_form',
+      :hide_preview => true
+    }) %>
+  <div style="clear:both">
+    <div id="<%= modul_uniq_id %>user_allocations_preview" class="adhoc-entities-preview"></div>
+  </div>
+<% end %>

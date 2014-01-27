@@ -1,0 +1,25 @@
+<% if subprojects.any? -%>
+  <div class="overview subproject-easy-money">
+    <table id="easy-money-subproject" class="list">
+      <thead>
+        <tr>
+          <th class="project-name"><%= l(:label_project) -%></th>
+          <th class="easy-money-sum-revenues"><%= l(:label_easy_money_subproject_sum_revenues) -%></th>
+          <th class="easy-money-sum-expenses"><%= l(:label_easy_money_subproject_sum_expenses) -%></th>
+          <% if project.self_and_descendants.active.has_module(:time_tracking).size > 0 %>
+            <th class="easy-money-sum-payroll-expenses"><%= l(:label_easy_money_subproject_sum_payroll_expenses) -%></th>
+          <% end %>
+          <th class="easy-money-profit"><%= l(:label_easy_money_subproject_profit) -%></th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= easy_money_subprojects_table(project, subprojects) -%>
+      </tbody>
+    </table>
+    <p id="easy-money-overview-subproject-explication">
+      <%= l(:label_easy_money_subproject_explication) -%>
+    </p>
+  </div>
+  <%= call_hook(:view_easy_money_suprojects_overview_bottom, :project => project, :subprojects => subprojects) %>
+<% end -%>

@@ -1,0 +1,5 @@
+<p>
+  <label class="" for="user_rss_key"><%= l(:field_rss_key) -%></label>
+  <input id="user_rss_key" type="text" value="<%= rss_key -%>" size="41" name="user[rss_key]" <%= 'readonly' unless User.current.admin? -%>>
+  <%= link_to(l(:button_generate_rss_key),{:controller => 'users', :action => 'generate_rss_key', :div_id => div_id}, :remote => true, :title => l(:button_generate_rss_key)) -%>
+</p>

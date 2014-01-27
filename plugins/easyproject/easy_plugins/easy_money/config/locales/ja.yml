@@ -1,0 +1,350 @@
+---
+ja:
+  easy_money_plugin_name: お金
+  easy_money_plugin_author: 簡単なソフトウェア
+  easy_money_plugin_author_url: http://www.easyproject.cz/en
+  easy_money_plugin_description: ! '- プロジェクトの予想と実際の業績の監視と管理'
+  project_module_easy_money: お金
+  menu_easy_money: お金
+  permission_view_easy_money: マネーモジュール（一般）へのアクセス
+  permission_easy_money_show_expected_revenue: 予想される所得を表示
+  permission_easy_money_show_expected_expense: 予想される費用を表示
+  permission_easy_money_show_expected_payroll_expense: 期待賃金費用を表示
+  permission_easy_money_show_expected_profit: 期待利益を表示
+  permission_easy_money_show_other_revenue: 実質所得を表示
+  permission_easy_money_show_other_expense: 実際の経費を表示
+  permission_easy_money_show_time_entry_expenses: 実質賃金費用を表示
+  permission_easy_money_show_other_profit: 本当の利益を表示
+  permission_easy_money_manage_expected_revenue: 予想される収入をAddig
+  permission_easy_money_manage_expected_expense: 予想される経費の追加
+  permission_easy_money_manage_expected_payroll_expense: 期待賃金経費の追加
+  permission_easy_money_manage_other_revenue: 実質所得の追加
+  permission_easy_money_manage_other_expense: 実際の経費の追加
+  permission_easy_money_settings: お金の設定にアクセスも
+  permission_easy_money_move: プロジェクト間でお金を移動
+  label_easy_money: お金
+  label_easy_money_settings: マネーの設定
+  label_easy_money_rate_priorities_settings: 経費率の設定
+  label_easy_money_project_index: お金
+  label_easy_money_other_expenses: 経費の概要
+  label_easy_money_other_expense_new: 新しい経費
+  label_easy_money_other_expense_show: 経費
+  label_easy_money_other_expense_edit: 経費編集
+  label_easy_money_other_revenues: 所得の概要
+  label_easy_money_other_revenue_new: 新たな収入
+  label_easy_money_other_revenue_show: 収入
+  label_easy_money_other_revenue_edit: 所得編集
+  label_easy_money_time_entry_expenses: 賃金費用の概要
+  label_easy_money_project_index_profit: 利益：
+  label_easy_money_expected_expenses: 予想される経費の概要
+  label_easy_money_expected_revenues: 予想される所得の概要
+  label_easy_money_expected_expense_new: 新しい予想費用
+  label_easy_money_expected_expense_show: 予想される費用
+  label_easy_money_expected_expense_edit: 予想される費用の編集
+  label_easy_money_expected_revenue_new: 新しい予想収入
+  label_easy_money_expected_revenue_show: 期待所得
+  label_easy_money_expected_revenue_edit: 期待所得を編集
+  label_easy_money_other_settings: その他の設定
+  label_easy_money_other_settings_price_visibility: 量を使用することにより：
+  label_easy_money_other_settings_rate_type: 賃金支出によって使用：
+  label_easy_money_other_settings_include_childs: サブプロジェクトからプロジェクトの総資金の量を数える。
+  label_easy_money_other_settings_project_expected_visibility: /期待の計画プロジェクトをオンにします。
+  label_easy_money_other_settings_project_use_easy_money_for_versions: マイルストーンにお金を使う
+  label_easy_money_other_settings_project_use_easy_money_for_issues: タスクにお金を使う
+  label_easy_money_project_usage_type: プロジェクトで使用します。
+  label_easy_money_other_settings_vat: 付加価値税（VAT）なしで量を示す場合、付加価値税（VAT）は、次のとおりです。
+  label_easy_money_use_vat: VATカウントを使用
+  label_easy_money_expected_budget: 計画
+  label_easy_money_real_budget: 現実
+  label_easy_money_project_name: プロジェクトの予算：
+  label_easy_money_hour: ! '%{hours}時間。'
+  label_easy_money_expected_payroll_expense_per_hours: 計画時給
+  label_easy_money_expected_payroll_expenses: 賃金費用：
+  label_easy_money_subproject_sum_revenues: 所得*
+  label_easy_money_subproject_sum_expenses: 経費*
+  label_easy_money_subproject_sum_payroll_expenses: 賃金費用
+  label_easy_money_subproject_profit: 結果*
+  label_easy_money_subproject_explication: ! '*）（計画/現実）'
+  label_easy_money_attachments: 添付ファイル：
+  label_easy_money_project_time_entry_expenses: プロジェクトで純粋にかかる賃金
+  label_easy_money_project_issues_time_entry_expenses: プロジェクトのタスクのための人件費
+  label_easy_money_total: 合計：
+  label_easy_money_all_project: すべてのプロジェクトのためのお金
+  label_easy_money_currency_visible: プロジェクト上の交流の変化を許可する：
+  label_easy_money_currency: 通貨：
+  label_easy_money_select_project: プロジェクトを選択してください
+  label_easy_money_mass_copy_rates: レート値費
+  label_easy_money_project_index_estimated_hours: 時間の見積もり：
+  label_easy_money_new_revenue_text: 収入
+  label_easy_money_new_revenue_description: 収入
+  label_easy_money_new_expense_text: 経費
+  label_easy_money_new_expense_description: 経費
+  text_easy_money_rate_priorities_settings: 経費率の基本的な階層。第速度がゼロの場合、次の非ゼロ率が使われる。
+  button_easy_money_rate_use_in_all_projects: すべてのプロジェクトにレートを使用
+  button_easy_money_rate_use_in_all_subprojects: すべてのサブプロジェクトでレートを使用
+  button_easy_money_priorities_use_in_all_projects: すべてのプロジェクトに速度の優先順位を使用して、
+  button_easy_money_priorities_use_in_all_subprojects: すべてのサブプロジェクトで速度の優先順位を使用して、
+  button_easy_money_project_expected_expenses: その他の費用：
+  button_easy_money_project_expected_revenues: 収入：
+  button_easy_money_project_other_expenses: その他の費用：
+  button_easy_money_project_other_revenues: 収入：
+  button_easy_money_project_time_entry_expenses: 賃金費用：
+  button_easy_money_project_new_revenue: 新たな収入
+  button_easy_money_project_new_expense: 新しい経費
+  button_easy_money_project_time_entry_hours: 時間は働いていた：
+  button_easy_money_project_index_show_details: 詳細を表示
+  button_easy_money_project_index_show_empty: 空のフィールドを表示する
+  button_easy_money_save_in_all_projects: すべてのプロジェクトで使用
+  button_easy_money_save_in_all_subprojects: すべてのサブプロジェクトで使用
+  button_easy_money_project_settings: マネーの設定
+  button_easy_money_save_expected_revenue: 期待所得を保存
+  button_easy_money_save_other_revenue: 実質所得を保存
+  button_easy_money_save_expected_hours: 予想される時間を保存
+  button_easy_money_save_expected_expense: 予想される費用を節約
+  button_easy_money_save_other_expense: 実際の費用を節約
+  button_easy_money_update_project_time_entry_expenses: プロジェクトで再計算賃金費用
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: 再計算賃金プロジェクトに関する費用およびすべてのサブプロジェクト
+  button_easy_money_update_all_projects_time_entry_expenses: すべてのプロジェクトで再計算賃金費用
+  button_easy_money_move: 選択された再割り当て
+  title_easy_money_project_new_revenue: 新たな収入を追加
+  title_easy_money_project_new_expense: 新たな経費を追加
+  title_easy_money_project_expected_revenues: プロジェクトの計画収入を表示
+  title_easy_money_project_other_revenues: プロジェクトの実質所得を表示
+  title_easy_money_project_expected_expenses: プロジェクトの計画費を表示
+  title_easy_money_project_other_expenses: プロジェクトの実際の経費を表示
+  title_easy_money_project_time_entry_expenses: プロジェクトの実質賃金費用を表示
+  title_easy_money_rates_save: レートを保存
+  title_easy_money_rate_use_in_all_projects: レートを保存し、すべてのプロジェクトでそれらを適用する
+  title_easy_money_rate_use_in_all_subprojects: レートを保存し、すべてのサブプロジェクトでそれらを適用する
+  title_easy_money_priorities_use_in_all_projects: すべてのプロジェクトの金利の順序を使用し
+  title_easy_money_priorities_use_in_all_subprojects: すべてのサブプロジェクトの金利の順序を使用し
+  title_easy_money_other_repeating_expense_show: 繰り返される費用を示す。
+  title_easy_money_other_repeating_revenue_show: 繰り返される収入を表示します。
+  title_easy_money_settings: プロジェクトマネーの設定に進みます。
+  title_easy_money_project_index_show_empty: 空のフィールドを表示します。
+  title_close: クリックして、このペインを閉じます。
+  title_easy_money_update_project_time_entry_expenses: プロジェクトで再計算の賃金費用。
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: プロジェクトとすべてのサブプロジェクト（数分かかる場合があります）の賃金コストの変換を開始する場合にクリックします。
+  title_easy_money_update_all_projects_time_entry_expenses: すべてのプロジェクトで再計算の賃金費用。
+  title_easy_money_sum_expected_revenues: プロジェクトの期待所得の合計%{project}です%{value}。
+  title_easy_money_sum_other_revenues: プロジェクト上の他の所得の合計%{project}です%{value}。
+  title_easy_money_sum_expected_expenses: プロジェクトで期待される費用の合計%{project}です%{value}。
+  title_easy_money_sum_other_expenses: プロジェクト上のその他の費用の合計%{project}です%{value}。
+  title_easy_money_sum_expected_payroll_expenses: プロジェクトの期待賃金の合計%{project}です%{value}。
+  title_easy_money_sum_time_entry_expenses: プロジェクト上の賃金の合計%{project}です%{value}。
+  title_easy_money_expected_profit: プロジェクトで期待利益%{project}です%{value}。
+  title_easy_money_other_profit: プロジェクト上の利益%{project}です%{value}。
+  title_easy_money_link_to_subproject: のお金に行く%{subproject}。
+  title_easy_money_link_to_project: プロジェクトの資金に行く%{project}。
+  field_spent_hours: 費やした時間
+  field_easy_money_rate_entity_time_entry_activity_name: アクティビティ名
+  field_easy_money_rate_entity_role_name: 役割名
+  field_easy_money_rate_entity_user_name: ユーザー名
+  field_easy_money_other_expense_spent_on: 日：
+  field_easy_money_other_expense_name: 名称：
+  field_easy_money_other_expense_description: 説明：
+  field_easy_money_other_expense_price1: VATと金額：
+  field_easy_money_other_expense_price2: 税抜き金額：
+  field_easy_money_other_expense_vat: VAT：
+  field_easy_money_other_revenue_spent_on: 日：
+  field_easy_money_other_revenue_name: 名称：
+  field_easy_money_other_revenue_description: 説明：
+  field_easy_money_other_revenue_price1: 合計金額：
+  field_easy_money_other_revenue_price2: 税抜き金額：
+  field_easy_money_other_revenue_vat: VAT：
+  field_easy_money_expected_expense_spent_on: 日：
+  field_easy_money_expected_expense_name: 名称：
+  field_easy_money_expected_expense_description: 説明：
+  field_easy_money_expected_expense_price1: 合計金額：
+  field_easy_money_expected_expense_price2: 税抜き金額：
+  field_easy_money_expected_expense_vat: VAT：
+  field_easy_money_expected_revenue_spent_on: 日：
+  field_easy_money_expected_revenue_name: 名称：
+  field_easy_money_expected_revenue_description: 説明：
+  field_easy_money_expected_revenue_price1: 合計金額：
+  field_easy_money_expected_revenue_price2: 税抜き金額：
+  field_easy_money_expected_revenue_vat: VAT：
+  field_easy_money_expected_revenue: 期待所得
+  field_easy_money_expected_expense: 予想される費用
+  field_easy_money_sum_other_revenues: 所得
+  field_easy_money_sum_time_entry_expenses: 賃金費用
+  field_easy_money_sum_other_expenses: 経費
+  field_easy_money_sum_other_profit: 利益
+  field_easy_money_rate_type_internal: 内部収益率
+  field_easy_money_rate_type_external: External_rate
+  field_price1: 総額
+  field_price2: 税抜き金額
+  field_vat: 付加価値税（VAT）
+  tab_easy_money_rate_priorities: レート階層
+  tab_easy_money_rate_role: ロール別料金
+  tab_easy_money_rate_time_entry_activity: 活動によって料金
+  tab_easy_money_rate_user: ユーザーによる料金
+  tab_easy_money_other_settings: その他の設定
+  easy_money_other_expense_custom_field: 本当の経費
+  easy_money_other_revenue_custom_field: 実質所得
+  notice_easy_money_recalculate: 金額は、概要ページの次の訪問の中で再計算されます。
+  error_easy_money_project_selector_select_values: 全く選択された値はありません
+  project_default_page:
+    easy_money: お金
+  warning_easy_money_settings:
+    project_question: は、プロジェクトの設定を保存しますか？
+    global_question: あなたはグローバル設定を保存しますか？
+    revenues_type: あなたは、所得の入力方法（以前に入力したすべての所得が削除されます）を変更します。
+    expenses_type: あなたは、費用（以前に入力したすべての費用は削除されます）の入力方法を変更。
+  warning_easy_money_all_projects:
+    question: あなたは、すべてのプロジェクトの設定を使用してもよろしいですか？
+    revenues_type: 以下のプロジェクトのすべての以前に入力した所得は削除されます：%{projects}
+    expenses_type: 以下のプロジェクトのすべての以前に入力した経費は削除されます：%{projects}
+  easy_money_rate_type:
+    one: 率
+    internal: 内部収益率
+    external: 外部レート
+  easy_money_entity:
+    user: ユーザー
+    role: 役割
+    time_entry_activity: 活動
+  easy_money_rate_entity:
+    user: ユーザによるレート
+    role: 役割によってレート
+    time_entry_activity: 活動によってレート
+  easy_money_period:
+    daily: デイリー
+    monthly: 毎月
+    weekly: 毎週
+    yearly: 毎年
+  easy_money_other_settings_price_visibility:
+    price1: 唯一の総額
+    price2: 税抜き金額のみ
+    all: 税抜き金額と合計金額
+  easy_money_other_settings_rate_type:
+    internal: 唯一の1つのレート
+    all: 内部と外部の速度
+  easy_money_other_settings_expected_count_price:
+    price1: 総額
+    price2: 税抜き金額
+  easy_money_other_settings_expected_rate_type:
+    internal: 内部レート
+    external: 外部レート
+  easy_reports_fields:
+    _time_entry_internalrate: 賃金費用 - 内部率
+    _time_entry_externalrate: 賃金費用 - 外部率
+    easy_money_other_revenue_id: 実質所得
+    easy_money_other_revenue_name: 実質所得 - 名前
+    easy_money_other_revenue_price1: 実質所得 - 合計金額
+    easy_money_other_revenue_price2: 実質所得 - 税抜き価格
+    easy_money_other_expense_id: 本当の経費
+    easy_money_other_expense_name: リアル経費 - 名前
+    easy_money_other_expense_price1: リアル費 - 合計金額
+    easy_money_other_expense_price2: リアル費用 - 税抜き価格
+    easy_money_expected_expense_id: 予想される経費
+    easy_money_expected_expense_name: 期待費用 - 名前
+    easy_money_expected_expense_price1: 期待費用 - 合計金額
+    easy_money_expected_expense_price2: 期待費用 - 税抜き価格
+    easy_money_expected_revenue_id: 期待所得
+    easy_money_expected_revenue_name: 期待収入 - 名前
+    easy_money_expected_revenue_price1: 期待収入 - 合計金額
+    easy_money_expected_revenue_price2: 期待収入 - 価格税抜き
+    project_expected_hours: 予想される労働時間
+    project_expected_payroll_expense: 期待賃金費用
+    _project_recovery: 回復
+    _project_timeentry_average_hourly_expense: 平均時間ごとの費用
+    _project_other_profit: 利益
+  easy_reports_categories:
+    easy_money: お金
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: 賃金コストの転換
+  tooltip_real_hourly_rate: プロジェクトは、平均時給に基づいています%{average_hourly_rate}/時間。
+  label_easy_money_sidebar:
+    project: プロジェクトのためのお金
+    issue: タスクのためのお金
+    version: マイルストーンのためのお金
+  easy_query:
+    name:
+      easy_money_other_revenue_query: その他の収益
+      easy_money_other_expense_query: その他の費用
+      easy_money_expected_revenue_query: 予想売上高
+      easy_money_expected_expense_query: 予想される経費
+      easy_money_project_cache_query: プロジェクト予算の概要
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: 他の収入の個人フィルタ
+        easy_money_other_expense_query: その他の費用の個人フィルタ
+        easy_money_expected_revenue_query: 期待される収益に個人的なフィルタ
+        easy_money_expected_expense_query: 予想される費用の個人フィルタ
+        easy_money_project_cache_query: 予算の概要の個人フィルタ
+      public:
+        easy_money_other_revenue_query: 他の収益にパブリックフィルタ
+        easy_money_other_expense_query: その他の費用についてのパブリックフィルタ
+        easy_money_expected_revenue_query: 期待される収益にパブリックフィルタ
+        easy_money_expected_expense_query: 予想される費用のパブリックフィルタ
+        easy_money_project_cache_query: 予算の概要のパブリックフィルタ
+  permission_easy_budgetsheet_view_internal_rates: Budgetsheet  - 内部レートを示し
+  permission_easy_budgetsheet_view_external_rates: Budgetsheet  - 外部のレートを示し
+  label_filter_group_easy_money_other_revenue_query: その他の収益
+  label_filter_group_easy_money_other_expense_query: その他の費用
+  label_filter_group_easy_money_expected_revenue_query: 予想売上高
+  label_filter_group_easy_money_expected_expense_query: 予想される経費
+  field_inherit_easy_money_settings: お金の設定を継承する
+  heading_easy_money_other_settings_project_overview: プロジェクトの概要の設定
+  heading_easy_money_other_settings_prices_and_rates: 価格や料金
+  label_easy_money_project_index_sum_hours: 予想時間：
+  label_easy_money_other_settings_expected_count_price: 収益及びその他の費用は、使用してカウント
+  label_easy_money_other_settings_expected_rate_type: 実質賃金費用は使用カウント
+  label_filter_group_easy_money_project_cache_query: 他人
+  label_filter_group_easy_money_project_cache_expenses: 経費
+  label_filter_group_easy_money_project_cache_revenues: 収益
+  label_filter_group_easy_money_project_cache_profit: 利益
+  label_easy_money_project_cache: プロジェクト予算の概要
+  label_easy_money_other_settings_revenues_type: 収益はとして機能します
+  label_easy_money_other_settings_expenses_type: その他の費用は次のように行為になります
+  label_easy_money_other_settings_expected_payroll_expense_type: 計画賃金費用はとしてカウントされます
+  field_sum_of_expected_hours: 予想時間
+  field_sum_of_expected_payroll_expenses: 期待賃金
+  field_sum_of_expected_expenses_price_1: 期待費用（消費税込み）
+  field_sum_of_expected_revenues_price_1: 予想売上高（消費税込み）
+  field_sum_of_other_expenses_price_1: その他の費用（消費税込み）
+  field_sum_of_other_revenues_price_1: その他の収益（消費税込み）
+  field_sum_of_expected_expenses_price_2: 予想される経費（VAT含まず）
+  field_sum_of_expected_revenues_price_2: 予想売上高（VAT含まず）
+  field_sum_of_other_expenses_price_2: その他の費用（消費税なし）
+  field_sum_of_other_revenues_price_2: その他の収益（VAT含まず）
+  field_sum_of_time_entries_expenses_internal: 賃金（内部収益率）
+  field_sum_of_time_entries_expenses_external: 賃金（外部率）
+  field_sum_of_all_expected_expenses_price_1: 総期待費用（消費税込み）
+  field_sum_of_all_expected_revenues_price_1: 総期待収入（消費税込み）
+  field_sum_of_all_other_revenues_price_1: 収益合計（消費税込み）
+  field_sum_of_all_expected_expenses_price_2: 総期待費用（VAT含まず）
+  field_sum_of_all_expected_revenues_price_2: 総期待収入（税抜き）
+  field_sum_of_all_other_revenues_price_2: 総収入（税抜き）
+  field_sum_of_all_other_expenses_price_1_internal: 合計費用（消費税込み、内部収益率）
+  field_sum_of_all_other_expenses_price_2_internal: 費用合計（税抜き、内部収益率）
+  field_sum_of_all_other_expenses_price_1_external: 合計費用（消費税込み、外部レート）
+  field_sum_of_all_other_expenses_price_2_external: 費用合計（VAT、外部速度なし）
+  field_expected_profit_price_1: 期待利益（消費税込み）
+  field_expected_profit_price_2: 期待利益（VAT含まず）
+  field_other_profit_price_1_internal: 利益（消費税込み、内部収益率）
+  field_other_profit_price_2_internal: 利益（税抜き、内部収益率）
+  field_other_profit_price_1_external: 利益（消費税込み、外部レート）
+  field_other_profit_price_2_external: 利益（税抜き、外部の速度）
+  field_average_hourly_rate_price_1: 平均時給（消費税込み）
+  field_average_hourly_rate_price_2: 平均時給（税抜き）
+  easy_pages:
+    pages:
+      easy_money_projects_overview: マネー - ホームページ
+    pages_description:
+      easy_money_projects_overview: マネー - ホームページ
+  easy_money_revenues_type:
+    list: 詳細なリスト
+    sum: 総所得
+  easy_money_expenses_type:
+    list: 詳細なリスト
+    sum: 総経費
+  easy_money_expected_payroll_expense_type:
+    amount: 賃金費用（総額）
+    hours: 賃金コスト（予想時間*計画時給）
+    estimated_hours: 賃金費（推定時間*計画時給）
+    planned_hours_and_rate: 譲受人（推定時間*計画時給）せずにタスク、譲受人（推定時間*率階層別）を持つタスク
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: プロジェクト予算の概要再計算
+  label_easy_money_round_money_on_list: リスト上のラウンド

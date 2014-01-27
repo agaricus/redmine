@@ -1,0 +1,400 @@
+cs:
+  easy_money_plugin_name: "Peníze"
+  easy_money_plugin_author: "Easy Software"
+  easy_money_plugin_author_url: "http://www.easyproject.cz/cz"
+  easy_money_plugin_description: "- sledování očekávaných a reálných ekonomických výsledků projektů"
+
+  project_module_easy_money: "Peníze"
+
+  menu_easy_money: "Peníze"
+
+  permission_view_easy_money: "Přístup k modulu Peníze (obecně)"
+  permission_easy_money_show_expected_revenue: "Zobrazení plánovaných příjmů"
+  permission_easy_money_show_expected_expense: "Zobrazení plánovaných nákladů"
+  permission_easy_money_show_expected_payroll_expense: "Zobrazení plánovaných mzdových nákladů"
+  permission_easy_money_show_expected_profit: "Zobrazení plánovaného výsledku"
+  permission_easy_money_show_other_revenue: "Zobrazení skutečných příjmů"
+  permission_easy_money_show_other_expense: "Zobrazení skutečných nákladů"
+  permission_easy_money_show_time_entry_expenses: "Zobrazení skutečných mzdových nákladů"
+  permission_easy_money_show_other_profit: "Zobrazení skutečného výsledku"
+  permission_easy_money_manage_expected_revenue: "Spravování plánovaných příjmů"
+  permission_easy_money_manage_expected_expense: "Spravování plánovaných nákladů"
+  permission_easy_money_manage_expected_payroll_expense: "Spravování plánovaných mzdových nákladů"
+  permission_easy_money_manage_other_revenue: "Spravování skutečných příjmů"
+  permission_easy_money_manage_other_expense: "Spravování skutečných nákladů"
+  permission_easy_money_settings: "Přístup k nastavení peněz"
+  permission_easy_money_move: "Přesun peněz mezi projekty"
+  permission_easy_budgetsheet_view_internal_rates: 'Výkaz - zobrazit interní sazby'
+  permission_easy_money_cash_flow_prediction: 'Cash flow'
+  permission_easy_money_cash_flow_history: 'Historie cash flow'
+
+  heading_easy_money_other_settings_project_overview: Nastavení přehledové stránky
+  heading_easy_money_other_settings_prices_and_rates: Částky a sazby
+
+  label_easy_money: "Peníze"
+  label_easy_money_settings: "Nastavení peněz"
+  label_easy_money_rate_priorities_settings: "Pořadí sazeb nákladů"
+  label_easy_money_project_index: "Peníze"
+  label_easy_money_other_expenses: "Přehled skutečných nákladů"
+  label_easy_money_other_expense_new: "Nový náklad"
+  label_easy_money_other_expense_show: "Náklad"
+  label_easy_money_other_expense_edit: "Úprava nákladu"
+  label_easy_money_other_revenues: "Přehled skutečných příjmů"
+  label_easy_money_other_revenue_new: "Nový skutečný příjem"
+  label_easy_money_other_revenue_show: "Příjem"
+  label_easy_money_other_revenue_edit: "Úprava skutečného příjmu"
+  label_easy_money_time_entry_expenses: "Přehled mzdových nákladů"
+  label_easy_money_project_index_sum_hours: "Plánované hodiny: "
+  label_easy_money_project_index_profit: "Výsledek: "
+  label_easy_money_expected_expenses: "Přehled plánovaných nákladů"
+  label_easy_money_expected_revenues: "Přehled plánovaných příjmů"
+  label_easy_money_expected_expense_new: "Nový plánovaný náklad"
+  label_easy_money_expected_expense_show: "Plánovaný náklad"
+  label_easy_money_expected_expense_edit: "Úprava plánovaného nákladu"
+  label_easy_money_expected_revenue_new: "Nový plánovaný příjem"
+  label_easy_money_expected_revenue_show: "Plánovaný příjem"
+  label_easy_money_expected_revenue_edit: "Úprava plánovaného příjmu"
+  label_easy_money_other_settings: "Ostatní nastavení"
+  label_easy_money_other_settings_price_visibility: "U částek používat:"
+  label_easy_money_other_settings_rate_type: "U mzdových nákladů používat:"
+  label_easy_money_other_settings_include_childs: "Do projektových peněz počítat i přímé podřízené projekty:"
+  label_easy_money_other_settings_project_expected_visibility: "Zapnout na projektu plánování / očekávání:"
+  label_easy_money_other_settings_expected_count_price: "Příjmy a ostatní náklady počítat z"
+  label_easy_money_other_settings_expected_rate_type: "Skutečné mzdové náklady počítat z"
+  label_easy_money_other_settings_project_use_easy_money_for_versions: 'Používat peníze na milnících'
+  label_easy_money_other_settings_project_use_easy_money_for_issues: 'Používat peníze na úkolech'
+  label_easy_money_other_settings_revenues_type: Příjmy budou formou
+  label_easy_money_other_settings_expenses_type: Ostatní náklady budou formou
+  label_easy_money_other_settings_expected_payroll_expense_type: Plánované mzdové náklady se počítají z
+  label_easy_money_project_usage_type: "Na projektu používat:"
+  label_easy_money_other_settings_vat: "Pokud je zobrazena částka bez DPH, tak DPH je:"
+  label_easy_money_use_vat: "použít výpočet DPH"
+  label_easy_money_expected_budget: "Plán"
+  label_easy_money_real_budget: "Skutečnost"
+  label_easy_money_project_name: "Peníze projektu: "
+  label_easy_money_hour: "%{hours} hod."
+  label_easy_money_expected_payroll_expense_per_hours: "Plánovaná hodinová sazba"
+  label_easy_money_expected_payroll_expenses: "Mzdové náklady: "
+  label_easy_money_subproject_sum_revenues: "Příjmy *"
+  label_easy_money_subproject_sum_expenses: "Náklady *"
+  label_easy_money_subproject_sum_payroll_expenses: "Mzdové náklady *"
+  label_easy_money_subproject_profit: "Výsledek *"
+  label_easy_money_subproject_explication: "*) (plán / skutečnost)"
+  label_easy_money_attachments: "Přílohy:"
+  label_easy_money_project_time_entry_expenses: "Mzdové náklady čistě na projektu"
+  label_easy_money_project_issues_time_entry_expenses: "Mzdové náklady na projektových úkolech"
+  label_easy_money_total: "celkem:"
+  label_easy_money_all_project: "Peníze všech projektů"
+  label_easy_money_currency_visible: "Na projektu povolit změnu měny:"
+  label_easy_money_currency: "Měna:"
+  label_easy_money_select_project: 'Přesunout vybrané peníze na projekt'
+  label_easy_money_mass_copy_rates: "Hodnoty sazeb nákladů"
+  label_easy_money_project_index_estimated_hours: "Předepsaná doba: "
+  label_easy_money_new_revenue_text: 'Příjem'
+  label_easy_money_new_revenue_description: 'příjem'
+  label_easy_money_new_expense_text: 'Náklad'
+  label_easy_money_new_expense_description: 'náklad'
+  label_filter_group_easy_money_other_revenue_query: Skutečné příjmy
+  label_filter_group_easy_money_other_expense_query: Skutečné náklady
+  label_filter_group_easy_money_expected_revenue_query: Plánované příjmy
+  label_filter_group_easy_money_expected_expense_query: Plánované náklady
+  label_filter_group_easy_money_project_cache_query: Ostatní
+  label_filter_group_easy_money_project_cache_expenses: Náklady
+  label_filter_group_easy_money_project_cache_revenues: Příjmy
+  label_filter_group_easy_money_project_cache_profit: Zisk
+  label_easy_money_project_cache: Přehled portfolia
+  label_easy_money_round_money_on_list: Na výpisu zaokrouhlovat
+  label_easy_money_currency_format: Formát zobrazení
+  label_easy_money_cash_flow_prediction: Cash flow
+  label_easy_money_cash_flow_history: Historie cash flow
+  label_easy_money_cash_flow_change_price_type: Jakou částku zobrazovat?
+  label_easy_money_entity_overview: Přehled nad projektem/úkolem/milníkem
+  label_easy_money_subprojects: Přehled nad podprojekty
+
+  label_easy_money_sidebar:
+    project: "Peníze na projektu"
+    issue: "Peníze na úkolu"
+    version: "Peníze na milníku"
+
+  text_easy_money_rate_priorities_settings: "Základní pořadí výpočtu sazby nákladů. Pokud je první sazba v pořadí nulová, použije se další nenulová sazba."
+
+  button_easy_money_rate_use_in_all_projects: "Použít sazbu ve všech projektech"
+  button_easy_money_rate_use_in_all_subprojects: "Použít sazbu ve všech podprojektech"
+  button_easy_money_priorities_use_in_all_projects: "Použít pořadí sazeb ve všech projektech"
+  button_easy_money_priorities_use_in_all_subprojects: "Použít pořadí sazeb ve všech podprojektech"
+  button_easy_money_project_expected_expenses: "Náklady: "
+  button_easy_money_project_expected_revenues: "Příjmy: "
+  button_easy_money_project_other_expenses: "Náklady: "
+  button_easy_money_project_other_revenues: "Příjmy: "
+  button_easy_money_project_time_entry_expenses: "Mzdové náklady: "
+  button_easy_money_project_new_revenue: "Nový příjem"
+  button_easy_money_project_new_expense: "Nový náklad"
+  button_easy_money_project_time_entry_hours: "Odpracovaný čas: "
+  button_easy_money_project_index_show_details: "Podrobnosti"
+  button_easy_money_project_index_show_empty: "Zobrazit prázdné položky"
+  button_easy_money_save_in_all_projects: "Použít ve všech projektech"
+  button_easy_money_save_in_all_subprojects: "Použít ve všech podprojektech"
+  button_easy_money_project_settings: "Nastavení peněz"
+  button_easy_money_save_expected_revenue: "Ulož plánovaný příjem"
+  button_easy_money_save_other_revenue: "Ulož skutečný příjem"
+  button_easy_money_save_expected_hours: "Ulož plánovaný čas"
+  button_easy_money_save_expected_expense: "Ulož plánovaný náklad"
+  button_easy_money_save_other_expense: "Ulož skutečný náklad"
+  button_easy_money_update_project_time_entry_expenses: "Přepočítat mzdové náklady na projektu"
+  button_easy_money_update_project_and_subprojects_time_entry_expenses: "Přepočítat mzdové náklady na projektu a všech podprojektech"
+  button_easy_money_update_all_projects_time_entry_expenses: "Přepočítat mzdové náklady na všech projektech"
+  button_easy_money_move: "Přesunout vybrané"
+
+  title_easy_money_project_new_revenue: "Kliknutím přidáte nový příjem."
+  title_easy_money_project_new_expense: "Kliknutím přidáte nový náklad."
+  title_easy_money_project_expected_revenues: "Kliknutím zobrazíte plánované příjmy projektu."
+  title_easy_money_project_other_revenues: "Kliknutím zobrazíte skutečné příjmy projektu."
+  title_easy_money_project_expected_expenses: "Kliknutím zobrazíte plánované náklady projektu."
+  title_easy_money_project_other_expenses: "Kliknutím zobrazíte skutečné náklady projektu."
+  title_easy_money_project_time_entry_expenses: Kliknutím zobrazíte skutečné mzdové náklady.
+  title_easy_money_rates_save: "Uložit sazby."
+  title_easy_money_rate_use_in_all_projects: "Uloží sazby a použije je ve všech projektech."
+  title_easy_money_rate_use_in_all_subprojects: "Uloží sazby a použije je ve všech podprojektech."
+  title_easy_money_priorities_use_in_all_projects: "Použije pořadí sazeb ve všech projektech."
+  title_easy_money_priorities_use_in_all_subprojects: "Použije pořadí sazeb ve všech podprojektech."
+  title_easy_money_other_repeating_expense_show: "Kliknutím zobrazíte opakovaný náklad."
+  title_easy_money_other_repeating_revenue_show: "Kliknutím zobrazíte opakovaný příjem."
+  title_easy_money_settings: "Kliknutím přejdete k nastavení projektových peněz."
+  title_easy_money_project_index_show_empty: "Zobrazit prázdné položky."
+  title_close: "Kliknutím zavřete toto podokno."
+  title_easy_money_update_project_time_entry_expenses: "Kliknutím se spustí přepočet mzdových nákladu na projektu (může trvat i několik minut)."
+  title_easy_money_update_project_and_subprojects_time_entry_expenses: "Kliknutím se spustí přepočet mzdových nákladu na projektu a všech podprojektech (může trvat i několik minut)."
+  title_easy_money_update_all_projects_time_entry_expenses: "Kliknutím se spustí přepočet mzdových nákladu na všech projektech (může trvat i několik minut)."
+  title_easy_money_link_to_subproject: "Kliknutím přejdete na peníze projektu %{subproject}."
+  title_easy_money_link_to_project: "Kliknutím se zobrazí peníze projektu %{project}."
+  title_easy_money_sum_expected_revenues: "Součet plánovaných příjmů na projektu %{project} je %{value}."
+  title_easy_money_sum_other_revenues: "Součet skutečných příjmů na projektu %{project} je %{value}."
+  title_easy_money_sum_expected_expenses: "Součet plánovaných nákladů na projektu %{project} je %{value}."
+  title_easy_money_sum_other_expenses: "Součet skutečných nákladů na projektu %{project} je %{value}."
+  title_easy_money_sum_expected_payroll_expenses: "Součet plánovaných mzdových nákladů na projektu %{project} je %{value}."
+  title_easy_money_sum_time_entry_expenses: "Součet skutečných mzdových nákladů na projektu %{project} je %{value}."
+  title_easy_money_expected_profit: "Plánovaný výsledek na projektu %{project} je %{value}."
+  title_easy_money_other_profit: "Skutečný výsledek na projektu %{project} je %{value}."
+  title_easy_money_project_revenues_per_month: 'Kliknutím zobrazíte příjmy na projektu za daný měsíc.'
+  title_easy_money_project_expenses_per_month: 'Kliknutím zobrazíte náklady na projektu za daný měsíc.'
+
+  field_spent_hours: "Odpracovaný čas"
+  field_easy_money_rate_entity_time_entry_activity_name: "Název aktivity"
+  field_easy_money_rate_entity_role_name: "Název role"
+  field_easy_money_rate_entity_user_name: "Jméno uživatele"
+  field_easy_money_other_expense_spent_on: "Datum:"
+  field_easy_money_other_expense_name: "Název:"
+  field_easy_money_other_expense_description: "Popis:"
+  field_easy_money_other_expense_price1: "Celková částka:"
+  field_easy_money_other_expense_price2: "Částka bez DPH:"
+  field_easy_money_other_expense_vat: "DPH:"
+  field_easy_money_other_revenue_spent_on: "Datum:"
+  field_easy_money_other_revenue_name: "Název:"
+  field_easy_money_other_revenue_description: "Popis:"
+  field_easy_money_other_revenue_price1: "Celková částka:"
+  field_easy_money_other_revenue_price2: "Částka bez DPH:"
+  field_easy_money_other_revenue_vat: "DPH:"
+  field_easy_money_expected_expense_spent_on: "Datum:"
+  field_easy_money_expected_expense_name: "Název:"
+  field_easy_money_expected_expense_description: "Popis:"
+  field_easy_money_expected_expense_price1: "Celková částka:"
+  field_easy_money_expected_expense_price2: "Částka bez DPH:"
+  field_easy_money_expected_expense_vat: "DPH:"
+  field_easy_money_expected_revenue_spent_on: "Datum:"
+  field_easy_money_expected_revenue_name: "Název:"
+  field_easy_money_expected_revenue_description: "Popis:"
+  field_easy_money_expected_revenue_price1: "Celková částka:"
+  field_easy_money_expected_revenue_price2: "Částka bez DPH:"
+  field_easy_money_expected_revenue_vat: "DPH:"
+  field_easy_money_expected_revenue: "Očekávané příjmy"
+  field_easy_money_expected_expense: "Očekávané náklady"
+  field_easy_money_sum_other_revenues: "Příjmy"
+  field_easy_money_sum_time_entry_expenses: "Mzdové náklady"
+  field_easy_money_sum_other_expenses: "Náklady"
+  field_easy_money_sum_other_profit: "Zisk"
+  field_easy_money_rate_type_internal: "Interní sazba"
+  field_easy_money_rate_type_external: "Externí sazba"
+  field_price1: "Celková částka"
+  field_price2: "Částka bez DPH"
+  field_vat: "DPH"
+  field_inherit_easy_money_settings: 'Dědit nastavení peněz'
+  field_sum_of_expected_hours: Plánované hodiny
+  field_sum_of_expected_payroll_expenses: Plánované mzdové náklady
+  field_sum_of_expected_expenses_price_1: Plánované náklady (s DPH)
+  field_sum_of_expected_revenues_price_1: Plánované příjmy (s DPH)
+  field_sum_of_other_expenses_price_1: Ostatní náklady (s DPH)
+  field_sum_of_other_revenues_price_1: Ostatní příjmy (s DPH)
+  field_sum_of_expected_expenses_price_2: Plánované náklady (bez DPH)
+  field_sum_of_expected_revenues_price_2: Plánované příjmy (bez DPH)
+  field_sum_of_other_expenses_price_2: Ostatní náklady (bez DPH)
+  field_sum_of_other_revenues_price_2: Ostatní příjmy (bez DPH)
+  field_sum_of_time_entries_expenses_internal: Mzdové náklady (interní sazba)
+  field_sum_of_time_entries_expenses_external: Mzdové náklady (externí sazba)
+  field_sum_of_all_expected_expenses_price_1: Celkové plánované náklady (s DPH)
+  field_sum_of_all_expected_revenues_price_1: Celkové plánované příjmy (s DPH)
+  field_sum_of_all_other_revenues_price_1: Celkové příjmy (s DPH)
+  field_sum_of_all_expected_expenses_price_2: Celkové plánované náklady (bez DPH)
+  field_sum_of_all_expected_revenues_price_2: Celkové plánované příjmy (bez DPH)
+  field_sum_of_all_other_revenues_price_2: Celkové příjmy (bez DPH)
+  field_sum_of_all_other_expenses_price_1_internal: Celkové náklady (s DPH, interní sazba)
+  field_sum_of_all_other_expenses_price_2_internal: Celkové náklady (bez DPH, interní sazba)
+  field_sum_of_all_other_expenses_price_1_external: Celkové náklady (s DPH, externí sazba)
+  field_sum_of_all_other_expenses_price_2_external: Celkové náklady (bez DPH, externí sazba)
+  field_expected_profit_price_1: Plánovaný zisk (s DPH)
+  field_expected_profit_price_2: Plánovaný zisk (bez DPH)
+  field_other_profit_price_1_internal: Zisk (s DPH, interní sazba)
+  field_other_profit_price_2_internal: Zisk (bez DPH, interní sazba)
+  field_other_profit_price_1_external: Zisk (s DPH, externí sazba)
+  field_other_profit_price_2_external: Zisk (bez DPH, externí sazba)
+  field_average_hourly_rate_price_1: Průměrná hodinová sazba (s DPH)
+  field_average_hourly_rate_price_2: Průměrná hodinová sazba (bez DPH)
+
+  tab_easy_money_other_expense_custom_field: "Uživatelská pole - Ostatní náklady"
+  tab_easy_money_other_revenue_custom_field: "Uživatelská pole - Ostatní příjmy"
+  tab_easy_money_expected_expense_custom_field: "Uživatelská pole - Plánované náklady"
+  tab_easy_money_expected_revenue_custom_field: "Uživatelská pole - Plánované příjmy"
+  tab_easy_money_rate_priorities: "Pořadí sazeb"
+  tab_easy_money_rate_role: "Sazby dle role"
+  tab_easy_money_rate_time_entry_activity: "Sazby dle aktivity"
+  tab_easy_money_rate_user: "Sazby dle uživatele"
+  tab_easy_money_other_settings: "Ostatní nastavení"
+
+  easy_money_other_expense_custom_field: "Ostatní náklady"
+  easy_money_other_revenue_custom_field: "Ostatní příjmy"
+  easy_money_expected_expense_custom_field: "Plánované náklady"
+  easy_money_expected_revenue_custom_field: "Plánované příjmy"
+
+  notice_easy_money_recalculate: "Peníze budou přepočteny při další návštěvě stránky přehledu peněz."
+  error_easy_money_project_selector_select_values: "Není co přesouvat!"
+
+  project_default_page:
+    easy_money: Peníze
+
+  warning_easy_money_settings:
+    project_question: "Opravdu si přejete uložit nastavení na projektu?"
+    global_question: "Opravdu si přejete uložit globální nastavení?"
+    revenues_type: "Změnili jste způsob zadávání příjmů (veškeré doposud zadané příjmy budou smazány)."
+    expenses_type: "Změnili jste způsob zadávání nákladů (veškeré doposud zadané náklady budou smazány)."
+
+  warning_easy_money_all_projects:
+    question: "Opravdu si přejete použít nastavení na všech projektech?"
+    revenues_type: "Veškeré doposud zadané příjmy budou u následujících projektů smazány: %{projects}"
+    expenses_type: "Veškeré doposud zadané náklady budou u následujících projektů smazány: %{projects}"
+
+  easy_pages:
+    pages:
+      easy_money_projects_overview: Peníze - úvodní stránka
+    pages_description:
+      easy_money_projects_overview: Peníze - úvodní stránka
+
+  easy_money_rate_type:
+    one: "Sazba"
+    internal: "Interní sazba"
+    external: "Externí sazba"
+
+  easy_money_entity:
+    user: "Uživatel"
+    role: "Role"
+    time_entry_activity: "Aktivita"
+
+  easy_money_rate_entity:
+    user: "Sazba dle uživatele"
+    role: "Sazba dle role"
+    time_entry_activity: "Sazba dle aktivity"
+
+  easy_money_period:
+    daily: "Denně"
+    monthly: "Měsíčně"
+    weekly: "Týdně"
+    yearly: "Ročně"
+
+  easy_money_other_settings_price_visibility:
+    price1: "pouze celkovou částku"
+    price2: "pouze částka bez DPH"
+    all: "částku bez DPH a celkovou"
+
+  easy_money_other_settings_rate_type:
+    internal: "pouze jednu sazbu"
+    all: "interní i externí sazbu"
+
+  easy_money_other_settings_expected_count_price:
+    price1: "celkové částky"
+    price2: "částky bez DPH"
+
+  easy_money_other_settings_expected_rate_type:
+    internal: "interní sazby"
+    external: "externí sazby"
+
+  easy_money_other_settings_default_currency_format: "Výchozí nastavení podle jazyka"
+
+  easy_money_revenues_type:
+    list: "detailního seznamu"
+    sum: "celkové částky"
+
+  easy_money_expenses_type:
+    list: "detailního seznamu"
+    sum: "celkové částky"
+
+  easy_money_expected_payroll_expense_type:
+    amount: "mzdové výdaje (částka)"
+    hours: "hodinové výdaje (plánované hodiny * plánovaná hodinová sazba)"
+    estimated_hours: "hodinové výdaje (předepsaná doba * plánovaná hodinová sazba)"
+    planned_hours_and_rate: "úkol nemá řešitele (předepsaná doba * plánovaná hodinová sazba), úkol má řešitele (předepsaná doba * sazba dle pořadí)"
+
+  easy_reports_fields:
+    _time_entry_internalrate: "Mzdové náklady - Interní sazba"
+    _time_entry_externalrate: "Mzdové náklady - Externí sazba"
+    easy_money_other_revenue_id: "Ostatní příjmy"
+    easy_money_other_revenue_name: "Ostatní příjmy - Název"
+    easy_money_other_revenue_price1: "Ostatní příjmy - Celková cena"
+    easy_money_other_revenue_price2: "Ostatní příjmy - Cena bez DPH"
+    easy_money_other_expense_id: "Ostatní náklady"
+    easy_money_other_expense_name: "Ostatní náklady - Název"
+    easy_money_other_expense_price1: "Ostatní náklady - Celková cena"
+    easy_money_other_expense_price2: "Ostatní náklady - Cena bez DPH"
+    easy_money_expected_expense_id: "Očekávané náklady"
+    easy_money_expected_expense_name: "Očekávané náklady - Název"
+    easy_money_expected_expense_price1: "Očekávané náklady - Celková cena"
+    easy_money_expected_expense_price2: "Očekávané náklady - Cena bez DPH"
+    easy_money_expected_revenue_id: "Očekávané příjmy"
+    easy_money_expected_revenue_name: "Očekávané příjmy - Název"
+    easy_money_expected_revenue_price1: "Očekávané příjmy - Celková cena"
+    easy_money_expected_revenue_price2: "Očekávané příjmy - Cena bez DPH"
+    project_expected_hours: "Očekávané hodiny"
+    project_expected_payroll_expense: "Očekávané mzdové náklady"
+    _project_recovery: "Recovery"
+    _project_timeentry_average_hourly_expense: "Hodinovka"
+    _project_other_profit: "Zisk"
+
+  easy_reports_categories:
+    easy_money: "Peníze"
+
+  easy_scheduler_tasks:
+    ep_update_projects_time_entry_expenses: "přepočet mzdových nákladů"
+
+  tooltip_real_hourly_rate: "Na projektu vychází průměrná hodinová sazba %{average_hourly_rate} / hod."
+
+  easy_query:
+    name:
+      easy_money_other_revenue_query: Skutečné příjmy
+      easy_money_other_expense_query: Skutečné náklady
+      easy_money_expected_revenue_query: Očekávané příjmy
+      easy_money_expected_expense_query: Očekávané náklady
+      easy_money_project_cache_query: Přehled peněz nad projekty
+    sidebar_filters:
+      personal:
+        easy_money_other_revenue_query: 'Osobní filtry nad skutečnými příjmy'
+        easy_money_other_expense_query: 'Osobní filtry nad skutečnými náklady'
+        easy_money_expected_revenue_query: 'Osobní filtry nad očekávanýmí příjmy'
+        easy_money_expected_expense_query: 'Osobní filtry nad očekávanýmí náklady'
+        easy_money_project_cache_query: 'Osobní filtry nad penězi'
+      public:
+        easy_money_other_revenue_query: 'Veřejné filtry nad skutečnými příjmy'
+        easy_money_other_expense_query: 'Veřejné filtry nad skutečnými náklady'
+        easy_money_expected_revenue_query: 'Veřejné filtry nad očekávanýmí příjmy'
+        easy_money_expected_expense_query: 'Veřejné filtry nad očekávanýmí náklady'
+        easy_money_project_cache_query: 'Veřejné filtry nad penězi'
+
+  easy_rake_tasks:
+    easy_rake_task_easy_money_project_cache:
+      caption: 'Přepočet přehledu peněz nad projekty'

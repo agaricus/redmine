@@ -1,0 +1,100 @@
+easy_page_available_zone_001:
+  id: 1
+  easy_pages_id: 1
+  easy_page_zones_id: 2
+  position: 1
+easy_page_available_zone_002:
+  id: 2
+  easy_pages_id: 1
+  easy_page_zones_id: 4
+  position: 2
+easy_page_available_zone_003:
+  id: 3
+  easy_pages_id: 1
+  easy_page_zones_id: 6
+  position: 3
+easy_page_available_zone_004:
+  id: 4
+  easy_pages_id: 2
+  easy_page_zones_id: 1
+  position: 1
+easy_page_available_zone_005:
+  id: 5
+  easy_pages_id: 2
+  easy_page_zones_id: 4
+  position: 2
+easy_page_available_zone_006:
+  id: 6
+  easy_pages_id: 2
+  easy_page_zones_id: 6
+  position: 3
+easy_page_available_zone_007:
+  id: 7
+  easy_pages_id: 2
+  easy_page_zones_id: 10
+  position: 4
+easy_page_available_zone_008:
+  id: 8
+  easy_pages_id: 2
+  easy_page_zones_id: 7
+  position: 5
+easy_page_available_zone_009:
+  id: 9
+  easy_pages_id: 3
+  easy_page_zones_id: 2
+  position: 1
+easy_page_available_zone_0010:
+  id: 10
+  easy_pages_id: 3
+  easy_page_zones_id: 4
+  position: 2
+easy_page_available_zone_0011:
+  id: 11
+  easy_pages_id: 3
+  easy_page_zones_id: 6
+  position: 3
+easy_page_available_zone_0012:
+  id: 12
+  easy_pages_id: 3
+  easy_page_zones_id: 8
+  position: 4
+easy_page_available_zone_0013:
+  id: 13
+  easy_pages_id: 4
+  easy_page_zones_id: 2
+  position: 1
+easy_page_available_zone_0014:
+  id: 14
+  easy_pages_id: 4
+  easy_page_zones_id: 4
+  position: 2
+easy_page_available_zone_0015:
+  id: 15
+  easy_pages_id: 4
+  easy_page_zones_id: 6
+  position: 3
+easy_page_available_zone_0016:
+  id: 16
+  easy_pages_id: 4
+  easy_page_zones_id: 8
+  position: 4
+easy_page_available_zone_0017:
+  id: 17
+  easy_pages_id: 5
+  easy_page_zones_id: 1
+  position: 1
+easy_page_available_zone_0018:
+  id: 18
+  easy_pages_id: 5
+  easy_page_zones_id: 4
+  position: 2
+easy_page_available_zone_0019:
+  id: 19
+  easy_pages_id: 5
+  easy_page_zones_id: 6
+  position: 3
+easy_page_available_zone_0020:
+  id: 20
+  easy_pages_id: 5
+  easy_page_zones_id: 10
+  position: 4

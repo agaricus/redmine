@@ -1,0 +1,32 @@
+<h2><%= l(:heading_project_mass_copy_select_actions) -%></h2>
+<h3><%= l(:label_source_project) %>: <%= @source_project.family_name %></h3>
+<h3><%= l(:label_target_projects) %>: <%= @target_projects.sort_by(&:lft).collect{|p| p.family_name}.join('<br />').html_safe %></h3>
+
+<%= form_tag({:controller => 'project_mass_copy', :action => 'copy', :source_project_id => @source_project}, :class => 'tabular') do %>
+  <%= hidden_field_tag('back_url', params[:back_url]) if params[:back_url] %>
+  <% if params[:target_projects] %>
+    <% params[:target_projects].each do |target_project| %>
+      <%= hidden_field_tag('target_projects[]', target_project) %>
+    <% end %>
+  <% end %>
+  <fieldset class="box"><legend><%= l(:label_mass_copy_select_actions) %></legend>
+    <label class="block"><%= check_box_tag 'only[]', 'activity', params[:only] && params[:only].include?('activity') %> <%= l(:enumeration_activities) %> (<%= @source_project.activities.count %>)</label>
+    <label class="block"><%= check_box_tag 'only[]', 'project_overview', params[:only] && params[:only].include?('project_overview') %> <%= l(:label_easy_page_modules_on_project_overview) %></label>
+    <label class="block"><%= check_box_tag 'only[]', 'members', params[:only] && params[:only].include?('members') %> <%= l(:label_member_plural) %> (<%= @source_project.members.count %>)</label>
+
+    <%= call_hook(:view_project_mass_copy_select_actions, :source_project => @source_project, :params => params) %>
+    <%= hidden_field_tag 'only[]', '' %>
+  </fieldset>
+
+  <%= submit_tag l(:button_copy), :class => 'button-1' %>
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :easy_page_layout_service_box do %>
+  <% if params[:back_url] %>
+    <%= link_to(l(:button_back), params[:back_url], :class => 'button-2') -%>
+  <% else %>
+    <%= link_to(l(:button_back), {:controller => 'project_mass_copy', :action => 'select_source_project'}, :class => 'button-2') -%>
+  <% end %>
+<% end %>

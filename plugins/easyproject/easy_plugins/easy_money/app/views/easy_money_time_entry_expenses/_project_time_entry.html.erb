@@ -1,0 +1,79 @@
+<% project_easy_money_settings_show_rate = @project.easy_money_settings.show_rate?('all')
+easy_money_rate_type_active = EasyMoneyRateType.active
+rate_type_size = 0
+total_money = []
+total_hours = 0.0 -%>
+<h3><%= l(:label_easy_money_project_time_entry_expenses) -%></h3>
+<table class="list">
+  <thead>
+    <tr>
+      <th><%= l(:field_user) -%></th>
+      <th><%= l(:field_spent_hours) -%></th>
+      <% easy_money_rate_type_active.each do |rate_type| -%>
+        <% total_money << 0
+        rate_type_size += 1 -%>
+        <th><%= rate_type.translated_name -%></th>
+      <% end -%>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @project_time_entries.any? %>
+      <% @project_time_entries.collect(&:user).uniq.each do |user| -%>
+        <tr class="<%= cycle('odd', 'even', :name => 'user') -%>">
+          <td class="column"><%= user.name -%></td>
+          <% project_user_time_entries = @project_time_entries.select{|pte| pte.user_id == user.id} -%>
+          <% user_hours = project_user_time_entries.inject(0.0){|sum, te| sum += te.hours}
+          total_hours += user_hours -%>
+          <td class="column"><%= l(:label_easy_money_hour, :hours => user_hours.round(2)) -%></td>
+          <% easy_money_rate_type_active.each_with_index do |rate_type, i| -%>
+            <% user_expenses = project_user_time_entries.inject(0.0){|sum, te| sum += te.easy_money_time_entry_expenses.select{|s| s.rate_type_id == rate_type.id}.empty? ? 0.0 : te.easy_money_time_entry_expenses.select{|s| s.rate_type_id == rate_type.id}.first.price}
+            total_money[i] += user_expenses -%>
+            <td class="column"><%= format_easy_money_price(user_expenses, @project) -%></td>
+          <% end -%>
+          <td class="column"><%= toggle_link l(:button_easy_money_project_index_show_details), "entry-#{user.id}",{:class => 'small button-2'}  -%></td>
+        </tr>
+        <tr id='entry-<%= user.id -%>' style="display:none">
+          <td colspan="<%= 3 + rate_type_size -%>">
+            <table class="list">
+              <thead>
+                <tr>
+                  <th><%= l(:label_project) -%></th>
+                  <th><%= l(:field_spent_on) -%></th>
+                  <th><%= l(:field_activity) -%></th>
+                  <th><%= l(:field_spent_hours) -%></th>
+                  <% easy_money_rate_type_active.each do |rate_type| -%>
+                    <th><%=  rate_type.translated_name -%></th>
+                  <% end -%>
+                </tr>
+              </thead>
+              <tbody>
+                <% project_user_time_entries.each do |user_time_entry| -%>
+                  <tr class="<%= cycle('odd', 'even', :name => 'user_time_entry') -%>">
+                    <td class="column"><%= link_to(user_time_entry.project.name, { :controller => 'projects', :action => 'show', :id => user_time_entry.project.id }, { :class => 'link' }) -%></td>
+                    <td class="column"><%= format_date(user_time_entry.spent_on) -%></td>
+                    <td class="column"><%= user_time_entry.activity.name -%></td>
+                    <td class="column"><%= l(:label_easy_money_hour, :hours => user_time_entry.hours) -%></td>
+                    <%= time_entry_expenses_columns_per_rate_type(@project, user_time_entry) -%>
+                  </tr>
+                <% end -%>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      <% end -%>
+    <% else -%>
+      <tr><td colspan="<%= 3 + rate_type_size -%>"><%= l(:label_no_data) -%></td></tr>
+    <% end -%>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td class="column"><%= l(:label_easy_money_total) -%></td>
+      <td class="column"><%= l(:label_easy_money_hour, :hours => total_hours.round(2)) -%></td>
+      <% total_money.each do |i| -%>
+        <td class="column"><%= format_easy_money_price(i, @project) -%></td>
+      <% end -%>
+      <td class="column"></td>
+    </tr>
+  </tfoot>
+</table>

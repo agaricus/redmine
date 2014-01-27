@@ -1,0 +1,74 @@
+/* IE 8 & IE 9 */
+/*#header #top-menu .menu-more-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}*/
+#header {
+ /*position: static;*/
+}
+div#indent-box {
+  /*display: none;
+  position: static;*/
+}
+/*
+#header #logo {
+padding-top: 5px;
+}*/
+body[class*=Easy] #header #logo, body[class*=Easy] #header #top-menu, body[class*=Easy]  #quick-search {
+ position: static;
+    z-index:1000;
+}
+/*#quick-search {
+ margin-left: 425px;
+}
+#header #top-menu .menu-more {
+    background-color: #2d86b3;
+}
+#header #top-menu > ul > li > a, #header #top-menu .menu-more-container > a {
+    margin-top: 5px;
+}
+#header #top-menu > ul > li >a {
+    display: block;
+    height: auto;
+}
+#header-space-holder {
+  display:none;
+}
+#main #main-menu {
+  width: 1000px !important;
+}*/
+
+div.clicker > div.clicker-desc {
+    left: 3px;
+    bottom: 0px;
+}
+#popuphelp {
+    background-image: url('../images/bg-dark-transparent.png');
+}
+#summary-table-bottom-first-cell {
+    border-top: 2px solid black;
+}
+div#top-menu > ul > li a:hover:after, div#top-menu div.menu-more-container > .menu-expander:hover:after, div#top-menu > ul > li a.selected:after {
+   border-color: #2d86b3 transparent;
+   color: #2d86b3;
+}
+/*#login-form input[type=text], #login-form input[type=password] {
+  width:99%;
+}*/
+#project_menu li {
+	width: auto;
+	display: inline-block;
+	height: 25px;
+}
+.cke_skin_kama a {
+  display: inline;
+}
+
+div#top-menu > ul > li,div#top-menu div.menu-more-container {
+    width: 100px;
+}
+@media screen and (min-width: 1279px) {
+  div#top-menu > ul > li,div#top-menu div.menu-more-container {
+      width: 145px;
+  }
+}

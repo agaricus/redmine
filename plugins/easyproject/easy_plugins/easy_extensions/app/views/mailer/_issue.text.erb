@@ -1,0 +1,36 @@
+<%- issue_estimated_hours = !issue.estimated_hours.nil?
+issue_fixed_version = !issue.fixed_version.nil?
+show_attachments ||= false -%>
+<%- if EasySetting.value('show_issue_id', issue.project) -%>
+  <%= '#' + issue.id.to_s + ' - ' + issue.subject + ' (' + issue_url + ')' -%>
+<%- else -%>
+  <%= issue.subject + ' (' + issue_url + ')' -%>
+<%- end %>
+
+<%= l(:field_assigned_to) -%>: <%= issue.assigned_to -%>     <%= l(:field_start_date) -%>: <%= format_date(issue.start_date) %>
+<% if issue_estimated_hours %><%= l(:field_estimated_hours) -%>: <%= ('%.2f' % (issue.estimated_hours || 0.0)) + 'h' -%><% else %><%= l(:label_spent_time) -%>: <%= l_hours(issue.spent_hours) -%><% end %>
+
+<%= l(:field_status) -%>: <%= issue.status.name -%>     <%= l(:field_due_date) -%>: <%= format_date(issue.due_date) -%>
+<% if issue_estimated_hours %><%= l(:label_spent_time) -%>: <%= l_hours(issue.spent_hours) -%><% else %><%= l(:label_updated_on) -%>: <%= format_time(issue.updated_on) -%><% end %>
+
+<%=l(:field_priority)%>: <%= issue.priority %>     <%= l(:field_author) -%>: <%= issue.author %>
+<% if issue_estimated_hours %><%= l(:label_updated_on) -%>: <%= format_time(issue.updated_on) -%><% elsif issue_fixed_version %><%= l(:label_fixed_version) -%>: <%= issue.fixed_version.name %><% end %>
+
+<% if issue_fixed_version %><%= l(:label_fixed_version) -%>: <%= issue.fixed_version.name %><% end %>
+
+<% issue.visible_custom_field_values.each do |c| %><%= c.custom_field.translated_name %>: <%= Sanitize.clean(show_value(c), :output => :html) -%>
+<% end %>
+
+<%= call_hook(:view_mailer_issue_show_text_bottom, :issue => issue) %>
+
+<%= Sanitize.clean(issue.description, :output => :html) unless issue.description.nil? -%>
+
+<% if show_attachments && issue.attachments.any? %>
+  <%=l :label_issue_attachments_heading %>
+  <% issue.attachments.each do |attachment | %>
+    * <%= attachment.filename %> (<%= number_to_human_size attachment.filesize %>)
+    <% unless attachment.description.blank? %>
+      --- <%= " #{attachment.description}" %>
+    <% end %>
+  <% end %>
+<% end %>

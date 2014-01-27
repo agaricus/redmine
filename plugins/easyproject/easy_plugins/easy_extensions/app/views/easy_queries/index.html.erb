@@ -1,0 +1,25 @@
+<div class="contextual">
+  <%= link_to_if_authorized l(:label_query_new), {:controller => 'easy_queries', :action => 'new'}, :class => 'icon icon-add' -%>
+</div>
+
+<%= content_tag :h2, l(:label_query_plural) %>
+
+<% if @queries.empty? %>
+  <p><%= content_tag :i, l(:label_no_data) -%></p>
+<% else %>
+  <table class="list">
+    <% @queries.each do |query| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td class="name">
+          <%= link_to query.name, :controller => query.easy_query_entity_controller, :action => 'index', :query_id => query -%>
+        </td>
+        <td align="right">
+          <% if query.editable_by?(User.current) %>
+            <%= link_to l(:button_edit), {:controller => 'easy_queries', :action => 'edit', :id => query}, :class => 'icon icon-edit' -%>
+            <%= link_to l(:button_delete), {:controller => 'easy_queries', :action => 'destroy', :id => query}, :data => {:confirm => l(:text_are_you_sure)}, :method => :post, :class => 'icon icon-del' -%>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

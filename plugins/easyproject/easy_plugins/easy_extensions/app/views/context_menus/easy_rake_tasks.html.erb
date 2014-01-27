@@ -1,0 +1,8 @@
+<ul>
+  <% if @task %>
+    <%= content_tag :li, context_menu_link(l(:button_execute), {:controller => 'easy_rake_tasks', :action => :execute, :id => @task, :back_url => @back_url}, :class => 'icon icon-play', :title => l(:button_execute)) -%>
+    <%= content_tag :li, context_menu_link(l(:button_settings), {:controller => 'easy_rake_tasks', :action => :edit, :id => @task, :back_url => @back_url}, :class => 'icon icon-settings', :title => l(:button_settings)) -%>
+    <%= content_tag :li, context_menu_link(l(:button_history), {:controller => 'easy_rake_tasks', :action => :task_infos, :id => @task, :back_url => @back_url}, :class => 'icon icon-stats', :title => l(:button_history)) -%>
+    <%= content_tag :li, context_menu_link(l(:button_delete), {:controller => 'easy_rake_tasks', :action => :destroy, :id => @task, :back_url => @back_url}, :class => 'icon icon-del', :method => :delete, :data => {:confirm => l(:text_are_you_sure)}, :title => l(:button_delete)) if @task.deletable? -%>
+  <% end %>
+</ul>

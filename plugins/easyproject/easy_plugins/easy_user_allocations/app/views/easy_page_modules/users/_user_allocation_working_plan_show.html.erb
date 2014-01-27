@@ -1,0 +1,8 @@
+<%= toggling_container(modul_uniq_id, user, {:heading => l(:label_user_allocation_plan), :container_html => {:class => 'module-content'}}) do %>
+  <%= render :partial => 'easy_page_modules/calendar_listing_links', :locals => {:page_module => page_module, :period => :week, :calendar => @easy_page_modules_data[block_name][:calendar], :user => user} -%>
+  <%= render(:partial => 'user_allocation_plan/index', :locals => @easy_page_modules_data[block_name]) %>
+<% end -%>
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'easy_user_allocations.css',  :plugin => 'easy_user_allocations' %>
+  <%= javascript_include_tag 'easy_user_allocation_working_plan.js', :plugin => 'easy_user_allocations' %>
+<% end %>

@@ -1,0 +1,22 @@
+<% if @project %>
+  <div class="project-index-sidebar">
+    <%= call_hook(:view_easy_money_project_index_sidebar_top, :project => @project) %>
+    <div class="box">
+      <%= link_to_easy_money_overview -%>
+      <%= render :partial => 'easy_money/sidebar_entities_links', :locals => { :entity_type => @entity_type, :entity_id => @entity_id, :show_new_links => true, :project => @project } %>
+    </div>
+
+    <%= render :partial => 'sidebar/project_family_info', :locals => { :project => @project } %>
+    <%= call_hook(:view_easy_money_project_index_sidebar_bottom, :project => @project) %>
+  </div>
+<% else %>
+  <div class="box">
+    <%= link_to(l(:label_easy_money_project_cache), {:controller => 'easy_money_project_caches', :action => 'index', :set_filter => '0'}, :class => 'button-2', :title => l(:label_easy_money_project_cache)) if User.current.allowed_to?(:view_easy_money, nil, :global => true) %>
+    <%= link_to(l(:label_easy_money_expected_expenses), {:controller => 'easy_money_expected_expenses', :action => 'index', :set_filter => '0'}, :class => 'button-2', :title => l(:label_easy_money_expected_expenses)) if User.current.allowed_to?(:easy_money_show_expected_expense, nil, :global => true) %>
+    <%= link_to(l(:label_easy_money_other_expenses), {:controller => 'easy_money_other_expenses', :action => 'index', :set_filter => '0'}, :class => 'button-2', :title => l(:label_easy_money_other_expenses)) if User.current.allowed_to?(:easy_money_show_other_expense, nil, :global => true) %>
+    <%= link_to(l(:label_easy_money_expected_revenues), {:controller => 'easy_money_expected_revenues', :action => 'index', :set_filter => '0'}, :class => 'button-2', :title => l(:label_easy_money_expected_revenues)) if User.current.allowed_to?(:easy_money_show_expected_revenue, nil, :global => true) %>
+    <%= link_to(l(:label_easy_money_other_revenues), {:controller => 'easy_money_other_revenues', :action => 'index', :set_filter => '0'}, :class => 'button-2', :title => l(:label_easy_money_other_revenues)) if User.current.allowed_to?(:easy_money_show_other_revenue, nil, :global => true) %>
+    <%= link_to(l(:label_easy_money_cash_flow_prediction), {:controller => 'easy_money_cash_flow_prediction', :action => 'index', :set_filter => '1', :project_id => 'mine'}, :class => 'button-2', :title => l(:label_easy_money_cash_flow_prediction)) if User.current.allowed_to?(:easy_money_cash_flow_prediction, nil, :global => true) %>
+    <%= link_to(l(:label_easy_money_cash_flow_history), {:controller => 'easy_money_cash_flow_history', :action => 'index', :set_filter => '1', :project_id => 'mine'}, :class => 'button-2', :title => l(:label_easy_money_cash_flow_history)) if User.current.allowed_to?(:easy_money_cash_flow_history, nil, :global => true) %>
+  </div>
+<% end %>

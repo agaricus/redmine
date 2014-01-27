@@ -1,0 +1,7 @@
+<%= form_tag(easy_issue_timers_settings_path, :method => :put, :class => 'tabular settings', :id => 'easy_issue_timers_settings_form') do %>
+  <%= hidden_field_tag(:project_id, @project.id) %>
+  <%= t = EasySetting.arel_table; render(:partial => 'easy_issue_timers/form', :locals => {
+    :setting => EasySetting.where(:name => 'easy_issue_timer_settings').where(t[:project_id].eq(@project.id).or(t[:project_id].eq(nil))).first.value,
+    :statuses => IssueStatus.order(:position).all
+  }) %>
+<% end -%>

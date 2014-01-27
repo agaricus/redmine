@@ -1,0 +1,43 @@
+<div id="indent-box"></div>
+<div id="wrapper">
+  <div id="wrapper2">
+    <div id="wrapper3">
+
+      <%= render :file => 'layouts/base_body_header' %>
+
+      <div id="main" class="container_12 <%= render_sidebar ? 'with-sidebar' : 'nosidebar' %>">
+        <% if display_main_menu?(@project) && controller_name != 'templates' %>
+          <div class="container_12">
+            <%= render :partial => 'projects/project_info_topmenu' %>
+          </div>
+          <div class="clear"></div>
+        <% end %>
+        <div class="grid_12">
+          <div class="<%= render_sidebar ? 'grid_9 alpha' : 'grid_12 alpha omega' %>">
+            <div id="content">
+              <%= render_flash_messages %>
+              <%= yield %>
+              <%= call_hook :view_layouts_base_content %>
+              <div style="clear:both;"></div>
+            </div>
+          </div>
+          <% if render_sidebar %>
+            <div class="grid_3 omega easy-sidebar-container" >
+              <div id="sidebar">
+                <% if content_for?(:easy_page_layout_service_box) -%>
+                  <div id="easy-page-layout-service-box" class="box">
+                    <%= yield :easy_page_layout_service_box %>
+                  </div>
+                <% end -%>
+                <%= yield :sidebar %>
+                <%= call_hook :view_layouts_base_sidebar %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div style="clear:both"></div>
+      </div>
+      <%= render :file => 'layouts/base_body_footer_wrapper' %>
+    </div>
+  </div>
+</div>

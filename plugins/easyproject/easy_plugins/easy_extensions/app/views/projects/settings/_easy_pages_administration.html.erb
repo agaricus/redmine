@@ -1,0 +1,50 @@
+<% page = EasyPage.find(params[:page_id]) unless params[:page_id].nil? -%>
+<% if (params[:tab_mode] == 'edit') -%>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :action => "settings", :id => @project, :tab => 'easypages'}, { :title => l('breadcrumb.title.easy_pages_administration') }),
+    link_to(l('breadcrumb.label.easy_page_edit', :pagename => page.translated_name), {:action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'edit', :page_id => page.id}, { :title => l('breadcrumb.title.easy_page_edit', :pagename => page.translated_name) })
+  ] -%>
+  <%= render :partial => "easy_page_layout/page_layout.edit", :locals => {:page => page, :user_id => nil, :entity_id => @project.id, :back_url => url_for(:action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'show', :page_id => page.id)} -%>
+<% elsif (params[:tab_mode] == 'template') -%>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :action => "settings", :id => @project, :tab => 'easypages'}, { :title => l('breadcrumb.title.easy_pages_administration') }),
+    link_to(l('breadcrumb.label.easy_page_show', :pagename => page.translated_name), { :action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'edit', :page_id => page.id}, { :title => l('breadcrumb.title.easy_page_show', :pagename => page.translated_name) })
+  ] -%>
+  <div class="easy-page-layout-from-template">
+    <%= render :partial => "easy_page_layout/page_layout_from_template", :locals => {:page => page, :user_id => nil, :entity_id => @project.id, :back_url => url_for(:action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'show', :page_id => page.id)} -%>
+  </div>
+<% elsif (params[:tab_mode] == 'show') -%>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :action => "settings", :id => @project, :tab => 'easypages'}, { :title => l('breadcrumb.title.easy_pages_administration') }),
+    link_to(l('breadcrumb.label.easy_page_show', :pagename => page.translated_name), { :action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'show', :page_id => page.id}, { :title => l('breadcrumb.title.easy_page_show', :pagename => page.translated_name) })
+  ] -%>
+  <div class="contextual">
+    <span><%= link_to l(:label_personalize_user_page), { :action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'edit', :page_id => page.id}, { :title => l(:title_personalize_user_page) } -%></span>
+    <span><%= link_to l(:label_personalize_user_page_from_layout), { :action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'template', :page_id => page.id}, { :title => l(:title_personalize_user_page_from_layout) } -%></span>
+  </div>
+  <%= render :partial => "easy_page_layout/page_layout.view", :locals => {:page => page, :user_id => nil, :entity_id => @project.id} -%>
+<% else -%>
+  <%= breadcrumb [
+    link_to(l('breadcrumb.label.easy_pages_administration'), { :action => "settings", :id => @project, :tab => 'easypages'}, { :title => l('breadcrumb.title.easy_pages_administration') })
+  ] -%>
+  <div class="easy-pages-list">
+  <% pages = EasyPage.find_similiar("project")
+  unless pages.size > 0 -%>
+    <p class="nodata">
+      <%= l(:label_easy_page_no_pages) -%>
+    </p>
+  <% else -%>
+    <table class="list">
+    <% pages.each do |page_def| -%>
+      <tr class="<%= cycle('odd', 'even') -%>">
+        <td class="easy-page-name"><%= page_def.translated_name -%></td>
+        <td class="easy-page-description"><%= page_def.translated_description -%></td>
+        <td class="easy-page-template-links">
+            <div><%= link_to l(:label_easy_page_user_layout_modules), { :action => "settings", :id => @project, :tab => 'easypages', :tab_mode => 'show', :page_id => page_def.id }, { :title => l(:title_easy_page_user_layout_modules) } -%></div>
+        </td>
+      </tr>
+    <% end -%>
+    </table>
+  <% end -%>
+  </div>
+<% end -%>

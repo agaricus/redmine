@@ -1,0 +1,19 @@
+<div class="my-news">
+  <div class="floatleft">
+    <%= content_tag :p, format_date(news.created_on), :class => 'created_on' %>
+    <%= avatar(news.author, :size => '40') -%>
+  </div>
+  <h4>
+    <%= link_to news.author.to_s, {:controller => 'users', :action => 'show', :id => news.author} -%> <%=  l(:title_says) -%>
+    <% if news.unread?(User.current) -%>
+      <span class="news-unread"><%= l(:label_news_unread) -%></span>
+    <% end -%>
+  </h4>
+  <div class="bubble <%= cycle('odd','even') %>">
+    <%= content_tag :h4, link_to( h(news.title), news_path(news) ) -%>
+    <div class="description">
+      <%= truncate_html(textilizable(news.description, {:headings => false}), 120, "... #{link_to(l(:label_more),{:controller => 'news', :action => 'show', :id => news})}" )%>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+</div>

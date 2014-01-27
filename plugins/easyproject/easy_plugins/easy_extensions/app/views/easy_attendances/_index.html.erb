@@ -1,0 +1,11 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => l(:label, :scope => [:easy_attendance]), :easy_query_apply_url => url_for({:tab => params[:tab], :set_filter => '1'}), :easy_query_clear_url => {:set_filter => 0, :tab => params[:tab]} } -%>
+
+<div id="easy_attendances">
+  <%= render :partial => 'easy_queries/easy_query_entities_list', :locals => {:query => @query, :entities => @entities, :options => {:hascontextmenu => true}} -%>
+</div>
+
+<p class="pagination">
+  <%= pagination_links_full @entity_pages, @entity_count, :query => @query, :entities => @entities %>
+</p>
+<%= render(:partial => 'easy_queries/easy_query_export_format_links', :locals => {:query => @query}) -%>
+<%= context_menu({:controller =>'context_menus', :action => 'easy_attendances' }, '#easy_attendances') -%>

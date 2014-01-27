@@ -1,0 +1,73 @@
+<%= content_tag :h1,  l(:label_search) %>
+<div class="search-form-container">
+  <%= form_tag({}, :method => :get, :id => 'search-form') do %>
+    <div class="gray-background">
+      <p>
+        <%= text_field_tag 'q', @question, :size => 33, :id => 'search-input' %>
+        <%= javascript_tag "$('#search-input').focus()" %>
+        <%
+        available_options = [[l(:label_project_all), 'all']]
+        available_options << [l(:label_and_its_subprojects, @project.name), 'subprojects'] if @project && @project.descendants.active.any?
+        available_options << [l(:label_project), 'project']
+      %>
+        <%= select_tag(:scope_type, options_for_select(available_options, @scope_select), :onchange => 'selectSearchRange(this)', :style => 'width:auto', :id => '' ) %>
+        <span id="search_projects_select" style="<%= 'display:none' if @scope_select != 'project' %>"><%= project_select_tag %></span>
+        <%= hidden_field_tag 'all_words', '', :id => nil %>
+        <label><%= check_box_tag 'all_words', 1, @all_words %> <%= l(:label_all_words) %></label>
+        <%= link_to("javascript:ToggleDivAndChangeOpen('search-advanced-setting', '#search_advanced_toggler');", :id => 'search_advanced_toggler') do %>
+          <i class="icon-toggler"></i>
+          <%= l(:button_advanced_search) %>
+        <% end -%>
+      </p>
+      <%= '<div id="search-advanced-setting" style="display: none">'.html_safe if in_mobile_view? %>
+      <fieldset>
+        <%= content_tag(:legend, l(:legend_entities, :scope => [:easy_search])) -%>
+        <% @object_types.each do |t| %>
+          <p class="floating-mobile" id="search-types">
+            <label><%= check_box_tag t, 1, @scope.include?(t) %> <%= link_to type_label(t), "#" %></label>
+          </p>
+        <% end %>
+      </fieldset>
+      <%= '<div id="search-advanced-setting" style="display: none">'.html_safe unless in_mobile_view? %>
+
+      <fieldset>
+        <%= content_tag(:legend, l(:legend_column_types, :scope => [:easy_search])) -%>
+        <% EasyExtensions.easy_searchable_column_types.each do |column| %>
+          <p class="floating-mobile">
+            <%= check_box_tag "easy_searchable_column_type[]", column, @easy_searchable_column_types.include?(column), :id => "easy_searchable_column_type_#{column}" -%>
+            <%= label_tag "easy_searchable_column_type_#{column}", l(column, :scope => [:easy_search, :label_column_type]) -%>
+          </p>
+        <% end %>
+      </fieldset>
+      <%= '</div>'.html_safe %>
+    </div>
+
+    <p><%= submit_tag l(:button_submit), :class => 'button-1' %></p>
+  <% end %>
+</div>
+<%= render :partial => 'search_results' -%>
+
+<% content_for :header_tags do %>
+  <script type="text/javascript">
+    function selectSearchRange(select) {
+      if (select.value == 'project') {
+        $("#scope").attr('disabled', false);
+        $("#search_projects_select").show();
+      } else {
+        $("#scope").attr('disabled', true);
+        $("#search_projects_select").hide();
+      }
+    }
+  </script>
+<% end -%>
+
+<%= javascript_tag do %>
+  $("#search-types a").click(function(e){
+  e.preventDefault();
+  $("#search-types input[type=checkbox]").attr('checked', false);
+  $(this).siblings("input[type=checkbox]").attr('checked', true);
+  if ($("#search-input").val() != "") {
+  $("#search-form").submit();
+  }
+  });
+<% end %>

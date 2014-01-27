@@ -1,0 +1,42 @@
+<% selected_tab = params[:tab] ? params[:tab].to_s : tabs.first[:name] %>
+
+<div class="tabs">
+  <ul>
+    <% tabs.each do |tab| -%>
+      <li>
+        <% tab_label = tab[:label].is_a?(Symbol) ? l(tab[:label]) : tab[:label] %>
+        <% if tab[:no_js_link] %>
+          <%= link_to tab_label, { :tab => tab[:name] },
+            :id => "tab-#{tab[:name]}",
+            :class => (tab[:name] != selected_tab ? nil : 'selected') %>
+        <% elsif tab[:redirect_link] %>
+          <%= link_to tab_label, tab[:url],
+            :id => "tab-#{tab[:name]}",
+            :class => (tab[:name] != selected_tab ? nil : 'selected') %>
+        <% else -%>
+          <%= link_to tab_label, { :tab => tab[:name] },
+            :id => "tab-#{tab[:name]}",
+            :class => (tab[:name] != selected_tab ? nil : 'selected'),
+            :onclick => "showTab('#{tab[:name]}', this.href); this.blur(); return false;" %>
+        <% end -%>
+      </li>
+    <% end -%>
+  </ul>
+  <div class="tabs-buttons" style="display:none;">
+    <button class="tab-left" onclick="moveTabLeft(this);"></button>
+    <button class="tab-right" onclick="moveTabRight(this);"></button>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(displayTabsButtons);
+  $(window).resize(displayTabsButtons);
+</script>
+
+<% tabs.each do |tab| -%>
+  <% next if (tab[:redirect_link] || tab[:no_js_link]) && (selected_tab != tab[:name]) %>
+  <%= content_tag('div', render(:partial => tab[:partial], :locals => {:tab => tab} ),
+    :id => "tab-content-#{tab[:name]}",
+    :style => (tab[:name] != selected_tab ? 'display:none' : nil),
+    :class => 'tab-content') %>
+<% end -%>

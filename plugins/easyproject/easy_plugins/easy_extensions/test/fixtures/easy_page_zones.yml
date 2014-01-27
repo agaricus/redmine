@@ -1,0 +1,30 @@
+easy_page_zone_001:
+  id: 1
+  zone_name: top-left
+easy_page_zone_002:
+  id: 2
+  zone_name: top-middle
+easy_page_zone_003:
+  id: 3
+  zone_name: top-right
+easy_page_zone_004:
+  id: 4
+  zone_name: middle-left
+easy_page_zone_005:
+  id: 5
+  zone_name: middle-middle
+easy_page_zone_006:
+  id: 6
+  zone_name: middle-right
+easy_page_zone_007:
+  id: 7
+  zone_name: bottom-left
+easy_page_zone_008:
+  id: 8
+  zone_name: bottom-middle
+easy_page_zone_009:
+  id: 9
+  zone_name: bottom-right
+easy_page_zone_010:
+  id: 10
+  zone_name: right-sidebar

@@ -1,0 +1,26 @@
+<% 
+additional_elements_to_serialize ||= ''
+additional_hidden_fields ||= {}
+%>
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {:query => @query, :easy_query_name => (@only_me == true ? l(:label_personal_statement) : l(:label_spent_time)), :additional_elements_to_serialize => additional_elements_to_serialize, :additional_hidden_fields => additional_hidden_fields} %>
+
+<div class="tabs">
+  <% url_params = @free_period ? { :from => @from, :to => @to } : { :period => params[:period] } %>
+  <ul>
+    <% if !!@only_me -%>
+      <li><%= link_to(l(:label_details), url_params.merge({:controller => 'timelog', :action => 'index', :project_id => @project, :issue_id => @issue, :only_me => @only_me}),
+          :class => (action_name == 'index' ? 'selected' : nil)) %></li>
+      <li><%= link_to(l(:label_report), url_params.merge({:controller => 'timelog', :action => 'report', :project_id => @project, :issue_id => @issue, :only_me => @only_me}),
+          :class => (action_name == 'report' ? 'selected' : nil)) %></li>
+    <% else -%>
+      <li><%= link_to(l(:label_details), url_params.merge({:controller => 'timelog', :action => 'index', :project_id => @project, :issue_id => @issue}),
+          :class => (action_name == 'index' ? 'selected' : nil)) %></li>
+      <li><%= link_to(l(:label_report), url_params.merge({:controller => 'timelog', :action => 'report', :project_id => @project, :issue_id => @issue}),
+          :class => (action_name == 'report' ? 'selected' : nil)) %></li>
+    <% end -%>
+  </ul>
+</div>
+
+<div class="total-hours">
+  <p><%= l(:label_total) %>: <%= html_hours(l_hours(@total_hours)) %></p>
+</div>

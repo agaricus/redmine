@@ -1,0 +1,17 @@
+<%= form_tag({:controller => 'easy_page_layout', :action => "layout_from_template"}, {:method => :post}) do -%>
+  <%= hidden_field_tag 'back_url', back_url -%>
+  <%= hidden_field_tag 'user_id', user_id -%>
+  <%= hidden_field_tag 'entity_id', entity_id -%>
+
+  <div class="layout-from-template">
+    <% templates = page.templates(true) %>
+    <% if templates.size > 0 %>
+      <span><%= select_tag 'page_template_id', "<option>#{l(:label_select_page_template)}</option>".html_safe + options_for_select(templates.collect{|p| [p.template_name, p.id]}) -%></span>
+    <% else %>
+      <span><%= l(:label_no_data) -%></span>
+    <% end %>
+    <span class="link-new-page-template"><%= link_to l(:label_easy_page_templates_new), {:controller => 'easy_page_templates', :action => 'new', :page_id => page.id }, {:class => 'icon icon-add', :title => l(:title_easy_page_templates_new)} -%></span>
+  </div>
+
+  <%= submit_tag(l(:button_apply), :class => "small", :name => nil) if templates.size > 0 %>
+<% end -%>

@@ -1,0 +1,16 @@
+<h2><%= l(:label_settings) %></h2>
+
+<%= render_tabs administration_settings_tabs %>
+
+<% html_title(l(:label_settings), l(:label_administration)) -%>
+
+<script type="text/javascript">
+	shortcut.add('Alt+Shift+S', function() {
+		var tabs = ['general', 'display', 'authentication', 'projects', 'issues', 'notifications', 'mail_handler'];
+		for (var i = 0; i < tabs.length; i++) {
+			if($('#tab-content-' + tabs[i]) && $('#tab-content-' + tabs[i]).is(':visible')) {
+				$('#tab-content-' + tabs[i] + ' input[type=submit]').click();
+			}
+		}
+	});
+</script>

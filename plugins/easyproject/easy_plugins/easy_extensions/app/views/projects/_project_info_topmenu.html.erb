@@ -1,0 +1,28 @@
+<% unless @project.nil? || @project.new_record? -%>
+  <div id="main-menu" class="grid_12">
+    <div class="grid_12 container_12 alpha omega">
+  <%# easy_cache ['project_header_breadcrump', User.current, @project, @issue] do %>
+      <div class="grid_9 alpha easy-dropper-target easy-drop-project" data-project-id="<%= @project.id %>" data-drop-action="project">
+        <div id="project-menu-breadcrumb" >
+          <div id="project-menu-breadcrumb-items">
+            <%= project_header_breadcrump -%>
+          </div>
+        </div>
+      </div>
+  <%# end %>
+      <% if User.current.allowed_to?(:add_issues, @project) %>
+        <div class="grid_3 omega">
+          <div id="issue_new_container">
+            <%= link_to(l(:label_issue_new), { :controller => 'issues', :action => 'new', :project_id => @project }, :class => 'button-1 orange icon icon-add', :accesskey => Redmine::AccessKeys.key_for(:new_issue)) -%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <%# easy_cache ['projects/_project_info_top_menu/project_menu', User.current, @project] do %>
+    <div class="project-menu tabs grid_12 alpha omega" id="project_menu">
+      <%= render :partial => 'projects/project_menu', :locals => {:project => @project} %>
+    </div>
+  <%# end %>
+  </div>
+  <div id="project-space-holder"></div>
+<% end -%>

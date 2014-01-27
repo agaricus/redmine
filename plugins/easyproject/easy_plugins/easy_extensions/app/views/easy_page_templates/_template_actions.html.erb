@@ -1,0 +1,5 @@
+<% if page.page_name == 'my-page' || page.page_name == 'my-mobile-page' -%>
+  <%= link_to l(:label_template_to_selected_users), { :controller => 'easy_page_layout', :action => 'layout_from_template_selecting_users', :page_template_id => page_template.id, :back_url => url_for({:page_id => page.id}) }, { :title => l(:title_template_to_selected_users) } -%>
+<% elsif page.page_name == 'project-overview' -%>
+  <%= link_to l(:label_template_to_selected_projects), { :controller => 'easy_page_layout', :action => 'layout_from_template_selecting_projects', :page_template_id => page_template.id, :back_url => url_for({:page_id => page.id}) }, { :title => l(:title_template_to_selected_projects) } -%>
+<% end -%>

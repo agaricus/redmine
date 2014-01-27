@@ -1,0 +1,57 @@
+<%
+original_url = CGI::unescape(params[:original_url]) if params[:original_url]
+original_url ||= url_for(params)
+uri = URI.parse(original_url)
+uri_query = uri.query
+uri_query ||= 't=1'
+uri_query << '&t=1' unless uri_query.match(/t=\d+/)
+is_preloaded ||= false
+
+uri.query = uri_query.gsub(/t=\d+/, "t=#{tab.position}")
+escaped_uri = CGI::escape(uri.to_s)
+tab_controller = tab.is_a?(EasyPageTemplateTab) ? {:controller => 'easy_page_template_layout', :page_template_id => tab.page_template_id} : {:controller => 'easy_page_layout', :page_id => tab.page_id}
+if editable
+  if is_preloaded || tab.position == selected_tab
+    is_preloaded = true
+    tab_href = "#easy_jquery_tab-#{tab.id}"
+  else
+    tab_href = url_for(
+      tab_controller.merge({
+          :action => 'get_tab_content',
+          :tab_id => tab.id,
+          :t => tab.position,
+          :user_id => (easy_page_context && easy_page_context[:page_params][:user_id]) || params[:user_id],
+          :entity_id => (easy_page_context && easy_page_context[:page_params][:entity_id]) || params[:entity_id]
+        })
+    )
+  end
+else
+  tab_href = uri.to_s
+end
+%>
+<% if editable %>
+  <%= content_tag(:span, ' ', :style => 'display:none;', :class => 'easy-sortable-list-handle', :data => {
+      :url => url_for( tab_controller.merge({:action =>'save_tab', :tab_id => tab.id}) ),
+      :name => (tab.is_a?(EasyPageTemplateTab) ? 'easy_page_template_tab' : 'easy_page_user_tab')
+    }) %>
+  <%= content_tag(:span, ' ', :class => 'easy_tab_id', :data => { :tab_id => tab.id }) %>
+<% end %>
+<%= link_to(h(tab.name), tab_href, :id => "tab_#{tab.position}", :class => 'tab-link' + (tab.position != selected_tab ? '' : ' selected')) %>
+<% if editable %>
+  <%= link_to '', tab_controller.merge({:action => 'edit_tab', :tab_id => tab.id, :original_url => escaped_uri, :is_preloaded => is_preloaded}),
+    :class => 'icon icon-edit', :title => l(:button_edit), :onclick => "return PageLayout.editTab(this, #{tab.position});" %>
+  <%= link_to '',
+  	tab_controller.merge({
+	  	:action => 'remove_tab',
+	  	:tab_id => tab.id,
+	  	:t => tab.position == selected_tab ? nil : params[:t],
+	  	:user_id => (easy_page_context && easy_page_context[:page_params][:user_id]) || params[:user_id],
+	  	:entity_id => (easy_page_context && easy_page_context[:page_params][:entity_id]) || params[:entity_id],
+	  	:original_url => escaped_uri
+  	}),
+    :remote => true,
+    :method => :delete,
+    :confirm => l(:text_tab_layout_remove_tab_confirmation),
+  	:class => 'icon icon-del',
+    :title => l(:button_delete) %>
+<% end %>

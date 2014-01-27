@@ -1,0 +1,6 @@
+<p class="easy-scheduler-task-info initialized">
+  <%= l('easy_scheduler_task_info.initialized', :task_name => l("easy_scheduler_tasks.#{scheduler_task_info.name.underscore}")) -%>
+</p>
+<script type="text/javascript">
+  setTimeout("<%= remote_function(:url => {:controller => 'easy_scheduler_tasks_info', :action => 'task_info', :task_id => scheduler_task_info.id, :back_url => back_url}, :update => 'easy-scheduler-task-info-container') -%>", 5000);
+</script>

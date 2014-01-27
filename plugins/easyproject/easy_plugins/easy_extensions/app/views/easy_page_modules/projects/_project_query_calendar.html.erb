@@ -1,0 +1,3 @@
+<% calendar = Redmine::Helpers::Calendar.new(Date.today, current_language, (settings['period'].blank? ? :week : settings['period'].to_sym))
+   calendar.events = projects -%>
+<%= render :partial => 'common/calendar', :locals => {:calendar => calendar } -%>

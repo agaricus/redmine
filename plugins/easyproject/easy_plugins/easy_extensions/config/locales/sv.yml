@@ -1,0 +1,2541 @@
+# Easy Extensions Language File [redimine-path]/plugins/easyproject/easy_plugins/easy_extensions/config/locales/sv.yml
+# Swedish Translation by Patrick Hvid (patrick (a) plan42.se)
+# Version 1.0 (2013-09-01)
+sv:
+  direction: ltr
+  date:
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%e %B, %Y'
+      short: ! '%e %b'
+    day_names:
+    - söndag
+    - måndag
+    - tisdag
+    - onsdag
+    - torsdag
+    - fredag
+    - lördag
+    abbr_day_names:
+    - sön
+    - mån
+    - tis
+    - ons
+    - tor
+    - fre
+    - lör
+    month_names:
+    -
+    - januari
+    - februari
+    - mars
+    - april
+    - maj
+    - juni
+    - juli
+    - augusti
+    - september
+    - oktober
+    - november
+    - december
+    abbr_month_names:
+    -
+    - jan
+    - feb
+    - mar
+    - apr
+    - maj
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+    order:
+    - :day
+    - :month
+    - :year
+  time:
+    formats:
+      default: ! '%a, %e %b %Y %H:%M:%S %z'
+      long: ! '%e %B %Y %H:%M'
+      short: ! '%e %b %H:%M'
+      time: ! '%H:%M'
+    am: ''
+    pm: ''
+  datetime:
+    distance_in_words:
+      half_a_minute: en halv minut
+      less_than_x_seconds:
+        one: mindre än en sekund
+        other: 'mindre än %{count} sekunder'
+      x_seconds:
+        one: en sekund
+        other: ! '%{count} sekunder'
+      less_than_x_minutes:
+        one: mindre än en minut
+        other: 'mindre än %{count} minuter'
+      x_minutes:
+        one: en minut
+        other: ! '%{count} minuter'
+      about_x_hours:
+        one: ungefär en timme
+        other: 'ungefär %{count} timmar'
+      x_hours:
+        one: en timme
+        other: ! '%{count} timmar'
+      x_days:
+        one: en dag
+        other: ! '%{count} dagar'
+      about_x_months:
+        one: ungefär en månad
+        other: ungefär %{count} månader
+      x_months:
+        one: en månad
+        other: ! '%{count} månader'
+      about_x_years:
+        one: ungefär ett år
+        other: ungefär %{count} år
+      over_x_years:
+        one: mer än ett år
+        other: mer än %{count} år
+      almost_x_years:
+        one: nästan ett år
+        other: nästan %{count} år
+  number:
+    format:
+      separator: .
+      delimiter: ''
+      precision: 2
+    currency:
+      format:
+        unit: kr
+        format: ! '%u %n'
+        separator: .
+        delimiter: ! ','
+        precision: 0
+    human:
+      format:
+        delimiter: ''
+        precision: 1
+        separator: ! ','
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: kB
+          mb: MB
+          gb: GB
+          tb: TB
+  support:
+    array:
+      sentence_connector: och
+      skip_last_comma: false
+
+  activerecord:
+    models:
+      easy_user_working_time_calendar: Kalender
+      easy_user_working_time_calendar_holiday: Helgdagar
+    attributes:
+      easy_user_working_time_calendar:
+        parent_id: Huvudkalender
+        name: Namn
+        default_working_hours: Antal arbetstimmar per dag
+        first_day_of_week: Första dagen i veckan
+        is_default: Standardkalender
+      easy_user_working_time_calendar_holiday:
+        name: Namn
+        holiday_date: Dag
+        is_repeating: Återkommande helgdag
+    errors:
+      models:
+        time_entry:
+          attributes:
+            spent_on:
+              out_of_range: är utanför tillåtet område
+      messages:
+        cant_link_an_project_with_a_descendant: Ett projekt kan inte kopplas till en av dess underaktiviteter
+        cant_link_an_version_with_a_descendant: En milstolpe kan inte kopplas till en av dess underaktiviteter
+        not_a_amount: inte ett giltigt belopp
+        before_milestone: '(%{due_date}) Måste vara före milstolpens datum (%{effective_date})'
+        before_project_end: '(%{due_date}) Måste vara före projektets förfallodag (%{project_due_date})'
+        after_project_start: '(%{start_date}) Måste vara senare än projektets startdatum  (%{project_start_date})'
+        less_than_duration: är för tidigt enligt beräknat antal timmar
+        greater_than_soonest_start: '(%{start_date}) Måste vara senare än tidigaste startdatum (%{soonest_start}) för relaterade aktiviteter'
+        greater_than_start_date2: '(%{due_date}) Måste vara senare än startdatumet (%{start_date})'
+
+  actionview_instancetag_blank_option: Var god välj
+  general_text_No: Nej
+  general_text_Yes: Ja
+  general_text_no: nej
+  general_text_yes: ja
+  general_lang_name: Svenska
+  general_csv_separator: ! ','
+  general_csv_decimal_separator: .
+  general_csv_encoding: ISO-8859-1
+  general_pdf_encoding: UTF-8
+  general_first_day_of_week: 1
+
+  notice_account_updated: Kontot har uppdaterats
+  notice_account_invalid_creditentials: Fel användarnamn eller lösenord
+  notice_account_password_updated: Lösenordet har uppdaterats
+  notice_account_wrong_password: Fel lösenord
+  notice_account_register_done: Kontot har skapats. För att aktivera kontot, klicka på länken i mailet som skickats till dig.
+  notice_account_unknown_email: Okänd användare.
+  notice_can_t_change_password: Detta konto använder en extern autentiseringskälla. Det går inte att byta lösenord.
+  notice_account_lost_email_sent: Ett mail med instruktioner om hur du väljer ett nytt lösenord har skickats till dig.
+  notice_account_activated: Ditt konto har blivit aktiverat. Du kan nu logga in.
+  notice_successful_create: Skapades korrekt.
+  notice_successful_update: Uppdatering lyckades.
+  notice_successful_delete: Borttagning lyckades.
+  notice_successful_connection: Anslutning lyckades.
+  notice_file_not_found: Sidan du försökte komma åt existerar inte eller är borttagen.
+  notice_locking_conflict: Data har uppdaterats av en annan användare.
+  notice_not_authorized: Du saknar behörighet att komma åt den här sidan.
+  notice_not_authorized_archived_project: Projektet du försöker komma åt har arkiverats.
+  notice_email_sent: 'Ett mail skickades till %{value}'
+  notice_email_error: 'Ett fel inträffade när mail skickades (%{value})'
+  notice_feeds_access_key_reseted: Din RSS-nyckel återställdes.
+  notice_api_access_key_reseted: Din API-nyckel återställdes.
+  notice_failed_to_save_issues: ! 'Misslyckades spara aktiviteten: %{issue} med följande fel: %{error}'
+  notice_failed_to_save_time_entries: '(%{count} av %{total}) tidsloggningar sparades inte.'
+  notice_failed_to_save_members: ! 'Misslyckades med att spara medlem(mar): %{errors}.'
+  notice_no_issue_selected: Ingen aktivitet är markerad! Var vänlig markera de aktiviteter du vill ändra.
+  notice_account_pending: Ditt konto skapades och avvaktar nu administratörens godkännande.
+  notice_default_data_loaded: Standardkonfiguration inläst.
+  notice_unable_delete_version: Denna milstolpe var inte möjlig att ta bort.
+  notice_unable_delete_time_entry: Tidsloggning kunde inte tas bort.
+  notice_issue_done_ratios_updated: ! '% uppdaterade.'
+  notice_gantt_chart_truncated: Schemat trunkerades eftersom det överskrider det maximala antalet aktiviteter som kan visas (%{max})
+  notice_issue_successful_create: 'Aktivitet %{id} skapades.'
+  notice_issue_update_conflict: Denna aktivitet har uppdaterats av en annan användare samtidigt som du redigerade den.
+  notice_account_deleted: Ditt konto har avslutats permanent.
+  notice_user_successful_create: 'Användare %{id} skapad.'
+
+  error_can_t_load_default_data: ! 'Standardkonfiguration gick inte att läsa in: %{value}'
+  error_scm_not_found: Inlägg och/eller revision finns inte i detta versionsarkiv.
+  error_scm_command_failed: ! 'Ett fel inträffade vid försök att nå versionsarkivet: %{value}'
+  error_scm_annotate: Inlägget existerar inte eller kan inte kommenteras.
+  error_scm_annotate_big_text_file: Inlägget kan inte kommenteras eftersom det överskrider maximal storlek för textfiler.
+  error_issue_not_found_in_project: Aktiviteten hittades inte eller så tillhör den inte detta projekt
+  error_no_tracker_in_project: Ingen aktivitetstyp är associerad med projektet. Vänligen kontrollera projektinställningarna.
+  error_no_default_issue_status: Ingen status är definierad som standard för nya aktiviteter. Vänligen kontrollera din konfiguration (Gå till "Inställningar -> Aktivitetsstatus").
+  error_can_not_delete_custom_field: Kan inte ta bort specialfält
+  error_can_not_delete_tracker: Det finns aktiviteter av denna typ och aktivitetstypen är därför inte möjlig att ta bort.
+  error_can_not_delete_auth_source: Denna autentiseringskälla används och kan inte tas bort.
+  error_can_not_remove_role: Denna roll används och den är därför inte möjlig att ta bort.
+  error_can_not_reopen_issue_on_closed_version: En aktivtet som har tilldelat en stängd milstolpe kan inte öppnas på nytt
+  error_can_not_archive_project: Detta projekt kan inte arkiveras
+  error_issue_done_ratios_not_updated: ! '% uppdaterade inte.'
+  error_workflow_copy_source: Vänligen välj källans aktivitetstyp eller roll
+  error_workflow_copy_target: Vänligen välj aktivitetstyp(er) och roll(er) för mål
+  error_unable_delete_issue_status: Aktivitetsstatus kunde inte tas bort
+  error_unable_to_connect: 'Kan inte ansluta (%{value})'
+  error_attachment_too_big: 'Denna bilaga kan inte laddas upp eftersom den överstiger maximalt tillåten filstorlek (%{max_size})'
+  error_session_expired: Din session har gått ut. Vänligen logga in på nytt.
+  warning_attachments_not_saved: ! '%{count} bilagor kunde inte sparas.'
+
+  mail_subject_lost_password: 'Ditt %{value} lösenord'
+  mail_body_lost_password: ! 'För att ändra ditt lösenord, klicka på följande länk:'
+  mail_subject_register: 'Din %{value} kontoaktivering'
+  mail_body_register: ! 'För att aktivera ditt konto, klicka på följande länk:'
+  mail_body_account_information_external: 'Du kan använda ditt %{value}-konto för att logga in.'
+  mail_body_account_information: Din kontoinformation
+  mail_subject_account_activation_request: ! '%{value} begäran om kontoaktivering'
+  mail_body_account_activation_request: ! 'En ny användare (%{value}) har registrerat sig och avvaktar ditt godkännande:'
+  mail_subject_reminder: ! '%{count} aktivitet(er) har slutdatum de kommande %{days} dagarna'
+  mail_body_reminder: ! '%{count} aktivitet(er) som är tilldelade till dig har slutdatum de kommande %{days} dagarna:'
+  mail_subject_wiki_content_added: ! '%{id} wikisida has lagts till'
+  mail_body_wiki_content_added: 'Wikisidan %{id} has lagts till av %{author}.'
+  mail_subject_wiki_content_updated: ! '%{id} wikisida har uppdaterats'
+  mail_body_wiki_content_updated: 'The %{id} wikisida har uppdaterats av %{author}.'
+
+  field_name: Namn
+  field_description: Beskrivning
+  field_summary: Statistik
+  field_is_required: Obligatoriskt
+  field_firstname: Förnamn
+  field_lastname: Efternamn
+  field_mail: Mail
+  field_filename: Filnamn
+  field_filesize: Storlek
+  field_downloads: Nedladdningar
+  field_author: Skapare
+  field_created_on: Skapad
+  field_updated_on: Uppdaterad
+  field_closed_on: Stängd
+  field_field_format: Format
+  field_is_for_all: För alla projekt
+  field_possible_values: Möjliga värden
+  field_regexp: Regular expression
+  field_min_length: Minimilängd
+  field_max_length: Maxlängd
+  field_value: Värde
+  field_category: Kategori
+  field_title: Titel
+  field_project: Projekt
+  field_issue: Aktivitet
+  field_status: Status
+  field_notes: Anteckningar
+  field_is_closed: Aktiviteten är stängd
+  field_is_default: Standardvärde
+  field_tracker: Aktivitetstyp
+  field_subject: Titel
+  field_due_date: Slutdatum
+  field_assigned_to: Tilldelad till
+  field_priority: Prioritet
+  field_fixed_version: Milstolpe
+  field_user: Användare
+  field_principal: Huvudsaklig
+  field_role: Roll
+  field_homepage: Hemsida
+  field_is_public: Publikt
+  field_is_planned: Planerad
+  field_parent: Underprojekt till
+  field_is_in_roadmap: Visa aktiviteter i roadmap
+  field_login: Användarnamn
+  field_mail_notification: Mailnotifieringar
+  field_admin: Administratör
+  field_last_login_on: Senaste inloggning
+  field_language: Språk
+  field_effective_date: Datum
+  field_password: Lösenord
+  field_new_password: Nytt lösenord
+  field_password_confirmation: Bekräfta lösenord
+  field_version: Milstolpe
+  field_versions: Milstolpar
+  field_type: Typ
+  field_host: Värddator
+  field_port: Port
+  field_account: Konto
+  field_base_dn: Base DN
+  field_attr_login: Inloggningsattribut
+  field_attr_firstname: Förnamnsattribut
+  field_attr_lastname: Efternamnsattribut
+  field_attr_mail: Mailattribut
+  field_onthefly: Skapa användare on-the-fly
+  field_start_date: Startdatum
+  field_done_ratio: ! '% Klart'
+  field_auth_source: Autentiseringskälla
+  field_hide_mail: Dölj min mailadress
+  field_comments: Kommentar
+  field_url: URL
+  field_start_page: Startsida
+  field_subproject: Underprojekt
+  field_hours: Timmar
+  field_activity: Arbetsuppgifter
+  field_spent_on: Datum
+  field_identifier: Identifierare
+  field_is_filter: Använd som filter
+  field_issue_to_id: Relaterad aktivitet
+  field_delay: Fördröjning
+  field_assignable: Aktiviteter kan tilldelas denna roll
+  field_redirect_existing_links: Omdirigera existerande länkar
+  field_estimated_hours: Uppskattad tid
+  field_column_names: Kolumner
+  field_time_entries: Loggad tid
+  field_time_zone: Tidszon
+  field_searchable: Sökbar
+  field_default_value: Standardvärde
+  field_comments_sorting: Visa kommentarer
+  field_parent_title: Överordnad sida
+  field_editable: Redigerbar
+  field_watcher: Medarbetare
+  field_identity_url: OpenID URL
+  field_content: Innehåll
+  field_group_by: Gruppera resultat efter
+  field_sharing: Delning
+  field_parent_issue: Överordnad aktivitet
+  field_member_of_group: Tilldelad användargrupp
+  field_assigned_to_role: Tilldelad användarroll
+  field_text: Textfält
+  field_visible: Synlig
+  field_warn_on_leaving_unsaved: Varna om jag lämnar en sida med osparad text
+  field_issues_visibility: Aktiviteters synlighet
+  field_is_private: Privat
+  field_commit_logs_encoding: Teckenuppsättning för commit-meddelanden
+  field_scm_path_encoding: Sökvägskodning
+  field_path_to_repository: Sökväg till versionsarkiv
+  field_root_directory: Rotmapp
+  field_cvsroot: CVSROOT
+  field_cvs_module: Modul
+  field_repository_is_default: Huvudarkiv
+  field_multiple: Flera värden
+  field_auth_source_ldap_filter: LDAP-filter
+  field_core_fields: Standardfält
+  field_timeout: Timeout (i sekunder)
+  field_board_parent: Föräldraforum
+  field_private_notes: Privat anteckning
+  field_inherit_members: Ärv medlemmar
+
+  setting_app_title: Applikationsrubrik
+  setting_app_subtitle: Applikation underrubrik
+  setting_welcome_text: Välkomsttext
+  setting_default_language: Standardspråk
+  setting_login_required: Kräver inloggning
+  setting_self_registration: Självregistrering
+  setting_attachment_max_size: Maxstorlek på bilaga
+  setting_issues_export_limit: Exportgräns för aktiviter
+  setting_mail_from: Avsändaradress
+  setting_bcc_recipients: Skicka som hemlig kopia (bcc) till mottagare
+  setting_plain_text_mail: Oformaterad text i mail (ingen HTML)
+  setting_host_name: Värddatornamn och sökväg
+  setting_text_formatting: Textformatering
+  setting_wiki_compression: Komprimering av wikihistorik
+  setting_feeds_limit: Max poster i flöden
+  setting_default_projects_public: Sätt nya projekt publika
+  setting_autofetch_changesets: 'Automatisk hämtning av "commits"'
+  setting_sys_api_enabled: Aktivera WS för versionsarkivhantering
+  setting_commit_ref_keywords: Referens-nyckelord
+  setting_commit_fix_keywords: Fix-nyckelord
+  setting_autologin: Automatisk inloggning
+  setting_date_format: Datumformat
+  setting_time_format: Tidsformat
+  setting_cross_project_issue_relations: Tillåt aktivitetsrelationer mellan projekt
+  setting_cross_project_subtasks: Tillåt underaktiviteter mellan projekt
+  setting_issue_list_default_columns: Standardkolumner i aktivitetslistan
+  setting_repositories_encodings: Kodning för bilagor och versionsarkiv
+  setting_emails_header: Mailrubrik
+  setting_emails_footer: Mailsignatur
+  setting_protocol: Protokoll
+  setting_per_page_options: Alternativ, objekt per sida
+  setting_user_format: Visningsformat för användare
+  setting_activity_days_default: Antal dagar som visas under projektaktivitet
+  setting_display_subprojects_issues: Visa aktiviteter från underprojekt i huvudprojekt
+  setting_enabled_scm: Aktivera SCM
+  setting_mail_handler_body_delimiters: Trunkera mail efter en av följande rader
+  setting_mail_handler_api_enabled: Aktivera WS för inkommande mail
+  setting_mail_handler_api_key: API-nyckel
+  setting_sequential_project_identifiers: Generera projektidentifierare sekventiellt
+  setting_gravatar_enabled: Använd Gravatar-bilder
+  setting_gravatar_default: Förvald Gravatar-bild
+  setting_diff_max_lines_displayed: Max antal synliga rader i diff
+  setting_file_max_size_displayed: Max storlek på textfiler som visas inline
+  setting_repository_log_display_limit: Maximalt antal revisioner i filloggen
+  setting_openid: Tillåt inloggning och registrering med OpenID
+  setting_password_min_length: Minsta tillåtna lösenordslängd
+  setting_new_project_user_role_id: Tilldelad roll för en icke-administratör som skapar ett projekt
+  setting_default_projects_modules: Automataktiverade moduler för nya projekt
+  setting_issue_done_ratio: 'Beräkna % klart med'
+  setting_issue_done_ratio_issue_field: Använd aktivitetsfält
+  setting_issue_done_ratio_issue_status: Använd aktivitetsstatus
+  setting_start_of_week: Första dagen i veckan
+  setting_rest_api_enabled: Aktivera REST webbtjänst
+  setting_cache_formatted_text: Cacha formaterad text
+  setting_default_notification_option: Standard notifieringsalternativ
+  setting_commit_logtime_enabled: Aktivera tidsloggning
+  setting_commit_logtime_activity_id: Aktivitet för loggad tid
+  setting_gantt_items_limit: Max antal aktiviteter som visas i gantt-schemat
+  setting_issue_group_assignment: Tillåt att aktiviteter tilldelas till grupper
+  setting_default_issue_start_date_to_creation_date: Använd dagens datum som startdatum för nya aktiviteter
+  setting_commit_cross_project_ref: Tillåt aktiviteter i övriga projekt att bli refererade och avslutade
+  setting_unsubscribe: Tillåt användare att avsluta eget konto
+  setting_session_lifetime: Maximal sessionslivslängd
+  setting_session_timeout: Tidsgräns för sessionsinaktivitet
+  setting_thumbnails_enabled: Visa miniatyrbilder av bilagor
+  setting_thumbnails_size: Storlek på miniatyrbilder (i pixlar)
+  setting_non_working_week_days: Lediga dagar
+  setting_jsonp_enabled: TIllåt JSONP
+  setting_default_projects_tracker_ids: Förvalda aktivitetstyper för nya projekt
+
+  permission_add_project: Skapa projekt
+  permission_add_subprojects: Skapa underprojekt
+  permission_edit_project: Redigera projekt
+  permission_edit_own_projects: Redigera egna projekt
+  permission_close_project: Stänga / återöppna projekt
+  permission_select_project_modules: Välja projektmoduler
+  permission_manage_members: Hantera medlemmar
+  permission_manage_project_activities: Hantera projektaktiviteter
+  permission_manage_versions: Hantera milstolpar
+  permission_manage_categories: Hantera aktivitetskategorier
+  permission_view_issues: Visa aktiviteter
+  permission_add_issues: Lägga till aktiviteter
+  permission_edit_issues: Redigera aktiviteter
+  permission_manage_issue_relations: Hantera aktivitetsrelationer
+  permission_set_issues_private: Sätta aktiviteter publika eller privata
+  permission_set_own_issues_private: Sätta egna aktiviteter publika eller privata
+  permission_add_issue_notes: Lägga till aktivitetsanteckning
+  permission_edit_issue_notes: Redigera aktivitetsanteckningar
+  permission_edit_own_issue_notes: Redigera egna aktivitetsanteckningar
+  permission_view_private_notes: Visa privata anteckningar
+  permission_set_notes_private: Sätta anteckningar som privata
+  permission_move_issues: Flytta aktiviteter
+  permission_delete_issues: Ta bort aktiviteter
+  permission_manage_public_queries: Hantera publika filter
+  permission_save_queries: Spara filter
+  permission_view_gantt: Visa Gantt-schema
+  permission_view_calendar: Visa kalender
+  permission_view_issue_watchers: Visa medarbetarlista
+  permission_add_issue_watchers: Lägga till medarbetare
+  permission_delete_issue_watchers: Ta bort medarbetare
+  permission_log_time: Logga tid
+  permission_view_time_entries: Visa loggad tid
+  permission_edit_time_entries: Redigera tidsloggningar
+  permission_edit_own_time_entries: Redigera egna tidsloggningar
+  permission_view_news: Visa nyheter
+  permission_manage_news: Hantera nyheter
+  permission_comment_news: Kommentera nyheter
+  permission_view_documents: Visa dokument
+  permission_add_documents: Lägga till dokument
+  permission_edit_documents: Redigera dokument
+  permission_delete_documents: Ta bort dokument
+  permission_manage_files: Hantera filer
+  permission_view_files: Visa filer
+  permission_manage_wiki: Hantera wiki
+  permission_rename_wiki_pages: Byta namn på wikisidor
+  permission_delete_wiki_pages: Ta bort wikisidor
+  permission_view_wiki_pages: Visa wiki
+  permission_view_wiki_edits: Visa wikihistorik
+  permission_edit_wiki_pages: Redigera wikisidor
+  permission_delete_wiki_pages_attachments: Ta bort wiki-bilagor
+  permission_protect_wiki_pages: Låsa wikisidor
+  permission_manage_repository: Hantera versionsarkiv
+  permission_browse_repository: Bläddra i versionsarkiv
+  permission_view_changesets: 'Visa "changesets"'
+  permission_commit_access: 'Åtkomst "commits"'
+  permission_manage_boards: Hantera forum
+  permission_view_messages: Visa meddelanden
+  permission_add_messages: Lägg till meddelanden
+  permission_edit_messages: Redigera meddelanden
+  permission_edit_own_messages: Redigera egna meddelanden
+  permission_delete_messages: Ta bort meddelanden
+  permission_delete_own_messages: Ta bort egna meddelanden
+  permission_export_wiki_pages: Exportera wikisidor
+  permission_manage_subtasks: Hantera underaktiviteter
+  permission_manage_related_issues: Hantera relaterade aktiviteter
+  permission_view_easy_attendances: Visa och använd forumet
+  permission_edit_easy_attendances: Redigera poster på forumet
+  permission_view_project_overview_users_query: Visa användare från filter på projektöversikt
+
+  project_module_issue_tracking: Hantera aktiviteter
+  project_module_time_tracking: Hantera tidsuppföljning
+  project_module_news: Nyheter
+  project_module_documents: Dokument
+  project_module_files: Filer
+  project_module_wiki: Wiki
+  project_module_repository: Versionsarkiv
+  project_module_boards: Forum
+  project_module_calendar: Kalender
+  project_module_gantt: Gantt
+
+  label_user: Användare
+  label_user_plural: Användare
+  label_user_new: Ny användare
+  label_user_anonymous: Anonym
+  label_project: Projekt
+  label_project_new: Nytt projekt
+  label_project_plural: Projekt
+  label_x_projects:
+    one: ett projekt
+    other: ! '%{count} projekt'
+    zero: inga projekt
+  label_project_all: Alla projekt
+  label_project_latest: Senaste projektet
+  label_issue: Aktivitet
+  label_issue_new: Ny aktivitet
+  label_issue_plural: Aktiviteter
+  label_issue_view_all: Visa alla aktiviteter
+  label_issues_by: Aktivieter %{value}
+  label_issue_added: Aktivitet tillagd
+  label_issue_updated: Aktivitet uppdaterad
+  label_issue_note_added: Anteckning tillagd
+  label_issue_status_updated: Status uppdaterad
+  label_issue_priority_updated: Prioritet uppdaterad
+  label_document: Dokument
+  label_document_new: Nytt dokument
+  label_document_plural: Dokument
+  label_document_added: Dokument tillagt
+  label_role: Roll
+  label_role_plural: Roller
+  label_role_new: Ny roll
+  label_role_and_permissions: Roller och behörigheter
+  label_role_anonymous: Anonym
+  label_role_non_member: Icke-medlem
+  label_member: Medlem
+  label_member_new: Ny medlem
+  label_member_plural: Medlemmar
+  label_tracker: Aktivitetstyp
+  label_tracker_plural: Aktivitetstyper
+  label_tracker_new: Ny aktivitetstyp
+  label_workflow: Aktivitetsmatris
+  label_issue_status: Aktivitetsstatus
+  label_issue_status_plural: Aktivitetsstatusar
+  label_issue_status_new: Ny aktivitetsstatus
+  label_issue_category: Aktivitetskategori
+  label_issue_category_plural: Aktivitetskategorier
+  label_issue_category_new: Ny aktivitetskategori
+  label_custom_field: Specialfält
+  label_custom_field_plural: Specialfält
+  label_custom_field_new: Nytt specialfält
+  label_enumerations: Konstanter
+  label_enumeration_new: Nytt värde
+  label_information: Information
+  label_information_plural: Information
+  label_please_login: Var god logga in
+  label_register: Registrera
+  label_login_with_open_id_option: eller logga in med OpenID
+  label_password_lost: Glömt lösenord
+  label_home: Hem
+  label_my_page: Min sida
+  label_my_account: Mitt konto
+  label_my_projects: Mina projekt
+  label_my_page_block: ! 'Blockera "Min sida"'
+  label_administration: Inställningar
+  label_login: Logga in
+  label_logout: Logga ut
+  label_help: Hjälp
+  label_reported_issues: Rapporterade aktiviteter
+  label_assigned_to_me_issues: Aktiviteter tilldelade till mig
+  label_last_login: Senaste inloggning
+  label_registered_on: Registrerad
+  label_activity: Aktivitet
+  label_overall_activity: Händelser
+  label_user_activity: 'Händelser för %{value}'
+  label_new: Ny
+  label_logged_as: Inloggad som
+  label_environment: Miljö
+  label_authentication: Autentisering
+  label_auth_source: Autentiseringskälla
+  label_auth_source_new: Ny autentiseringskälla
+  label_auth_source_plural: Autentiseringskällor
+  label_subproject_plural: Underprojekt
+  label_subproject_new: Nytt underprojekt
+  label_and_its_subprojects: ! '%{value} och dess underprojekt'
+  label_min_max_length: 'Min- / Maxlängd'
+  label_list: Lista
+  label_date: Datum
+  label_integer: Heltal
+  label_float: Flyttal
+  label_boolean: Boolean
+  label_string: Text
+  label_text: Lång text
+  label_attribute: Attribut
+  label_attribute_plural: Attribut
+  label_no_data: Inget data att visa
+  label_change_status: Ändra status
+  label_history: Historik
+  label_attachment: Bilaga
+  label_attachment_new: Ny bilaga
+  label_attachment_delete: Ta bort bilaga
+  label_attachment_plural: Bilagor
+  label_file_added: Fil tillagd
+  label_report: Rapport
+  label_report_plural: Rapporter
+  label_news: Nyhet
+  label_news_new: Lägg till nyhet
+  label_news_plural: Nyheter
+  label_news_latest: Senaste nyheterna
+  label_news_view_all: Visa alla nyheter
+  label_news_added: Nyhet tillagd
+  label_news_comment_added: Kommentar tillagd till nyhet
+  label_settings: Inställningar
+  label_overview: Översikt
+  label_version: Milstolpe
+  label_version_new: Ny milstolpe
+  label_version_plural: Milstolpar
+  label_close_versions: Stäng klara milstolpar
+  label_confirmation: Bekräftelse
+  label_export_to: ! 'Finns även som:'
+  label_read: Läs...
+  label_public_projects: Publika projekt
+  label_open_issues: öppen
+  label_open_issues_plural: öppna
+  label_closed_issues: stängd
+  label_closed_issues_plural: stängda
+  label_x_open_issues_abbr_on_total:
+    zero: 'inga öppna av %{total}'
+    one: 'en öppen av %{total}'
+    other: ! '%{count} öppna av %{total}'
+  label_x_open_issues_abbr:
+    zero: inga öppna
+    one: en öppen
+    other: ! '%{count} öppna'
+  label_x_closed_issues_abbr:
+    zero: inga stängda
+    one: en stängd
+    other: ! '%{count} stängda'
+  label_x_issues:
+    zero: inga aktiviteter
+    one: en aktivitet
+    other: ! '%{count} aktiviteter'
+  label_total: Total
+  label_total_total: ! 'Totalt:'
+  label_total_time: Total tid
+  label_permissions: Behörigheter
+  label_permissions_global: Globala behörigheter
+  label_permissions_project: Projektbehörigheter
+  label_current_status: Nuvarande status
+  label_new_statuses_allowed: Nya statusvärden tillåtna
+  label_all: alla
+  label_any: 'vad/vem som helst'
+  label_none: 'inget/ingen'
+  label_nobody: ingen
+  label_next: Nästa
+  label_previous: Föregående
+  label_used_by: Använd av
+  label_details: Detaljer
+  label_add_note: Lägg till anteckning
+  label_per_page: Per sida
+  label_calendar: Kalender
+  label_months_from: månader från
+  label_gantt: Gantt
+  label_project_gantt: Projekt Gantt
+  label_internal: Intern
+  label_last_changes: 'senaste %{count} ändringar'
+  label_change_view_all: Visa alla ändringar
+  label_personalize_page: Anpassa denna sida
+  label_comment: Kommentar
+  label_comment_plural: Kommentarer
+  label_x_comments:
+    zero: inga kommentarer
+    one: en kommentar
+    two: 2 kommentarer
+    three: 3 kommentarer
+    four: 4 kommentarer
+    other: ! '%{count} kommentarer'
+  label_comment_add: Lägg till kommentar
+  label_comment_added: Kommentar tillagd
+  label_comment_delete: Ta bort kommentar
+  label_query: Filter
+  label_query_plural: Filter
+  label_query_new: Nytt filter
+  label_my_queries: Mina filter
+  label_filter_add: Lägg till filter
+  label_filter_plural: Filter
+  label_equals: är
+  label_not_equals: är inte
+  label_in_less_than: är mindre än
+  label_in_more_than: ät större än
+  label_in_the_next_days: under kommande
+  label_in_the_past_days: under föregående
+  label_greater_or_equal: ! '>='
+  label_less_or_equal: '<='
+  label_between: mellan
+  label_in: om
+  label_today: idag
+  label_all_time: all tid
+  label_yesterday: igår
+  label_this_week: denna vecka
+  label_last_week: föregående vecka
+  label_last_n_weeks: 'senaste %{count} veckorna'
+  label_last_n_days: 'senaste %{count} dagarna'
+  label_this_month: denna månaden
+  label_last_month: föregående månaden
+  label_this_year: i år
+  label_date_range: Datumintervall
+  label_less_than_ago: mindre än dagar sedan
+  label_more_than_ago: mer än dagar sedan
+  label_ago: dagar sedan
+  label_contains: innehåller
+  label_not_contains: innehåller inte
+  label_any_issues_in_project: ativiteter i projektet
+  label_any_issues_not_in_project: aktiviteter utanför projektet
+  label_no_issues_in_project: inga aktiviteter i projektet
+  label_day_plural: dagar
+  label_repository: Versionsarkiv
+  label_repository_new: Nytt versionsarkiv
+  label_repository_plural: Versionsarkiv
+  label_browse: Bläddra
+  label_branch: Gren
+  label_tag: Tag
+  label_revision: Revision
+  label_revision_plural: Revisioner
+  label_revision_id: 'Revision %{value}'
+  label_associated_revisions: Associerade revisioner
+  label_added: tillagd
+  label_modified: modifierad
+  label_copied: kopierad
+  label_renamed: omdöpt
+  label_deleted: raderad
+  label_latest_revision: Senaste revisionen
+  label_latest_revision_plural: Senaste revisionerna
+  label_view_revisions: Visa revisioner
+  label_view_all_revisions: Visa alla revisioner
+  label_max_size: Max storlek
+  label_sort_highest: Flytta till toppen
+  label_sort_higher: Flytta upp
+  label_sort_lower: Flytta ner
+  label_sort_lowest: Flytta till botten
+  label_roadmap: Roadmap
+  label_roadmap_due_in: 'Färdig om %{value}'
+  label_roadmap_overdue: ! '%{value} sen'
+  label_roadmap_no_issues: Inga aktiviteter för denna milstolpe
+  label_search: Sök
+  label_result_plural: Resultat
+  label_all_words: Alla ord
+  label_wiki: Wiki
+  label_wiki_edit: Redigera wiki
+  label_wiki_edit_plural: Redigera wikis
+  label_wiki_page: Wikisida
+  label_wiki_page_plural: Wikisidor
+  label_index_by_title: Index efter titel
+  label_index_by_date: Index efter datum
+  label_current_version: Nuvarande milstolpe
+  label_preview: Förhandsgranska
+  label_feed_plural: Flöden
+  label_changes_details: Detaljer för alla ändringar
+  label_issue_tracking: Aktivitetsuppföljning
+  label_spent_time: Loggad tid
+  label_overall_spent_time: Total loggad tid
+  label_f_hour: ! '%{value} timme'
+  label_f_hour_plural: ! '%{value} timmar'
+  label_time_tracking: Tidsuppföljning
+  label_change_plural: Ändringar
+  label_statistics: Statistik
+  label_commits_per_month: Commits per månad
+  label_commits_per_author: Commits per skapare
+  label_diff: diff
+  label_view_diff: Visa olikheter
+  label_diff_inline: inline
+  label_diff_side_by_side: sida vid sida
+  label_options: Inställningar
+  label_copy_workflow_from: Kopiera aktivitetsmatris från
+  label_permissions_report: Behörighetsrapport
+  label_watched_issues: Bevakade aktiviteter
+  label_related_issues: Relaterade aktiviteter
+  label_applied_status: Tilldelad status
+  label_loading: Laddar...
+  label_relation_new: Ny relation
+  label_relation_delete: Ta bort relation
+  label_relates_to: Relaterar till
+  label_duplicates: Kopior
+  label_duplicated_by: Kopierad av
+  label_blocks: Blockerar
+  label_blocked_by: Blockerad av
+  label_precedes: Kommer före
+  label_follows: Följer efter
+  label_copied_to: Kopierad till
+  label_copied_from: Kopierad från
+  label_end_to_start: slut till början
+  label_end_to_end: slut till slut
+  label_start_to_start: början till början
+  label_start_to_end: början till slut
+  label_stay_logged_in: Förbli inloggad
+  label_disabled: inaktiverad
+  label_show_completed_versions: Visa färdiga milstoplpar
+  label_me: mig
+  label_board: Forum
+  label_board_new: Nytt forum
+  label_board_plural: Forum
+  label_board_locked: Låst
+  label_board_sticky: Fäst
+  label_topic_plural: Ämnen
+  label_message_plural: Meddelanden
+  label_message_last: Senaste meddelande
+  label_message_new: Nytt meddelande
+  label_message_posted: Meddelande tillagt
+  label_reply_plural: Svar
+  label_send_information: Skicka kontoinformation till användaren
+  label_year: År
+  label_month: Månad
+  label_week: Vecka
+  label_date_from: Från
+  label_date_to: Till
+  label_language_based: Baserat på användarens språk
+  label_sort_by: 'Sortera på %{value}'
+  label_send_test_email: Skicka testmail
+  label_feeds_access_key: RSS-nyckel
+  label_missing_feeds_access_key: Saknar RSS-nyckel
+  label_feeds_access_key_created_on: 'RSS nyckel skapades för %{value} sedan'
+  label_module_plural: Moduler
+  label_added_time_by: 'Upplagd av %{author}'
+  label_updated_time_by: 'Uppdaterad av %{author} för %{age} sedan'
+  label_updated_time: 'Uppdaterad för %{value} sedan'
+  label_jump_to_a_project: Gå till projekt...
+  label_file_plural: Filer
+  label_changeset_plural: Changesets
+  label_default_columns: Standardkolumner
+  label_no_change_option: (Ingen ändring)
+  label_no_change: Ingen ändring
+  label_change_to: ! 'Byt till:'
+  label_bulk_edit_selected_issues: Redigera markerade aktiviteter
+  label_bulk_edit_selected_time_entries: Redigera markerade tidsloggningar
+  label_theme: Tema
+  label_default: Standard
+  option_only_selected: endast utvalda
+  label_search_titles_only: Sök endast i titlar
+  label_user_mail_option_all: För alla händelser i mina projekt
+  label_user_mail_option_selected: För alla händelser i markerade projekt...
+  label_user_mail_option_none: Inga händelser
+  label_user_mail_option_only_my_events: Endast för saker jag bevakar eller är inblandad i
+  label_user_mail_option_only_assigned: Endast för saker jag är tilldelad till
+  label_user_mail_option_only_owner: Endast för saker jag är ägare till
+  label_user_mail_no_self_notified: Jag vill inte bli underrättad om egna ändringar
+  label_registration_activation_by_email: kontoaktivering via mail
+  label_registration_manual_activation: manuell kontoaktivering
+  label_registration_automatic_activation: automatisk kontoaktivering
+  label_display_per_page: ! 'Per sida: %{value}'
+  label_age: Ålder
+  label_change_properties: Ändra inställningar
+  label_general: Allmänt
+  label_more: Mer
+  label_scm: SCM
+  label_plugins: Moduler
+  label_ldap_authentication: LDAP-autentisering
+  label_downloads_abbr: Nedl.
+  label_optional_description: Valfri beskrivning
+  label_add_another_file: Lägg till ytterligare fil
+  label_preferences: Användarinställningar
+  label_chronological_order: I kronologisk ordning
+  label_reverse_chronological_order: I omvänd kronologisk ordning
+  label_planning: Planering
+  label_incoming_emails: Inkommande mail
+  label_generate_key: Generera nyckel
+  label_issue_watchers: Medarbetare
+  label_example: Exempel
+  label_display: Visa
+  label_sort: Sortera
+  label_ascending: Stigande
+  label_descending: Fallande
+  label_date_from_to: 'Från %{start} till %{end}'
+  label_wiki_content_added: Wikisida tillagd
+  label_wiki_content_updated: Wikisida uppdaterad
+  label_group: Grupp
+  label_group_plural: Grupper
+  label_group_new: Ny grupp
+  label_time_entry_plural: Loggad tid
+  label_version_sharing_none: Inte delad
+  label_version_sharing_descendants: Med underprojekt
+  label_version_sharing_hierarchy: Med projekthierarki
+  label_version_sharing_tree: Med projektträd
+  label_version_sharing_system: Med alla projekt
+  label_update_issue_done_ratios: 'Uppdatering % klart'
+  label_copy_source: Källa
+  label_copy_target: Mål
+  label_copy_same_as_target: Samma som mål
+  label_display_used_statuses_only: Visa endast statusar som används av denna aktivitetstyp
+  label_api_access_key: API-nyckel
+  label_missing_api_access_key: Saknar API-nyckel
+  label_api_access_key_created_on: 'API-nyckel skapad för %{value} sedan'
+  label_profile: Profil
+  label_subtask_plural: Underaktiviteter
+  label_project_copy_notifications: Skicka mailnotifiering när projektet kopieras
+  label_principal_search: ! 'Sök efter användare eller grupp:'
+  label_user_search: ! 'Sök efter användare:'
+  label_additional_workflow_transitions_for_author: Ytterligare övergångar tillåtna när användaren är den som skapat aktiviteten
+  label_additional_workflow_transitions_for_assignee: Ytterligare övergångar tillåtna när användaren är den som tilldelats aktiviteten
+  label_issues_visibility_all: Alla aktiviteter
+  label_issues_visibility_public: Alla icke-privata aktiviteter
+  label_issues_visibility_own: Aktiviteter skapade av eller tilldelade till användaren
+  label_git_report_last_commit: 'Rapportera senaste "commit" av filer och mappar'
+  label_parent_revision: Överordnad
+  label_child_revision: Underordnad
+  label_export_options: ! '%{export_format} exportalternativ'
+  label_copy_attachments: Kopiera bilagor
+  label_copy_subtasks: Kopiera underaktiviteter
+  label_item_position: ! '%{position} av %{count}'
+  label_completed_versions: Klara milstolpar
+  label_search_for_watchers: Sök efter medarbetare att lägga till
+  label_session_expiration: Sessionsutgång
+  label_show_closed_projects: Visa stängda projekt
+  label_status_transitions: Statusövergångar
+  label_fields_permissions: Fältbehörigheter
+  label_readonly: Skrivskyddad
+  label_required: Obligatorisk
+  label_attribute_of_project: Projektets %{name}
+  label_attribute_of_issue: Aktivitetens %{name}
+  label_attribute_of_author: Skaparens %{name}
+  label_attribute_of_assigned_to: Tilldelad användares %{name}
+  label_attribute_of_user: Användarens %{name}
+  label_attribute_of_fixed_version: Milstolpens %{name}
+  label_cross_project_descendants: Med underprojekt
+  label_cross_project_tree: Med projektträd
+  label_cross_project_hierarchy: Med projekthierarki
+  label_cross_project_system: Med alla projekt
+  label_allow_log_time_to_closed_issue: Tillåt att logga tid på stängda aktiviteter
+  label_gantt_progress_line: Framstegslinje
+
+  button_login: Logga in
+  button_submit: Skicka
+  button_save: Spara
+  button_check_all: Markera alla
+  button_uncheck_all: Avmarkera alla
+  button_collapse_all: Kollapsa alla
+  button_expand_all: Expandera alla
+  button_delete: Ta bort
+  button_create: Skapa
+  button_create_and_continue: Skapa och fortsätt
+  button_test: Testa
+  button_edit: Ändra
+  button_edit_associated_wikipage: ! 'Ändra associerad Wikisida: %{page_title}'
+  button_add: Lägg till
+  button_change: Ändra
+  button_apply: Verkställ
+  button_clear: Återställ
+  button_lock: Lås
+  button_unlock: Lås upp
+  button_download: Ladda ned
+  button_list: Lista
+  button_view: Visa
+  button_move: Flytta
+  button_move_and_follow: Flytta och följ efter
+  button_back: Tillbaka
+  button_cancel: Avbryt
+  button_activate: Aktivera
+  button_sort: Sortera
+  button_log_time: Logga tid
+  button_rollback: Återställ till denna milstolpe
+  button_watch: Bevaka
+  button_unwatch: Avbryt bevakning
+  button_reply: Svara
+  button_archive: Arkivera
+  button_unarchive: Ta tillbaks från arkiv
+  button_reset: Återställ
+  button_rename: Byt namn
+  button_change_password: Ändra lösenord
+  button_copy: Kopiera
+  button_copy_and_follow: Kopiera och följ efter
+  button_annotate: Kommentera
+  button_update: Redigera
+  button_configure: Konfigurera
+  button_quote: Citera
+  button_duplicate: Duplicera
+  button_show: Visa
+  button_hide: Göm
+  button_edit_section: Redigera denna sektion
+  button_export: Exportera
+  button_delete_my_account: Ta bort mitt konto
+  button_close: Stäng
+  button_reopen: Återöppna
+
+  status_active: aktiv
+  status_registered: registrerad
+  status_locked: låst
+  project_status_planned: planerat
+  project_status_active: aktivt
+  project_status_closed: stängt
+  project_status_archived: arkiverat
+  version_status_open: öppen
+  version_status_locked: låst
+  version_status_closed: stängd
+  field_active: Aktiv
+
+  text_select_mail_notifications: Välj för vilka händelser mail ska skickas.
+  text_regexp_info: 'eg. ^[A-Z0-9]+$'
+  text_min_max_length_info: 0 betyder ingen gräns
+  text_project_destroy_confirmation: Är du säker på att du vill ta bort detta projekt och all relaterad data?
+  text_project_archive_confirmation: Är du säker på att du vill arkivera detta projekt och all relaterad data?
+  text_project_close_confirmation: Är du säker på att du vill avsluta detta projekt?
+  text_project_reopen_confirmation: Är du säker på att du vill återuppta detta projekt?
+  text_subprojects_destroy_warning: ! 'Alla underprojekt: %{value} kommer också tas bort.'
+  text_workflow_edit: Välj en roll och en aktivitetstyp för att ändra behörigheter
+  text_are_you_sure: Är du säker ?
+  text_journal_changed: ! '%{label} ändrad från %{old} till %{new}'
+  text_journal_changed_no_detail: ! '%{label} uppdaterad'
+  text_journal_set_to: ! '%{label} är satt till: %{value}'
+  text_journal_deleted: ! '%{label} borttagen (%{old})'
+  text_journal_added: ! '%{label} %{value} tillagd'
+  text_tip_issue_begin_day: aktiviteter som börjar denna dag
+  text_tip_issue_end_day: aktiviteter som slutar denna dag
+  text_tip_issue_begin_end_day: aktiviteter som börjar och slutar denna dag
+  text_project_identifier_info: 'Endast gemener (a-z), siffror, streck och understreck är tillåtna, måste börja med en bokstav.<br />När identifieraren sparats kan den inte ändras.'
+  text_caracters_maximum: 'Max %{count} tecken.'
+  text_caracters_minimum: 'Måste vara minst %{count} tecken lång.'
+  text_length_between: 'Längd mellan %{min} och %{max} tecken.'
+  text_tracker_no_workflow: Ingen aktivitetsmatris definerat för denna aktivitetstyp
+  text_unallowed_characters: Otillåtna tecken
+  text_comma_separated: 'Flera värden tillåtna (kommaseparerade).'
+  text_line_separated: 'Flera värden tillåtna (ett värde per rad).'
+  text_issues_ref_in_commit_messages: Referera och fixa aktiviteter i commit-meddelanden
+  text_issue_added: 'Aktivitet %{id} har lagts till (av %{author}).'
+  text_issue_updated: 'Aktivitet %{id} har uppdaterats (av %{author}).'
+  text_wiki_destroy_confirmation: Är du säker på att du vill ta bort denna wiki och allt dess innehåll ?
+  text_issue_category_destroy_question: 'Aktiviteter (%{count}) är tilldelade till denna kategori. Vad vill du göra ?'
+  text_issue_category_destroy_assignments: Ta bort kategoritilldelningar
+  text_issue_category_reassign_to: Återtilldela aktiviteter till denna kategori
+  text_user_mail_option: 'För omarkerade projekt kommer du bara bli underrättad om saker du bevakar eller är inblandad i (T.ex. aktiviteter du skapat eller tilldelats).'
+  text_no_configuration_data: ! 'Roller, aktivitetstyper, aktivitetsstatus och arbetsflöden har inte konfigurerats ännu.
+    Det rekommenderas att läsa in standardkonfigurationen. Du kommer att kunna göra ändringar efter att den blivit inläst.'
+  text_load_default_configuration: Läs in standardkonfiguration
+  text_status_changed_by_changeset: 'Ändrad i changeset %{value}.'
+  text_time_logged_by_changeset: 'Tilldelad i changeset %{value}.'
+  text_issues_destroy_confirmation: Är du säker på att du vill radera markerade aktivitet(er)?
+  text_issues_destroy_descendants_confirmation: Detta kommer även ta bort %{count} underaktivitet(er).
+  text_time_entries_destroy_confirmation: Är du säker på att du vill ta bort valda tidsloggningar?
+  text_select_project_modules: ! 'Välj vilka moduler som ska vara aktiva för projektet:'
+  text_default_administrator_account_changed: Huvudadministratörens konto har ändrats
+  text_file_repository_writable: Arkivet för filer är skrivbart
+  text_plugin_assets_writable: Arkivet för moduler är skrivbart
+  text_rmagick_available: 'RMagick tillgängligt (ej obligatoriskt)'
+  text_destroy_time_entries_question: ! '%{hours} timmar har rapporterats på aktiviteterna du är på väg att ta bort. Vad vill du göra ?'
+  text_destroy_time_entries: Ta bort rapporterade timmar
+  text_assign_time_entries_to_project: Tilldela rapporterade timmar till projektet
+  text_reassign_time_entries: ! 'Återtilldela rapporterade timmar till denna aktivitet:'
+  text_user_wrote: ! '%{value} skrev:'
+  text_enumeration_destroy_question: ! '%{count} objekt är tilldelade till detta värde.'
+  text_enumeration_category_reassign_to: ! 'Återtilldela till detta värde:'
+  text_email_delivery_not_configured: ! 'Mailfunktionen har inte konfigurerats, och notifieringar via mail kan därför inte skickas.
+    Konfigurera din SMTP-server i config/configuration.yml och starta om applikationen för att aktivera.'
+  text_repository_usernames_mapping: ! 'Välj eller uppdatera användare som är mappad till användarnamn i versionarkivloggen.
+    Användare med samma användarnamn eller mailadress i både projektsystemet och versionsarkivet  mappas automatiskt.'
+  text_diff_truncated: ! '... Denna diff har trunkerats eftersom den överskrider den maximala storlek som kan visas.'
+  text_custom_field_possible_values_info: Ett värde per rad
+  text_wiki_page_destroy_question: 'Denna sida har %{descendants} underliggande sidor. Vad vill du göra?'
+  text_wiki_page_nullify_children: Behåll undersidor som rotsidor
+  text_wiki_page_destroy_children: Ta bort alla underliggande sidor
+  text_wiki_page_reassign_children: Flytta undersidor till denna överordnade sida
+  text_own_membership_delete_confirmation: ! 'Några av, eller alla dina behörigheter kommer att tas bort och du kanske inte längre kommer kunna göra ändringar i det här projektet.
+    Vill du verkligen fortsätta?'
+  text_zoom_in: Zooma in
+  text_zoom_out: Zooma ut
+  text_warn_on_leaving_unsaved: Nuvarande sida innehåller osparad text som kommer försvinna om du lämnar sidan.
+  text_scm_path_encoding_note: ! 'Standard: UTF-8'
+  text_git_repository_note: Versionsarkiv är tomt och lokalt (t.ex. /gitrepo, c:\gitrepo)
+  text_mercurial_repository_note: Lokalt versionsarkiv (t.ex. /hgrepo, c:\hgrepo)
+  text_scm_command: Kommando
+  text_scm_command_version: Version
+  text_scm_config: Du kan konfigurera dina scm-kommandon i config/configuration.yml. Vänligen starta om applikationen när ändringar gjorts.
+  text_scm_command_not_available: Scm-kommandon är inte tillgängligt. Vänligen kontrollera inställningarna i administratörspanelen.
+  text_issue_conflict_resolution_overwrite: Använd mina ändringar i alla fall (tidigare anteckningar kommer behållas men några ändringar kan bli överskrivna)
+  text_issue_conflict_resolution_add_notes: Lägg till mina anteckningar och tag bort andra ändringar
+  text_issue_conflict_resolution_cancel: 'Tag bort alla mina ändringar och visa igen %{link}'
+  text_account_destroy_confirmation: ! 'Är du säker på att du vill fortsätta?
+    Ditt konto kommer tas bort permanent, utan möjlighet att återaktivera det.'
+  text_session_expiration_settings: ! 'Varning: ändring av dessa inställningar kan få alla nuvarande sessioner, inklusive din egen, att gå ut.'
+  text_project_closed: Detta projekt är stängt och skrivskyddat.
+  text_turning_multiple_off: Om du inaktiverar multipla värden kommer endast ett värde per objekt behållas.
+  text_milestone_effective_date_from_issue: ! 'Justera datum från aktivitet: #%{issue}'
+
+  default_role_manager: Projektledare
+  default_role_developer: Utvecklare
+  default_role_reporter: Rapportör
+  default_tracker_bug: Bugg
+  default_tracker_feature: Funktionalitet
+  default_tracker_support: Support
+  default_issue_status_new: Ny
+  default_issue_status_in_progress: Pågår
+  default_issue_status_resolved: Löst
+  default_issue_status_feedback: Återkoppling
+  default_issue_status_closed: Stängd
+  default_issue_status_rejected: Avslagen
+  default_doc_category_user: Användardokumentation
+  default_doc_category_tech: Teknisk dokumentation
+  default_priority_low: Låg
+  default_priority_normal: Normal
+  default_priority_high: Hög
+  default_priority_urgent: Brådskande
+  default_priority_immediate: Omedelbar
+  default_activity_design: Design
+  default_activity_development: Utveckling
+
+  enumeration_issue_priorities: Aktivitetsprioriteter
+  enumeration_doc_categories: Dokumentkategorier
+  enumeration_activities: Arbetsuppgifter (tidsuppföljning)
+  enumeration_system_activity: Systemhändelser
+
+  description_filter: Filter
+  description_search: Sökfält
+  description_choose_project: Projekt
+  description_project_scope: Sökomfång
+  description_notes: Anteckningar
+  description_message_content: Meddelandeinnehåll
+  description_query_sort_criteria_attribute: Sorteringsattribut
+  description_query_sort_criteria_direction: Sorteringsriktning
+  description_user_mail_notification: Inställningar mailnotifiering
+  description_available_columns: Tillgängliga Kolumner
+  description_selected_columns: Valda Kolumner
+  description_all_columns: Alla kolumner
+  description_issue_category_reassign: Välj aktivitetskategori
+  description_wiki_subpages_reassign: Välj ny överordnad sida
+  description_date_range_list: Välj intervall från listan
+  description_date_range_interval: Välj intervall genom att välja start- och slutdatum
+  description_date_from: Ange startdatum
+  description_date_to: Ange slutdatum
+
+  text_repository_identifier_info: 'Endast gemener (a-z), siffror, streck och understreck är tillåtna.<br />När identifieraren sparats kan den inte ändras.'
+  easyproject_name: EASY REDMINE 2013
+  easyproject_author: Easy Software
+  easyproject_author_url: 'http://www.easyproject.cz/en'
+  easyproject_description: Management Information System for project management.
+  easyproject_version_description: 2013
+  project_module_easy_other_permissions: Andra
+
+  permission_create_project_from_template: Skapa projekt från mall
+  permission_create_project_template: Skapa mall från projekt
+  permission_edit_project_template: Redigera projektmall
+  permission_delete_project_template: Radera projektmall
+  permission_view_project_activity: Visa projekthändelser
+  permission_view_project_report: Visa projektstatistik
+  permission_action_duplicate_issue: Duplicera aktivitet
+  permission_edit_own_issue: Redigera egna aktivteter
+  permission_view_restrictions_users: Visa kommentarer för utvalda användare
+  permission_view_personal_statement: Se egna sammanställningar
+  permission_view_all_statements: Visa sammanställningar för alla användare
+  permission_manage_page_project_overview: Hantera projektöversikt
+  permission_supervisor: Hantera projekt där inte medlem
+  permission_archive_project: Arkivera projekt
+  permission_copy_project: Kopiera projekt
+  permission_manage_my_page: Redigera min sida
+  permission_view_bulk_time_entry: Bulkredigering av tid
+  permission_manage_bulk_version: Bulkredigering av milstolpar
+  permission_manage_easy_project_relations: Hantera projektrelationer
+  permission_manage_easy_version_relations: Hantera milstolperelationer
+  permission_edit_issue_fixed_activity: Förändring i aktivitet associerad med en viss händelse
+  permission_view_easy_attendances_extra_info: 'Visa extra info (User IP, ...)'
+  permission_manage_global_versions: Hantera globala milstolpar
+  permission_edit_own_easy_attendances: Redigera eget deltagande
+  permission_view_easy_attendance_other_users: Visa deltagande för andra användare
+  permission_manage_easy_issue_timers: Tillgång till inställningar för aktivitetstimer
+  permission_edit_project_custom_fields: Redigera projekts specialfält
+  permission_delete_project: Radera projekt
+
+  heading_easy_user_working_time_calendar_index: Lista över kalendrar - arbetstid
+  heading_easy_user_working_time_calendar_show: 'Kalender %{calendarname}'
+  heading_easy_user_working_time_calendar_edit: Redigera grundläggande attribut för kalendern
+  heading_easy_user_working_time_calendar_new: Ny kalender
+  heading_easy_user_working_time_calendars_holiday_index: Helgdagar
+  heading_easy_user_working_time_calendars_holiday_edit: Redigera helgdagar
+  heading_easy_user_working_time_calendars_holiday_new: Ny helgdag
+  heading_layout_from_template_selecting_projects: Applicera mallen på valda projekt
+  heading_layout_from_template_selecting_users: Applicera mallen på valda användare
+  heading_project_mass_copy_select_source_project: Välj källprojekt
+  heading_project_mass_copy_select_target_projects: Välj målprojekt
+  heading_project_mass_copy_select_actions: Välj poster som skall kopieras
+  heading_easy_issues_preview_external_email: Skicka extern mail
+  heading_issues_settings_display: Visa
+  heading_issues_settings_behaviour: Beteende
+
+  label_simple_add_project_task: Projekt
+  label_simple_add_project_task_on_project: Underprojekt
+  label_done: utfört
+  label_issue_due_date: Tid till förfallodagen
+  label_show_user_info: Visa inforamtion om %{username}.
+  label_show_assigned_issues: Visa aktiviteter som tilldelats användaren %{username}.
+  label_budget_draw: Budget utgifter
+  label_user_new_issue: Skapa ny aktivitet för användaren %{username}.
+  label_user_saved_query: Visa användarens filter %{queryname}.
+  label_show_project_info: Visa projektinformation %{projectname}.
+  label_show_issue_info: Visa detaljer för aktivitet %{issuename}.
+  label_templates_plural: Projektmallar
+  label_news_unread: Olästa nyheter
+  label_new_project_name: Nytt projektnamn
+  label_template_new: Nytt projekt från mall
+  label_template_copy: Kopiera mallen till befintligt projekt
+  label_easy_page_module_settings_missing: Vänligen, spara modulen igen.
+  label_my_page_project_query_select: ! 'Sparade filter:'
+  label_my_page_issue_query_select: ! 'Sparade filter:'
+  label_my_page_user_query_select: ! 'Sparade filter:'
+  label_my_page_project_output_select: ! 'Visningsformat:'
+  label_my_page_issue_output_select: ! 'Visningsformat:'
+  label_my_page_user_output_select: ! 'Visningsformat:'
+  label_my_page_issue_query: Sparade filter
+  label_my_page_issue_query_new_before: 'Du kan skapa nya filter på aktivitetslistan eller '
+  label_my_page_issue_query_new_link: här
+  label_my_page_issue_query_new_after: .
+  label_my_page_projects_row_count: ! 'Antal projekt:'
+  label_my_page_issue_row_count: ! 'Antal aktiviteter:'
+  label_my_page_document_row_count: ! 'Antal dokument:'
+  label_my_page_users_row_count: ! 'Antal användare:'
+  label_my_page_news_row_count: ! 'Antal nyheter:'
+  label_my_page_users_filter_visible: ! 'Visa möjligheter att filtrera på projektets översikt:'
+  label_my_page_issue_enable_text_editor: ! 'Aktivera textredigerare:'
+  label_my_page_issue_show_fields_option_part1: Visa
+  label_my_page_issue_show_fields_option_part2: formulärfält.
+  label_my_page_projects_query_settings_missing: Korrigera modulinställning.
+  label_my_page_projects_query_select: ! 'Sparade filter:'
+  label_my_page_document_query_select: ! 'Sparade filter:'
+  label_my_page_projects_query: Sparade filter
+  label_my_page_projects_query_new_before: 'Du kan skapa nya filter på projektlistan eller '
+  label_my_page_projects_query_new_link: här
+  label_my_page_projects_query_new_after: .
+  label_my_page_issues_rss_reader: Aktiviteter från en annan server
+  label_my_page_issues_rss_reader_url: ! 'Källa:'
+  label_my_page_issues_rss_reader_row_limit: ! 'Radbegränsning:'
+  label_my_page_issues_rss_reader_loading: Vänta, laddar data.
+  label_my_page_google_maps_iframe_tag: HTML embeded tagg
+  label_version_show_closed_issues: Visa stängda aktiviteter.
+  label_easy_pages_project_administration: Sidanpassning
+  label_easy_pages: Lista över sidor att anpassa
+  label_easy_page_zone: zon
+  label_easy_page_zones: 'zoner på sidan %{pagename}'
+  label_easy_page_new: ny sida
+  label_easy_page_edit: redigera sida
+  label_easy_page_zones_view: Sidzoner översikt
+  label_easy_page_zone_new: zon
+  label_easy_page_zone_edit: redigera zon
+  label_easy_page_zone_show: 'Visa zon %{zonename}'
+  label_easy_page_modules: moduler i zon
+  label_easy_page_user_modules: 'Moduler på sidan %{pagename}'
+  label_personalize_user_page: Redigera eller lägga till moduler
+  label_personalize_user_page_from_layout: Skriv över sidan med standardinställning.
+  label_easy_page_templates: 'Lista över mallar på sidan %{pagename}'
+  label_easy_page_templates_new: Ny mall
+  label_easy_page_template_new: 'Ny sidmall %{pagename}'
+  label_easy_page_template_edit: 'Redigera sidmall %{pagename}'
+  label_easy_page_user_layout_modules: Modullayout på sidan
+  label_easy_page_template_user_modules: 'Modullayout i mallen %{templatename}'
+  label_easy_page_template_show: Modullayout
+  label_back_to_easy_page_templates:
+  label_select_page_template: ! 'Välj sidmall:'
+  label_select_my_page_template: Välj min sidmall
+  label_easy_page_zones_new_assignments: Lägg zon till sidan
+  label_easy_page_assign_zone: 'Lägg zon till sidans layout %{pagename}'
+  label_select_page_assign_zone: ! 'Välj zon:'
+  label_easy_page_no_zones: Inga zoner definierade.
+  label_easy_page_no_pages: Inga sidor att redigera.
+  label_easy_page_module_select: ! 'Välj modul från listan:'
+  label_user_my_page: Min sida
+  label_project_custom_fields: Projektets specialfält
+  label_project_no_custom_fields: Inga specialfält i projektet.
+  label_easy_page_module_empty: 'Modul <b>%{modulename}</b> inte kan visas i mallen. Lägg till specifik sida för att rätta till det.'
+  label_easy_page_module_missing: 'Modul <b>%{modulename}</b> kan inte visas, eftersom den inte existerar.'
+  label_project_templates_update_dates: Uppdatera all projektdata till projektets startdatum.
+  label_user_saved_projectquery: 'Visa användarens filter %{queryname}.'
+  label_new_project_from_template: Nytt projekt från mall
+  label_new_subproject_from_template: Nytt underprojekt från mall
+  label_easy_my_page_template_to_all: Applicera mall på alla användare
+  label_custom_field_computed_string: Beräknat fält - Text
+  label_custom_field_computed_integer: Beräknat fält - Heltal
+  label_custom_field_computed_float: Beräknat fält - Decimaltal
+  label_custom_field_computed_date: Beräknat fält - Datum
+  label_custom_field_computed_boolean: 'Beräknat fält - Ja / Nej'
+  label_my_page_timelog_calendar: Tidkort
+  label_my_page_timelog_calendar_period_select: ! 'Kalenderperiod:'
+  label_timelog_calendar_link_before: ''
+  label_timelog_calendar_link_after: ' timmar'
+  label_restrictions_users: Visa endast
+  label_timelog_view_all: Full sammanställning över arbetad tid
+  label_personal_statement: Egen sammanställning
+  label_log_time: Logga tid
+  label_issue_assigned_to_users: ! 'Användare:'
+  label_issue_assigned_to_groups: ! 'Grupper:'
+  label_last_year: föregående år
+  label_template_to_selected_projects: Applicera mall på valda projekt
+  label_template_to_selected_users: Applicera mall på valda användare
+  label_my_page_timelog_simple_day_limit: Visa dagar
+  label_error_project_query: Det uppstod ett fel vid hantering av filter. Vänligen rapportera detta fel till administratören.
+  label_project_description: Beskrivning
+  label_easy_lookup: Uppslag
+  label_custom_field_settings_entity_type: Enhet
+  label_custom_field_settings_entity_attribute: Attribut
+  label_link_with: 'Länka med %{attribute}'
+  label_issue_new_relation_before: Denna aktivitet
+  label_issue_new_relation_after: ! 'aktiviteter:'
+  label_project_new_relation_before: Detta projekt
+  label_project_new_relation_after: ! 'projekt:'
+  label_version_new_relation_before: Denna milstolpe
+  label_version_new_relation_after: ! 'milstolpar:'
+  label_parenttask_plural: Överliggande aktiviteter
+  label_revert_to_version: Återgå till denna milstolpe
+  label_project_overview_project_info: Projektöversikt
+  label_easy_user_queries_plural: Användare
+  label_menu_more: Mer
+  label_project_index: Projektlista
+  label_issue_index: Aktivitetslista
+  label_issue_static_attributes_heading: ! 'Grundläggande egenskaper:'
+  label_issue_updatable_attributes_heading: ! 'Ytterligare attribut:'
+  label_issue_attachments_heading: ! 'Bilagor:'
+  label_issue_watchers_heading: ! 'Medarbetare:'
+  label_document_category_read_role: Rätt att läsa dokument i denna kategori
+  label_document_category_manage_role: Rätt att hantera dokument i denna kategori
+  label_document_category_custom_roles_n: Använd standardinställning
+  label_document_category_custom_roles_y: Använd anpassad inställning
+  label_datetime_custom_field_tag_hour: timmar
+  label_datetime_custom_field_tag_minute: min.
+  label_datetime_custom_field: Datum och tid
+  label_menu_project_template: (MALL)
+  label_with_non_shared_versions: Visa icke-delade milstolpar från delprojekt
+  label_project_copy_tracker_issues:
+    zero: inga aktiviteter
+    one: en aktivitet
+    two: 2 aktiviteter
+    three: 3 aktiviteter
+    four: 4 aktiviteter
+    other: ! '%{count} aktiviteter'
+  label_top_ten_projects: Senaste 10 projekten
+  label_activity_all: Alla
+  label_working_time: Arbetstid
+  label_admin_easy_user_working_time_calendars: Arbetstid - mallar
+  label_easy_user_working_time_calendar_explanatory_notes: ! 'Förklaringar:'
+  label_easy_user_working_time_calendar_explanatory_notes_default: Gemensam arbetsdag
+  label_easy_user_working_time_calendar_explanatory_notes_today: I dag
+  label_easy_user_working_time_calendar_explanatory_notes_weekend: Weekend
+  label_easy_user_working_time_calendar_explanatory_notes_holiday: Helgdag
+  label_easy_user_working_time_calendar_explanatory_notes_exception: Undantag
+  label_easy_user_working_time_calendar_none: Användaren har inte valt någon arbetstidskalender.
+  label_easy_user_working_time_calendar_default_time: 'Standardarbetstiden är %{count} timmar per dag.'
+  label_easy_user_working_time_calendar_change_calendar: ! 'Ändra arbetstidskalender till:'
+  label_easy_user_working_time_calendar_preserve_calendar_exceptions: Bevara arbetstidsundantag från den valda kalendern
+  label_easy_user_working_time_calendar_settings: Inställningar
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar: Kopiera från
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_exceptions: Kopiera undantag
+  label_easy_user_working_time_calendar_inherit_from_parent_calendar_copy_holidays: Kopiera helgdagar
+  label_easy_user_working_time_mass_exceptions: Massundantag
+  label_easy_user_working_time_calendar_mass_exceptions_working_hours: Ange antalet arbetstimmar
+  label_easy_user_working_time_calendar_mass_exceptions_day_period: ' för varje '
+  label_easy_query_settings: Filterinställningar
+  label_field_format_autoincrement_from_to: Från - till
+  label_field_format_autoincrement_entity_limitation: ! 'Automatisk uppräkning i:'
+  label_project_templates_custom_fields: Projektets inställningar för specialfält
+  label_source_project: Källprojekt
+  label_target_projects: Målprojekt
+  label_easy_page_modules_on_project_overview: Moduler på projektöversikt
+  label_project_templates_change_issues_author: Byt skapare på alla aktiviteter
+  label_easy_system_flag: '(Visa inte för projektets medlemmar, etc.)'
+  label_timelog_comment_editor_enabled: Använd editor för kommentarer vid tidrapportering
+  label_time_entry_spent_on_at_issue_update_enabled: Sätt datum och registrerare vid uppdatering?
+  label_user_form_other_settings: Andra val
+  label_user_copy_roles_from: Applicera roller och behörigheter från användaren
+  label_easy_page_tab_default_name: Flik %{count}
+  label_mass_copy_select_actions: ! 'Kopiera (markerade objekt kommer att raderas och därefter kopieras):'
+  label_select_none_assignee: '<< Ingen tilldelning >>'
+  label_select_no_change_assignee: '<< Ingen förändring i tilldelning >>'
+  label_unread_entity: Oläst
+  label_switch_to_mobile_version: Mobil sida
+  label_switch_to_full_version: Desktopsidan
+  label_default_project_page: Projektets standardsida
+  label_too_many_mambers: ! 'För många användare, använd sök:'
+  label_gantt_pdf_date: Från datum
+  label_gantt_show_all_versions: Visa alla milstolpar
+  label_gantt_versions_above: Visa milstolpar ovanför aktiviteter
+  label_custom_field_settings_multiple: Flera
+  label_last_user_assigned_to: << Senaste tilldelning >>
+  label_author_assigned_to: << Skapare >>
+  label_default_color_schema: Standardfärger
+  label_template_easy_start_date: Ange startdatum för projektet
+  label_templates_easy_start_date: Ange startdatum för projekten
+  label_eqdt: ''
+  label_bulk_time_entries: Logga tid
+  label_bulk_time_entries_edit: Redigera tid
+  label_bulk_time_add_another: Lägg till ytterligare
+  label_bulk_time_flash_project: ! 'Projekt:'
+  label_bulk_time_flash_issue: ! 'Aktivitet:'
+  label_bulk_time_flash_comment: ! 'Kommentar:'
+  label_bulk_time_flash_user: ! 'Användare:'
+  label_bulk_time_flash_hours: ! 'Timmar:'
+  label_bulk_time_flash_spent_on: ! 'Datum:'
+  label_issue_priority: Aktivitetsprioritet
+  label_issue_priority_plural: Aktivitetsprioriteringar
+  label_amount: Mängd
+  label_version_update_database: 'Flytta alla aktiviteter?'
+  label_my_issues_plural: mina
+  label_other_issues_plural: andra
+  label_projectquery_plural: Projektfilter
+  label_userquery_plural: Användarfilter
+  label_related_projects: Relaterande projekt
+  label_related_versions: Relaterande milstolpar
+  label_add_related_issues: Lägg till relaterande aktiviteter
+  label_add_related_projects: Lägg till relaterande projekt
+  label_add_related_versions: Lägg till relaterande milstolpar
+  label_preceding: föregår
+  label_following: efter
+  label_send_email_to_all_users: Skicka ett mail till alla användare
+  label_updated_on: Uppdaterad den
+  label_less: Mindre
+  label_group_by: 'Gruppera på %{value}'
+  label_period_past: Föregående
+  label_period_present: Nuvarande
+  label_period_future: Framtida
+  label_to_today: till idag
+  label_after_due_date: efter förfallodag
+  label_next_n_days: 'närmaste %{days} dagarna'
+  label_next_week: nästa vecka
+  label_next_month: nästa månad
+  label_next_year: nästa år
+  label_tomorrow: i morgon
+  label_user_role_select: ! 'för rollen:'
+  label_document_global: Dokument
+  label_milestone_sharing_info: ! 'Beskrivning:'
+  label_milestone_sharing_info_none: milstolpen används endast i projektet den skapats.
+  label_milestone_sharing_info_descendants: milstolpen används endast i projektet den skapats och alla delprojekt.
+  label_milestone_sharing_info_hierarchy: milstolpen används endast i projektet den skapats, samt projekthierarkin.
+  label_milestone_sharing_info_tree: milstolpen används endast i projektet den skapats, samt alla projekt som har gemensamt överordnat projekt.
+  label_milestone_sharing_info_system: milstolpen används i alla projekt.
+  label_autoincrement: Automatisk uppräkning
+  label_quick_search: Snabbsökning
+  label_search_result_journal_header: ! 'Söksträngen hittades i journalerna (%{count}):'
+  label_journal_as_search_result: Journal
+  label_not_available: 'N/A'
+  label_search_entities: ! 'Sök:'
+  label_fixed_version: Målmilstolpe
+  label_easy_color_schemes: ! 'Välj färgschema:'
+  label_issue_color_scheme_for: ! 'Använd färgschema för:'
+  label_easy_setting_new_subproject_user_role_id: Roll som en icke-admin användare som skapar ett delprojekt erhåller
+  label_easy_setting_new_subproject_user_role_id_info: (Lämplig för fall, när användaren endast har behörighet att skapa delprojekt)
+  label_easy_setting_attachment_description: Bilagebeskrivning
+  label_easy_setting_attachment_description_required: krävs
+  label_easy_setting_attachment_description_enabled: aktiverad
+  label_easy_setting_attachment_description_disabled: inaktiverad
+  label_issue_by_unassigned_to: otilldelad
+  label_issue_notice_recipients: ! 'Mail skickas till:'
+  label_email: Mail
+  label_url: URL
+  label_easy_user_working_time_calendar_time_from: 'Arbetet startar '
+  label_easy_user_working_time_calendar_time_to: 'Arbetet avslutas '
+  label_issue_open_plural: Aktiviteter - öppna
+  label_issue_close_plural: Aktiviteter - stängda
+  label_easy_version_queries_plural: Milstolpar
+  label_issues_assigned_to_me_visible_issues_assigned: Endast aktiviteter jag tilldelats.
+  label_issues_assigned_to_me_visible_issues_conserns: Aktiviteter där jag är skapare, tilldelad eller kollega.
+  label_match_starting_dates: Sätt aktiviteter till startdatum för projektet
+  label_next_issue: Nästa aktivitet
+  label_previous_issue: Föregående aktivitet
+  label_issue_automatic_recalculate_attributes: 'Automatisk korrigering från underaktivitet %{issue_id}'
+  label_easy_query_export_links: Exporter
+  label_easy_attendance_spent_time: Loggad tid
+  label_easy_attendance_plural: Deltagande
+  label_easy_attendance_queries_plural: Deltagande
+  label_easy_attendance_user_arrival_add_notify_title: Meddela mig om denna användare loggar in
+  label_easy_attendance_is_repeating: 'Upprepa?'
+  label_easy_attendance_repeating_to: 'Upprepa till?'
+  label_easy_google_maps_address: Adress - Google map
+  label_preview_external_email_mail_sender: Mail avsändare
+  label_preview_external_email_mail_recepient: Mail mottagareare
+  label_preview_external_email_mail_cc: Mail kopia
+  label_preview_external_email_mail_subject: Mail ämne
+  label_preview_external_email_mail_body_html: Mail text i HTML
+  label_preview_external_email_mail_body_plain: Mail text i klartext
+  label_easy_custom_field_disable: Inaktivera
+  label_easy_custom_field_enable: Aktivera
+  label_easy_issue_timer: Aktivitetsklocka
+  label_easy_issue_timer_settings: Inställningar aktivitetsklocka
+  label_easy_issue_timer_start: Start
+  label_easy_issue_timer_end: Stopp
+  label_filter_group_project_fields: Projekt
+  label_filter_group_relations: Relationer
+  label_filter_group_custom_fields_suffix: specialfält
+  label_filter_group_unknown: Okänd
+  label_filter_group_easy_issue_query: Aktiviteter
+  label_filter_group_easy_project_query: Projekt
+  label_filter_group_easy_user_query: Användare
+  label_filter_group_easy_document_query: Dokument
+  label_filter_group_easy_version_query: Milstolpar
+  label_filter_group_easy_attendance_query: Deltagande
+  label_filter_group_easy_time_entry_query: Tidposter
+  label_filter_group_easy_group_query: Grupper
+  label_easy_issue_easy_is_repeating: Återkommande
+  label_easy_issue_easy_repeating_period: Återkommande period
+  label_easy_issue_easy_repeating_period_daily: Dagligen
+  label_easy_issue_easy_repeating_period_weekly: Veckovis
+  label_easy_issue_easy_repeating_period_monthly: Månadsvis
+  label_easy_issue_easy_repeating_period_yearly: Årligen
+  label_easy_issue_easy_repeating_further_options: Sätt återkommande typ
+  label_easy_issue_easy_repeating_time: Skapa inställning
+  label_easy_issue_easy_repeating_time_hour: Skapa vid
+  label_easy_issue_easy_repeating_create_time: Skapa tid
+  label_easy_issue_easy_repeating_create_time_time: Tid för skapande
+  label_easy_issue_easy_repeating_in_advance: I förväg
+  label_easy_issue_easy_repeating_on_start_date: På upprepad dag
+  label_easy_issue_easy_repeating_dont_create_now: Skapa inte nu
+  label_easy_issue_easy_repeating_create_now_all: Skapa alla nu
+  label_easy_issue_easy_repeating_create_now_count: Skapa nu
+  label_easy_issue_easy_reccuring_daily_every: Varje
+  label_easy_issue_easy_reccuring_daily_each: dagar
+  label_easy_issue_easy_reccuring_daily_work: arbetsdagar
+  label_easy_issue_easy_reccuring_recur_every: Återkommer varje
+  label_easy_issue_easy_reccuring_recur_years: år
+  label_easy_issue_easy_reccuring_recur_months: 'månad(er)'
+  label_easy_issue_easy_reccuring_yearly_month_of: av
+  label_easy_issue_easy_reccuring_after_recurs: iterationer
+  label_easy_issue_easy_reccuring_monthly_every: varje
+  label_easy_issue_easy_repeating_endtype: Slut
+  label_easy_issue_easy_repeating_endtype_date: På datum
+  label_easy_issue_easy_repeating_endtype_count: Efter x upprepningar
+  label_easy_issue_easy_repeating_endtype_endless: Vid projektslut
+  label_easy_issue_easy_repeating_start: Start
+  label_easy_issue_reccuring_after: Efter
+  label_easy_issue_reccuring_day_plural: dagar
+  label_easy_issue_subject_reccuring_suffix: (Återkommande)
+  label_not_updated_on: Uppdaterades inte
+  label_easy_rake_period: Varje
+  label_easy_rake_period_monthly: månad
+  label_easy_rake_period_daily: dag
+  label_easy_rake_period_hourly: timme
+  label_easy_rake_period_minutes: minut
+  label_easy_issue_reccuring_monthly_orders:
+    '1': Första
+    '2': Andra
+    '3': Tredje
+    '4': Fjärde
+    '5': Sista
+  label_day:
+    zero: '0'
+    one: en dag
+    other: ! '%{count} Dagar'
+    two: ! '%{count} Dagar'
+    three: ! '%{count} Dagar'
+    four: ! '%{count} Dagar'
+    half: ! '%{count} hag'
+  label_easy_versions: Milstolpar
+  label_easy_versions_top_menu: Milstolpar
+  label_easy_repository_source_easy_repository_url: URL till versionsarkiv
+  label_easy_lesser_admin_for: ! 'Områden lägre administratörer kan komma åt:'
+  label_added_datetime_by: 'Upplagd av %{author} vid %{datetime}'
+  label_updated_datetime_by: 'Uppdaterad av %{author} vid %{datetime}'
+  label_user_mail_no_notified_if_issue_closing: Jag vill inte bli meddelad om händelser i stängda aktiviteter
+  label_user_mail_no_notification_ever: Jag vill inte att någon meddelas om mina aktiviteter
+  label_easy_setting_required_issue_id_at_time_entry: Aktivitet krävs vid tidsloggning
+  label_easy_setting_show_time_entry_range_select: Visa från/till-väljare
+  label_last_n_days_next_m_days: '-%{last} dagar +%{next} dagar'
+  label_should_send_invitation_update: Skicka inbjudan
+  label_email_field:
+    from: FRÅN
+    to: TILL
+
+  button_context_menu: Visa aktivitetsmeny.
+  button_attachment_context_menu: Visa milstolpeshistorik.
+  button_new_project_from_template: Skapa nytt projekt
+  button_new_template_from_project: Skapa mall från projekt
+  button_create_project_from_template: Skapa nytt projekt
+  button_copy_project_from_template: Kopiera till projekt
+  button_template_restore_project: Återställ projekt
+  button_easy_page_templates: Mallar översikt
+  button_save_easy_page: Spara sidan och gå tillbaks
+  button_edit_projectquery: Redigera filter
+  button_delete_projectquery: Radera filter
+  button_apply_projectquery: Använd
+  button_clear_projectquery: Standardfilter
+  button_save_projectquery: Spara
+  button_timelog_calendar_new: Registrera tid
+  button_uninstall: Avinstallera
+  button_easy_lookup_modal_selector_assign: Tilldela markerad
+  button_new_issue_relation: Lägg relaterade aktiviteter
+  button_issue_put_between: Infoga mellan
+  button_new_subtask: Ny underaktivitet
+  button_easy_lookup_modal_close: Stäng
+  button_go_up: Upp
+  button_issue_create: Spara aktivitet
+  button_issue_create_and_continue: Spara och fortsätt
+  button_issue_update: ! 'Uppdatera aktivitet:'
+  button_issue_submit: Spara uppdatering
+  button_gantt_issue_update: Uppdatera aktivitet
+  button_gantt_issue_update_plural: Uppdatera
+  button_easy_user_working_time_calendar_show: Visa kalender
+  button_easy_user_working_time_calendars_new: Ny kalender
+  button_easy_user_working_time_calendar_holidays: Helgdagar
+  button_easy_user_working_time_calendar_holidays_new: Ny helgdag
+  button_easy_user_working_time_back_to_calendar: Tillbaks till kalender
+  button_easy_user_working_time_back_to_calendars: Tillbaks till kalendrar
+  button_easy_user_working_time_reset_to_parent: Återställ kalender
+  button_easy_user_working_time_parent: Gå till överordnad kalender
+  button_check_subprojects: Markera delprojekt
+  button_uncheck_subprojects: Avmarkera underprojekt
+  button_check_rootprojects: Markera huvudprojekt
+  button_uncheck_rootprojects: Avmarkera huvudprojekt
+  button_edit_user_profile: Redigera profil
+  button_project_mass_copy: Massändring
+  button_choose_actions: Gå till välja åtgärder
+  button_down: Ned
+  button_check_and_uncheck_subprojects: Markera / avmarkera delprojekt
+  button_gantt_show_sidebar: Visa sparade filter
+  button_gantt_hide_sidebar: Göm sparade filter
+  button_easy_page_add_tab: Lägg till flik
+  button_manage_versions: Hantera milstolpar
+  button_mobile_saved_filters: Sparade filter
+  button_edit_anonymous_user: Redigera anonym användare
+  button_back_to_calendar: Tillbaka till kalendern
+  button_bulk_time_save_and_continue: Spara och fortsätt
+  button_gantt_zoom_day: Dag
+  button_gantt_zoom_week: Vecka
+  button_gantt_zoom_month: Månad
+  button_fullscreen: Fullskärm
+  button_fullscreen_close: X
+  button_add_and_close: Lägg till och stäng
+  button_generate_rss_key: Generera RSS nyckel
+  button_generate_api_key: Generera API-nyckel
+  button_back_to_top: Tillbaka till toppen
+  button_advanced_search: Avancerad sökning
+  button_my_page_google_maps_url_helper: Hjälp för att lägga till karta från Google Maps
+  button_execute: Verkställ
+  button_timelog_calendar_prev:
+    week: Föregående vecka
+    month: Föregående månad
+  button_timelog_calendar_next:
+    week: Nästa vecka
+    month: Nästa månad
+  button_send_email: Skicka mail
+  button_dont_send_email: Skicka inte mail
+  button_link_easy_google_map_address: Visa på Google Maps
+  button_select_file: Välj fil
+  button_easy_issue_timer_play: Arbetar
+  button_easy_issue_timer_stop: Utfört
+  button_easy_issue_timer_pause: Paus
+  button_easy_issue_timer_resume: Fortsätt
+  button_release_cache: Töm cache
+  button_journal_unprivate_note: Publicering
+  button_create_issue_from_journal: Skapa aktivitet
+  button_download_email: Hämta mail
+  button_additional_context_menu: Andra optioner
+
+  title_button_template: 'Skapa mall från projektet %{projectname}.'
+  title_button_template_create_project: Skapa projekt från mall.
+  title_button_template_copy_project: Kopiera mallen till befintliga projekt.
+  title_button_template_restore_project: Redigera projektmall.
+  title_project_new_issue: 'Lägg till aktivitet i projekt %{projectname}'
+  title_project_edit: Redigera projekt
+  title_project_show: 'Visa projekt %{projectname}'
+  title_other_formats_links_atom: Ladda upp till RSS-läsare.
+  title_other_formats_links_csv: Spara som CSV-fil.
+  title_other_formats_links_pdf: Spara som PDF-fil.
+  title_other_formats_links_png: Spara som PNG-fil.
+  title_other_formats_links_ics: Spara som ICS (Outlook) fil.
+  title_other_formats_links_ics_outlook: Prenumerera på denna aktivitetslista i MS Outlook-kalender.
+  title_easy_page_zones_view: Klicka för att visa en överblick över sidans zoner.
+  title_easy_page_zone_edit: Genom att klicka på Redigera zon.
+  title_easy_page_zone_show: Genom att klicka på Visa zonen.
+  title_easy_page_zone_modules: Visa moduler genom att klicka.
+  title_personalize_user_page: Genom att klicka kan du personifiera denna sida.
+  title_personalize_user_page_from_layout: Genom att klicka på Välj sidmall som kommer att ersätta den faktiska layouten.
+  title_easy_page_templates: Genom att klicka på Visa sidmallistan.
+  title_easy_page_templates_new: 'Genom att klicka på Skapa mall från projektet.'
+  title_easy_page_user_layout_modules: Genom att klicka på visa modullayout.
+  title_easy_page_template_show: Genom att klicka på visa modullayout för mallen.
+  title_back_to_easy_page_templates:
+  title_easy_page_zones_new_assignments: Genom att klicka på lägg till nytt område för sidlayout.
+  title_button_save_easy_page: Genom att klicka på spara sidan och gå tillbaka.
+  title_my_page_issue_query_new_link: Genom att klicka på skapa nya filter i aktivitetslistan.
+  title_edit_projectquery: Genom att klicka på gå till redigering av användarfilter.
+  title_delete_projectquery: Genom att klicka bort användarfilter.
+  title_apply_projectquery: Genom att klicka på förinställda projektfilter.
+  title_clear_projectquery: Genom att klicka på använd filtret som standardinställning.
+  title_save_projectquery: Genom att klicka på spara förinställda filter för vidare användning.
+  title_new_project_from_template: Genom att klicka på Gå till mallar listan.
+  title_easy_my_page_template_to_all: Använd denna mall för alla användare.
+  title_timelog_calendar_new: Genom att klicka på Lägg tid på vald dag.
+  title_template_to_selected_projects: Tillämpa mall för projekt
+  title_template_to_selected_users: Tillämpa mall för användarna
+  title_easy_lookup_modal_selector_assign: Genom att klicka kan du tilldela det markerade objektet.
+  title_button_edit: Genom att klicka kan du redigera den här posten.
+  title_button_delete: Genom att klicka kan du ta bort denna post.
+  title_new_issue_relation: Lägg till relaterade aktiviteter.
+  title_new_subtask: Lägg underordnad aktivitet.
+  title_logo: Klicka för att gå till min sida.
+  title_delete: Klicka för att ta bort ett objekt.
+  title_delete_selected: Klicka för att ta bort det markerade objektet.
+  title_go_up: Klicka för att gå till toppen av sidan.
+  title_says: ! 'säger:'
+  title_project_copy_tracker_issues: Genom att klicka på Byt frågor tracker.
+  title_user_profile: 'Genom att klicka på Visa %{username} profil.'
+  title_easy_user_working_time_calendar_show: Genom att klicka kan du redigera dagar i kalendern.
+  title_easy_user_working_time_calendars_new: Genom att klicka kan du skapa en ny kalender.
+  title_easy_user_working_time_calendar_holidays: Genom att klicka kan du hantera helgdagar.
+  title_easy_user_working_time_calendar_holidays_new: Genom att klicka kan du skapa en ny helgdag.
+  title_easy_user_working_time_back_to_calendar: Genom att klicka kan du gå tillbaka till kalendern.
+  title_easy_user_working_time_back_to_calendars: Genom att klicka kan du gå tillbaka till kalendrar.
+  title_easy_user_working_time_calendars_inline_edit: Genom att klicka kan du lägga till undantag.
+  title_easy_user_working_time_calendars_inline_save: Genom att klicka kan du spara undantag.
+  title_easy_user_working_time_calendars_inline_close: Genom att klicka kan du stänga redigering av undantag.
+  title_easy_user_working_time_reset_to_parent: Genom att klicka kan du radera alla aktuella undantag och ställa in kalendern från den överordnade staten.
+  title_easy_user_working_time_parent: Genom att klicka kan du gå till överordnade kalender.
+  title_edit_user_profile: Genom att klicka dig redigera cand din profil.
+  title_easy_page_add_tab: Genom att klicka kan du lägga till ny flik.
+  title_last_journal_link: Visa sista tidskriften för utfärdandet.
+  title_edit_anonymous_user: Genom att klicka kan du redigera anonym användare.
+  title_fullscreen: Visning på helskärm
+  title_download_attachment: Ladda ner bilagan
+  title_show_attachment: Visa innehållet i bilagan
+  title_user_detail: Genom att klicka kan du visa detaljer för användaren.
+  title_version_detail: Genom att klicka kan du visa detaljer för milstolpe.
+  title_easy_issue_timer_button_play: Uppdatera aktiviteten och börjar mäta tid.
+  title_easy_issue_timer_button_stop: Uppdatera aktiviteten och pre-fill tid anmälningsblankett
+  title_easy_issue_timer_button_pause: Paus mäta tid
+  title_easy_issue_timer_button_resume: Fortsätt i measuere tid
+  title_jump_to_project: Välj projekt
+  title_easy_copy_to_project: Skapa projekt från utfärdandet
+  title_issue_remove_parent: Genom att klicka på denna aktivitet kommer inte vara längre underaktivitet.
+  title_create_issue_from_journal: Skapa ny aktivitet med text från denna journal som beskrivning
+  title_journal_unprivate_note: Visa uppdatera alla användare
+  title_additional_context_menu: Klicka för att öppna meny med ytterligare optioner
+  title_timelog_calendar_prev:
+    week: Genom att klicka på Gå till föregående vecka.
+    month: Genom att klicka på Gå till föregående månad.
+  title_timelog_calendar_next:
+    week: Genom att klicka på Gå till nästa vecka.
+    month: Genom att klicka på Gå till nästa månad.
+  title_easy_modal_selector_trigger:
+    issue: Klicka för att välja funktioner från den listan.
+    project: Klicka för att välja ut projekt från listan.
+    version: Klicka för att markera milstolpar från listan.
+    user: Klicka för att välja användare från listan.
+    group: Klicka för att välja grupper från listan.
+    document: Klicka för att välja dokument från listan.
+
+  project_template:
+    label_name: Mallnamn
+    label_new_project: Namn på nya projekt
+  sidebar_all_users_queries: Medlemsaktiviteter
+  sidebar_issue_button_update: Lägg till notering eller redigera aktiviteten
+  sidebar_issue_button_log_time: Lägg till spenderad tid
+  sidebar_issue_button_duplicate: Duplicera aktivitet
+  sidebar_issue_button_copy: Kopiera aktivitet
+  sidebar_issue_button_move: Flytta aktivitet
+  sidebar_issue_button_delete: Radera aktivitet
+  sidebar_issue_spent_time: Aktivitet, översikt tid
+  sidebar_issue_info: Aktivitetsinformation
+  sidebar_issues_buttons: Visning
+  sidebar_project_info: Projektinformation
+  sidebar_project_spent_time: Projekt, översikt tid
+  sidebar_project_members: Projektgrupp
+  sidebar_budget_costs_info: Kostnader
+  sidebar_project_family_info: Projektträd
+
+  field_easy_due_date_time: Slutdatum
+  field_easy_start_date: Startdatum
+  field_spinned: Fäst överst på sidan
+  field_zone_name: zon-namn
+  field_page_name: Sidans namn
+  field_is_primary: Primär
+  field_show_empty: Visa tomma fält
+  field_show_on_list: Visa i lista
+  field_predicted_cost: Budget
+  field_computed_token: Formel
+  field_member: Projektmedlem
+  field_groups: Grupp
+  field_roles: Roll
+  field_xproject: Projekt
+  field_cached_group_names: Grupper
+  field_parent_user: Överordnad
+  field_template_name: Mallnamn
+  field_parent_project: Överordnat projekt
+  field_root: Huvudprojekt
+  field_main_project: Huvudprojekt
+  field_sum_of_timeentries: Loggad tid
+  field_remaining_timeentries: Återstående tid
+  field_completed_percent: ! '% Klar'
+  field_attachment_created_on: Bilaga - skapad den
+  field_user_roles: Roll
+  field_show_on_more_form: 'Visa under "mer"'
+  field_spent_estimated_timeentries: ! '% Loggad tid'
+  field_easy_system_flag: Systemgrupp
+  field_easy_global_rating: Global klassificering
+  field_id: ID
+  field_at_work: På jobbet?
+  field_arrival: Anlände
+  field_departure: Lämnade
+  field_easy_attendance_activity: Händelse
+  field_arrival_user_ip: loggade in med IP
+  field_departure_user_ip: loggade ut med IP
+  field_color_schema: Färgschema
+  field_group: Användargrupp
+  field_rss_key: RSS nyckel
+  field_api_key: API-nyckel
+  field_global_fixing_activity: Sätt arbetsuppgift vid registrering av aktivitet.
+  field_project_fixed_activity_true: Arbetsuppgiften är förvald när man skapar en aktivitet.
+  field_project_fixed_activity_false: Arbetsuppgiften kan väljas när man skriver tid.
+  field_user_time_entry_setting: ! 'Inskrivning av tid:'
+  field_easy_range_from: ! 'Tid från (format: 10:30)'
+  field_easy_range_to: 'Tid till (format: 10:30)'
+  field_easy_range_form_to: till
+  field_enable_activity_roles: Aktivera rollbaserade arbetsuppgifter
+  field_limit_assignable_users: Aktiviteter kan endast återföras till skaparen
+  field_easy_version_category_id: Kategori
+  field_easy_version_category: Kategori
+  field_relations_from: relation
+  field_created_at: Skapad
+  field_updated_at: Redigerad
+  field_easy_send_invitation: Skicka inbjudan via mail
+  field_easy_do_not_allow_close_if_subtasks_opened: Tillåt inte att stänga aktivitet om underaktivitet är öppen
+  field_easy_do_not_allow_close_if_no_attachments: Tillåt inte att stänga aktivitet om bilaga saknas
+  field_easy_issue_prefix: Aktivitetsprefix
+  field_send_to_external_mails: 'Skicka uppdatering via mail?'
+  field_attachments: Bilagor
+  field_ckeditor_toolbar_config: HTML-editor verktygsfält
+  field_easy_issue_timer_assign_to_me: Tilldelad till mig
+  field_easy_issue_timer_round: Avrunda
+  field_attachment_reminder_words: Bilageord
+  field_easy_is_repeating: Återkommande
+  field_easy_lesser_admin: Begränsad administratör
+  field_easy_user_type: Användartyp
+  field_easy_repeat_settings: Återkommande alternativ
+  field_send_all_planned_emails: Skicka alla planerade mail
+  field_easy_next_start: Nästa start
+  field_easy_is_meeting: Möte
+  field_easy_meeting_day: Mötesdag
+  field_easy_meeting_time: Tid för möte
+  field_easy_start_date_time: Starttid
+  field_easy_due_date: Förfallodag
+  field_mail_to_admin: Administratörens mail
+  field_time_entry: Förbrukad tid
+
+  status_archived: arkiverad
+  filter_active: aktiv
+
+  notice_journal_published: 'Uppdatering publicerades!'
+  notice_successful_create_template: Mallen skapades korrekt.
+  notice_successful_create_project_from_template: Projektet skapades korrekt.
+  notice_failed_create_project_from_template: 'Projektet skapades inte: %{errors}'
+  notice_almost_successful_create_project_from_template: Projektet skapades utan att alla objekt kunde kopieras.
+  notice_successful_restore_template: Mallen återställdes korrekt.
+  notice_template_successful_applied: Mallen tillämpades korrekt.
+  notice_plugin_successful_uninstall: 'Modulen %{plugin} har tagits bort och din webserver behöver nu startas om.'
+  notice_project_successful_archive: Projektet arkiverades korrekt.
+  notice_failed_to_update: Fel vid uppdateringen.
+  notice_project_successful_unarchive: Projekt dearkiverades korrekt.
+  notice_easy_custom_field_disabled: Anpassade fält har inaktiverats
+  notice_easy_custom_field_enabled: Anpassade fält har aktiverats
+
+  error_invalid_authenticity_token: Sidan gjorde time-out.
+  error_rss_reader_timeout: 'Fel i inställningarna (en sida är inte ansluten, kontrollera att du har rätt källa för aktiviteterna!).'
+  error_rss_reader_bad_url: 'Fel i inställningarna (en sida är inte ansluten, kontrollera att du har rätt källa för aktiviteterna).'
+  error_rss_reader_old_ep: 'Fel i inställningarna (källan för aktiviteterna måste vara Easy Project 2012 eller högre).'
+  error_validates_max_size: filen är för stor
+  error_custom_value_autoincrement_greater: 'måste vara större än %{count}'
+  error_custom_value_autoincrement_equal: 'måste vara %{count}'
+  error_can_not_unarchive_project: Projektet kunde inte dearkiveras.
+  error_can_not_delete_project: Projektet kan inte raderas.
+  error_can_not_delete_project_template: Projektmallen kan inte raderas.
+  error_can_not_create_project_template: 'Ett fel uppstod vid skapandet av projektmall från projektet %{projectname}.'
+  error_bulk_update_save: ! '%{count} objekt kan inte sparas.'
+  error_no_file_selected_to_upload: Ingen fil vald att ladda upp.
+  error_cannot_close_issue_due_to_subtasks: 'Aktivitet kan inte stängas eftersom den innehåller öppna underaktiviteter: %{issues}'
+  error_cannot_close_issue_due_to_no_attachments: Aktivitet kan inte stängas eftersom bilaga saknas
+  error_create_repo_from_url_cannot_create_dir: 'Kan inte skapa katalog %{dir}'
+  error_create_repo_from_url_cannot_determine_repo_name: Kan inte avgöra ett repo-namn
+  error_create_repo_from_url_repo_already_exists: Repository finns redan
+  error_create_repo_from_url_repo_cannot_be_created: Repository kan inte skapas
+  error_update_easy_issue_timer_settings: Inställning har inte sparats
+  error_project_not_selected: Projekt inte valt
+  error_repeat_period_missing: Period för upprepning måste väljas
+  error_repeat_endtype_missing: Avslut för upprepning måste väljas
+  error_repeat_endtype_count_blank: upprepningsräknare kan inte vara tomt
+  error_repeat_endtype_count_numeric: upprepningsräknare måste vara ett nummer
+  error_repeat_endtype_date_blank: Slutdatum kan inte vara tomt
+  error_repeat_daily_option_missing: 'upprepningstyp (arbetsdag eller varje dag) måste väljas'
+  error_repeat_daily_x_blank: upprepning antal dagar kan inte vara tomt
+  error_repeat_daily_x_numeric: upprepning antal dagar måste vara ett nummer
+  error_repeat_weekly_days_selected: minst en veckodag måste väljas
+  error_repeat_monthly_option_missing: ! 'upprepningstyp (den x:te dag / anpassad) måste väljas'
+  error_repeat_monthly_day_numeric: upprepning dag måste vara nummer mellan 1 och 31
+  error_repeat_monthly_month_numeric: upprepning månad måste vara nummer mellan 1 och 12
+  error_easy_custom_field_disable_deletable: Detta specialfält kan inte inaktiveras
+
+  confirm_admininstration_display_all_project: Visa alla projekt kommer att ta mycket lång tid. Vill du fortsätta?
+
+  text_commit_example_1: ! 'refs #1523 @5h30m calendar finishing'
+  text_commit_example_2: 'log time 5 hours and 30 minutes to task no. 1523'
+  text_easy_settings_time_entry_heading: Passerade tidsfrister
+  text_easy_settings_time_entry_limit: 'Tillåt att lägga till / redigera tid'
+  text_easy_settings_time_entry_limit_note: Om du vill avaktivera tidsfrister, lämna dessa textrutorna tomma.
+  text_easy_attachment_reminder_confirm: Du har inte laddat upp någon bilaga, vill du fortsätta ändå?
+  text_easy_attachment_reminder_explanatory_html: ! '? = Alla tecken <br />* = Valfritt antal <br /><dd style="margin-left:15px;"> godtyckliga tecken </dd>'
+  text_easy_settings_time_entry_limit_past: dagar bakåt i tiden
+  text_easy_settings_time_entry_limit_future: dagar framåt i tiden
+  text_git_repository_url_note: ! 'URL i form http(s)://user:password@url/repo.git. Repo är lokalt och skapas automatiskt.'
+
+  text_external_email_sent: 'Ett bifogat meddelande har skickats till adressen: %{email}.'
+  text_textile_migration: ! 'För migrera sparade texter från textile till HTML skriver du följande från kommandoraden: "bundle exec rake easyproject: textile: migrate_all RAILS_ENV = production"'
+  text_project_is_planned: Om ett projekt är under planering skickas inga uppdateringar via mail.
+  text_easy_attendance_user_detail_online_at: Användare loggade in
+  text_easy_attendance_user_detail_offline_at: Användare loggade ut
+  text_easy_attendance_user_detail_no_data_today: Användaren har ännu inte loggat in
+  text_easy_attendance_user_notify_default_message: ! '%{user} har just loggat in'
+  text_easy_attendance_user_notify_title: 'Meddelande kommer att skickas till:%{email}'
+  text_easy_attendance_user_notify_already_exists_warning: 'Varning! Meddelande finns redan. Totalt %{count} x'
+  text_easy_issue_reccuring_create_now: I det här avsnittet kan du ange hur många  aktiviteter du vill skapa nu. Nästa aktivitet kommer att skapas på en dag som bestäms av inställningen i återkommande. Klockslag definieras nedan.
+  text_easy_rake_task_failure_email: I händelse av fel skickas meddelande till denna adress
+
+  setting_issue_recalculate_attributes: Ny delaktivitet påverkar överordnade aktivitet (prioritet, beräknad tid,% gjort, startdatum och förfallodag)
+  setting_project_display_identifiers: Visa projektets identifierare
+  setting_use_easy_cache: Aktivera specialcache
+  setting_just_one_issue_mail: Skicka bara ETT mail vid aktivitetsuppdatering
+
+  my_page_timelog_calendar_period:
+    month: Månadsvis
+    week: Veckovis
+
+  easy_pages:
+    pages:
+      my_page: Min sida
+      project_overview: Projekt - startsida
+    pages_description:
+      my_page: Min sida
+      project_overview: Projekt - startsida
+    modules:
+      issues_create_new: Ny aktivitet
+      issue_query: Aktiviteter från filter
+      projects_query: Projekt från filter
+      documents: Dokument
+      issues_assigned_to_me: Mina aktiviteter
+      issues_reported_by_me: Aktiviteter rapporterade av mig
+      issues_watched_by_me: Mina bevakade aktiviteter
+      my_calendar: Min kalender
+      my_projects_simple: Projektlista
+      news: Nyheter
+      saved_queries: Sparade filter
+      timelog_simple: Tidsloggning
+      timelog_calendar: Tidsloggning kalender
+      issues_rss_reader: Aktiviteter från annan server
+      project_history: Projekthistorik
+      project_news: Nyheter
+      project_tree: Underprojekt
+      project_sidebar_all_users_queries: Medlemsaktiviteter
+      project_sidebar_project_info: Projektinfo
+      project_sidebar_project_members: Projektets medlemmar
+      project_sidebar_saved_queries: Sparade filter
+      project_issues: Aktiviteter
+      noticeboard: Anslagstavla
+      project_sidebar_family_info: Projektträd
+      project_info: Projektinfo
+      attendance: Deltagande
+      users_query: Projektgrupp från filtret
+      resource_availability: Resurstillgänglighet
+      google_maps: Kartor Google
+    module_category:
+      calendars: Kalendrar
+      issues: Aktiviteter
+      lists: Listor
+      others: Andra
+      projects: Projekt
+      project_sidebar: Sidofältet
+      timelog: Använd tid
+      users: Användare
+      redmine: Redmine
+    zones:
+      top_left: övre vänster
+      top_middle: överst i mitten
+      top_right: övre höger
+      middle_left: mitten vänster
+      middle_middle: mitten
+      middle_right: mitten höger
+      bottom_left: nedre vänster
+      bottom_middle: nedre mitten
+      bottom_right: nedre höger
+      right_sidebar: sidofältet höger
+    zones_description:
+      bottom_left: beskrivning
+      bottom_middle: beskrivning
+      bottom_right: beskrivning
+      middle_left: beskrivning
+      middle_middle: beskrivning
+      middle_right: beskrivning
+      right_sidebar: beskrivning
+      top_left: beskrivning
+      top_middle: beskrivning
+      top_right: beskrivning
+
+  label_my_page_project_output:
+    list: lista
+    calendar: kalender
+  label_my_page_issue_output:
+    list: lista
+    calendar: kalender
+  select_easy_page_module_project_info:
+    label: egenskap att visa
+    description: beskrivning
+    customfields: projektanpassat fält
+
+  easy_page_module:
+    project_history:
+      heading_project_edit_custom_fields: Redigera projektanpassade fält
+    project_query:
+      adhoc_query: Ad-hoc namnet på filtret
+      adhoc_query_default_text: namnet på filtret
+    issue_query:
+      adhoc_query: Ad-hoc namnet på filtret
+      adhoc_query_default_text: namnet på filtret
+    document_query:
+      adhoc_query: Ad-hoc namnet på filtret
+      adhoc_query_default_text: namnet på filtret
+    user_query:
+      adhoc_query: Ad-hoc namnet på filtret
+      adhoc_query_default_text: namnet på filtret
+    attendance:
+      adhoc_query: Ad-hoc namnet på filtret
+      adhoc_query_default_text: Mitt deltagande
+    resource_availability:
+      label_resource_name: Resursnamn
+      label_day_start_time: Starttid
+      label_day_end_time: Sluttid
+      label_set_available: Sätt som tillgänglig
+      label_set_unavailable: Sätt som otillgänglig
+      label_available: tillgänglig
+      label_unavailable: otillgänglig
+      label_set_day_available: Sätt hela dagen som tillgänglig
+      label_set_day_unavailable: Sätt hela dagen som otillgänglig
+      label_description_prompt: ! 'Vänligen skriv en anledning:'
+    new_issue:
+      field: Fält
+      show: Visas
+      default_value: Standardvärde (blankt innebär ingen förändring)
+
+  menu:
+    admin:
+      easy_pages_administration: Sidpersonalisering
+
+  breadcrumb:
+    label:
+      easy_pages_administration: Sidpersonalisering
+      easy_page_templates: Sidmallar %{pagename}
+      easy_page_new: Ny sida
+      easy_page_show: Moduler på sidan %{pagename}
+      easy_page_edit: Redigera sidan %{pagename}
+      easy_page_templates_new: Ny sidmall
+      easy_page_templates_edit: Rediger mallen %{templatename}
+      easy_page_template_view: Modullayout
+      easy_page_template_edit: Redigera modullayout
+      easy_page_template_user_modules: Modullayout
+    title:
+      easy_pages_administration: Klicka för att gå till sidan inställningar.
+      easy_page_templates: Klicka för att gå till listan med mallar %{pagename}.
+      easy_page_new: Klicka för att Skapa ny sida.
+      easy_page_show: Klicka för att Visa moduler på sidan %{pagename}.
+      easy_page_edit: Klicka för att Redigera sidan %{pagename}.
+      easy_page_template_edit: Klicka för att Redigera modullayout i mallen.
+      easy_page_templates_new: Klicka för att "Skapa mall från projektet" på sidan %{pagename}.
+      easy_page_template_view: Klicka för att Visa modullayout.
+      easy_page_templates_edit: Klicka för att Redigera mall %{templatename}.
+      easy_page_template_user_modules: Klicka för att Visa personlig modullayout.
+
+  easy_user_working_time_calendar_names:
+    standard: Standard
+
+  easy_lookup:
+    document:
+      label: Dokument
+    group:
+      label: Grupper
+    issue:
+      label: Aktiviteter
+    project:
+      label: Projekt
+    user:
+      label: Användare
+    version:
+      label: Milstolpar
+
+  project_default_page:
+    project_overview: Projektöversikt
+    roadmap: Milstolpar
+    issue_tracking: Aktiviteter
+    time_tracking: Loggad tid
+    news: Nyheter
+    documents: Dokument
+    repository: Versionsarkiv
+    calendar: Kalender
+    gantt: Gantt
+    boards: Forum
+    files: Filer
+    wiki: Wiki
+
+  select_option_issue_restrictions_users_blank: ! '>> Välj <<'
+
+  mail:
+    field_author: Författare
+    field_updated_by: Uppdaterad av
+    field_before: innan
+    field_updated_time: Uppdaterad innan
+    label_attachment_new: Lade till en ny bilaga
+    text_attachment_added: ! 'Användare %{user} laddade %{time} upp följande fil(er) till %{added_to}:'
+
+  attachments:
+    no_more_versions: Inga fler milstolpar
+    revert_to:
+      successfully: 'Bilagan återsställdes framgångsrikt till version %{version}.'
+      failed: 'Bilagan misslyckades att återställas till version %{version}. Den nuvarande versionen är: %{current_v}.'
+
+  easy_query:
+    name:
+      easy_issue_query: Aktiviteter
+      easy_project_query: Projekt
+      easy_user_query: Användare
+      easy_document_query: Dokument
+      easy_version_query: Milstolpar
+      easy_attendance_query: Deltagande
+      easy_time_entry_query: Tidposter
+      easy_group_query: Grupper
+    label:
+      default_columns: Standardkolumner
+      default_fitlers: Standardfilter
+    button_apply:
+      project: Tillämpa inställningar
+      issue: Tillämpa inställningar
+      user: Tillämpa inställningar
+    sidebar_filters:
+      personal:
+        easy_issue_query: Privata filter för aktiviteter
+        easy_user_query: Privata filter för användare
+        easy_project_query: Privata filter för projekt
+        easy_document_query: Privata filter för dokument
+        easy_attendance_query: Privata filter för deltagande
+        easy_group_query: Privata filter för grupper
+        easy_member_query: Privata filter för medlemmar
+        easy_time_entry_query: Privata filter för loggad tid
+        easy_version_query: Privata filter för milstolpar
+        other: Privata filter
+      public:
+        easy_issue_query: Gemensamma filter för aktiviteter
+        easy_user_query: Gemensamma filter för användare
+        easy_project_query: Gemensamma filter för projekt
+        easy_document_query: Gemensamma filter för dokument
+        easy_attendance_query: Gemensamma filter för loggad tid
+        easy_group_query: Gemensamma filter för grupper
+        easy_member_query: Gemensamma filter för medlemmar
+        easy_time_entry_query: Gemensamma filter för loggad tid
+        easy_version_query: Gemensamma filter för milstolpar
+        other: Publika filter
+    easy_lookup:
+      name:
+        issue:
+          default: Välj aktiviteter
+          issue_relation: Välj relaterade aktiviteter
+        project:
+          default: Välj projekt
+          project_relation: Välj relaterade projekt
+        user:
+          default: Välj användare
+        group:
+          default: Välj grupper
+        version:
+          default: Välj milstolpar
+          version_relation: Välj relaterade milstolpar
+        document:
+          default: Välj dokument
+
+  easy_scheduler_task_info:
+    planned: 'Aktivitet %{task_name} är planerad.'
+    running: 'Aktivitet %{task_name} är aktiv.'
+    ended_failed: 'Aktivitet %{task_name} misslyckades.'
+    ended_ok: 'Aktivitet %{task_name} avslutades framgångsrikt.'
+    initialized: 'Aktivitet %{task_name} skapades.'
+
+  user:
+    easy_user_type:
+      internal: Användare
+      external: Klient
+
+  bulk_time_entry_title: Logga Tid
+  text_bulk_time_entry_permission: Denna användare har inte rättigheter att rapportera tid i projekt.
+  label_avatar: Avatar
+  message_avatar_uploaded: Avatar uppladdad
+  button_change_avatar: Ändra avatar
+  are_you_sure_delete_avatar: Är du säker på att du vill ta bort din avatar?
+  avatar_deleted: Avatar borttagen
+  unable_to_delete_avatar: Det uppstod ett fel vid borttagning avataren.
+  avatar_invalid_file: Ogiltig filtyp
+  text_settings_gravatar_enabled: Om Gravatar inte är valt används klassisk avatar från användarprofilen.
+
+  license_manager:
+    user_limit: Din maximala antalet användare har uppnåtts, kontakta %{email}.
+    user_limit_unlock_button: Du har uppnått det maximala antalet aktiva användare.
+
+  image_tag:
+    alt:
+      bullet_toggle_plus: Växla till multi-select
+
+  collapse_expand: Komprimera / expandera
+  gantt_day: dag
+  gantt_day_plural: dagar
+  gantt_day_plural5: dagar
+  gantt_start: Startdatum
+  gantt_end: Slutdatum
+  gantt_duration: Varaktighet
+  gantt_completed: Avslutat
+  issue_predecessor_error: 'Aktiviteten %{issue_name} följer redan efter en annan aktivitet.'
+  project_predecessor_error: 'Projektet %{project_name} följer redan ett annat projekt.'
+  version_predecessor_error: 'Milstolpen %{version_name} följer redan en annan milstolpe.'
+  label_easy_publishing_module: Modul
+  label_easy_publishing_modules: Publiceringsmoduler
+  easy_publishing_setting: Modul
+  easy_publishing_setting_new: Ny publiceringsinställning
+  label_easy_publishing_setting_url: URL exempel
+  button_easy_publishing_settings_new: Ny modul
+  label_easy_publishing_module_info: Info
+  label_easy_publishing_module_contact: Kontakt
+  label_easy_publishing_module_help: Välj din lösning
+  label_easy_publishing_module_youtube: YouTube
+  label_easy_publishing_module_info_header: Beställ Easy Redmine nu
+  label_easy_publishing_invalid_file_type: 'Dessa filer är inte bilder och sparades inte: %{files}.'
+
+  helper_module:
+    button_show_help: Visa hjälp
+    button_close_help: Stäng hjälp
+    button_show_youtube: Spela upp video
+    alt_image_help: Bildhjälp
+    title_help: Välj din lösning
+    title_contact: Kontakt
+
+  user_time_entry_setting:
+    all: timmar eller intervall
+    hours: timmar
+    range: intervall (från - till)
+
+  label_rating: Betyg
+  label_easy_global_rating: Globalt betyg
+
+  easy_attendance:
+    label: Deltagande
+    label_menu_more: Deltagande
+    label_back_to_basic: Stäng
+    label_setting: Använd loggning för start och stopp
+    label_mail: Noteringsmail
+    label_statistic_worked: arbetat
+    label_statistic_attendance: närvaro
+    label_statistic_supplement: 'från %{hours}, Ex. %{percent}%'
+    new: Registrera start / stopp
+    arrival: Ankomst
+    departure: Hemgång
+    advanced_settings: Schemaläggare
+    label_activities: Aktivitet
+    project_mapping_0: Utan att koppla till projektet
+    project_mapping_1: Koppla till projektet
+    project_mapping_1_1: och aktivitet
+    link_to_easy_attendance: Deltagarlista
+    error_can_not_delete_activity: Aktiviteten innehåller poster och kan inte tas bort.
+    change_easy_attendance_activity_to: ! 'Ändra aktivitet till:'
+    description:
+      advanced_infobox: ! 'Exempel: Jag tar semester från %{from} till %{to}.'
+      arrival: Jag startade nu
+      departure: Jag slutade nu
+    activities:
+      enumerations:
+        label: Aktiviteter (anslagstavla)
+        new: Ny aktivitet på tavlan
+    title:
+      advanced_settings: Planera arbete hemifrån eller semester.
+    arrival_date_error: kan inte vara större än tidsspannet.
+    arrival_already_taken: Datum är upptaget av en annan aktivitet.
+    invalid_date: inget datum
+    departure_is_same_as_arrival: skall ha samma tid som starttid.
+    notice:
+      notice_arrivaled: Automatloggad starttid. Genom att klicka kan du ändra dina start- eller stopptider.
+      warning_missing_departure: 'Stopptid saknas för den %{arrival_date}. Vänligen lägg till detta.'
+    calendar:
+      legend:
+        starting: Aktivitet startar
+        ending: Aktivitet slutar
+        starting_ending: Denna dags aktivitet
+    mail_added:
+      body_top: ! '%{user} meddelar %{activity} på arbetsplatsen från %{from} till %{to}.'
+      subject: ! '%{user} meddelar frånvaro från arbetsplatsen'
+      body_link: Lista för deltagande finns här.
+    mail_updated:
+      body_top: ! '%{user} meddelar %{activity} på arbetsplatsen från %{from} till %{to}.'
+      subject: ! '%{user} meddelar frånvaro från arbetsplatsen'
+      body_link: Lista för deltagande finns här.
+    label_report_sum_time_entry: 'Totalt för år %{year} [Rapporterad Tid]'
+    label_report_sum_attendance: 'Totalt för år %{year} [Deltagande]'
+    text_activity_destroy_with_attendances: 'Aktiviteten innehåller totalt %{count} poster. Är du säker på att du vill ta bort aktiviteten och alla poster?'
+    field_range: ! 'Skriv deltagande för:'
+    range:
+      full_day: Hela dagen
+      forenoon: Förmiddag
+      afternoon: Eftermiddag
+
+  sidebar_easy_attendances_all_users_queries: Närvaro per användare
+  error_put_between_issue_count: Du måste välja två aktiviteter
+  label_xml_data_export: XML-data export
+  label_xml_data_select_exportables: Välj data som ska exporteras
+  label_xml_data_select_projects: Välj projekt
+  button_xml_data_export: Exportera
+  button_xml_data_import: Importera
+  button_xml_data_continue: Fortsätt
+  label_xml_data_import: XML-data import
+  label_user_mapping: Användare mappning
+  label_map_to: Mappa till
+  option_map_to_new_user: ny användare
+  label_tracker_mapping: Aktivitetstyp mappning
+  option_map_to_new_tracker: ny aktivitetstyp
+  label_xml_data_notify: Skicka notifiering
+  label_role_mapping: Rollmappning
+  label_issue_status_mapping: Aktivitetsstatus mappning
+  label_issue_priority_mapping: Aktivitetsprioritet mappning
+  label_time_entry_activity_mapping: Aktivitet mappning
+  label_custom_field_mapping: Specialfält mappning
+
+  option_map_to_new_role: ny roll
+  option_map_to_new_project_custom_field: nytt fält
+  option_map_to_new_issue_custom_field: nytt fält
+  option_map_to_new_issue_priority: ny prioritering
+  option_map_to_new_issue_status: ny status
+  option_map_to_new_time_entry_activity: ny händelse
+  label_auto_mapping: Automatisk mappning av
+  label_import_success: Data har importerats
+  label_import_zip_error: Felaktigt dataformat
+  xml_data_users: Användare
+  xml_data_trackers: Aktivitetstyper
+  xml_data_roles: Roller
+  xml_data_issue_priorities: Aktivitetsprioriteringar
+  xml_data_project_custom_fields: Anpassade fält
+  xml_data_issue_custom_fields: Anpassade fält
+  xml_data_issue_statuses: Aktivitetsstatusar
+  xml_data_document_categories: Dokumentkategorier
+  xml_data_time_entry_activities: Arbetsuppgifter
+
+  sample_text: Easy Project
+  easy_color_scheme_not_available: 'Färgschema för %{current} (går att ändra)'
+  notice_issues_successful_create: ! 'Framgångsrikt skapad för användarna:'
+  notice_failed_to_save_issues2: 'Det gick inte att spara aktiviteten %{issue} på grund av fel: %{error}'
+  notice_too_many_projects: 'För många projekt (%{count}), Använd sökfunktionen.'
+  general_all: alla
+  general_only_required: endast obligatoriska
+  mail_subject_easy_query_migration_nonsaved_query: Filtermigrering misslyckades
+  mail_body_easy_query_migration_nonsaved_query_begin: ! 'Hej, filtermigreringen misslyckades med att spara filtret:'
+  mail_body_easy_query_migration_nonsaved_query_end: 'Klicka på länken ovan och ändra filtret (kolumnen innehåller datumintervall - skapat, uppdaterat, förfallodatum...).'
+  mail_subject_easy_query_migration_unsupported_query: Filtermigrering - inställningarna stödjs inte
+  mail_body_easy_query_migration_unsupported_query_begin: ! 'Hej, filtermigreringen misslyckades med att spara filtret:'
+  mail_body_easy_query_migration_unsupported_query_end: ! 'Klicka på länken ovan och ändra filter. Det innehåller följande inställning:'
+
+  setting_project_list_default_columns: Standardkolumner visas på projektlistan
+  setting_default_projects_tree_display: Visa projektträd
+  setting_projects_tree_display_with_siblings: med syskon
+  setting_projects_tree_display_without_siblings: utan syskon
+  setting_issue_created_on_date_format_label: Visa liknande
+  setting_issue_created_on_date_format_date: datum
+  setting_issue_created_on_date_format_datetime: datum och tid
+  setting_enable_private_issues: Aktivera privata aktiviteter
+  setting_show_personal_statement: Visa egen sammanställning i menyn
+  setting_show_bulk_time_entry: Visa logga tid i menyn
+  setting_project_calculate_start_date: Beräkna startdatum från aktiviteter
+  setting_project_calculate_due_date: Beräkna slutdatum från aktiviteter
+  setting_show_issue_id: Visa aktivitets-ID
+  setting_quick_jump_to_an_issue: Hoppa till aktiviteten om ID söks
+  setting_milestone_effective_date_from_issue_due_date: Tillåt sätta ett slutdatum för aktivitet efter utgången av milstolpe.
+  setting_issue_set_done_after_close: 'Sätt 100% genomfört på avslutade aktiviteter'
+  setting_allow_repeating_issues: Tillåt upprepande aktiviteter
+  setting_close_subtask_after_parent: Vid avslut av aktivitet, stäng även underaktiviteter
+  workflow_button_edit: Inställningar aktivitetsmatris
+
+  easy_search:
+    legend_entities: ! 'Sök:'
+    legend_column_types: ! 'Sök i:'
+    label_column_type:
+      name: Namn
+      description: Beskrivning
+      comment: Kommentera
+      other: Annat
+
+  enumeration_easy_version_cetegory: Milstoplpeskategori
+  label_tracker_move_issues: Aktivitet ändra tilldelning
+  label_tracker_move_issues_explanation: ! 'Ändra aktivitetstyp till:'
+  button_tracker_move_issues: Ändra tilldelning och ta bort
+  option_dont_map: ! '- Mappa inte -'
+  move_auth_source_users_explanation: ! 'Välj en ny autentiseringskälla för användare:'
+  button_auth_source_move_users: Ändra tilldelning och ta bort
+
+  dashboard:
+    legends:
+      others: Annat
+      projects: Projekt
+      issues: Aktiviteter
+      users: Användare
+      security: Säkerhet
+      xml: XML
+      extensions: Moduler
+      settings: Inställningar
+
+  label_easy_user_working_time_calendar_no_of_days: Arbetsdagar
+  label_easy_user_working_time_calendar_no_of_hours: Arbetstid
+  label_easy_attendance_report_working_time: 'arbetade %{sum_timeentries} av %{total_working_hours}, Dvs %{timeentries_percent}%'
+  label_easy_attendance_report_attendence_time: 'närvarade %{sum_attendance} av %{total_working_hours}, Dvs %{working_percent}%'
+  button_settings: Justering
+  button_history: Historik
+  field_started_at: Börjar
+  field_finished_at: Slutar
+  field_note: Anmärkning
+
+  easy_rake_tasks:
+    views:
+      heading_index: Schemalagda händelser
+      button_index: Schemalagda händelser
+      heading_settings: 'Jobbinställningar %{task_name}'
+      heading_task_infos: 'Jobbsammanfattning -%{task_name}'
+      interval: Intervall
+      next_run_at: Nästa start
+      last_action: Senaste åtgärd
+    periods:
+      daily: 'varje %{interval}'
+      hourly: 'varje %{interval} timmar'
+      minutes: 'varje %{interval} minuter'
+    easy_rake_task_receive_mail:
+      caption: Ta emot mailmeddelanden
+    easy_rake_task_repeating_entities:
+      caption: Repeterande aktiveter
+    easy_rake_task_history_cleaner:
+      caption: Radera gamla schemalagda aktivitetes historik
+    easy_rake_task_check_failure_tasks:
+      caption: Kontrollera fel i schemalagda aktiviteter
+      email_type:
+        all_admins: Skicka mail till admins
+        email: Skicka mail till
+      mail:
+        footer: Du kan ändra inställningarna i schemalagda aktiviteter
+        heading: 'Dessa schemalagda aktiviteter misslyckanden den %{date}'
+
+  easy_rake_task_infos:
+    status:
+      running: Det är
+      ended_ok: Slutfördes ok
+      ended_failed: Avslutades med ett fel
+
+  easy_rake_task_info_details:
+    receive_mail:
+      status:
+        unknown: Okänd
+        received: Mottagen
+        processed_and_deleted: Bearbetad och raderad
+        not_processed_and_deleted: Bearbetades och raderades inte
+        not_processed_and_left_on_server: Inte bearbetat och kvar på servern
+        cannot_be_processed: Kan inte bearbetas
+
+  button_delete_avatar: Tag bort avatar
+  label_issue_due_date_overdue: ! 'Kvar att slutföra:'
+  label_issue_due_date_not_overdue: efter tidsfristen för
+  label_project_due_date_overdue: att slutföra de återstående
+  label_project_due_date_not_overdue: efter tidsfristen för
+  label_easy_setting_use_personal_theme: Tillåt användare att använda eget tema?
+  label_permission_flag_r: R
+  label_permission_flag_p: P
+  label_permission_flag_m: M
+  label_permission_flag_l: L
+  button_gantt_relation_new: Ny relation
+  button_gantt_relation_destroy: Tag bort relation
+  title_permission_flag_r: Kan inte skriva - skrivskyddad
+  title_permission_flag_p: Kräver inloggning
+  title_permission_flag_m: Kräver medlemskap i projektet
+  title_permission_flag_l: Kräver inloggning
+  setting_display_issue_relations_on_new_form: Se relaterade aktiviteter i det nya formuläret
+  gantt_new_following_issue: Ny följande aktivitet
+  gantt_new_preceding_issue: Ny föregående aktivitet
+  gantt_new_child_issue: Ny underordnad aktivitet
+
+  themes:
+    easy: Easy
+    easy_widescreen: Wide
+
+  label_easy_user_working_time_day_settings: Ställ in dagar
+
+  editor_config_names:
+    basic: Grundläggande
+    extended: Avancerad
+    full: Full
+
+  custom_field_names:
+    external_mails:
+      label: Extern mail
+
+  label_field_format_rating_star_no: Stjärna
+  label_easy_gantt_theme_plural: PDF Gantt-teman
+  label_easy_gantt_theme_new: Nytt tema
+  label_header_style: Huvud tema
+  label_logo: Logotyp
+  field_header_color: Bakgrundsfärg
+  field_header_font_color: Textfärg
+  label_with_theme: använda tema
+  label_is_null: är tom
+  label_is_not_null: är inte tom
+
+  search_field_placeholders:
+    issues: Sök aktiviteter
+    projects: Sök projekt
+
+  label_zoom: Zoom
+  label_easy_issue_easy_repeating_create_now: Skapa nu
+  label_video_url: Video URL
+  label_customize_gantt_export: Anpassade exportinställningar
+  label_easy_issue_reccuring_month: månad
+  button_easy_copy_to_project: Skapa ett projekt
+
+
+
+
+
+
+
+
+
+
+
+

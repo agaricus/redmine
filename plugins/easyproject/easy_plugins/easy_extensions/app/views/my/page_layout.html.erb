@@ -1,0 +1,11 @@
+<% html_title(l(:label_my_page)) -%>
+
+<%= context_menu issues_context_menu_path, 'table.issues' %>
+
+<%= content_for :easy_page_layout_content do %>
+  <div class="contextual">
+    <p>
+      <%= link_to(l(:button_edit_mobile_page), {:controller => 'my', :action => 'mobile_page_layout'}, :class => 'icon icon-edit button-2') %>
+    </p>
+  </div>
+<% end -%>

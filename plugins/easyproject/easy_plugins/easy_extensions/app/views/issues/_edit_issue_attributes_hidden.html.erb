@@ -1,0 +1,42 @@
+<% issue_ajax_url ||= url_for({ :controller => 'issues', :action => :update_form, :project_id => @project, :id => @issue, :format => 'js' }) %>
+<% if @issue.editable? %>
+  <% if @issue.safe_attribute? 'subject' %>
+    <div class="issue-edit-subject-field">
+      <p><%= f.text_field :subject, :required => true %></p>
+    </div>
+  <% end -%>
+  <% if @issue.safe_attribute? 'description' %>
+    <div class="splitcontentleft">
+      <p class="description">
+        <%= f.label_for_field :description, :required => @issue.required_attribute?('description') %>
+        <%= link_to('', {:controller => 'easy_issues', :action => 'toggle_description', :id => @issue, :element => 'issue_description_and_toolbar'}, :class => 'icon icon-edit', :title => l(:button_edit), :remote => true, :id => 'description_toggler') unless @issue.new_record? %>
+      </p>
+    </div>
+    <div class="clear"></div>
+    <div id="issue_description_and_toolbar">
+      <% if @issue.new_record? %>
+        <%= f.text_area( :description,
+                :cols => 60,
+                :rows => (@issue.description.blank? ? 10 : [[10, @issue.description.length / 50].max, 100].min),
+                :class => 'wiki-edit',
+                :no_label => true) %>
+        <%= wikitoolbar_for('issue_description', :attachment_reminder => true) unless in_mobile_view? %>
+      <% end %>
+    </div>
+  <% end -%>
+<% end %>
+
+<%= render_hidden_issue_attributes_for_edit(@issue, f, {:issue_ajax_url => issue_ajax_url}) %>
+
+<div id="attributes" style="clear:both">
+  <% if @issue.safe_attribute_names.include?('activity_id') && User.current.allowed_to?(:edit_issue_fixed_activity, @project) %>
+    <div class="attribute">
+      <%= render :partial => 'timelog/time_entry_activity', :locals => { :tag_name_prefix => 'issue', :entity => @issue, :activity_collection => @project.activities, :container_id => nil, :project => @project, :options => {:hide_role_select => true}} -%>
+    </div>
+  <% end %>
+  <%= render :partial => 'edit_form_updatable_attributes', :locals => {:show_on_more_form => true} %>
+</div>
+
+<div id="edit_issue_repeat_options">
+  <%= render :partial => 'issues/edit_issue_repeat_options', :locals => { :issue => @issue } %>
+</div>

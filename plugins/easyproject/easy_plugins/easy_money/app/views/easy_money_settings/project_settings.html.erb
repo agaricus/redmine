@@ -1,0 +1,12 @@
+<%= render_tabs easy_money_project_settings_tabs(@project) %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% content_for :header_tags do -%>
+    <%= stylesheet_link_tag 'easy_money', :plugin => 'easy_money' -%>
+    <%= javascript_include_tag 'easy_money', :plugin => 'easy_money' -%>
+<% end -%>
+
+<% content_for :sidebar do -%>
+    <%= render :partial => 'easy_money/index_sidebar' -%>
+<% end -%>

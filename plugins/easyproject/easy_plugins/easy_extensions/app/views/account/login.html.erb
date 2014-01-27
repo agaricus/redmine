@@ -1,0 +1,39 @@
+<%= call_hook :view_account_login_top %>
+<div id="login-form">
+  <%= form_tag(signin_path, :id => 'form-login-form') do %>
+    <%= back_url_hidden_field_tag -%>
+    <p>
+      <%= label_tag :username, l(:field_login) -%>
+      <%= text_field_tag :username, params[:username], :tabindex => 1, :autofocus => true, :required =>  true, :placeholder => l(:field_login) -%>
+    </p>
+    <p>
+      <%= label_tag :password, l(:field_password) -%>
+      <%= password_field_tag :password, nil, :tabindex => 2, :required => true, :placeholder => l(:field_password) -%>
+    </p>
+    <% if Setting.openid? %>
+      <p>
+        <%= label_tag :openid_url, l(:field_identity_url) -%>
+        <%= text_field_tag :openid_url, nil, :tabindex => 3, :placeholder => l(:field_identity_url) -%>
+      </p>
+    <% end %>
+    <span id="container-for-mobile">
+      <% if Setting.autologin? %>
+        <p  id="login-form-autologin">
+          <%= check_box_tag :autologin, 1, false, :tabindex => 4 -%> <%= label_tag :autologin, l(:label_stay_logged_in), :style => 'display: inline' -%>
+        </p>
+        <br />
+      <% end %>
+      <div id="submit-button">
+        <%= link_to(l(:label_password_lost), lost_password_path, :class => 'button-2 floatleft') if Setting.lost_password? && !is_mobile_device? %>
+        <%= submit_tag (l(:button_login) + " &#187;").html_safe, :class => 'button-1', :tabindex => 5 -%>
+        <div class="clear"></div>
+      </div>
+    </span>
+  <% end %>
+</div>
+<%= call_hook :view_account_login_bottom %>
+<% if params[:username].present? %>
+  <%= javascript_tag "$('#password').focus();" %>
+<% else %>
+  <%= javascript_tag "$('#username').focus();" %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= render(:partial => 'easy_page_modules/issues/issue_query_edit', :locals => { :user => user, :block_name => block_name, :settings => settings, :page_module => page_module, :modul_uniq_id => modul_uniq_id, :page_params => page_params }) %>
+<p>
+  <i class="icon-warning"></i><%= l(:text_mobile_issue_query_notice) %>
+</p>
+
+<div class="box">
+  <%= render(:partial => 'easy_page_modules/mobile_modules/mobile_issue_end_buttons_select', :locals => {:block_name => block_name, :settings => settings}) %>
+</div>

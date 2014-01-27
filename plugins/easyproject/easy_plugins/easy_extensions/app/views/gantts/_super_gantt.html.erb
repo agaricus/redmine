@@ -1,0 +1,69 @@
+<div id="gantt-buttons">
+  <% if request.xhr? %>
+    <%= link_to_function l(:button_gantt_issue_update_plural), "fs_gantt.easygantt('saveIssues')", :class => 'button-2' if User.current.allowed_to?(:edit_issues, @project) %>
+  <% else %>
+    <div style="text-align: left;" class="floatleft">
+      <%= easy_modal_selector_link_to_fullscreen_by_ajax(url_for({:controller => 'gantts', :action => 'render_to_fullscreen', :project_id => @project, :zoom => @zoom}),
+        {:class => 'button-2 icon icon-fullscreen'}) -%>
+
+      <div class="button-group">
+        <% %w(day week month).each do |zoom| %>
+          <%= link_to(
+            l("button_gantt_zoom_#{zoom}"),
+            @zoom == zoom ? 'javascript:void(0);' : params.merge({:zoom => zoom}),
+            :class => "button-2 icon icon-calendar-#{zoom}#{' pressed' if zoom == @zoom}"
+          ) %>
+        <% end -%>
+      </div>
+    </div>
+    <div style="text-align: right;">
+      <% if params[:action] != 'projects' %>
+        <% if User.current.allowed_to?(:add_issues, @project) %>
+          <%= link_to_function l(:label_issue_new), "gantt.easygantt('newIssue')", :class => 'button-1 icon icon-add' %>
+        <% end -%>
+        <%= link_to_function l(:label_version_new), "gantt.easygantt('newMilestone')", :class => 'button-1 icon icon-add' %>
+        <% if User.current.allowed_to?(:manage_issue_relations, @project) %>
+          <%= render_menu_more(:relation_menu, nil, :menu_more_class => 'menu-more-sidebar', :menu_expander_class => 'button-1 icon icon-add gantt-relation', :label => l(:button_gantt_relation_new)) do %>
+            <ul class="">
+              <% %w(follows blocks relates_to duplicates copied_to).each do |rel_type| %>
+                <li><%= link_to_function l("label_#{rel_type}").humanize, "if (gantt.easygantt('newRelation', '#{rel_type == 'relates_to' ? 'relates' : rel_type }')) {$('.gantt-relation').toggle();} $('#menu-more-#{:relation_menu.object_id}').hide();" %></li>
+              <% end -%>
+            </ul>
+          <% end -%>
+          <%= link_to_function l(:button_gantt_relation_destroy), "if (gantt.easygantt('destroyRelation')) {$('.gantt-relation').toggle();}", :class => 'button-2 gantt-relation icon icon-remove' %>
+          <%= link_to_function l(:button_cancel), "gantt.easygantt('cancelNewRelation'); $('.gantt-relation').toggle();", :class => 'button-2 gantt-relation', :style => 'display:none;' %>
+          <%= link_to_function l(:button_gantt_issue_update_plural), "gantt.easygantt('saveIssues')", :class => 'button-1 icon icon-save' if User.current.allowed_to?(:edit_issues, @project) || (@project.nil? && User.current.allowed_to?(:edit_issues, nil, :global => true)) %>
+          <%= link_to_function(l(:button_gantt_show_sidebar), 'toggleSidebar(); $(this).html($("#sidebar").is(":visible") ? "' + l(:button_gantt_hide_sidebar) + '" : "' + l(:button_gantt_show_sidebar) + '");', :class => 'button-2') unless @sidebar.blank? -%>
+        <% end -%>
+      <% end -%>
+    </div>
+    <div class="clear"></div>
+  <% end -%>
+</div>
+<% if request.xhr? %>
+  <div>
+    <h2><%= @query.new_record? ? l(:label_gantt) : h(@query.name) %> (<%= @query.entity_count %>)</h2>
+  </div>
+<% end -%>
+
+<div id="<%= element_id %>">
+</div>
+<%= javascript_tag do %>
+  <% if request.xhr? %>
+    $(function() {
+      window.fs_gantt = {}; GenerateGantt('easygantt-container-fs', 'fs_gantt');
+    });
+  <% end -%>
+<% end %>
+
+<p>
+  <%= link_to l(:title_other_formats_links_pdf), params.merge(:format => 'pdf', :action => 'show'), :class => 'button-2 gantt-export' %>
+  <% if EasyGanttTheme.any? %>
+    <%= l(:label_with_theme) %>
+    <%= select_tag 'easy_gantt_theme', options_for_select([[l(:label_default), '']] + EasyGanttTheme.all.collect{|t| [t.name, t.id]}) %>
+  <% end -%>
+  <% if User.current.admin? %>
+    <%= link_to l(:label_customize_gantt_export), easy_gantt_themes_path %>
+  <% end -%>
+  <%= select_tag 'pdf_format', options_for_select(['A4', 'A3']) %>
+</p>

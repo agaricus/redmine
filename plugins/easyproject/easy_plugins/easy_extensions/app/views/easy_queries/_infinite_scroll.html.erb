@@ -1,0 +1,10 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    setInfiniteScrollDefaults();
+    $('<%= (content_selector ||= 'table.list:first > tbody').html_safe %>').infinitescroll({
+      navSelector: '<%= (nav_selector ||= 'p.pagination').html_safe %>',
+      nextSelector: '<%= (next_selector ||= 'p.pagination > a.next').html_safe %>',
+      itemSelector: '<%= (item_selector ||= "#{content_selector} > tr").html_safe %>, <%= next_selector.html_safe %>'
+    });
+  });
+</script>

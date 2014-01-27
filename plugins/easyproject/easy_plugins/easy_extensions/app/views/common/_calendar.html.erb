@@ -1,0 +1,75 @@
+<%-
+require 'utils/uuid'
+modul_uniq_id ||= UUID.create_random
+unless defined?(easy_user_working_time_calendar)
+  easy_user_working_time_calendar = nil
+end
+-%>
+<table class="cal">
+  <thead>
+    <tr><th scope="col" title="<%= l(:label_week) %>" class="week-number"></th><% 7.times do |i| %><th scope="col"><%= day_name( (calendar.first_wday+i)%7 ) %></th><% end %></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% day = calendar.startdt
+      while day <= calendar.enddt %>
+        <%= ("<td class='week-number' title='#{ l(:label_week) }'>#{(day+(11-day.cwday)%7).cweek}</td>").html_safe if day.cwday == calendar.first_wday %>
+        <td class="<%= day.month==calendar.month ? 'even' : 'odd' %><%= easy_user_working_time_calendar ? ' ' + easy_user_working_time_calendar.css_classes(day) : (' today' if User.current.today == day) -%>"
+         >
+          <div class="easy-dropper-target easy-drop-calendar common-calendar" data-calendar-day="<%= day %>">
+          <p class="day-num" id="<%= "#{modul_uniq_id}-day-num-#{day.month}-#{day.day}"%>">
+            <%= day.day %>
+            <% if easy_user_working_time_calendar && holiday = easy_user_working_time_calendar.holiday(day) %>
+              <%= h(holiday.name) %>
+            <% end %>
+          </p>
+          <% calendar.sorted_events_on(day).each do |i| %>
+            <% g_uuid = UUID.create_random -%>
+            <% if i.is_a? Issue %>
+              <div class="<%= i.css_classes %> <%= 'starting' if day == i.start_date %> <%= 'ending' if day == i.due_date %>">
+                <%= h("#{i.project} -") unless @project && @project == i.project %>
+                <%= link_to_issue i, :truncate => 30, :html => {:id => "el-#{g_uuid}"} %>
+                <%= format_issue_meeting_time( i ) %>
+                <% content_for :after_footer_tags do %>
+                  <div id="tooltip-<%= g_uuid -%>" style="display:none;" class="tooltip"><%= render_issue_tooltip i %></div>
+                  <%= javascript_tag "$('#el-#{g_uuid}').qtip({content: $('#tooltip-#{g_uuid}').html(), position: {adjust: {screen: true}}})" %>
+                <% end %>
+              </div>
+            <% elsif i.is_a? Project %>
+              <span class="icon icon-package">
+                <%= h("#{i} -") -%>
+                <% issues = i.issues.select{|is| is.due_date == day}
+                shared_versions = i.shared_versions.select{|sh| sh.due_date == day} -%>
+                <% if issues.any? -%>
+                  <% issues.each do |issue| -%>
+                    <%= link_to_issue issue -%>
+                  <% end -%>
+                <% elsif shared_versions.any? -%>
+                  <% shared_versions.each do |shared_version| -%>
+                    <%= link_to_version shared_version -%>
+                  <% end -%>
+                <% end -%>
+              </span>
+            <% elsif i.is_a? EasyAttendances::EasyAttendanceCalendarDay %>
+              <% i.events.each do |user, user_events| %>
+                <% user_events.each do |e| %>
+                  <div class="<%= e.css_classes %> <%= 'starting' if day == e.start_date(User.current) %> <%= 'ending' if day == e.due_date(User.current) %>">
+                    <%= render :partial => 'easy_attendances/calendar_item', :locals => {:g_uuid => g_uuid, :i => e, :calendar => calendar, :day => day} -%>
+                  </div>
+                <% end -%>
+              <% end -%>
+            <% else %>
+              <span class="icon icon-package">
+                <%= h("#{i.project} -") unless @project && @project == i.project %>
+                <%= link_to_version i%>
+              </span>
+            <% end %>
+          <% end %>
+          </div>
+        </td>
+        <%= '</tr><tr>'.html_safe if day.cwday==calendar.last_wday and day!=calendar.enddt %>
+        <% day = day + 1
+      end %>
+    </tr>
+  </tbody>
+</table>

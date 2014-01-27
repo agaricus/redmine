@@ -1,0 +1,7 @@
+Description:
+    The plugin generator creates stubs for a new easy customer.
+	
+Example:
+    bundle exec rails generate easy_customer NameOfNewCustomer
+      create  plugins/easyproject/easy_plugins/modification_name_of_new_customer/app/controllers
+      ...

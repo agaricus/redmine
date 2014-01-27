@@ -1,0 +1,11 @@
+easy_user_time_calendar_001:
+  id: 1
+  type: EasyUserWorkingTimeCalendar
+  name: Standard
+  builtin: true
+  is_default: true
+  default_working_hours: 8
+  first_day_of_week: 1
+  position: 1
+  time_from: 2012-09-03 09:00:00
+  time_to: 2012-09-03 18:00:00

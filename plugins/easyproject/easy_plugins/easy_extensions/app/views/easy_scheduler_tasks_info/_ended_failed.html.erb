@@ -1,0 +1,8 @@
+<p class="easy-scheduler-task-info ended-failed">
+  <%= l('easy_scheduler_task_info.ended_failed', :task_name => l("easy_scheduler_tasks.#{scheduler_task_info.name.underscore}")) -%>
+</p>
+<% unless back_url.blank? -%>
+  <script type="text/javascript">
+    setTimeout("window.location = '<%= back_url -%>';", 3000);
+  </script>
+<% end -%>

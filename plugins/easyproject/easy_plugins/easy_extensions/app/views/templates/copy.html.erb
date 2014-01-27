@@ -1,0 +1,50 @@
+<%= content_tag :h1, l(:label_template_copy) -%>
+
+<%= form_tag({ :action => 'copy_project_from_template', :id => @source_project }, :method => :post, :id => 'project-from-template') do -%>
+  <div class="gray-background tabular long2">
+    <p id="project-template">
+      <%= label_tag :project_root, l('project_template.label_name') %>
+      <span><%= h @source_project %></span>
+    </p>
+    <% p = @projects.shift %>
+    <% if p %>
+      <p>
+        <%= label_tag "template[target_root_project_id]", l(:label_project) %>
+        <%= easy_autocomplete_tag("template[target_root_project_id]", {:id => '', :name => ''}, url_for(:controller => 'easy_auto_completes', :action => 'visible_projects', :format => 'json'), {:html_options => {:id => "template_target_project_id"}, :root_element => 'projects'}) %>
+      </p>
+    <% end %>
+
+    <p id="form-start-date">
+      <%= label_tag "template[start_date]", @projects.size == 0 ? l(:label_template_easy_start_date) : l(:label_templates_easy_start_date) %>
+      <%= text_field_tag "template[start_date]", Date.current, {:size => 10} -%>
+      <%= calendar_for('template_start_date') -%>
+    </p>
+
+    <p id="form-checkbox">
+      <%= label_tag 'template[update_dates]', l(:label_project_templates_update_dates) %>
+      <%= check_box_tag 'template_update_dates', '', true -%>
+    </p>
+
+    <p>
+      <%= label_tag 'template[match_starting_dates]', l(:label_match_starting_dates) %>
+      <%= check_box_tag 'template_match_starting_dates', '1', false -%>
+    </p>
+
+    <div id="additional_template_options">
+      <p>
+        <%= label_tag(:change_issues_author, l(:label_project_templates_change_issues_author)) -%>
+        <%= select_tag('template[change_issues_author]', options_for_select([[l(:label_no_change_option), '']] + User.active.non_system_flag.easy_type_internal.sorted.collect{|u| [u.name, u.id]}, '')) %>
+      </p>
+
+      <%= call_hook(:view_templates_create_project_from_template, :source_project => @source_project) %>
+    </div>
+  </div>
+  <p>
+    <%= submit_tag(l(:button_copy_project_from_template), :class => 'button-1') %>
+  </p>
+
+<% end %>
+
+<% ### PAGE CUSTOMS ########################################################## %>
+
+<% html_title(l(:label_template_copy)) -%>

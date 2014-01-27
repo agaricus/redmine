@@ -1,0 +1,4 @@
+<%= labelled_form_for @project, :url => project_path(@project), :html => {:method => (@project.new_record? ? :post : :put), :id => 'project-form' } do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <%= submit_tag l(:button_save), :class => 'button-1', :id => 'save-project-info' %>
+<% end %>

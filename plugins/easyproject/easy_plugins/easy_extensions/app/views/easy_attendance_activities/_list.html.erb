@@ -1,0 +1,35 @@
+<% modul_uniq_id ||= controller_name + '_' + action_name %>
+<% if EasyAttendance.enabled? %>
+  <%= toggling_container("#{modul_uniq_id}_easy_attendance_activities", User.current, {:heading => l(:label, :scope => [:easy_attendance,:activities,:enumerations]), :default_button_state => false,
+      :heading_links => link_to(l(:label_enumeration_new), { :controller => 'easy_attendance_activities', :action => 'new'}, :class => 'button-1')}) do %>
+    <% if EasyAttendanceActivity.sorted.any? %>
+      <table class="list reorder">
+        <thead>
+          <tr>
+            <th></th>
+            <th><%= l(:field_name) -%></th>
+            <th style="width:15%;"><%= l(:field_is_default) -%></th>
+            <th style="width:15%;"><%= l(:field_at_work) -%></th>
+            <th align="center" style="width:10%;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% EasyAttendanceActivity.sorted.each do |activity| %>
+            <tr class="<%= cycle('odd', 'even') %> <%= activity.css_classes -%> " id="easy-attendance-activity-<%= activity.id %>">
+              <td class="center reorder-handler"><%= render_reorder_handle(activity, 'easy_attendance_activity') %></td>
+              <td class="name"><%= link_to(h(activity.name), edit_easy_attendance_activity_path(activity)) -%></td>
+              <td class="center" style="width:15%;"><%= checked_image activity.is_default? %></td>
+              <td class="center" style="width:15%;"><%= checked_image activity.at_work? %></td>
+              <td class="buttons">
+                <%= link_to( l(:button_delete), activity,
+                  {:method => :delete,
+                    :remote => true,
+                    :class => 'icon texticon icon-del'}.merge(activity.easy_attendances.any? ? {} : {:data => {:confirm => l(:text_are_you_sure)}})) unless activity.non_deletable? -%>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
+<% end %>

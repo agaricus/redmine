@@ -1,0 +1,6 @@
+<h3><%=l('easy_pages.modules.news')%> (<%= @easy_page_modules_data[block_name][:news_count] %>)</h3>
+<p>
+  <span class="my-page-news-query-select-label"><%= l(:label_my_page_news_row_count) -%></span>
+  <% settings['row_limit'] ||= 10 %>
+  <span class="my-page-news-query-select"><%= text_field_tag("#{block_name}[row_limit]", settings["row_limit"].to_i, :size => 5) -%></span>
+</p>

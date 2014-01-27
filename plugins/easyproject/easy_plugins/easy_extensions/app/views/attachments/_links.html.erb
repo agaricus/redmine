@@ -1,0 +1,31 @@
+<%
+unless attachments.blank?
+  # -- options:
+  #       * enable_toggling: This option enable magic plus button.
+  #       * toggling_uniq_id Require for module pages like my_page, projects/show... Makes toggle uniq.
+  #       * show_checkboxes -
+  %>
+  <div class="attachment-links <%= options[:do_not_show_context_menu] ? 'do_not_show_context_menu' : 'show_context_menu' -%>">
+    <% if options[:enable_toggling] -%>
+      <%= toggling_container("#{options[:toggling_uniq_id]}attachments-link-for#{('-' + attachments.first.container_type.underscore + attachments.first.container_id.to_s) if attachments.first.present?}", User.current, {:heading => (options[:label] || l(:label_issue_attachments_heading)), :default_button_state => options.delete(:default_button_state)}) do %>
+        <%= render :partial => 'attachments/link_rows', :locals => {:attachments => attachments, :options => options} -%>
+      <% end
+    else %>
+      <%= content_tag :h3, options[:label] || l(:label_issue_attachments_heading), :class => 'sidebar-style-h3 attachment-header' -%>
+      <%= render :partial => 'attachments/link_rows', :locals => {:attachments => attachments, :options => options} -%>
+    <% end %>
+    <% if defined?(thumbnails) && thumbnails %>
+      <% images = attachments.select(&:thumbnailable?) %>
+      <% if images.any? %>
+        <div class="thumbnails">
+          <% images.each do |attachment| %>
+            <div class="floating"><%= thumbnail_tag(attachment, :target => '_blank') %></div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <% unless options[:do_not_show_context_menu] %>
+    <%= context_menu url_for(:controller => 'context_menus', :action => 'versioned_attachments'), '.attachment-links.show_context_menu table.attachments' -%>
+  <% end %>
+<% end %>
