@@ -1,0 +1,10 @@
+<div class="project-team members box">
+  <% @project.members.sort_by{|member| [member.roles.sort_by(&:position).first.position] + [member.name] }.each do |member| %>
+    <div class="member" data-id="<%= member.user_id %>">
+      <%= avatar(member.user, :size => '40') %>
+      <div class="member-name"><%= member.name %></div>
+      <div class="member-roles"><%= member.roles.sort_by(&:position).collect(&:name).join(', ') -%></div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+</div>

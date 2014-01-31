@@ -1,0 +1,38 @@
+<% relations = sprint.issue_easy_sprint_relations.group_by(&:relation_type); issues = {}; %>
+<% relations.each{|type, rels| issues[type] = rels.collect &:issue} %>
+<div id="easy-sprint-<%= sprint.id %>" class="easy-sprint" data-id="<%= sprint.id %>">
+  <h3>
+    <%= sprint.name %>: <%= format_date(sprint.start_date) %> - <%= format_date(sprint.due_date) %>
+    <%= link_to(l(:button_delete_sprint), project_easy_sprint_path(@project, sprint),
+        :remote => true, :method => :delete, :data => {:confirm => l(:text_are_you_sure)},
+        :class => 'floatright button-2 icon icon-del') if User.current.allowed_to?(:edit_easy_agile_board, @project) %>
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2"><%= l(:label_agile_backlog) %></th>
+        <th colspan="3"><%= l(:label_agile_in_progress) %></th>
+        <th rowspan="2"><%= l(:label_agile_done) %></th>
+      </tr>
+      <tr>
+        <th><%= l(:label_agile_new) %></th>
+        <th><%= l(:label_agile_realization) %></th>
+        <th><%= l(:label_agile_to_check) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <% IssueEasySprintRelation::TYPES.each do |relation_type, relation_type_value| %>
+          <td>
+            <ul data-relation-type="<%= relation_type %>" class="<%= relation_type %> agile-list">
+              <% (issues[relation_type_value] || []).each do |issue| %>
+                <%= render :partial => 'easy_agile_board/issue_item', :locals => {:issue => issue} %>
+              <% end -%>
+            </ul>
+          </td>
+        <% end -%>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

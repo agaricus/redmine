@@ -1,0 +1,33 @@
+<%= render :partial => 'easy_queries/easy_query_index', :locals => {
+  :query => @query,
+  :easy_query_name => l(:label_agile_board),
+  :show_free_search => false
+} %>
+
+<div class="agile-board-container">
+
+  <div class="grid_3 alpha agile-board-sidebar">
+    <h3><%= l(:label_project_backlog) %></h3>
+    <%= render :partial => 'project_backlog' %>
+    <h3><%= l(:sidebar_project_members) %></h3>
+    <%= render :partial => 'project_team' %>
+  </div>
+
+  <div class="grid_9 omega agile-board-body">
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'jquery.agileboard.js', :plugin => 'easy_agile_board' %>
+  <script type="text/javascript">
+    $(function () {
+      var agile = $('.agile-board-container').agileboard({
+        newSprintUrl: <%= raw new_project_easy_sprint_path(@project).to_json %>,
+        sprintsUrl: <%= raw project_easy_sprints_path(@project).to_json %>,
+        editable: <%= raw User.current.allowed_to?(:edit_easy_agile_board, @project) %>
+      });
+    });
+  </script>
+<% end -%>

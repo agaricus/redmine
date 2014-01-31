@@ -1,0 +1,7 @@
+<div class="project-backlog">
+  <ul class="agile-list">
+    <% @backlog.each do |issue| %>
+      <%= render :partial => 'issue_item', :locals => {:issue => issue} %>
+    <% end -%>
+  </ul>
+</div>

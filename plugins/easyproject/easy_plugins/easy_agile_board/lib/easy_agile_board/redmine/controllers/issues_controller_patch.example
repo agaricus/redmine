@@ -1,0 +1,30 @@
+module EasyAgileBoard
+  module IssuesControllerPatch
+
+    def self.included(base)
+      base.extend(ClassMethods)
+      base.send(:include, InstanceMethods)
+
+      base.class_eval do
+
+        alias_method_chain :index, :easy_agile_board
+
+      end
+    end
+
+    module InstanceMethods
+
+      def index_with_easy_agile_board
+        index_without_easy_agile_board
+      end
+
+    end
+
+    module ClassMethods
+
+    end
+
+  end
+
+end
+EasyExtensions::PatchManager.register_controller_patch 'IssuesController', 'EasyAgileBoard::IssuesControllerPatch'

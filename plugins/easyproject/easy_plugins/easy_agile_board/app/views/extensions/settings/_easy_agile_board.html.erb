@@ -1,0 +1,23 @@
+<fieldset class="box">
+  <legend><%=l(:label_issue_status_plural)%></legend>
+  <p>
+    <label for="settings_new_status_id"><%= l(:label_agile_new) -%></label>
+    <%= select_tag 'settings[new_status_id]',
+      content_tag(:option, '', :value => '') + options_from_collection_for_select(IssueStatus.all, :id, :name, @settings['new_status_id'] )  %>
+  </p>
+  <p>
+    <label for="settings_realization_status_id"><%= l(:label_agile_realization) -%></label>
+    <%= select_tag 'settings[realization_status_id]',
+      content_tag(:option, '', :value => '') + options_from_collection_for_select(IssueStatus.all, :id, :name, @settings['realization_status_id'] )  %>
+  </p>
+  <p>
+    <label for="settings_to_check_status_id"><%= l(:label_agile_to_check) -%></label>
+    <%= select_tag 'settings[to_check_status_id]',
+      content_tag(:option, '', :value => '') + options_from_collection_for_select(IssueStatus.all, :id, :name, @settings['to_check_status_id'] )  %>
+  </p>
+  <p>
+    <label for="settings_done_status_id"><%= l(:label_agile_done) -%></label>
+    <%= select_tag 'settings[done_status_id]',
+      content_tag(:option, '', :value => '') + options_from_collection_for_select(IssueStatus.all, :id, :name, @settings['done_status_id'] )  %>
+  </p>
+</fieldset>

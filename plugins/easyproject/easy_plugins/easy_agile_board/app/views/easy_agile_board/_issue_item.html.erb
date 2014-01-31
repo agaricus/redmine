@@ -1,0 +1,10 @@
+<li id="el-<%= issue.id %>" data-id="<%= issue.id %>" class="agile-issue-item <%= issue.css_classes %>">
+  <% if issue.assigned_to %>
+    <%= avatar(issue.assigned_to, :size => '50', :no_link => true) %>
+  <% end -%>
+  <div class="issue-link">
+    <%= link_to(issue.to_s, issue_path(issue), :class => issue.css_classes) %>
+  </div>
+  <div id="tooltip-<%= issue.id -%>" style="display:none;" class="tooltip"><%= render_issue_tooltip issue %></div>
+  <%= javascript_tag "$('#el-#{issue.id}').qtip({content: $('#tooltip-#{issue.id}').html(), position: {adjust: {screen: true}}})" %>
+</li>

@@ -1,0 +1,24 @@
+en:
+  permission_view_easy_agile_board: View agile board
+  permission_edit_easy_agile_board: Edit agile board
+
+  easy_agile_board_plugin_name: "Easy Agile Board"
+  easy_agile_board_plugin_author: "Easy Software"
+  easy_agile_board_plugin_author_url: "http://www.easyproject.cz/en"
+  easy_agile_board_plugin_description: ""
+  easy_agile_board_query: Agile Board
+  label_filter_group_easy_agile_board_query: Tasks
+
+  button_agile_board: Agile board
+  button_create_sprint: Create sprint
+  button_delete_sprint: Delete sprint
+  field_sprint_title: Sprint name
+  label_agile_board: Agile board
+  label_project_backlog: Project backlog
+
+  label_agile_backlog: Sprint backlog
+  label_agile_in_progress: In progress
+  label_agile_done: Done
+  label_agile_new: New
+  label_agile_realization: Realization
+  label_agile_to_check: To check
