@@ -1,6 +1,6 @@
 # config/unicorn.rb
 worker_processes Integer(ENV["UNICORN_WORKERS"] || 3) # Heroku recommends 3 workers per dyno
-timeout 300
+timeout 600
 preload_app true
 
 before_fork do |server, worker|

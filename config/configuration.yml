@@ -127,7 +127,7 @@ default:
   # scm_bazaar_command:     bzr.exe                                   # (default: bzr)
   # scm_darcs_command:      darcs-1.0.9-i386-linux                    # (default: darcs)
   #
-  scm_subversion_command:
+  scm_subversion_command: svn
   scm_mercurial_command:
   scm_git_command:
   scm_cvs_command:
