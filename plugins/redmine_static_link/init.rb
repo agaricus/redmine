@@ -5,7 +5,7 @@ Redmine::Plugin.register :redmine_static_link do
 
   version '0.1.0'
   
-  menu :top_menu, "Wiki", "http://redminesmmp/projects/smmp/wiki"
+  menu :top_menu, "Wiki", "http://redminesmg/projects/smmp/wiki"
 
 end
 
